@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/</loc>
+    <lastmod>2019-02-26T17:29:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/</loc>
     <lastmod>2019-02-25T16:50:14+09:00</lastmod>
   </url>
@@ -40,7 +45,7 @@
   
   <url>
     <loc>http://kkawazoe.github.io/</loc>
-    <lastmod>2019-02-25T16:50:14+09:00</lastmod>
+    <lastmod>2019-02-26T17:29:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,7 +57,7 @@
   
   <url>
     <loc>http://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-02-25T16:50:14+09:00</lastmod>
+    <lastmod>2019-02-26T17:29:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,6 +76,12 @@
   <url>
     <loc>http://kkawazoe.github.io/tags/vs-code/</loc>
     <lastmod>2019-02-20T00:24:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kkawazoe.github.io/tags/vue.js/</loc>
+    <lastmod>2019-02-26T17:29:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

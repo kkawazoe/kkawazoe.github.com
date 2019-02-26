@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="http://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="http://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+<link rel="canonical" href="http://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
 
 
     
@@ -19,24 +19,24 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - My Memorandum For Programming</title>
+    <title>画像の読み込みの開始および完了を検知する - My Memorandum For Programming</title>
     
 
-<meta name="description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得してVBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のソース [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
+<meta name="description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 
-<meta property="og:title" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - My Memorandum For Programming">
+<meta property="og:title" content="画像の読み込みの開始および完了を検知する - My Memorandum For Programming">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+<meta property="og:url" content="http://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
 <meta property="og:image" content="http://kkawazoe.github.io/images/default.png">
 <meta property="og:site_name" content="My Memorandum For Programming">
-<meta property="og:description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得してVBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のソース [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
+<meta property="og:description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="My Memorandum For Programming">
-<meta name="twitter:url" content="http://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-<meta name="twitter:title" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - My Memorandum For Programming">
-<meta name="twitter:description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得してVBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のソース [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
+<meta name="twitter:url" content="http://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
+<meta name="twitter:title" content="画像の読み込みの開始および完了を検知する - My Memorandum For Programming">
+<meta name="twitter:description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 <meta name="twitter:image" content="http://kkawazoe.github.io/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"http://kkawazoe.github.io/"
     },
-    "headline": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - My Memorandum For Programming",
+    "headline": "画像の読み込みの開始および完了を検知する - My Memorandum For Programming",
     "image": {
       "@type": "ImageObject",
       "url": "http://kkawazoe.github.io/images/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2014-06-22T09:01:00JST",
-    "dateModified": "2014-06-22T09:01:00JST",
+    "datePublished": "2019-02-26T17:29:00JST",
+    "dateModified": "2019-02-26T17:29:00JST",
     "author": {
       "@type": "Person",
       "name": "My Memorandum For Programming"
@@ -71,13 +71,9 @@
         "height": 60
       }
     },
-    "description": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して
-VBS から戻り値を受け取り、実現する。
-取得するiniファイルの中身 [sample.ini]
-&lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=c:\src\wk 'Work Folder Path  実際のソース [getProfileString.bat]
-@echo off set iniFileName=sample.ini for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A echo &quot;%ret%&quot; pause exit  [getProfileString.vbs]
-Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting."
+    "description": "Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加
+v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;ja&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;app&quot;&gt; &lt;img :src=&quot;url&quot; v-on:load=&quot;load&quot; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: '#app', data: { url: &quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&quot; // ※1 }, methods: { // ※4 load: function() { console."
   }
 </script>
 
@@ -126,24 +122,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+  <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
 
   <header class="article-header">
-    <h1 class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</h1>
+    <h1 class="title">画像の読み込みの開始および完了を検知する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&title=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&text=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&t=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&title=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -152,161 +148,79 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法</h1>
+<h1 id="vue-js-で画像の読み込みの開始および完了を検知する">Vue.js で画像の読み込みの開始および完了を検知する</h1>
 
-<h2 id="対応方法">対応方法</h2>
+<h2 id="確認環境">確認環境</h2>
 
-<p>バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。<br />
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して<br />
-VBS から戻り値を受け取り、実現する。</p>
+<ul>
+<li>Vue.js: v2.6.7</li>
+</ul>
 
-<h2 id="取得するiniファイルの中身">取得するiniファイルの中身</h2>
+<h2 id="方法">方法</h2>
 
-<p>[sample.ini]</p>
+<h3 id="読み込み開始検知">読み込み開始検知</h3>
 
-<pre><code class="language-ini">&lt;設定値&gt;*****************************************************'&lt;コメント&gt;#######################################
-[Path]
-WorkPath=c:\src\wk                                           'Work Folder Path
-</code></pre>
+<ol>
+<li><code>img</code> タグの <code>:src</code> に展開する <code>URL</code> を変数化 ※1</li>
+<li><code>Vue.js</code> 側の <code>watch</code> で<code>1.</code>の変数を監視 ※2</li>
+</ol>
 
-<h2 id="実際のソース">実際のソース</h2>
+<h3 id="読み込み完了検知">読み込み完了検知</h3>
 
-<p>[getProfileString.bat]</p>
+<ol>
+<li><code>img</code> タグに以下のイベントを追加<br />
+<code>v-on:load=&quot;メソッド名&quot;</code> ※3</li>
+<li><code>Vue.js</code> 側に<code>1.</code>で指定したメソッドを定義 ※4</li>
+</ol>
 
-<pre><code class="language-bat">@echo off
-set iniFileName=sample.ini
+<h2 id="実際のコード">実際のコード</h2>
 
-for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A
+<p>[index.html]</p>
 
-echo &quot;%ret%&quot;
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      &lt;img :src=&quot;url&quot; v-on:load=&quot;load&quot; /&gt; &lt;!-- ※3 --&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      var app = new Vue({
+        el: '#app',
+        data: {
+          url: &quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&quot; // ※1
+        },
+        methods: {
+          // ※4
+          load: function() {
+            console.log('loaded');
+          },
+        }
+      });
 
-pause
-exit
-</code></pre>
-
-<p>[getProfileString.vbs]</p>
-
-<pre><code class="language-vbs">Option Explicit
-rem /*****************************************************************
-rem  *  getProfileString.vbs iniFileName, sectionName, entryName
-rem  *
-rem  *  引数
-rem  *    iniFileName : 設定ファイル名(フルパス)
-rem  *    sectionName : セクション名
-rem  *    entryName   : エントリー名
-rem  *  動作
-rem  *    引数に指定された設定ファイルより指定した
-rem  *    「セクション」,「エントリー」に対応する設定値を返す。
-rem  *    先頭がカンマの場合はコメント行として扱う。
-rem  *    行の途中でカンマがある場合は直前までの文字列(右空白除去)を
-rem  *    設定値として扱う。
-rem  *  戻り値
-rem  *    設定値(見つからなかった場合およびエラーの場合は空を返す。)
-rem  *****************************************************************/
-
-Dim ret
-Dim fs
-Dim readLineObj
-Dim searchFlg
-Dim buffer
-
-rem ファイルシステムアクセス用
-Set fs = CreateObject( &quot;Scripting.FileSystemObject&quot; )
-ret = &quot;&quot;
-
-rem ファイルを開く
-on error resume next
-Set readLineObj = fs.OpenTextFile( Wscript.Arguments(0), 1 )
-if Err.Number &lt;&gt; 0 then
-    rem ファイルアクセスエラーの場合は終了
-    Wscript.Echo ret
-    Wscript.Quit
-end if
-on error goto 0
-
-rem 検索処理用のフラグ
-searchFlg = false
-
-rem 読込みループ
-Do While not readLineObj.AtEndOfStream
-    rem 行単位の読込み
-    buffer = readLineObj.ReadLine
-
-    rem 空の行以外の場合
-    if Trim(buffer) &lt;&gt; &quot;&quot; then
-        rem 対象セクションの場合
-        if Ucase(Trim(buffer)) = &quot;[&quot; &amp; Ucase( Wscript.Arguments(1) ) &amp; &quot;]&quot; then
-            searchFlg = true
-        else
-            rem 設定値を取得
-            ret = GetProfileString(buffer, Wscript.Arguments(2), searchFlg)
-            rem エントリー名が見つからなかった場合
-            if searchFlg And IsEmpty(ret) then
-                ret = &quot;&quot;
-            end if
-            rem 設定値を取得できた場合はループを抜ける
-            if searchFlg And (Len(ret) &lt;&gt; 0) then Exit Do
-        end if
-    end if
-Loop
-
-readLineObj.Close
-Wscript.Echo ret
-Wscript.Quit
-
-rem /*****************************************************************
-rem  *  引数に指定された設定ファイルより指定した
-rem  *  「セクション」,「エントリー」に対応する設定値を返す。
-rem  *  先頭がカンマの場合はコメント行として扱う。
-rem  *  行の途中でカンマがある場合は直前までの文字列(右空白除去)を
-rem  *  設定値として扱う。
-rem  *
-rem  *  引数
-rem  *    buffer       : 設定ファイルより読込んだ行
-rem  *    sectionName  : セクション名
-rem  *    searchFlg    : 検索用フラグ
-rem  *  戻り値
-rem  *    設定値(見つからなかった場合およびエラーの場合は空を返す。)
-rem  *****************************************************************/
-Function GetProfileString ( buffer, sectionName, searchFlg )
-    Dim ret
-    Dim entries
-    Dim entry
-
-    ret = &quot;&quot;
-    if searchFlg then
-        rem 次のセクションの場合
-        if Left(Trim(buffer) ,1) = &quot;[&quot; then
-            rem ループを抜ける
-            GetProfileString = Empty
-            Exit Function
-        end if
-
-        entries = Split(buffer, &quot;'&quot;)
-        entry = Split(entries(0), &quot;=&quot;)
-
-        rem エントリーの場合
-        if (Ubound(entry) = 1) then
-            rem 検索対象のエントリーの場合
-            if Ucase(Trim(entry(0))) = Ucase(sectionName) then
-                ret = RTrim(entry(1))
-            End if
-        end if
-    end if
-    GetProfileString = ret
-End Function
+      // ※2
+      app.$watch('url', function(val, oldVal) {
+        console.log(val);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b http%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&title=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&text=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&t=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f&title=%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e7%94%bb%e5%83%8f%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e9%96%8b%e5%a7%8b%e3%81%8a%e3%82%88%e3%81%b3%e5%ae%8c%e4%ba%86%e3%82%92%e6%a4%9c%e7%9f%a5%e3%81%99%e3%82%8b http%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f26%2fdetect-loaded-and-start-reading-for-img-with-vuejs%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -318,7 +232,7 @@ End Function
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</li>
+            <li class="active">画像の読み込みの開始および完了を検知する</li>
           </ol>
         </nav>
       </div>
@@ -336,7 +250,7 @@ End Function
       <div>
         <ul class="terms">
           
-          <li><a href="http://kkawazoe.github.io/tags/bat/">Bat</a></li>
+          <li><a href="http://kkawazoe.github.io/tags/vue.js/">Vue.js</a></li>
           
         </ul>
       </div>
@@ -354,14 +268,14 @@ End Function
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="http://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-    <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
+  <a href="http://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
+    <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
 
     <div class="inner">
-      <div class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</div>
+      <div class="title">Rails の order by で自分を優先的に取得する</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -372,27 +286,6 @@ End Function
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="http://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-    <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
