@@ -1,6 +1,6 @@
-baseURL = "http://kkawazoe.github.io/"
+baseURL = "https://kkawazoe.github.io/"
 languageCode = "jp"
-title = "My Memorandum For Programming"
+title = "My Memorandum For Programming ~One Step At A Time~"
 theme = "hugo_theme_robust"
 enableRobotsTXT = true
 googleAnalytics = "UA-46736290-1"
