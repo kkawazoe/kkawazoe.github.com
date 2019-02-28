@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/tool/</link>
+    <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Thu, 28 Feb 2019 12:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rambox で ChatWork の未読メッセージを通知する</title>
+      <link>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</link>
+      <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
+      <description>Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが
+手間だったためまとめて管理できるツールがないか調査した。
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際に
+ダウンロード用のダイアログが表示されるため
+「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついている
+メッセージの場合は以下のようにバッジと未読数が表示される
+ Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は
+表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
+※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ Rambox サービス設定画面   実際のコード [Custom Code]</description>
+    </item>
+    
+  </channel>
+</rss>
