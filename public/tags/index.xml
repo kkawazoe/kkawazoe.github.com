@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My Memorandum For Programming</title>
-    <link>http://kkawazoe.github.io/tags/</link>
-    <description>Recent content in Tags on My Memorandum For Programming</description>
+    <title>Tags on My Memorandum For Programming ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/</link>
+    <description>Recent content in Tags on My Memorandum For Programming ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sun, 22 Jun 2014 09:01:00 +0900</lastBuildDate>
     
-	<atom:link href="http://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bat</title>
-      <link>http://kkawazoe.github.io/tags/bat/</link>
+      <link>https://kkawazoe.github.io/tags/bat/</link>
       <pubDate>Sun, 22 Jun 2014 09:01:00 +0900</pubDate>
       
-      <guid>http://kkawazoe.github.io/tags/bat/</guid>
+      <guid>https://kkawazoe.github.io/tags/bat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>http://kkawazoe.github.io/tags/mysql/</link>
+      <link>https://kkawazoe.github.io/tags/mysql/</link>
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
-      <guid>http://kkawazoe.github.io/tags/mysql/</guid>
+      <guid>https://kkawazoe.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ruby on Rails</title>
-      <link>http://kkawazoe.github.io/tags/ruby-on-rails/</link>
+      <link>https://kkawazoe.github.io/tags/ruby-on-rails/</link>
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
-      <guid>http://kkawazoe.github.io/tags/ruby-on-rails/</guid>
+      <guid>https://kkawazoe.github.io/tags/ruby-on-rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vs Code</title>
-      <link>http://kkawazoe.github.io/tags/vs-code/</link>
+      <link>https://kkawazoe.github.io/tags/vs-code/</link>
       <pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate>
       
-      <guid>http://kkawazoe.github.io/tags/vs-code/</guid>
+      <guid>https://kkawazoe.github.io/tags/vs-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>http://kkawazoe.github.io/tags/vue.js/</link>
+      <link>https://kkawazoe.github.io/tags/vue.js/</link>
       <pubDate>Tue, 26 Feb 2019 17:29:00 +0900</pubDate>
       
-      <guid>http://kkawazoe.github.io/tags/vue.js/</guid>
+      <guid>https://kkawazoe.github.io/tags/vue.js/</guid>
       <description></description>
     </item>
     

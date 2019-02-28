@@ -5,4 +5,4 @@ Disallow: https://kkawazoe.github.io/blog/categories/batutihuairu/
 
 
 
-Sitemap: http://kkawazoe.github.io/sitemap.xml
+Sitemap: https://kkawazoe.github.io/sitemap.xml
