@@ -6,10 +6,30 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 26 Feb 2019 17:29:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Feb 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rambox で ChatWork の未読メッセージを通知する</title>
+      <link>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</link>
+      <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
+      <description>Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが
+手間だったためまとめて管理できるツールがないか調査した。
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際に
+ダウンロード用のダイアログが表示されるため
+「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついている
+メッセージの場合は以下のようにバッジと未読数が表示される
+ Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は
+表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
+※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ Rambox サービス設定画面   実際のコード [Custom Code]</description>
+    </item>
     
     <item>
       <title>画像の読み込みの開始および完了を検知する</title>
@@ -68,7 +88,7 @@ class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して
 VBS から戻り値を受け取り、実現する。
 取得するiniファイルの中身 [sample.ini]
-&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のソース [getProfileString.bat]
+&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のコード [getProfileString.bat]
 @echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]
 Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.</description>
     </item>
@@ -81,7 +101,7 @@ Option Explicit rem /***********************************************************
       <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
       <description>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のソース [DispMsgBox.bat]
+実際のコード [DispMsgBox.bat]
 @echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]
 Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
     </item>

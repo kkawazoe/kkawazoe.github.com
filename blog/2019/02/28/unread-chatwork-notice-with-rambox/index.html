@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/">
 
 
     
@@ -19,24 +19,24 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる - Note To Self ~One Step At A Time~</title>
+    <title>Rambox で ChatWork の未読メッセージを通知する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。資料を共有をする場合に拡張機能である Markdown PDF を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。情報元 Markdown PDF の「Page Break」の項目に記載あり実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;quot;page&amp;quot;/&amp;gt; # h1 ## h2 ### h3  ">
+<meta name="description" content="Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動 Rambox サービス設定画面   実際のコード [Custom Code]">
 
-<meta property="og:title" content="Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Rambox で ChatWork の未読メッセージを通知する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。資料を共有をする場合に拡張機能である Markdown PDF を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。情報元 Markdown PDF の「Page Break」の項目に記載あり実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;quot;page&amp;quot;/&amp;gt; # h1 ## h2 ### h3  ">
+<meta property="og:description" content="Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動 Rambox サービス設定画面   実際のコード [Custom Code]">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-<meta name="twitter:title" content="Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。資料を共有をする場合に拡張機能である Markdown PDF を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。情報元 Markdown PDF の「Page Break」の項目に記載あり実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;quot;page&amp;quot;/&amp;gt; # h1 ## h2 ### h3  ">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/">
+<meta name="twitter:title" content="Rambox で ChatWork の未読メッセージを通知する - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動 Rambox サービス設定画面   実際のコード [Custom Code]">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる - Note To Self ~One Step At A Time~",
+    "headline": "Rambox で ChatWork の未読メッセージを通知する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-02-20T00:24:14JST",
-    "dateModified": "2019-02-20T00:24:14JST",
+    "datePublished": "2019-02-28T12:00:00JST",
+    "dateModified": "2019-02-28T12:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -71,10 +71,18 @@
         "height": 60
       }
     },
-    "description": " Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
-資料を共有をする場合に拡張機能である Markdown PDF を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
-情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --&gt; &lt;div class=&quot;page&quot;/&gt; # h1 ## h2 ### h3  "
+    "description": "Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが
+手間だったためまとめて管理できるツールがないか調査した。
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際に
+ダウンロード用のダイアログが表示されるため
+「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついている
+メッセージの場合は以下のようにバッジと未読数が表示される
+ Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は
+表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
+※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ Rambox サービス設定画面   実際のコード [Custom Code]"
   }
 </script>
 
@@ -123,24 +131,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
+  <div class="thumb thumb-5be2a40737ee2715ddd6c0983ee493bd"></div>
 
   <header class="article-header">
-    <h1 class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</h1>
+    <h1 class="title">Rambox で ChatWork の未読メッセージを通知する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-28T12:00:00JST">Feb 28, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&text=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&t=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&title=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&text=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&t=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&title=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -149,47 +157,85 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="visual-studio-code-で-markdown-pdf-を使用してpdf出力する際に任意の場所で改行させる方法">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法</h1>
+<h1 id="rambox-で-chatwork-の未読メッセージを通知する">Rambox で ChatWork の未読メッセージを通知する</h1>
+
+<h2 id="確認環境">確認環境</h2>
+
+<ul>
+<li>Windows10</li>
+<li>Rambox: 0.6.3</li>
+</ul>
 
 <h2 id="経緯">経緯</h2>
 
-<p>普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。<br />
-資料を共有をする場合に拡張機能である <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。</p>
+<p>普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが<br />
+手間だったためまとめて管理できるツールがないか調査した。</p>
 
-<h2 id="情報元">情報元</h2>
+<h3 id="候補">候補</h3>
 
-<p><a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> の「Page Break」の項目に記載あり</p>
+<ul>
+<li><a href="https://meetfranz.com/">Franz</a></li>
+<li><a href="https://getstation.com/">Station</a></li>
+<li><a href="https://rambox.pro/#ce">Rambox</a></li>
+</ul>
+
+<p>Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際に<br />
+ダウンロード用のダイアログが表示されるため<br />
+「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定</p>
+
+<h3 id="rambox-の-chatwork-の挙動">Rambox の ChatWork の挙動</h3>
+
+<p>Rambox で ChatWork をサービスとして追加した場合自分にメンションがついている<br />
+メッセージの場合は以下のようにバッジと未読数が表示される</p>
+
+<figure class="center">
+    <img src="/images/rambox_badge.png" width="40" height="40"/> <figcaption>
+            <h4>Rambox バッジおよび未読数</h4>
+        </figcaption>
+</figure>
+
+
+<p>しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は<br />
+表示されないため見逃してしまう</p>
+
+<h2 id="対処方法">対処方法</h2>
+
+<p>Rambox のサービス設定画面でカスタムコードを使用して対応する<br />
+※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動</p>
+
+<figure class="center">
+    <img src="/images/rambox_service_config.png" width="480" height="640"/> <figcaption>
+            <h4>Rambox サービス設定画面</h4>
+        </figcaption>
+</figure>
+
 
 <h2 id="実際のコード">実際のコード</h2>
 
-<pre><code class="language-md">
-# h1
+<p>[Custom Code]</p>
 
-## h2
+<pre><code class="language-javascript">function checkUnread() {
+    const elements = document.querySelectorAll(&quot;.roomListBadges__unreadBadgeText&quot;);
+    updateBadge(elements.length);
+}
 
-### h3
+function updateBadge(e) {
+  e &gt;= 1 ? rambox.setUnreadCount(e) : rambox.clearUnreadCount();
+}
 
-&lt;!-- 改行させたい位置 --&gt;
-&lt;div class=&quot;page&quot;/&gt;
-
-# h1
-
-## h2
-
-### h3
-
+setInterval(checkUnread, 3000);
 </code></pre>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&text=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&t=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&title=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&text=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&t=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f&title=Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rambox%20%e3%81%a7%20ChatWork%20%e3%81%ae%e6%9c%aa%e8%aa%ad%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%82%92%e9%80%9a%e7%9f%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f28%2funread-chatwork-notice-with-rambox%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -201,7 +247,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</li>
+            <li class="active">Rambox で ChatWork の未読メッセージを通知する</li>
           </ol>
         </nav>
       </div>
@@ -219,7 +265,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/vs-code/">VS Code</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/tool/">Tool</a></li>
           
         </ul>
       </div>
@@ -237,14 +283,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-    <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
+    <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
 
     <div class="inner">
-      <div class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</div>
+      <div class="title">画像の読み込みの開始および完了を検知する</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -255,27 +301,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-    <div class="thumb thumb-b73c0654cc5a32930a864f256828331a"></div>
-
-    <div class="inner">
-      <div class="title">Rails で階層構造になっているテーブルに自分自身への関連を設定する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-21T18:10:43JST">Feb 21, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
