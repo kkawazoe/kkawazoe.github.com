@@ -19,23 +19,23 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - My Memorandum For Programming ~One Step At A Time~</title>
+    <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~</title>
     
 
 <meta name="description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のソース [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
 
-<meta property="og:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
-<meta property="og:site_name" content="My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のソース [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-<meta name="twitter:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のソース [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
@@ -48,7 +48,7 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - My Memorandum For Programming ~One Step At A Time~",
+    "headline": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
@@ -59,11 +59,11 @@
     "dateModified": "2014-02-09T18:46:00JST",
     "author": {
       "@type": "Person",
-      "name": "My Memorandum For Programming ~One Step At A Time~"
+      "name": "Note To Self ~One Step At A Time~"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "My Memorandum For Programming ~One Step At A Time~",
+      "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
         "url": "https://kkawazoe.github.io/images/logo.png",
@@ -109,7 +109,7 @@ if (!doNotTrack) {
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
-          <a href="https://kkawazoe.github.io/">My Memorandum For Programming ~One Step At A Time~</a>
+          <a href="https://kkawazoe.github.io/">Note To Self ~One Step At A Time~</a>
         </div>
         
 
@@ -501,7 +501,7 @@ End Function
 
     <footer class="l-footer">
       <div class="l-container">
-        <p><span class="h-logo">&copy; My Memorandum For Programming ~One Step At A Time~</span></p>
+        <p><span class="h-logo">&copy; Note To Self ~One Step At A Time~</span></p>
         <aside>
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
