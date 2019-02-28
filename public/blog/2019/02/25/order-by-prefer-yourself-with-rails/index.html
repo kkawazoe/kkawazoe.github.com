@@ -19,23 +19,23 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Rails の order by で自分を優先的に取得する - My Memorandum For Programming ~One Step At A Time~</title>
+    <title>Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~</title>
     
 
 <meta name="description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 
-<meta property="og:title" content="Rails の order by で自分を優先的に取得する - My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
-<meta property="og:site_name" content="My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-<meta name="twitter:title" content="Rails の order by で自分を優先的に取得する - My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
@@ -48,7 +48,7 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Rails の order by で自分を優先的に取得する - My Memorandum For Programming ~One Step At A Time~",
+    "headline": "Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
@@ -59,11 +59,11 @@
     "dateModified": "2019-02-25T16:50:14JST",
     "author": {
       "@type": "Person",
-      "name": "My Memorandum For Programming ~One Step At A Time~"
+      "name": "Note To Self ~One Step At A Time~"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "My Memorandum For Programming ~One Step At A Time~",
+      "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
         "url": "https://kkawazoe.github.io/images/logo.png",
@@ -108,7 +108,7 @@ if (!doNotTrack) {
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
-          <a href="https://kkawazoe.github.io/">My Memorandum For Programming ~One Step At A Time~</a>
+          <a href="https://kkawazoe.github.io/">Note To Self ~One Step At A Time~</a>
         </div>
         
 
@@ -455,7 +455,7 @@ if (!doNotTrack) {
 
     <footer class="l-footer">
       <div class="l-container">
-        <p><span class="h-logo">&copy; My Memorandum For Programming ~One Step At A Time~</span></p>
+        <p><span class="h-logo">&copy; Note To Self ~One Step At A Time~</span></p>
         <aside>
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>

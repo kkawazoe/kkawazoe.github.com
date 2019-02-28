@@ -19,23 +19,23 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>画像の読み込みの開始および完了を検知する - My Memorandum For Programming ~One Step At A Time~</title>
+    <title>画像の読み込みの開始および完了を検知する - Note To Self ~One Step At A Time~</title>
     
 
 <meta name="description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 
-<meta property="og:title" content="画像の読み込みの開始および完了を検知する - My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:title" content="画像の読み込みの開始および完了を検知する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
-<meta property="og:site_name" content="My Memorandum For Programming ~One Step At A Time~">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
-<meta name="twitter:title" content="画像の読み込みの開始および完了を検知する - My Memorandum For Programming ~One Step At A Time~">
+<meta name="twitter:title" content="画像の読み込みの開始および完了を検知する - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
@@ -48,7 +48,7 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "画像の読み込みの開始および完了を検知する - My Memorandum For Programming ~One Step At A Time~",
+    "headline": "画像の読み込みの開始および完了を検知する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
@@ -59,11 +59,11 @@
     "dateModified": "2019-02-26T17:29:00JST",
     "author": {
       "@type": "Person",
-      "name": "My Memorandum For Programming ~One Step At A Time~"
+      "name": "Note To Self ~One Step At A Time~"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "My Memorandum For Programming ~One Step At A Time~",
+      "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
         "url": "https://kkawazoe.github.io/images/logo.png",
@@ -107,7 +107,7 @@ if (!doNotTrack) {
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
-          <a href="https://kkawazoe.github.io/">My Memorandum For Programming ~One Step At A Time~</a>
+          <a href="https://kkawazoe.github.io/">Note To Self ~One Step At A Time~</a>
         </div>
         
 
@@ -468,7 +468,7 @@ if (!doNotTrack) {
 
     <footer class="l-footer">
       <div class="l-container">
-        <p><span class="h-logo">&copy; My Memorandum For Programming ~One Step At A Time~</span></p>
+        <p><span class="h-logo">&copy; Note To Self ~One Step At A Time~</span></p>
         <aside>
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
