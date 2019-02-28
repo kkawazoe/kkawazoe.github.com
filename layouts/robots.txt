@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: https://kkawazoe.github.io/blog/2013/12/29/my-memorandum-record/
+Disallow: https://kkawazoe.github.io/blog/archives/
+Disallow: https://kkawazoe.github.io/blog/categories/batutihuairu/
+
+{{ range where .Data.Pages "Params.robotsdisallow" true }}
+Disallow: {{ .RelPermalink }}
+{{ end }}
+
+Sitemap: {{ .Sitemap.Filename | default "sitemap.xml" | absURL }}
