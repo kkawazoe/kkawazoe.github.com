@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.io/tags/</link>
+    <link>https://kkawazoe.github.com/tags/</link>
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sun, 22 Jun 2014 09:01:00 +0900</lastBuildDate>
     
-	<atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kkawazoe.github.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bat</title>
-      <link>https://kkawazoe.github.io/tags/bat/</link>
+      <link>https://kkawazoe.github.com/tags/bat/</link>
       <pubDate>Sun, 22 Jun 2014 09:01:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/bat/</guid>
+      <guid>https://kkawazoe.github.com/tags/bat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>https://kkawazoe.github.io/tags/mysql/</link>
+      <link>https://kkawazoe.github.com/tags/mysql/</link>
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/mysql/</guid>
+      <guid>https://kkawazoe.github.com/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ruby on Rails</title>
-      <link>https://kkawazoe.github.io/tags/ruby-on-rails/</link>
+      <link>https://kkawazoe.github.com/tags/ruby-on-rails/</link>
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/ruby-on-rails/</guid>
+      <guid>https://kkawazoe.github.com/tags/ruby-on-rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tool</title>
-      <link>https://kkawazoe.github.io/tags/tool/</link>
+      <link>https://kkawazoe.github.com/tags/tool/</link>
       <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/tool/</guid>
+      <guid>https://kkawazoe.github.com/tags/tool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vs Code</title>
-      <link>https://kkawazoe.github.io/tags/vs-code/</link>
+      <link>https://kkawazoe.github.com/tags/vs-code/</link>
       <pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/vs-code/</guid>
+      <guid>https://kkawazoe.github.com/tags/vs-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>https://kkawazoe.github.io/tags/vue.js/</link>
+      <link>https://kkawazoe.github.com/tags/vue.js/</link>
       <pubDate>Tue, 26 Feb 2019 17:29:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/vue.js/</guid>
+      <guid>https://kkawazoe.github.com/tags/vue.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>株</title>
-      <link>https://kkawazoe.github.io/tags/%E6%A0%AA/</link>
+      <link>https://kkawazoe.github.com/tags/%E6%A0%AA/</link>
       <pubDate>Fri, 01 Mar 2019 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/%E6%A0%AA/</guid>
+      <guid>https://kkawazoe.github.com/tags/%E6%A0%AA/</guid>
       <description></description>
     </item>
     
