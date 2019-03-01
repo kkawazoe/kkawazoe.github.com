@@ -4,6 +4,5 @@ title = "Note To Self ~One Step At A Time~"
 theme = "hugo_theme_robust"
 enableRobotsTXT = true
 googleAnalytics = "UA-46736290-1"
-disqusShortname = "http-kkawazoe-github-io"
 [permalinks]
   post = "/blog/:year/:month/:day/:slug"
