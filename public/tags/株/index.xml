@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>株 on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.io/tags/%E6%A0%AA/</link>
+    <link>https://kkawazoe.github.com/tags/%E6%A0%AA/</link>
     <description>Recent content in 株 on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Fri, 01 Mar 2019 09:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://kkawazoe.github.io/tags/%E6%A0%AA/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kkawazoe.github.com/tags/%E6%A0%AA/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>普通の会社員(SE)が確定申告してみた</title>
-      <link>https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/</link>
+      <link>https://kkawazoe.github.com/blog/2019/03/01/tried-tax-returns/</link>
       <pubDate>Fri, 01 Mar 2019 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/</guid>
+      <guid>https://kkawazoe.github.com/blog/2019/03/01/tried-tax-returns/</guid>
       <description>普通の会社員(SE)が確定申告してみた 経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため
 例年であれば会社の年末調整のみで完結するはずだが以下の状況のため
 確定申告をすることにした
