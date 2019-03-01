@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bat on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.com/tags/bat/</link>
+    <link>https://kkawazoe.github.io/tags/bat/</link>
     <description>Recent content in Bat on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sun, 22 Jun 2014 09:01:00 +0900</lastBuildDate>
     
-	<atom:link href="https://kkawazoe.github.com/tags/bat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kkawazoe.github.io/tags/bat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</title>
-      <link>https://kkawazoe.github.com/blog/2014/06/22/get-value-from-initialize-file/</link>
+      <link>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</link>
       <pubDate>Sun, 22 Jun 2014 09:01:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.com/blog/2014/06/22/get-value-from-initialize-file/</guid>
+      <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
       <description>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して
 VBS から戻り値を受け取り、実現する。
@@ -28,10 +28,10 @@ Option Explicit rem /***********************************************************
     
     <item>
       <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</title>
-      <link>https://kkawazoe.github.com/blog/2014/02/09/switch-processing-by-message-box/</link>
+      <link>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</link>
       <pubDate>Sun, 09 Feb 2014 18:46:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.com/blog/2014/02/09/switch-processing-by-message-box/</guid>
+      <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
       <description>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
 実際のコード [DispMsgBox.bat]
