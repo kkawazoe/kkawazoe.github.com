@@ -1,4 +1,4 @@
-baseURL = "https://kkawazoe.github.io/"
+baseURL = "https://kkawazoe.github.com/"
 languageCode = "jp"
 title = "Note To Self ~One Step At A Time~"
 theme = "hugo_theme_robust"
