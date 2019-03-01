@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
+<link rel="canonical" href="https://kkawazoe.github.io/privacy-policy/">
 
 
     
@@ -19,24 +19,24 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~</title>
+    <title>プライバシーポリシー - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のコード [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
+<meta name="description" content="プライバシーポリシー 当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense）を利用しています。 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。当サイトが使用しているアクセス解析ツールについて 当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。 このGoogle Analyticsはトラフィックデータの収集のために Cookieを使用しています。 このトラフィックデータは匿名で収集されており、個人を特定するものではありません。 この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。免責事項 本サイトの情報は、一部のサービスを除き、無料で提供されています。 当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、 情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および 輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など その内容については一切の保証を致しかねます。当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について 一切の責任を負いません。当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。 引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。 権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。 確認後、対応させて頂きます。">
 
-<meta property="og:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="プライバシーポリシー - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
+<meta property="og:url" content="https://kkawazoe.github.io/privacy-policy/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のコード [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
+<meta property="og:description" content="プライバシーポリシー 当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense）を利用しています。 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。当サイトが使用しているアクセス解析ツールについて 当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。 このGoogle Analyticsはトラフィックデータの収集のために Cookieを使用しています。 このトラフィックデータは匿名で収集されており、個人を特定するものではありません。 この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。免責事項 本サイトの情報は、一部のサービスを除き、無料で提供されています。 当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、 情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および 輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など その内容については一切の保証を致しかねます。当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について 一切の責任を負いません。当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。 引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。 権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。 確認後、対応させて頂きます。">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-<meta name="twitter:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える実際のコード [DispMsgBox.bat]@echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.">
+<meta name="twitter:url" content="https://kkawazoe.github.io/privacy-policy/">
+<meta name="twitter:title" content="プライバシーポリシー - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="プライバシーポリシー 当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense）を利用しています。 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。当サイトが使用しているアクセス解析ツールについて 当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。 このGoogle Analyticsはトラフィックデータの収集のために Cookieを使用しています。 このトラフィックデータは匿名で収集されており、個人を特定するものではありません。 この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。免責事項 本サイトの情報は、一部のサービスを除き、無料で提供されています。 当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、 情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および 輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など その内容については一切の保証を致しかねます。当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について 一切の責任を負いません。当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。 引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。 権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。 確認後、対応させて頂きます。">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~",
+    "headline": "プライバシーポリシー - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2014-02-09T18:46:00JST",
-    "dateModified": "2014-02-09T18:46:00JST",
+    "datePublished": "2019-03-01T09:00:00JST",
+    "dateModified": "2019-03-01T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -71,11 +71,14 @@
         "height": 60
       }
     },
-    "description": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
-※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード [DispMsgBox.bat]
-@echo off rem メッセージボックスの表示 set msg=&quot;メッセージボックスのテスト [\n] で改行します。&quot; set title=&quot;メッセージボックステスト&quot; for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &quot;%title%&quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]
-Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript."
+    "description": "プライバシーポリシー 当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense）を利用しています。 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。
+当サイトが使用しているアクセス解析ツールについて 当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。 このGoogle Analyticsはトラフィックデータの収集のために Cookieを使用しています。 このトラフィックデータは匿名で収集されており、個人を特定するものではありません。 この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
+免責事項 本サイトの情報は、一部のサービスを除き、無料で提供されています。 当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、 情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および 輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。
+当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。
+当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など その内容については一切の保証を致しかねます。
+当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について 一切の責任を負いません。
+当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。 引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。
+また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。 権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。 確認後、対応させて頂きます。"
   }
 </script>
 
@@ -124,24 +127,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
+  <div class="thumb thumb-ba8e20cb6e739a50bc3b05dfc391e82b"></div>
 
   <header class="article-header">
-    <h1 class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</h1>
+    <h1 class="title">プライバシーポリシー</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-01T09:00:00JST">Mar 1, 2019</time></li>
+      
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&title=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&text=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&t=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&title=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -150,110 +153,54 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法</h1>
+<h1 id="プライバシーポリシー">プライバシーポリシー</h1>
 
-<h2 id="対応方法">対応方法</h2>
+<h2 id="当サイトに掲載されている広告について">当サイトに掲載されている広告について</h2>
 
-<p>バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。<br />
-※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える</p>
+<p>当サイトでは、第三者配信の広告サービス（Google Adsense）を利用しています。
+広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』
+(氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。</p>
 
-<h2 id="実際のコード">実際のコード</h2>
+<h2 id="当サイトが使用しているアクセス解析ツールについて">当サイトが使用しているアクセス解析ツールについて</h2>
 
-<p>[DispMsgBox.bat]</p>
+<p>当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。
+このGoogle Analyticsはトラフィックデータの収集のために
+Cookieを使用しています。
+このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
+この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。</p>
 
-<pre><code class="language-bat">@echo off
+<h2 id="免責事項">免責事項</h2>
 
-rem メッセージボックスの表示
-set msg=&quot;メッセージボックスのテスト [\n] で改行します。&quot;
-set title=&quot;メッセージボックステスト&quot;
+<p>本サイトの情報は、一部のサービスを除き、無料で提供されています。
+当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、
+情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および
+輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。</p>
 
-for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &quot;%title%&quot;`) do set ret=%%A
+<p>当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。</p>
 
-echo %ret%
+<p>当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など
+その内容については一切の保証を致しかねます。</p>
 
-pause
-exit
-</code></pre>
+<p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について
+一切の責任を負いません。</p>
 
-<p>[msgbox.vbs]</p>
+<p>当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。
+引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。</p>
 
-<pre><code class="language-vbs">Option Explicit
-rem /*******************************************************
-rem  *  msgbox.vbs msg [,title]
-rem  *
-rem  *  引数
-rem  *    msg   :表示するメッセージ
-rem  *    title :メッセージボックスのタイトル
-rem  *  動作
-rem  *    メッセージボックスを表示し、クリックされたボタンに
-rem  *    対応する数値を返す。
-rem  *    msg中の 「\n」という文字列は改行に変換する。
-rem  *  戻り値
-rem  *    0:[はい]/1:[いいえ]
-rem  ********************************************************/
-
-Dim args
-Dim arg(99)
-Dim value
-Dim cnt
-Dim retBtn
-Dim ret
-Dim eLevel
-
-rem 引数を変数にセット
-Set args = WScript.Arguments
-cnt = 0
-For Each value In args
-    arg(cnt) = value
-    cnt = cnt + 1
-Next
-
-rem 改行文字の置換
-arg(0) = RepExAll (arg(0), &quot;\\n&quot;, VbCrLf)
-
-eLevel = 0
-retBtn = MsgBox (arg(0), 36, arg(1))
-
-Select Case retBtn
-    Case 6: ret = 0
-    Case 7: ret = 1
-End Select
-
-WScript.Echo ret
-WScript.Quit (eLevel)
-
-rem /*******************************************************
-rem  *  文字列を正規表現文字列で検索して、一致する文字列を
-rem  *  すべて置換文字列に置換して返す
-rem  *
-rem  *  引数
-rem  *    str1 :置換対象文字列
-rem  *    reg  :正規表現文字列
-rem  *    str2 :置換文字列
-rem  *  戻り値
-rem  *    置換後の文字列
-rem  ********************************************************/
-Function RepExAll ( str1, reg, str2 )
-    Dim regExpression
-    Dim Matchers
-    Set regExpression = New RegExp
-    regExpression.Pattern = reg
-    regExpression.IgnoreCase = True
-    regExpression.Global = True
-    RepExAll = regExpression.Replace(str1, str2)
-End Function
-</code></pre>
+<p>また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。
+権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。
+確認後、対応させて頂きます。</p>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&title=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&text=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&t=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f&title=%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e3%83%97%e3%83%a9%e3%82%a4%e3%83%90%e3%82%b7%e3%83%bc%e3%83%9d%e3%83%aa%e3%82%b7%e3%83%bc https%3a%2f%2fkkawazoe.github.io%2fprivacy-policy%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -263,9 +210,7 @@ End Function
           <ol>
             <li><a href="https://kkawazoe.github.io/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
             
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
-            
-            <li class="active">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</li>
+            <li class="active">プライバシーポリシー</li>
           </ol>
         </nav>
       </div>
@@ -276,19 +221,6 @@ End Function
     
     
     
-    <section class="footer">
-      <header>
-        <a href="https://kkawazoe.github.io/tags/">TAGS</a>
-      </header>
-      <div>
-        <ul class="terms">
-          
-          <li><a href="https://kkawazoe.github.io/tags/bat/">Bat</a></li>
-          
-        </ul>
-      </div>
-    </section>
-    
     
   </footer>
 
@@ -298,27 +230,6 @@ End Function
     <div class="adj">
       <div class="mrow">
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-    <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
-
-    <div class="inner">
-      <div class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
