@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/02/01/tried-tax-returns/">
 
 
     
@@ -19,24 +19,24 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~</title>
+    <title>普通の会社員(SE)が確定申告してみた - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta name="description" content="普通の会社員(SE)が確定申告してみた 経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却=&amp;gt; 年間の損益がマイナスになる   ※確定申告をすると3年間の損失の繰越控除が可能になるらしい想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は未使用(e-tax を使用した場合は※1が不要)※マイナンバーカードが必要で発行に1ヵ月程度かかるため手順 国税庁 確定申告書等作成コーナーで作成する 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択   「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記  住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函   まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに">
 
-<meta property="og:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="普通の会社員(SE)が確定申告してみた - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/01/tried-tax-returns/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta property="og:description" content="普通の会社員(SE)が確定申告してみた 経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却=&amp;gt; 年間の損益がマイナスになる   ※確定申告をすると3年間の損失の繰越控除が可能になるらしい想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は未使用(e-tax を使用した場合は※1が不要)※マイナンバーカードが必要で発行に1ヵ月程度かかるため手順 国税庁 確定申告書等作成コーナーで作成する 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択   「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記  住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函   まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-<meta name="twitter:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/01/tried-tax-returns/">
+<meta name="twitter:title" content="普通の会社員(SE)が確定申告してみた - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="普通の会社員(SE)が確定申告してみた 経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却=&amp;gt; 年間の損益がマイナスになる   ※確定申告をすると3年間の損失の繰越控除が可能になるらしい想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は未使用(e-tax を使用した場合は※1が不要)※マイナンバーカードが必要で発行に1ヵ月程度かかるため手順 国税庁 確定申告書等作成コーナーで作成する 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択   「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記  住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函   まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~",
+    "headline": "普通の会社員(SE)が確定申告してみた - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-02-25T16:50:14JST",
-    "dateModified": "2019-02-25T16:50:14JST",
+    "datePublished": "2019-02-01T09:00:00JST",
+    "dateModified": "2019-02-01T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -71,10 +71,16 @@
         "height": 60
       }
     },
-    "description": "Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。
-また、ORDER BY FIELD で指定した分に対して desc を指定すること。
-( desc を指定しないと自分以外が優先的に並び替えられてしまう)"
+    "description": "普通の会社員(SE)が確定申告してみた 経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため
+例年であれば会社の年末調整のみで完結するはずだが以下の状況のため
+確定申告をすることにした
+ 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
+=&gt; 年間の損益がマイナスになる   ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は
+未使用(e-tax を使用した場合は※1が不要)
+※マイナンバーカードが必要で発行に1ヵ月程度かかるため
+手順 国税庁 確定申告書等作成コーナーで作成する
+ 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択   「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記  住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函   まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに"
   }
 </script>
 
@@ -123,24 +129,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
+  <div class="thumb thumb-3afc112ec5651c1cdade5bc355a7a0f8"></div>
 
   <header class="article-header">
-    <h1 class="title">Rails の order by で自分を優先的に取得する</h1>
+    <h1 class="title">普通の会社員(SE)が確定申告してみた</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-01T09:00:00JST">Feb 1, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -149,42 +155,116 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="rails-の-order-by-で自分を優先的に取得する方法-mysql-限定">Rails の order by で自分を優先的に取得する方法(MySql 限定)</h1>
+<h1 id="普通の会社員-se-が確定申告してみた">普通の会社員(SE)が確定申告してみた</h1>
 
-<h2 id="確認環境">確認環境</h2>
+<h2 id="経緯">経緯</h2>
 
-<ul>
-<li>ruby: ruby 2.5.3</li>
-<li>rails: rails 5.2.2</li>
-</ul>
-
-<h2 id="方法">方法</h2>
+<p>株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため<br />
+例年であれば会社の年末調整のみで完結するはずだが以下の状況のため<br />
+確定申告をすることにした</p>
 
 <ul>
-<li><p>Mysqlの <code>FIELD</code> 関数を使用する。※<code>FIELD</code> 関数の結果で <code>ORDER BY</code> する</p>
+<li>昨年末(2018年12月)の株式市場が全体的に下落
 
 <ul>
-<li>例. レコードを <code>order</code> 昇順, <code>user_id</code> 昇順で並び替える場合(同じ順位の場合は自分を優先)</li>
+<li>手持ち株が元本割れになる</li>
+<li>普段は塩漬けにしているが一旦売却<br />
+=&gt; 年間の損益がマイナスになる</li>
 </ul></li>
 </ul>
 
-<pre><code class="language-rb">   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)
-</code></pre>
+<p>※確定申告をすると3年間の損失の繰越控除が可能になるらしい</p>
 
-<p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。<br />
-  また、<code>ORDER BY FIELD</code> で指定した分に対して <code>desc</code> を指定すること。<br />
-  ( <code>desc</code> を指定しないと自分以外が優先的に並び替えられてしまう)</p>
+<h2 id="想定ケース">想定ケース</h2>
+
+<ul>
+<li>会社員で年末調整済</li>
+<li>株は特定口座(源泉徴収あり)で取引</li>
+</ul>
+
+<h2 id="確定申告手順">確定申告手順</h2>
+
+<h3 id="事前準備">事前準備</h3>
+
+<ul>
+<li>源泉徴収票</li>
+<li>特定口座年間取引報告書</li>
+<li>マイナンバー通知カード※1</li>
+<li>本人確認書類(免許証等)※1</li>
+<li>マイナンバーカード※2</li>
+<li>ICカードリーダー※2</li>
+</ul>
+
+<p>今回は、 e-tax を使用せずに確定申告したため<code>※2</code>は<br />
+未使用(e-tax を使用した場合は<code>※1</code>が不要)<br />
+※マイナンバーカードが必要で発行に1ヵ月程度かかるため</p>
+
+<h3 id="手順">手順</h3>
+
+<p><a href="https://www.keisan.nta.go.jp/kyoutu/ky/sm/top#bsctrl">国税庁 確定申告書等作成コーナー</a>で作成する</p>
+
+<ol>
+<li>「作成開始」ボタンを押下</li>
+<li>「印刷して書面を提出」ボタンを押下</li>
+<li>「利用規約に同意して次へ」ボタンを押下</li>
+<li>「平成30年分の申告書等の作成」&gt;「所得税」を選択</li>
+<li>「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下</li>
+<li>生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
+<li>「上場株式等の譲渡所得等」を選択
+
+<ul>
+<li>配当所得の課税方法の選択
+
+<ul>
+<li>「申告分離課税」を選択</li>
+</ul></li>
+<li>株式等の売却・配当・利子等の入力
+
+<ul>
+<li>「特定口座年間取引報告書の内容を入力する」を選択</li>
+<li>入力例を参考に「特定口座年間取引報告書」の内容を転記する</li>
+</ul></li>
+<li>平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方
+
+<ul>
+<li>「いいえ」を選択※来年はここで「はい」を選択</li>
+</ul></li>
+</ul></li>
+<li>「入力終了(次へ) &gt;」ボタンを押下</li>
+<li>内容確認後、「確認終了(次へ)」ボタンを押下</li>
+<li>「収入金額等」&gt;「給与」を選択
+
+<ul>
+<li>「源泉徴収票」の内容を転記</li>
+</ul></li>
+<li>住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
+<li>マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
+<li>帳票を印刷する</li>
+<li>以下の方法で確定申告書類を提出する
+
+<ul>
+<li>郵便又は信書便で送付</li>
+<li>税務署の受付に持参</li>
+<li>税務署の時間外収受箱へ投函</li>
+</ul></li>
+</ol>
+
+<h3 id="まとめ">まとめ</h3>
+
+<p>今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに<br />
+確定申告が完了した<br />
+来年度はもう少し簡略化できそうなので忘れないようにする</p>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f01%2ftried-tax-returns%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -196,7 +276,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Rails の order by で自分を優先的に取得する</li>
+            <li class="active">普通の会社員(SE)が確定申告してみた</li>
           </ol>
         </nav>
       </div>
@@ -214,9 +294,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
-          
-          <li><a href="https://kkawazoe.github.io/tags/mysql/">MySQL</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA/">株</a></li>
           
         </ul>
       </div>
@@ -234,14 +312,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-    <div class="thumb thumb-b73c0654cc5a32930a864f256828331a"></div>
+  <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+    <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
 
     <div class="inner">
-      <div class="title">Rails で階層構造になっているテーブルに自分自身への関連を設定する</div>
+      <div class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-21T18:10:43JST">Feb 21, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -256,14 +334,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Next Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
-    <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
+    <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
 
     <div class="inner">
-      <div class="title">画像の読み込みの開始および完了を検知する</div>
+      <div class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
