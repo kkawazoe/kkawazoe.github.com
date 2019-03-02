@@ -9,7 +9,7 @@ GitHub Pages
 
 ## 他の端末で使用する場合
 
-### subtree の追加および master ブランチの内容の取り込み
+### master ブランチの内容の取り込み
 
 `git clone` 後 `public` フォルダ配下を `subtree` に追加して `master` ブランチ
 の内容を取り込む。
