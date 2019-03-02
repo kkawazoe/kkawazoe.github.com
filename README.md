@@ -16,9 +16,6 @@ GitHub Pages
 
 ```bash
 git clone git@github.com:kkawazoe/kkawazoe.github.com.git
-cd kkawazoe.github.com
-git subtree add --prefix=public/ origin master
-git subtree pull --prefix=public/ origin master
 ```
 
 ### テーマの取り込み
