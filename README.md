@@ -11,8 +11,7 @@ GitHub Pages
 
 ### master ブランチの内容の取り込み
 
-`git clone` 後 `public` フォルダ配下を `subtree` に追加して `master` ブランチ
-の内容を取り込む。
+`git clone` をして master ブランチを取り込み
 
 ```bash
 git clone git@github.com:kkawazoe/kkawazoe.github.com.git
