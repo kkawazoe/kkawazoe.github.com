@@ -6,5 +6,3 @@ enableRobotsTXT = true
 googleAnalytics = "UA-46736290-1"
 [permalinks]
   post = "/blog/:year/:month/:day/:slug"
-[outputs]
-  page = [ "HTML", "AMP" ]
