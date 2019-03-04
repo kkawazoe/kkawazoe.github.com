@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vb.net on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/vb.net/</link>
+    <description>Recent content in Vb.net on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/vb.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VB.NET でふりがな機能を実装する</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/</guid>
+      <description>VB.NET でふりがな機能を実装する 経緯 最近、周りで VB.NET を使っている人が複数人出てきた
+恐らく2020年にWindows7 サポート終了となるため
+VB6 =&amp;gt; VB.NET へのコンバージョンの案件が増えていると
+思われる。
+そのため、以前行った際に苦労したふりがな機能について
+備忘録として残しておくことにする
+実際のコード [mImecomp.vb]
+ふりがな取得機能の実装クラス
+ 以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ   Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &amp;lt;summary&amp;gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &amp;lt;/summary&amp;gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &amp;lt;summary&amp;gt; &#39;&#39;&#39; 変換イベントクラスのコンストラクタ &#39;&#39;&#39; &amp;lt;/summary&amp;gt; &#39;&#39;&#39; &amp;lt;param name=&amp;quot;f&amp;quot;&amp;gt;ふりがな文字列&amp;lt;/param&amp;gt; &#39;&#39;&#39; &amp;lt;param name=&amp;quot;r&amp;quot;&amp;gt;変換後文字列&amp;lt;/param&amp;gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &amp;lt;summary&amp;gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &amp;lt;/summary&amp;gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &amp;lt;summary&amp;gt; &#39;&#39;&#39; ふりがな取得完了通知イベント &#39;&#39;&#39; &#39;&#39;&#39; ふりがな取得が完了したことを通知する &#39;&#39;&#39; &amp;lt;/summary&amp;gt; &#39;&#39;&#39; &amp;lt;param name=&amp;quot;txtSrc&amp;quot;&amp;gt;ふりがな取得対象テキストボックス&amp;lt;/param&amp;gt; &#39;&#39;&#39; &amp;lt;param name=&amp;quot;txtDest&amp;quot;&amp;gt;ふりがな出力対象テキストボックス&amp;lt;/param&amp;gt; &#39;&#39;&#39; &amp;lt;param name=&amp;quot;e&amp;quot;&amp;gt;変換イベントクラス&amp;lt;/param&amp;gt; Public Event Converted(ByVal txtSrc As System.</description>
+    </item>
+    
+  </channel>
+</rss>
