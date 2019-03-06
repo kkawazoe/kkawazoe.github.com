@@ -18,8 +18,7 @@
       
       <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
       <description>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して
-VBS から戻り値を受け取り、実現する。
+具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
 取得するiniファイルの中身 [sample.ini]
 &amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のコード [getProfileString.bat]
 @echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]
