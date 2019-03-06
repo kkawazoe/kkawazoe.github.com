@@ -162,7 +162,7 @@ Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加
     <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
 
     <div class="inner">
-      <h2 class="title">画像の読み込みの開始および完了を検知する</h2>
+      <h2 class="title">Vue.js で画像の読み込みの開始および完了を検知する</h2>
 
       <ul class="facts">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
@@ -170,7 +170,7 @@ Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加
         
       </ul>
 
-      <div class="summary">Vue.js で画像の読み込みの開始および完了を検知する 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加
+      <div class="summary">Vue.js で画像の読み込みの開始および完了を検知する方法 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加
 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]
 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ja&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;app&quot;&gt; &lt;img :src=&quot;url&quot; v-on:load=&quot;load&quot; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: '#app', data: { url: &quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&quot; // ※1 }, methods: { // ※4 load: function() { console.</div>
     </div>
@@ -368,7 +368,7 @@ Option Explicit rem /******************************************************* rem
     <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
 
     <div class="inner">
-      <div class="title">画像の読み込みの開始および完了を検知する</div>
+      <div class="title">Vue.js で画像の読み込みの開始および完了を検知する</div>
 
       <ul class="facts sm">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
