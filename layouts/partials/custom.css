@@ -1,5 +1,5 @@
 article.lism .thumb {
-  width: 5.5rem;
+  width: 6rem;
 }
 
 {{ range $p := .Site.RegularPages }}
@@ -9,7 +9,7 @@ article.lism .thumb {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 10px 0 10px 10px;
+  margin: 10px;
 }
 article.lism .thumb-{{ $p.UniqueID }} {
   width: 5rem;
