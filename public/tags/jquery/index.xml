@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jquery on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/jquery/</link>
+    <description>Recent content in Jquery on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Fri, 08 Mar 2019 17:21:18 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CofeeScript で JQuery の each を使用する場合の注意点</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/</link>
+      <pubDate>Fri, 08 Mar 2019 17:21:18 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/</guid>
+      <description> CoffeeScript で JQuery の each を使用する場合の注意点 JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
+その場合は以下のように修正する
+実際のソース  修正前  processRows: -&amp;gt; $(&amp;quot;#my-table&amp;gt;tr&amp;quot;).each -&amp;gt; id = $(this).attr(&amp;quot;id&amp;quot;) @processRow id   修正後  processRows: -&amp;gt; $(&amp;quot;#my-table&amp;gt;tr&amp;quot;).each (index, element) =&amp;gt; id = $(element).attr(&amp;quot;id&amp;quot;) @processRow id  </description>
+    </item>
+    
+  </channel>
+</rss>
