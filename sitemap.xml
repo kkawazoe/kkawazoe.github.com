@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/</loc>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/</loc>
     <lastmod>2019-03-07T18:00:00+09:00</lastmod>
   </url>
@@ -74,8 +79,20 @@
   </url>
   
   <url>
+    <loc>https://kkawazoe.github.io/tags/cofeescript/</loc>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/tags/css/</loc>
     <lastmod>2019-03-06T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/jquery/</loc>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,13 +104,13 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-03-07T18:00:00+09:00</lastmod>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-03-07T18:00:00+09:00</lastmod>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
     <priority>0</priority>
   </url>
   
