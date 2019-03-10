@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fp on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/fp/</link>
+    <description>Recent content in Fp on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/fp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FP3級への道</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp2/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp2/</guid>
+      <description>FP3級への道 ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。
+上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
+使用する教材 今回使用する教材は以下
+2018-2019年版　みんなが欲しかった！　FPの教科書3級 [ 滝澤ななみ ]
+価格:1,728円(2019/3/10 21:02時点)感想(10件)
+ 他の人の評価等を確認する限り、これ１冊でもいけそう。
+必要があれば追加で購入する。
+とりあえず、5月の受験を目指す。</description>
+    </item>
+    
+  </channel>
+</rss>
