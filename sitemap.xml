@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2019/03/14/health-insurance-credit-limit-authorization/</loc>
+    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp2/</loc>
     <lastmod>2019-03-11T00:00:00+09:00</lastmod>
   </url>
@@ -115,13 +120,13 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-03-11T00:00:00+09:00</lastmod>
+    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-03-11T00:00:00+09:00</lastmod>
+    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,6 +163,12 @@
   <url>
     <loc>https://kkawazoe.github.io/tags/vue.js/</loc>
     <lastmod>2019-03-07T18:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82/</loc>
+    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
