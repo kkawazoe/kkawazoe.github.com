@@ -6,10 +6,25 @@
     <description>Recent content in Bat on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 22 Jun 2014 09:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 Mar 2019 00:07:49 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/bat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>バッチファイルでタイムスタンプを付与する</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/</link>
+      <pubDate>Sat, 23 Mar 2019 00:07:49 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/</guid>
+      <description>バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
+yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23
+yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91
+yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749</description>
+    </item>
     
     <item>
       <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</title>
