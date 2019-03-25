@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 23 Mar 2019 00:07:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slack &#43; Todoist &#43; Integromat でタスク管理</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</guid>
+      <description>したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
+ タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理
+シンプルで管理しやすい todoist を使用 リマインダー機能
+slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ 足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する</description>
+    </item>
     
     <item>
       <title>バッチファイルでタイムスタンプを付与する</title>
