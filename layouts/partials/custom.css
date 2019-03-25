@@ -16,3 +16,11 @@ article.lism .thumb-{{ $p.UniqueID }} {
 }
 {{ end }}
 {{ end }}
+
+article.sn > .article-body ul {
+  margin: 0;
+}
+
+article.sn > .article-body h4 {
+  margin-bottom: 1rem;
+}
