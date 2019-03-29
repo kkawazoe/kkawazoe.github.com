@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp2/</loc>
+    <loc>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</loc>
     <lastmod>2019-03-11T00:00:00+09:00</lastmod>
   </url>
   
@@ -115,20 +115,8 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/css/</loc>
+    <loc>https://kkawazoe.github.io/tags/html/</loc>
     <lastmod>2019-03-06T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/fp/</loc>
-    <lastmod>2019-03-11T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/jquery/</loc>
-    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -175,12 +163,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/vs-code/</loc>
-    <lastmod>2019-02-20T00:24:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/tags/vue.js/</loc>
     <lastmod>2019-03-07T18:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -195,6 +177,12 @@
   <url>
     <loc>https://kkawazoe.github.io/tags/%E6%A0%AA/</loc>
     <lastmod>2019-03-01T09:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
+    <lastmod>2019-03-11T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
