@@ -6,10 +6,24 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Mon, 25 Feb 2019 16:50:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 04:24:08 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</link>
+      <pubDate>Sun, 07 Apr 2019 04:24:08 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</guid>
+      <description>Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
+苦労したためその際の手順およびハマった点等を備忘録として残しておく
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
+$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</description>
+    </item>
     
     <item>
       <title>Rails の order by で自分を優先的に取得する</title>

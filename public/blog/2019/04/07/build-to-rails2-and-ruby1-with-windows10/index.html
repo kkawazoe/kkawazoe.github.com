@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
 
 
     
@@ -19,25 +19,25 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~</title>
+    <title>Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
+<meta name="description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
 
-<meta property="og:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/bat_file_icon.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
+<meta property="og:description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta name="twitter:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/bat_file_icon.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
+<meta name="twitter:title" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~",
+    "headline": "Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/bat_file_icon.png",
+      "url": "https://kkawazoe.github.io/images/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-03-23T00:07:49JST",
-    "dateModified": "2019-03-23T00:07:49JST",
+    "datePublished": "2019-04-07T04:24:08JST",
+    "dateModified": "2019-04-07T04:24:08JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -71,13 +71,12 @@
         "height": 60
       }
     },
-    "description": "バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE%  =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&gt; 20190323000749"
+    "description": "Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
+苦労したためその際の手順およびハマった点等を備忘録として残しておく
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
+$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems."
   }
 </script>
 
@@ -126,24 +125,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
+  <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
 
   <header class="article-header">
-    <h1 class="title">バッチファイルでタイムスタンプを付与する</h1>
+    <h1 class="title">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-23T00:07:49JST">Mar 23, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&text=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&t=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -152,51 +151,95 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="バッチファイルでタイムスタンプを付与する方法">バッチファイルでタイムスタンプを付与する方法</h1>
+<h1 id="windows10-に-ruby1-8-7-rails2-3-18-を構築する">Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する</h1>
 
-<p>ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく</p>
+<h2 id="経緯">経緯</h2>
 
-<h2 id="実際のコード">実際のコード</h2>
+<p>仕事で必要となり表題の環境を準備することになった<br />
+苦労したためその際の手順およびハマった点等を備忘録として残しておく</p>
 
-<p>例 2019/03/23 0:07:49.91 に実行した場合</p>
+<h2 id="構築環境">構築環境</h2>
 
-<h3 id="yyyy-mm-dd-表示">yyyy/mm/dd 表示</h3>
+<ul>
+<li>ruby: ruby 1.8.7</li>
+<li>rails: rails 2.3.18</li>
+</ul>
 
-<pre><code class="language-bat">@echo off
+<h2 id="手順">手順</h2>
 
-echo %DATE%
+<ol>
+<li><a href="https://rubyinstaller.org/downloads/archives/">Ruby Installer</a> で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする</li>
+<li>Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)</li>
+
+<li><p>DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
+3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する</p>
+
+<pre><code class="language-bat">$ ruby dk.rb init
+$ ruby dk.rb install
+</code></pre></li>
+
+<li><p>rubygems-update のバージョンをダウングレードする
+4-1. 以下のコマンドを入力する</p>
+
+<pre><code class="language-bat">$ gem update --system 1.3.7
 </code></pre>
 
-<p>=&gt; 2019/03/23</p>
+<p>※以下のエラーが起きる場合は<a href="https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html#updating-rubygems">このサイト</a>を参考に手動で rubygems-update をダウングレードする</p>
 
-<h3 id="yyyy-mm-dd-hh-mm-ss-fff-表示">yyyy/mm/dd-hh:MM:ss.fff 表示</h3>
+<pre><code class="language-bat">$  gem update --system
+ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
+SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz)
+</code></pre></li>
 
-<p>午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め</p>
+<li><p>動作確認用のフォルダを作成</p></li>
 
-<pre><code class="language-bat">@echo off
+<li><p>以下の gem をインストールする</p>
 
-set timeStamp=%DATE%-%TIME%
-set timeStamp=%timeStamp: =0%
+<p><a href="https://rubygems.org/gems">このサイト</a>で1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</p>
 
-echo %timeStamp%
+<pre><code class="language-bat">$ gem install rake -v 0.8.7
+$ gem install rails -v 2.3.18
+$ gem install rdoc -v 2.4.2
 </code></pre>
 
-<p>=&gt; 2019/03/23-00:07:49.91</p>
+<p>rake を先にインストールしないと Ruby のバージョンが古い旨のエラーが発生するため先インストールする</p></li>
 
-<h3 id="yyyymmddhhmmss-表示">yyyymmddhhMMss 表示</h3>
+<li><p>動作確認用の Rails プロジェクトを作成する</p>
 
-<p>%var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)</p>
+<pre><code class="language-bat">$ rails sample-rails
+$ cd sample-rails
+$ ruby script/generate scaffold user name:string age:integer
+</code></pre></li>
 
-<pre><code class="language-bat">@echo off
+<li><p>db のマイグレートを行う</p>
 
-set timeStamp=%DATE%-%TIME%
-set timeStamp=%timeStamp: =0%
-set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2%
+<p>8-1. デフォルトの sqlite3 用の Gem をインストールする</p>
 
-echo %formatTimeStamp%
+<pre><code class="language-bat">$ gem install sqlite3 -v 1.3.3
 </code></pre>
 
-<p>=&gt; 20190323000749</p>
+<p>8-2. DLL ファイルをダウンロードする</p>
+
+<ul>
+<li><a href="http://www.sqlite.org/sqlitedll-3_7_3.zip">sqlitedll-3_7_3.zip</a> をダウンロードする<br />
+※最新のやつだとエラーになるため古いやつをダウンロードすること</li>
+<li>ダウンロードしたやつを解凍して <code>sqlite3.dll</code>
+を Ruby のインストールフォルダ/bin(例. C:\Ruby187\bin)にコピーする</li>
+</ul>
+
+<p>8-3. 以下のコマンドを入力して db のマイグレートを行う</p>
+
+<pre><code class="language-bat">$ rake db:create
+$ rake db:migrate
+</code></pre></li>
+
+<li><p>サーバを起動する</p>
+
+<pre><code class="language-bat">$ ruby script/server
+</code></pre></li>
+
+<li><p>サーバ(<a href="http://localhost:3000/users">http://localhost:3000/users</a>) にアクセスして動作確認を行う</p></li>
+</ol>
 </div>
   
   <footer class="article-footer">
@@ -211,12 +254,12 @@ echo %formatTimeStamp%
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&text=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&t=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -228,7 +271,7 @@ echo %formatTimeStamp%
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">バッチファイルでタイムスタンプを付与する</li>
+            <li class="active">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</li>
           </ol>
         </nav>
       </div>
@@ -246,7 +289,7 @@ echo %formatTimeStamp%
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/bat/">Bat</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
           
         </ul>
       </div>
@@ -264,14 +307,14 @@ echo %formatTimeStamp%
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
-    <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
+    <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
 
     <div class="inner">
-      <div class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</div>
+      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その２</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-19T23:35:30JST">Mar 19, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -282,27 +325,6 @@ echo %formatTimeStamp%
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
-
-    <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その１</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
