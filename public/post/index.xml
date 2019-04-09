@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 07 Apr 2019 04:24:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2019 17:36:18 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ruby on Rails の Gem Gretel で項目の前に画像を置く</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/</link>
+      <pubDate>Tue, 09 Apr 2019 17:36:18 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/</guid>
+      <description> Gretel について パンくずリストを表示する Gem
+github
+実際のコード [config/breadcrumbs.rb]
+# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon + {表示文字}, {URL} parent :parent_articles, article.category end  </description>
+    </item>
     
     <item>
       <title>Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</title>
