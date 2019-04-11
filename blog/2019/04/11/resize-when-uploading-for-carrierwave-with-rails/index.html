@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
 
 
     
@@ -19,25 +19,25 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~</title>
+    <title>Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="CSS で複数行でも3点リーダーを表示する方法 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.">
+<meta name="description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
 
-<meta property="og:title" content="CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/html_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="CSS で複数行でも3点リーダーを表示する方法 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.">
+<meta property="og:description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
-<meta name="twitter:title" content="CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="CSS で複数行でも3点リーダーを表示する方法 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/html_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
+<meta name="twitter:title" content="Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~",
+    "headline": "Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/html_logo.svg",
+      "url": "https://kkawazoe.github.io/images/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-03-06T12:00:00JST",
-    "dateModified": "2019-03-06T12:00:00JST",
+    "datePublished": "2019-04-11T13:49:45JST",
+    "dateModified": "2019-04-11T13:49:45JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -71,8 +71,15 @@
         "height": 60
       }
     },
-    "description": "CSS で複数行でも3点リーダーを表示する方法 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen."
+    "description": " Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gem
+github
+実際のコード [app/uploaders/my_uploader.rb]
+尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit
+画像が指定したサイズ未満の時
+=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit
+画像が指定したサイズ未満の時
+=&gt; なにもしない  "
   }
 </script>
 
@@ -121,24 +128,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-04e02c5a7ce921261e0b5408f751b9e0"></div>
+  <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
 
   <header class="article-header">
-    <h1 class="title">CSS で複数行でも3点リーダーを表示する</h1>
+    <h1 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-06T12:00:00JST">Mar 6, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&text=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&t=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&title=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&text=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&t=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&title=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -147,20 +154,47 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="css-で複数行でも3点リーダーを表示する方法">CSS で複数行でも3点リーダーを表示する方法</h1>
+<h1 id="ruby-on-rails-の-gem-carrierwave-でアップロードする際に画像をリサイズする">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h1>
 
-<h2 id="経緯">経緯</h2>
+<h2 id="carrier-wave-について">Carrier Wave について</h2>
 
-<p>CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく</p>
+<p>ファイルアップロード機能を提供する Gem<br />
+<a href="https://github.com/carrierwaveuploader/carrierwave">github</a></p>
 
-<h2 id="実際のソースおよび実行結果">実際のソースおよび実行結果</h2>
+<h2 id="実際のコード">実際のコード</h2>
 
-<p><p class="codepen" data-height="297" data-theme-id="0" data-default-tab="css,result" data-user="kkawazoe" data-slug-hash="ywVRKo" style="height: 297px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="CSS で3点リーダー付与">
-  <span>See the Pen <a href="https://codepen.io/kkawazoe/pen/ywVRKo/">
-  CSS で3点リーダー付与</a> by kkawazoe (<a href="https://codepen.io/kkawazoe">@kkawazoe</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+<p>[app/uploaders/my_uploader.rb]</p>
+
+<p>尚、アスペクト比固定で <code>width</code> および <code>height</code> のみ指定する場合は <code>nil</code> を指定する</p>
+
+<h3 id="heightのみ指定">heightのみ指定</h3>
+
+<pre><code class="language-ruby">class MyUploader &lt; CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
+  process resize_to_limit: [1200, nil]
+end
+</code></pre>
+
+<h3 id="widthのみ指定">widthのみ指定</h3>
+
+<pre><code class="language-ruby">class MyUploader &lt; CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
+  process resize_to_limit: [1200, nil]
+end
+</code></pre>
+
+<h3 id="resize-to-fit-と-resize-to-limit-の違いについて">resize_to_fit  と resize_to_limit の違いについて</h3>
+
+<ul>
+<li>resize_to_fit<br />
+画像が指定したサイズ未満の時<br />
+=&gt; アスペクト比を維持しながら指定したサイズまで拡大する</li>
+<li>resize_to_limit<br />
+画像が指定したサイズ未満の時<br />
+=&gt; なにもしない</li>
+</ul>
 </div>
   
   <footer class="article-footer">
@@ -175,12 +209,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&text=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&t=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&title=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&text=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&t=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f&title=Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Ruby%20on%20Rails%20%e3%81%ae%20Gem%20CarrierWave%20%e3%81%a7%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e7%94%bb%e5%83%8f%e3%82%92%e3%83%aa%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f11%2fresize-when-uploading-for-carrierwave-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -192,7 +226,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">CSS で複数行でも3点リーダーを表示する</li>
+            <li class="active">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</li>
           </ol>
         </nav>
       </div>
@@ -210,7 +244,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/html/">html</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
           
         </ul>
       </div>
@@ -228,14 +262,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/">
-    <div class="thumb thumb-9a1638adc21a38dde3c87ab440a422a1"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
+    <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
 
     <div class="inner">
-      <div class="title">VB.NET でふりがな機能を実装する</div>
+      <div class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-04T00:00:00JST">Mar 4, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -246,27 +280,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/">
-    <div class="thumb thumb-95d351547a98871ee844c9037d287c88"></div>
-
-    <div class="inner">
-      <div class="title">Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-07T18:00:00JST">Mar 7, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
