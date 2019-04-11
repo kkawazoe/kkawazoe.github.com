@@ -6,10 +6,27 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 09 Apr 2019 17:36:18 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 13:49:45 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</link>
+      <pubDate>Thu, 11 Apr 2019 13:49:45 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</guid>
+      <description> Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gem
+github
+実際のコード [app/uploaders/my_uploader.rb]
+尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
+heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit
+画像が指定したサイズ未満の時
+=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit
+画像が指定したサイズ未満の時
+=&amp;gt; なにもしない  </description>
+    </item>
     
     <item>
       <title>Ruby on Rails の Gem Gretel で項目の前に画像を置く</title>
