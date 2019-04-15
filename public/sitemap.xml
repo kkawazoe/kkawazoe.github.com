@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</loc>
+    <lastmod>2019-04-15T11:51:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</loc>
+    <lastmod>2019-04-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</loc>
     <lastmod>2019-04-11T13:49:45+09:00</lastmod>
   </url>
@@ -130,6 +140,12 @@
   </url>
   
   <url>
+    <loc>https://kkawazoe.github.io/tags/git/</loc>
+    <lastmod>2019-04-15T11:51:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/tags/html/</loc>
     <lastmod>2019-03-06T12:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -143,13 +159,13 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-04-11T13:49:45+09:00</lastmod>
+    <lastmod>2019-04-15T11:51:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-04-11T13:49:45+09:00</lastmod>
+    <lastmod>2019-04-15T11:51:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -179,7 +195,7 @@
   
   <url>
     <loc>https://kkawazoe.github.io/tags/vue.js/</loc>
-    <lastmod>2019-03-07T18:00:00+09:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

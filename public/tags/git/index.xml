@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/git/</link>
+    <description>Recent content in Git on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 15 Apr 2019 11:51:14 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Github への公開鍵の登録</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</link>
+      <pubDate>Mon, 15 Apr 2019 11:51:14 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid>
+      <description>Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
+実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動
+$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.</description>
+    </item>
+    
+  </channel>
+</rss>

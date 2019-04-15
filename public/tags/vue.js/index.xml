@@ -6,10 +6,23 @@
     <description>Recent content in Vue.js on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 07 Mar 2019 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 12 Apr 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</link>
+      <pubDate>Fri, 12 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
+      <description>Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定
+※キャメルケースに変換すること
+以下のイベントがフックされるようになる
+Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</description>
+    </item>
     
     <item>
       <title>Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</title>
