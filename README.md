@@ -22,9 +22,9 @@ git clone git@github.com:kkawazoe/kkawazoe.github.com.git
 HUGO のテーマを `git clone` で取り込む
 
 ```bash
-cd themes
-git clone https://github.com/dim0627/hugo_theme_robust.git
-cd ..
+$ cd themes
+$ git clone https://github.com/kkawazoe/hugo_theme_robust.git
+$ cd ..
 ```
 
 ## 記事の更新方法
