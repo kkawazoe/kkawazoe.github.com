@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -46,12 +46,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
+      "@id":"https:\/\/kkawazoe.github.io\/"
     },
     "headline": "CofeeScript で JQuery の each を使用する場合の注意点 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/coffee_script_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/coffee_script_logo.png",
       "height": 800,
       "width": 800
     },
@@ -66,14 +66,12 @@
       "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": " CoffeeScript で JQuery の each を使用する場合の注意点 JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
-その場合は以下のように修正する
-実際のソース  修正前  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each -&gt; id = $(this).attr(&quot;id&quot;) @processRow id   修正後  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each (index, element) =&gt; id = $(element).attr(&quot;id&quot;) @processRow id  "
+    "description": " CoffeeScript で JQuery の each を使用する場合の注意点 JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する\nその場合は以下のように修正する\n実際のソース  修正前  processRows: -\x26gt; $(\x26quot;#my-table\x26gt;tr\x26quot;).each -\x26gt; id = $(this).attr(\x26quot;id\x26quot;) @processRow id   修正後  processRows: -\x26gt; $(\x26quot;#my-table\x26gt;tr\x26quot;).each (index, element) =\x26gt; id = $(element).attr(\x26quot;id\x26quot;) @processRow id  "
   }
 </script>
 

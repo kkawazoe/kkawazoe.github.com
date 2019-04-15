@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -46,12 +46,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
+      "@id":"https:\/\/kkawazoe.github.io\/"
     },
     "headline": "Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/microsoft_windows_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/microsoft_windows_logo.svg",
       "height": 800,
       "width": 800
     },
@@ -66,25 +66,12 @@
       "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": "経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。
-そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。
-Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。
-ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
-手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。
-「C:\Windows\System32\drivers\etc」に hosts ファイルがある。
-そのファイルを右クリック&gt;Properties&gt;Security&gt;Editボタンで、 Users の権限に全部チェックを入れる。
-Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。
-※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
-Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録"
+    "description": "経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。\nそのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。\nMicrosoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。\nダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。\n手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。\n「C:\\Windows\\System32\\drivers\\etc」に hosts ファイルがある。\nそのファイルを右クリック\x26gt;Properties\x26gt;Security\x26gt;Editボタンで、 Users の権限に全部チェックを入れる。\nMac の hosts ファイルを複製 Mac の hosts ファイルは「\/private\/etc\/hosts」にあるので、それを前述のファイルに中身をコピーする。\n※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。\nRails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う\nIEの場合  サーバの起動の際に以下のコマンドで行う\nbundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録\n  Edgeの場合  サーバの起動の際に以下のコマンドで行う\nbundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録"
   }
 </script>
 

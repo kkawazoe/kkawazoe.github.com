@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -46,12 +46,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
+      "@id":"https:\/\/kkawazoe.github.io\/"
     },
     "headline": "VB.NET でふりがな機能を実装する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/vbnet_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/vbnet_logo.svg",
       "height": 800,
       "width": 800
     },
@@ -66,15 +66,12 @@
       "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": "VB.NET でふりがな機能を実装する 経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。
-そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
-実際のコード ふりがな取得機能の実装クラス [mImecomp.vb]
- 以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ   Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer ''' &lt;summary&gt; ''' 変換イベントクラス ''' &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs ''' &lt;summary&gt; ''' 変換イベントクラスのコンストラクタ ''' &lt;/summary&gt; ''' &lt;param name=&quot;f&quot;&gt;ふりがな文字列&lt;/param&gt; ''' &lt;param name=&quot;r&quot;&gt;変換後文字列&lt;/param&gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class ''' &lt;summary&gt; ''' 自動ふりがな取得クラス ''' &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer ''' &lt;summary&gt; ''' ふりがな取得完了通知イベント ''' ''' ふりがな取得が完了したことを通知する ''' &lt;/summary&gt; ''' &lt;param name=&quot;txtSrc&quot;&gt;ふりがな取得対象テキストボックス&lt;/param&gt; ''' &lt;param name=&quot;txtDest&quot;&gt;ふりがな出力対象テキストボックス&lt;/param&gt; ''' &lt;param name=&quot;e&quot;&gt;変換イベントクラス&lt;/param&gt; Public Event Converted(ByVal txtSrc As System."
+    "description": "VB.NET でふりがな機能を実装する 経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =\x26gt; VB.NET へのコンバージョンの案件が増えていると思われる。\nそのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする\n実際のコード ふりがな取得機能の実装クラス [mImecomp.vb]\n 以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ   Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer \x27\x27\x27 \x26lt;summary\x26gt; \x27\x27\x27 変換イベントクラス \x27\x27\x27 \x26lt;\/summary\x26gt; Public Class ConvertedEventArgs Inherits EventArgs \x27\x27\x27 \x26lt;summary\x26gt; \x27\x27\x27 変換イベントクラスのコンストラクタ \x27\x27\x27 \x26lt;\/summary\x26gt; \x27\x27\x27 \x26lt;param name=\x26quot;f\x26quot;\x26gt;ふりがな文字列\x26lt;\/param\x26gt; \x27\x27\x27 \x26lt;param name=\x26quot;r\x26quot;\x26gt;変換後文字列\x26lt;\/param\x26gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class \x27\x27\x27 \x26lt;summary\x26gt; \x27\x27\x27 自動ふりがな取得クラス \x27\x27\x27 \x26lt;\/summary\x26gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer \x27\x27\x27 \x26lt;summary\x26gt; \x27\x27\x27 ふりがな取得完了通知イベント \x27\x27\x27 \x27\x27\x27 ふりがな取得が完了したことを通知する \x27\x27\x27 \x26lt;\/summary\x26gt; \x27\x27\x27 \x26lt;param name=\x26quot;txtSrc\x26quot;\x26gt;ふりがな取得対象テキストボックス\x26lt;\/param\x26gt; \x27\x27\x27 \x26lt;param name=\x26quot;txtDest\x26quot;\x26gt;ふりがな出力対象テキストボックス\x26lt;\/param\x26gt; \x27\x27\x27 \x26lt;param name=\x26quot;e\x26quot;\x26gt;変換イベントクラス\x26lt;\/param\x26gt; Public Event Converted(ByVal txtSrc As System."
   }
 </script>
 

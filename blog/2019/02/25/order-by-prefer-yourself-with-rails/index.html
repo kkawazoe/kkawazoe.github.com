@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -46,12 +46,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
+      "@id":"https:\/\/kkawazoe.github.io\/"
     },
     "headline": "Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/rails_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
@@ -66,15 +66,12 @@
       "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": "Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。
-また、ORDER BY FIELD で指定した分に対して desc を指定すること。
-( desc を指定しないと自分以外が優先的に並び替えられてしまう)"
+    "description": "Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する\n 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [\x26quot;field(user_id , #{current_user.id}) desc\x26quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。\nまた、ORDER BY FIELD で指定した分に対して desc を指定すること。\n( desc を指定しないと自分以外が優先的に並び替えられてしまう)"
   }
 </script>
 
