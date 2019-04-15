@@ -4,14 +4,14 @@ article.lism .thumb {
 
 {{ range $p := .Site.RegularPages }}
 {{ with $p.Params.thumbnail }}
-.thumb-{{ $p.UniqueID }} {
+.thumb-{{ $p.File.UniqueID }} {
   background-image: url({{ $.Site.BaseURL }}{{ . }});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   margin: 10px;
 }
-article.lism .thumb-{{ $p.UniqueID }} {
+article.lism .thumb-{{ $p.File.UniqueID }} {
   width: 5rem;
 }
 {{ end }}
