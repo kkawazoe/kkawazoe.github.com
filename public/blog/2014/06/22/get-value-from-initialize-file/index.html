@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -46,12 +46,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
+      "@id":"https:\/\/kkawazoe.github.io\/"
     },
     "headline": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/bat_file_icon.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/bat_file_icon.png",
       "height": 800,
       "width": 800
     },
@@ -66,17 +66,12 @@
       "name": "Note To Self ~One Step At A Time~",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
         "width": 600,
         "height": 60
       }
     },
-    "description": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得するiniファイルの中身 [sample.ini]
-&lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=c:\src\wk 'Work Folder Path  実際のコード [getProfileString.bat]
-@echo off set iniFileName=sample.ini for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A echo &quot;%ret%&quot; pause exit  [getProfileString.vbs]
-Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting."
+    "description": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。\n具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。\n取得するiniファイルの中身 [sample.ini]\n\x26lt;設定値\x26gt;*****************************************************\x27\x26lt;コメント\x26gt;####################################### [Path] WorkPath=c:\\src\\wk \x27Work Folder Path  実際のコード [getProfileString.bat]\n@echo off set iniFileName=sample.ini for \/f \x26quot;usebackq tokens=* delims=\x26quot; %%A in (`call cscript \/\/Nologo getProfileString.vbs \x26quot;%iniFileName%\x26quot; Path WorkPath`) do set ret=%%A echo \x26quot;%ret%\x26quot; pause exit  [getProfileString.vbs]\nOption Explicit rem \/***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************\/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( \x26quot;Scripting."
   }
 </script>
 
