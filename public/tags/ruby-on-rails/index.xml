@@ -6,10 +6,23 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 11 Apr 2019 13:49:45 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</guid>
+      <description> Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
+a.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグ
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   </description>
+    </item>
     
     <item>
       <title>Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</title>

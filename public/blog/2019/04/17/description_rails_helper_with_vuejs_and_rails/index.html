@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~</title>
+    <title>Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する方法 テーブル構成例 [Nodesテーブル]最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
+<meta name="description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
 
-<meta property="og:title" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する方法 テーブル構成例 [Nodesテーブル]最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
+<meta property="og:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-<meta name="twitter:title" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する方法 テーブル構成例 [Nodesテーブル]最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
+<meta name="twitter:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~",
+    "headline": "Vue.js \x2b Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/vuejs_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-02-21T18:10:43JST",
-    "dateModified": "2019-02-21T18:10:43JST",
+    "datePublished": "2019-04-17T00:00:00JST",
+    "dateModified": "2019-04-17T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "Rails で階層構造になっているテーブルに自分自身への関連を設定する方法 テーブル構成例 [Nodesテーブル]\n最上位のノード以外は親ノードを持っている\n   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app\/models\/node.rb]\nclass Node \x26lt; ApplicationRecord has_many :children, class_name: \x26quot;Node\x26quot;, foreign_key: \x26quot;parrent_id\x26quot; belongs_to :parrent, class_name: \x26quot;Node\x26quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db\/migrate\/{datetime}_create_nodes."
+    "description": " Vue.js \x2b Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく\n実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ\na.btn.home href=\x26quot;#{root_path}\x26quot; @touchStart=\x26quot;onTouchStartForBtn\x26quot; @touchEnd=\x26quot;onTouchEndForBtn\x26quot; @touchmove=\x26quot;onTouchMoveForBtn\x26quot;  RailsHelper での a タグ\nVue.js の bind を\x26rsquo;(シングルコート)で括る\n= link_to national_rankings_path, class: \x27btn ranking\x27, \x27@touchStart\x27: \x26quot;onTouchStartForBtn\x26quot;, \x27@touchEnd\x27: \x26quot;onTouchEndForBtn\x26quot;, \x27@touchmove\x27: \x26quot;onTouchMoveForBtn\x26quot;   "
   }
 </script>
 
@@ -119,24 +119,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-b73c0654cc5a32930a864f256828331a"></div>
+  <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
 
   <header class="article-header">
-    <h1 class="title">Rails で階層構造になっているテーブルに自分自身への関連を設定する</h1>
+    <h1 class="title">Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-21T18:10:43JST">Feb 21, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&title=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&text=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&t=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&title=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&text=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&t=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -145,120 +145,27 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="rails-で階層構造になっているテーブルに自分自身への関連を設定する方法">Rails で階層構造になっているテーブルに自分自身への関連を設定する方法</h1>
+<h1 id="vue-js-rails-で-railshelper-と組み合わせた場合の記述方法">Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法</h1>
 
-<h2 id="テーブル構成例">テーブル構成例</h2>
+<h2 id="経緯">経緯</h2>
 
-<p>[Nodesテーブル]<br />
-最上位のノード以外は親ノードを持っている</p>
+<p>Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく</p>
 
-<table>
-<thead>
-<tr>
-<th align="right">id</th>
-<th align="left">name</th>
-<th align="right">parent_id</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="right">1</td>
-<td align="left">parrent_node</td>
-<td align="right">null</td>
-</tr>
-
-<tr>
-<td align="right">2</td>
-<td align="left">child_node_1</td>
-<td align="right">1</td>
-</tr>
-
-<tr>
-<td align="right">3</td>
-<td align="left">child_node_2</td>
-<td align="right">1</td>
-</tr>
-
-<tr>
-<td align="right">4</td>
-<td align="left">child_node_1_1</td>
-<td align="right">2</td>
-</tr>
-
-<tr>
-<td align="right">5</td>
-<td align="left">child_node_1_2</td>
-<td align="right">2</td>
-</tr>
-
-<tr>
-<td align="right">6</td>
-<td align="left">child_node_2_1</td>
-<td align="right">3</td>
-</tr>
-
-<tr>
-<td align="right">7</td>
-<td align="left">child_node_2_2</td>
-<td align="right">3</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="確認環境">確認環境</h2>
+<h2 id="実際のコード-html-テンプレートエンジンは-slim-を使用">実際のコード(html テンプレートエンジンは slim を使用)</h2>
 
 <ul>
-<li>ruby: ruby 2.5.3</li>
-<li>rails: rails 5.2.2</li>
+<li><p>通常 a タグ</p>
+
+<pre><code class="language-ruby">a.btn.home href=&quot;#{root_path}&quot; @touchStart=&quot;onTouchStartForBtn&quot; @touchEnd=&quot;onTouchEndForBtn&quot; @touchmove=&quot;onTouchMoveForBtn&quot;
+</code></pre></li>
+
+<li><p>RailsHelper での a タグ</p>
+
+<p>Vue.js の bind を&rsquo;(シングルコート)で括る</p>
+
+<pre><code class="language-ruby">= link_to national_rankings_path, class: 'btn ranking', '@touchStart': &quot;onTouchStartForBtn&quot;, '@touchEnd': &quot;onTouchEndForBtn&quot;, '@touchmove': &quot;onTouchMoveForBtn&quot;
+</code></pre></li>
 </ul>
-
-<h2 id="実際のコード">実際のコード</h2>
-
-<p>[app/models/node.rb]</p>
-
-<pre><code class="language-ruby">class Node &lt; ApplicationRecord
-  has_many :children, class_name: &quot;Node&quot;, foreign_key: &quot;parrent_id&quot;
-
-  belongs_to :parrent, class_name: &quot;Node&quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可
-end
-</code></pre>
-
-<p>[db/migrate/{datetime}_create_nodes.rb]</p>
-
-<pre><code class="language-ruby">class CreateNodes &lt; ActiveRecord::Migration[5.2]
-  def change
-    create_table :nodes do |t|
-      t.string :name
-      t.references :parrent
-
-      t.timestamps
-    end
-  end
-end
-</code></pre>
-
-<h2 id="実行例">実行例</h2>
-
-<p>テーブル構成例のデータが格納済の状態</p>
-
-<pre><code class="language-ruby"># 最上位ノードに紐付く子ノードのレコードを取得
-parrent_node = Node.first
-parrent_node.children
-#=&gt; Node Load (0.8ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`parrent_id` = 1 LIMIT 11
-#=&gt; #&lt;ActiveRecord::Associations::CollectionProxy [#&lt;Node id: 2, name: &quot;child_node_1&quot;, parrent_id: 1, created_at: &quot;2019-02-21 09:05:38&quot;, updated_at: &quot;2019-02-21 09:05:38&quot;&gt;, #&lt;Node id: 3, name: &quot;child_node_2&quot;, parrent_id: 1, created_at: &quot;2019-02-21 09:05:38&quot;, updated_at: &quot;2019-02-21 09:05:38&quot;&gt;]&gt;
-
-# 子ノードに紐付く親ノードのレコードを取得
-child_node = Node.find(2)
-child_node.parrent
-#=&gt; Node Load (0.5ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`id` = 1 LIMIT 1
-#=&gt; #&lt;Node id: 1, name: &quot;parrent_node&quot;, parrent_id: nil, created_at: &quot;2019-02-21 09:05:37&quot;, updated_at: &quot;2019-02-21 09:05:37&quot;&gt;
-
-# 最上位ノードに紐付く親ノードのレコードを取得
-parrent_node = Node.first
-parrent_node.parrent
-#=&gt; nil
-</code></pre>
 </div>
   
   <footer class="article-footer">
@@ -273,12 +180,12 @@ parrent_node.parrent
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&title=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&text=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&t=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f&title=Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%a7%e9%9a%8e%e5%b1%a4%e6%a7%8b%e9%80%a0%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ab%e8%87%aa%e5%88%86%e8%87%aa%e8%ba%ab%e3%81%b8%e3%81%ae%e9%96%a2%e9%80%a3%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f21%2fset-self-association-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&text=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&t=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -290,7 +197,7 @@ parrent_node.parrent
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Rails で階層構造になっているテーブルに自分自身への関連を設定する</li>
+            <li class="active">Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</li>
           </ol>
         </nav>
       </div>
@@ -307,6 +214,8 @@ parrent_node.parrent
       </header>
       <div>
         <ul class="terms">
+          
+          <li><a href="https://kkawazoe.github.io/tags/vue.js/">Vue.js</a></li>
           
           <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
           
@@ -326,14 +235,14 @@ parrent_node.parrent
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-    <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
+    <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
 
     <div class="inner">
-      <div class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</div>
+      <div class="title">Github への公開鍵の登録</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-15T11:51:14JST">Apr 15, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -344,27 +253,6 @@ parrent_node.parrent
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-    <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
-
-    <div class="inner">
-      <div class="title">Rails の order by で自分を優先的に取得する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
