@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/18/road_to_aws_certified_solutions_architect_associate/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~</title>
+    <title>AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta name="description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
 
-<meta property="og:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/18/road_to_aws_certified_solutions_architect_associate/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/aws_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta property="og:description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
-<meta name="twitter:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/18/road_to_aws_certified_solutions_architect_associate/">
+<meta name="twitter:title" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/aws_logo.png">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Vue.js \x2b Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~",
+    "headline": "AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/vuejs_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/aws_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-17T00:00:00JST",
-    "dateModified": "2019-04-17T00:00:00JST",
+    "datePublished": "2019-04-18T11:02:29JST",
+    "dateModified": "2019-04-18T11:02:29JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": " Vue.js \x2b Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく\n実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ\na.btn.home href=\x26quot;#{root_path}\x26quot; @touchStart=\x26quot;onTouchStartForBtn\x26quot; @touchEnd=\x26quot;onTouchEndForBtn\x26quot; @touchmove=\x26quot;onTouchMoveForBtn\x26quot;  RailsHelper での a タグ\nVue.js の bind を\x26rsquo;(シングルコート)で括る\n= link_to national_rankings_path, class: \x27btn ranking\x27, \x27@touchStart\x27: \x26quot;onTouchStartForBtn\x26quot;, \x27@touchEnd\x27: \x26quot;onTouchEndForBtn\x26quot;, \x27@touchmove\x27: \x26quot;onTouchMoveForBtn\x26quot;   "
+    "description": "AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)\n受験料 15,000 円 (日本語版\/税別)\n出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1."
   }
 </script>
 
@@ -119,24 +119,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
+  <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
 
   <header class="article-header">
-    <h1 class="title">Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</h1>
+    <h1 class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T11:02:29JST">Apr 18, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&text=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&t=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&text=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&t=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -145,26 +145,126 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="vue-js-rails-で-railshelper-と組み合わせた場合の記述方法">Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法</h1>
+<h1 id="aws-認定ソリューションアーキテクト-アソシエイトへの道">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h1>
 
-<h2 id="経緯">経緯</h2>
+<h2 id="試験概要">試験概要</h2>
 
-<p>Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく</p>
+<p>詳細は、試験ガイド(<a href="https://aws.amazon.com/jp/certification/certified-solutions-architect-associate/">試験概要</a> の「試験ガイドのダウンロード」を参照)</p>
 
-<h2 id="実際のコード-html-テンプレートエンジンは-slim-を使用">実際のコード(html テンプレートエンジンは slim を使用)</h2>
+<h3 id="受験料">受験料</h3>
+
+<p>15,000 円 (日本語版/税別)</p>
+
+<h3 id="出題範囲">出題範囲</h3>
+
+<table>
+<thead>
+<tr>
+<th>分野</th>
+<th>試験に占める 割合</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>分野 1: 回復性の高いアーキテクチャを設計する</td>
+<td>34%</td>
+</tr>
+
+<tr>
+<td>分野 2: パフォーマンスに優れたアーキテクチャを定義する</td>
+<td>24%</td>
+</tr>
+
+<tr>
+<td>分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する</td>
+<td>26%</td>
+</tr>
+
+<tr>
+<td>分野 4: コスト最適化アーキテクチャを設計する</td>
+<td>10%</td>
+</tr>
+
+<tr>
+<td>分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する</td>
+<td>6%</td>
+</tr>
+
+<tr>
+<td>合計</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="出題範囲詳細">出題範囲詳細</h3>
 
 <ul>
-<li><p>通常 a タグ</p>
+<li>分野 1: 回復性の高いアーキテクチャを設計する
 
-<pre><code class="language-ruby">a.btn.home href=&quot;#{root_path}&quot; @touchStart=&quot;onTouchStartForBtn&quot; @touchEnd=&quot;onTouchEndForBtn&quot; @touchmove=&quot;onTouchMoveForBtn&quot;
-</code></pre></li>
+<ul>
+<li>1.1 信頼性と回復性の高いストレージを選択する。</li>
+<li>1.2 AWS サービスを使用した分離機構を設計する方法を定義する。</li>
+<li>1.3 多層アーキテクチャソリューションを設計する方法を定義する。</li>
+<li>1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。</li>
+</ul></li>
+<li>分野 2: パフォーマンスに優れたアーキテクチャを定義する
 
-<li><p>RailsHelper での a タグ</p>
+<ul>
+<li>2.1 パフォーマンスの高いストレージとデータベースを選択する。</li>
+<li>2.2 キャッシュを使用してパフォーマンスを向上させる。</li>
+<li>2.3 伸縮性と拡張性を備えたソリューションを設計する。</li>
+</ul></li>
+<li>分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する
 
-<p>Vue.js の bind を&rsquo;(シングルコート)で括る</p>
+<ul>
+<li>3.1 アプリケーション層をセキュリティ保護する方法を定義する。</li>
+<li>3.2 データをセキュリティ保護する方法を定義する。</li>
+<li>3.3 単一の VPC アプリケーション用のネットワークインフラストラクチャーを定義する。<br /></li>
+</ul></li>
+<li>分野 4: コスト最適化アーキテクチャを設計する
 
-<pre><code class="language-ruby">= link_to national_rankings_path, class: 'btn ranking', '@touchStart': &quot;onTouchStartForBtn&quot;, '@touchEnd': &quot;onTouchEndForBtn&quot;, '@touchmove': &quot;onTouchMoveForBtn&quot;
-</code></pre></li>
+<ul>
+<li>4.1 コスト最適化ストレージを設計する方法を定義する。</li>
+<li>4.2 コスト最適化コンピューティングを設計する方法を定義する。</li>
+</ul></li>
+<li>分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する
+
+<ul>
+<li>5.1 オペレーショナルエクセレンスを実現するソリューションの設計特性を選択する。</li>
+</ul></li>
+</ul>
+
+<h3 id="合格ライン">合格ライン</h3>
+
+<p>100～1000 点の範囲のスコアでレポートされる<br />
+最低合格スコアは 720 点<br />
+各分野毎の最低合格ラインはなし</p>
+
+<h2 id="試験対策">試験対策</h2>
+
+<h3 id="教本">教本</h3>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19433294&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5490%2F9784295005490.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5490%2F9784295005490.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >徹底攻略AWS認定ソリューションアーキテクトアソシエイト教科書 [ 鳥谷部昭寛 ]</a><br><span >価格：2570円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19453575&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F3828%2F9784297103828.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F3828%2F9784297103828.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >最短突破AWS認定ソリューションアーキテクトアソシエイト合格教本 [ 村主壮悟 ]</a><br><span >価格：2678円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=18106776&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F0435%2F9784865940435.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F0435%2F9784865940435.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >合格対策 AWS認定ソリューションアーキテクト - アソシエイト [ 大塚康徳（日立インフォメーションアカデミー） ]</a><br><span >価格：2376円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19539978&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F7390%2F9784797397390.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F7390%2F9784797397390.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >AWS認定試験対策　AWS ソリューションアーキテクトーアソシエイト [ 佐々木拓郎 ]</a><br><span >価格：2570円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<h3 id="その他">その他</h3>
+
+<ul>
+<li><a href="https://aws.amazon.com/jp/whitepapers/">AWS に関するホワイトペーパー</a></li>
+<li><a href="https://www.aws.training/">模擬試験</a>
+
+<ul>
+<li>所要時間: 30 分間</li>
+<li>受験方法: オンライン</li>
+<li>受験料: 2,000 円(税別)</li>
+</ul></li>
 </ul>
 </div>
   
@@ -180,12 +280,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&text=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&t=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f&title=Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Vue.js%20%2b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription_rails_helper_with_vuejs_and_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&text=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&t=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2froad_to_aws_certified_solutions_architect_associate%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -197,7 +297,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</li>
+            <li class="active">AWS 認定ソリューションアーキテクト - アソシエイトへの道</li>
           </ol>
         </nav>
       </div>
@@ -215,9 +315,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/vue.js/">Vue.js</a></li>
-          
-          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/">資格</a></li>
           
         </ul>
       </div>
@@ -234,28 +332,6 @@ if (!doNotTrack) {
         
         <div class="mcol c6">
           <header>Previous Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
-    <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
-
-    <div class="inner">
-      <div class="title">Github への公開鍵の登録</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-15T11:51:14JST">Apr 15, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
-        
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
           <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2019/04/18/about_git_command/">
     <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
@@ -274,6 +350,7 @@ if (!doNotTrack) {
 </article>
 
         </div>
+        
         
       </div>
     </div>
