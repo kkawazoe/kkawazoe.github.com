@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~</title>
+    <title>AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
+<meta name="description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
 
-<meta property="og:title" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/aws_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
+<meta property="og:description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-<meta name="twitter:title" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった苦労したためその際の手順およびハマった点等を備忘録として残しておく構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/">
+<meta name="twitter:title" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)受験料 15,000 円 (日本語版/税別)出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/aws_logo.png">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する - Note To Self ~One Step At A Time~",
+    "headline": "AWS 認定ソリューションアーキテクト - アソシエイトへの道 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/logo/rails_logo.svg",
+      "url": "https://kkawazoe.github.io/images/logo/aws_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-07T04:24:08JST",
-    "dateModified": "2019-04-07T04:24:08JST",
+    "datePublished": "2019-04-19T00:00:00JST",
+    "dateModified": "2019-04-19T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,12 +70,9 @@
         "height": 60
       }
     },
-    "description": "Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
-苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems."
+    "description": "AWS 認定ソリューションアーキテクト - アソシエイトへの道 試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
+受験料 15,000 円 (日本語版/税別)
+出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1."
   }
 </script>
 
@@ -124,24 +121,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
+  <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
 
   <header class="article-header">
-    <h1 class="title">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</h1>
+    <h1 class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-19T00:00:00JST">Apr 19, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&text=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&t=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&text=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&t=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -150,95 +147,127 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="windows10-に-ruby1-8-7-rails2-3-18-を構築する">Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する</h1>
+<h1 id="aws-認定ソリューションアーキテクト-アソシエイトへの道">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h1>
 
-<h2 id="経緯">経緯</h2>
+<h2 id="試験概要">試験概要</h2>
 
-<p>仕事で必要となり表題の環境を準備することになった<br />
-苦労したためその際の手順およびハマった点等を備忘録として残しておく</p>
+<p>詳細は、試験ガイド(<a href="https://aws.amazon.com/jp/certification/certified-solutions-architect-associate/">試験概要</a> の「試験ガイドのダウンロード」を参照)</p>
 
-<h2 id="構築環境">構築環境</h2>
+<h3 id="受験料">受験料</h3>
 
-<ul>
-<li>ruby: ruby 1.8.7</li>
-<li>rails: rails 2.3.18</li>
-</ul>
+<p>15,000 円 (日本語版/税別)</p>
 
-<h2 id="手順">手順</h2>
+<h3 id="出題範囲">出題範囲</h3>
 
-<ol>
-<li><a href="https://rubyinstaller.org/downloads/archives/">Ruby Installer</a> で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする</li>
-<li>Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)</li>
+<table>
+<thead>
+<tr>
+<th>分野</th>
+<th>試験に占める 割合</th>
+</tr>
+</thead>
 
-<li><p>DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する</p>
+<tbody>
+<tr>
+<td>分野 1: 回復性の高いアーキテクチャを設計する</td>
+<td>34%</td>
+</tr>
 
-<pre><code class="language-bat">$ ruby dk.rb init
-$ ruby dk.rb install
-</code></pre></li>
+<tr>
+<td>分野 2: パフォーマンスに優れたアーキテクチャを定義する</td>
+<td>24%</td>
+</tr>
 
-<li><p>rubygems-update のバージョンをダウングレードする
-4-1. 以下のコマンドを入力する</p>
+<tr>
+<td>分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する</td>
+<td>26%</td>
+</tr>
 
-<pre><code class="language-bat">$ gem update --system 1.3.7
-</code></pre>
+<tr>
+<td>分野 4: コスト最適化アーキテクチャを設計する</td>
+<td>10%</td>
+</tr>
 
-<p>※以下のエラーが起きる場合は<a href="https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html#updating-rubygems">このサイト</a>を参考に手動で rubygems-update をダウングレードする</p>
+<tr>
+<td>分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する</td>
+<td>6%</td>
+</tr>
 
-<pre><code class="language-bat">$  gem update --system
-ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
-SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz)
-</code></pre></li>
+<tr>
+<td>合計</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
 
-<li><p>動作確認用のフォルダを作成</p></li>
-
-<li><p>以下の gem をインストールする</p>
-
-<p><a href="https://rubygems.org/gems">このサイト</a>で1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</p>
-
-<pre><code class="language-bat">$ gem install rake -v 0.8.7
-$ gem install rails -v 2.3.18
-$ gem install rdoc -v 2.4.2
-</code></pre>
-
-<p>rake を先にインストールしないと Ruby のバージョンが古い旨のエラーが発生するため先インストールする</p></li>
-
-<li><p>動作確認用の Rails プロジェクトを作成する</p>
-
-<pre><code class="language-bat">$ rails sample-rails
-$ cd sample-rails
-$ ruby script/generate scaffold user name:string age:integer
-</code></pre></li>
-
-<li><p>db のマイグレートを行う</p>
-
-<p>8-1. デフォルトの sqlite3 用の Gem をインストールする</p>
-
-<pre><code class="language-bat">$ gem install sqlite3 -v 1.3.3
-</code></pre>
-
-<p>8-2. DLL ファイルをダウンロードする</p>
+<h3 id="出題範囲詳細">出題範囲詳細</h3>
 
 <ul>
-<li><a href="http://www.sqlite.org/sqlitedll-3_7_3.zip">sqlitedll-3_7_3.zip</a> をダウンロードする<br />
-※最新のやつだとエラーになるため古いやつをダウンロードすること</li>
-<li>ダウンロードしたやつを解凍して <code>sqlite3.dll</code>
-を Ruby のインストールフォルダ/bin(例. C:\Ruby187\bin)にコピーする</li>
+<li>分野 1: 回復性の高いアーキテクチャを設計する
+
+<ul>
+<li>1.1 信頼性と回復性の高いストレージを選択する。</li>
+<li>1.2 AWS サービスを使用した分離機構を設計する方法を定義する。</li>
+<li>1.3 多層アーキテクチャソリューションを設計する方法を定義する。</li>
+<li>1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。</li>
+</ul></li>
+<li>分野 2: パフォーマンスに優れたアーキテクチャを定義する
+
+<ul>
+<li>2.1 パフォーマンスの高いストレージとデータベースを選択する。</li>
+<li>2.2 キャッシュを使用してパフォーマンスを向上させる。</li>
+<li>2.3 伸縮性と拡張性を備えたソリューションを設計する。</li>
+</ul></li>
+<li>分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する
+
+<ul>
+<li>3.1 アプリケーション層をセキュリティ保護する方法を定義する。</li>
+<li>3.2 データをセキュリティ保護する方法を定義する。</li>
+<li>3.3 単一の VPC アプリケーション用のネットワークインフラストラクチャーを定義する。<br /></li>
+</ul></li>
+<li>分野 4: コスト最適化アーキテクチャを設計する
+
+<ul>
+<li>4.1 コスト最適化ストレージを設計する方法を定義する。</li>
+<li>4.2 コスト最適化コンピューティングを設計する方法を定義する。</li>
+</ul></li>
+<li>分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する
+
+<ul>
+<li>5.1 オペレーショナルエクセレンスを実現するソリューションの設計特性を選択する。</li>
+</ul></li>
 </ul>
 
-<p>8-3. 以下のコマンドを入力して db のマイグレートを行う</p>
+<h3 id="合格ライン">合格ライン</h3>
 
-<pre><code class="language-bat">$ rake db:create
-$ rake db:migrate
-</code></pre></li>
+<p>100～1000 点の範囲のスコアでレポートされる<br />
+最低合格スコアは 720 点<br />
+各分野毎の最低合格ラインはなし</p>
 
-<li><p>サーバを起動する</p>
+<h2 id="試験対策">試験対策</h2>
 
-<pre><code class="language-bat">$ ruby script/server
-</code></pre></li>
+<h3 id="教本">教本</h3>
 
-<li><p>サーバ(<a href="http://localhost:3000/users">http://localhost:3000/users</a>) にアクセスして動作確認を行う</p></li>
-</ol>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19433294&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5490%2F9784295005490.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5490%2F9784295005490.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >徹底攻略AWS認定ソリューションアーキテクトアソシエイト教科書 [ 鳥谷部昭寛 ]</a><br><span >価格：2570円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15742600%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19433294%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19453575&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F3828%2F9784297103828.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F3828%2F9784297103828.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >最短突破AWS認定ソリューションアーキテクトアソシエイト合格教本 [ 村主壮悟 ]</a><br><span >価格：2678円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15770415%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19453575%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=18106776&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F0435%2F9784865940435.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F0435%2F9784865940435.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >合格対策 AWS認定ソリューションアーキテクト - アソシエイト [ 大塚康徳（日立インフォメーションアカデミー） ]</a><br><span >価格：2376円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14348936%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18106776%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/181a658b.90ca9f5c.181a658c.d64ef0de/?me_id=1213310&item_id=19539978&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F7390%2F9784797397390.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F7390%2F9784797397390.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  >AWS認定試験対策　AWS ソリューションアーキテクトーアソシエイト [ 佐々木拓郎 ]</a><br><span >価格：2570円（税込、送料無料)</span> <span style="color:#BBB">(2019/4/18時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0"></a><a href="https://hb.afl.rakuten.co.jp/hgc/181a658b.90ca9f5c.181a658c.d64ef0de/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15842930%2F%3Fscid%3Daf_pc_bbtn&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19539978%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxfQ==" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff !important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;">楽天で購入</div></a></div></td><tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+
+<h3 id="その他">その他</h3>
+
+<ul>
+<li><a href="https://aws.amazon.com/jp/whitepapers/">AWS に関するホワイトペーパー</a></li>
+<li><a href="https://www.aws.training/">模擬試験</a>
+
+<ul>
+<li>所要時間: 30 分間</li>
+<li>受験方法: オンライン</li>
+<li>受験料: 2,000 円(税別)</li>
+</ul></li>
+</ul>
 </div>
   
   <footer class="article-footer">
@@ -253,12 +282,12 @@ $ rake db:migrate
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&text=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&t=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f&title=Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows10%20%e3%81%ab%20Ruby1.8.7%20%2b%20Rails2.3.18%20%e3%82%92%e6%a7%8b%e7%af%89%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f07%2fbuild-to-rails2-and-ruby1-with-windows10%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&text=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&t=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f&title=AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?AWS%20%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%20-%20%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%81%b8%e3%81%ae%e9%81%93 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f19%2froad_to_aws_certified_solutions_architect_associate%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -270,7 +299,7 @@ $ rake db:migrate
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</li>
+            <li class="active">AWS 認定ソリューションアーキテクト - アソシエイトへの道</li>
           </ol>
         </nav>
       </div>
@@ -288,7 +317,7 @@ $ rake db:migrate
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/">資格</a></li>
           
         </ul>
       </div>
@@ -306,14 +335,14 @@ $ rake db:migrate
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-    <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/18/about_git_command/">
+    <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その２</div>
+      <div class="title">Git コマンドについて</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T00:00:00JST">Apr 18, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -324,27 +353,6 @@ $ rake db:migrate
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
-    <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
-
-    <div class="inner">
-      <div class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
