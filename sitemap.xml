@@ -3,25 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</loc>
+    <lastmod>2019-04-18T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-18T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-18T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2019-04-18T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/git/</loc>
+    <lastmod>2019-04-18T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
     <lastmod>2019-04-17T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -40,12 +51,6 @@
   <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</loc>
     <lastmod>2019-04-15T11:51:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/git/</loc>
-    <lastmod>2019-04-15T11:51:14+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
