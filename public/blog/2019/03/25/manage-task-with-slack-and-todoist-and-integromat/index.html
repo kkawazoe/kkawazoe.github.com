@@ -18,12 +18,12 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Slack &#43; Todoist &#43; Integromat でタスク管理その１ - Note To Self ~One Step At A Time~</title>
+    <title>Slack &#43; Todoist &#43; Integromat でタスク管理 その１ - Note To Self ~One Step At A Time~</title>
     
 
 <meta name="description" content="したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理シンプルで管理しやすい todoist を使用 リマインダー機能slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない 足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する">
 
-<meta property="og:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理その１ - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その１ - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-<meta name="twitter:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理その１ - Note To Self ~One Step At A Time~">
+<meta name="twitter:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その１ - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理シンプルで管理しやすい todoist を使用 リマインダー機能slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない 足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
 
@@ -47,7 +47,7 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Slack \x2b Todoist \x2b Integromat でタスク管理その１ - Note To Self ~One Step At A Time~",
+    "headline": "Slack \x2b Todoist \x2b Integromat でタスク管理 その１ - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/kkawazoe.github.io\/images\/logo\/slack_logo.svg",
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
 
   <header class="article-header">
-    <h1 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その１</h1>
+    <h1 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</h1>
 
     <ul class="facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
@@ -131,12 +131,12 @@ if (!doNotTrack) {
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
   <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -427,12 +427,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
   <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%81%9d%e3%81%ae%ef%bc%91 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%91 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f25%2fmanage-task-with-slack-and-todoist-and-integromat%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -444,7 +444,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Slack &#43; Todoist &#43; Integromat でタスク管理その１</li>
+            <li class="active">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</li>
           </ol>
         </nav>
       </div>
@@ -506,7 +506,7 @@ if (!doNotTrack) {
     <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その２</div>
+      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</div>
 
       <ul class="facts sm">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
@@ -685,7 +685,7 @@ if (!doNotTrack) {
     <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その２</div>
+      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</div>
 
       <ul class="facts sm">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
@@ -703,7 +703,7 @@ if (!doNotTrack) {
     <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理その１</div>
+      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</div>
 
       <ul class="facts sm">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
