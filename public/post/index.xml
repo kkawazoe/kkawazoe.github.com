@@ -125,7 +125,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
     </item>
     
     <item>
-      <title>Slack &#43; Todoist &#43; Integromat でタスク管理その２</title>
+      <title>Slack &#43; Todoist &#43; Integromat でタスク管理 その２</title>
       <link>https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/</link>
       <pubDate>Thu, 28 Mar 2019 12:09:59 +0900</pubDate>
       
@@ -138,7 +138,7 @@ map() で 「content」の内容を配列で取得後 join() で改行および�
     </item>
     
     <item>
-      <title>Slack &#43; Todoist &#43; Integromat でタスク管理その１</title>
+      <title>Slack &#43; Todoist &#43; Integromat でタスク管理 その１</title>
       <link>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0900</pubDate>
       
