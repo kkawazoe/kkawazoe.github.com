@@ -3,32 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/</loc>
-    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
+    <loc>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</loc>
+    <lastmod>2019-04-22T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/tags/</loc>
-    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
-    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/</loc>
+    <lastmod>2019-04-19T00:00:00+09:00</lastmod>
   </url>
   
   <url>
