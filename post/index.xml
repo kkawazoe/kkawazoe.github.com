@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FP3級への道 その3</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</guid>
+      <description>FP3級への道 その3 学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道
+ FP3級への道 その2  リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
+[死亡保険金の場合]
+   契約者 被保険者 受取人 税金     A A B 相続税   A B A 所得税(一時所得)
+住民税   A B C 贈与税    [満期保険金の場合]
+   契約者 被保険者 受取人 税金     A 誰でも A 所得税(一時所得)
+住民税   A 誰でも B 贈与税    [非課税となる保険金や給付金]</description>
+    </item>
     
     <item>
       <title>Access でパラメータクエリが未入力の場合は全検索する</title>
