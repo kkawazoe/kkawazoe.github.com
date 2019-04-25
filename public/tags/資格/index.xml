@@ -6,10 +6,29 @@
     <description>Recent content in 資格 on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 25 Apr 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FP3級への道 その5</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</guid>
+      <description>FP3級への道 その5 学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道
+ FP3級への道 その2 FP3級への道 その3 FP3級への道 その4  金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
+※PER が低い銘柄は 割安 、高い銘柄は割高
+$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
+※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
+$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$
+$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$
+$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$
+$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$</description>
+    </item>
     
     <item>
       <title>FP3級への道 その4</title>
