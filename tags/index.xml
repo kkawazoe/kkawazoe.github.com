@@ -6,15 +6,25 @@
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+<<<<<<< HEAD
     <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate>
+=======
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0900</lastBuildDate>
+>>>>>>> release 2019-04-26 12:05
     
 	<atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>Access</title>
       <link>https://kkawazoe.github.io/tags/access/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate>
+=======
+      <title>資格</title>
+      <link>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0900</pubDate>
+>>>>>>> release 2019-04-26 12:05
       
       <guid>https://kkawazoe.github.io/tags/access/</guid>
       <description></description>
