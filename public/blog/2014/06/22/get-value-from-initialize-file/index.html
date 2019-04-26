@@ -1,121 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="theme-color" content="#263238">
-
-<meta name="generator" content="Hugo 0.54.0" />
-
-<link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-
-
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-
-    
-    <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
-    
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - Note To Self ~One Step At A Time~</title>
-    
-
-<meta name="description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のコード [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
-
-<meta property="og:title" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - Note To Self ~One Step At A Time~">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
-<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のコード [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
-<meta property="og:locale" content="ja_JP">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-<meta name="twitter:title" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。取得するiniファイルの中身 [sample.ini]&amp;lt;設定値&amp;gt;*****************************************************&#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=c:\src\wk &#39;Work Folder Path  実際のコード [getProfileString.bat]@echo off set iniFileName=sample.ini for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo getProfileString.vbs &amp;quot;%iniFileName%&amp;quot; Path WorkPath`) do set ret=%%A echo &amp;quot;%ret%&amp;quot; pause exit  [getProfileString.vbs]Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
-
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id":"https://kkawazoe.github.io/"
-    },
-    "headline": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する - Note To Self ~One Step At A Time~",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/logo/bat_file_icon.png",
-      "height": 800,
-      "width": 800
-    },
-    "datePublished": "2014-06-22T09:01:00JST",
-    "dateModified": "2014-06-22T09:01:00JST",
-    "author": {
-      "@type": "Person",
-      "name": "Note To Self ~One Step At A Time~"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Note To Self ~One Step At A Time~",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://kkawazoe.github.io/images/logo.png",
-        "width": 600,
-        "height": 60
-      }
-    },
-    "description": "Windows7環境でバッチファイルからiniファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得するiniファイルの中身 [sample.ini]
-&lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=c:\src\wk 'Work Folder Path  実際のコード [getProfileString.bat]
-@echo off set iniFileName=sample.ini for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A echo &quot;%ret%&quot; pause exit  [getProfileString.vbs]
-Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting."
-  }
-</script>
-
-
-    <style>
-      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://kkawazoe.github.io/images/default.jpg); background-size: cover; background-position: center;}.thumb-931fb086a0fa06c095e15790fb0d6747 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png);}.thumb-9f9739c9a579e09d86d2f796482b15d3 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png);}.thumb-a0619f44ba45d95c26d446f8ba4c21e3 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png);}.thumb-67c195c22b76149c2a0d2d5ea82cfc3c { background-image: url(https://kkawazoe.github.io/images/logo/access_logo.png);}.thumb-20b685e429fc8c023c41ac263d5ea869 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png);}.thumb-dbdce5b04f31bb6a45d277876b47adfc { background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);}.thumb-b079f192815207959eb2599fb6cb0a3d { background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png);}.thumb-bf5b4c28a69b26e419c7d4e52f9bfd26 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png);}.thumb-736ca96d6fa58ebca524019f319836ea { background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png);}.thumb-d69d3c99235fb827ed4ea87bdf6e7076 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png);}.thumb-e3c2ee128105a79928dbbb3f0321b964 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);}.thumb-91ddefd9879dbdf0b12d0c27bfbbef5d { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);}.thumb-22a09971c752ef71760fc42937e3fa65 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);}.thumb-1ccc7a236ed4851cfa345762b5168343 { background-image: url(https://kkawazoe.github.io/images/logo/slack_logo.svg);}.thumb-db8dc2c4f916f98b1e232d68dbc4deeb { background-image: url(https://kkawazoe.github.io/images/logo/slack_logo.svg);}.thumb-ecd45247f71b5a0c755e8d46de3ba742 { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png);}.thumb-206974e06b087bbe9dd046e97aa00882 { background-image: url(https://kkawazoe.github.io/images/logo/microsoft_windows_logo.svg);}.thumb-39ef9e30c5390d01c651eeb9a897f721 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png);}.thumb-27703da049b375c9d1edda7674dab688 { background-image: url(https://kkawazoe.github.io/images/logo/coffee_script_logo.png);}.thumb-95d351547a98871ee844c9037d287c88 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png);}.thumb-04e02c5a7ce921261e0b5408f751b9e0 { background-image: url(https://kkawazoe.github.io/images/logo/html_logo.svg);}.thumb-9a1638adc21a38dde3c87ab440a422a1 { background-image: url(https://kkawazoe.github.io/images/logo/vbnet_logo.svg);}.thumb-5be2a40737ee2715ddd6c0983ee493bd { background-image: url(https://kkawazoe.github.io/images/logo/rambox_logo.png);}.thumb-a4983a1e02839d0323fa862d0716f47f { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png);}.thumb-2d72ccc0731e495240ee4b00bf88ca26 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);}.thumb-b73c0654cc5a32930a864f256828331a { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);}.thumb-b9c0df1dc6dcc004f785e3c0222005f4 { background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);}.thumb-95925b3c3c396d332297caefd1f3c3ee { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png);}.thumb-11d08bed5565731bc48854b764577f97 { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png);}
-      article.lism .thumb { width: 6rem;}.thumb-931fb086a0fa06c095e15790fb0d6747 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-931fb086a0fa06c095e15790fb0d6747 { width: 5rem;}.thumb-9f9739c9a579e09d86d2f796482b15d3 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-9f9739c9a579e09d86d2f796482b15d3 { width: 5rem;}.thumb-a0619f44ba45d95c26d446f8ba4c21e3 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-a0619f44ba45d95c26d446f8ba4c21e3 { width: 5rem;}.thumb-67c195c22b76149c2a0d2d5ea82cfc3c { background-image: url(https://kkawazoe.github.io/images/logo/access_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-67c195c22b76149c2a0d2d5ea82cfc3c { width: 5rem;}.thumb-20b685e429fc8c023c41ac263d5ea869 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-20b685e429fc8c023c41ac263d5ea869 { width: 5rem;}.thumb-dbdce5b04f31bb6a45d277876b47adfc { background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-dbdce5b04f31bb6a45d277876b47adfc { width: 5rem;}.thumb-b079f192815207959eb2599fb6cb0a3d { background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-b079f192815207959eb2599fb6cb0a3d { width: 5rem;}.thumb-bf5b4c28a69b26e419c7d4e52f9bfd26 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-bf5b4c28a69b26e419c7d4e52f9bfd26 { width: 5rem;}.thumb-736ca96d6fa58ebca524019f319836ea { background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-736ca96d6fa58ebca524019f319836ea { width: 5rem;}.thumb-d69d3c99235fb827ed4ea87bdf6e7076 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-d69d3c99235fb827ed4ea87bdf6e7076 { width: 5rem;}.thumb-e3c2ee128105a79928dbbb3f0321b964 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-e3c2ee128105a79928dbbb3f0321b964 { width: 5rem;}.thumb-91ddefd9879dbdf0b12d0c27bfbbef5d { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-91ddefd9879dbdf0b12d0c27bfbbef5d { width: 5rem;}.thumb-22a09971c752ef71760fc42937e3fa65 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-22a09971c752ef71760fc42937e3fa65 { width: 5rem;}.thumb-1ccc7a236ed4851cfa345762b5168343 { background-image: url(https://kkawazoe.github.io/images/logo/slack_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-1ccc7a236ed4851cfa345762b5168343 { width: 5rem;}.thumb-db8dc2c4f916f98b1e232d68dbc4deeb { background-image: url(https://kkawazoe.github.io/images/logo/slack_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-db8dc2c4f916f98b1e232d68dbc4deeb { width: 5rem;}.thumb-ecd45247f71b5a0c755e8d46de3ba742 { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-ecd45247f71b5a0c755e8d46de3ba742 { width: 5rem;}.thumb-206974e06b087bbe9dd046e97aa00882 { background-image: url(https://kkawazoe.github.io/images/logo/microsoft_windows_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-206974e06b087bbe9dd046e97aa00882 { width: 5rem;}.thumb-39ef9e30c5390d01c651eeb9a897f721 { background-image: url(https://kkawazoe.github.io/images/logo/fp_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-39ef9e30c5390d01c651eeb9a897f721 { width: 5rem;}.thumb-27703da049b375c9d1edda7674dab688 { background-image: url(https://kkawazoe.github.io/images/logo/coffee_script_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-27703da049b375c9d1edda7674dab688 { width: 5rem;}.thumb-95d351547a98871ee844c9037d287c88 { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-95d351547a98871ee844c9037d287c88 { width: 5rem;}.thumb-04e02c5a7ce921261e0b5408f751b9e0 { background-image: url(https://kkawazoe.github.io/images/logo/html_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-04e02c5a7ce921261e0b5408f751b9e0 { width: 5rem;}.thumb-9a1638adc21a38dde3c87ab440a422a1 { background-image: url(https://kkawazoe.github.io/images/logo/vbnet_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-9a1638adc21a38dde3c87ab440a422a1 { width: 5rem;}.thumb-5be2a40737ee2715ddd6c0983ee493bd { background-image: url(https://kkawazoe.github.io/images/logo/rambox_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-5be2a40737ee2715ddd6c0983ee493bd { width: 5rem;}.thumb-a4983a1e02839d0323fa862d0716f47f { background-image: url(https://kkawazoe.github.io/images/logo/vuejs_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-a4983a1e02839d0323fa862d0716f47f { width: 5rem;}.thumb-2d72ccc0731e495240ee4b00bf88ca26 { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-2d72ccc0731e495240ee4b00bf88ca26 { width: 5rem;}.thumb-b73c0654cc5a32930a864f256828331a { background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-b73c0654cc5a32930a864f256828331a { width: 5rem;}.thumb-b9c0df1dc6dcc004f785e3c0222005f4 { background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-b9c0df1dc6dcc004f785e3c0222005f4 { width: 5rem;}.thumb-95925b3c3c396d332297caefd1f3c3ee { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-95925b3c3c396d332297caefd1f3c3ee { width: 5rem;}.thumb-11d08bed5565731bc48854b764577f97 { background-image: url(https://kkawazoe.github.io/images/logo/bat_file_icon.png); background-size: contain; background-position: center; background-repeat: no-repeat; margin: 10px;}article.lism .thumb-11d08bed5565731bc48854b764577f97 { width: 5rem;}article.sn > .article-body ul { margin: 0;}article.sn > .article-body h4 { margin-bottom: 1rem;}.has-jax { font: inherit; font-size: 100%; background: inherit; border: inherit; color: #515151;}.has-jax > .MathJax_Display { text-align: left !important;}
-      
-      
-    </style>
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-  });
-  MathJax.Hub.Queue(function() {
-    
-    
-    
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-  </head>
-
-  <body>
-    
-=======
 <!DOCTYPE html>
 <html>
   <head>
@@ -227,7 +109,6 @@ Option Explicit rem /***********************************************************
 
   <body>
     
->>>>>>> release 2019-04-26 12:05
     
 <script type="application/javascript">
 var doNotTrack = false;
@@ -431,7 +312,6 @@ Function GetProfileString ( buffer, sectionName, searchFlg )
     GetProfileString = ret
 End Function
 </code></pre>
-<<<<<<< HEAD
 </div>
   
   <footer class="article-footer">
@@ -823,396 +703,3 @@ End Function
   </body>
 </html>
 
-=======
-</div>
-  
-  <footer class="article-footer">
-
-    <section class="footer">
-  <div>
-    
-    <script type="text/javascript">rakuten_affiliateId="0ea62065.34400275.0ea62066.204f04c0";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_recommend="on";rakuten_design="slide";rakuten_size="600x200";rakuten_target="_blank";rakuten_border="on";rakuten_auto_mode="on";rakuten_adNetworkId="a8Net";rakuten_adNetworkUrl="https%3A%2F%2Frpx.a8.net%2Fsvt%2Fejp%3Fa8mat%3D3599I4%2B9XTJCI%2B2HOM%2BBS629%26rakuten%3Dy%26a8ejpredirect%3D";rakuten_pointbackId="a19022887215_3599I4_9XTJCI_2HOM_BS629";rakuten_mediaId="20011815";</script><script type="text/javascript" src="//xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
-    
-    <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3599I4+9XTJCI+2HOM+BS629" alt="">
-  </div>
-</section>
-
-    <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89ini%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e8%aa%ad%e8%be%bc%e3%82%93%e3%81%a7%e5%80%a4%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f06%2f22%2fget-value-from-initialize-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
-</aside>
-
-
-    <section class="footer">
-      <div>
-        <nav class="crumb">
-          <ol>
-            <li><a href="https://kkawazoe.github.io/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
-            
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
-            
-            <li class="active">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</li>
-          </ol>
-        </nav>
-      </div>
-    </section>
-
-    
-    
-    
-    
-    
-    <section class="footer">
-      <header>
-        <a href="https://kkawazoe.github.io/tags/">TAGS</a>
-      </header>
-      <div>
-        <ul class="terms">
-          
-          <li><a href="https://kkawazoe.github.io/tags/bat/">Bat</a></li>
-          
-        </ul>
-      </div>
-    </section>
-    
-    
-  </footer>
-
-</article>
-
-
-    <div class="adj">
-      <div class="mrow">
-        
-        <div class="mcol c6">
-          <header>Previous Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-    <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
-
-    <div class="inner">
-      <div class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
-        
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-    <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
-        
-      </div>
-    </div>
-
-    
-  </div>
-  <div class="mcol c4">
-    <aside class="l-sidebar">
-
-  <div class="sections sidebar">
-    
-
-    <section class="sidebar">
-  <header>LATESTS</header>
-  <div>
-    <div class="articles sm">
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
-    <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その5</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-    <div class="thumb thumb-9f9739c9a579e09d86d2f796482b15d3"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その4</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-25T00:00:00JST">Apr 25, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
-    <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その3</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-24T00:00:00JST">Apr 24, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/">
-    <div class="thumb thumb-67c195c22b76149c2a0d2d5ea82cfc3c"></div>
-
-    <div class="inner">
-      <div class="title">Access でパラメータクエリが未入力の場合は全検索する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-23T00:00:00JST">Apr 23, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">
-    <div class="thumb thumb-20b685e429fc8c023c41ac263d5ea869"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-22T00:00:00JST">Apr 22, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/">
-    <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
-
-    <div class="inner">
-      <div class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-19T00:00:00JST">Apr 19, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/18/about_git_command/">
-    <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
-
-    <div class="inner">
-      <div class="title">Git コマンドについて</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T00:00:00JST">Apr 18, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
-    <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
-
-    <div class="inner">
-      <div class="title">Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
-    <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
-
-    <div class="inner">
-      <div class="title">Github への公開鍵の登録</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-15T11:51:14JST">Apr 15, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
-    <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
-
-    <div class="inner">
-      <div class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-    </div>
-  </div>
-</section>
-
-    
-
-    
-<section class="sidebar">
-  <header>TAGS</header>
-  <div>
-    <ul class="terms">
-      <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(6)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(6)</span></a></li><li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(5)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li><li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li><li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(2)</span></a></li><li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/cofeescript">cofeescript <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/mysql">mysql <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vb.net">vb.net <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82">医療 <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(1)</span></a></li>
-    </ul>
-  </div>
-</section>
-
-
-
-    <section class="sidebar">
-  <header>ABOUT</header>
-  <div>
-    <div class="articles sm">
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/privacy-policy/">
-    <div class="thumb thumb-ba8e20cb6e739a50bc3b05dfc391e82b"></div>
-
-    <div class="inner">
-      <div class="title">プライバシーポリシー</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-01T09:00:00JST">Mar 1, 2019</time></li>
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-    </div>
-  </div>
-</section>
-
-    <section class="sidebar">
-  <div>
-    <div class="articles sm">
-      <a href="https://px.a8.net/svt/ejp?a8mat=3599I4+9YEYYA+50+2HKG8X" target="_blank" rel="nofollow">
-        <img border="0" width="350" height="80" alt="" src="https://www25.a8.net/svt/bgt?aid=190228828602&wid=001&eno=01&mid=s00000000018015044000&mc=1"></a>
-        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3599I4+9YEYYA+50+2HKG8X" alt="">
-    </div>
-  </div>
-</section>
-
-  </div>
-
-</aside>
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3004453896477629",
-    enable_page_level_ads: true
-  });
-</script>
-
-  </div>
-</div>
-
-      </div>
-    </main>
-
-    <footer class="l-footer">
-      <div class="l-container">
-        <p><span class="h-logo">&copy; Note To Self ~One Step At A Time~</span></p>
-        <aside>
-          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
-          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
-        </aside>
-      </div>
-    </footer>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
->>>>>>> release 2019-04-26 12:05
