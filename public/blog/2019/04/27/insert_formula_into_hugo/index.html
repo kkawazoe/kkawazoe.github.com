@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~</title>
+    <title>Hugo に数式を挿入する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
+<meta name="description" content="Hugo に数式を挿入する 経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく手順 参考 と同じく Mathjax を使用して実現する partials フォルダ配下に以下のファイルを作成するCDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する[mathjax_support.html]&amp;lt;script type=&amp;quot;text/javascript&amp;quot; async src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; }, extensions: [&amp;quot;AMSmath.js&amp;quot;, &amp;quot;AMSsymbols.js&amp;quot;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.">
 
-<meta property="og:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Hugo に数式を挿入する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
+<meta property="og:description" content="Hugo に数式を挿入する 経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく手順 参考 と同じく Mathjax を使用して実現する partials フォルダ配下に以下のファイルを作成するCDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する[mathjax_support.html]&amp;lt;script type=&amp;quot;text/javascript&amp;quot; async src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; }, extensions: [&amp;quot;AMSmath.js&amp;quot;, &amp;quot;AMSsymbols.js&amp;quot;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-<meta name="twitter:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
+<meta name="twitter:title" content="Hugo に数式を挿入する - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Hugo に数式を挿入する 経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく手順 参考 と同じく Mathjax を使用して実現する partials フォルダ配下に以下のファイルを作成するCDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する[mathjax_support.html]&amp;lt;script type=&amp;quot;text/javascript&amp;quot; async src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; }, extensions: [&amp;quot;AMSmath.js&amp;quot;, &amp;quot;AMSsymbols.js&amp;quot;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~",
+    "headline": "Hugo に数式を挿入する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/logo/slack_logo.svg",
+      "url": "https://kkawazoe.github.io/images/logo/hugo_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-03-28T12:09:59JST",
-    "dateModified": "2019-03-28T12:09:59JST",
+    "datePublished": "2019-04-27T00:00:00JST",
+    "dateModified": "2019-04-27T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,11 +70,13 @@
         "height": 60
       }
     },
-    "description": "前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
- 「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正
-map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。"
+    "description": "Hugo に数式を挿入する 経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
+調査した結果を備忘録として残しておく
+手順 参考 と同じく Mathjax を使用して実現する
+ partials フォルダ配下に以下のファイルを作成する
+CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+[mathjax_support.html]
+&lt;script type=&quot;text/javascript&quot; async src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$']], processEscapes: true, processEnvironments: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'], TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; }, extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown."
   }
 </script>
 
@@ -147,24 +149,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
+  <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
 
   <header class="article-header">
-    <h1 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</h1>
+    <h1 class="title">Hugo に数式を挿入する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -173,76 +175,147 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="前回の残りtodo">前回の残りTODO</h1>
+<h1 id="hugo-に数式を挿入する">Hugo に数式を挿入する</h1>
 
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする</label></li>
-</ul>
+<h2 id="経緯">経緯</h2>
+
+<p>Hugo で運用しているサイトに数式を埋め込む必要があり<br />
+調査した結果を備忘録として残しておく</p>
 
 <h2 id="手順">手順</h2>
 
-<p><a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">前回</a>構築した API と Slack の処理の間に以下の処理を追加する</p>
+<p><a href="https://gohugo.io/content-management/formats/">参考</a> と同じく <a href="https://www.mathjax.org/">Mathjax</a> を使用して実現する</p>
 
 <ol>
-<li><p>「スパナ」アイコンを押下後「JSON」を選択して以下を指定</p>
+<li><p>partials フォルダ配下に以下のファイルを作成する</p>
 
-<ul>
-<li>「Parse JSON」
+<p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
 
-<ul>
-<li>「Data structure」
+<p>[mathjax_support.html]</p>
 
-<ul>
-<li>「Add data structure」
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; },
+           extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] }
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+&lt;/script&gt;
+</code></pre></li>
 
-<ul>
-<li>「Specification」
+<li><p>1 で作成した partial を head or footer で読込</p>
 
-<ul>
-<li>「Generate」を押下して API の戻り値を貼り付けて生成</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>「JSON string」
+<p>例 head で読込</p>
 
-<ul>
-<li>「Data」を指定</li>
-</ul></li>
-</ul></li>
-</ul></li>
+<pre><code class="language-html">&lt;head&gt;
+  ・・・
+  {{ partial &quot;mathjax_support.html&quot; . }}
+&lt;/head&gt;
+</code></pre></li>
 
-<li><p>「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定</p>
+<li><p>css を修正(カスタマイズする場合)</p>
 
-<ul>
-<li>「Array aggregator」
+<p>css ファイルで以下の要素に対する修飾を記述する</p>
 
-<ul>
-<li>「Source Module」
+<pre><code class="language-css">.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #515151;
+}
 
-<ul>
-<li>手順１ で作成したJSON</li>
-</ul></li>
-<li>「Target structure type」
-
-<ul>
-<li>「Custom」を指定</li>
-</ul></li>
-<li>「Aggregated fields」
-
-<ul>
-<li>必要な項目を指定</li>
-</ul></li>
-</ul></li>
-</ul></li>
-
-<li><p>前回作成した slack の Text を以下のように修正</p>
-
-<p>map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。<br />
-<em>※「\n」では改行しないため「newline」を使用する</em></p></li>
+.has-jax &gt; .MathJax_Display {
+  text-align: left !important;
+}
+</code></pre></li>
 </ol>
 
-<pre><code class="language-txt">:white_medium_square:{{nbsp}}{{join(map(33.array; &quot;content&quot;); newline&quot;:white_medium_square:&quot; + nbsp)}}
+<h2 id="チートシート">チートシート</h2>
+
+<h3 id="ページ内に数式を記述">ページ内に数式を記述</h3>
+
+<p>[記入例]</p>
+
+<pre><code class="language-math">  $${}_n \mathrm{ P }_k$$
 </code></pre>
+
+<p>[表示例]</p>
+
+<p>$${}_n \mathrm{ P }_k$$</p>
+
+<h3 id="インライン形式で数式を記述">インライン形式で数式を記述</h3>
+
+<p>[記入例]</p>
+
+<pre><code class="language-math">  ${}_n \mathrm{ P }_k$
+</code></pre>
+
+<p>[表示例]</p>
+
+<p>次の数式は ${}_n \mathrm{ P }_k$ 文章内に埋め込まれます</p>
+
+<h3 id="四則演算">四則演算</h3>
+
+<p>[記入例]</p>
+
+<pre><code class="language-math">  $$1 + 2 = 3$$
+  $$2 - 3 = 5$$
+  $$3 \times 2 = 6$$
+  $$6 \div 3 = 2$$
+</code></pre>
+
+<p>[表示例]</p>
+
+<p>$$1 + 2 = 3$$
+  $$2 - 3 = 5$$
+  $$3 \times 2 = 6$$
+  $$6 \div 3 = 2$$</p>
+
+<h3 id="分数">分数</h3>
+
+<p>[記入例]</p>
+
+<pre><code class="language-math">  $$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
+  $$\frac{a+b}{2ab}$$
+</code></pre>
+
+<p>[表示例]</p>
+
+<p>$$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
+  $$\frac{a+b}{2ab}$$</p>
+
+<h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
+
+<p>[記入例]</p>
+
+<pre><code class="language-math">  \begin{align}
+  f(x) &amp;= x^2+3x+2 \\\\\\
+  &amp;= (x+1)(x+2)
+  \end{align}
+</code></pre>
+
+<p>[表示例]</p>
+
+<p>\begin{align}
+  f(x) &amp;= x^2+3x+2 \\<br />
+  &amp;= (x+1)(x+2)
+  \end{align}</p>
 </div>
   
   <footer class="article-footer">
@@ -254,12 +327,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -271,7 +344,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</li>
+            <li class="active">Hugo に数式を挿入する</li>
           </ol>
         </nav>
       </div>
@@ -289,7 +362,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/tool/">Tool</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
           
         </ul>
       </div>
@@ -307,14 +380,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
+    <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</div>
+      <div class="title">FP3級への道 その5</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -325,27 +398,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-    <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-    <div class="inner">
-      <div class="title">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
