@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</loc>
+    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/</loc>
     <lastmod>2019-04-27T00:00:00+09:00</lastmod>
   </url>
@@ -210,13 +215,13 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-04-27T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-04-27T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -234,7 +239,7 @@
   
   <url>
     <loc>https://kkawazoe.github.io/tags/tool/</loc>
-    <lastmod>2019-04-27T00:00:00+09:00</lastmod>
+    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
