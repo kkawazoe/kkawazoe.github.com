@@ -8,7 +8,7 @@ if not "%diff%"=="" (
 )
 
 echo "************ Deleting old publication ************"
-rm -rf public
+rmdir /s /q public
 
 echo "************ Generating site ************"
 hugo
