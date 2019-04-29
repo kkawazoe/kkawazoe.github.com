@@ -6,10 +6,34 @@
     <description>Recent content in 資格 on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 14:08:19 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FP3級への道 その6</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/29/road-to-fp3-part6/</link>
+      <pubDate>Mon, 29 Apr 2019 14:08:19 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/29/road-to-fp3-part6/</guid>
+      <description>FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道
+ FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り  直接利回り
+投資金額(購入価格)に対する毎年の利息収入の割合
+$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
+例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1\%}{102円} \times 100 ≒ 0.98\% $$
+ 応募者利回り
+債権の発行時に購入し、償還まで所有した場合の利回り
+$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
+例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1\% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43\% $$
+ 最終利回り
+既に発行されている債権を時価で購入し、償還まで所有した場合の利回り
+$$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$</description>
+    </item>
     
     <item>
       <title>FP3級への道 その5</title>
