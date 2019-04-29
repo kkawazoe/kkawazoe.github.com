@@ -8,7 +8,7 @@ if not "%diff%"=="" (
 )
 
 echo "************ Deleting old publication ************"
-Remove-Item public -Force -Recurse
+rm -rf public
 
 echo "************ Generating site ************"
 hugo
