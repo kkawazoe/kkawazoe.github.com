@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000c7f400%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000a73900%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/bat/">
 
@@ -137,7 +137,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
       <div class="summary">Windows7 環境でバッチファイルから ini ファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
 取得する ini ファイルの中身 [sample.ini]
-&lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=C:\src\wk 'Work Folder Path  実際のコード [getProfileString.bat]
+&lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk 'Work Folder Path  実際のコード [getProfileString.bat]
 @echo off set iniFileName=sample.ini for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A echo &quot;%ret%&quot; pause exit  [getProfileString.vbs]
 Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting.</div>
     </div>
