@@ -78,7 +78,7 @@ slack の channel への通知を使用  google calendar  リマインダーが�
 Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。
 ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
 手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。
-「C:\Windows\System32\drivers\etc」に hosts ファイルがある。
+「C:/Windows/System32/drivers/etc」に hosts ファイルがある。
 そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる。
 Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。
 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
