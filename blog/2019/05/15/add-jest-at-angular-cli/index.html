@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>FP3級への道 その6 - Note To Self ~One Step At A Time~</title>
+    <title>Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り  直接利回り投資金額(購入価格)に対する毎年の利息収入の割合$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\%}{102円} \times 100 ≒ 0.98\% $$ 応募者利回り債権の発行時に購入し、償還まで所有した場合の利回り$$ 応募者利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\% &#43; \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43\% $$ 最終利回り既に発行されている債権を時価で購入し、償還まで所有した場合の利回り$$ 最終利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$">
+<meta name="description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
 
-<meta property="og:title" content="FP3級への道 その6 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/angular_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り  直接利回り投資金額(購入価格)に対する毎年の利息収入の割合$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\%}{102円} \times 100 ≒ 0.98\% $$ 応募者利回り債権の発行時に購入し、償還まで所有した場合の利回り$$ 応募者利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\% &#43; \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43\% $$ 最終利回り既に発行されている債権を時価で購入し、償還まで所有した場合の利回り$$ 最終利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$">
+<meta property="og:description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
-<meta name="twitter:title" content="FP3級への道 その6 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り  直接利回り投資金額(購入価格)に対する毎年の利息収入の割合$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\%}{102円} \times 100 ≒ 0.98\% $$ 応募者利回り債権の発行時に購入し、償還まで所有した場合の利回り$$ 応募者利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)$$ \frac{1\% &#43; \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43\% $$ 最終利回り既に発行されている債権を時価で購入し、償還まで所有した場合の利回り$$ 最終利回り(\%) = \frac{表面利率 &#43; \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
+<meta name="twitter:title" content="Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/angular_logo.svg">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "FP3級への道 その6 - Note To Self ~One Step At A Time~",
+    "headline": "Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/fp_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/angular_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-30T00:00:19JST",
-    "dateModified": "2019-04-30T00:00:19JST",
+    "datePublished": "2019-05-15T12:00:00JST",
+    "dateModified": "2019-05-15T12:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく\n[前回までの記事]\n FP3級への道\n FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り  直接利回り\n投資金額(購入価格)に対する毎年の利息収入の割合\n$$ 直接利回り(\\%) = \\frac{表面利率}{購入価格} \\times 100 $$\n例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)\n$$ \\frac{1\\%}{102円} \\times 100 ≒ 0.98\\% $$\n 応募者利回り\n債権の発行時に購入し、償還まで所有した場合の利回り\n$$ 応募者利回り(\\%) = \\frac{表面利率 \x2b \\frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \\times 100 $$\n例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)\n$$ \\frac{1\\% \x2b \\frac{100円 - 98円}{5年}}{98円} \\times 100 ≒ 1.43\\% $$\n 最終利回り\n既に発行されている債権を時価で購入し、償還まで所有した場合の利回り\n$$ 最終利回り(\\%) = \\frac{表面利率 \x2b \\frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \\times 100 $$"
+    "description": "Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma \x2b Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく\n構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit\/architect 0.13.9 @angular-devkit\/core 7.3.9 @angular-devkit\/schematics 7.3.9 @schematics\/angular 7.3.9 @schematics\/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug\/jest-schematic $ ng g @briebug\/jest-schematic:add $ ng add @briebug\/jest-schematic  3."
   }
 </script>
 
@@ -143,24 +143,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-ac16365a35e08a4f79796da25ad54f94"></div>
+  <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
 
   <header class="article-header">
-    <h1 class="title">FP3級への道 その6</h1>
+    <h1 class="title">Angular Cli で作成したプロジェクトに Jest を追加する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-30T00:00:19JST">Apr 30, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-05-15T12:00:00JST">May 15, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&title=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&text=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&t=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&title=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -169,73 +169,160 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="fp3級への道-その6">FP3級への道 その6</h1>
+<h1 id="angular-cli-で作成したプロジェクトに-jest-を追加する">Angular Cli で作成したプロジェクトに Jest を追加する</h1>
 
-<p>学習中に間違えやすいと思った点を備忘録として残しておく</p>
+<p>Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
+Jest に変更する手順を備忘録として残しておく</p>
 
-<p>[前回までの記事]</p>
+<h2 id="構築環境">構築環境</h2>
 
-<ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">FP3級への道</a><br /></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">FP3級への道 その2</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">FP3級への道 その3</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">FP3級への道 その4</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">FP3級への道 その5</a></li>
-</ul>
+<pre><code class="language-bash">Angular CLI: 7.3.9
+Node: 10.15.3
+OS: darwin x64
+Angular:
+...
 
-<h2 id="金融資産運用">金融資産運用</h2>
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.13.9
+@angular-devkit/core         7.3.9
+@angular-devkit/schematics   7.3.9
+@schematics/angular          7.3.9
+@schematics/update           0.13.9
+rxjs                         6.3.3
+typescript                   3.2.4
+</code></pre>
 
-<h3 id="債権">債権</h3>
+<h3 id="手順">手順</h3>
 
-<h4 id="債権の利回り">債権の利回り</h4>
+<h4 id="1-プロジェクトを作成">1. プロジェクトを作成</h4>
 
-<ol>
-<li><p>直接利回り</p>
+<pre><code class="language-bash">$ ng new JEST-EXAMPLE --style=styl
+? Would you like to add Angular routing? Yes
+</code></pre>
 
-<p>投資金額(購入価格)に対する毎年の利息収入の割合</p>
+<h4 id="2-以下のコマンドを実行する">2. 以下のコマンドを実行する</h4>
 
-<p>$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$</p>
+<pre><code class="language-bash">$ yarn global add @briebug/jest-schematic
+$ ng g @briebug/jest-schematic:add
+$ ng add @briebug/jest-schematic
+</code></pre>
 
-<p>例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)</p>
+<h4 id="3-以下のコマンドを実行して動作確認する">3. 以下のコマンドを実行して動作確認する</h4>
 
-<p>$$ \frac{1\%}{102円} \times 100 ≒ 0.98\% $$</p></li>
+<pre><code class="language-bash">$ yarn test
+$ jest
+PASS  src/app/app.component.spec.ts
+AppComponent
+    ✓ should create the app (89ms)
+    ✓ should have as title 'JEST-EXAMPLE' (28ms)
+    ✓ should render title in a h1 tag (29ms)
 
-<li><p>応募者利回り</p>
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        3.913s
+Ran all test suites.
+✨  Done in 4.76s.
+</code></pre>
 
-<p>債権の発行時に購入し、償還まで所有した場合の利回り</p>
+<p>上記だけでも動くが snapshot テストを行うためには以下が追加で必要</p>
 
-<p>$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$</p>
+<h4 id="4-src-app-app-component-spec-ts-を修正">4. src/app/app.component.spec.ts を修正</h4>
 
-<p>例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)</p>
+<pre><code class="language-ts">import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
 
-<p>$$ \frac{1\% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43\% $$</p></li>
+describe('AppComponent', () =&gt; {
+  beforeEach(async(() =&gt; {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent,
+      ],
+    }).compileComponents();
+  }));
 
-<li><p>最終利回り</p>
+  describe('snapshots', () =&gt; {
+    it('正しく render されること', () =&gt; {
+      const fixture = TestBed.createComponent(AppComponent);
+      expect(fixture).toMatchSnapshot();
+    });
+  });
+});
+</code></pre>
 
-<p>既に発行されている債権を時価で購入し、償還まで所有した場合の利回り</p>
+<h4 id="5-src-tsconfig-spec-json-を修正">5. src/tsconfig.spec.json を修正</h4>
 
-<p>$$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$</p>
+<pre><code class="language-json">{
+  &quot;extends&quot;: &quot;../tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;../out-tsc spec&quot;,
+    &quot;types&quot;: [
+      &quot;jasmine&quot;, //=&gt; &quot;jest&quot;
+      &quot;node&quot;
+    ],
+    &quot;module&quot;: &quot;commonjs&quot;
+  },
+  &quot;files&quot;: [
+    &quot;polyfills.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;**/*.spec.ts&quot;,
+    &quot;**/*.d.ts&quot;
+  ]
+}
+</code></pre>
 
-<p>例えば、表面利率1%、償還期限5年、発行価格99円の債権を残存年数3年の時点で99円を購入した場合(小数点以下第3位を四捨五入)</p>
+<h4 id="6-src-angular-json-から以下を削除">6. src/angular.json から以下を削除</h4>
 
-<p>$$ \frac{1\% + \frac{100円 - 99円}{3年}}{99円} \times 100 ≒ 1.35\% $$</p></li>
+<pre><code class="language-json">{
+  ・・・
+  &quot;test&quot;: {
+    &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+    &quot;options&quot;: {
+      &quot;main&quot;: &quot;src/test.ts&quot;,
+      &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+      &quot;tsConfig&quot;: &quot;src/tsconfig.spec.json&quot;,
+      &quot;karmaConfig&quot;: &quot;src/karma.conf.js&quot;,
+      &quot;styles&quot;: [
+        &quot;src/styles.styl&quot;
+      ],
+      &quot;scripts&quot;: [],
+      &quot;assets&quot;: [
+        &quot;src/favicon.ico&quot;,
+        &quot;src/assets&quot;
+      ]
+    }
+  },
+  ・・・
+}
+</code></pre>
 
-<li><p>所有期間利回り</p>
+<h4 id="7-以下のコマンドを実行する">7. 以下のコマンドを実行する</h4>
 
-<p>新規発行の債権または既発行の債権を購入し、償還前に売却した場合の利回り</p>
+<pre><code class="language-bash">$ yarn remove @types/jasmine @types/jasminewd2
+$ yarn add @types/jest
+</code></pre>
 
-<p>$$ 所有期間利回り(\%) = \frac{表面利率 + \frac{売却価格 - 購入価格}{所有期間(年)}}{購入価格} \times 100 $$</p>
+<h4 id="8-以下のコマンドを実行して動作確認する">8. 以下のコマンドを実行して動作確認する</h4>
 
-<p>例えば、表面利率1%、償還期限5年、発行価格98円の債権を発行時に購入し、4年後に103円で売却した場合(小数点以下第3位を四捨五入)</p>
+<pre><code class="language-bash">$ jest
+PASS  src/app/app.component.spec.ts
+AppComponent
+    snapshots
+    ✓ 正しく render されること (109ms)
 
-<p>$$ \frac{1\% + \frac{103円 - 98円}{4年}}{98円} \times 100 ≒ 2.30\% $$</p></li>
-</ol>
-
-<h3 id="参考にした教本">参考にした教本</h3>
-
-<p>上記内容は以下の教本の内容を参考にしてます</p>
-
-<table  border="0" cellpadding="5" style="border:none"><tr><td valign="top" style="border:none;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" ><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5855/9784813275855.jpg?_ex=200x200" border="0" style="margin-right:10px" /></a></td><td valign="top" style="border:none;text-align:left"><font size="-1"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >2018-2019年版　みんなが欲しかった！　FPの教科書3級</a><br /><br />        滝澤ななみ TAC 2018年05月22日<br />        売り上げランキング : <br /><table style="border:none"><tr><td style="border:none;text-align:left;"><div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >楽天ブックスで購入</a></div><div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://www.amazon.co.jp/exec/obidos/asin/4813275850/kkawazoe-22/" target="_blank" rel="nofollow" >Amazonで購入</a></div>                                                                                                                               </td><td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none">by <a href="https://yomereba.com" rel="nofollow" target="_blank">ヨメレバ</a></td></tr></table></font></td></tr></table>
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   1 passed, 1 total
+Time:        1.711s, estimated 3s
+Ran all test suites.
+✨  Done in 2.43s.
+</code></pre>
 </div>
   
   <footer class="article-footer">
@@ -247,12 +334,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae6 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f30%2froad-to-fp3-part6%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&title=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&text=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&t=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f&title=Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Angular%20Cli%20%e3%81%a7%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ab%20Jest%20%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f15%2fadd-jest-at-angular-cli%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -264,7 +351,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">FP3級への道 その6</li>
+            <li class="active">Angular Cli で作成したプロジェクトに Jest を追加する</li>
           </ol>
         </nav>
       </div>
@@ -282,7 +369,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/">資格</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/angular/">Angular</a></li>
           
         </ul>
       </div>
@@ -300,14 +387,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/">
-    <div class="thumb thumb-fa0c8854dce4201ca020ba9d24fce43b"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
+    <div class="thumb thumb-ac16365a35e08a4f79796da25ad54f94"></div>
 
     <div class="inner">
-      <div class="title">Excel でテスト用シートを自動生成するツールを作成する</div>
+      <div class="title">FP3級への道 その6</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-28T00:00:00JST">Apr 28, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-30T00:00:19JST">Apr 30, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -318,27 +405,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
-    <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
-
-    <div class="inner">
-      <div class="title">Angular Cli で作成したプロジェクトに Jest を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-05-15T12:00:00JST">May 15, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
