@@ -84,7 +84,9 @@ Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc
 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
 IEの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録  Edgeの場合  サーバの起動の際に以下のコマンドで行う  bundle exec rails s -b 0.</description>
+bundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録
+  Edgeの場合  サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録</description>
     </item>
     
     <item>

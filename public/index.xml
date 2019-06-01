@@ -149,7 +149,8 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <description> Access でパラメータクエリが未入力の場合は全検索する方法 実際のコード  パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合  パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
+[パラメータ] Or [パラメータ] Is Null  パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
 [抽出対象フィールド] Or Is Null  ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
   </description>
@@ -212,10 +213,13 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</guid>
       <description>Git コマンドについて 基本的なコマンドを含めて備忘録として残しておく
 実際のコード 基本的な流れ  Git初期化
-$ git init   Git接続先設定  $ git remote add {Fork 元リモート名} {Fork 元接続先URL} $ git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
-$ git pull {Fork 元リモート名} {ブランチ名}   トピックブランチ作成  $ git checkout -b topic/#{issue番号}-作業者名  開発
+$ git init  Git接続先設定
+$ git remote add {Fork 元リモート名} {Fork 元接続先URL} $ git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
+$ git pull {Fork 元リモート名} {ブランチ名}  トピックブランチ作成
+$ git checkout -b topic/#{issue番号}-作業者名  開発
  ステージングにあげる
-$ git add -A   コミットする  $ git commit -m &amp;quot;コメント&amp;quot;  プルリクエストを投げる
+$ git add -A  コミットする
+$ git commit -m &amp;quot;コメント&amp;quot;  プルリクエストを投げる
 $ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合はgit addから先を繰り返し</description>
     </item>
     
@@ -227,7 +231,8 @@ $ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合
       <guid>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</guid>
       <description> Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
-a.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;   RailsHelper での a タグ  Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+a.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグ
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   </description>
     </item>
     
@@ -239,8 +244,11 @@ a.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchSt
       <guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid>
       <description>Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)  &amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する  4-1. バックグラウンドでssh-agentを起動</description>
+$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動
+$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.</description>
     </item>
     
     <item>
@@ -295,7 +303,8 @@ github
 苦労したためその際の手順およびハマった点等を備忘録として残しておく
 構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-$ ruby dk.rb init $ ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する  $ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
 $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</description>
     </item>
     
@@ -357,7 +366,9 @@ Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc
 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
 IEの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録  Edgeの場合  サーバの起動の際に以下のコマンドで行う  bundle exec rails s -b 0.</description>
+bundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録
+  Edgeの場合  サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録</description>
     </item>
     
     <item>
