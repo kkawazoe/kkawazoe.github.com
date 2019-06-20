@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on Note To Self ~One Step At A Time~</title>
+    <title>git on Note To Self ~One Step At A Time~</title>
     <link>https://kkawazoe.github.io/tags/git/</link>
-    <description>Recent content in Git on Note To Self ~One Step At A Time~</description>
+    <description>Recent content in git on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 18 Apr 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>github で access token を使用してリポジトリを clone する</title>
+      <link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link>
+      <pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid>
+      <description> github で access token を使用してリポジトリを clone する 経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
+手順 1. アクセストークンを作成する  GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokensを選択する
+ Generate new token を押下する
+  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名}  3. ローカルの設定を追加する $ git config --local user.name {アカウント名} $ git config --local user.email {アカウントのメールアドレス}  </description>
+    </item>
     
     <item>
       <title>Git コマンドについて</title>
@@ -19,13 +31,10 @@
       <guid>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</guid>
       <description>Git コマンドについて 基本的なコマンドを含めて備忘録として残しておく
 実際のコード 基本的な流れ  Git初期化
-$ git init  Git接続先設定
-$ git remote add {Fork 元リモート名} {Fork 元接続先URL} $ git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
-$ git pull {Fork 元リモート名} {ブランチ名}  トピックブランチ作成
-$ git checkout -b topic/#{issue番号}-作業者名  開発
+$ git init   Git接続先設定  $ git remote add {Fork 元リモート名} {Fork 元接続先URL} $ git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
+$ git pull {Fork 元リモート名} {ブランチ名}   トピックブランチ作成  $ git checkout -b topic/#{issue番号}-作業者名  開発
  ステージングにあげる
-$ git add -A  コミットする
-$ git commit -m &amp;quot;コメント&amp;quot;  プルリクエストを投げる
+$ git add -A   コミットする  $ git commit -m &amp;quot;コメント&amp;quot;  プルリクエストを投げる
 $ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合はgit addから先を繰り返し</description>
     </item>
     
@@ -37,11 +46,8 @@ $ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合
       <guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid>
       <description>Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.</description>
+$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)  &amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する  4-1. バックグラウンドでssh-agentを起動</description>
     </item>
     
   </channel>
