@@ -3,49 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
-    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/git/</loc>
-    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</loc>
     <lastmod>2019-06-20T12:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/electron/</loc>
-    <lastmod>2019-05-24T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</loc>
     <lastmod>2019-05-24T12:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/angular/</loc>
-    <lastmod>2019-05-15T12:00:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -59,20 +23,8 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
-    <lastmod>2019-04-30T00:00:19+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</loc>
     <lastmod>2019-04-28T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
-    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -101,12 +53,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/access/</loc>
-    <lastmod>2019-04-23T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</loc>
     <lastmod>2019-04-22T00:00:00+09:00</lastmod>
   </url>
@@ -119,18 +65,6 @@
   <url>
     <loc>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</loc>
     <lastmod>2019-04-18T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/vue.js/</loc>
-    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -174,12 +108,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/bat/</loc>
-    <lastmod>2019-03-23T00:07:49+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/</loc>
     <lastmod>2019-03-23T00:07:49+09:00</lastmod>
   </url>
@@ -190,12 +118,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82/</loc>
-    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/14/health-insurance-credit-limit-authorization/</loc>
     <lastmod>2019-03-14T13:54:31+09:00</lastmod>
   </url>
@@ -203,12 +125,6 @@
   <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</loc>
     <lastmod>2019-03-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/cofeescript/</loc>
-    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -227,18 +143,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/html/</loc>
-    <lastmod>2019-03-06T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/vb.net/</loc>
-    <lastmod>2019-03-04T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/</loc>
     <lastmod>2019-03-04T00:00:00+09:00</lastmod>
   </url>
@@ -254,12 +158,6 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/tags/%E6%A0%AA/</loc>
-    <lastmod>2019-03-01T09:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</loc>
     <lastmod>2019-02-28T12:00:00+09:00</lastmod>
   </url>
@@ -267,12 +165,6 @@
   <url>
     <loc>https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/</loc>
     <lastmod>2019-02-26T17:29:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/mysql/</loc>
-    <lastmod>2019-02-25T16:50:14+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -301,7 +193,115 @@
   </url>
   
   <url>
+    <loc>https://kkawazoe.github.io/tags/access/</loc>
+    <lastmod>2019-04-23T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/angular/</loc>
+    <lastmod>2019-05-15T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/bat/</loc>
+    <lastmod>2019-03-23T00:07:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/cofeescript/</loc>
+    <lastmod>2019-03-08T17:21:18+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/electron/</loc>
+    <lastmod>2019-05-24T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/git/</loc>
+    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/html/</loc>
+    <lastmod>2019-03-06T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/mysql/</loc>
+    <lastmod>2019-02-25T16:50:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/</loc>
+    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/post/</loc>
+    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2019-04-23T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
+    <lastmod>2019-04-28T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/vb.net/</loc>
+    <lastmod>2019-03-04T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/vue.js/</loc>
+    <lastmod>2019-04-17T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82/</loc>
+    <lastmod>2019-03-14T13:54:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/%E6%A0%AA/</loc>
+    <lastmod>2019-03-01T09:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
+    <lastmod>2019-04-30T00:00:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
