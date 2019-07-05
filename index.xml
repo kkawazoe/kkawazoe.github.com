@@ -6,10 +6,25 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FP3級への道 その7</title>
+      <link>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</link>
+      <pubDate>Sat, 06 Jul 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</guid>
+      <description>FP3級への道 その6 学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道
+ FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6   受験結果 2019年5月 一応　FP 3級合格
+勉強時間は一月半程度
+後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
+2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい</description>
+    </item>
     
     <item>
       <title>github で access token を使用してリポジトリを clone する</title>
