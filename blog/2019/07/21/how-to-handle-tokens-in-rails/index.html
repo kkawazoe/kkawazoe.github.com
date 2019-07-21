@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~</title>
+    <title>Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
+<meta name="description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
 
-<meta property="og:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
+<meta property="og:description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-<meta name="twitter:title" content="Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する 「スパナ」アイコンを押下後「JSON」を選択して以下を指定 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
+<meta name="twitter:title" content="Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Slack &#43; Todoist &#43; Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~",
+    "headline": "Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/logo/slack_logo.svg",
+      "url": "https://kkawazoe.github.io/images/logo/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-03-28T12:09:59JST",
-    "dateModified": "2019-03-28T12:09:59JST",
+    "datePublished": "2019-07-21T18:12:58JST",
+    "dateModified": "2019-07-21T18:12:58JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,11 +70,11 @@
         "height": 60
       }
     },
-    "description": "前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
- 「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正
-map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。"
+    "description": "Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+以下が対象
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する
+以下が対象
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;."
   }
 </script>
 
@@ -147,24 +147,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
+  <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
 
   <header class="article-header">
-    <h1 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</h1>
+    <h1 class="title">Rails でトークンを扱う方法</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-07-21T18:12:58JST">Jul 21, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&title=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&text=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&t=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&title=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -173,75 +173,60 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="前回の残りtodo">前回の残りTODO</h1>
+<h1 id="rails-でトークンを扱う方法">Rails でトークンを扱う方法</h1>
 
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする</label></li>
+<h2 id="環境">環境</h2>
+
+<ul>
+<li>rails: rails 5.2.3</li>
 </ul>
 
-<h2 id="手順">手順</h2>
+<h2 id="方法">方法</h2>
 
-<p><a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">前回</a>構築した API と Slack の処理の間に以下の処理を追加する</p>
+<h3 id="トークンの認証">トークンの認証</h3>
 
-<ol>
-<li><p>「スパナ」アイコンを押下後「JSON」を選択して以下を指定</p>
+<p>トークンの認証については <a href="https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token/ControllerMethods.html">authenticate_with_http_token</a> を使用する</p>
 
-<ul>
-<li>「Parse JSON」
+<p>以下が対象</p>
 
 <ul>
-<li>「Data structure」
+<li>Authorization: Token XXX</li>
+<li>Authorization: Bearer XXX</li>
+</ul>
+
+<pre><code class="language-rb">class ApplicationController &lt; ActionController::API
+  # authenticate_with_http_token を使用するために必要
+  include ActionController::HttpAuthentication::Token::ControllerMethods
+
+  before_action :authenticate
+
+  def authenticate
+    authenticate_with_http_token  do |token, options|
+      # 認証処理 および レスポンスが必要な場合は記述
+    end
+  end
+end
+</code></pre>
+
+<h3 id="トークンの取得">トークンの取得</h3>
+
+<p>トークンの取得については <a href="https://apidock.com/rails/v5.2.3/ActionController/HttpAuthentication/Token/token_and_options">token_and_options</a> を使用する</p>
+
+<p>以下が対象</p>
 
 <ul>
-<li>「Add data structure」
+<li>Authorization: Token XXX</li>
+<li>Authorization: Bearer XXX</li>
+</ul>
 
-<ul>
-<li>「Specification」
+<pre><code class="language-rb">class ApplicationController &lt; ActionController::API
+  # token_and_options を使用するために必要
+  include ActionController::HttpAuthentication::Token
 
-<ul>
-<li>「Generate」を押下して API の戻り値を貼り付けて生成</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>「JSON string」
-
-<ul>
-<li>「Data」を指定</li>
-</ul></li>
-</ul></li>
-</ul></li>
-
-<li><p>「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定</p>
-
-<ul>
-<li>「Array aggregator」
-
-<ul>
-<li>「Source Module」
-
-<ul>
-<li>手順１ で作成したJSON</li>
-</ul></li>
-<li>「Target structure type」
-
-<ul>
-<li>「Custom」を指定</li>
-</ul></li>
-<li>「Aggregated fields」
-
-<ul>
-<li>必要な項目を指定</li>
-</ul></li>
-</ul></li>
-</ul></li>
-
-<li><p>前回作成した slack の Text を以下のように修正</p>
-
-<p>map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。<br />
-<em>※「\n」では改行しないため「newline」を使用する</em></p></li>
-</ol>
-
-<pre><code class="language-txt">:white_medium_square:{{nbsp}}{{join(map(33.array; &quot;content&quot;); newline&quot;:white_medium_square:&quot; + nbsp)}}
+  def access_token
+    token_and_options(request)&amp;.first
+  end
+end
 </code></pre>
 </div>
   
@@ -254,12 +239,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&text=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&t=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f&title=Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Slack%20%2b%20Todoist%20%2b%20Integromat%20%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%20%e3%81%9d%e3%81%ae%ef%bc%92 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f28%2fmanage-task-with-slack-and-todoist-and-integromat-2%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&title=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&text=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&t=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f&title=Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%a7%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e6%89%b1%e3%81%86%e6%96%b9%e6%b3%95 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f21%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -271,7 +256,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</li>
+            <li class="active">Rails でトークンを扱う方法</li>
           </ol>
         </nav>
       </div>
@@ -289,7 +274,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/tool/">Tool</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
           
         </ul>
       </div>
@@ -307,14 +292,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/">
+    <div class="thumb thumb-1b0d5d48e442a702a1feb877522791e5"></div>
 
     <div class="inner">
-      <div class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</div>
+      <div class="title">FP3級への道 その7</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-07-06T00:00:00JST">Jul 6, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -325,27 +310,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-    <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-    <div class="inner">
-      <div class="title">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
