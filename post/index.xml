@@ -18,7 +18,7 @@
       
       <guid>https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/</guid>
       <description> RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
-I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:hello) #=&amp;gt; テスト  </description>
+I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  </description>
     </item>
     
     <item>
