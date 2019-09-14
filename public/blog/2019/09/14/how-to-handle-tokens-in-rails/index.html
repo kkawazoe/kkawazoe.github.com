@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Hugo に数式を挿入する - Note To Self ~One Step At A Time~</title>
+    <title>RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Hugo に数式を挿入する  経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく">
+<meta name="description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:hello) #=&amp;gt; テスト  ">
 
-<meta property="og:title" content="Hugo に数式を挿入する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Hugo に数式を挿入する  経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく">
+<meta property="og:description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:hello) #=&amp;gt; テスト  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/">
-<meta name="twitter:title" content="Hugo に数式を挿入する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Hugo に数式を挿入する  経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+<meta name="twitter:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:hello) #=&amp;gt; テスト  ">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Hugo に数式を挿入する - Note To Self ~One Step At A Time~",
+    "headline": "RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/hugo_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-27T00:00:00JST",
-    "dateModified": "2019-04-27T00:00:00JST",
+    "datePublished": "2019-09-14T09:56:37JST",
+    "dateModified": "2019-09-14T09:56:37JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "Hugo に数式を挿入する  経緯 Hugo で運用しているサイトに数式を埋め込む必要があり調査した結果を備忘録として残しておく"
+    "description": " RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する\nI18n.backend.store_translations( :ja, test: \x27テスト\x27 ) I18n.t(:hello) #=\x26gt; テスト  "
   }
 </script>
 
@@ -143,24 +143,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
+  <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
 
   <header class="article-header">
-    <h1 class="title">Hugo に数式を挿入する</h1>
+    <h1 class="title">RSpec 内で動的に I18n の訳文を追加する</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-09-14T09:56:37JST">Sep 14, 2019</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -169,147 +169,26 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="hugo-に数式を挿入する">Hugo に数式を挿入する</h1>
+<h1 id="rspec-内で動的に-i18n-の訳文を追加する">RSpec 内で動的に I18n の訳文を追加する</h1>
 
-<h2 id="経緯">経緯</h2>
+<h2 id="環境">環境</h2>
 
-<p>Hugo で運用しているサイトに数式を埋め込む必要があり<br />
-調査した結果を備忘録として残しておく</p>
+<ul>
+<li>rails: rails 5.2.3</li>
+</ul>
 
-<h2 id="手順">手順</h2>
+<h2 id="方法">方法</h2>
 
-<p><a href="https://gohugo.io/content-management/formats/">参考</a> と同じく <a href="https://www.mathjax.org/">Mathjax</a> を使用して実現する</p>
+<p><a href="https://www.rubydoc.info/github/svenfuchs/i18n/I18n/Backend/Base:store_translations">I18n::Backend::Base#store_translations</a> を使用する</p>
 
-<ol>
-<li><p>partials フォルダ配下に以下のファイルを作成する</p>
+<pre><code class="language-rb">I18n.backend.store_translations(
+  :ja,
+  test: 'テスト'
+)
 
-<p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
-
-<p>[mathjax_support.html]</p>
-
-<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot; async
-  src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; },
-           extensions: [&quot;AMSmath.js&quot;, &quot;AMSsymbols.js&quot;] }
-    }
-  });
-  MathJax.Hub.Queue(function() {
-    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i &lt; all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-&lt;/script&gt;
-</code></pre></li>
-
-<li><p>1 で作成した partial を head or footer で読込</p>
-
-<p>例 head で読込</p>
-
-<pre><code class="language-html">&lt;head&gt;
-  ・・・
-  {{ partial &quot;mathjax_support.html&quot; . }}
-&lt;/head&gt;
-</code></pre></li>
-
-<li><p>css を修正(カスタマイズする場合)</p>
-
-<p>css ファイルで以下の要素に対する修飾を記述する</p>
-
-<pre><code class="language-css">.has-jax {
-  font: inherit;
-  font-size: 100%;
-  background: inherit;
-  border: inherit;
-  color: #515151;
-}
-
-.has-jax &gt; .MathJax_Display {
-  text-align: left !important;
-}
-</code></pre></li>
-</ol>
-
-<h2 id="チートシート">チートシート</h2>
-
-<h3 id="ページ内に数式を記述">ページ内に数式を記述</h3>
-
-<p>[記入例]</p>
-
-<pre><code class="language-math">  $${}_n \mathrm{ P }_k$$
+I18n.t(:hello)
+#=&gt; テスト
 </code></pre>
-
-<p>[表示例]</p>
-
-<p>$${}_n \mathrm{ P }_k$$</p>
-
-<h3 id="インライン形式で数式を記述">インライン形式で数式を記述</h3>
-
-<p>[記入例]</p>
-
-<pre><code class="language-math">  ${}_n \mathrm{ P }_k$
-</code></pre>
-
-<p>[表示例]</p>
-
-<p>次の数式は ${}_n \mathrm{ P }_k$ 文章内に埋め込まれます</p>
-
-<h3 id="四則演算">四則演算</h3>
-
-<p>[記入例]</p>
-
-<pre><code class="language-math">  $$1 + 2 = 3$$
-  $$2 - 3 = 5$$
-  $$3 \times 2 = 6$$
-  $$6 \div 3 = 2$$
-</code></pre>
-
-<p>[表示例]</p>
-
-<p>$$1 + 2 = 3$$
-  $$2 - 3 = 5$$
-  $$3 \times 2 = 6$$
-  $$6 \div 3 = 2$$</p>
-
-<h3 id="分数">分数</h3>
-
-<p>[記入例]</p>
-
-<pre><code class="language-math">  $$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
-  $$\frac{a+b}{2ab}$$
-</code></pre>
-
-<p>[表示例]</p>
-
-<p>$$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
-  $$\frac{a+b}{2ab}$$</p>
-
-<h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
-
-<p>[記入例]</p>
-
-<pre><code class="language-math">  \begin{align}
-  f(x) &amp;= x^2+3x+2 \\\\\\
-  &amp;= (x+1)(x+2)
-  \end{align}
-</code></pre>
-
-<p>[表示例]</p>
-
-<p>\begin{align}
-  f(x) &amp;= x^2+3x+2 \\<br />
-  &amp;= (x+1)(x+2)
-  \end{align}</p>
 </div>
   
   <footer class="article-footer">
@@ -321,12 +200,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f27%2finsert_formula_into_hugo%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -338,7 +217,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Hugo に数式を挿入する</li>
+            <li class="active">RSpec 内で動的に I18n の訳文を追加する</li>
           </ol>
         </nav>
       </div>
@@ -356,7 +235,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
           
         </ul>
       </div>
@@ -374,14 +253,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
-    <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
+    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
 
     <div class="inner">
-      <div class="title">FP3級への道 その5</div>
+      <div class="title">Rails でトークンを扱う方法</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-07-21T18:12:58JST">Jul 21, 2019</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -392,27 +271,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/">
-    <div class="thumb thumb-fa0c8854dce4201ca020ba9d24fce43b"></div>
-
-    <div class="inner">
-      <div class="title">Excel でテスト用シートを自動生成するツールを作成する</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-28T00:00:00JST">Apr 28, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
