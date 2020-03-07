@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/</loc>
+    <lastmod>2020-03-07T09:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/</loc>
     <lastmod>2019-09-14T09:56:37+09:00</lastmod>
   </url>
@@ -262,13 +267,13 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2019-09-14T09:56:37+09:00</lastmod>
+    <lastmod>2020-03-07T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2019-09-14T09:56:37+09:00</lastmod>
+    <lastmod>2020-03-07T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -309,12 +314,8 @@
   </url>
   
   <url>
-    <loc>https://kkawazoe.github.io/blog/1/01/01/tried-tax-returns-part2/</loc>
-  </url>
-  
-  <url>
     <loc>https://kkawazoe.github.io/tags/%E6%A0%AA/</loc>
-    <lastmod>2019-03-01T09:00:00+09:00</lastmod>
+    <lastmod>2020-03-07T09:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
