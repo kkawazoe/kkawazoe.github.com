@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc001274000%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000e86a00%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/post/">
 
@@ -97,258 +97,25 @@ if (!doNotTrack) {
         
         
         <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
-    <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
+  <a href="https://kkawazoe.github.io/blog/1/01/01/tried-tax-returns-part2/">
+    <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
 
     <div class="inner">
-      <h2 class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</h2>
+      <h2 class="title">普通の会社員(SE)が確定申告してみた その2</h2>
 
       <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="0001-01-01T00:00:00JST">Jan 1, 0001</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
 
-      <div class="summary"> Gretel について パンくずリストを表示する Gem
-github
-実際のコード [config/breadcrumbs.rb]
-# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&quot;表示したい画像&quot;) : &quot;&quot; link icon + {表示文字}, {URL} parent :parent_articles, article.category end  </div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-    <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-    <div class="inner">
-      <h2 class="title">Windows10 に Ruby1.8.7 &#43; Rails2.3.18 を構築する</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
-苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-    <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
-
-    <div class="inner">
-      <h2 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その２</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
- 「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正
-map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
-
-    <div class="inner">
-      <h2 class="title">Slack &#43; Todoist &#43; Integromat でタスク管理 その１</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理
-シンプルで管理しやすい todoist を使用 リマインダー機能
-slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-    <div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
-
-    <div class="inner">
-      <h2 class="title">バッチファイルでタイムスタンプを付与する</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-23T00:07:49JST">Mar 23, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE%  =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&gt; 20190323000749</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
-    <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
-
-    <div class="inner">
-      <h2 class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-19T23:35:30JST">Mar 19, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。
-そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。
-Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。
-ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
-手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。
-「C:/Windows/System32/drivers/etc」に hosts ファイルがある。
-そのファイルを右クリック&gt;Properties&gt;Security&gt;Editボタンで、 Users の権限に全部チェックを入れる。
-Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。
-※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
-Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/14/health-insurance-credit-limit-authorization/">
-    <div class="thumb thumb-2901bf721fa3d51df3fd4fe519615afa"></div>
-
-    <div class="inner">
-      <h2 class="title">限度額適用認定証について</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-14T13:54:31JST">Mar 14, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
-できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
-高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
- 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
-しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
-「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
-※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
-※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
- =&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
-自分の場合請求から発行までおよそ2週間程度かかった。
-1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
-※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">
-    <div class="thumb thumb-39ef9e30c5390d01c651eeb9a897f721"></div>
-
-    <div class="inner">
-      <h2 class="title">FP3級への道</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-11T00:00:00JST">Mar 11, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary"> FP3級への道 ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。
-上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目  学科  FP協会・金融財政事情研究会で共通  実技  FP協会  資産設計提案業務  金融財政事情研究会
-難易度的には「資産設計提案業務」が初心者には易しいらしい  個人資産相談業務 ※今回受験 保険顧客資産相談業務    使用する教材 今回使用する教材は以下
-2018-2019年版　みんなが欲しかった！　FPの教科書3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。
-必要があれば追加で購入する。
-とりあえず、5月の受験を目指す。
-2019/03/26 追記 試験用の電卓を購入
-CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入
-※教本だけだと習熟度がわからないため
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/">
-    <div class="thumb thumb-27703da049b375c9d1edda7674dab688"></div>
-
-    <div class="inner">
-      <h2 class="title">CofeeScript で JQuery の each を使用する場合の注意点</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-08T17:21:18JST">Mar 8, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary"> CoffeeScript で JQuery の each を使用する場合の注意点 JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
-その場合は以下のように修正する
-実際のソース  修正前  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each -&gt; id = $(this).attr(&quot;id&quot;) @processRow id   修正後  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each (index, element) =&gt; id = $(element).attr(&quot;id&quot;) @processRow id  </div>
-    </div>
-  </a>
-</article>
-</div>
-        
-        <div class="mcol c6"><article class="li">
-  <a href="https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/">
-    <div class="thumb thumb-95d351547a98871ee844c9037d287c88"></div>
-
-    <div class="inner">
-      <h2 class="title">Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</h2>
-
-      <ul class="facts">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-07T18:00:00JST">Mar 7, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-      <div class="summary">Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する方法 経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
-created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
-例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.</div>
+      <div class="summary">普通の会社員(SE)が確定申告してみた [前回までの記事]
+ 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
+今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
+スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
+手順 e-tax 確定申告書等作成コーナーで作成する
+ 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力   「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記  「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下  住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので</div>
     </div>
   </a>
 </article>
@@ -360,11 +127,9 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
     
 <nav class="paging">
   
-  <a href="/post/page/2/" rel="prev">Prev</a>
+  <a href="/post/page/4/" rel="prev">Prev</a>
   
 
-  
-  <a href="/post/page/4/" rel="next">Next</a>
   
 </nav>
 
