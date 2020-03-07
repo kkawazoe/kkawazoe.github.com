@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 14 Sep 2019 09:56:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 09:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>普通の会社員(SE)が確定申告してみた その2</title>
+      <link>https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/</link>
+      <pubDate>Sat, 07 Mar 2020 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/</guid>
+      <description>普通の会社員(SE)が確定申告してみた [前回までの記事]
+ 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
+今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
+スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
+手順 e-tax 確定申告書等作成コーナーで作成する
+ 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力   「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記  「住民税等入力」  「入力終了(次へ) &amp;gt;」ボタンを押下  住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので</description>
+    </item>
     
     <item>
       <title>RSpec 内で動的に I18n の訳文を追加する</title>
@@ -619,21 +634,6 @@ Option Explicit rem /***********************************************************
 実際のコード [DispMsgBox.bat]
 @echo off rem メッセージボックスの表示 set msg=&amp;quot;メッセージボックスのテスト [\n] で改行します。&amp;quot; set title=&amp;quot;メッセージボックステスト&amp;quot; for /f &amp;quot;usebackq tokens=* delims=&amp;quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;quot;%title%&amp;quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]
 Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
-    </item>
-    
-    <item>
-      <title>普通の会社員(SE)が確定申告してみた その2</title>
-      <link>https://kkawazoe.github.io/blog/1/01/01/tried-tax-returns-part2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/1/01/01/tried-tax-returns-part2/</guid>
-      <description>普通の会社員(SE)が確定申告してみた [前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択  株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する  平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力   「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記  「住民税等入力」  「入力終了(次へ) &amp;gt;」ボタンを押下  住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので</description>
     </item>
     
   </channel>
