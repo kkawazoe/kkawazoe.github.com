@@ -21,21 +21,21 @@
     <title>RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
+<meta name="description" content=" 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
 
 <meta property="og:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
+<meta property="og:description" content=" 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
 <meta name="twitter:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
+<meta name="twitter:description" content=" 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用するI18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&amp;gt; テスト  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": " RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
+    "description": " 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: 'テスト' ) I18n.t(:test) #=&gt; テスト  "
   }
 </script>
@@ -169,8 +169,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="rspec-内で動的に-i18n-の訳文を追加する">RSpec 内で動的に I18n の訳文を追加する</h1>
 
 <h2 id="環境">環境</h2>
 

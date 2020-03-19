@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000cfd400%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000cd6f00%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/">
 
@@ -105,9 +105,8 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定
-※キャメルケースに変換すること
+      <div class="summary">実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'beforeEnter' }, enter: function (el) { el.textContent = 'enter' }, afterEnter: function (el) { el.textContent = 'afterEnter' }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = 'beforeLeave' }, leave: function (el) { el.textContent = 'leave' }, afterLeave: function (el) { el.</div>
     </div>
@@ -128,15 +127,10 @@ Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'before
         
       </ul>
 
-      <div class="summary"> Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gem
-github
+      <div class="summary"> Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード [app/uploaders/my_uploader.rb]
 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit
-画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit
-画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&gt; なにもしない  </div>
     </div>
   </a>
 </article>
@@ -177,12 +171,12 @@ github
         
       </ul>
 
-      <div class="summary">Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
+      <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった
 苦労したためその際の手順およびハマった点等を備忘録として残しておく
 構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+ruby dk.rb init ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
 $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
     </div>
   </a>
@@ -226,9 +220,7 @@ map() で 「content」の内容を配列で取得後 join() で改行および�
       </ul>
 
       <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理
-シンプルで管理しやすい todoist を使用 リマインダー機能
-slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
  足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する</div>
     </div>
   </a>
@@ -248,7 +240,7 @@ slack の channel への通知を使用  google calendar  リマインダーが�
         
       </ul>
 
-      <div class="summary">バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+      <div class="summary">ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
 実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
 yyyy/mm/dd 表示 @echo off echo %DATE%  =&gt; 2019/03/23
 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
@@ -335,10 +327,9 @@ bundle exec rails s -b 0.0.0.0  インターネットオプションの Local in
         
       </ul>
 
-      <div class="summary"> FP3級への道 ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。
+      <div class="summary"> ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。
 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目  学科  FP協会・金融財政事情研究会で共通  実技  FP協会  資産設計提案業務  金融財政事情研究会
-難易度的には「資産設計提案業務」が初心者には易しいらしい  個人資産相談業務 ※今回受験 保険顧客資産相談業務    使用する教材 今回使用する教材は以下
+受験する科目  学科  FP 協会・金融財政事情研究会で共通  実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務  金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務    使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
 売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。

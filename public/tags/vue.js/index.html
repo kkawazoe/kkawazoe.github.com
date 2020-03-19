@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000ea6f00%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b06000%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/vue.js/">
 
@@ -109,7 +109,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary"> Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+      <div class="summary"> 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
 a.btn.home href=&quot;#{root_path}&quot; @touchStart=&quot;onTouchStartForBtn&quot; @touchEnd=&quot;onTouchEndForBtn&quot; @touchmove=&quot;onTouchMoveForBtn&quot;  RailsHelper での a タグ
 Vue.js の bind を&rsquo;(シングルコート)で括る
@@ -132,9 +132,8 @@ Vue.js の bind を&rsquo;(シングルコート)で括る
         
       </ul>
 
-      <div class="summary">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定
-※キャメルケースに変換すること
+      <div class="summary">実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'beforeEnter' }, enter: function (el) { el.textContent = 'enter' }, afterEnter: function (el) { el.textContent = 'afterEnter' }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = 'beforeLeave' }, leave: function (el) { el.textContent = 'leave' }, afterLeave: function (el) { el.</div>
     </div>
@@ -155,7 +154,7 @@ Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'before
         
       </ul>
 
-      <div class="summary">Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する方法 経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく
+      <div class="summary">経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
@@ -178,8 +177,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
         
       </ul>
 
-      <div class="summary">Vue.js で画像の読み込みの開始および完了を検知する方法 確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加
-v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]
+      <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]
 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ja&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;app&quot;&gt; &lt;img :src=&quot;url&quot; v-on:load=&quot;load&quot; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: '#app', data: { url: &quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&quot; // ※1 }, methods: { // ※4 load: function() { console.</div>
     </div>
   </a>

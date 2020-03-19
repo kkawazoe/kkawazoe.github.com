@@ -21,21 +21,21 @@
     <title>バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
+<meta name="description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
 
 <meta property="og:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
+<meta property="og:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
 <meta name="twitter:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
+<meta name="twitter:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく実際のコード 例 2019/03/23 0:07:49.91 に実行した場合yyyy/mm/dd 表示 @echo off echo %DATE%  =&amp;gt; 2019/03/23yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp%  =&amp;gt; 2019/03/23-00:07:49.91yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp%  =&amp;gt; 20190323000749">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+    "description": "ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
 実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
 yyyy/mm/dd 表示 @echo off echo %DATE%  =&gt; 2019/03/23
 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
@@ -174,8 +174,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="バッチファイルでタイムスタンプを付与する方法">バッチファイルでタイムスタンプを付与する方法</h1>
 
 <p>ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく</p>
 

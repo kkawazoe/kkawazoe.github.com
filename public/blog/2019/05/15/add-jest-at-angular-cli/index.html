@@ -21,21 +21,21 @@
     <title>Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
+<meta name="description" content="Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るためJest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic  3.">
 
 <meta property="og:title" content="Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/angular_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
+<meta property="og:description" content="Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るためJest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic  3.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
 <meta name="twitter:title" content="Angular Cli で作成したプロジェクトに Jest を追加する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3.">
+<meta name="twitter:description" content="Angular Cli でプロジェクトを作成すると Karma &#43; Jasmine が単体テストとして入るためJest に変更する手順を備忘録として残しておく構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic  3.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/angular_logo.svg">
 
 
@@ -70,8 +70,9 @@
         "height": 60
       }
     },
-    "description": "Angular Cli で作成したプロジェクトに Jest を追加する Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため Jest に変更する手順を備忘録として残しておく
-構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する $ yarn global add @briebug/jest-schematic $ ng g @briebug/jest-schematic:add $ ng add @briebug/jest-schematic  3."
+    "description": "Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
+Jest に変更する手順を備忘録として残しておく
+構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4  手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes  2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic  3."
   }
 </script>
 
@@ -170,9 +171,7 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="angular-cli-で作成したプロジェクトに-jest-を追加する">Angular Cli で作成したプロジェクトに Jest を追加する</h1>
-
-<p>Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
+<p>Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため<br />
 Jest に変更する手順を備忘録として残しておく</p>
 
 <h2 id="構築環境">構築環境</h2>
@@ -204,9 +203,9 @@ typescript                   3.2.4
 
 <h4 id="2-以下のコマンドを実行する">2. 以下のコマンドを実行する</h4>
 
-<pre><code class="language-bash">$ yarn global add @briebug/jest-schematic
-$ ng g @briebug/jest-schematic:add
-$ ng add @briebug/jest-schematic
+<pre><code class="language-bash">yarn global add @briebug/jest-schematic
+ng g @briebug/jest-schematic:add
+ng add @briebug/jest-schematic
 </code></pre>
 
 <h4 id="3-以下のコマンドを実行して動作確認する">3. 以下のコマンドを実行して動作確認する</h4>
@@ -305,8 +304,8 @@ describe('AppComponent', () =&gt; {
 
 <h4 id="7-以下のコマンドを実行する">7. 以下のコマンドを実行する</h4>
 
-<pre><code class="language-bash">$ yarn remove @types/jasmine @types/jasminewd2
-$ yarn add @types/jest
+<pre><code class="language-bash">yarn remove @types/jasmine @types/jasminewd2
+yarn add @types/jest
 </code></pre>
 
 <h4 id="8-以下のコマンドを実行して動作確認する">8. 以下のコマンドを実行して動作確認する</h4>

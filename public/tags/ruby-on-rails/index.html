@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000dd1900%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b06a00%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/ruby-on-rails/">
 
@@ -109,7 +109,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary"> RSpec 内で動的に I18n の訳文を追加する 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
+      <div class="summary"> 環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: 'テスト' ) I18n.t(:test) #=&gt; テスト  </div>
     </div>
   </a>
@@ -129,7 +129,7 @@ I18n.backend.store_translations( :ja, test: 'テスト' ) I18n.t(:test) #=&gt; �
         
       </ul>
 
-      <div class="summary">Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+      <div class="summary">環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
 以下が対象
  Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する
 以下が対象
@@ -152,7 +152,7 @@ I18n.backend.store_translations( :ja, test: 'テスト' ) I18n.t(:test) #=&gt; �
         
       </ul>
 
-      <div class="summary"> Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+      <div class="summary"> 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
 a.btn.home href=&quot;#{root_path}&quot; @touchStart=&quot;onTouchStartForBtn&quot; @touchEnd=&quot;onTouchEndForBtn&quot; @touchmove=&quot;onTouchMoveForBtn&quot;  RailsHelper での a タグ
 Vue.js の bind を&rsquo;(シングルコート)で括る
@@ -175,15 +175,10 @@ Vue.js の bind を&rsquo;(シングルコート)で括る
         
       </ul>
 
-      <div class="summary"> Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gem
-github
+      <div class="summary"> Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード [app/uploaders/my_uploader.rb]
 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit
-画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit
-画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&gt; なにもしない  </div>
     </div>
   </a>
 </article>
@@ -224,12 +219,12 @@ github
         
       </ul>
 
-      <div class="summary">Windows10 に Ruby1.8.7 + Rails2.3.18 を構築する 経緯 仕事で必要となり表題の環境を準備することになった
+      <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった
 苦労したためその際の手順およびハマった点等を備忘録として残しておく
 構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-$ ruby dk.rb init $ ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-$ gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+ruby dk.rb init ruby dk.rb install  rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+gem update --system 1.3.7  ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
 $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
     </div>
   </a>
@@ -241,7 +236,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
     <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
 
     <div class="inner">
-      <h2 class="title">Rails の order by で自分を優先的に取得する</h2>
+      <h2 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h2>
 
       <ul class="facts">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
@@ -249,10 +244,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
         
       </ul>
 
-      <div class="summary">Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。
-また、ORDER BY FIELD で指定した分に対して desc を指定すること。
-( desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
+      <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
+ 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
     </div>
   </a>
 </article>
@@ -271,8 +264,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
         
       </ul>
 
-      <div class="summary">Rails で階層構造になっているテーブルに自分自身への関連を設定する方法 テーブル構成例 [Nodesテーブル]
-最上位のノード以外は親ノードを持っている
+      <div class="summary">テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている
    id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]
 class Node &lt; ApplicationRecord has_many :children, class_name: &quot;Node&quot;, foreign_key: &quot;parrent_id&quot; belongs_to :parrent, class_name: &quot;Node&quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.</div>
     </div>
