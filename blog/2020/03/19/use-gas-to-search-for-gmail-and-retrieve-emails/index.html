@@ -11,32 +11,32 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
+<link rel="canonical" href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
 
     
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>FP3級への道 その4 - Note To Self ~One Step At A Time~</title>
+    <title>Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="FP3級への道 その4 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外">
+<meta name="description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
 
-<meta property="og:title" content="FP3級への道 その4 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="FP3級への道 その4 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外">
+<meta property="og:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-<meta name="twitter:title" content="FP3級への道 その4 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="FP3級への道 その4 学習中に間違えやすいと思った点を備忘録として残しておく[前回までの記事] FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
+<meta name="twitter:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 
 
 <script type="application/ld+json">
@@ -47,15 +47,15 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "FP3級への道 その4 - Note To Self ~One Step At A Time~",
+    "headline": "Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https://kkawazoe.github.io/images/logo/fp_logo.png",
+      "url": "https://kkawazoe.github.io/images/logo/gas_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-25T00:00:00JST",
-    "dateModified": "2019-04-25T00:00:00JST",
+    "datePublished": "2020-03-19T15:25:56JST",
+    "dateModified": "2020-03-19T15:25:56JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -70,12 +70,7 @@
         "height": 60
       }
     },
-    "description": "FP3級への道 その4 学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道
- FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外"
+    "description": "Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp."
   }
 </script>
 
@@ -148,24 +143,24 @@ if (!doNotTrack) {
 
     <article class="sn">
 
-  <div class="thumb thumb-9f9739c9a579e09d86d2f796482b15d3"></div>
+  <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
 
   <header class="article-header">
-    <h1 class="title">FP3級への道 その4</h1>
+    <h1 class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h1>
 
     <ul class="facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-25T00:00:00JST">Apr 25, 2019</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2020-03-19T15:25:56JST">Mar 19, 2020</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&title=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&text=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&t=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&title=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -174,115 +169,37 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="fp3級への道-その4">FP3級への道 その4</h1>
+<h1 id="google-apps-script-で-gmail-から-特定条件のスレッドを検索しメールを取り出す">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h1>
 
-<p>学習中に間違えやすいと思った点を備忘録として残しておく</p>
+<h2 id="実際のソース">実際のソース</h2>
 
-<p>[前回までの記事]</p>
+<pre><code class="language-gs">function searchContactMail() {
 
-<ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">FP3級への道</a><br /></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">FP3級への道 その2</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">FP3級への道 その3</a></li>
-</ul>
+  /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */
+  var strTerms = 'noreply';
+  var myThreads = GmailApp.search(strTerms,0,100);
+  var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列
 
-<h2 id="リスクマネジメント">リスクマネジメント</h2>
+  var contents = [];
+  
+  /* 各メールの内容を取り出す */
+  for(var i = 0; i &lt; myMsgs.length; i++){
+    for(var j = 0; j &lt; myMsgs[i].length; j++){
+      var data = myMsgs[i][j].getTo();
 
-<h3 id="火災保険">火災保険</h3>
+      if(data !== null) {
+        contents.push([data]);
+      }
+    }
+  }
 
-<h4 id="補償の範囲">補償の範囲</h4>
-
-<table>
-<thead>
-<tr>
-<th align="left">損害</th>
-<th align="center">住宅火災保険</th>
-<th align="center">住宅総合保険</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">火災、落雷、爆発、破裂<br>風災、雹災、雪災</td>
-<td align="center">◯</td>
-<td align="center">◯</td>
-</tr>
-
-<tr>
-<td align="left">水害(水災)</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-
-<tr>
-<td align="left">給排水設備事故による水漏れ</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-
-<tr>
-<td align="left">盗難</td>
-<td align="center"><em>×</em></td>
-<td align="center"><em>◯</em></td>
-</tr>
-
-<tr>
-<td align="left">外部からの落下、飛来、衝突</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-
-<tr>
-<td align="left">持出家財の損害</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-
-<tr>
-<td align="left">地震、噴火、津波</td>
-<td align="center"><em>×</em></td>
-<td align="center"><em>×</em></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="傷害保険">傷害保険</h3>
-
-<h4 id="主な傷害保険">主な傷害保険</h4>
-
-<ul>
-<li>普通傷害保険
-
-<ul>
-<li>国内外を問わず、日常生活で起こる傷害を補償する保険<br />
-※病気、<em>細菌性食中毒</em>、自殺、地震、噴火、津波を原因とする傷害は<em>対象外</em><br />
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある</li>
-</ul></li>
-<li>交通事故傷害保険
-
-<ul>
-<li>国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険<br />
-=&gt; 1つの契約で家族全員が補償される「ファミリー交通傷害保険」もある</li>
-</ul></li>
-<li>国内旅行傷害保険
-
-<ul>
-<li>国内旅行中の傷害を補償する保険<br />
-※<em>細菌性食中毒</em>は保証の<em>対象</em>だが、地震などによる傷害は<em>対象外</em></li>
-</ul></li>
-<li>海外旅行傷害保険
-
-<ul>
-<li>海外旅行中(家を出てから帰宅するまで)の傷害を補償する保険<br />
-※<em>細菌性食中毒</em>、地震、噴火、津波による傷害も補償の<em>対象</em></li>
-</ul></li>
-</ul>
-
-<h3 id="参考にした教本">参考にした教本</h3>
-
-<p>上記内容は以下の教本の内容を参考にしてます</p>
-
-<table  border="0" cellpadding="5" style="border:none"><tr><td valign="top" style="border:none;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" ><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /></a></td><td valign="top" style="border:none;text-align:left"><font size="-1"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >2018-2019年版　みんなが欲しかった！　FPの問題集3級</a><br /><br />        滝澤ななみ TAC 2018年05月22日<br />        売り上げランキング : <br /><table style="border:none"><tr><td style="border:none;text-align:left;"><div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >楽天ブックスで購入</a></div><div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" >Amazonで購入</a></div>                                                                                                                               </td><td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none">by <a href="https://yomereba.com" rel="nofollow" target="_blank">ヨメレバ</a></td></tr></table></font></td></tr></table>
+  /* スプレッドシートのシート「output」に出力 */
+  if(myMsgs.length &gt; 0){
+    var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output');
+    mySheet.getRange(1, 1, contents.length, 1).setValues(contents);
+  }
+}
+</code></pre>
 </div>
   
   <footer class="article-footer">
@@ -297,12 +214,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&title=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&text=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&t=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f&title=Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Google%20Apps%20Script%20%e3%81%a7%20Gmail%20%e3%81%8b%e3%82%89%20%e7%89%b9%e5%ae%9a%e6%9d%a1%e4%bb%b6%e3%81%ae%e3%82%b9%e3%83%ac%e3%83%83%e3%83%89%e3%82%92%e6%a4%9c%e7%b4%a2%e3%81%97%e3%83%a1%e3%83%bc%e3%83%ab%e3%82%92%e5%8f%96%e3%82%8a%e5%87%ba%e3%81%99 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f19%2fuse-gas-to-search-for-gmail-and-retrieve-emails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -314,7 +231,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">FP3級への道 その4</li>
+            <li class="active">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</li>
           </ol>
         </nav>
       </div>
@@ -332,7 +249,7 @@ if (!doNotTrack) {
       <div>
         <ul class="terms">
           
-          <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/">資格</a></li>
+          <li><a href="https://kkawazoe.github.io/tags/tools/">tools</a></li>
           
         </ul>
       </div>
@@ -350,14 +267,14 @@ if (!doNotTrack) {
         <div class="mcol c6">
           <header>Previous Article</header>
           <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
-    <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
+  <a href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
+    <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
 
     <div class="inner">
-      <div class="title">FP3級への道 その3</div>
+      <div class="title">普通の会社員(SE)が確定申告してみた その2</div>
 
       <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-24T00:00:00JST">Apr 24, 2019</time></li>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2020-03-07T09:00:00JST">Mar 7, 2020</time></li>
         <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
         
       </ul>
@@ -368,27 +285,6 @@ if (!doNotTrack) {
 
         </div>
         
-        
-        <div class="mcol c6">
-          <header>Next Article</header>
-          <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
-    <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その5</div>
-
-      <ul class="facts sm">
-        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
-        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-        </div>
         
       </div>
     </div>
