@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000ea7400%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b0e500%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/bat/">
 
@@ -109,7 +109,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">バッチファイルでタイムスタンプを付与する方法 ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+      <div class="summary">ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
 実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
 yyyy/mm/dd 表示 @echo off echo %DATE%  =&gt; 2019/03/23
 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
@@ -134,7 +134,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
         
       </ul>
 
-      <div class="summary">Windows7 環境でバッチファイルから ini ファイルを読込んで値を取得する方法 対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
+      <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
 取得する ini ファイルの中身 [sample.ini]
 &lt;設定値&gt;*****************************************************'&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk 'Work Folder Path  実際のコード [getProfileString.bat]
@@ -158,7 +158,7 @@ Option Explicit rem /***********************************************************
         
       </ul>
 
-      <div class="summary">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
+      <div class="summary">対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
 実際のコード [DispMsgBox.bat]
 @echo off rem メッセージボックスの表示 set msg=&quot;メッセージボックスのテスト [\n] で改行します。&quot; set title=&quot;メッセージボックステスト&quot; for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo msgbox.vbs %msg% &quot;%title%&quot;`) do set ret=%%A echo %ret% pause exit  [msgbox.vbs]

@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000efea00%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b0f400%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/electron/">
 
@@ -109,11 +109,13 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+      <div class="summary">経緯 electron にて ビルドするのに electron-builder を使用してみた
+その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 [package.json]
 { ・・・ &quot;scripts&quot;: { &quot;ng&quot;: &quot;ng&quot;, &quot;start&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;, &quot;build&quot;: &quot;ng build&quot;, &quot;test&quot;: &quot;jest&quot;, &quot;lint&quot;: &quot;ng lint&quot;, &quot;postinstall&quot;: &quot;electron-builder install-app-deps&quot;, &quot;release&quot;: &quot;ng build --prod &amp;&amp; node build.js&quot;, }, ・・・ }  [build.js]
-electron-builder のオプションについては公式を参照</div>
+electron-builder のオプションについては公式を参照
+&quot;use strict&quot;; const builder = require(&quot;electron-builder&quot;); const Platform = builder.</div>
     </div>
   </a>
 </article>

@@ -17,11 +17,13 @@
       <pubDate>Fri, 24 May 2019 12:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</guid>
-      <description>electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+      <description>経緯 electron にて ビルドするのに electron-builder を使用してみた
+その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 [package.json]
 { ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]
-electron-builder のオプションについては公式を参照</description>
+electron-builder のオプションについては公式を参照
+&amp;quot;use strict&amp;quot;; const builder = require(&amp;quot;electron-builder&amp;quot;); const Platform = builder.</description>
     </item>
     
   </channel>

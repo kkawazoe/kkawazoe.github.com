@@ -21,21 +21,21 @@
     <title>Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
+<meta name="description" content=" 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).setValues(contents); } }  ">
 
 <meta property="og:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
+<meta property="og:description" content=" 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).setValues(contents); } }  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
 <meta name="twitter:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.">
+<meta name="twitter:description" content=" 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &amp;lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).setValues(contents); } }  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp."
+    "description": " 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output'); mySheet.getRange(1, 1, contents.length, 1).setValues(contents); } }  "
   }
 </script>
 
@@ -168,8 +168,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="google-apps-script-で-gmail-から-特定条件のスレッドを検索しメールを取り出す">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h1>
 
 <h2 id="実際のソース">実際のソース</h2>
 

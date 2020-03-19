@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000ea6a00%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000a03900%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/git/">
 
@@ -109,10 +109,10 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary"> github で access token を使用してリポジトリを clone する 経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
+      <div class="summary"> 経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
 手順 1. アクセストークンを作成する  GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokensを選択する
  Generate new token を押下する
-  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名}  3. ローカルの設定を追加する $ git config --local user.name {アカウント名} $ git config --local user.email {アカウントのメールアドレス}  </div>
+  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名}  3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス}  </div>
     </div>
   </a>
 </article>
@@ -131,16 +131,17 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">Git コマンドについて 基本的なコマンドを含めて備忘録として残しておく
+      <div class="summary">基本的なコマンドを含めて備忘録として残しておく
 実際のコード 基本的な流れ  Git初期化
-$ git init  Git接続先設定
-$ git remote add {Fork 元リモート名} {Fork 元接続先URL} $ git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
-$ git pull {Fork 元リモート名} {ブランチ名}  トピックブランチ作成
-$ git checkout -b topic/#{issue番号}-作業者名  開発
+git init  Git接続先設定
+git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL}  最新ソース取得
+git pull {Fork 元リモート名} {ブランチ名}  トピックブランチ作成
+git checkout -b topic/#{issue番号}-作業者名  開発
  ステージングにあげる
-$ git add -A  コミットする
-$ git commit -m &quot;コメント&quot;  プルリクエストを投げる
-$ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合はgit addから先を繰り返し</div>
+git add -A  コミットする
+git commit -m &quot;コメント&quot;  プルリクエストを投げる
+git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合はgit addから先を繰り返し
+  その他 直前のコミットのコメントを修正 git commit --amend -m &quot;直前のコミットのコメントを修正&quot;  コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正  最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意  git の状態を一つ前に戻す git reset --hard HEAD^  stash の一覧を表示 git stash list  stash の差分を表示 git diff HEAD.</div>
     </div>
   </a>
 </article>
@@ -159,13 +160,13 @@ $ git push {Fork 元リモート名} {ブランチ名}  ※修正がある場合
         
       </ul>
 
-      <div class="summary">Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
+      <div class="summary">毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行
 $ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; &gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 &gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 &gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する
 4-1. バックグラウンドでssh-agentを起動
-$ eval &quot;$(ssh-agent -s)&quot; &gt; Agent pid 59566  macOS Sierra 10.</div>
+$ eval &quot;$(ssh-agent -s)&quot; &gt; Agent pid 59566  ※ macOS Sierra 10.</div>
     </div>
   </a>
 </article>

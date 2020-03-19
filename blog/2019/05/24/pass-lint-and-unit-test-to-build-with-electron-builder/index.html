@@ -21,21 +21,21 @@
     <title>electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照">
+<meta name="description" content="経緯 electron にて ビルドするのに electron-builder を使用してみたその際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照&amp;quot;use strict&amp;quot;; const builder = require(&amp;quot;electron-builder&amp;quot;); const Platform = builder.">
 
 <meta property="og:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照">
+<meta property="og:description" content="経緯 electron にて ビルドするのに electron-builder を使用してみたその際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照&amp;quot;use strict&amp;quot;; const builder = require(&amp;quot;electron-builder&amp;quot;); const Platform = builder.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
 <meta name="twitter:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照">
+<meta name="twitter:description" content="経緯 electron にて ビルドするのに electron-builder を使用してみたその際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)[package.json]{ ・・・ &amp;quot;scripts&amp;quot;: { &amp;quot;ng&amp;quot;: &amp;quot;ng&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; electron .&amp;quot;, &amp;quot;build&amp;quot;: &amp;quot;ng build&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot;, &amp;quot;lint&amp;quot;: &amp;quot;ng lint&amp;quot;, &amp;quot;postinstall&amp;quot;: &amp;quot;electron-builder install-app-deps&amp;quot;, &amp;quot;release&amp;quot;: &amp;quot;ng build --prod &amp;amp;&amp;amp; node build.js&amp;quot;, }, ・・・ }  [build.js]electron-builder のオプションについては公式を参照&amp;quot;use strict&amp;quot;; const builder = require(&amp;quot;electron-builder&amp;quot;); const Platform = builder.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
 
 
@@ -70,11 +70,13 @@
         "height": 60
       }
     },
-    "description": "electron-builder で Lint および UnitTest が通った場合のみビルドするようにする 経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+    "description": "経緯 electron にて ビルドするのに electron-builder を使用してみた
+その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 [package.json]
 { ・・・ &quot;scripts&quot;: { &quot;ng&quot;: &quot;ng&quot;, &quot;start&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;, &quot;build&quot;: &quot;ng build&quot;, &quot;test&quot;: &quot;jest&quot;, &quot;lint&quot;: &quot;ng lint&quot;, &quot;postinstall&quot;: &quot;electron-builder install-app-deps&quot;, &quot;release&quot;: &quot;ng build --prod &amp;&amp; node build.js&quot;, }, ・・・ }  [build.js]
-electron-builder のオプションについては公式を参照"
+electron-builder のオプションについては公式を参照
+&quot;use strict&quot;; const builder = require(&quot;electron-builder&quot;); const Platform = builder."
   }
 </script>
 
@@ -173,11 +175,9 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="electron-builder-で-lint-および-unittest-が通った場合のみビルドするようにする">electron-builder で Lint および UnitTest が通った場合のみビルドするようにする</h1>
-
 <h2 id="経緯">経緯</h2>
 
-<p>electron にて ビルドするのに <a href="https://github.com/electron-userland/electron-builder">electron-builder</a> を使用してみた
+<p>electron にて ビルドするのに <a href="https://github.com/electron-userland/electron-builder">electron-builder</a> を使用してみた<br />
 その際に最低限 <code>Lint</code>, <code>UnitTest</code> を通ることを担保するようにしたため備忘録として残しておく</p>
 
 <h2 id="構築環境">構築環境</h2>

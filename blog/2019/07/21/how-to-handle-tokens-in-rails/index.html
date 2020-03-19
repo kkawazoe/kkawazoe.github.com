@@ -21,21 +21,21 @@
     <title>Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
+<meta name="description" content="環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
 
 <meta property="og:title" content="Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
+<meta property="og:description" content="環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
 <meta name="twitter:title" content="Rails でトークンを扱う方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
+<meta name="twitter:description" content="環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する以下が対象 Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "Rails でトークンを扱う方法 環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+    "description": "環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
 以下が対象
  Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end  トークンの取得 トークンの取得については token_and_options を使用する
 以下が対象
@@ -172,8 +172,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="rails-でトークンを扱う方法">Rails でトークンを扱う方法</h1>
 
 <h2 id="環境">環境</h2>
 

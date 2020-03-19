@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000e87900%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b0ef00%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/mysql/">
 
@@ -101,7 +101,7 @@ if (!doNotTrack) {
     <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
 
     <div class="inner">
-      <h2 class="title">Rails の order by で自分を優先的に取得する</h2>
+      <h2 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h2>
 
       <ul class="facts">
         <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
@@ -109,10 +109,8 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。
-また、ORDER BY FIELD で指定した分に対して desc を指定すること。
-( desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
+      <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
+ 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
     </div>
   </a>
 </article>

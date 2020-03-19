@@ -21,21 +21,21 @@
     <title>Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
+<meta name="description" content=" Carrier Wave について ファイルアップロード機能を提供する Gem github実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&amp;gt; なにもしない  ">
 
 <meta property="og:title" content="Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
+<meta property="og:description" content=" Carrier Wave について ファイルアップロード機能を提供する Gem github実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&amp;gt; なにもしない  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
 <meta name="twitter:title" content="Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gemgithub実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit画像が指定したサイズ未満の時=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit画像が指定したサイズ未満の時=&amp;gt; なにもしない  ">
+<meta name="twitter:description" content=" Carrier Wave について ファイルアップロード機能を提供する Gem github実際のコード [app/uploaders/my_uploader.rb]尚、アスペクト比固定で width および height のみ指定する場合は nil を指定するheightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&amp;gt; なにもしない  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -70,15 +70,10 @@
         "height": 60
       }
     },
-    "description": " Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする Carrier Wave について ファイルアップロード機能を提供する Gem
-github
+    "description": " Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード [app/uploaders/my_uploader.rb]
 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit
-画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit
-画像が指定したサイズ未満の時
-=&gt; なにもしない  "
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&gt; なにもしない  "
   }
 </script>
 
@@ -177,11 +172,9 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="ruby-on-rails-の-gem-carrierwave-でアップロードする際に画像をリサイズする">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h1>
-
 <h2 id="carrier-wave-について">Carrier Wave について</h2>
 
-<p>ファイルアップロード機能を提供する Gem<br />
+<p>ファイルアップロード機能を提供する Gem
 <a href="https://github.com/carrierwaveuploader/carrierwave">github</a></p>
 
 <h2 id="実際のコード">実際のコード</h2>
@@ -211,11 +204,11 @@ end
 <h3 id="resize-to-fit-と-resize-to-limit-の違いについて">resize_to_fit  と resize_to_limit の違いについて</h3>
 
 <ul>
-<li>resize_to_fit<br />
-画像が指定したサイズ未満の時<br />
+<li>resize_to_fit
+画像が指定したサイズ未満の時
 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する</li>
-<li>resize_to_limit<br />
-画像が指定したサイズ未満の時<br />
+<li>resize_to_limit
+画像が指定したサイズ未満の時
 =&gt; なにもしない</li>
 </ul>
 </div>

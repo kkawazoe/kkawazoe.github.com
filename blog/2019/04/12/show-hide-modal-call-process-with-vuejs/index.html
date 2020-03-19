@@ -21,21 +21,21 @@
     <title>Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
+<meta name="description" content="実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
 
 <meta property="og:title" content="Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
+<meta property="og:description" content="実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
 <meta name="twitter:title" content="Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
+<meta name="twitter:description" content="実際のコード HTML側 transition を指定.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること以下のイベントがフックされるようになるVue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
@@ -70,9 +70,8 @@
         "height": 60
       }
     },
-    "description": "Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法 実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定
-※キャメルケースに変換すること
+    "description": "実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'beforeEnter' }, enter: function (el) { el.textContent = 'enter' }, afterEnter: function (el) { el.textContent = 'afterEnter' }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = 'beforeLeave' }, leave: function (el) { el.textContent = 'leave' }, afterLeave: function (el) { el."
   }
@@ -173,8 +172,6 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="vue-js-でモーダルが表示-非表示された際に呼ばれる処理の実装方法">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装方法</h1>
-
 <h2 id="実際のコード">実際のコード</h2>
 
 <h3 id="html側">HTML側</h3>
@@ -186,7 +183,7 @@ if (!doNotTrack) {
 
 <h3 id="javascript側">JavaScript側</h3>
 
-<p><code>transitions</code> 内に HTML の <code>transition</code> で指定した <code>app-modal</code> を指定<br />
+<p><code>transitions</code> 内に HTML の <code>transition</code> で指定した <code>app-modal</code> を指定
 ※キャメルケースに変換すること</p>
 
 <p>以下のイベントがフックされるようになる</p>

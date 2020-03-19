@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000a2ea00%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b06500%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/cofeescript/">
 
@@ -109,7 +109,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary"> CoffeeScript で JQuery の each を使用する場合の注意点 JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
+      <div class="summary"> JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
 実際のソース  修正前  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each -&gt; id = $(this).attr(&quot;id&quot;) @processRow id   修正後  processRows: -&gt; $(&quot;#my-table&gt;tr&quot;).each (index, element) =&gt; id = $(element).attr(&quot;id&quot;) @processRow id  </div>
     </div>

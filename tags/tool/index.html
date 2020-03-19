@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000efef00%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000b0f900%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/tool/">
 
@@ -109,7 +109,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">Excel でテスト用シートを自動生成するツールを作成する 経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった
+      <div class="summary">経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった
 テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため
 ツール化をすることにした
 使用方法  「パラメータ」シートにて以下を指定する
@@ -134,7 +134,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary">Hugo に数式を挿入する 経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
+      <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
  partials フォルダ配下に以下のファイルを作成する
@@ -183,9 +183,7 @@ map() で 「content」の内容を配列で取得後 join() で改行および�
       </ul>
 
       <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理
-シンプルで管理しやすい todoist を使用 リマインダー機能
-slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる  todoist と連携可能だが期日指定なしが連携されない   integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
  足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する</div>
     </div>
   </a>
@@ -237,7 +235,7 @@ bundle exec rails s -b 0.0.0.0  インターネットオプションの Local in
         
       </ul>
 
-      <div class="summary">Rambox で ChatWork の未読メッセージを通知する 確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+      <div class="summary">確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
 候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため
 「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
@@ -245,7 +243,7 @@ Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
 ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
  Rambox サービス設定画面   実際のコード [Custom Code]
-function checkUnread() { const elements = document.</div>
+function checkUnread() { const elements = document.querySelectorAll(&quot;.roomListBadges__unreadBadgeText&quot;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ?</div>
     </div>
   </a>
 </article>
@@ -264,8 +262,8 @@ function checkUnread() { const elements = document.</div>
         
       </ul>
 
-      <div class="summary"> Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる方法 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
-資料を共有をする場合に拡張機能である Markdown PDF を使用しているが出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
+      <div class="summary"> 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
+資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
 情報元 Markdown PDF の「Page Break」の項目に記載あり
 実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --&gt; &lt;div class=&quot;page&quot;/&gt; # h1 ## h2 ### h3  </div>
     </div>
