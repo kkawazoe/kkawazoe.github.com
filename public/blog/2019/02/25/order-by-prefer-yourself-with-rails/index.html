@@ -18,24 +18,24 @@
     
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~</title>
+    <title>Rails の order by で自分を優先的に取得する(MySql 限定) - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta name="description" content="確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 
-<meta property="og:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Rails の order by で自分を優先的に取得する(MySql 限定) - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta property="og:description" content="確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-<meta name="twitter:title" content="Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。また、ORDER BY FIELD で指定した分に対して desc を指定すること。( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
+<meta name="twitter:title" content="Rails の order by で自分を優先的に取得する(MySql 限定) - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&amp;quot;field(user_id , #{current_user.id}) desc&amp;quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -47,7 +47,7 @@
       "@type": "WebPage",
       "@id":"https://kkawazoe.github.io/"
     },
-    "headline": "Rails の order by で自分を優先的に取得する - Note To Self ~One Step At A Time~",
+    "headline": "Rails の order by で自分を優先的に取得する(MySql 限定) - Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https://kkawazoe.github.io/images/logo/rails_logo.svg",
@@ -70,10 +70,8 @@
         "height": 60
       }
     },
-    "description": "Rails の order by で自分を優先的に取得する方法(MySql 限定) 確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。
-また、ORDER BY FIELD で指定した分に対して desc を指定すること。
-( desc を指定しないと自分以外が優先的に並び替えられてしまう)"
+    "description": "確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
+ 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)  ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)"
   }
 </script>
 
@@ -149,7 +147,7 @@ if (!doNotTrack) {
   <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
 
   <header class="article-header">
-    <h1 class="title">Rails の order by で自分を優先的に取得する</h1>
+    <h1 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h1>
 
     <ul class="facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
@@ -158,12 +156,12 @@ if (!doNotTrack) {
     </ul>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
   <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
   </header>
@@ -171,8 +169,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="rails-の-order-by-で自分を優先的に取得する方法-mysql-限定">Rails の order by で自分を優先的に取得する方法(MySql 限定)</h1>
 
 <h2 id="確認環境">確認環境</h2>
 
@@ -194,8 +190,8 @@ if (!doNotTrack) {
 <pre><code class="language-rb">   order(:order, [&quot;field(user_id , #{current_user.id}) desc&quot;], :user_id)
 </code></pre>
 
-<p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。<br />
-  また、<code>ORDER BY FIELD</code> で指定した分に対して <code>desc</code> を指定すること。<br />
+<p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。
+  また、<code>ORDER BY FIELD</code> で指定した分に対して <code>desc</code> を指定すること。
   ( <code>desc</code> を指定しないと自分以外が優先的に並び替えられてしまう)</p>
 </div>
   
@@ -211,12 +207,12 @@ if (!doNotTrack) {
 </section>
 
     <aside class="share">
-  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&text=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&t=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
   <a href="https://plus.google.com/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f&title=Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?Rails%20%e3%81%ae%20order%20by%20%e3%81%a7%e8%87%aa%e5%88%86%e3%82%92%e5%84%aa%e5%85%88%e7%9a%84%e3%81%ab%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%28MySql%20%e9%99%90%e5%ae%9a%29 https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f02%2f25%2forder-by-prefer-yourself-with-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
 </aside>
 
 
@@ -228,7 +224,7 @@ if (!doNotTrack) {
             
             <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
             
-            <li class="active">Rails の order by で自分を優先的に取得する</li>
+            <li class="active">Rails の order by で自分を優先的に取得する(MySql 限定)</li>
           </ol>
         </nav>
       </div>

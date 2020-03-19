@@ -21,21 +21,21 @@
     <title>Github への公開鍵の登録 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.">
+<meta name="description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  ※ macOS Sierra 10.">
 
 <meta property="og:title" content="Github への公開鍵の登録 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.">
+<meta property="og:description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  ※ macOS Sierra 10.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
 <meta name="twitter:title" content="Github への公開鍵の登録 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  macOS Sierra 10.">
+<meta name="twitter:description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行$ ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; &amp;gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する4-1. バックグラウンドでssh-agentを起動$ eval &amp;quot;$(ssh-agent -s)&amp;quot; &amp;gt; Agent pid 59566  ※ macOS Sierra 10.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 
 
@@ -70,13 +70,13 @@
         "height": 60
       }
     },
-    "description": "Github への公開鍵の登録 毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
+    "description": "毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac  以下のコマンドを GitHub のEメールアドレスに置き換えて実行
 $ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; &gt; Generating public/private rsa key pair.  以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 &gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 &gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]  SSH キーを ssh-agent に追加する
 4-1. バックグラウンドでssh-agentを起動
-$ eval &quot;$(ssh-agent -s)&quot; &gt; Agent pid 59566  macOS Sierra 10."
+$ eval &quot;$(ssh-agent -s)&quot; &gt; Agent pid 59566  ※ macOS Sierra 10."
   }
 </script>
 
@@ -175,8 +175,6 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="github-への公開鍵の登録">Github への公開鍵の登録</h1>
-
 <p>毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく</p>
 
 <h2 id="実際のコード">実際のコード</h2>
@@ -209,7 +207,7 @@ if (!doNotTrack) {
 &gt; Agent pid 59566
 </code></pre>
 
-<p>macOS Sierra 10.12.2 以降を使用している場合は ~/.ssh/config ファイルを変更して自動的にキーを ssh-agent にロードしパスフレーズをキーチェーンに格納する必要あり</p>
+<p>※ macOS Sierra 10.12.2 以降を使用している場合は <code>~/.ssh/config</code> ファイルを変更して自動的にキーを <code>ssh-agent</code> にロードしパスフレーズをキーチェーンに格納する必要あり</p>
 
 <p>[~/.ssh/config]</p>
 
@@ -221,12 +219,12 @@ if (!doNotTrack) {
 
 <li><p>SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する</p>
 
-<pre><code class="language-bash">$ ssh-add -K ~/.ssh/id_rsa
+<pre><code class="language-bash">ssh-add -K ~/.ssh/id_rsa
 </code></pre></li>
 
 <li><p>公開鍵をクリップボードにコピーする</p>
 
-<pre><code class="language-bash">$ pbcopy &lt; ~/.ssh/id_rsa.pub
+<pre><code class="language-bash">pbcopy &lt; ~/.ssh/id_rsa.pub
 </code></pre></li>
 
 <li><p>SSH キーを GitHub アカウントに追加する</p></li>
@@ -262,12 +260,12 @@ if (!doNotTrack) {
 
 <li><p>SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する</p>
 
-<pre><code class="language-ps">$ ssh-add ~/.ssh/id_rsa
+<pre><code class="language-ps">ssh-add ~/.ssh/id_rsa
 </code></pre></li>
 
 <li><p>公開鍵をクリップボードにコピーする</p>
 
-<pre><code class="language-ps">$ clip &lt; ~/.ssh/id_rsa.pub
+<pre><code class="language-ps">clip &lt; ~/.ssh/id_rsa.pub
 </code></pre></li>
 
 <li><p>SSH キーを GitHub アカウントに追加する</p></li>

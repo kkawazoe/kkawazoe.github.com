@@ -169,8 +169,6 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="git-コマンドについて">Git コマンドについて</h1>
-
 <p>基本的なコマンドを含めて備忘録として残しておく</p>
 
 <h2 id="実際のコード">実際のコード</h2>
@@ -180,40 +178,40 @@ if (!doNotTrack) {
 <ol>
 <li><p>Git初期化</p>
 
-<pre><code class="language-bash">$ git init
+<pre><code class="language-bash">git init
 </code></pre></li>
 
 <li><p>Git接続先設定</p>
 
-<pre><code class="language-bash">$ git remote add {Fork 元リモート名} {Fork 元接続先URL}
-$ git remote add {Fork 先リモート名} {Fork 先接続先URL}
+<pre><code class="language-bash">git remote add {Fork 元リモート名} {Fork 元接続先URL}
+git remote add {Fork 先リモート名} {Fork 先接続先URL}
 </code></pre></li>
 
 <li><p>最新ソース取得</p>
 
-<pre><code class="language-bash">$ git pull {Fork 元リモート名} {ブランチ名}
+<pre><code class="language-bash">git pull {Fork 元リモート名} {ブランチ名}
 </code></pre></li>
 
 <li><p>トピックブランチ作成</p>
 
-<pre><code class="language-bash">$ git checkout -b topic/#{issue番号}-作業者名
+<pre><code class="language-bash">git checkout -b topic/#{issue番号}-作業者名
 </code></pre></li>
 
 <li><p>開発</p></li>
 
 <li><p>ステージングにあげる</p>
 
-<pre><code class="language-bash">$ git add -A
+<pre><code class="language-bash">git add -A
 </code></pre></li>
 
 <li><p>コミットする</p>
 
-<pre><code class="language-bash">$ git commit -m &quot;コメント&quot;
+<pre><code class="language-bash">git commit -m &quot;コメント&quot;
 </code></pre></li>
 
 <li><p>プルリクエストを投げる</p>
 
-<pre><code class="language-bash">$ git push {Fork 元リモート名} {ブランチ名}
+<pre><code class="language-bash">git push {Fork 元リモート名} {ブランチ名}
 </code></pre>
 
 <p>※修正がある場合はgit addから先を繰り返し</p></li>
@@ -223,7 +221,7 @@ $ git remote add {Fork 先リモート名} {Fork 先接続先URL}
 
 <h4 id="直前のコミットのコメントを修正">直前のコミットのコメントを修正</h4>
 
-<pre><code class="language-bash">$ git commit --amend -m &quot;直前のコミットのコメントを修正&quot;
+<pre><code class="language-bash">git commit --amend -m &quot;直前のコミットのコメントを修正&quot;
 </code></pre>
 
 <h4 id="コミットをまとめる">コミットをまとめる</h4>
@@ -252,56 +250,56 @@ $ git push -f {リモート名} {ブランチ名}
 
 <h4 id="git-の状態を一つ前に戻す">git の状態を一つ前に戻す</h4>
 
-<pre><code class="language-bash">$ git reset --hard HEAD^
+<pre><code class="language-bash">git reset --hard HEAD^
 </code></pre>
 
 <h4 id="stash-の一覧を表示">stash の一覧を表示</h4>
 
-<pre><code class="language-bash">$ git stash list
+<pre><code class="language-bash">git stash list
 </code></pre>
 
 <h4 id="stash-の差分を表示">stash の差分を表示</h4>
 
-<pre><code class="language-bash">$ git diff HEAD..stash@{0}
+<pre><code class="language-bash">git diff HEAD..stash@{0}
 </code></pre>
 
 <h4 id="stash-の最新を適用">stash の最新を適用</h4>
 
-<pre><code class="language-bash">$ git stash pop
+<pre><code class="language-bash">git stash pop
 </code></pre>
 
 <h4 id="stash-n-番目を適用">stash  N 番目を適用</h4>
 
-<pre><code class="language-bash">$ git stash pop stash@{N}
+<pre><code class="language-bash">git stash pop stash@{N}
 </code></pre>
 
 <h4 id="untracked-files-を含めて退避">untracked files を含めて退避</h4>
 
-<pre><code class="language-bash">$ git stash save -u &quot;untracked files を含めて退避&quot;
+<pre><code class="language-bash">git stash save -u &quot;untracked files を含めて退避&quot;
 </code></pre>
 
 <h4 id="fork-元の任意ブランチを親としてトピックブランチを作成">Fork 元の任意ブランチを親としてトピックブランチを作成</h4>
 
-<pre><code class="language-bash">$ git checkout -b {new ブランチ名} {Fork 元のリモート名}/{Fork 元のブランチ名}
+<pre><code class="language-bash">git checkout -b {new ブランチ名} {Fork 元のリモート名}/{Fork 元のブランチ名}
 </code></pre>
 
 <h4 id="プルリクエストの取り下げ-プルリクエスト出す直前に取り消し">プルリクエストの取り下げ(プルリクエスト出す直前に取り消し)</h4>
 
-<pre><code class="language-bash">$ git push --delete {Fork 先リモート名} {ブランチ名}
+<pre><code class="language-bash">git push --delete {Fork 先リモート名} {ブランチ名}
 </code></pre>
 
-<p>=&gt; <code>github</code> 上の 「Compare $ pull request」ボタンが消える</p>
+<p>=&gt; <code>github</code> 上の 「Compare &amp; pull request」ボタンが消える</p>
 
 <h4 id="プルリクエストの取り下げ-プルリクエスト出した直後に取り消し">プルリクエストの取り下げ(プルリクエスト出した直後に取り消し)</h4>
 
-<pre><code class="language-bash">$ git push --delete {Fork 先リモート名} {ブランチ名}
+<pre><code class="language-bash">git push --delete {Fork 先リモート名} {ブランチ名}
 </code></pre>
 
 <p>=&gt; <code>github</code> 上は「close」扱いになる</p>
 
 <h4 id="github-上の-プルリクエストブランチをローカルに持ってくる">github 上の プルリクエストブランチをローカルに持ってくる</h4>
 
-<p>プルリクエストを行うと github 上では、 <code>pr/{連番}/head</code> と <code>pr/{連番}/merge</code> というブランチが作られるためそれを使用する</p>
+<p>プルリクエストを行うと <code>github</code> 上では、 <code>pr/{連番}/head</code> と <code>pr/{連番}/merge</code> というブランチが作られるためそれを使用する</p>
 
 <pre><code class="language-bash">$ git fetch {Fork 元リモート名} '+refs/pull/*:refs/remotes/pr/*'
   * [new ref]    refs/pull/9/head -&gt; pull/1/head
@@ -317,11 +315,12 @@ $ git checkout -b {new ブランチ名} pull/10/head
 
 <p><code>git checkout</code> コマンドを使用すると移動元のブランチの修正を引き継いで切り替えを行う</p>
 
-<p>上記のため、<code>git status</code> コマンドで差分として上がらないため、 github に上げた際に不要なソースが混じってしまう可能性があるため注意する</p>
+<p>上記のため、<code>git status</code> コマンドで差分として上がらず <code>github</code> に上げた際に<br />
+不要なソースが混じってしまう可能性があるため注意する</p>
 
 <p>対策としては以下のようにチェックアウト元を指定して新規でブランチを作成する</p>
 
-<pre><code class="language-bash">$ git checkout -b {作成するブランチ名} {チェックアウト元ブランチ名}
+<pre><code class="language-bash">git checkout -b {作成するブランチ名} {チェックアウト元ブランチ名}
 </code></pre>
 </div>
   

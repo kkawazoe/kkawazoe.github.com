@@ -21,21 +21,21 @@
     <title>Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta name="description" content=" 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
 
 <meta property="og:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta property="og:description" content=" 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/">
 <meta name="twitter:title" content="Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" Vue.js &#43; Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
+<meta name="twitter:description" content=" 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグa.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグVue.js の bind を&amp;rsquo;(シングルコート)で括る= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": " Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+    "description": " 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
 a.btn.home href=&quot;#{root_path}&quot; @touchStart=&quot;onTouchStartForBtn&quot; @touchEnd=&quot;onTouchEndForBtn&quot; @touchmove=&quot;onTouchMoveForBtn&quot;  RailsHelper での a タグ
 Vue.js の bind を&rsquo;(シングルコート)で括る
@@ -172,8 +172,6 @@ if (!doNotTrack) {
   
 
   <div class="article-body">
-
-<h1 id="vue-js-rails-で-railshelper-と組み合わせた場合の記述方法">Vue.js + Rails で RailsHelper と組み合わせた場合の記述方法</h1>
 
 <h2 id="経緯">経緯</h2>
 

@@ -169,8 +169,6 @@ if (!doNotTrack) {
 
   <div class="article-body">
 
-<h1 id="excel-でテスト用シートを自動生成するツールを作成する">Excel でテスト用シートを自動生成するツールを作成する</h1>
-
 <h2 id="経緯">経緯</h2>
 
 <p>結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった<br />
@@ -201,7 +199,7 @@ Sub ExecuteButtonClick()
     Dim ws As Worksheet
     Dim wsArray() As String
     Dim chkFlg As Long
-    
+
     'ワークシートの初期化
     For Each ws In Worksheets
         'ワークシート名が&quot;パラメータ&quot;以外の場合
@@ -211,10 +209,10 @@ Sub ExecuteButtonClick()
             Application.DisplayAlerts = True
         End If
     Next ws
-    
+
     'チェックボックスの値を取得
     chkFlg = Worksheets(&quot;パラメータ&quot;).OLEObjects(&quot;Chk_WorkGroup&quot;).Object.Value
-    
+
     'ワークシートの追加
     For i = 0 To Worksheets(&quot;パラメータ&quot;).Cells(2, 3).Value - 1
         Sheets.Add after:=ActiveSheet
@@ -222,19 +220,19 @@ Sub ExecuteButtonClick()
         ActiveWindow.Zoom = Worksheets(&quot;パラメータ&quot;).Cells(3, 3).Value
         ReDim Preserve wsArray(i)
         wsArray(i) = ActiveSheet.Name
-        
+
         '100の倍数ごとに画面に制御を返す
         If i Mod 100 = 0 Then
             DoEvents
         End If
     Next
-    
+
     '作業グループ設定フラグがオンの場合
     If chkFlg Then
         '作業グループの設定
         Sheets(wsArray).Select
     End If
-    
+
 End Sub
 </code></pre>
 
