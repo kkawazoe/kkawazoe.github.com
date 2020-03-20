@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000a02500%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000c50a00%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/">
 
@@ -105,7 +105,7 @@ if (!doNotTrack) {
         
       </ul>
 
-      <div class="summary"> 実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms,0,100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output'); mySheet.getRange(1, 1, contents.length, 1).setValues(contents); } }  </div>
+      <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output'); mySheet.getRange(1, 1, contents.length, 1).</div>
     </div>
   </a>
 </article>
