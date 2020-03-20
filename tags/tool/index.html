@@ -9,7 +9,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000c71900%7d">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="%7balternate%20%7bRSS%20%7bapplication%20rss%20xml%20.%20[xml]%20%7d%20%20index%20alternate%20%20false%20false%20true%20false%7d%200xc000bad400%7d">
 
 <link rel="canonical" href="https://kkawazoe.github.io/tags/tool/">
 
@@ -95,6 +95,25 @@ if (!doNotTrack) {
     <div class="articles">
       <div class="mrow">
         
+        
+        <div class="mcol c6"><article class="li">
+  <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
+    <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
+
+    <div class="inner">
+      <h2 class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h2>
+
+      <ul class="facts">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2020-03-19T15:25:56JST">Mar 19, 2020</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+      <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = 'noreply'; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output'); mySheet.getRange(1, 1, contents.length, 1).</div>
+    </div>
+  </a>
+</article>
+</div>
         
         <div class="mcol c6"><article class="li">
   <a href="https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/">
@@ -479,7 +498,7 @@ function checkUnread() { const elements = document.querySelectorAll(&quot;.roomL
   <header>TAGS</header>
   <div>
     <ul class="terms">
-      <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(8)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li><li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(7)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li><li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li><li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(3)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li><li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/angular">angular <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/cofeescript">cofeescript <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/electron">electron <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/mysql">mysql <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/tools">tools <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vb.net">vb.net <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82">医療 <span class="count">(1)</span></a></li>
+      <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(8)</span></a></li><li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(8)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li><li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li><li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(3)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li><li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/angular">angular <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/cofeescript">cofeescript <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/electron">electron <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/mysql">mysql <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/vb.net">vb.net <span class="count">(1)</span></a></li><li><a href="https://kkawazoe.github.io/tags/%E5%8C%BB%E7%99%82">医療 <span class="count">(1)</span></a></li>
     </ul>
   </div>
 </section>
