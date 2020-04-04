@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</loc>
+    <lastmod>2020-04-04T10:46:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</loc>
     <lastmod>2020-03-19T15:25:56+09:00</lastmod>
   </url>
@@ -272,19 +277,19 @@
   
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2020-03-19T15:25:56+09:00</lastmod>
+    <lastmod>2020-04-04T10:46:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2020-03-19T15:25:56+09:00</lastmod>
+    <lastmod>2020-04-04T10:46:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2019-09-14T09:56:37+09:00</lastmod>
+    <lastmod>2020-04-04T10:46:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
