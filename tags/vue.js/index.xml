@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue.js on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/vue.js/</link>
+    <description>Recent content in Vue.js on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</guid>
+      <description> 経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ
+a.btn.home href=&amp;quot;#{root_path}&amp;quot; @touchStart=&amp;quot;onTouchStartForBtn&amp;quot; @touchEnd=&amp;quot;onTouchEndForBtn&amp;quot; @touchmove=&amp;quot;onTouchMoveForBtn&amp;quot;  RailsHelper での a タグ
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &amp;quot;onTouchStartForBtn&amp;quot;, &#39;@touchEnd&#39;: &amp;quot;onTouchEndForBtn&amp;quot;, &#39;@touchmove&#39;: &amp;quot;onTouchMoveForBtn&amp;quot;   </description>
+    </item>
+    
+    <item>
+      <title>Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</title>
+      <link>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</link>
+      <pubDate>Fri, 12 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
+      <description>実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;  JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+以下のイベントがフックされるようになる
+Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</title>
+      <link>https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/</link>
+      <pubDate>Thu, 07 Mar 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/</guid>
+      <description>経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく
+実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
+created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
+例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js で画像の読み込みの開始および完了を検知する</title>
+      <link>https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/</link>
+      <pubDate>Tue, 26 Feb 2019 17:29:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/</guid>
+      <description>確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード [index.html]
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;img :src=&amp;quot;url&amp;quot; v-on:load=&amp;quot;load&amp;quot; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &amp;quot;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;quot; // ※1 }, methods: { // ※4 load: function() { console.</description>
+    </item>
+    
+  </channel>
+</rss>
