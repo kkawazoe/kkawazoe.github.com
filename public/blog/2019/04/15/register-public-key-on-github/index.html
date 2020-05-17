@@ -203,9 +203,7 @@ if (!doNotTrack) {
 
 <p>※ macOS Sierra 10.12.2 以降を使用している場合は <code>~/.ssh/config</code> ファイルを変更して自動的にキーを <code>ssh-agent</code> にロードしパスフレーズをキーチェーンに格納する必要あり</p>
 
-<p>[~/.ssh/config]</p>
-
-<pre><code class="language-bash">Host *
+<pre><code class="language-bash:~/.ssh/config">Host *
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
