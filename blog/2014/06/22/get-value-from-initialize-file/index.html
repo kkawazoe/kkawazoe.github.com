@@ -176,18 +176,14 @@ if (!doNotTrack) {
 
 <h2 id="取得する-ini-ファイルの中身">取得する ini ファイルの中身</h2>
 
-<p>[sample.ini]</p>
-
-<pre><code class="language-txt">&lt;設定値&gt;*****************************************************'&lt;コメント&gt;#######################################
+<pre><code class="language-txt:sample.ini">&lt;設定値&gt;*****************************************************'&lt;コメント&gt;#######################################
 [Path]
 WorkPath=C:/src/wk                                           'Work Folder Path
 </code></pre>
 
 <h2 id="実際のコード">実際のコード</h2>
 
-<p>[getProfileString.bat]</p>
-
-<pre><code class="language-bat">@echo off
+<pre><code class="language-bat:getProfileString.bat">@echo off
 set iniFileName=sample.ini
 
 for /f &quot;usebackq tokens=* delims=&quot; %%A in (`call cscript //Nologo getProfileString.vbs &quot;%iniFileName%&quot; Path WorkPath`) do set ret=%%A
@@ -198,9 +194,7 @@ pause
 exit
 </code></pre>
 
-<p>[getProfileString.vbs]</p>
-
-<pre><code class="language-vbs">Option Explicit
+<pre><code class="language-vbs:getProfileString.vbs">Option Explicit
 rem /*****************************************************************
 rem  *  getProfileString.vbs iniFileName, sectionName, entryName
 rem  *

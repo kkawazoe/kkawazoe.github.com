@@ -21,21 +21,21 @@
     <title>Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
+<meta name="description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  class CreateNodes &amp;lt; ActiveRecord::Migration[5.">
 
 <meta property="og:title" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
+<meta property="og:description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  class CreateNodes &amp;lt; ActiveRecord::Migration[5.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
 <meta name="twitter:title" content="Rails で階層構造になっているテーブルに自分自身への関連を設定する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app/models/node.rb]class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db/migrate/{datetime}_create_nodes.">
+<meta name="twitter:description" content="テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;quot;Node&amp;quot;, foreign_key: &amp;quot;parrent_id&amp;quot; belongs_to :parrent, class_name: &amp;quot;Node&amp;quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  class CreateNodes &amp;lt; ActiveRecord::Migration[5.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": "テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている\n   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード [app\/models\/node.rb]\nclass Node \x26lt; ApplicationRecord has_many :children, class_name: \x26quot;Node\x26quot;, foreign_key: \x26quot;parrent_id\x26quot; belongs_to :parrent, class_name: \x26quot;Node\x26quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  [db\/migrate\/{datetime}_create_nodes."
+    "description": "テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている\n   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node \x26lt; ApplicationRecord has_many :children, class_name: \x26quot;Node\x26quot;, foreign_key: \x26quot;parrent_id\x26quot; belongs_to :parrent, class_name: \x26quot;Node\x26quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end  class CreateNodes \x26lt; ActiveRecord::Migration[5."
   }
 </script>
 
@@ -237,18 +237,14 @@ if (!doNotTrack) {
 
 <h2 id="実際のコード">実際のコード</h2>
 
-<p>[app/models/node.rb]</p>
-
-<pre><code class="language-ruby">class Node &lt; ApplicationRecord
+<pre><code class="language-ruby:app/models/node.rb">class Node &lt; ApplicationRecord
   has_many :children, class_name: &quot;Node&quot;, foreign_key: &quot;parrent_id&quot;
 
   belongs_to :parrent, class_name: &quot;Node&quot;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可
 end
 </code></pre>
 
-<p>[db/migrate/{datetime}_create_nodes.rb]</p>
-
-<pre><code class="language-ruby">class CreateNodes &lt; ActiveRecord::Migration[5.2]
+<pre><code class="language-ruby:db/migrate/{datetime}_create_nodes.rb">class CreateNodes &lt; ActiveRecord::Migration[5.2]
   def change
     create_table :nodes do |t|
       t.string :name

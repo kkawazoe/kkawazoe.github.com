@@ -294,9 +294,7 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       <div class="summary">経緯 electron にて ビルドするのに electron-builder を使用してみた
 その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0  実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
-[package.json]
-{ ・・・ &quot;scripts&quot;: { &quot;ng&quot;: &quot;ng&quot;, &quot;start&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;, &quot;build&quot;: &quot;ng build&quot;, &quot;test&quot;: &quot;jest&quot;, &quot;lint&quot;: &quot;ng lint&quot;, &quot;postinstall&quot;: &quot;electron-builder install-app-deps&quot;, &quot;release&quot;: &quot;ng build --prod &amp;&amp; node build.js&quot;, }, ・・・ }  [build.js]
-electron-builder のオプションについては公式を参照
+{ ・・・ &quot;scripts&quot;: { &quot;ng&quot;: &quot;ng&quot;, &quot;start&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;, &quot;build&quot;: &quot;ng build&quot;, &quot;test&quot;: &quot;jest&quot;, &quot;lint&quot;: &quot;ng lint&quot;, &quot;postinstall&quot;: &quot;electron-builder install-app-deps&quot;, &quot;release&quot;: &quot;ng build --prod &amp;&amp; node build.js&quot;, }, ・・・ }  electron-builder のオプションについては公式を参照
 &quot;use strict&quot;; const builder = require(&quot;electron-builder&quot;); const Platform = builder.</div>
     </div>
   </a>

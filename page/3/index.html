@@ -176,8 +176,7 @@ Vue.transition('expand', { beforeEnter: function (el) { el.textContent = 'before
       </ul>
 
       <div class="summary"> Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード [app/uploaders/my_uploader.rb]
-尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
+実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
 heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end  resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&gt; なにもしない  </div>
     </div>
   </a>
@@ -199,8 +198,7 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 
       <div class="summary"> Gretel について パンくずリストを表示する Gem
 github
-実際のコード [config/breadcrumbs.rb]
-# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&quot;表示したい画像&quot;) : &quot;&quot; link icon + {表示文字}, {URL} parent :parent_articles, article.category end  </div>
+実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&quot;表示したい画像&quot;) : &quot;&quot; link icon + {表示文字}, {URL} parent :parent_articles, article.category end  </div>
     </div>
   </a>
 </article>

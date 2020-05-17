@@ -178,8 +178,6 @@ if (!doNotTrack) {
 
 <h3 id="ふりがな取得機能の実装クラス">ふりがな取得機能の実装クラス</h3>
 
-<p>[mImecomp.vb]</p>
-
 <ul>
 <li>以下のふりがなに対応(半角および全角英数はそのまま取得)
 
@@ -190,7 +188,7 @@ if (!doNotTrack) {
 </ul></li>
 </ul>
 
-<pre><code class="language-vb">Option Strict Off
+<pre><code class="language-vb:mImecomp.vb">Option Strict Off
 Option Explicit On
 
 Imports System.Runtime.InteropServices
@@ -425,11 +423,9 @@ End Class
 
 <h3 id="ふりがな取得機能テスト用フォーム">ふりがな取得機能テスト用フォーム</h3>
 
-<p>[Form1.vb]</p>
-
 <p>初期処理時にふりがな種別を指定する</p>
 
-<pre><code class="language-vb">Imports Microsoft.VisualBasic
+<pre><code class="language-vb:Form1.vb">Imports Microsoft.VisualBasic
 Public Class Form1
 
     Private WithEvents ImeComp As Imecomp 'ふりがな取得イベント

@@ -176,13 +176,11 @@ if (!doNotTrack) {
 
 <h2 id="実際のコード">実際のコード</h2>
 
-<p>[app/uploaders/my_uploader.rb]</p>
-
 <p>尚、アスペクト比固定で <code>width</code> および <code>height</code> のみ指定する場合は <code>nil</code> を指定する</p>
 
 <h3 id="heightのみ指定">heightのみ指定</h3>
 
-<pre><code class="language-ruby">class MyUploader &lt; CarrierWave::Uploader::Base
+<pre><code class="language-ruby:app/uploaders/my_uploader.rb">class MyUploader &lt; CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   process resize_to_limit: [1200, nil]
@@ -191,7 +189,7 @@ end
 
 <h3 id="widthのみ指定">widthのみ指定</h3>
 
-<pre><code class="language-ruby">class MyUploader &lt; CarrierWave::Uploader::Base
+<pre><code class="language-ruby:app/uploaders/my_uploader.rb">class MyUploader &lt; CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   process resize_to_limit: [1200, nil]
