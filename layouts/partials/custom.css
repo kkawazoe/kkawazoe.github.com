@@ -36,3 +36,21 @@ article.sn > .article-body h4 {
 .has-jax > .MathJax_Display {
   text-align: left !important;
 }
+
+.hljs {
+  position: relative;
+}
+
+.hljs[data-filename] {
+  padding-top: 2em !important;
+}
+
+.hljs[data-filename]::before {
+  content: attr(data-filename);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  padding: 0 0.3em;
+  font-size: 0.93em;
+  background-color: #E7E9EB;
+}
