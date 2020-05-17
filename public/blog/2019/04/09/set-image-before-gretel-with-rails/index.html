@@ -21,21 +21,21 @@
     <title>Ruby on Rails の Gem Gretel で項目の前に画像を置く - Note To Self ~One Step At A Time~</title>
     
 
-<meta name="description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード [config/breadcrumbs.rb]# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
+<meta name="description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
 
 <meta property="og:title" content="Ruby on Rails の Gem Gretel で項目の前に画像を置く - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード [config/breadcrumbs.rb]# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
+<meta property="og:description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
 <meta name="twitter:title" content="Ruby on Rails の Gem Gretel で項目の前に画像を置く - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード [config/breadcrumbs.rb]# articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
+<meta name="twitter:description" content=" Gretel について パンくずリストを表示する Gemgithub実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&amp;quot;表示したい画像&amp;quot;) : &amp;quot;&amp;quot; link icon &#43; {表示文字}, {URL} parent :parent_articles, article.category end  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -70,7 +70,7 @@
         "height": 60
       }
     },
-    "description": " Gretel について パンくずリストを表示する Gem\ngithub\n実際のコード [config\/breadcrumbs.rb]\n# articles#index crumb :articles do |article| icon = article.flg ? image_tag(\x26quot;表示したい画像\x26quot;) : \x26quot;\x26quot; link icon \x2b {表示文字}, {URL} parent :parent_articles, article.category end  "
+    "description": " Gretel について パンくずリストを表示する Gem\ngithub\n実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(\x26quot;表示したい画像\x26quot;) : \x26quot;\x26quot; link icon \x2b {表示文字}, {URL} parent :parent_articles, article.category end  "
   }
 </script>
 
@@ -176,9 +176,7 @@ if (!doNotTrack) {
 
 <h2 id="実際のコード">実際のコード</h2>
 
-<p>[config/breadcrumbs.rb]</p>
-
-<pre><code class="language-ruby">
+<pre><code class="language-ruby:config/breadcrumbs.rb">
 # articles#index
 crumb :articles do |article|
   icon = article.flg ? image_tag(&quot;表示したい画像&quot;) : &quot;&quot;
