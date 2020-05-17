@@ -6,10 +6,24 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 04 Apr 2020 10:46:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 11:56:06 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rails で静的エラーページにレイアウトを適用する</title>
+      <link>https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/</link>
+      <pubDate>Sun, 17 May 2020 11:56:06 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/</guid>
+      <description>環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
+確認 config/environments/development.rb の以下を編集して確認する
+config.consider_all_requests_local = false  実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
+=&amp;gt; 生成されるファイル 例. public/%404.ja.html
+[generate_error_pages.rake]
+desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &amp;quot;public/%s.#{locale}.html&amp;quot; # where to put generated pages by default, %s is the replacement for @code ) renderer.</description>
+    </item>
     
     <item>
       <title>Docker Compose 上で Rails の秘匿情報を扱う</title>
