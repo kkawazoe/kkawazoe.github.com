@@ -199,10 +199,16 @@ if (!doNotTrack) {
     <section class="footer">
       <div>
         <nav class="crumb">
-          <ol>
-            <li><a href="https://kkawazoe.github.io/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+          <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="https://kkawazoe.github.io/" itemprop="item"><i class="fa fa-home" aria-hidden="true"></i>TOP</a>
+              <meta itemprop="position" content="1" />
+            </li>
             
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://kkawazoe.github.io/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="https://kkawazoe.github.io/post/" itemprop="item"><span itemprop="title">POST</span></a>
+              <meta itemprop="position" content="2" />
+            </li>
             
             <li class="active">CSS で複数行でも3点リーダーを表示する</li>
           </ol>
