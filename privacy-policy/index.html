@@ -232,8 +232,11 @@ Cookieを使用しています。
     <section class="footer">
       <div>
         <nav class="crumb">
-          <ol>
-            <li><a href="https://kkawazoe.github.io/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+          <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a href="https://kkawazoe.github.io/" itemprop="item"><i class="fa fa-home" aria-hidden="true"></i>TOP</a>
+              <meta itemprop="position" content="1" />
+            </li>
             
             <li class="active">プライバシーポリシー</li>
           </ol>
