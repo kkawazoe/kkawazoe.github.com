@@ -34,12 +34,12 @@
         <nav class="crumb">
           <ol itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <a href="{{ .Site.BaseURL }}" itemprop="item"><i class="fa fa-home" aria-hidden="true"></i>TOP</a>
+              <a href="{{ .Site.BaseURL }}" itemprop="item"><i class="fa fa-home" itemprop="name" aria-hidden="true"></i>TOP</a>
               <meta itemprop="position" content="1" />
             </li>
             {{ with .Section }}
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <a href="{{ $.Site.BaseURL }}{{ . | urlize }}/" itemprop="item"><span itemprop="title">{{ . | upper }}</span></a>
+              <a href="{{ $.Site.BaseURL }}{{ . | urlize }}/" itemprop="item"><span itemprop="name">{{ . | upper }}</span></a>
               <meta itemprop="position" content="2" />
             </li>
             {{ end }}
