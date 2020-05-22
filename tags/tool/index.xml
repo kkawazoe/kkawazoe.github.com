@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on Note To Self ~One Step At A Time~</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid>
-      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i++){ for(var j = 0; j &amp;lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).</description>
+      <description>実際のソース function searchContactMail() {/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */var strTerms = &#39;noreply&#39;;var myThreads = GmailApp.search(strTerms, 0, 100);var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列var contents = [];/* 各メールの内容を取り出す */for(var i = 0; i &amp;lt; myMsgs.length; i++){for(var j = 0; j &amp;lt; myMsgs[i].length; j++){var data = myMsgs[i][j].getTo();if(data !== null) {contents.push([data]);}}}/* スプレッドシートのシート「output」に出力 */if(myMsgs.length &amp;gt; 0){var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;);mySheet.getRange(1, 1, contents.length, 1).setValues(contents);}}</description>
     </item>
     
     <item>
@@ -27,10 +27,10 @@
       
       <guid>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</guid>
       <description>経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった テスト項目が多い場合手作業で シート作成 =&amp;gt; シート名変更をするのは手間だったため ツール化をすることにした
-使用方法  「パラメータ」シートにて以下を指定する
+使用方法   「パラメータ」シートにて以下を指定する
 [設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後にワークグループ(各シートが選択状態)になる  「パラメータ」シートの「実行」ボタンを押下する
-  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化 For Each ws In Worksheets &#39;ワークシート名が&amp;quot;パラメータ&amp;quot;以外の場合 If ws.Name &amp;lt;&amp;gt; &amp;quot;パラメータ&amp;quot; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得 chkFlg = Worksheets(&amp;quot;パラメータ&amp;quot;).</description>
+ シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後にワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
+  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &amp;#39;ワークシートの初期化  For Each ws In Worksheets &amp;#39;ワークシート名が&amp;#34;パラメータ&amp;#34;以外の場合  If ws.Name &amp;lt;&amp;gt; &amp;#34;パラメータ&amp;#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &amp;#39;チェックボックスの値を取得  chkFlg = Worksheets(&amp;#34;パラメータ&amp;#34;).</description>
     </item>
     
     <item>
@@ -42,9 +42,9 @@
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
- partials フォルダ配下に以下のファイルを作成する
+  partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot; async src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &amp;quot;AMS&amp;quot; }, extensions: [&amp;quot;AMSmath.js&amp;quot;, &amp;quot;AMSsymbols.js&amp;quot;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</description>
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</description>
     </item>
     
     <item>
@@ -53,11 +53,10 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Thu, 28 Mar 2019 12:09:59 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/</guid>
-      <description>前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
- 「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成    「JSON string」  「Data」を指定    「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON  「Target structure type」  「Custom」を指定  「Aggregated fields」  必要な項目を指定    前回作成した slack の Text を以下のように修正
-map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。</description>
+      <description>前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+ 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+ 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</description>
     </item>
     
     <item>
@@ -67,8 +66,8 @@ map() で 「content」の内容を配列で取得後 join() で改行および�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</guid>
       <description>したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定  リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク   今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない  integromat  サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報   [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列  そのため、todoist api を叩くことで実装する</description>
+ タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar * リマインダーが直前になる * todoist と連携可能だが「期日指定なし」が連携されない integromat * サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
     </item>
     
     <item>
@@ -82,10 +81,10 @@ Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下�
 手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる。
 Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合  サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0  インターネットオプションの Local intranet に「localhost:3000」を登録</description>
+IEの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
+  Edgeの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.</description>
     </item>
     
     <item>
@@ -102,7 +101,7 @@ Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
 ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
  Rambox サービス設定画面   実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;quot;.roomListBadges__unreadBadgeText&amp;quot;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ?</description>
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ?</description>
     </item>
     
     <item>
@@ -111,10 +110,10 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;quot;.r
       <pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</guid>
-      <description> 経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
+      <description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
 情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;quot;page&amp;quot;/&amp;gt; # h1 ## h2 ### h3  </description>
+実際のコード # h1 ## h2  ### h3  &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2  ### h3  </description>
     </item>
     
   </channel>

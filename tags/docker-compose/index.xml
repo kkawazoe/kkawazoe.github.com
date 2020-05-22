@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker Compose on Note To Self ~One Step At A Time~</title>
@@ -17,11 +17,11 @@
       <pubDate>Sat, 04 Apr 2020 10:46:01 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</guid>
-      <description> 環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
+      <description>環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&amp;quot;vim&amp;quot; bin/rails env_credentials:show -e production  編集 例. production 環境の秘匿情報を編集する
+$ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&amp;#34;vim&amp;#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&amp;quot;vim&amp;quot; bin/rails env_credentials:edit -e production  </description>
+$ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&amp;#34;vim&amp;#34; bin/rails env_credentials:edit -e production </description>
     </item>
     
   </channel>
