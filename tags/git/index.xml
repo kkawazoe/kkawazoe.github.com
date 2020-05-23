@@ -25,10 +25,10 @@
     
     <item>
       <title>Git コマンドについて</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link>
       <pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid>
       <description>基本的なコマンドを含めて備忘録として残しておく
 実際のコード 基本的な流れ   Git初期化
 git init   Git接続先設定

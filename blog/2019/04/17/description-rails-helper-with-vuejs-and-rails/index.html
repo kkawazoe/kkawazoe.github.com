@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~</title>
+    <title>Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,34 @@
 
 
     
-<meta name="description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
+<meta name="description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
 
-<meta property="og:title" content="Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
+<meta property="og:description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-<meta name="twitter:title" content="Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+<meta name="twitter:title" content="Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
 <script type="application/ld+json">
@@ -43,15 +55,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Hugo に数式を挿入する その2-Note To Self ~One Step At A Time~",
+    "headline": "Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/hugo_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/vuejs_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2020-05-23T15:11:31JST",
-    "dateModified": "2020-05-23T15:11:31JST",
+    "datePublished": "2019-04-17T00:00:00JST",
+    "dateModified": "2019-04-17T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +78,13 @@
         "height": 60
       }
     },
-    "description": "Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った"
+    "description": "経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく\n実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ\na.btn.home href=\x26#34;#{root_path}\x26#34; @touchStart=\x26#34;onTouchStartForBtn\x26#34; @touchEnd=\x26#34;onTouchEndForBtn\x26#34; @touchmove=\x26#34;onTouchMoveForBtn\x26#34;   RailsHelper での a タグ\nVue.js の bind を\x26rsquo;(シングルコート)で括る\n= link_to national_rankings_path, class: \x26#39;btn ranking\x26#39;, \x26#39;@touchStart\x26#39;: \x26#34;onTouchStartForBtn\x26#34;, \x26#39;@touchEnd\x26#39;: \x26#34;onTouchEndForBtn\x26#34;, \x26#39;@touchmove\x26#39;: \x26#34;onTouchMoveForBtn\x26#34;   "
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1411,48 +1423,6 @@ article.sn > .article-body h4 {
     </style>
 
 
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true,
-      tags: "ams",
-      autoload: {
-        color: [],
-        colorV2: ['color']
-      },
-      packages: {'[+]': ['noerrors']}
-    },
-    chtml: {
-      matchFontHeight: false,
-      displayAlign: "left",
-      displayIndent: "2em"
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      renderActions: {
-         
-        find_script_mathtex: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = {node: text, delim: '', n: 0};
-            math.end = {node: text, delim: '', n: 0};
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-    loader: {
-      load: ['[tex]/noerrors']
-    }
-  };
-</script>
-<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
-
-
 
 
 <script async src='https://www.google-analytics.com/analytics.js'></script>
@@ -1478,13 +1448,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
+  <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
 
   <header class="article-header">
-    <h1 class="title">Hugo に数式を挿入する その2</h1>
+    <h1 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-23T15:11:31JST">May 23, 2020</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1494,114 +1464,41 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&title=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&text=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&t=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&title=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>[前回までの記事]</p>
+  <div class="article-body"><h2 id="経緯">経緯</h2>
+<p>Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく</p>
+<h2 id="実際のコードhtml-テンプレートエンジンは-slim-を使用">実際のコード(html テンプレートエンジンは slim を使用)</h2>
 <ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">Hugo に数式を挿入する</a></li>
+<li>
+<p>通常 a タグ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">a<span style="color:#f92672">.</span>btn<span style="color:#f92672">.</span>home href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>root_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> @touchStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span> @touchEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span> @touchmove<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
+</code></pre></div></li>
+<li>
+<p>RailsHelper での a タグ</p>
+<p>Vue.js の bind を&rsquo;(シングルコート)で括る</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">=</span> link_to national_rankings_path, <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#39;btn ranking&#39;</span>, <span style="color:#e6db74">&#39;@touchStart&#39;</span>: <span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchEnd&#39;</span>: <span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchmove&#39;</span>: <span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
+</code></pre></div></li>
 </ul>
-<h2 id="経緯">経緯</h2>
-<p><code>mathjax</code> のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく</p>
-<h2 id="手順">手順</h2>
-<p><a href="http://docs.mathjax.org/en/latest/web/configuration.html#converting-your-v2-configuration-to-v3">参考</a> を見ながらアップデートする<br>
-※<a href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">version2 から version 3 への変換</a>を利用</p>
-<ol>
-<li>
-<p>partials フォルダ配下の以下のファイルを修正する</p>
-<p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
- <span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
-   <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
-     <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-     <span style="color:#a6e22e">tags</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ams&#34;</span>,
-     <span style="color:#a6e22e">autoload</span><span style="color:#f92672">:</span> {
-       <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> [],
-       <span style="color:#a6e22e">colorV2</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;color&#39;</span>]
-     },
-     <span style="color:#a6e22e">packages</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#39;[+]&#39;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;noerrors&#39;</span>]}
-   },
-   <span style="color:#a6e22e">chtml</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">matchFontHeight</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-     <span style="color:#a6e22e">displayAlign</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#75715e">// version 2 で css で変更していた 数式の表示位置の設定
-</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">displayIndent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2em&#34;</span>
-   },
-   <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">skipHtmlTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
-     <span style="color:#a6e22e">renderActions</span><span style="color:#f92672">:</span> {
-       <span style="color:#75715e">/* これを記述しないと インライン数式(例. ${}_n \mathrm{ P }_k$) が機能しない */</span>
-       <span style="color:#a6e22e">find_script_mathtex</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">doc</span>) {
-         <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#66d9ef">of</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;script[type^=&#34;math/tex&#34;]&#39;</span>)) {
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/; *mode=display/</span>);
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">math</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">MathItem</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">textContent</span>, <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">inputJax</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">display</span>);
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#e6db74">&#39;&#39;</span>);
-           <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">replaceChild</span>(<span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">node</span>);
-           <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">delim</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};
-           <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">delim</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};
-           <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">math</span>);
-         }
-       }, <span style="color:#e6db74">&#39;&#39;</span>]
-     }
-   },
-   <span style="color:#a6e22e">loader</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">load</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;[tex]/noerrors&#39;</span>]
-   }
- };
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div></li>
-<li>
-<p>1 で作成した partial を head or footer で読込</p>
-<p>例 head で読込</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
-  ・・・
-  {{ partial &#34;mathjax_support.html&#34; . }}
-&lt;/<span style="color:#f92672">head</span>&gt;
-</code></pre></div></li>
-</ol>
-<h2 id="チートシート-追加分のみ">チートシート ※追加分のみ</h2>
-<h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
-<h4 id="番号あり">番号あり</h4>
-<p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align}
-f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
-&amp;= (x+1)(x+2)
-<span style="color:#66d9ef">\end</span>{align}
-</code></pre></div><p>[表示例]</p>
-<p>\begin{align}
-f(x) &amp;= x^2+3x+2 \\\<br>
-&amp;= (x+1)(x+2)
-\end{align}</p>
-<h4 id="番号なし">番号なし</h4>
-<p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align*}
-f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
-&amp;= (x+1)(x+2)
-<span style="color:#66d9ef">\end</span>{align*}
-</code></pre></div><p>[表示例]</p>
-<p>\begin{align*}
-f(x) &amp;= x^2+3x+2 \\\<br>
-&amp;= (x+1)(x+2)
-\end{align*}</p>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&title=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&text=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&t=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f&title=Vue.js%20%ef%bc%8b%20Rails%20%e3%81%a7%20RailsHelper%20%e3%81%a8%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e8%a8%98%e8%bf%b0%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f17%2fdescription-rails-helper-with-vuejs-and-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -1616,7 +1513,9 @@ f(x) &amp;= x^2+3x+2 \\\<br>
       </header>
       <ul class="terms">
         
-        <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
+        <li><a href="https://kkawazoe.github.io/tags/vue.js/">Vue.js</a></li>
+        
+        <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
         
       </ul>
     </section>
@@ -1632,14 +1531,14 @@ f(x) &amp;= x^2+3x+2 \\\<br>
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-    <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
+    <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
 
     <div class="inner">
-      <div class="title">Rails で静的エラーページにレイアウトを適用する</div>
+      <div class="title">Github への公開鍵の登録</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-05-17T11:56:06JST">May 17, 2020</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="15007-04-15T11:51:14JST">Apr 15, 2019</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1655,6 +1554,27 @@ f(x) &amp;= x^2+3x+2 \\\<br>
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
+    <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
+
+    <div class="inner">
+      <div class="title">Git コマンドについて</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="18007-04-18T00:00:00JST">Apr 18, 2019</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
   </div>
 </div>

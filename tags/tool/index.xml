@@ -37,10 +37,10 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
     
     <item>
       <title>Excel でテスト用シートを自動生成するツールを作成する</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/</guid>
       <description>経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった テスト項目が多い場合手作業で シート作成 =&amp;gt; シート名変更をするのは手間だったため ツール化をすることにした
 使用方法   「パラメータ」シートにて以下を指定する
 [設定項目]
@@ -50,10 +50,10 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
     
     <item>
       <title>Hugo に数式を挿入する</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</link>
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する

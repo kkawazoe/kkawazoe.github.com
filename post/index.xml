@@ -177,10 +177,10 @@ $$ 最終利回り(%) = \frac{表面利率 + \frac{額面(100円) - 購入価格
     
     <item>
       <title>Excel でテスト用シートを自動生成するツールを作成する</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/</guid>
       <description>経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった テスト項目が多い場合手作業で シート作成 =&amp;gt; シート名変更をするのは手間だったため ツール化をすることにした
 使用方法   「パラメータ」シートにて以下を指定する
 [設定項目]
@@ -190,10 +190,10 @@ $$ 最終利回り(%) = \frac{表面利率 + \frac{額面(100円) - 購入価格
     
     <item>
       <title>Hugo に数式を挿入する</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</link>
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
@@ -303,10 +303,10 @@ $$ 自己資本比率(%) = \frac{自己資本(純資産)}{総資産(負債 + 純
     
     <item>
       <title>AWS 認定ソリューションアーキテクト - アソシエイトへの道</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</guid>
       <description>試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
 受験料 15,000 円 (日本語版/税別)
 出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</description>
@@ -314,10 +314,10 @@ $$ 自己資本比率(%) = \frac{自己資本(純資産)}{総資産(負債 + 純
     
     <item>
       <title>Git コマンドについて</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link>
       <pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/18/about_git_command/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid>
       <description>基本的なコマンドを含めて備忘録として残しておく
 実際のコード 基本的な流れ   Git初期化
 git init   Git接続先設定
@@ -333,10 +333,10 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
     
     <item>
       <title>Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</link>
       <pubDate>Wed, 17 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</guid>
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ

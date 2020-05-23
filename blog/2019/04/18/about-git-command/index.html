@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~</title>
+    <title>Git コマンドについて - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
+<meta name="description" content="Git コマンドについて　基本的なコマンドを含めて備忘録として残しておく">
 
-<meta property="og:title" content="Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Git コマンドについて - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
+<meta property="og:description" content="Git コマンドについて　基本的なコマンドを含めて備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-<meta name="twitter:title" content="Hugo に数式を挿入する その2 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/hugo_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
+<meta name="twitter:title" content="Git コマンドについて - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Git コマンドについて　基本的なコマンドを含めて備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Hugo に数式を挿入する その2-Note To Self ~One Step At A Time~",
+    "headline": "Git コマンドについて-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/hugo_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/github_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2020-05-23T15:11:31JST",
-    "dateModified": "2020-05-23T15:11:31JST",
+    "datePublished": "2019-04-18T00:00:00JST",
+    "dateModified": "2019-04-18T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "Hugo に数式を挿入する その2 mathjax version 3 へのアップデートを行った"
+    "description": "Git コマンドについて　基本的なコマンドを含めて備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1411,48 +1411,6 @@ article.sn > .article-body h4 {
     </style>
 
 
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true,
-      tags: "ams",
-      autoload: {
-        color: [],
-        colorV2: ['color']
-      },
-      packages: {'[+]': ['noerrors']}
-    },
-    chtml: {
-      matchFontHeight: false,
-      displayAlign: "left",
-      displayIndent: "2em"
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      renderActions: {
-         
-        find_script_mathtex: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = {node: text, delim: '', n: 0};
-            math.end = {node: text, delim: '', n: 0};
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-    loader: {
-      load: ['[tex]/noerrors']
-    }
-  };
-</script>
-<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
-
-
 
 
 <script async src='https://www.google-analytics.com/analytics.js'></script>
@@ -1478,13 +1436,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
+  <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
 
   <header class="article-header">
-    <h1 class="title">Hugo に数式を挿入する その2</h1>
+    <h1 class="title">Git コマンドについて</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-23T15:11:31JST">May 23, 2020</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T00:00:00JST">Apr 18, 2019</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1494,114 +1452,122 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&text=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&t=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>[前回までの記事]</p>
-<ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">Hugo に数式を挿入する</a></li>
-</ul>
-<h2 id="経緯">経緯</h2>
-<p><code>mathjax</code> のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく</p>
-<h2 id="手順">手順</h2>
-<p><a href="http://docs.mathjax.org/en/latest/web/configuration.html#converting-your-v2-configuration-to-v3">参考</a> を見ながらアップデートする<br>
-※<a href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">version2 から version 3 への変換</a>を利用</p>
+  <div class="article-body"><p>基本的なコマンドを含めて備忘録として残しておく</p>
+<h2 id="実際のコード">実際のコード</h2>
+<h3 id="基本的な流れ">基本的な流れ</h3>
 <ol>
 <li>
-<p>partials フォルダ配下の以下のファイルを修正する</p>
-<p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
- <span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
-   <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
-     <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-     <span style="color:#a6e22e">tags</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ams&#34;</span>,
-     <span style="color:#a6e22e">autoload</span><span style="color:#f92672">:</span> {
-       <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> [],
-       <span style="color:#a6e22e">colorV2</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;color&#39;</span>]
-     },
-     <span style="color:#a6e22e">packages</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#39;[+]&#39;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;noerrors&#39;</span>]}
-   },
-   <span style="color:#a6e22e">chtml</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">matchFontHeight</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-     <span style="color:#a6e22e">displayAlign</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#75715e">// version 2 で css で変更していた 数式の表示位置の設定
-</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">displayIndent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2em&#34;</span>
-   },
-   <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">skipHtmlTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
-     <span style="color:#a6e22e">renderActions</span><span style="color:#f92672">:</span> {
-       <span style="color:#75715e">/* これを記述しないと インライン数式(例. ${}_n \mathrm{ P }_k$) が機能しない */</span>
-       <span style="color:#a6e22e">find_script_mathtex</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">doc</span>) {
-         <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#66d9ef">of</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;script[type^=&#34;math/tex&#34;]&#39;</span>)) {
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">type</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/; *mode=display/</span>);
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">math</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">MathItem</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">textContent</span>, <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">inputJax</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">display</span>);
-           <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#e6db74">&#39;&#39;</span>);
-           <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">replaceChild</span>(<span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">node</span>);
-           <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">delim</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};
-           <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>, <span style="color:#a6e22e">delim</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};
-           <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">math</span>);
-         }
-       }, <span style="color:#e6db74">&#39;&#39;</span>]
-     }
-   },
-   <span style="color:#a6e22e">loader</span><span style="color:#f92672">:</span> {
-     <span style="color:#a6e22e">load</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;[tex]/noerrors&#39;</span>]
-   }
- };
-&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<p>Git初期化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 </code></pre></div></li>
 <li>
-<p>1 で作成した partial を head or footer で読込</p>
-<p>例 head で読込</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
-  ・・・
-  {{ partial &#34;mathjax_support.html&#34; . }}
-&lt;/<span style="color:#f92672">head</span>&gt;
+<p>Git接続先設定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元接続先URL<span style="color:#f92672">}</span>
+git remote add <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 先接続先URL<span style="color:#f92672">}</span>
 </code></pre></div></li>
+<li>
+<p>最新ソース取得</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>トピックブランチ作成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b topic/#<span style="color:#f92672">{</span>issue番号<span style="color:#f92672">}</span>-作業者名
+</code></pre></div></li>
+<li>
+<p>開発</p>
+</li>
+<li>
+<p>ステージングにあげる</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
+</code></pre></div></li>
+<li>
+<p>コミットする</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#e6db74">&#34;コメント&#34;</span>
+</code></pre></div></li>
+<li>
+<p>プルリクエストを投げる</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+</code></pre></div><p>※修正がある場合はgit addから先を繰り返し</p>
+</li>
 </ol>
-<h2 id="チートシート-追加分のみ">チートシート ※追加分のみ</h2>
-<h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
-<h4 id="番号あり">番号あり</h4>
-<p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align}
-f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
-&amp;= (x+1)(x+2)
-<span style="color:#66d9ef">\end</span>{align}
-</code></pre></div><p>[表示例]</p>
-<p>\begin{align}
-f(x) &amp;= x^2+3x+2 \\\<br>
-&amp;= (x+1)(x+2)
-\end{align}</p>
-<h4 id="番号なし">番号なし</h4>
-<p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align*}
-f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
-&amp;= (x+1)(x+2)
-<span style="color:#66d9ef">\end</span>{align*}
-</code></pre></div><p>[表示例]</p>
-<p>\begin{align*}
-f(x) &amp;= x^2+3x+2 \\\<br>
-&amp;= (x+1)(x+2)
-\end{align*}</p>
-</div>
+<h3 id="その他">その他</h3>
+<h4 id="直前のコミットのコメントを修正">直前のコミットのコメントを修正</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit --amend -m <span style="color:#e6db74">&#34;直前のコミットのコメントを修正&#34;</span>
+</code></pre></div><h4 id="コミットをまとめる">コミットをまとめる</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 2つ前までのコミットを修正</span>
+$ git rebase -i HEAD~~
+
+squash or s に編集
+
+コメントを修正
+</code></pre></div><h4 id="最新資産へのマージ">最新資産へのマージ</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git pull --rebase base master
+
+<span style="color:#75715e"># コンフリクトを修正</span>
+<span style="color:#75715e"># コンフリクトの修正をマージする</span>
+$ git add -A
+$ git rebase --continue
+※git commitではないので注意
+
+$ git push -f <span style="color:#f92672">{</span>リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+※強制更新になるため注意
+</code></pre></div><h4 id="git-の状態を一つ前に戻す">git の状態を一つ前に戻す</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard HEAD^
+</code></pre></div><h4 id="stash-の一覧を表示">stash の一覧を表示</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash list
+</code></pre></div><h4 id="stash-の差分を表示">stash の差分を表示</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD..stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="stash-の最新を適用">stash の最新を適用</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop
+</code></pre></div><h4 id="stash--n-番目を適用">stash  N 番目を適用</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="untracked-files-を含めて退避">untracked files を含めて退避</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash save -u <span style="color:#e6db74">&#34;untracked files を含めて退避&#34;</span>
+</code></pre></div><h4 id="fork-元の任意ブランチを親としてトピックブランチを作成">Fork 元の任意ブランチを親としてトピックブランチを作成</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元のリモート名<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>Fork 元のブランチ名<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="プルリクエストの取り下げプルリクエスト出す直前に取り消し">プルリクエストの取り下げ(プルリクエスト出す直前に取り消し)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+</code></pre></div><p>=&gt; <code>github</code> 上の 「Compare &amp; pull request」ボタンが消える</p>
+<h4 id="プルリクエストの取り下げプルリクエスト出した直後に取り消し">プルリクエストの取り下げ(プルリクエスト出した直後に取り消し)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+</code></pre></div><p>=&gt; <code>github</code> 上は「close」扱いになる</p>
+<h4 id="github-上の-プルリクエストブランチをローカルに持ってくる">github 上の プルリクエストブランチをローカルに持ってくる</h4>
+<p>プルリクエストを行うと <code>github</code> 上では、 <code>pr/{連番}/head</code> と <code>pr/{連番}/merge</code> というブランチが作られるためそれを使用する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git fetch <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#e6db74">&#39;+refs/pull/*:refs/remotes/pr/*&#39;</span>
+  * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>    refs/pull/9/head -&gt; pull/1/head
+  * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>    refs/pull/9/merge -&gt; pull/1/merge
+  * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>   refs/pull/10/head -&gt; pull/10/head
+  ... <span style="color:#f92672">(</span>abbrev<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># 例. プルリクエスト 10 を持ってくる場合</span>
+$ git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> pull/10/head
+</code></pre></div><h3 id="git-ブランチ切り替え時の注意点">Git ブランチ切り替え時の注意点</h3>
+<p><code>git checkout</code> コマンドを使用すると移動元のブランチの修正を引き継いで切り替えを行う</p>
+<p>上記のため、<code>git status</code> コマンドで差分として上がらず <code>github</code> に上げた際に<br>
+不要なソースが混じってしまう可能性があるため注意する</p>
+<p>対策としては以下のようにチェックアウト元を指定して新規でブランチを作成する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>作成するブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>チェックアウト元ブランチ名<span style="color:#f92672">}</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&text=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&t=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f&title=Hugo%20%e3%81%ab%e6%95%b0%e5%bc%8f%e3%82%92%e6%8c%bf%e5%85%a5%e3%81%99%e3%82%8b%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f05%2f23%2finsert-formula-into-hugo-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&text=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&t=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -1616,7 +1582,7 @@ f(x) &amp;= x^2+3x+2 \\\<br>
       </header>
       <ul class="terms">
         
-        <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
+        <li><a href="https://kkawazoe.github.io/tags/git/">git</a></li>
         
       </ul>
     </section>
@@ -1632,14 +1598,14 @@ f(x) &amp;= x^2+3x+2 \\\<br>
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-    <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
+  <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+    <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
 
     <div class="inner">
-      <div class="title">Rails で静的エラーページにレイアウトを適用する</div>
+      <div class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-05-17T11:56:06JST">May 17, 2020</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-04-17T00:00:00JST">Apr 17, 2019</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1655,6 +1621,27 @@ f(x) &amp;= x^2+3x+2 \\\<br>
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/">
+    <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
+
+    <div class="inner">
+      <div class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-04-19T00:00:00JST">Apr 19, 2019</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
   </div>
 </div>

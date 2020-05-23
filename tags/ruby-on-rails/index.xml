@@ -62,10 +62,10 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
     
     <item>
       <title>Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</title>
-      <link>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</link>
       <pubDate>Wed, 17 Apr 2019 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</guid>
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
