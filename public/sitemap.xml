@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/</loc>
+    <lastmod>2020-05-23T15:11:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2020-05-17T11:56:06+09:00</lastmod>
+    <lastmod>2020-05-23T15:11:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2020-05-23T15:11:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
+    <lastmod>2020-05-23T15:11:31+09:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +29,6 @@
   
   <url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2020-05-17T11:56:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2020-05-17T11:56:06+09:00</lastmod>
   </url>
   
@@ -34,11 +44,6 @@
   
   <url>
     <loc>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</loc>
-    <lastmod>2020-03-19T15:25:56+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
     <lastmod>2020-03-19T15:25:56+09:00</lastmod>
   </url>
   
