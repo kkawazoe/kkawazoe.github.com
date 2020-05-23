@@ -1357,46 +1357,8 @@ article.sn > .article-body h4 {
 }
 
     </style>
-    <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true,
-      tags: "ams",
-      autoload: {
-        color: [],
-        colorV2: ['color']
-      },
-      packages: {'[+]': ['noerrors']}
-    },
-    chtml: {
-      matchFontHeight: false,
-      displayAlign: "left",
-      displayIndent: "2em"
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      renderActions: {
-         
-        find_script_mathtex: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = {node: text, delim: '', n: 0};
-            math.end = {node: text, delim: '', n: 0};
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-    loader: {
-      load: ['[tex]/noerrors']
-    }
-  };
-</script>
-<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+
+
 
 
 <script async src='https://www.google-analytics.com/analytics.js'></script>
@@ -1435,7 +1397,7 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/">
+        <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
           <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
 
           <div class="inner">
@@ -1451,6 +1413,7 @@ ga('send', 'pageview');
             <div class="summary">[前回までの記事]
  Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする
+※version2 から version 3 への変換を利用
   partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
@@ -1676,7 +1639,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
   <div class="articles sm">
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/">
+  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
     <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
 
     <div class="inner">
