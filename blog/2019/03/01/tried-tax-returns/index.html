@@ -1430,46 +1430,8 @@ article.sn > .article-body h4 {
 }
 
     </style>
-    <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true,
-      tags: "ams",
-      autoload: {
-        color: [],
-        colorV2: ['color']
-      },
-      packages: {'[+]': ['noerrors']}
-    },
-    chtml: {
-      matchFontHeight: false,
-      displayAlign: "left",
-      displayIndent: "2em"
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      renderActions: {
-         
-        find_script_mathtex: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = {node: text, delim: '', n: 0};
-            math.end = {node: text, delim: '', n: 0};
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-    loader: {
-      load: ['[tex]/noerrors']
-    }
-  };
-</script>
-<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+
+
 
 
 <script async src='https://www.google-analytics.com/analytics.js'></script>
@@ -1703,7 +1665,7 @@ ga('send', 'pageview');
   <div class="articles sm">
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/">
+  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
     <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
 
     <div class="inner">
