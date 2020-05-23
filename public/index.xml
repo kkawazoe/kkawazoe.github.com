@@ -12,6 +12,20 @@
     
     
     <item>
+      <title>Hugo に数式を挿入する その2</title>
+      <link>https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/</link>
+      <pubDate>Sat, 23 May 2020 15:11:31 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/</guid>
+      <description>[前回までの記事]
+ Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+手順 参考 を見ながらアップデートする
+  partials フォルダ配下の以下のファイルを修正する
+CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
+    </item>
+    
+    <item>
       <title>Rails で静的エラーページにレイアウトを適用する</title>
       <link>https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/</link>
       <pubDate>Sun, 17 May 2020 11:56:06 +0900</pubDate>
