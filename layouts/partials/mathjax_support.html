@@ -16,6 +16,7 @@
       displayIndent: "2em"
     },
     options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
       renderActions: {
         /* add a new named action to render <script type="math/tex"> */
         find_script_mathtex: [10, function (doc) {
