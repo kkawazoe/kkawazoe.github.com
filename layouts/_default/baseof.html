@@ -44,7 +44,11 @@
 {{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
 {{ partial "custom.css" . | safeCSS }}
     </style>
-    {{ partial "mathjax_support.html" . }}
+
+{{ if .Params.mathjax }}
+  {{ partial "mathjax_support.html" . }}
+{{ end }}
+
 {{ if and .Site.GoogleAnalytics (ne (getenv "HUGO_ENV") "DEV") }}
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 <script>
