@@ -25,18 +25,6 @@ article.sn > .article-body h4 {
   margin-bottom: 1rem;
 }
 
-.has-jax {
-  font: inherit;
-  font-size: 100%;
-  background: inherit;
-  border: inherit;
-  color: #515151;
-}
-
-.has-jax > .MathJax_Display {
-  text-align: left !important;
-}
-
 .hljs {
   position: relative;
 }
