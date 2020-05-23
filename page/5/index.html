@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-cf1ebbe74cd06a5a15d2f97d266119eb {
+  background-image: url("https://kkawazoe.github.io/images/logo/hugo_logo.png");
+}
+  
+
+  
 .thumb-c643f44b7b7ea0683b36a2c49d8f0bed {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -766,6 +772,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cf1ebbe74cd06a5a15d2f97d266119eb {
+  background-image: url(https://kkawazoe.github.io/images/logo/hugo_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cf1ebbe74cd06a5a15d2f97d266119eb {
+  width: 5rem;
 }
 
 
@@ -1356,6 +1375,7 @@ article.sn > .article-body h4 {
       displayIndent: "2em"
     },
     options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
       renderActions: {
          
         find_script_mathtex: [10, function (doc) {
@@ -1408,6 +1428,27 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
+          <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js で画像の読み込みの開始および完了を検知する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1  }, methods: { // ※4  load: function() { console.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -1545,6 +1586,27 @@ ga('send', 'pageview');
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert_formula_into_hugo/">
+    <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
+
+    <div class="inner">
+      <div class="title">Hugo に数式を挿入する その2</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-05-23T15:11:31JST">May 23, 2020</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
@@ -1735,27 +1797,6 @@ ga('send', 'pageview');
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
-    <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
-
-    <div class="inner">
-      <div class="title">Angular Cli で作成したプロジェクトに Jest を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="15007-05-15T12:00:00JST">May 15, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1768,7 +1809,7 @@ ga('send', 'pageview');
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(10)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(8)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(9)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
