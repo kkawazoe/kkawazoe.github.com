@@ -10,3 +10,6 @@ googleAnalytics = "UA-46736290-1"
 
 [params]
 enableHighlight = true
+
+[outputs]
+page = [ "HTML", "AMP" ]
