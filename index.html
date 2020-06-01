@@ -1483,7 +1483,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               
             </ul>
 
-            <div class="summary">実際のソース function searchContactMail() {/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */var strTerms = 'noreply';var myThreads = GmailApp.search(strTerms, 0, 100);var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列var contents = [];/* 各メールの内容を取り出す */for(var i = 0; i &lt; myMsgs.length; i++){for(var j = 0; j &lt; myMsgs[i].length; j++){var data = myMsgs[i][j].getTo();if(data !== null) {contents.push([data]);}}}/* スプレッドシートのシート「output」に出力 */if(myMsgs.length &gt; 0){var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('output');mySheet.getRange(1, 1, contents.length, 1).setValues(contents);}}</div>
+            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i++){ for(var j = 0; j &lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).</div>
           </div>
         </a>
       </article>
