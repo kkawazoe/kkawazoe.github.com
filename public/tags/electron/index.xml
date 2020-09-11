@@ -21,7 +21,7 @@
 その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 { ・・・ &amp;#34;scripts&amp;#34;: { &amp;#34;ng&amp;#34;: &amp;#34;ng&amp;#34;, &amp;#34;start&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; electron .&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;ng build&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;jest&amp;#34;, &amp;#34;lint&amp;#34;: &amp;#34;ng lint&amp;#34;, &amp;#34;postinstall&amp;#34;: &amp;#34;electron-builder install-app-deps&amp;#34;, &amp;#34;release&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; node build.js&amp;#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&amp;#34;use strict&amp;#34;; const builder = require(&amp;#34;electron-builder&amp;#34;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
+&amp;#39;use strict&amp;#39;; const builder = require(&amp;#39;electron-builder&amp;#39;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
     </item>
     
   </channel>

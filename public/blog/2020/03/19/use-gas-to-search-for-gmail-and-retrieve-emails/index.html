@@ -17,21 +17,21 @@
 
 
     
-<meta name="description" content="実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).">
+<meta name="description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す">
 
 <meta property="og:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).">
+<meta property="og:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
 <meta name="twitter:title" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &lt; myMsgs.length; i&#43;&#43;){ for(var j = 0; j &lt; myMsgs[i].length; j&#43;&#43;){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;output&#39;); mySheet.getRange(1, 1, contents.length, 1).">
+<meta name="twitter:description" content="Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/gas_logo.svg">
 
 
@@ -66,7 +66,7 @@
         "height": 60
       }
     },
-    "description": "実際のソース function searchContactMail() { \/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す *\/ var strTerms = \x26#39;noreply\x26#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); \/\/二次元配列  var contents = []; \/* 各メールの内容を取り出す *\/ for(var i = 0; i \x26lt; myMsgs.length; i\x2b\x2b){ for(var j = 0; j \x26lt; myMsgs[i].length; j\x2b\x2b){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } \/* スプレッドシートのシート「output」に出力 *\/ if(myMsgs.length \x26gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(\x26#39;output\x26#39;); mySheet.getRange(1, 1, contents.length, 1)."
+    "description": "Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す"
   }
 </script>
 
@@ -1465,28 +1465,29 @@ ga('send', 'pageview');
 
   <div class="article-body"><h2 id="実際のソース">実際のソース</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">searchContactMail</span>() {
-
   <span style="color:#75715e">/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */</span>
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTerms</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;noreply&#39;</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myThreads</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GmailApp</span>.<span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">strTerms</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>);
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myMsgs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GmailApp</span>.<span style="color:#a6e22e">getMessagesForThreads</span>(<span style="color:#a6e22e">myThreads</span>); <span style="color:#75715e">//二次元配列
 </span><span style="color:#75715e"></span>
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> [];
-  
+
   <span style="color:#75715e">/* 各メールの内容を取り出す */</span>
-  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">myMsgs</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">myMsgs</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>){
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">myMsgs</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">myMsgs</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
       <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myMsgs</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">getTo</span>();
 
-      <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">data</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
         <span style="color:#a6e22e">contents</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">data</span>]);
       }
     }
   }
 
   <span style="color:#75715e">/* スプレッドシートのシート「output」に出力 */</span>
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">myMsgs</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mySheet</span><span style="color:#f92672">=</span><span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">getActiveSpreadsheet</span>().<span style="color:#a6e22e">getSheetByName</span>(<span style="color:#e6db74">&#39;output&#39;</span>);
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">myMsgs</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mySheet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SpreadsheetApp</span>.<span style="color:#a6e22e">getActiveSpreadsheet</span>().<span style="color:#a6e22e">getSheetByName</span>(
+      <span style="color:#e6db74">&#39;output&#39;</span>
+    );
     <span style="color:#a6e22e">mySheet</span>.<span style="color:#a6e22e">getRange</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">contents</span>.<span style="color:#a6e22e">length</span>, <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">setValues</span>(<span style="color:#a6e22e">contents</span>);
   }
 }
