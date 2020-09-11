@@ -17,33 +17,21 @@
 
 
     
-<meta name="description" content="経緯 electron にて ビルドするのに electron-builder を使用してみた
-その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
-構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
-{ ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&#34;use strict&#34;; const builder = require(&#34;electron-builder&#34;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.">
+<meta name="description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
 
 <meta property="og:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="経緯 electron にて ビルドするのに electron-builder を使用してみた
-その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
-構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
-{ ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&#34;use strict&#34;; const builder = require(&#34;electron-builder&#34;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.">
+<meta property="og:description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
 <meta name="twitter:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="経緯 electron にて ビルドするのに electron-builder を使用してみた
-その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
-構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
-{ ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&#34;use strict&#34;; const builder = require(&#34;electron-builder&#34;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.">
+<meta name="twitter:description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
 
 
@@ -78,7 +66,7 @@
         "height": 60
       }
     },
-    "description": "経緯 electron にて ビルドするのに electron-builder を使用してみた\nその際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく\n構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)\n{ ・・・ \x26#34;scripts\x26#34;: { \x26#34;ng\x26#34;: \x26#34;ng\x26#34;, \x26#34;start\x26#34;: \x26#34;ng build --prod \x26amp;\x26amp; electron .\x26#34;, \x26#34;build\x26#34;: \x26#34;ng build\x26#34;, \x26#34;test\x26#34;: \x26#34;jest\x26#34;, \x26#34;lint\x26#34;: \x26#34;ng lint\x26#34;, \x26#34;postinstall\x26#34;: \x26#34;electron-builder install-app-deps\x26#34;, \x26#34;release\x26#34;: \x26#34;ng build --prod \x26amp;\x26amp; node build.js\x26#34;, }, ・・・ } electron-builder のオプションについては公式を参照\n\x26#34;use strict\x26#34;; const builder = require(\x26#34;electron-builder\x26#34;); const Platform = builder.Platform; const childProcess = require(\x26#39;child_process\x26#39;); const unitTest = new Promise((resolve, reject) =\x26gt; { childProcess."
+    "description": "electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく"
   }
 </script>
 
@@ -1498,16 +1486,16 @@ electron-builder: 20.39.0
   <span style="color:#960050;background-color:#1e0010">・・・</span>
 }
 </code></pre></div><p>electron-builder のオプションについては<a href="https://www.electron.build/">公式</a>を参照</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#34;use strict&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#39;use strict&#39;</span>;
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;electron-builder&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron-builder&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Platform</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">Platform</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">childProcess</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>);
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">unitTest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
   <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn test&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">error</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
       <span style="color:#75715e">// エラー時は例外を投げる
 </span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
     }
@@ -1517,7 +1505,7 @@ electron-builder: 20.39.0
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lint</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
   <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn lint&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">error</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
       <span style="color:#75715e">// エラー時は例外を投げる
 </span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
     }
@@ -1526,48 +1514,45 @@ electron-builder: 20.39.0
 });
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">build</span>({
-    <span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">WINDOWS</span>.<span style="color:#a6e22e">createTarget</span>(),
-    <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
-      <span style="color:#e6db74">&#34;directories&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;output&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;release&#34;</span>,
-        <span style="color:#e6db74">&#34;buildResources&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dist&#34;</span>
+  <span style="color:#a6e22e">builder</span>
+    .<span style="color:#a6e22e">build</span>({
+      <span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">WINDOWS</span>.<span style="color:#a6e22e">createTarget</span>(),
+      <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">directories</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;release&#39;</span>,
+          <span style="color:#a6e22e">buildResources</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dist&#39;</span>,
+        },
+        <span style="color:#a6e22e">productName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Example App&#39;</span>,
+        <span style="color:#a6e22e">files</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;**/*&#39;</span>, <span style="color:#e6db74">&#39;dist/**/*&#39;</span>],
+        <span style="color:#a6e22e">win</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> [
+            {
+              <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nsis&#39;</span>,
+              <span style="color:#a6e22e">arch</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;x64&#39;</span>],
+            },
+          ],
+        },
+        <span style="color:#a6e22e">nsis</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">createDesktopShortcut</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;always&#39;</span>,
+        },
       },
-      <span style="color:#e6db74">&#34;productName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Example App&#34;</span>,
-      <span style="color:#e6db74">&#34;files&#34;</span><span style="color:#f92672">:</span> [
-        <span style="color:#e6db74">&#34;**/*&#34;</span>,
-        <span style="color:#e6db74">&#34;dist/**/*&#34;</span>
-      ],
-      <span style="color:#e6db74">&#34;win&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;target&#34;</span><span style="color:#f92672">:</span> [
-          {
-            <span style="color:#e6db74">&#34;target&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;nsis&#34;</span>,
-            <span style="color:#e6db74">&#34;arch&#34;</span><span style="color:#f92672">:</span> [ <span style="color:#e6db74">&#34;x64&#34;</span> ]
-          }
-        ]
-      },
-      <span style="color:#e6db74">&#34;nsis&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#e6db74">&#34;createDesktopShortcut&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;always&#34;</span>
-      }
-    }
-  })
-  .<span style="color:#a6e22e">then</span>(() =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Build OK!&#39;</span>);
-  })
-  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-  });
+    })
+    .<span style="color:#a6e22e">then</span>(() =&gt; {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Build OK!&#39;</span>);
+    })
+    .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+    });
 };
 
 Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint</span>, <span style="color:#a6e22e">unitTest</span>])
-  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">values</span> =&gt; {
+  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">values</span>) =&gt; {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>));
     <span style="color:#a6e22e">build</span>();
   })
-  .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
-  }
-);
+  });
 </code></pre></div></div>
 
   <footer class="article-footer">
