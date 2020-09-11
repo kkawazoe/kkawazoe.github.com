@@ -58,7 +58,7 @@ $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない
       <pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid>
-      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i++){ for(var j = 0; j &amp;lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&amp;#39;output&amp;#39;); mySheet.getRange(1, 1, contents.length, 1).</description>
+      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
     </item>
     
     <item>
@@ -138,7 +138,7 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
 その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 { ・・・ &amp;#34;scripts&amp;#34;: { &amp;#34;ng&amp;#34;: &amp;#34;ng&amp;#34;, &amp;#34;start&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; electron .&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;ng build&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;jest&amp;#34;, &amp;#34;lint&amp;#34;: &amp;#34;ng lint&amp;#34;, &amp;#34;postinstall&amp;#34;: &amp;#34;electron-builder install-app-deps&amp;#34;, &amp;#34;release&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; node build.js&amp;#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&amp;#34;use strict&amp;#34;; const builder = require(&amp;#34;electron-builder&amp;#34;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
+&amp;#39;use strict&amp;#39;; const builder = require(&amp;#39;electron-builder&amp;#39;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
     </item>
     
     <item>

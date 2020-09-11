@@ -1414,7 +1414,7 @@ ga('send', 'pageview');
 その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 { ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
-&#34;use strict&#34;; const builder = require(&#34;electron-builder&#34;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.</div>
+&#39;use strict&#39;; const builder = require(&#39;electron-builder&#39;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.</div>
           </div>
         </a>
       </article>

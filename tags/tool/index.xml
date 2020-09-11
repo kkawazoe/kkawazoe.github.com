@@ -32,7 +32,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid>
-      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for(var i = 0; i &amp;lt; myMsgs.length; i++){ for(var j = 0; j &amp;lt; myMsgs[i].length; j++){ var data = myMsgs[i][j].getTo(); if(data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if(myMsgs.length &amp;gt; 0){ var mySheet=SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&amp;#39;output&amp;#39;); mySheet.getRange(1, 1, contents.length, 1).</description>
+      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
     </item>
     
     <item>
