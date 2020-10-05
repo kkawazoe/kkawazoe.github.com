@@ -6,11 +6,7 @@
     <description>Recent content in access on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/access/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/access/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access でパラメータクエリが未入力の場合は全検索する</title>
       <link>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</link>

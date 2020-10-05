@@ -6,10 +6,18 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 23 May 2020 15:11:31 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 04 Oct 2020 09:00:30 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vagrant halt 失敗の対応方法</title>
+      <link>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</link>
+      <pubDate>Sun, 04 Oct 2020 09:00:30 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</guid>
+      <description>経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
+手順   vagrant halt を行う
+以下のエラーが発生
+An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If youbelieve this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them. Then try again.</description>
+    </item>
     
     <item>
       <title>Hugo に数式を挿入する その2</title>

@@ -6,11 +6,7 @@
     <description>Recent content in git on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>github で access token を使用してリポジトリを clone する</title>
       <link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link>

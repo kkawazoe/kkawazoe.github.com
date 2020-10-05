@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~</title>
+    <title>vagrant halt 失敗の対応方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,40 +17,22 @@
 
 
     
-<meta name="description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
+<meta name="description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
 
-<meta property="og:title" content="普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="vagrant halt 失敗の対応方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/vagrant_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
+<meta property="og:description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-<meta name="twitter:title" content="普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
+<meta name="twitter:title" content="vagrant halt 失敗の対応方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vagrant_logo.svg">
 
 
 <script type="application/ld+json">
@@ -61,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "普通の会社員(SE)が確定申告してみた その2-Note To Self ~One Step At A Time~",
+    "headline": "vagrant halt 失敗の対応方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/default.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/vagrant_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2020-03-07T09:00:00JST",
-    "dateModified": "2020-03-07T09:00:00JST",
+    "datePublished": "2020-10-04T09:00:30JST",
+    "dateModified": "2020-10-04T09:00:30JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -84,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "[前回までの記事]\n 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った\n今年は、前回利用しなかった e-tax で行う \u002b 申請方法が変わったらしいので備忘録として残しておく\n想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料\nスマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う\n手順 e-tax 確定申告書等作成コーナーで作成する\n 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」\u0026gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) \u0026gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」\u0026gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) \u0026gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある"
+    "description": "vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1473,13 +1455,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
+  <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
 
   <header class="article-header">
-    <h1 class="title">普通の会社員(SE)が確定申告してみた その2</h1>
+    <h1 class="title">vagrant halt 失敗の対応方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-07T09:00:00JST">Mar 7, 2020</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-04T09:00:30JST">Oct 4, 2020</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1489,99 +1471,59 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&text=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&t=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>[前回までの記事]</p>
-<ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/">普通の会社員(SE)が確定申告してみた</a></li>
-</ul>
-<h2 id="経緯">経緯</h2>
-<p>前回、確定申告をして損失の繰り越し控除を行った<br>
-今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく</p>
-<h2 id="想定ケース">想定ケース</h2>
-<ul>
-<li>会社員で年末調整済</li>
-<li>株は特定口座(源泉徴収あり)で取引</li>
-</ul>
-<h2 id="確定申告手順">確定申告手順</h2>
-<h3 id="事前準備">事前準備</h3>
-<ul>
-<li>源泉徴収票</li>
-<li>特定口座年間取引報告書</li>
-<li>マイナンバーカード</li>
-<li>ICカードリーダ※1</li>
-</ul>
-<p><code>※1</code> 対応するスマートフォンでも可 <a href="https://www.e-tax.nta.go.jp/toiawase/qa/yokuaru02/32.htm">参考資料</a><br>
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う</p>
-<h3 id="手順">手順</h3>
-<p><a href="https://www.e-tax.nta.go.jp/kojin.html">e-tax 確定申告書等作成コーナー</a>で作成する</p>
+  <div class="article-body"><h2 id="経緯">経緯</h2>
+<p>vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく</p>
+<h2 id="手順">手順</h2>
 <ol>
-<li>「作成開始」ボタンを押下</li>
-<li>「e-tax で提出 マイナンバーカード方式」ボタンを押下</li>
-<li>「利用規約に同意して次へ」ボタンを押下</li>
-<li>マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下</li>
-<li>「令和元年分の申告書等の作成」&gt;「所得税」を選択</li>
-<li>「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下</li>
-<li>生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>「上場株式等の譲渡所得等」を選択
-<ul>
-<li>配当所得の課税方法の選択
-<ul>
-<li>「申告分離課税」を選択</li>
-</ul>
+<li>
+<p>vagrant halt を行う</p>
+<p>以下のエラーが発生</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">An action &#39;halt&#39; was attempted on the machine &#39;default&#39;,
+but another process is already executing an action on
+the machine.
+ess at a time.
+Please wait until the other Vagrant process finishes modifying this
+machine, then try again.
+
+<span style="color:#66d9ef">If</span> you<span style="color:#960050;background-color:#1e0010"> believe this message is in error, please check</span>
+the process
+listing for any <span style="color:#e6db74">&#34;ruby&#34;</span> or <span style="color:#e6db74">&#34;vagrant&#34;</span> processes and kill them. Then
+try again.
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して <code>ruby.exe</code> の pid を探す</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">tasklist /fi <span style="color:#e6db74">&#34;Imagename eq ruby.exe&#34;</span>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して <code>ruby.exe</code> を終了させる</p>
+<p>例 ruby.exe の pid が 7972 の場合</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">taskkill /F /pid 7972
+</code></pre></div></li>
+<li>
+<p>再度 vagrant halt を実行する</p>
 </li>
-<li>株式等の売却・配当・利子等の入力
-<ul>
-<li>「特定口座年間取引報告書の内容を入力する」を選択</li>
-<li>入力例を参考に「特定口座年間取引報告書」の内容を転記する</li>
-</ul>
-</li>
-<li>平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方
-<ul>
-<li>「はい」を選択</li>
-<li>前年の譲渡損失を入力</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>内容確認後、「確認終了(次へ)」ボタンを押下</li>
-<li>「収入金額等」&gt;「給与」を選択
-<ul>
-<li>「源泉徴収票」の内容を転記</li>
-</ul>
-</li>
-<li>「住民税等入力」
-<ul>
-<li>「入力終了(次へ) &gt;」ボタンを押下</li>
-</ul>
-</li>
-<li>住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>e-tax 経由で送信する</li>
 </ol>
-<h2 id="まとめ">まとめ</h2>
-<p>前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある<br>
-また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</p>
 </div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&text=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&t=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -1596,7 +1538,7 @@ ga('send', 'pageview');
       </header>
       <ul class="terms">
         
-        <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA/">株</a></li>
+        <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
         
       </ul>
     </section>
@@ -1612,14 +1554,14 @@ ga('send', 'pageview');
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
+  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
+    <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
 
     <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
+      <div class="title">Hugo に数式を挿入する その2</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-05-23T15:11:31JST">May 23, 2020</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1635,27 +1577,6 @@ ga('send', 'pageview');
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-    <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-    <div class="inner">
-      <div class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T15:25:56JST">Mar 19, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>
