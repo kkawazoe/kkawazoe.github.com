@@ -6,11 +6,7 @@
     <description>Recent content in html on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 06 Mar 2019 12:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 06 Mar 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS で複数行でも3点リーダーを表示する</title>
       <link>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</guid>
       <description>経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 </description>
+実際のソースおよび実行結果  </description>
     </item>
     
   </channel>
