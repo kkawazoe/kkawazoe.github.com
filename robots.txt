@@ -9,7 +9,7 @@ Disallow: https://kkawazoe.github.io/blog/2019/03/01/ime-comp-with-vbnet
 Disallow: https://kkawazoe.github.io/blog/2019/04/17/description_rails_helper_with_vuejs_and_rails
 Disallow: https://kkawazoe.github.io/blog/2019/04/18/about_git_command
 Disallow: https://kkawazoe.github.io/blog/2019/04/19/road_to_aws_certified_solutions_architect_associate
-Disallow: https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo
+Disallow: https://kkawazoe.github.io/blog/2019/04/27/insert_formula_into_hugo
 Disallow: https://kkawazoe.github.io/blog/2019/04/28/auto_generate_test_sheet_tool_with_excel
 
 
