@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~</title>
+    <title>Gem rubyXL を使用した際に起こったエラーおよび対応について - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
+<meta name="description" content="Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく">
 
-<meta property="og:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Gem rubyXL を使用した際に起こったエラーおよび対応について - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
+<meta property="og:description" content="Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
-<meta name="twitter:title" content="electron-builder で Lint および UnitTest が通った場合のみビルドするようにする - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/electron_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
+<meta name="twitter:title" content="Gem rubyXL を使用した際に起こったエラーおよび対応について - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "electron-builder で Lint および UnitTest が通った場合のみビルドするようにする-Note To Self ~One Step At A Time~",
+    "headline": "Gem rubyXL を使用した際に起こったエラーおよび対応について-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/electron_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-05-24T12:00:00JST",
-    "dateModified": "2019-05-24T12:00:00JST",
+    "datePublished": "2020-10-06T09:00:00JST",
+    "dateModified": "2020-10-06T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく"
+    "description": "Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1474,13 +1474,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-60c2664adea71a693389e45d9f8657b9"></div>
+  <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
 
   <header class="article-header">
-    <h1 class="title">electron-builder で Lint および UnitTest が通った場合のみビルドするようにする</h1>
+    <h1 class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-05-24T12:00:00JST">May 24, 2019</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-06T09:00:00JST">Oct 6, 2020</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1490,117 +1490,130 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&title=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&text=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&t=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&title=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&title=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&text=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&t=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&title=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><h2 id="経緯">経緯</h2>
-<p>electron にて ビルドするのに <a href="https://github.com/electron-userland/electron-builder">electron-builder</a> を使用してみた<br>
-その際に最低限 <code>Lint</code>, <code>UnitTest</code> を通ることを担保するようにしたため備忘録として残しておく</p>
-<h2 id="構築環境">構築環境</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">electron: 5.0.1
-electron-builder: 20.39.0
-</code></pre></div><h3 id="実際のコード">実際のコード</h3>
-<p><code>package.json</code> に以下の定義がしてある前提
-※以下は electron x angular(Angular Cli で生成)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json:package.json" data-lang="json:package.json">{
-  <span style="color:#960050;background-color:#1e0010">・・・</span>
-  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-    <span style="color:#f92672">&#34;ng&#34;</span>: <span style="color:#e6db74">&#34;ng&#34;</span>,
-    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; electron .&#34;</span>,
-    <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;ng build&#34;</span>,
-    <span style="color:#f92672">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;jest&#34;</span>,
-    <span style="color:#f92672">&#34;lint&#34;</span>: <span style="color:#e6db74">&#34;ng lint&#34;</span>,
-    <span style="color:#f92672">&#34;postinstall&#34;</span>: <span style="color:#e6db74">&#34;electron-builder install-app-deps&#34;</span>,
-    <span style="color:#f92672">&#34;release&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; node build.js&#34;</span>,
-  },
-  <span style="color:#960050;background-color:#1e0010">・・・</span>
-}
-</code></pre></div><p>electron-builder のオプションについては<a href="https://www.electron.build/">公式</a>を参照</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron-builder&#39;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Platform</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">Platform</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">childProcess</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>);
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">unitTest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn test&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#75715e">// エラー時は例外を投げる
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
-    }
-    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;UnitTest OK!&#39;</span>);
-  });
-});
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lint</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn lint&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#75715e">// エラー時は例外を投げる
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
-    }
-    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;Lint OK!&#39;</span>);
-  });
-});
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#a6e22e">builder</span>
-    .<span style="color:#a6e22e">build</span>({
-      <span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">WINDOWS</span>.<span style="color:#a6e22e">createTarget</span>(),
-      <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">directories</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;release&#39;</span>,
-          <span style="color:#a6e22e">buildResources</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dist&#39;</span>,
-        },
-        <span style="color:#a6e22e">productName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Example App&#39;</span>,
-        <span style="color:#a6e22e">files</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;**/*&#39;</span>, <span style="color:#e6db74">&#39;dist/**/*&#39;</span>],
-        <span style="color:#a6e22e">win</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> [
-            {
-              <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nsis&#39;</span>,
-              <span style="color:#a6e22e">arch</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;x64&#39;</span>],
-            },
-          ],
-        },
-        <span style="color:#a6e22e">nsis</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">createDesktopShortcut</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;always&#39;</span>,
-        },
-      },
-    })
-    .<span style="color:#a6e22e">then</span>(() =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Build OK!&#39;</span>);
-    })
-    .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-    });
-};
-
-Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint</span>, <span style="color:#a6e22e">unitTest</span>])
-  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">values</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>));
-    <span style="color:#a6e22e">build</span>();
-  })
-  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
-  });
-</code></pre></div></div>
+  <div class="article-body"><p>Gem <a href="https://github.com/weshatheleopard/rubyXL">rubyXL</a> を使用している際に起こったエラーとその対処方法を備忘録として残しておく</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>rails: rails 5.2.2</li>
+</ul>
+<h2 id="rubyxl-について">rubyXL について</h2>
+<p>拡張子「xlsx」を読み書き可能なライブラリ<br>
+使用感としてはテンプレートとなる Excel に対して読み書きする場合には<br>
+問題なく使用可能。<br>
+但し、テンプレートに数式やグラフが含まれている場合に行などを<br>
+追加した場合に出力された Excel ファイルが破損して起動不可になる場合が<br>
+あるため注意が必要。</p>
+<h2 id="rubyxl-発生した障害とその対応">rubyXL 発生した障害とその対応</h2>
+<ol>
+<li>
+<p>テキストの折り返しがsheet.add_cellではできない</p>
+<p><code>sheet.add_cell(col, row, 'text').change_text_wrap</code> によって実装可能。<br>
+テキストを折り返して表示してくれるようになる。</p>
+</li>
+<li>
+<p><code>change_contents</code> が使えない</p>
+<p>version 3.4.0 以降は <code>convenience_methods</code> を呼び出さないと利用不可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># require が必要なメソッド</span>
+require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/cell&#39;</span>
+require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/color&#39;</span>
+require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/font&#39;</span>
+require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/workbook&#39;</span>
+require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#39;</span>
+</code></pre></div><p>もしくは以下で全て使用可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;rubyXL/convenience_methods&#39;</span>
+</code></pre></div></li>
+<li>
+<p>シートのコピーができない</p>
+<p><code>Marshal.load</code> なども試してみたが、上手くいかなかったので以下を参考にして対応。<br>
+<a href="https://stackoverflow.com/questions/29507841/create-multiple-sheets-that-uses-same-template-using-rubyxl">参考サイト</a></p>
+</li>
+<li>
+<p>シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう</p>
+<p><code>change_contents</code> の仕様と上記のシートコピーによって生じた現象。<br>
+シートの書式等をコピー → <code>change_contents</code> で書式設定を保持したまま内容を変更 →<br>
+該当するコピーシートすべての内容が書き換わる という動作をしている。<br>
+=&gt; <code>add_cell</code> による値の挿入だと上記の現象は発生しないため、左記の方法で対応。<br>
+上記の場合は書式設定等は rubyXL 側で行う必要がある。</p>
+</li>
+<li>
+<p>動的な配置で Excel の数式を設定する</p>
+<p><code>insert_row</code> 等で行の挿入を動的に行った場合に Excel の数式によって値の算出を行いたい。<br>
+※<code>insert_row</code>は公式でも書かれているが扱いに慎重になるべきメソッドで<br>
+結合したセルや数式が挿入した行の下にあった場合に Excel が破損することがある。</p>
+<p><a href="https://www.rubydoc.info/gems/rubyXL/1.1.12/RubyXL/Worksheet#add_cell-instance_method">add_cell</a>の書式を確認したところ数式は第4引数に該当するためそこに Excel の数式を代入する。(SUM 関数等)</p>
+</li>
+<li>
+<p>グラフの作成ができない</p>
+<p>rubyXL 側にグラフに関するメソッドは存在しないため対応不可。<br>
+テンプレートにグラフを挿入することで対応。</p>
+</li>
+<li>
+<p>印刷方向を縦向きから横向きにしたい</p>
+<p>基本的にテンプレートの印刷設定を修正するだけで対応可。<br>
+「テンプレート内のシートをコピーして作成。その後、シートを削除する」といった処理の場合は以下の対応を行う。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">worksheet<span style="color:#f92672">.</span>page_setup <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>page_setup
+</code></pre></div><p>以下page_setup内の属性</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">paperSize(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">用紙サイズ</span>
+scale(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷スケール</span>(<span style="color:#960050;background-color:#1e0010">すべての行を</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">シート内に含める、などの設定を指す</span>)
+firstPageNumber(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号</span>
+fitToWidth(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">幅に合わせる</span>
+fitToHeight(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">高さに合わせる</span>
+horizonDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">水平</span><span style="color:#66d9ef">DPI</span>
+verticalDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">垂直</span><span style="color:#66d9ef">DPI</span>
+copies(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷する部数</span>
+usePrinterDefaults(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">デフォルトのプリンタを利用するかどうか</span>
+blackAndWhite(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">白黒印刷をするかどうか</span>
+draft(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">簡易印刷するかどうか</span>(<span style="color:#960050;background-color:#1e0010">罫線や塗りつぶしの色</span>(<span style="color:#960050;background-color:#1e0010">網掛け</span>)<span style="color:#960050;background-color:#1e0010">などの書式やグラフや図形などのオブジェクトを省略して印刷</span>)
+useFirstPageNumber(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号を使用するかどうか</span>
+pageOrder(downThenOver<span style="color:#960050;background-color:#1e0010">・</span>overThenDownの2択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">ページの順序．昇順か降順か</span>
+orientaion(default<span style="color:#960050;background-color:#1e0010">・</span>portrait<span style="color:#960050;background-color:#1e0010">・</span>landscapeの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">オリエンテーション</span>(<span style="color:#960050;background-color:#1e0010">印刷時の向き．デフォルト・縦・横</span>)
+cellComments(none<span style="color:#960050;background-color:#1e0010">・</span>asDisplayed<span style="color:#960050;background-color:#1e0010">・</span>atEndの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">セルコメントを印刷する</span>
+errors(displayed<span style="color:#960050;background-color:#1e0010">・</span>blank<span style="color:#960050;background-color:#1e0010">・</span>dash<span style="color:#960050;background-color:#1e0010">・</span><span style="color:#66d9ef">NAの4択</span>)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷エラー処理</span>
+</code></pre></div></li>
+</ol>
+<h2 id="rubyxl-では実装できないパターンについて">rubyXL では実装できないパターンについて</h2>
+<ol>
+<li>
+<p>グラフ関連</p>
+<p>グラフの描画自体はテンプレートファイルからの読み込みで問題なく実行可能。<br>
+但し、以下のパターンは実現は難しい。</p>
+<ul>
+<li>①  シート名を動的に変更しつつグラフの描画を行う<br>
+Excel 上だとグラフのデータ範囲はシートに基づいており<br>
+シート名を変更してしまうと変更前のシート名を参照してしまいエラーが発生する。<br>
+<code>DISTINCT</code>関数をテンプレート側で使用しても、グラフのデータ範囲は<br>
+ファイル読み込み時の Excel の関数よりも早くに動作するためエラーが発生する。<br>
+また、シート名の動的な変更は xlsm のマクロを利用するしかなく RubyXL 側では実現不可。</li>
+<li>②  グラフのデータ範囲の変更<br>
+①と同様の理由で不可。<br>
+同様の理由で、グラフのデータ範囲が動的に変化する<br>
+(<code>insert_row</code> などを使用して抽出するデータ範囲が変動する)場合も RubyXL 側では実現不可。</li>
+<li>③  グラフの生成(グラフ設定の編集含む)<br>
+RubyXL にグラフ描画・サポート機能が対応していないため不可。<br>
+テンプレートファイルにてグラフを挿入しておいて対応する。</li>
+</ul>
+</li>
+</ol>
+</div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&title=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&text=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&t=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f&title=electron-builder%20%e3%81%a7%20Lint%20%e3%81%8a%e3%82%88%e3%81%b3%20UnitTest%20%e3%81%8c%e9%80%9a%e3%81%a3%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e3%81%bf%e3%83%93%e3%83%ab%e3%83%89%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f05%2f24%2fpass-lint-and-unit-test-to-build-with-electron-builder%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&title=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&text=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&t=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f&title=Gem%20rubyXL%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e9%9a%9b%e3%81%ab%e8%b5%b7%e3%81%93%e3%81%a3%e3%81%9f%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8a%e3%82%88%e3%81%b3%e5%af%be%e5%bf%9c%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f06%2fabout-error-with-rubyxl%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -1615,7 +1628,7 @@ Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint
       </header>
       <ul class="terms">
         
-        <li><a href="https://kkawazoe.github.io/tags/electron/">electron</a></li>
+        <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails/">Ruby on Rails</a></li>
         
       </ul>
     </section>
@@ -1631,14 +1644,14 @@ Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
-    <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
+  <a href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
+    <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
 
     <div class="inner">
-      <div class="title">Angular Cli で作成したプロジェクトに Jest を追加する</div>
+      <div class="title">vagrant halt 失敗時の対応方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="15007-05-15T12:00:00JST">May 15, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="4007-10-04T09:00:30JST">Oct 4, 2020</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1654,27 +1667,6 @@ Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/">
-    <div class="thumb thumb-20b12b3796a2e8f19eab02a6a8e700f1"></div>
-
-    <div class="inner">
-      <div class="title">github で access token を使用してリポジトリを clone する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-06-20T12:00:00JST">Jun 20, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>

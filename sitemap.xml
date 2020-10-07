@@ -3,18 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</loc>
+    <lastmod>2020-10-06T09:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2020-10-04T09:00:30+09:00</lastmod>
+    <lastmod>2020-10-06T09:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2020-10-04T09:00:30+09:00</lastmod>
+    <lastmod>2020-10-06T09:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2020-10-06T09:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://kkawazoe.github.io/tags/</loc>
-    <lastmod>2020-10-04T09:00:30+09:00</lastmod>
+    <lastmod>2020-10-06T09:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -34,11 +44,6 @@
   
   <url>
     <loc>https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/</loc>
-    <lastmod>2020-05-17T11:56:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
     <lastmod>2020-05-17T11:56:06+09:00</lastmod>
   </url>
   
