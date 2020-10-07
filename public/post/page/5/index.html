@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-3c8b529163598e21f221b0a5895082a0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-a2ffdc9f4fab5292d5f4a0a596185d5e {
   background-image: url("https://kkawazoe.github.io/images/logo/vagrant_logo.svg");
 }
@@ -778,6 +784,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-3c8b529163598e21f221b0a5895082a0 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-3c8b529163598e21f221b0a5895082a0 {
+  width: 5rem;
 }
 
 
@@ -1416,6 +1435,35 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/">
+          <div class="thumb thumb-5be2a40737ee2715ddd6c0983ee493bd"></div>
+
+          <div class="inner">
+            <h2 class="title">Rambox で ChatWork の未読メッセージを通知する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-28T12:00:00JST">Feb 28, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため
+「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
+ Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
+※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ Rambox サービス設定画面   実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&#34;.roomListBadges__unreadBadgeText&#34;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ?</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
           <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
 
@@ -1571,6 +1619,27 @@ ga('send', 'pageview');
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
+    <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
+
+    <div class="inner">
+      <div class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-10-06T09:00:00JST">Oct 6, 2020</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
@@ -1761,27 +1830,6 @@ ga('send', 'pageview');
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/">
-    <div class="thumb thumb-20b12b3796a2e8f19eab02a6a8e700f1"></div>
-
-    <div class="inner">
-      <div class="title">github で access token を使用してリポジトリを clone する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-06-20T12:00:00JST">Jun 20, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1792,7 +1840,7 @@ ga('send', 'pageview');
   <header>TAGS</header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(10)</span></a></li>
     

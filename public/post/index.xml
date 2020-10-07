@@ -6,7 +6,34 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 04 Oct 2020 09:00:30 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gem rubyXL を使用した際に起こったエラーおよび対応について</title>
+      <link>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</link>
+      <pubDate>Tue, 06 Oct 2020 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</guid>
+      <description>Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
+環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+使用感としてはテンプレートとなる Excel に対して読み書きする場合には
+問題なく使用可能。
+但し、テンプレートに数式やグラフが含まれている場合に行などを
+追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
+あるため注意が必要。
+rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
+sheet.add_cell(col, row, &#39;text&#39;).change_text_wrap によって実装可能。
+テキストを折り返して表示してくれるようになる。
+  change_contents が使えない
+version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
+# require が必要なメソッド require &amp;#39;rubyXL/convenience_methods/cell&amp;#39; require &amp;#39;rubyXL/convenience_methods/color&amp;#39; require &amp;#39;rubyXL/convenience_methods/font&amp;#39; require &amp;#39;rubyXL/convenience_methods/workbook&amp;#39; require &amp;#39;rubyXL/convenience_methods/worksheet&amp;#39; もしくは以下で全て使用可
+require &amp;#39;rubyXL/convenience_methods&amp;#39;   シートのコピーができない
+Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
+参考サイト
+  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+change_contents の仕様と上記のシートコピーによって生じた現象。
+シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</description>
+    </item>
+    
     <item>
       <title>vagrant halt 失敗時の対応方法</title>
       <link>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</link>
