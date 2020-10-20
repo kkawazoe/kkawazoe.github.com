@@ -1508,26 +1508,26 @@ ga('send', 'pageview');
 <li>
 <p>vagrant halt を行う</p>
 <p>以下のエラーが発生</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">An action &#39;halt&#39; was attempted on the machine &#39;default&#39;,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">An action <span style="color:#e6db74">&#39;halt&#39;</span> was attempted on the machine <span style="color:#e6db74">&#39;default&#39;</span>,
 but another process is already executing an action on
 the machine.
 ess at a time.
-Please wait until the other Vagrant process finishes modifying this
-machine, then try again.
+Please wait <span style="color:#66d9ef">until</span> the other Vagrant process finishes modifying this
+machine, <span style="color:#66d9ef">then</span> try again.
 
-<span style="color:#66d9ef">If</span> you<span style="color:#960050;background-color:#1e0010"> believe this message is in error, please check</span>
+If you believe this message is in error, please check
 the process
-listing for any <span style="color:#e6db74">&#34;ruby&#34;</span> or <span style="color:#e6db74">&#34;vagrant&#34;</span> processes and kill them. Then
+listing <span style="color:#66d9ef">for</span> any <span style="color:#e6db74">&#34;ruby&#34;</span> or <span style="color:#e6db74">&#34;vagrant&#34;</span> processes and kill them. Then
 try again.
 </code></pre></div></li>
 <li>
 <p>以下のコマンドを実行して <code>ruby.exe</code> の pid を探す</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">tasklist /fi <span style="color:#e6db74">&#34;Imagename eq ruby.exe&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tasklist /fi <span style="color:#e6db74">&#34;Imagename eq ruby.exe&#34;</span>
 </code></pre></div></li>
 <li>
 <p>以下のコマンドを実行して <code>ruby.exe</code> を終了させる</p>
 <p>例 ruby.exe の pid が 7972 の場合</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">taskkill /F /pid 7972
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">taskkill /F /pid <span style="color:#ae81ff">7972</span>
 </code></pre></div></li>
 <li>
 <p>再度 vagrant halt を実行する</p>
