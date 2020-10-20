@@ -1502,14 +1502,14 @@ ga('send', 'pageview');
   
 
   <div class="article-body"><h2 id="対応方法">対応方法</h2>
-<p>バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。<br>
+<p>バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。</p>
 <h2 id="取得する-ini-ファイルの中身">取得する ini ファイルの中身</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt:sample.ini" data-lang="txt:sample.ini"><span style="color:#a6e22e">&lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;#######################################</span>
 <span style="color:#66d9ef">[Path]</span>
 <span style="color:#a6e22e">WorkPath</span><span style="color:#f92672">=</span><span style="color:#e6db74">C:/src/wk                                           &#39;Work Folder Path</span>
 </code></pre></div><h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat:getProfileString.bat" data-lang="bat:getProfileString.bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:getProfileString.bat" data-lang="bash:getProfileString.bat">@<span style="color:#66d9ef">echo</span> off
 <span style="color:#66d9ef">set</span> iniFileName=sample.ini
 
 <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;usebackq tokens=* delims=&#34;</span> <span style="color:#ae81ff">%%</span>A <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">`call cscript //Nologo getProfileString.vbs &#34;</span>%iniFileName%<span style="color:#e6db74">&#34; Path WorkPath`</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> ret=<span style="color:#ae81ff">%%</span>A
@@ -1518,7 +1518,7 @@ ga('send', 'pageview');
 
 <span style="color:#66d9ef">pause</span>
 <span style="color:#66d9ef">exit</span>
-</code></pre></div><pre><code class="language-vbs:getProfileString.vbs" data-lang="vbs:getProfileString.vbs">Option Explicit
+</code></pre></div><pre><code class="language-vb:getProfileString.vbs" data-lang="vb:getProfileString.vbs">Option Explicit
 rem /*****************************************************************
 rem  *  getProfileString.vbs iniFileName, sectionName, entryName
 rem  *
@@ -2034,8 +2034,9 @@ End Function
 
     
     <script src="/js/code-title.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
   </body>
