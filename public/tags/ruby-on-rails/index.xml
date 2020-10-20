@@ -104,7 +104,9 @@ Vue.js の bind を&#39;(シングルコート)で括る
       <guid>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</guid>
       <description>Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&amp;gt; なにもしない  </description>
+heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
+=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
+=&amp;gt; なにもしない  </description>
     </item>
     
     <item>
@@ -124,8 +126,7 @@ github
       <pubDate>Sun, 07 Apr 2019 04:24:08 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</guid>
-      <description>経緯 仕事で必要となり表題の環境を準備することになった
-苦労したためその際の手順およびハマった点等を備忘録として残しておく
+      <description>経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
 構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
   Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
   DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)

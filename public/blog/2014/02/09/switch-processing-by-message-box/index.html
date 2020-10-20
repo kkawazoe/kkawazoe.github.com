@@ -1502,10 +1502,10 @@ ga('send', 'pageview');
   
 
   <div class="article-body"><h2 id="対応方法">対応方法</h2>
-<p>バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。<br>
+<p>バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える</p>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat:DispMsgBox.bat" data-lang="bat:DispMsgBox.bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:DispMsgBox.bat" data-lang="bash:DispMsgBox.bat">@<span style="color:#66d9ef">echo</span> off
 
 <span style="color:#75715e">rem メッセージボックスの表示</span>
 <span style="color:#66d9ef">set</span> msg=<span style="color:#e6db74">&#34;メッセージボックスのテスト [\n] で改行します。&#34;</span>
@@ -1517,7 +1517,7 @@ ga('send', 'pageview');
 
 <span style="color:#66d9ef">pause</span>
 <span style="color:#66d9ef">exit</span>
-</code></pre></div><pre><code class="language-vbs:msgbox.vbs" data-lang="vbs:msgbox.vbs">Option Explicit
+</code></pre></div><pre><code class="language-vb:msgbox.vbs" data-lang="vb:msgbox.vbs">Option Explicit
 rem /*******************************************************
 rem  *  msgbox.vbs msg [,title]
 rem  *
@@ -1968,8 +1968,9 @@ End Function
 
     
     <script src="/js/code-title.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
   </body>

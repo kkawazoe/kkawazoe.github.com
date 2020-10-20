@@ -420,7 +420,9 @@ Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textC
       <guid>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</guid>
       <description>Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時 =&amp;gt; なにもしない  </description>
+heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
+=&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
+=&amp;gt; なにもしない  </description>
     </item>
     
     <item>
@@ -440,8 +442,7 @@ github
       <pubDate>Sun, 07 Apr 2019 04:24:08 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</guid>
-      <description>経緯 仕事で必要となり表題の環境を準備することになった
-苦労したためその際の手順およびハマった点等を備忘録として残しておく
+      <description>経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
 構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
   Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
   DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
@@ -470,7 +471,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       
       <guid>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</guid>
       <description>したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar * リマインダーが直前になる * todoist と連携可能だが「期日指定なし」が連携されない integromat * サイトが英語のみ    integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
  足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
     </item>
     
@@ -532,21 +533,16 @@ bundle exec rails s -b 0.</description>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</guid>
-      <description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。
-上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会 * 資産設計提案業務 金融財政事情研究会 * 個人資産相談業務 ※今回受験 * 保険顧客資産相談業務    使用する教材 今回使用する教材は以下
+      <description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
+受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。
-必要があれば追加で購入する。
-とりあえず、5月の受験を目指す。
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
 2019/03/26 追記 試験用の電卓を購入
 CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入
-※教本だけだと習熟度がわからないため
+シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
+滝澤ななみ TAC 2018年05月22日</description>
     </item>
     
     <item>
@@ -674,8 +670,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <pubDate>Sun, 22 Jun 2014 09:01:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
-      <description>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
-具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
+      <description>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
 取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.</description>
     </item>
     
@@ -685,8 +680,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <pubDate>Sun, 09 Feb 2014 18:46:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
-      <description>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
-※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
+      <description>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
 実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
     </item>
     
