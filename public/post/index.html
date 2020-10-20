@@ -1541,7 +1541,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
             <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
 確認 config/environments/development.rb の以下を編集して確認する
 config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
-=&gt; 生成されるファイル 例. public/%404.ja.html
+=&gt; 生成されるファイル 例. public/404.ja.html
 desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.</div>
           </div>
         </a>
