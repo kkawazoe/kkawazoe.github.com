@@ -1523,28 +1523,28 @@ ga('send', 'pageview');
 <h2 id="実際のコード">実際のコード</h2>
 <p>例 2019/03/23 0:07:49.91 に実行した場合</p>
 <h3 id="yyyymmdd-表示">yyyy/mm/dd 表示</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
-<span style="color:#66d9ef">echo</span> %DATE%
+echo %DATE%
 </code></pre></div><p>=&gt; 2019/03/23</p>
 <h3 id="yyyymmdd-hhmmssfff-表示">yyyy/mm/dd-hh:MM:ss.fff 表示</h3>
 <p>午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
-<span style="color:#66d9ef">set</span> timeStamp=%DATE%-%TIME%
-<span style="color:#66d9ef">set</span> timeStamp=%timeStamp: =0%
+set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
+set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
 
-<span style="color:#66d9ef">echo</span> %timeStamp%
+echo %timeStamp%
 </code></pre></div><p>=&gt; 2019/03/23-00:07:49.91</p>
 <h3 id="yyyymmddhhmmss-表示">yyyymmddhhMMss 表示</h3>
 <p>%var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
-<span style="color:#66d9ef">set</span> timeStamp=%DATE%-%TIME%
-<span style="color:#66d9ef">set</span> timeStamp=%timeStamp: =0%
-<span style="color:#66d9ef">set</span> formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2%
+set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
+set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
+set formatTimeStamp<span style="color:#f92672">=</span>%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2%
 
-<span style="color:#66d9ef">echo</span> %formatTimeStamp%
+echo %formatTimeStamp%
 </code></pre></div><p>=&gt; 20190323000749</p>
 </div>
 
@@ -1953,8 +1953,9 @@ ga('send', 'pageview');
 
     
     <script src="/js/code-title.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
   </body>

@@ -1526,10 +1526,16 @@ ga('send', 'pageview');
 <a href="https://slack.com/intl/ja-jp/lp/three?cvosrc=ppc.google.d_ppc_google_ja_jp_brand-hv&amp;cvo_creative=302825870859&amp;utm_medium=ppc&amp;utm_source=google&amp;utm_campaign=d_ppc_google_ja_jp_brand-hv&amp;utm_term=slack&amp;&amp;cvosrc=ppc.google.slack&amp;cvo_campaign=&amp;cvo_crid=302825870859&amp;Matchtype=e&amp;utm_source=google&amp;utm_medium=ppc&amp;c3api=5523,302825870859,slack&amp;gclid=EAIaIQobChMI9pr_seia4QIV2qmWCh0zXQp4EAAYASAAEgLmtPD_BwE&amp;gclsrc=aw.ds">slack</a> の channel への通知を使用
 <ul>
 <li><del>google calendar</del>
-* リマインダーが直前になる
-* todoist と連携可能だが「期日指定なし」が連携されない</li>
+<ul>
+<li>リマインダーが直前になる</li>
+<li>todoist と連携可能だが「期日指定なし」が連携されない</li>
+</ul>
+</li>
 <li><a href="https://www.integromat.com/en/">integromat</a>
-* サイトが英語のみ</li>
+<ul>
+<li>サイトが英語のみ</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1567,12 +1573,21 @@ ga('send', 'pageview');
 <a href="https://api.slack.com/">slack api</a> より設定</p>
 <ul>
 <li>「App Name」
-* 任意の名称を指定</li>
+<ul>
+<li>任意の名称を指定</li>
+</ul>
+</li>
 <li>「Development Slack Workspace」
-* 使用するワークスペースを指定</li>
+<ul>
+<li>使用するワークスペースを指定</li>
+</ul>
+</li>
 <li>「OAuth &amp; Permissions」&gt;「Redirect URLs」
-* <a href="https://www.integromat.com/oauth/cb/slack">https://www.integromat.com/oauth/cb/slack</a> を指定
+<ul>
+<li><a href="https://www.integromat.com/oauth/cb/slack">https://www.integromat.com/oauth/cb/slack</a> を指定<br>
 ※「Client ID」, 「Client Secret」をメモしておく</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -1580,16 +1595,22 @@ ga('send', 'pageview');
 <del><a href="https://developer.todoist.com/appconsole.html">Todoist App Management</a> より設定</del></p>
 <ul>
 <li>
-<p><del>「App display name」</del>
-* <del>任意の名称を指定</del></p>
+<p><del>「App display name」</del></p>
+<ul>
+<li><del>任意の名称を指定</del></li>
+</ul>
 </li>
 <li>
-<p><del>「App service URL」</del>
-* <del>未指定</del></p>
+<p><del>「App service URL」</del></p>
+<ul>
+<li><del>未指定</del></li>
+</ul>
 </li>
 <li>
-<p><del>「OAuth redirect URL」</del>
-* <del><a href="https://www.integromat.com/oauth/cb/todoist">https://www.integromat.com/oauth/cb/todoist</a> を指定</del></p>
+<p><del>「OAuth redirect URL」</del></p>
+<ul>
+<li><del><a href="https://www.integromat.com/oauth/cb/todoist">https://www.integromat.com/oauth/cb/todoist</a> を指定</del></li>
+</ul>
 <p><del>※「Client ID」, 「Client Secret」をメモしておく</del> <strong>※今回は使用しない</strong></p>
 </li>
 </ul>
@@ -1682,20 +1703,44 @@ ga('send', 'pageview');
 <li>「create a message」
 <ul>
 <li>「Connection」
-* 「Connection name」
-* 任意の接続名
-* 「Client ID」
-* 事前作業でメモした「Client ID」を指定
-* 「Client secret」
-* 事前作業でメモした「Client secret」を指定</li>
+<ul>
+<li>「Connection name」
+<ul>
+<li>任意の接続名</li>
+</ul>
+</li>
+<li>「Client ID」
+<ul>
+<li>事前作業でメモした「Client ID」を指定</li>
+</ul>
+</li>
+<li>「Client secret」
+<ul>
+<li>事前作業でメモした「Client secret」を指定</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>「Where to send the message」
-* to a selected channel</li>
+<ul>
+<li>to a selected channel</li>
+</ul>
+</li>
 <li>「Channel」
-* メッセージを投稿したいチャネルを指定</li>
+<ul>
+<li>メッセージを投稿したいチャネルを指定</li>
+</ul>
+</li>
 <li>「Text」
-* 投稿したいメッセージを指定</li>
+<ul>
+<li>投稿したいメッセージを指定</li>
+</ul>
+</li>
 <li>「Show advanced settings」
-* チェックを入れる</li>
+<ul>
+<li>チェックを入れる</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2110,8 +2155,9 @@ ga('send', 'pageview');
 
     
     <script src="/js/code-title.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/latex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
   </body>
