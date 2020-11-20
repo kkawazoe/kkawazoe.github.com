@@ -1577,18 +1577,8 @@ ga('send', 'pageview');
 &gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again:</span> [<span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again</span>]
 </code></pre></div></li>
 <li>
-<p>SSH キーを ssh-agent に追加する</p>
-<p>4-1. バックグラウンドでssh-agentを起動</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">eval</span> <span style="color:#a6e22e">$</span><span style="color:#e6db74">(ssh-agent -s)</span>
-&gt; <span style="color:#a6e22e">Agent</span> <span style="color:#a6e22e">pid</span> <span style="color:#ae81ff">59566</span>
-</code></pre></div></li>
-<li>
-<p>SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">ssh-add</span> <span style="color:#a6e22e">~</span>/.ssh/id_rsa
-</code></pre></div></li>
-<li>
 <p>公開鍵をクリップボードにコピーする</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">clip</span> &lt; <span style="color:#a6e22e">~</span>/.ssh/id_rsa.pub
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">~</span>/.ssh/id_rsa.pub <span style="color:#a6e22e">|</span> <span style="color:#a6e22e">clip</span>
 </code></pre></div></li>
 <li>
 <p>SSH キーを GitHub アカウントに追加する</p>
