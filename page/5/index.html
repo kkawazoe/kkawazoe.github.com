@@ -508,6 +508,18 @@ section.footer {
 }
 
   
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
+}
+  
+
+  
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
+}
+  
+
+  
 .thumb-56eac61a7e9139ba6ee39ec63d867b2b {
   background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
 }
@@ -790,6 +802,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url(https://kkawazoe.github.io/images/logo/windows_terminal_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-512b010b5be0e4f46ede454a4ef10009 {
+  width: 5rem;
+}
+
+
+
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url(https://kkawazoe.github.io/images/logo/wsl_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  width: 5rem;
 }
 
 
@@ -1450,6 +1488,50 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
+          <div class="thumb thumb-04e02c5a7ce921261e0b5408f751b9e0"></div>
+
+          <div class="inner">
+            <h2 class="title">CSS で複数行でも3点リーダーを表示する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-06T12:00:00JST">Mar 6, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
+実際のソースおよび実行結果  </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/">
+          <div class="thumb thumb-9a1638adc21a38dde3c87ab440a422a1"></div>
+
+          <div class="inner">
+            <h2 class="title">VB.NET でふりがな機能を実装する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-04T00:00:00JST">Mar 4, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
+実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; 変換イベントクラスのコンストラクタ  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; ふりがな取得完了通知イベント  &#39;&#39;&#39;  &#39;&#39;&#39; ふりがな取得が完了したことを通知する  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;  Public Event Converted(ByVal txtSrc As System.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/privacy-policy/">
           <div class="thumb thumb-ba8e20cb6e739a50bc3b05dfc391e82b"></div>
 
@@ -1646,29 +1728,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-          <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
-
-          <div class="inner">
-            <h2 class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
-※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1678,6 +1737,8 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
   
   <a href="/page/4/" rel="prev">Prev</a>
   
+  
+  <a href="/page/6/" rel="next">Next</a>
   
 </nav>
 
@@ -1690,6 +1751,48 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+    <div class="inner">
+      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
+    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
+
+    <div class="inner">
+      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
@@ -1859,48 +1962,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-    <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-    <div class="inner">
-      <div class="title">Rails でトークンを扱う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-07-21T18:12:58JST">Jul 21, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1913,7 +1974,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

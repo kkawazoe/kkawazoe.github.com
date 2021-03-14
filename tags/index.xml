@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 14 Mar 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 15:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tool</title>
+      <link>https://kkawazoe.github.io/tags/tool/</link>
+      <pubDate>Sun, 14 Mar 2021 15:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/tags/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://kkawazoe.github.io/tags/wsl/</link>
+      <pubDate>Sun, 14 Mar 2021 10:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Docker Compose</title>
       <link>https://kkawazoe.github.io/tags/docker-compose/</link>
@@ -22,15 +40,6 @@
       <pubDate>Tue, 06 Oct 2020 09:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/tags/ruby-on-rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tool</title>
-      <link>https://kkawazoe.github.io/tags/tool/</link>
-      <pubDate>Sun, 04 Oct 2020 09:00:30 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/tags/tool/</guid>
       <description></description>
     </item>
     
@@ -53,7 +62,7 @@
     </item>
     
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://kkawazoe.github.io/tags/git/</link>
       <pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate>
       
@@ -62,7 +71,7 @@
     </item>
     
     <item>
-      <title>electron</title>
+      <title>Electron</title>
       <link>https://kkawazoe.github.io/tags/electron/</link>
       <pubDate>Fri, 24 May 2019 12:00:00 +0900</pubDate>
       
@@ -80,7 +89,7 @@
     </item>
     
     <item>
-      <title>access</title>
+      <title>Access</title>
       <link>https://kkawazoe.github.io/tags/access/</link>
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate>
       
@@ -125,7 +134,7 @@
     </item>
     
     <item>
-      <title>html</title>
+      <title>HTML</title>
       <link>https://kkawazoe.github.io/tags/html/</link>
       <pubDate>Wed, 06 Mar 2019 12:00:00 +0900</pubDate>
       
