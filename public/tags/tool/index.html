@@ -508,6 +508,18 @@ section.footer {
 }
 
   
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
+}
+  
+
+  
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
+}
+  
+
+  
 .thumb-56eac61a7e9139ba6ee39ec63d867b2b {
   background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
 }
@@ -790,6 +802,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url(https://kkawazoe.github.io/images/logo/windows_terminal_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-512b010b5be0e4f46ede454a4ef10009 {
+  width: 5rem;
+}
+
+
+
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url(https://kkawazoe.github.io/images/logo/wsl_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  width: 5rem;
 }
 
 
@@ -1454,6 +1492,31 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+          <div class="inner">
+            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
+  「Ctrl」+「,」を押下して setting.json を開く
+  setting.json の設定に以下を追加する
+  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
           <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
 
@@ -1493,8 +1556,7 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
 
             <div class="summary">[前回までの記事]
  Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
-手順 参考 を見ながらアップデートする
-※version2 から version 3 への変換を利用
+手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
   partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
@@ -1564,8 +1626,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
               
             </ul>
 
-            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
-調査した結果を備忘録として残しておく
+            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
   partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
@@ -1680,34 +1741,17 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-          <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
-
-          <div class="inner">
-            <h2 class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
-資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
-情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2  ### h3  &lt;!-- 改行させたい位置 --&gt; &lt;div class=&#34;page&#34;/&gt; # h1 ## h2  ### h3  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
 
+
+<nav class="paging">
+  
+  
+  <a href="/tags/tool/page/2/" rel="next">Next</a>
+  
+</nav>
 
 
         </div>
@@ -1718,6 +1762,48 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+    <div class="inner">
+      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
+    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
+
+    <div class="inner">
+      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
@@ -1887,48 +1973,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-    <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-    <div class="inner">
-      <div class="title">Rails でトークンを扱う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-07-21T18:12:58JST">Jul 21, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1941,7 +1985,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

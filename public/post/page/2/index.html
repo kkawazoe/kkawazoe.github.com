@@ -508,6 +508,18 @@ section.footer {
 }
 
   
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
+}
+  
+
+  
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
+}
+  
+
+  
 .thumb-56eac61a7e9139ba6ee39ec63d867b2b {
   background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
 }
@@ -790,6 +802,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url(https://kkawazoe.github.io/images/logo/windows_terminal_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-512b010b5be0e4f46ede454a4ef10009 {
+  width: 5rem;
+}
+
+
+
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url(https://kkawazoe.github.io/images/logo/wsl_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  width: 5rem;
 }
 
 
@@ -1454,6 +1492,53 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+          <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
+
+          <div class="inner">
+            <h2 class="title">RSpec 内で動的に I18n の訳文を追加する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-09-14T09:56:37JST">Sep 14, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
+I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
+          <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails でトークンを扱う方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-07-21T18:12:58JST">Jul 21, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+以下が対象
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
+以下が対象
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/">
           <div class="thumb thumb-1b0d5d48e442a702a1feb877522791e5"></div>
 
@@ -1520,8 +1605,7 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
               
             </ul>
 
-            <div class="summary">経緯 electron にて ビルドするのに electron-builder を使用してみた
-その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+            <div class="summary">経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 { ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
 &#39;use strict&#39;; const builder = require(&#39;electron-builder&#39;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.</div>
@@ -1627,8 +1711,7 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
               
             </ul>
 
-            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
-調査した結果を備忘録として残しておく
+            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
   partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
@@ -1671,60 +1754,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-          <div class="thumb thumb-9f9739c9a579e09d86d2f796482b15d3"></div>
-
-          <div class="inner">
-            <h2 class="title">FP3級への道 その4</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-25T00:00:00JST">Apr 25, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
-          <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
-
-          <div class="inner">
-            <h2 class="title">FP3級への道 その3</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-24T00:00:00JST">Apr 24, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2  リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
-[死亡保険金の場合]
-   契約者 被保険者 受取人 税金     A A B 相続税   A B A 所得税(一時所得)
-住民税   A B C 贈与税    [満期保険金の場合]
-   契約者 被保険者 受取人 税金     A 誰でも A 所得税(一時所得)
-住民税   A 誰でも B 贈与税    [非課税となる保険金や給付金]</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1748,6 +1777,48 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+    <div class="inner">
+      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
+    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
+
+    <div class="inner">
+      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
@@ -1917,48 +1988,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-    <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-    <div class="inner">
-      <div class="title">Rails でトークンを扱う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-07-21T18:12:58JST">Jul 21, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1971,7 +2000,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

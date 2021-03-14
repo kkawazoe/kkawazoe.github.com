@@ -508,6 +508,18 @@ section.footer {
 }
 
   
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
+}
+  
+
+  
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
+}
+  
+
+  
 .thumb-56eac61a7e9139ba6ee39ec63d867b2b {
   background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
 }
@@ -790,6 +802,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-512b010b5be0e4f46ede454a4ef10009 {
+  background-image: url(https://kkawazoe.github.io/images/logo/windows_terminal_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-512b010b5be0e4f46ede454a4ef10009 {
+  width: 5rem;
+}
+
+
+
+.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  background-image: url(https://kkawazoe.github.io/images/logo/wsl_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+  width: 5rem;
 }
 
 
@@ -1450,6 +1488,57 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
+          <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
+
+          <div class="inner">
+            <h2 class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Gretel について パンくずリストを表示する Gem
+github
+実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&#34;表示したい画像&#34;) : &#34;&#34; link icon + {表示文字}, {URL} parent :parent_articles, article.category end </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
+          <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
+
+          <div class="inner">
+            <h2 class="title">Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
+  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
+  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
+3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
+ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
           <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
 
@@ -1661,50 +1750,6 @@ created のタイミングで API 等からデータが取得される想定の�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
-          <div class="thumb thumb-04e02c5a7ce921261e0b5408f751b9e0"></div>
-
-          <div class="inner">
-            <h2 class="title">CSS で複数行でも3点リーダーを表示する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-06T12:00:00JST">Mar 6, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/">
-          <div class="thumb thumb-9a1638adc21a38dde3c87ab440a422a1"></div>
-
-          <div class="inner">
-            <h2 class="title">VB.NET でふりがな機能を実装する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-04T00:00:00JST">Mar 4, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
-実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; 変換イベントクラスのコンストラクタ  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; ふりがな取得完了通知イベント  &#39;&#39;&#39;  &#39;&#39;&#39; ふりがな取得が完了したことを通知する  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;  Public Event Converted(ByVal txtSrc As System.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1728,6 +1773,48 @@ created のタイミングで API 等からデータが取得される想定の�
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+    <div class="inner">
+      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
+    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
+
+    <div class="inner">
+      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
@@ -1897,48 +1984,6 @@ created のタイミングで API 等からデータが取得される想定の�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-    <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-    <div class="inner">
-      <div class="title">Rails でトークンを扱う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-07-21T18:12:58JST">Jul 21, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1951,7 +1996,7 @@ created のタイミングで API 等からデータが取得される想定の�
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
