@@ -1562,11 +1562,10 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
 
             <div class="summary">毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 &gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 &gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
+4-1. バックグラウンドでssh-agentを起動</div>
           </div>
         </a>
       </article>
