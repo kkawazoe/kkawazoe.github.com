@@ -6,7 +6,18 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 06 Oct 2020 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker-compose で管理しているコンテナ内にファイルをコピーする方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</link>
+      <pubDate>Sun, 14 Mar 2021 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</guid>
+      <description>docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
+環境  dokcer: 20.10.5 docker-compose: 1.28.5  前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
+方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/ </description>
+    </item>
+    
     <item>
       <title>Gem rubyXL を使用した際に起こったエラーおよび対応について</title>
       <link>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</link>
