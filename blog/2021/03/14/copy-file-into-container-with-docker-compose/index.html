@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>vagrant halt 失敗時の対応方法 - Note To Self ~One Step At A Time~</title>
+    <title>docker-compose で管理しているコンテナ内にファイルをコピーする方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
+<meta name="description" content="docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく">
 
-<meta property="og:title" content="vagrant halt 失敗時の対応方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="docker-compose で管理しているコンテナ内にファイルをコピーする方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/vagrant_logo.svg">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/docker_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
+<meta property="og:description" content="docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
-<meta name="twitter:title" content="vagrant halt 失敗時の対応方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vagrant_logo.svg">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
+<meta name="twitter:title" content="docker-compose で管理しているコンテナ内にファイルをコピーする方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/docker_logo.png">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "vagrant halt 失敗時の対応方法-Note To Self ~One Step At A Time~",
+    "headline": "docker-compose で管理しているコンテナ内にファイルをコピーする方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/vagrant_logo.svg",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/docker_logo.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2020-10-04T09:00:30JST",
-    "dateModified": "2020-10-04T09:00:30JST",
+    "datePublished": "2021-03-14T09:00:00JST",
+    "dateModified": "2021-03-14T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく"
+    "description": "docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1493,13 +1493,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
+  <div class="thumb thumb-56eac61a7e9139ba6ee39ec63d867b2b"></div>
 
   <header class="article-header">
-    <h1 class="title">vagrant halt 失敗時の対応方法</h1>
+    <h1 class="title">docker-compose で管理しているコンテナ内にファイルをコピーする方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-04T09:00:30JST">Oct 4, 2020</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T09:00:00JST">Mar 14, 2021</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1509,59 +1509,40 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&text=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&t=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&title=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&text=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&t=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&title=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><h2 id="経緯">経緯</h2>
-<p>vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく</p>
-<h2 id="手順">手順</h2>
-<ol>
-<li>
-<p>vagrant halt を行う</p>
-<p>以下のエラーが発生</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">An action <span style="color:#e6db74">&#39;halt&#39;</span> was attempted on the machine <span style="color:#e6db74">&#39;default&#39;</span>,
-but another process is already executing an action on
-the machine.
-ess at a time.
-Please wait <span style="color:#66d9ef">until</span> the other Vagrant process finishes modifying this
-machine, <span style="color:#66d9ef">then</span> try again.
+  <div class="article-body"><p>docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>dokcer: 20.10.5</li>
+<li>docker-compose: 1.28.5</li>
+</ul>
+<h2 id="前提">前提</h2>
+<p>ファイルをコピーする対象のコンテナに紐づいているサービス名 <code>app</code></p>
+<h2 id="方法">方法</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker cp <span style="color:#f92672">{</span>コピーする対象ファイル<span style="color:#f92672">}</span> <span style="color:#e6db74">`</span>docker-compose ps -q <span style="color:#f92672">{</span>サービス名<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>:/
 
-If you believe this message is in error, please check
-the process
-listing <span style="color:#66d9ef">for</span> any <span style="color:#e6db74">&#34;ruby&#34;</span> or <span style="color:#e6db74">&#34;vagrant&#34;</span> processes and kill them. Then
-try again.
-</code></pre></div></li>
-<li>
-<p>以下のコマンドを実行して <code>ruby.exe</code> の pid を探す</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tasklist /fi <span style="color:#e6db74">&#34;Imagename eq ruby.exe&#34;</span>
-</code></pre></div></li>
-<li>
-<p>以下のコマンドを実行して <code>ruby.exe</code> を終了させる</p>
-<p>例 ruby.exe の pid が 7972 の場合</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">taskkill /F /pid <span style="color:#ae81ff">7972</span>
-</code></pre></div></li>
-<li>
-<p>再度 vagrant halt を実行する</p>
-</li>
-</ol>
-</div>
+<span style="color:#75715e"># 例 サービス名 app に紐付いているコンテナに test.txt をコピーする</span>
+docker cp test.txt <span style="color:#e6db74">`</span>docker-compose ps -q app<span style="color:#e6db74">`</span>:/
+</code></pre></div></div>
 
   <footer class="article-footer">
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&text=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&t=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f&title=vagrant%20halt%20%e5%a4%b1%e6%95%97%e6%99%82%e3%81%ae%e5%af%be%e5%bf%9c%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f10%2f04%2fhow-to-deal-with-vagrant-halt-failure%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&title=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&text=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&t=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f&title=docker-compose%20%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e5%86%85%e3%81%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%82%b3%e3%83%94%e3%83%bc%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f03%2f14%2fcopy-file-into-container-with-docker-compose%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -1576,7 +1557,7 @@ try again.
       </header>
       <ul class="terms">
         
-        <li><a href="https://kkawazoe.github.io/tags/tool/">tool</a></li>
+        <li><a href="https://kkawazoe.github.io/tags/docker-compose/">Docker Compose</a></li>
         
       </ul>
     </section>
@@ -1590,31 +1571,6 @@ try again.
 <div class="adj mrow">
   <div class="mcol c6">
     <header>Previous Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-    <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
-
-    <div class="inner">
-      <div class="title">Hugo に数式を挿入する その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-05-23T15:11:31JST">May 23, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-  </div>
-  <div class="mcol c6">
-    <header>Next Article</header>
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
@@ -1636,6 +1592,10 @@ try again.
   </a>
 </article>
 
+    
+  </div>
+  <div class="mcol c6">
+    <header>Next Article</header>
     
   </div>
 </div>
