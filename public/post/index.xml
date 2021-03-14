@@ -6,7 +6,31 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 14 Mar 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 15:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows terminal でターミナル毎に起動時のディレクトリを変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</link>
+      <pubDate>Sun, 14 Mar 2021 15:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid>
+      <description>windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
+  「Ctrl」+「,」を押下して setting.json を開く
+  setting.json の設定に以下を追加する
+  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+    </item>
+    
+    <item>
+      <title>wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</link>
+      <pubDate>Sun, 14 Mar 2021 10:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</guid>
+      <description>wsl の起動時のユーザを root にする方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
+方法  PowerShell で以下のコマンドを実行する  sudo passwd root wsl -s Ubuntu-18.04 ubuntu1804 config --default-user root wsl #=&amp;gt; root でログインしていることを確認 </description>
+    </item>
+    
     <item>
       <title>docker-compose で管理しているコンテナ内にファイルをコピーする方法</title>
       <link>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</link>
@@ -65,8 +89,7 @@ An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&a
       <guid>https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/</guid>
       <description>[前回までの記事]
  Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
-手順 参考 を見ながらアップデートする
-※version2 から version 3 への変換を利用
+手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
   partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
@@ -180,8 +203,7 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       <pubDate>Fri, 24 May 2019 12:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</guid>
-      <description>経緯 electron にて ビルドするのに electron-builder を使用してみた
-その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+      <description>経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
 構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
 { ・・・ &amp;#34;scripts&amp;#34;: { &amp;#34;ng&amp;#34;: &amp;#34;ng&amp;#34;, &amp;#34;start&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; electron .&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;ng build&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;jest&amp;#34;, &amp;#34;lint&amp;#34;: &amp;#34;ng lint&amp;#34;, &amp;#34;postinstall&amp;#34;: &amp;#34;electron-builder install-app-deps&amp;#34;, &amp;#34;release&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; node build.js&amp;#34;, }, ・・・ } electron-builder のオプションについては公式を参照
 &amp;#39;use strict&amp;#39;; const builder = require(&amp;#39;electron-builder&amp;#39;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
@@ -239,8 +261,7 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
-      <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
-調査した結果を備忘録として残しておく
+      <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
   partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する

@@ -6,7 +6,20 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 04 Oct 2020 09:00:30 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 15:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows terminal でターミナル毎に起動時のディレクトリを変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</link>
+      <pubDate>Sun, 14 Mar 2021 15:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid>
+      <description>windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
+  「Ctrl」+「,」を押下して setting.json を開く
+  setting.json の設定に以下を追加する
+  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+    </item>
+    
     <item>
       <title>vagrant halt 失敗時の対応方法</title>
       <link>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</link>
@@ -27,8 +40,7 @@ An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&a
       <guid>https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/</guid>
       <description>[前回までの記事]
  Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
-手順 参考 を見ながらアップデートする
-※version2 から version 3 への変換を利用
+手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
   partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
@@ -62,8 +74,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
-      <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり
-調査した結果を備忘録として残しておく
+      <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
   partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
