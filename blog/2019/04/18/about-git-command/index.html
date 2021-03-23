@@ -1625,8 +1625,11 @@ $ git push -f <span style="color:#f92672">{</span>リモート名<span style="co
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD..stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="stash-の最新を適用">stash の最新を適用</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop
-</code></pre></div><h4 id="stash--n-番目を適用">stash  N 番目を適用</h4>
+</code></pre></div><h4 id="stash-n-番目を適用">stash N 番目を適用</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="stash-されたファイルの内指定したファイルを復元">stash されたファイルの内、指定したファイルを復元</h4>
+<p>stash list で表示された stash list 番号およびファイル名を指定して取り出す</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span> hoge.rb
 </code></pre></div><h4 id="untracked-files-を含めて退避">untracked files を含めて退避</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash save -u <span style="color:#e6db74">&#34;untracked files を含めて退避&#34;</span>
 </code></pre></div><h4 id="fork-元の任意ブランチを親としてトピックブランチを作成">Fork 元の任意ブランチを親としてトピックブランチを作成</h4>
