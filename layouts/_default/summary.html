@@ -19,6 +19,9 @@
       {{ if .Draft }}
       <li style="color: #2196f3;">DRAFT</li>
       {{ end }}
+      {{ range .Params.tags }}
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
     </ul>
 
     {{ partial "share.html" . }}
@@ -34,23 +37,20 @@
 
   <footer class="article-footer">
 
+    <ul class="facts-tags">
+  
+      {{ with .Section }}
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}{{ . | urlize }}/">{{ . | upper }}</a></li>
+      {{ end }}
+  
+      {{ range .Params.tags }}
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+  
+    </ul>
+  
     {{ partial "share.html" . }}
-
-    {{ $params := .Params }}
-    {{ range $key, $value := $.Site.Taxonomies }}
-    {{ if isset $params $key }}
-    <section class="footer">
-      <header>
-        <a href="{{ $.Site.BaseURL }}{{ $key | urlize }}/">{{ $key | upper }}</a>
-      </header>
-      <ul class="terms">
-        {{ range (index $params $key) }}
-        <li><a href="{{ $.Site.BaseURL }}{{ $key | urlize }}/{{ . | urlize }}/">{{ . }}</a></li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-    {{ end }}
+  
   </footer>
 
 </article>

@@ -42,3 +42,40 @@ article.sn > .article-body pre > code.hljs[data-filename] {
   font-size: 0.93em;
   background-color: #E7E9EB;
 }
+
+ul.facts, ul.facts-tags {
+  margin: 0;
+  padding: 0;
+}
+
+ul.facts li, ul.facts-tags li {
+  display: inline;
+  font-size: 0.8rem;
+}
+
+ul.facts i, ul.facts-tags i {
+  color: #cfd8dc;
+  margin-right: 0.5em;
+}
+
+ul.facts.sm li, ul.facts-tags.sm li {
+  font-size: 0.7rem;
+}
+
+ul.facts > li {
+  margin-right: 1rem;
+}
+
+ul.facts-tags {
+  margin: 0.5rem 0rem 1.3rem 0rem;
+  line-height: 1.3rem;
+}
+
+ul.facts-tags li {
+  margin-right: 0.2rem;
+}
+
+section.sidebar header a {
+  color: #333;
+  text-decoration: underline;
+}
