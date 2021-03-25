@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -84,7 +84,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
         "height": 60
       }
     },
-    "description": "ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく\n実際のコード 例 2019\/03\/23 0:07:49.91 に実行した場合\nyyyy\/mm\/dd 表示 @echo off echo %DATE% =\u0026gt; 2019\/03\/23\nyyyy\/mm\/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\u0026gt; 2019\/03\/23-00:07:49.91\nyyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\u0026gt; 20190323000749"
+    "description": "ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく\n実際のコード 例 2019\/03\/23 0:07:49.91 に実行した場合\nyyyy\/mm\/dd 表示 @echo off echo %DATE% =\x26gt; 2019\/03\/23\nyyyy\/mm\/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\x26gt; 2019\/03\/23-00:07:49.91\nyyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\x26gt; 20190323000749"
   }
 </script>
 
@@ -1521,6 +1521,43 @@ article.sn > .article-body pre > code.hljs[data-filename] {
   background-color: #E7E9EB;
 }
 
+ul.facts, ul.facts-tags {
+  margin: 0;
+  padding: 0;
+}
+
+ul.facts li, ul.facts-tags li {
+  display: inline;
+  font-size: 0.8rem;
+}
+
+ul.facts i, ul.facts-tags i {
+  color: #cfd8dc;
+  margin-right: 0.5em;
+}
+
+ul.facts.sm li, ul.facts-tags.sm li {
+  font-size: 0.7rem;
+}
+
+ul.facts > li {
+  margin-right: 1rem;
+}
+
+ul.facts-tags {
+  margin: 0.5rem 0rem 1.3rem 0rem;
+  line-height: 1.3rem;
+}
+
+ul.facts-tags li {
+  margin-right: 0.2rem;
+}
+
+section.sidebar header a {
+  color: #333;
+  text-decoration: underline;
+}
+
     </style>
 
 
@@ -1561,6 +1598,9 @@ ga('send', 'pageview');
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
       
+      
+      
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
       
     </ul>
 
@@ -1607,6 +1647,18 @@ echo %formatTimeStamp%
 
   <footer class="article-footer">
 
+    <ul class="facts-tags">
+  
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+  
+      
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
+      
+  
+    </ul>
+  
     <aside class="share">
   <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
   <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
@@ -1615,24 +1667,7 @@ echo %formatTimeStamp%
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
-
-    
-    
-    
-    
-    
-    <section class="footer">
-      <header>
-        <a href="https://kkawazoe.github.io/tags/">TAGS</a>
-      </header>
-      <ul class="terms">
-        
-        <li><a href="https://kkawazoe.github.io/tags/bat/">Bat</a></li>
-        
-      </ul>
-    </section>
-    
-    
+  
   </footer>
 
 </article>
@@ -1919,7 +1954,7 @@ echo %formatTimeStamp%
 
             
 <section class="sidebar">
-  <header>TAGS</header>
+  <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
