@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1451,6 +1451,43 @@ article.sn > .article-body pre > code.hljs[data-filename] {
   background-color: #E7E9EB;
 }
 
+ul.facts, ul.facts-tags {
+  margin: 0;
+  padding: 0;
+}
+
+ul.facts li, ul.facts-tags li {
+  display: inline;
+  font-size: 0.8rem;
+}
+
+ul.facts i, ul.facts-tags i {
+  color: #cfd8dc;
+  margin-right: 0.5em;
+}
+
+ul.facts.sm li, ul.facts-tags.sm li {
+  font-size: 0.7rem;
+}
+
+ul.facts > li {
+  margin-right: 1rem;
+}
+
+ul.facts-tags {
+  margin: 0.5rem 0rem 1.3rem 0rem;
+  line-height: 1.3rem;
+}
+
+ul.facts-tags li {
+  margin-right: 0.2rem;
+}
+
+section.sidebar header a {
+  color: #333;
+  text-decoration: underline;
+}
+
     </style>
 
 
@@ -1695,7 +1732,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を'(シングルコート)で括る
+Vue.js の bind を&rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
@@ -1744,7 +1781,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
             </ul>
 
             <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
           </div>
@@ -2018,7 +2055,7 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 
             
 <section class="sidebar">
-  <header>TAGS</header>
+  <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
