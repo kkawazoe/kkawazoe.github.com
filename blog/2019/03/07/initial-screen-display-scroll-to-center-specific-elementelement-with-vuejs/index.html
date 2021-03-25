@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -21,7 +21,7 @@
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- ">
+">
 
 <meta property="og:title" content="Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -32,7 +32,7 @@ created のタイミングで API 等からデータが取得される想定の�
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- ">
+">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@ created のタイミングで API 等からデータが取得される想定の�
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- ">
+">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
@@ -78,7 +78,7 @@ created のタイミングで API 等からデータが取得される想定の�
         "height": 60
       }
     },
-    "description": "経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する\ncreated のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる\n例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する\n "
+    "description": "経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する\ncreated のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる\n例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する\n\r"
   }
 </script>
 
@@ -1515,6 +1515,43 @@ article.sn > .article-body pre > code.hljs[data-filename] {
   background-color: #E7E9EB;
 }
 
+ul.facts, ul.facts-tags {
+  margin: 0;
+  padding: 0;
+}
+
+ul.facts li, ul.facts-tags li {
+  display: inline;
+  font-size: 0.8rem;
+}
+
+ul.facts i, ul.facts-tags i {
+  color: #cfd8dc;
+  margin-right: 0.5em;
+}
+
+ul.facts.sm li, ul.facts-tags.sm li {
+  font-size: 0.7rem;
+}
+
+ul.facts > li {
+  margin-right: 1rem;
+}
+
+ul.facts-tags {
+  margin: 0.5rem 0rem 1.3rem 0rem;
+  line-height: 1.3rem;
+}
+
+ul.facts-tags li {
+  margin-right: 0.2rem;
+}
+
+section.sidebar header a {
+  color: #333;
+  text-decoration: underline;
+}
+
     </style>
 
 
@@ -1555,6 +1592,9 @@ ga('send', 'pageview');
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
       
       
+      
+      
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/vue.js">Vue.js</a> </li>
       
     </ul>
 
@@ -1601,6 +1641,18 @@ ga('send', 'pageview');
 
   <footer class="article-footer">
 
+    <ul class="facts-tags">
+  
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+  
+      
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/vue.js">Vue.js</a> </li>
+      
+  
+    </ul>
+  
     <aside class="share">
   <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f07%2finitial-screen-display-scroll-to-center-specific-elementelement-with-vuejs%2f&title=Vue.js%20%e3%81%a7%e7%94%bb%e9%9d%a2%e5%88%9d%e6%9c%9f%e8%a1%a8%e7%a4%ba%e6%99%82%e3%81%ab%e7%89%b9%e5%ae%9a%e3%81%ae%e8%a6%81%e7%b4%a0%e3%82%92%e3%82%b9%e3%82%af%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%a8%e3%83%aa%e3%82%a2%e4%b8%ad%e5%a4%ae%e3%81%ab%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
   <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f07%2finitial-screen-display-scroll-to-center-specific-elementelement-with-vuejs%2f&text=Vue.js%20%e3%81%a7%e7%94%bb%e9%9d%a2%e5%88%9d%e6%9c%9f%e8%a1%a8%e7%a4%ba%e6%99%82%e3%81%ab%e7%89%b9%e5%ae%9a%e3%81%ae%e8%a6%81%e7%b4%a0%e3%82%92%e3%82%b9%e3%82%af%e3%83%ad%e3%83%bc%e3%83%ab%e3%82%a8%e3%83%aa%e3%82%a2%e4%b8%ad%e5%a4%ae%e3%81%ab%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
@@ -1609,24 +1661,7 @@ ga('send', 'pageview');
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f07%2finitial-screen-display-scroll-to-center-specific-elementelement-with-vuejs%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
-
-    
-    
-    
-    
-    
-    <section class="footer">
-      <header>
-        <a href="https://kkawazoe.github.io/tags/">TAGS</a>
-      </header>
-      <ul class="terms">
-        
-        <li><a href="https://kkawazoe.github.io/tags/vue.js/">Vue.js</a></li>
-        
-      </ul>
-    </section>
-    
-    
+  
   </footer>
 
 </article>
@@ -1913,7 +1948,7 @@ ga('send', 'pageview');
 
             
 <section class="sidebar">
-  <header>TAGS</header>
+  <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
