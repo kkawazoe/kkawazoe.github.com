@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-766136c42363b1752e86f3f0bba5157c {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-512b010b5be0e4f46ede454a4ef10009 {
   background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
 }
@@ -802,6 +808,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-766136c42363b1752e86f3f0bba5157c {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-766136c42363b1752e86f3f0bba5157c {
+  width: 5rem;
 }
 
 
@@ -1525,6 +1544,39 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
+          <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その5</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4  金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
+※PER が低い銘柄は 割安 、高い銘柄は割高
+$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
+※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
+$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$
+$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$
+$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$
+$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$
+参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
           <div class="thumb thumb-9f9739c9a579e09d86d2f796482b15d3"></div>
 
@@ -1728,7 +1780,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&rsquo;(シングルコート)で括る
+Vue.js の bind を'(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
@@ -1777,34 +1829,9 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
             </ul>
 
             <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
           </div>
         </a>
       </article>
@@ -1833,6 +1860,27 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+    <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
+
+    <div class="inner">
+      <div class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-04-11T09:00:00JST">Apr 11, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
@@ -2023,27 +2071,6 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-    <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
-
-    <div class="inner">
-      <div class="title">普通の会社員(SE)が確定申告してみた その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="7007-03-07T09:00:00JST">Mar 7, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2054,7 +2081,7 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
