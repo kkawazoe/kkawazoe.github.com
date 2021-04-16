@@ -6,10 +6,18 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 06 Oct 2020 09:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 11 Apr 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nkf を使用して UTF-8 を CP932 に文字コード変換する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</link>
+      <pubDate>Sun, 11 Apr 2021 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</guid>
+      <description>CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
+その対処方法を備忘録として残しておく
+環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&#39;〓&#39;に変換する
+実際のコード str = &amp;#39;〜変換不可能文字を含む文字列〜&amp;#39; NKF.nkf(&amp;#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&amp;#39;, str).encode(&amp;#39;UTF-8&amp;#39;, &amp;#39;CP932&amp;#39;) #=&amp;gt; &amp;#34;〓変換不可能文字を含む文字列〓&amp;#34; </description>
+    </item>
     
     <item>
       <title>Gem rubyXL を使用した際に起こったエラーおよび対応について</title>
@@ -96,7 +104,7 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+Vue.js の bind を&#39;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
