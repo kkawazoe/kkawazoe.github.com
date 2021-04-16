@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~</title>
+    <title>nkf を使用して UTF-8 を CP932 に文字コード変換する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,40 +17,22 @@
 
 
     
-<meta name="description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
+<meta name="description" content="CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った その対処方法を備忘録として残しておく">
 
-<meta property="og:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="nkf を使用して UTF-8 を CP932 に文字コード変換する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
+<meta property="og:description" content="CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った その対処方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta name="twitter:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+<meta name="twitter:title" content="nkf を使用して UTF-8 を CP932 に文字コード変換する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った その対処方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -61,15 +43,15 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "バッチファイルでタイムスタンプを付与する-Note To Self ~One Step At A Time~",
+    "headline": "nkf を使用して UTF-8 を CP932 に文字コード変換する方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/bat_file_icon.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-03-23T00:07:49JST",
-    "dateModified": "2019-03-23T00:07:49JST",
+    "datePublished": "2021-04-11T09:00:00JST",
+    "dateModified": "2021-04-11T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -84,13 +66,13 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
         "height": 60
       }
     },
-    "description": "ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく\n実際のコード 例 2019\/03\/23 0:07:49.91 に実行した場合\nyyyy\/mm\/dd 表示 @echo off echo %DATE% =\u0026gt; 2019\/03\/23\nyyyy\/mm\/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\u0026gt; 2019\/03\/23-00:07:49.91\nyyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\u0026gt; 20190323000749"
+    "description": "CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った その対処方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1605,13 +1587,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
+  <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
 
   <header class="article-header">
-    <h1 class="title">バッチファイルでタイムスタンプを付与する</h1>
+    <h1 class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-23T00:07:49JST">Mar 23, 2019</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-04-11T09:00:00JST">Apr 11, 2021</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1619,50 +1601,35 @@ ga('send', 'pageview');
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&title=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&text=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&t=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&title=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく</p>
+  <div class="article-body"><p>CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った<br>
+その対処方法を備忘録として残しておく</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>rails: rails 6.0.3.6</li>
+</ul>
+<h2 id="仕様">仕様</h2>
+<p>UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する</p>
 <h2 id="実際のコード">実際のコード</h2>
-<p>例 2019/03/23 0:07:49.91 に実行した場合</p>
-<h3 id="yyyymmdd-表示">yyyy/mm/dd 表示</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-echo %DATE%
-</code></pre></div><p>=&gt; 2019/03/23</p>
-<h3 id="yyyymmdd-hhmmssfff-表示">yyyy/mm/dd-hh:MM:ss.fff 表示</h3>
-<p>午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
-set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
-
-echo %timeStamp%
-</code></pre></div><p>=&gt; 2019/03/23-00:07:49.91</p>
-<h3 id="yyyymmddhhmmss-表示">yyyymmddhhMMss 表示</h3>
-<p>%var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
-set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
-set formatTimeStamp<span style="color:#f92672">=</span>%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2%
-
-echo %formatTimeStamp%
-</code></pre></div><p>=&gt; 20190323000749</p>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;〜変換不可能文字を含む文字列〜&#39;</span>
+<span style="color:#66d9ef">NKF</span><span style="color:#f92672">.</span>nkf(<span style="color:#e6db74">&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;</span>, str)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;UTF-8&#39;</span>, <span style="color:#e6db74">&#39;CP932&#39;</span>)
+<span style="color:#75715e">#=&gt; &#34;〓変換不可能文字を含む文字列〓&#34;</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -1673,17 +1640,17 @@ echo %formatTimeStamp%
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&title=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&text=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&t=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f&title=nkf%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20UTF-8%20%e3%82%92%20CP932%20%e3%81%ab%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f04%2f11%2fconvert_string_code_utf8_to_cp932_with_nkf%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -1697,14 +1664,14 @@ echo %formatTimeStamp%
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
-    <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
+  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
 
     <div class="inner">
-      <div class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</div>
+      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T23:35:30JST">Mar 19, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1720,27 +1687,6 @@ echo %formatTimeStamp%
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
-
-    <div class="inner">
-      <div class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その１</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="25007-03-25T00:00:00JST">Mar 25, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>

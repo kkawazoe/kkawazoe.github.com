@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~</title>
+    <title>Posts - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -14,83 +14,13 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
+<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/post/index.xml" title="Note To Self ~One Step At A Time~">
+
 
 
     
-<meta name="description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
 
-<meta property="og:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
-<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
-<meta property="og:locale" content="ja_JP">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
-<meta name="twitter:title" content="バッチファイルでタイムスタンプを付与する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
-実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
-yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
-yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)
-@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
-
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id":"https:\/\/kkawazoe.github.io\/"
-    },
-    "headline": "バッチファイルでタイムスタンプを付与する-Note To Self ~One Step At A Time~",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/bat_file_icon.png",
-      "height": 800,
-      "width": 800
-    },
-    "datePublished": "2019-03-23T00:07:49JST",
-    "dateModified": "2019-03-23T00:07:49JST",
-    "author": {
-      "@type": "Person",
-      "name": "Note To Self ~One Step At A Time~"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Note To Self ~One Step At A Time~",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
-        "width": 600,
-        "height": 60
-      }
-    },
-    "description": "ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく\n実際のコード 例 2019\/03\/23 0:07:49.91 に実行した場合\nyyyy\/mm\/dd 表示 @echo off echo %DATE% =\u0026gt; 2019\/03\/23\nyyyy\/mm\/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\u0026gt; 2019\/03\/23-00:07:49.91\nyyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)\n@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\u0026gt; 20190323000749"
-  }
-</script>
-
-
-
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
+    <link rel="canonical" href="https://kkawazoe.github.io/post/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1603,148 +1533,53 @@ ga('send', 'pageview');
         <div class="mrow">
         <div class="mcol c8">
           
-<article class="sn">
 
-  <div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
-
-  <header class="article-header">
-    <h1 class="title">バッチファイルでタイムスタンプを付与する</h1>
-
-    <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-23T00:07:49JST">Mar 23, 2019</time></li>
-      
-      
-      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
-      
-      
-      
-      
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
-      
-    </ul>
-
-    <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
-</aside>
-
-  </header>
-
-  
-
-  <div class="article-body"><p>ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく</p>
-<h2 id="実際のコード">実際のコード</h2>
-<p>例 2019/03/23 0:07:49.91 に実行した場合</p>
-<h3 id="yyyymmdd-表示">yyyy/mm/dd 表示</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-echo %DATE%
-</code></pre></div><p>=&gt; 2019/03/23</p>
-<h3 id="yyyymmdd-hhmmssfff-表示">yyyy/mm/dd-hh:MM:ss.fff 表示</h3>
-<p>午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
-set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
-
-echo %timeStamp%
-</code></pre></div><p>=&gt; 2019/03/23-00:07:49.91</p>
-<h3 id="yyyymmddhhmmss-表示">yyyymmddhhMMss 表示</h3>
-<p>%var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
-
-set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
-set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
-set formatTimeStamp<span style="color:#f92672">=</span>%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2%
-
-echo %formatTimeStamp%
-</code></pre></div><p>=&gt; 20190323000749</p>
-</div>
-
-  <footer class="article-footer">
-
-    <ul class="facts-tags">
-  
-      
-      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
-      
-  
-      
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
-      
-  
-    </ul>
-  
-    <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&text=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&t=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
-</aside>
-
-  
-  </footer>
-
-</article>
+<header class="page-title">
+  <h1 class="title">Posts</h1>
+</header>
 
 
-<div class="adj mrow">
-  <div class="mcol c6">
-    <header>Previous Article</header>
+<div class="articles">
+  <div class="mrow">
+
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
-    <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
+    
+    
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
+          <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
 
-    <div class="inner">
-      <div class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</div>
+          <div class="inner">
+            <h2 class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</h2>
 
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T23:35:30JST">Mar 19, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
 
+            <div class="summary">対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
+※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
+実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</div>
+          </div>
+        </a>
+      </article>
     </div>
-  </a>
-</article>
-
     
-  </div>
-  <div class="mcol c6">
-    <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-    <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
 
-    <div class="inner">
-      <div class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その１</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="25007-03-25T00:00:00JST">Mar 25, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </div>
 
+
+<nav class="paging">
+  
+  <a href="/post/page/5/" rel="prev">Prev</a>
+  
+  
+</nav>
 
 
         </div>

@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-766136c42363b1752e86f3f0bba5157c {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-512b010b5be0e4f46ede454a4ef10009 {
   background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
 }
@@ -802,6 +808,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-766136c42363b1752e86f3f0bba5157c {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-766136c42363b1752e86f3f0bba5157c {
+  width: 5rem;
 }
 
 
@@ -1525,6 +1544,30 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+          <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
+
+          <div class="inner">
+            <h2 class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-04-11T09:00:00JST">Apr 11, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
+その対処方法を備忘録として残しておく
+環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
+実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
           <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
 
@@ -1754,33 +1797,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-          <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
-
-          <div class="inner">
-            <h2 class="title">普通の会社員(SE)が確定申告してみた その2</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-07T09:00:00JST">Mar 7, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1802,6 +1818,27 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+    <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
+
+    <div class="inner">
+      <div class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-04-11T09:00:00JST">Apr 11, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
@@ -1992,27 +2029,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-    <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
-
-    <div class="inner">
-      <div class="title">普通の会社員(SE)が確定申告してみた その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="7007-03-07T09:00:00JST">Mar 7, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2023,7 +2039,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(11)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
