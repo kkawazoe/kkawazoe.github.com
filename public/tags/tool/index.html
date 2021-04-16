@@ -1657,10 +1657,14 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
               
             </ul>
 
-            <div class="summary">経緯 結合テストなのでエビデンスを残しておく必要がありテスト項目ごとにシートを分ける必要があった テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため ツール化をすることにした
+            <div class="summary">経緯 結合テストなのでエビデンスを残しておく必要があり
+テスト項目ごとにシートを分ける必要があった
+テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため
+ツール化をすることにした
 使用方法   「パラメータ」シートにて以下を指定する
 [設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後にワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
+ シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
+ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
   実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化  For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合  If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得  chkFlg = Worksheets(&#34;パラメータ&#34;).</div>
           </div>
         </a>
