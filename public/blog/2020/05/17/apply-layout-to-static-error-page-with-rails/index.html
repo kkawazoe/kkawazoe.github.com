@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -17,33 +17,21 @@
 
 
     
-<meta name="description" content="環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
-確認 config/environments/development.rb の以下を編集して確認する
-config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
-=&gt; 生成されるファイル 例. public/404.ja.html
-desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.">
+<meta name="description" content="Rails で静的エラーページにレイアウトを適用する">
 
 <meta property="og:title" content="Rails で静的エラーページにレイアウトを適用する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
-確認 config/environments/development.rb の以下を編集して確認する
-config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
-=&gt; 生成されるファイル 例. public/404.ja.html
-desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.">
+<meta property="og:description" content="Rails で静的エラーページにレイアウトを適用する">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
 <meta name="twitter:title" content="Rails で静的エラーページにレイアウトを適用する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
-確認 config/environments/development.rb の以下を編集して確認する
-config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
-=&gt; 生成されるファイル 例. public/404.ja.html
-desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.">
+<meta name="twitter:description" content="Rails で静的エラーページにレイアウトを適用する">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -78,7 +66,7 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
         "height": 60
       }
     },
-    "description": "環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する\n確認 config\/environments\/development.rb の以下を編集して確認する\nconfig.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する\n=\u0026gt; 生成されるファイル 例. public\/404.ja.html\ndesc \u0026#39;Generate Error Pages\u0026#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: \u0026#39;layouts\/error_page\u0026#39;, # where to find your layout by default output: \u0026#34;public\/%s.#{locale}.html\u0026#34; # where to put generated pages by default, %s is the replacement for @code ) renderer."
+    "description": "Rails で静的エラーページにレイアウトを適用する"
   }
 </script>
 

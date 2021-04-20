@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1563,7 +1563,7 @@ ga('send', 'pageview');
 
             <div class="summary">対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</div>
+実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicitrem /*******************************************************rem * msgbox.vbs msg [,title]rem *rem * 引数rem * msg :表示するメッセージrem * title :メッセージボックスのタイトルrem * 動作rem * メッセージボックスを表示し、クリックされたボタンにrem * 対応する数値を返す。rem * msg中の 「\n」という文字列は改行に変換する。rem * 戻り値rem * 0:[はい]/1:[いいえ]rem ********************************************************/Dim argsDim arg(99)Dim valueDim cntDim retBtnDim retDim eLevelrem 引数を変数にセットSet args = WScript.</div>
           </div>
         </a>
       </article>
