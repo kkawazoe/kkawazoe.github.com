@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-ef7ba2867dac050942fd569077c700f9 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-766136c42363b1752e86f3f0bba5157c {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -808,6 +814,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-ef7ba2867dac050942fd569077c700f9 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-ef7ba2867dac050942fd569077c700f9 {
+  width: 5rem;
 }
 
 
@@ -1590,7 +1609,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
 
             <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicitrem /*****************************************************************rem * getProfileString.vbs iniFileName, sectionName, entryNamerem *rem * 引数rem * iniFileName : 設定ファイル名(フルパス)rem * sectionName : セクション名rem * entryName : エントリー名rem * 動作rem * 引数に指定された設定ファイルより指定したrem * 「セクション」,「エントリー」に対応する設定値を返す。rem * 先頭がカンマの場合はコメント行として扱う。rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)をrem * 設定値として扱う。rem * 戻り値rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。)rem *****************************************************************/Dim retDim fsDim readLineObjDim searchFlgDim bufferrem ファイルシステムアクセス用Set fs = CreateObject( &quot;Scripting.</div>
+取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting.</div>
           </div>
         </a>
       </article>
@@ -1613,7 +1632,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
 
             <div class="summary">対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicitrem /*******************************************************rem * msgbox.vbs msg [,title]rem *rem * 引数rem * msg :表示するメッセージrem * title :メッセージボックスのタイトルrem * 動作rem * メッセージボックスを表示し、クリックされたボタンにrem * 対応する数値を返す。rem * msg中の 「\n」という文字列は改行に変換する。rem * 戻り値rem * 0:[はい]/1:[いいえ]rem ********************************************************/Dim argsDim arg(99)Dim valueDim cntDim retBtnDim retDim eLevelrem 引数を変数にセットSet args = WScript.</div>
+実際のコード @echo off rem メッセージボックスの表示 set msg=&#34;メッセージボックスのテスト [\n] で改行します。&#34; set title=&#34;メッセージボックステスト&#34; for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&#34;%title%&#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</div>
           </div>
         </a>
       </article>
@@ -1633,6 +1652,27 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
+    <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
+
+    <div class="inner">
+      <div class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
@@ -1823,27 +1863,6 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-    <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-    <div class="inner">
-      <div class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T15:25:56JST">Mar 19, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -1854,7 +1873,7 @@ yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     

@@ -6,10 +6,16 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 11 Apr 2021 09:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 12 May 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hash の Key が Symbol または String どちらでも取得可能にする方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</link>
+      <pubDate>Wed, 12 May 2021 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</guid>
+      <description>HashWithIndifferentAccess に変換して実現する
+環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &amp;#39;#0000&amp;#39;, white: &amp;#39;#FFFFFF&amp;#39; }.with_indifferent_access rgb[:black] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:white] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[:&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; </description>
+    </item>
     
     <item>
       <title>nkf を使用して UTF-8 を CP932 に文字コード変換する方法</title>
@@ -108,7 +114,7 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+Vue.js の bind を&#39;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
