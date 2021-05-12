@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-ef7ba2867dac050942fd569077c700f9 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-766136c42363b1752e86f3f0bba5157c {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -808,6 +814,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-ef7ba2867dac050942fd569077c700f9 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-ef7ba2867dac050942fd569077c700f9 {
+  width: 5rem;
 }
 
 
@@ -1548,6 +1567,31 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">
+          <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
+
+          <div class="inner">
+            <h2 class="title">Hugo に数式を挿入する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
+手順 参考 と同じく Mathjax を使用して実現する
+  partials フォルダ配下に以下のファイルを作成する
+CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
           <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
 
@@ -1784,7 +1828,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&rsquo;(シングルコート)で括る
+Vue.js の bind を'(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
@@ -1817,30 +1861,6 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
-          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
-以下のイベントがフックされるようになる
-Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1864,6 +1884,27 @@ Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent =
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
+    <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
+
+    <div class="inner">
+      <div class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
@@ -2054,27 +2095,6 @@ Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent =
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-    <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-    <div class="inner">
-      <div class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T15:25:56JST">Mar 19, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2085,7 +2105,7 @@ Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent =
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
