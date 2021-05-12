@@ -6,11 +6,7 @@
     <description>Recent content in Electron on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 24 May 2019 12:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 24 May 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>electron-builder で Lint および UnitTest が通った場合のみビルドするようにする</title>
       <link>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</link>
