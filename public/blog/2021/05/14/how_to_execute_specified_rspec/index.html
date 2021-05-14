@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~</title>
+    <title>特定の RSpec のみ実行されるようにする方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,40 +17,22 @@
 
 
     
-<meta name="description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
+<meta name="description" content="個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。">
 
-<meta property="og:title" content="普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="特定の RSpec のみ実行されるようにする方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/default.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
+<meta property="og:description" content="個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-<meta name="twitter:title" content="普通の会社員(SE)が確定申告してみた その2 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う &#43; 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/default.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
+<meta name="twitter:title" content="特定の RSpec のみ実行されるようにする方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -61,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "普通の会社員(SE)が確定申告してみた その2-Note To Self ~One Step At A Time~",
+    "headline": "特定の RSpec のみ実行されるようにする方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/default.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2020-03-07T09:00:00JST",
-    "dateModified": "2020-03-07T09:00:00JST",
+    "datePublished": "2021-05-14T09:00:00JST",
+    "dateModified": "2021-05-14T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -84,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "[前回までの記事]\n 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った\n今年は、前回利用しなかった e-tax で行う \u002b 申請方法が変わったらしいので備忘録として残しておく\n想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料\nスマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う\n手順 e-tax 確定申告書等作成コーナーで作成する\n 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」\u0026gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) \u0026gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」\u0026gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) \u0026gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) \u0026gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある"
+    "description": "個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1643,13 +1625,13 @@ ga('send', 'pageview');
           
 <article class="sn">
 
-  <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
+  <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
 
   <header class="article-header">
-    <h1 class="title">普通の会社員(SE)が確定申告してみた その2</h1>
+    <h1 class="title">特定の RSpec のみ実行されるようにする方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-07T09:00:00JST">Mar 7, 2020</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-14T09:00:00JST">May 14, 2021</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1657,95 +1639,48 @@ ga('send', 'pageview');
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&title=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&text=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&t=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&title=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>[前回までの記事]</p>
+  <div class="article-body"><p>個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。</p>
+<h2 id="方法">方法</h2>
+<p><a href="https://relishapp.com/rspec/rspec-core/v/3-8/docs/command-line/tag-option">tag オプション</a> を使用して実現する</p>
+<h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/">普通の会社員(SE)が確定申告してみた</a></li>
+<li>rspec: rspec 3.8</li>
 </ul>
-<h2 id="経緯">経緯</h2>
-<p>前回、確定申告をして損失の繰り越し控除を行った<br>
-今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく</p>
-<h2 id="想定ケース">想定ケース</h2>
-<ul>
-<li>会社員で年末調整済</li>
-<li>株は特定口座(源泉徴収あり)で取引</li>
-</ul>
-<h2 id="確定申告手順">確定申告手順</h2>
-<h3 id="事前準備">事前準備</h3>
-<ul>
-<li>源泉徴収票</li>
-<li>特定口座年間取引報告書</li>
-<li>マイナンバーカード</li>
-<li>ICカードリーダ※1</li>
-</ul>
-<p><code>※1</code> 対応するスマートフォンでも可 <a href="https://www.e-tax.nta.go.jp/toiawase/qa/yokuaru02/32.htm">参考資料</a><br>
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う</p>
-<h3 id="手順">手順</h3>
-<p><a href="https://www.e-tax.nta.go.jp/kojin.html">e-tax 確定申告書等作成コーナー</a>で作成する</p>
-<ol>
-<li>「作成開始」ボタンを押下</li>
-<li>「e-tax で提出 マイナンバーカード方式」ボタンを押下</li>
-<li>「利用規約に同意して次へ」ボタンを押下</li>
-<li>マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下</li>
-<li>「令和元年分の申告書等の作成」&gt;「所得税」を選択</li>
-<li>「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下</li>
-<li>生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>「上場株式等の譲渡所得等」を選択
-<ul>
-<li>配当所得の課税方法の選択
-<ul>
-<li>「申告分離課税」を選択</li>
-</ul>
-</li>
-<li>株式等の売却・配当・利子等の入力
-<ul>
-<li>「特定口座年間取引報告書の内容を入力する」を選択</li>
-<li>入力例を参考に「特定口座年間取引報告書」の内容を転記する</li>
-</ul>
-</li>
-<li>平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方
-<ul>
-<li>「はい」を選択</li>
-<li>前年の譲渡損失を入力</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>内容確認後、「確認終了(次へ)」ボタンを押下</li>
-<li>「収入金額等」&gt;「給与」を選択
-<ul>
-<li>「源泉徴収票」の内容を転記</li>
-</ul>
-</li>
-<li>「住民税等入力」
-<ul>
-<li>「入力終了(次へ) &gt;」ボタンを押下</li>
-</ul>
-</li>
-<li>住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下</li>
-<li>e-tax 経由で送信する</li>
-</ol>
-<h2 id="まとめ">まとめ</h2>
-<p>前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある<br>
-また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</p>
-</div>
+<h2 id="実際のコード">実際のコード</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e">#</span>
+<span style="color:#75715e"># :key =&gt; &#39;value&#39; 形式でタグを付与可能</span>
+<span style="color:#75715e"># Group(describe, context, it) に対して付与可能</span>
+<span style="color:#75715e">#</span>
+<span style="color:#66d9ef">RSpec</span><span style="color:#f92672">.</span>describe <span style="color:#e6db74">&#34;group with tagged specs&#34;</span> <span style="color:#66d9ef">do</span>
+  it <span style="color:#e6db74">&#34;example I&#39;m working now&#34;</span>, <span style="color:#e6db74">focus</span>: <span style="color:#66d9ef">true</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+  it <span style="color:#e6db74">&#34;special example with string&#34;</span>, <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#39;special&#39;</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+  it <span style="color:#e6db74">&#34;special example with symbol&#34;</span>, <span style="color:#e6db74">type</span>: <span style="color:#e6db74">:special</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+  it <span style="color:#e6db74">&#34;slow example&#34;</span>, <span style="color:#e6db74">skip</span>: <span style="color:#66d9ef">true</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+  it <span style="color:#e6db74">&#34;ordinary example&#34;</span>, <span style="color:#e6db74">speed</span>: <span style="color:#e6db74">&#39;slow&#39;</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="実行方法">実行方法</h2>
+<p>例. タグとして type: :special が付与された RSpec を実行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">bundle exec rspec spec --tag type:special
+</code></pre></div><p>以下のテストが実行される</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">it <span style="color:#e6db74">&#34;special example with string&#34;</span>, <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#39;special&#39;</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+it <span style="color:#e6db74">&#34;special example with symbol&#34;</span>, <span style="color:#e6db74">type</span>: <span style="color:#e6db74">:special</span> <span style="color:#66d9ef">do</span>; <span style="color:#66d9ef">end</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -1756,17 +1691,17 @@ ga('send', 'pageview');
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&text=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&t=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f&title=%e6%99%ae%e9%80%9a%e3%81%ae%e4%bc%9a%e7%a4%be%e5%93%a1%28SE%29%e3%81%8c%e7%a2%ba%e5%ae%9a%e7%94%b3%e5%91%8a%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%e3%81%9d%e3%81%ae2" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2020%2f03%2f07%2ftried-tax-returns-part2%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&title=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&text=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&t=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f&title=%e7%89%b9%e5%ae%9a%e3%81%ae%20RSpec%20%e3%81%ae%e3%81%bf%e5%ae%9f%e8%a1%8c%e3%81%95%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f05%2f14%2fhow_to_execute_specified_rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -1780,14 +1715,14 @@ ga('send', 'pageview');
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
+  <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
+    <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
 
     <div class="inner">
-      <div class="title">RSpec 内で動的に I18n の訳文を追加する</div>
+      <div class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T09:56:37JST">Sep 14, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1803,27 +1738,6 @@ ga('send', 'pageview');
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-    <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-    <div class="inner">
-      <div class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-03-19T15:25:56JST">Mar 19, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>
