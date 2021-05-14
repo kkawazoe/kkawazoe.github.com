@@ -6,7 +6,18 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 12 May 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>特定の RSpec のみ実行されるようにする方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</link>
+      <pubDate>Fri, 14 May 2021 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</guid>
+      <description>個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。
+方法 tag オプション を使用して実現する
+環境  rspec: rspec 3.8  実際のコード # # :key =&amp;gt; &amp;#39;value&amp;#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &amp;#34;group with tagged specs&amp;#34; do it &amp;#34;example I&amp;#39;m working now&amp;#34;, focus: true do; end it &amp;#34;special example with string&amp;#34;, type: &amp;#39;special&amp;#39; do; end it &amp;#34;special example with symbol&amp;#34;, type: :special do; end it &amp;#34;slow example&amp;#34;, skip: true do; end it &amp;#34;ordinary example&amp;#34;, speed: &amp;#39;slow&amp;#39; do; end end 実行方法 例.</description>
+    </item>
+    
     <item>
       <title>Hash の Key が Symbol または String どちらでも取得可能にする方法</title>
       <link>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</link>

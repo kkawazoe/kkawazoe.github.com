@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</loc>
-    <lastmod>2021-05-12T09:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2021-05-12T09:00:00+09:00</lastmod>
+    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2021-05-12T09:00:00+09:00</lastmod>
+    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2021-05-12T09:00:00+09:00</lastmod>
+    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</loc>
+    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</loc>
     <lastmod>2021-05-12T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</loc>
