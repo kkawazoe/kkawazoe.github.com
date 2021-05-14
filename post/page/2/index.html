@@ -508,6 +508,12 @@ section.footer {
 }
 
   
+.thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-ef7ba2867dac050942fd569077c700f9 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -814,6 +820,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
+  width: 5rem;
 }
 
 
@@ -1567,6 +1586,31 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/">
+          <div class="thumb thumb-29825a4d4c5b04cfa5318654886562b0"></div>
+
+          <div class="inner">
+            <h2 class="title">Docker Compose 上で Rails の秘匿情報を扱う</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-04-04T10:46:01JST">Apr 4, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
+以下のコマンドを使用して確認する
+$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
+以下のコマンドを使用して確認する
+$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:edit -e production </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
           <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
 
@@ -1794,35 +1838,6 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/">
-          <div class="thumb thumb-fa0c8854dce4201ca020ba9d24fce43b"></div>
-
-          <div class="inner">
-            <h2 class="title">Excel でテスト用シートを自動生成するツールを作成する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-28T00:00:00JST">Apr 28, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 結合テストなのでエビデンスを残しておく必要があり
-テスト項目ごとにシートを分ける必要があった
-テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため
-ツール化をすることにした
-使用方法   「パラメータ」シートにて以下を指定する
-[設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
-ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
-  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化  For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合  If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得  chkFlg = Worksheets(&#34;パラメータ&#34;).</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -1846,6 +1861,27 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
             <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
+    <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
+
+    <div class="inner">
+      <div class="title">特定の RSpec のみ実行されるようにする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-05-14T09:00:00JST">May 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
@@ -2036,27 +2072,6 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/">
-    <div class="thumb thumb-29825a4d4c5b04cfa5318654886562b0"></div>
-
-    <div class="inner">
-      <div class="title">Docker Compose 上で Rails の秘匿情報を扱う</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="4007-04-04T10:46:01JST">Apr 4, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2067,7 +2082,7 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(13)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(14)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
     
