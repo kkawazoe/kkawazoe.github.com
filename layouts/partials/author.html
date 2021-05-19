@@ -1,0 +1,23 @@
+{{ with .Site.Params.author }}
+<section class="sidebar">
+  <header>AUTHOR</header>
+  <div class="author">
+    <a href="{{ .github | absURL }}">
+      {{ with .thumbnail }}
+      <img class="author-thumb" src="{{ . | absURL }}">
+      {{ end }}
+    </a>
+    <div class="author-name">{{ .name }}</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        {{ len (where $.Site.RegularPages "Section" "==" "post") }}
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        {{ len $.Site.Taxonomies.tags }}
+        <span>Tags</span>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
