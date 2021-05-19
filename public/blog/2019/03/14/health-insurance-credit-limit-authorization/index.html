@@ -585,6 +585,49 @@ section.footer {
 
 
 
+  
+    .author {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px rgba(63, 63, 68, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center; }
+  .author .author-thumb {
+    margin: 0 auto 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #eceff1;
+    background-size: cover;
+    background-position: center; }
+  .author .author-name {
+    margin-bottom: .5rem;
+    font-weight: 700; }
+  .author .author-facts {
+    margin-bottom: 1rem; }
+    .author .author-facts li {
+      display: inline; }
+      .author .author-facts li a {
+        display: inline-block;
+        background-color: #eceff1;
+        width: 1.75rem;
+        height: 1.75rem;
+        line-height: 1.75rem;
+        text-align: center;
+        color: #333;
+        font-size: .8rem;
+        border-radius: 2px; }
+        .author .author-facts li a:hover {
+          color: #fff;
+          background-color: #333; }
+  .author .author-description {
+    text-align: left;
+    font-size: .8rem; }
+    .author .author-description p {
+      margin: .5rem 0; }
+
+  
+
 
 .thumb {
   background-image: url("https://kkawazoe.github.io/images/default.jpg");
@@ -1630,6 +1673,62 @@ section.sidebar header a {
   text-decoration: underline;
 }
 
+.author {
+  padding: 1rem 0 0;
+}
+
+.author .author-name {
+  margin-bottom: 1rem;
+}
+
+.article-info {
+  padding: 0px;
+  border-top: 1px solid rgb(63 63 68 / 10%);
+}
+
+.article-info:before,
+.article-info:after {
+  content: "";
+  display: table;
+}
+
+.article-info:after {
+  clear: both;
+}
+
+.article-info .article-info-block {
+  width: 50%;
+  float: left;
+  padding: 5px 4px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.article-info .article-info-block span {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.article-info .article-info-block:first-child {
+  border-right: 1px solid rgb(63 63 68 / 10%);
+}
+
+.c8 {
+  width: 50%;
+}
+
+.c2 {
+  width: 25%;
+}
+
+.l-container {
+  max-width: 80rem;
+}
+
     </style>
 
 
@@ -1654,8 +1753,44 @@ ga('send', 'pageview');
     <main>
       <div class="l-container">
         <div class="mrow">
-        <div class="mcol c8">
-          
+          <div class="mcol c2">
+            <aside class="l-sidebar">
+              
+<section class="sidebar">
+  <header>AUTHOR</header>
+  <div class="author">
+    <a href="https://github.com/kkawazoe">
+      
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/kkawazoe">
+      
+    </a>
+    <div class="author-name">kkawazoe</div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        53
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        17
+        <span>Tags</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+            </aside>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3004453896477629",
+    enable_page_level_ads: true
+  });
+</script>
+
+          </div>
+          <div class="mcol c8">
+            
 <article class="sn">
 
   <div class="thumb thumb-2901bf721fa3d51df3fd4fe519615afa"></div>
@@ -1789,12 +1924,10 @@ ga('send', 'pageview');
 
 
 
-        </div>
-        <div class="mcol c4">
-          <aside class="l-sidebar">
-            
-
-            <section class="sidebar">
+          </div>
+          <div class="mcol c2">
+            <aside class="l-sidebar">
+              <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
     
@@ -2011,9 +2144,9 @@ ga('send', 'pageview');
   </div>
 </section>
 
-            
+              
 
-            
+              
 <section class="sidebar">
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
@@ -2043,7 +2176,7 @@ ga('send', 'pageview');
 
 
 
-            <section class="sidebar">
+              <section class="sidebar">
   <header>ABOUT</header>
   <div>
     <div class="articles sm">
@@ -2071,7 +2204,7 @@ ga('send', 'pageview');
   </div>
 </section>
 
-            <section class="sidebar">
+              <section class="sidebar">
   <div>
     <div class="articles sm">
       <a href="https://px.a8.net/svt/ejp?a8mat=3599I4+9YEYYA+50+2HK0TD" rel="nofollow">
@@ -2081,8 +2214,8 @@ ga('send', 'pageview');
   </div>
 </section>
 
-          </aside>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            </aside>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-3004453896477629",
@@ -2090,6 +2223,7 @@ ga('send', 'pageview');
   });
 </script>
 
+          </div>
         </div>
       </div>
     </main>
