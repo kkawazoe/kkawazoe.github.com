@@ -14,3 +14,8 @@ enableHighlight = true
 [markup.goldmark]
   [markup.goldmark.renderer]
     unsafe = true
+
+[params.author]
+thumbnail = "https://avatars.githubusercontent.com/kkawazoe"
+name = "kkawazoe"
+github = "https://github.com/kkawazoe"

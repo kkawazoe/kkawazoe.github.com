@@ -73,19 +73,25 @@ ga('send', 'pageview');
     <main>
       <div class="l-container">
         <div class="mrow">
-        <div class="mcol c8">
-          {{ block "main" . }}{{ end }}
-        </div>
-        <div class="mcol c4">
-          <aside class="l-sidebar">
-            {{ partial "author.html" . }}
-            {{ partial "latests.html" . }}
-            {{ partial "categories.html" . }}
-            {{ partial "tags.html" . }}
-            {{ partial "about.html" . }}
-            {{ partial "affiliate.html" . }}
-          </aside>
-          {{ partial "ads.html" .}}
+          <div class="mcol c2">
+            <aside class="l-sidebar">
+              {{ partial "author.html" . }}
+            </aside>
+            {{ partial "ads.html" .}}
+          </div>
+          <div class="mcol c8">
+            {{ block "main" . }}{{ end }}
+          </div>
+          <div class="mcol c2">
+            <aside class="l-sidebar">
+              {{ partial "latests.html" . }}
+              {{ partial "categories.html" . }}
+              {{ partial "tags.html" . }}
+              {{ partial "about.html" . }}
+              {{ partial "affiliate.html" . }}
+            </aside>
+            {{ partial "ads.html" .}}
+          </div>
         </div>
       </div>
     </main>

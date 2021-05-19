@@ -79,3 +79,59 @@ section.sidebar header a {
   color: #333;
   text-decoration: underline;
 }
+
+.author {
+  padding: 1rem 0 0;
+}
+
+.author .author-name {
+  margin-bottom: 1rem;
+}
+
+.article-info {
+  padding: 0px;
+  border-top: 1px solid rgb(63 63 68 / 10%);
+}
+
+.article-info:before,
+.article-info:after {
+  content: "";
+  display: table;
+}
+
+.article-info:after {
+  clear: both;
+}
+
+.article-info .article-info-block {
+  width: 50%;
+  float: left;
+  padding: 5px 4px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.article-info .article-info-block span {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.article-info .article-info-block:first-child {
+  border-right: 1px solid rgb(63 63 68 / 10%);
+}
+
+.c8 {
+  width: 50%;
+}
+
+.c2 {
+  width: 25%;
+}
+
+.l-container {
+  max-width: 80rem;
+}
