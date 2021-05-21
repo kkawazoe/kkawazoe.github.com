@@ -10,12 +10,16 @@
     <div class="author-name">{{ .name }}</div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        {{ len (where $.Site.RegularPages "Section" "==" "post") }}
-        <span>Posts</span>
+        <a href="{{ .Site.baseURL | absURL }}">
+          {{ len (where $.Site.RegularPages "Section" "==" "post") }}
+          <span>Posts</span>
+        </a>
       </div>
       <div class="article-info-block">
-        {{ len $.Site.Taxonomies.tags }}
-        <span>Tags</span>
+        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">
+          {{ len $.Site.Taxonomies.tags }}
+          <span>Tags</span>
+        </a>
       </div>
     </div>
   </div>

@@ -143,3 +143,7 @@ section.sidebar header a {
 @media (max-width: 768px) {
   .c2, .c4, .c6, .c8 { width: 100%; }
 }
+
+.article-info-block a {
+  display: block;
+}
