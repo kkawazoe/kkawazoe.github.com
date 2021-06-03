@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/tags/git/</loc>
+    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</loc>
+    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
+    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2021-05-14T09:00:00+09:00</lastmod>
+    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
     <lastmod>2021-05-14T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</loc>
@@ -76,9 +82,6 @@
   </url><url>
     <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
     <lastmod>2019-07-06T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/git/</loc>
-    <lastmod>2019-06-20T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</loc>
     <lastmod>2019-06-20T12:00:00+09:00</lastmod>

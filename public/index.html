@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+}
+  
+
+  
 .thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -863,6 +869,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-569c339862a3e91bd980bffef4fc5554 {
+  width: 5rem;
 }
 
 
@@ -1695,7 +1714,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          53
+          54
           <span>Posts</span>
         </a>
       </div>
@@ -1730,6 +1749,29 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+          <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+          <div class="inner">
+            <h2 class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-06-02T12:00:00JST">Jun 2, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 表題の件を行う必要があり調査を行ったため備忘録として残しておく
+手順 1. Github にログインする 2. 以下を GitHub 内で検索する is:open is:pr review-requested:{自分のユーザー名} もしくは rewiew-requested で確認可能
+※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -1960,31 +2002,6 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-          <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails で静的エラーページにレイアウトを適用する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-17T11:56:06JST">May 17, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
-確認 config/environments/development.rb の以下を編集して確認する
-config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
-=&gt; 生成されるファイル 例. public/404.ja.html
-desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2004,6 +2021,27 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+    <div class="inner">
+      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
@@ -2194,27 +2232,6 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-    <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
-
-    <div class="inner">
-      <div class="title">Rails で静的エラーページにレイアウトを適用する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-05-17T11:56:06JST">May 17, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2231,11 +2248,11 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     

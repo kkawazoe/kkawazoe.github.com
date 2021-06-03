@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Angular - Note To Self ~One Step At A Time~</title>
+    <title>Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -14,13 +14,65 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/tags/angular/index.xml" title="Note To Self ~One Step At A Time~">
-
 
 
     
+<meta name="description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
 
-    <link rel="canonical" href="https://kkawazoe.github.io/tags/angular/">
+<meta property="og:title" content="Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
+<meta property="og:description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+<meta name="twitter:title" content="Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/kkawazoe.github.io\/"
+    },
+    "headline": "Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法-Note To Self ~One Step At A Time~",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/github_logo.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2021-06-02T12:00:00JST",
+    "dateModified": "2021-06-02T12:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Note To Self ~One Step At A Time~"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Note To Self ~One Step At A Time~",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく"
+  }
+</script>
+
+
+
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1741,47 +1793,128 @@ ga('send', 'pageview');
           </div>
           <div class="mcol c8">
             
+<article class="sn">
 
-<header class="page-title">
-  <h1 class="title">Angular</h1>
-</header>
+  <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+  <header class="article-header">
+    <h1 class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</h1>
+
+    <ul class="facts">
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-06-02T12:00:00JST">Jun 2, 2021</time></li>
+      
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+      
+      
+      
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/git">Git</a> </li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&text=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&t=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body"><h2 id="経緯">経緯</h2>
+<p>表題の件を行う必要があり調査を行ったため備忘録として残しておく</p>
+<h3 id="手順">手順</h3>
+<h4 id="1-github-にログインする">1. Github にログインする</h4>
+<h4 id="2-以下を-github-内で検索する">2. 以下を GitHub 内で検索する</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">is:open is:pr review-requested:<span style="color:#f92672">{</span>自分のユーザー名<span style="color:#f92672">}</span>
+</code></pre></div><p>もしくは <a href="https://github.com/pulls/review-requested">rewiew-requested</a> で確認可能<br>
+※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要</p>
+</div>
+
+  <footer class="article-footer">
+
+    <ul class="facts-tags">
+  
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+  
+      
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/git">Git</a> </li>
+      
+  
+    </ul>
+  
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&text=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&t=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  
+  </footer>
+
+</article>
 
 
-<div class="articles">
-  <div class="mrow">
-
+<div class="adj mrow">
+  <div class="mcol c6">
+    <header>Previous Article</header>
     
-    
-    
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
-          <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
+    <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
 
-          <div class="inner">
-            <h2 class="title">Angular Cli で作成したプロジェクトに Jest を追加する</h2>
+    <div class="inner">
+      <div class="title">特定の RSpec のみ実行されるようにする方法</div>
 
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-05-15T12:00:00JST">May 15, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-05-14T09:00:00JST">May 14, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
 
-            <div class="summary">Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
-Jest に変更する手順を備忘録として残しておく
-構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4 手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes 2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic 3. 以下のコマンドを実行して動作確認する $ yarn test $ jest PASS src/app/app.</div>
-          </div>
-        </a>
-      </article>
     </div>
-    
+  </a>
+</article>
 
+    
+  </div>
+  <div class="mcol c6">
+    <header>Next Article</header>
+    
   </div>
 </div>
 
-
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kkawazoe" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
           </div>
           <div class="mcol c2">
