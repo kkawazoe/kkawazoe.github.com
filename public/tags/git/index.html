@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+}
+  
+
+  
 .thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -863,6 +869,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-569c339862a3e91bd980bffef4fc5554 {
+  width: 5rem;
 }
 
 
@@ -1695,7 +1714,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          53
+          54
           <span>Posts</span>
         </a>
       </div>
@@ -1737,6 +1756,29 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+          <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+          <div class="inner">
+            <h2 class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-06-02T12:00:00JST">Jun 2, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 表題の件を行う必要があり調査を行ったため備忘録として残しておく
+手順 1. Github にログインする 2. 以下を GitHub 内で検索する is:open is:pr review-requested:{自分のユーザー名} もしくは rewiew-requested で確認可能
+※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/">
           <div class="thumb thumb-20b12b3796a2e8f19eab02a6a8e700f1"></div>
 
@@ -1751,7 +1793,7 @@ ga('send', 'pageview');
             </ul>
 
             <div class="summary">経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokensを選択する
+手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
   Generate new token を押下する
   2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
           </div>
@@ -1784,7 +1826,7 @@ git checkout -b topic/#{issue番号}-作業者名   開発
 git add -A   コミットする
 git commit -m &#34;コメント&#34;   プルリクエストを投げる
 git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-  その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
+  その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
           </div>
         </a>
       </article>
@@ -1828,6 +1870,27 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+    <div class="inner">
+      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
@@ -2018,27 +2081,6 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-    <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
-
-    <div class="inner">
-      <div class="title">Rails で静的エラーページにレイアウトを適用する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-05-17T11:56:06JST">May 17, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2055,11 +2097,11 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     

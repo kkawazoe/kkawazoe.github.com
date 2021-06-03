@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+}
+  
+
+  
 .thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -863,6 +869,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-569c339862a3e91bd980bffef4fc5554 {
+  background-image: url(https://kkawazoe.github.io/images/logo/github_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-569c339862a3e91bd980bffef4fc5554 {
+  width: 5rem;
 }
 
 
@@ -1695,7 +1714,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          53
+          54
           <span>Posts</span>
         </a>
       </div>
@@ -1734,6 +1753,40 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
+          <div class="thumb thumb-ac16365a35e08a4f79796da25ad54f94"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その6</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-30T00:00:19JST">Apr 30, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り   直接利回り
+投資金額(購入価格)に対する毎年の利息収入の割合
+$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
+$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
+例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1%}{102円} \times 100 ≒ 0.98% $$
+  応募者利回り
+債権の発行時に購入し、償還まで所有した場合の利回り
+$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
+例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
+  最終利回り</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2003,32 +2056,7 @@ git checkout -b topic/#{issue番号}-作業者名   開発
 git add -A   コミットする
 git commit -m &#34;コメント&#34;   プルリクエストを投げる
 git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-  その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
-          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を'(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
+  その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
           </div>
         </a>
       </article>
@@ -2055,6 +2083,27 @@ Vue.js の bind を'(シングルコート)で括る
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+
+    <div class="inner">
+      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
@@ -2245,27 +2294,6 @@ Vue.js の bind を'(シングルコート)で括る
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
-    <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
-
-    <div class="inner">
-      <div class="title">Rails で静的エラーページにレイアウトを適用する</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-05-17T11:56:06JST">May 17, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2282,11 +2310,11 @@ Vue.js の bind を'(シングルコート)で括る
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     
