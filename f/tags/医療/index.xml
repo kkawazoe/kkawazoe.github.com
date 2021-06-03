@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>医療 on Note To Self ~One Step At A Time~</title>
+    <link>http://localhost:1313/tags/%E5%8C%BB%E7%99%82/</link>
+    <description>Recent content in 医療 on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Thu, 14 Mar 2019 13:54:31 +0900</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%8C%BB%E7%99%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>限度額適用認定証について</title>
+      <link>http://localhost:1313/blog/2019/03/14/health-insurance-credit-limit-authorization/</link>
+      <pubDate>Thu, 14 Mar 2019 13:54:31 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/2019/03/14/health-insurance-credit-limit-authorization/</guid>
+      <description>経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
+できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
+高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
+ 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
+しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
+「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
+※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
+※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
+ =&amp;gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
+自分の場合請求から発行までおよそ2週間程度かかった。
+1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
+※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</description>
+    </item>
+    
+  </channel>
+</rss>
