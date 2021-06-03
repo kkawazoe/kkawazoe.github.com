@@ -6,7 +6,18 @@
     <description>Recent content in Git on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jun 2021 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</link>
+      <pubDate>Wed, 02 Jun 2021 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</guid>
+      <description>経緯 表題の件を行う必要があり調査を行ったため備忘録として残しておく
+手順 1. Github にログインする 2. 以下を GitHub 内で検索する is:open is:pr review-requested:{自分のユーザー名} もしくは rewiew-requested で確認可能
+※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要</description>
+    </item>
+    
     <item>
       <title>github で access token を使用してリポジトリを clone する</title>
       <link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link>
@@ -14,7 +25,7 @@
       
       <guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid>
       <description>経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokensを選択する
+手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する
   Generate new token を押下する
   2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </description>
     </item>
@@ -35,7 +46,7 @@ git checkout -b topic/#{issue番号}-作業者名   開発
 git add -A   コミットする
 git commit -m &amp;#34;コメント&amp;#34;   プルリクエストを投げる
 git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-  その他 直前のコミットのコメントを修正 git commit --amend -m &amp;#34;直前のコミットのコメントを修正&amp;#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</description>
+  その他 直前のコミットのコメントを修正 git commit --amend -m &amp;#34;直前のコミットのコメントを修正&amp;#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</description>
     </item>
     
     <item>
