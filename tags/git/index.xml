@@ -49,7 +49,7 @@ git checkout -b topic/#{issue番号}-作業者名   開発
 git add -A   コミットする
 git commit -m &amp;#34;コメント&amp;#34;   プルリクエストを投げる
 git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-  その他 直前のコミットのコメントを修正 git commit --amend -m &amp;#34;直前のコミットのコメントを修正&amp;#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</description>
+  その他 直前のコミットのコメントを修正 git commit --amend -m &amp;#34;直前のコミットのコメントを修正&amp;#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す ※ローカルの変更はそのまま git reset --soft HEAD^ git の状態を一つ前に戻す ※ローカルの変更も戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</description>
     </item>
     
     <item>
