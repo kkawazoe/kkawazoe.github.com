@@ -1938,9 +1938,9 @@ git clean -df
 
 <span style="color:#75715e"># 例. プルリクエスト 10 を持ってくる場合</span>
 $ git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> pull/10/head
-</code></pre></div><h4 id="master-ブランチ以外を削除したい">master ブランチ以外を削除したい</h4>
+</code></pre></div><h4 id="master-ブランチ以外を削除する">master ブランチ以外を削除する</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v master | xargs git branch -D
-</code></pre></div><h4 id="master-および-develop-ブランチ以外を削除したい">master および develop ブランチ以外を削除したい</h4>
+</code></pre></div><h4 id="master-および-develop-ブランチ以外を削除する">master および develop ブランチ以外を削除する</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v <span style="color:#e6db74">&#34;master\|develop&#34;</span> | xargs git branch -D
 </code></pre></div><h3 id="git-ブランチ切り替え時の注意点">Git ブランチ切り替え時の注意点</h3>
 <p><code>git checkout</code> コマンドを使用すると移動元のブランチの修正を引き継いで切り替えを行う</p>
