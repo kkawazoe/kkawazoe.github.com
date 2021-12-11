@@ -12,6 +12,26 @@
     
     
     <item>
+      <title>libreoffice を使用して Excel を PDF に変換する方法</title>
+      <link>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</link>
+      <pubDate>Sat, 11 Dec 2021 14:24:49 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</guid>
+      <description>アップロードされた Excel を PDF に変換して保存する必要があり
+調査を行った LibreOffice で変換する方法を備忘録として残しておく
+※図形など綺麗に変換されないパターンもあるため注意が必要
+前提 LibreOffice を事前にインストールしておく
+/Applications/LibreOffice.app/Contents/MacOS/soffice にインストールしている場合
+方法 以下のコマンドで変換を行う ※Calc を使用して PDF に変換
+参考
+指定できるフィルタ
+/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&amp;#34;calc_pdf_Export&amp;#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
+  /usr/local/bin/soffice を作成して中に以下を記載する
+#!/bin/bash  # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34;   以下のコマンドで実行権限を付与する
+sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</description>
+    </item>
+    
+    <item>
       <title>Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</title>
       <link>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</link>
       <pubDate>Wed, 02 Jun 2021 12:00:00 +0900</pubDate>

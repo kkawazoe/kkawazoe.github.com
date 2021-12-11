@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>FP3級への道 その7 - Note To Self ~One Step At A Time~</title>
+    <title>libreoffice を使用して Excel を PDF に変換する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,46 +17,22 @@
 
 
     
-<meta name="description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格
-勉強時間は一月半程度
-後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
-FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
-2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
-【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-   等級 学科/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい">
+<meta name="description" content="アップロードされた Excel を PDF に変換して保存する必要があり調査を行った">
 
-<meta property="og:title" content="FP3級への道 その7 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="libreoffice を使用して Excel を PDF に変換する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/libreoffice_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格
-勉強時間は一月半程度
-後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
-FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
-2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
-【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-   等級 学科/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい">
+<meta property="og:description" content="アップロードされた Excel を PDF に変換して保存する必要があり調査を行った">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/">
-<meta name="twitter:title" content="FP3級への道 その7 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格
-勉強時間は一月半程度
-後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
-FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
-2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
-【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-   等級 学科/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
+<meta name="twitter:title" content="libreoffice を使用して Excel を PDF に変換する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="アップロードされた Excel を PDF に変換して保存する必要があり調査を行った">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/libreoffice_logo.svg">
 
 
 <script type="application/ld+json">
@@ -67,15 +43,15 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "FP3級への道 その7-Note To Self ~One Step At A Time~",
+    "headline": "libreoffice を使用して Excel を PDF に変換する方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/fp_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/libreoffice_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-07-06T00:00:00JST",
-    "dateModified": "2019-07-06T00:00:00JST",
+    "datePublished": "2021-12-11T14:24:49JST",
+    "dateModified": "2021-12-11T14:24:49JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -90,13 +66,13 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
         "height": 60
       }
     },
-    "description": "学習中に間違えやすいと思った点を備忘録として残しておく\n[前回までの記事]\n FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格\n勉強時間は一月半程度\n後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した\nFP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う\n2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい\n【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下\n   等級 学科\/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい"
+    "description": "アップロードされた Excel を PDF に変換して保存する必要があり調査を行った"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1838,13 +1814,13 @@ ga('send', 'pageview');
             
 <article class="sn">
 
-  <div class="thumb thumb-1b0d5d48e442a702a1feb877522791e5"></div>
+  <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
 
   <header class="article-header">
-    <h1 class="title">FP3級への道 その7</h1>
+    <h1 class="title">libreoffice を使用して Excel を PDF に変換する方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-07-06T00:00:00JST">Jul 6, 2019</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-12-11T14:24:49JST">Dec 11, 2021</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1852,67 +1828,52 @@ ga('send', 'pageview');
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/tool">Tool</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&title=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&text=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&t=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&title=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>学習中に間違えやすいと思った点を備忘録として残しておく</p>
-<p>[前回までの記事]</p>
-<ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">FP3級への道</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">FP3級への道 その2</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">FP3級への道 その3</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">FP3級への道 その4</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">FP3級への道 その5</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">FP3級への道 その6</a></li>
-</ul>
-<h2 id="受験結果">受験結果</h2>
-<h3 id="2019年5月">2019年5月</h3>
-<p>一応　FP 3級合格<br>
-勉強時間は一月半程度<br>
-後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した<br>
-FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う<br>
-2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい</p>
-<h3 id="種目別試験結果ファイナンシャルプランニング技能検定">【種目別試験結果】ファイナンシャル・プランニング技能検定</h3>
-<p><a href="https://www.kinzai.or.jp/fp/news-fp/23815.html">公式サイト</a>で確認すると今回の合格率は以下</p>
-<table>
-<thead>
-<tr>
-<th align="right">等級</th>
-<th align="left">学科/実技</th>
-<th align="center">試験科目</th>
-<th align="right">合格率</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">3級</td>
-<td align="left">学科</td>
-<td align="center"></td>
-<td align="right">42.76％</td>
-</tr>
-<tr>
-<td align="right">3級</td>
-<td align="left">実技</td>
-<td align="center">個人資産相談業務</td>
-<td align="right">54.35％</td>
-</tr>
-</tbody>
-</table>
-<p>大体例年通りくらいの合格率だったらしい</p>
-</div>
+  <div class="article-body"><p>アップロードされた Excel を PDF に変換して保存する必要があり<br>
+調査を行った LibreOffice で変換する方法を備忘録として残しておく<br>
+※図形など綺麗に変換されないパターンもあるため注意が必要</p>
+<h2 id="前提">前提</h2>
+<p>LibreOffice を事前にインストールしておく<br>
+<code>/Applications/LibreOffice.app/Contents/MacOS/soffice</code> にインストールしている場合</p>
+<h2 id="方法">方法</h2>
+<p>以下のコマンドで変換を行う ※Calc を使用して PDF に変換<br>
+<a href="https://help.libreoffice.org/Common/Starting_the_Software_With_Parameters/ja">参考</a><br>
+<a href="https://github.com/LibreOffice/core/tree/master/filter/source/config/fragments/filters">指定できるフィルタ</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:<span style="color:#e6db74">&#34;calc_pdf_Export&#34;</span> <span style="color:#f92672">{</span>Excel File Path<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="その他">その他</h2>
+<p>以下のようにすることで soffice コマンドを登録可能</p>
+<ol>
+<li>
+<p>/usr/local/bin/soffice を作成して中に以下を記載する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Need to do this because symlink won&#39;t work</span>
+<span style="color:#75715e"># It complains about some .plist files</span>
+/Applications/LibreOffice.app/Contents/MacOS/soffice <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドで実行権限を付与する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod +x /usr/loca/bin/soffice
+</code></pre></div></li>
+</ol>
+<p>上記を sh として gist に置いているので以下でも可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &gt; /usr/local/bin/soffice <span style="color:#f92672">&amp;&amp;</span> sudo chmod +x /usr/local/bin/soffice
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -1923,17 +1884,17 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/tool">Tool</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae7" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f07%2f06%2froad-to-fp3-part7%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&title=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&text=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&t=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f&title=libreoffice%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20Excel%20%e3%82%92%20PDF%20%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f12%2f11%2fhow-to-convert-excel-to-pdf-with-libreoffice%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -1947,14 +1908,14 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/">
-    <div class="thumb thumb-20b12b3796a2e8f19eab02a6a8e700f1"></div>
+  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
 
     <div class="inner">
-      <div class="title">github で access token を使用してリポジトリを clone する</div>
+      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-06-20T12:00:00JST">Jun 20, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1970,27 +1931,6 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-    <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-    <div class="inner">
-      <div class="title">Rails でトークンを扱う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-07-21T18:12:58JST">Jul 21, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>

@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
+  background-image: url("https://kkawazoe.github.io/images/logo/libreoffice_logo.svg");
+}
+  
+
+  
 .thumb-569c339862a3e91bd980bffef4fc5554 {
   background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
 }
@@ -869,6 +875,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
+  background-image: url(https://kkawazoe.github.io/images/logo/libreoffice_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
+  width: 5rem;
 }
 
 
@@ -1714,7 +1733,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          54
+          55
           <span>Posts</span>
         </a>
       </div>
@@ -1749,6 +1768,35 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
+          <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
+
+          <div class="inner">
+            <h2 class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-19T23:35:30JST">Mar 19, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。 そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。
+Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。 ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
+手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&gt;Properties&gt;Security&gt;Editボタンで、 Users の権限に全部チェックを入れる。
+Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
+Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
+IEの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
+  Edgeの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -1989,27 +2037,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
-          <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js で画像の読み込みの開始および完了を検知する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1  }, methods: { // ※4  load: function() { console.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2031,6 +2058,27 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
+    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
+
+    <div class="inner">
+      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
@@ -2221,27 +2269,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-    <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
-
-    <div class="inner">
-      <div class="title">Hugo に数式を挿入する その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-05-23T15:11:31JST">May 23, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2254,7 +2281,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(14)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(11)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
