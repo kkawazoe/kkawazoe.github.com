@@ -6,7 +6,11 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>libreoffice を使用して Excel を PDF に変換する方法</title>
       <link>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</link>
@@ -214,10 +218,10 @@ $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない
     
     <item>
       <title>RSpec 内で動的に I18n の訳文を追加する</title>
-      <link>https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/</link>
+      <link>https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/</link>
       <pubDate>Sat, 14 Sep 2019 09:56:37 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/</guid>
       <description>環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t(:test) #=&amp;gt; テスト </description>
     </item>
@@ -484,7 +488,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
@@ -509,7 +513,7 @@ $ ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;
       
       <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
       <description>実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.textContent = &amp;#39;leave&amp;#39; }, afterLeave: function (el) { el.</description>
     </item>
@@ -639,10 +643,10 @@ bundle exec rails s -b 0.</description>
 受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
 2019/03/26 追記 試験用の電卓を購入
-CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
+CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバこっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
+シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
 滝澤ななみ TAC 2018年05月22日</description>
     </item>
@@ -668,7 +672,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- </description>
+</description>
     </item>
     
     <item>
@@ -678,7 +682,7 @@ created のタイミングで API 等からデータが取得される想定の�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</guid>
       <description>経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  </description>
+実際のソースおよび実行結果 </description>
     </item>
     
     <item>
@@ -774,7 +778,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
       <description>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.</description>
+取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicitrem /*****************************************************************rem * getProfileString.vbs iniFileName, sectionName, entryNamerem *rem * 引数rem * iniFileName : 設定ファイル名(フルパス)rem * sectionName : セクション名rem * entryName : エントリー名rem * 動作rem * 引数に指定された設定ファイルより指定したrem * 「セクション」,「エントリー」に対応する設定値を返す。rem * 先頭がカンマの場合はコメント行として扱う。rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)をrem * 設定値として扱う。rem * 戻り値rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。)rem *****************************************************************/Dim retDim fsDim readLineObjDim searchFlgDim bufferrem ファイルシステムアクセス用Set fs = CreateObject( &amp;quot;Scripting.</description>
     </item>
     
     <item>
@@ -785,7 +789,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
       <description>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
+実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicitrem /*******************************************************rem * msgbox.vbs msg [,title]rem *rem * 引数rem * msg :表示するメッセージrem * title :メッセージボックスのタイトルrem * 動作rem * メッセージボックスを表示し、クリックされたボタンにrem * 対応する数値を返す。rem * msg中の 「\n」という文字列は改行に変換する。rem * 戻り値rem * 0:[はい]/1:[いいえ]rem ********************************************************/Dim argsDim arg(99)Dim valueDim cntDim retBtnDim retDim eLevelrem 引数を変数にセットSet args = WScript.</description>
     </item>
     
   </channel>

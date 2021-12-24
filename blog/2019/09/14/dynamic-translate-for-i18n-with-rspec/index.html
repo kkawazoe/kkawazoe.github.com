@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -21,7 +21,7 @@
 
 <meta property="og:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="RSpec 内で動的に I18n の訳文を追加する">
@@ -29,7 +29,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
 <meta name="twitter:title" content="RSpec 内で動的に I18n の訳文を追加する - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="RSpec 内で動的に I18n の訳文を追加する">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
@@ -72,7 +72,7 @@
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/09/14/how-to-handle-tokens-in-rails/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1833,11 +1833,11 @@ ga('send', 'pageview');
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
@@ -1874,11 +1874,11 @@ ga('send', 'pageview');
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fhow-to-handle-tokens-in-rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&text=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&t=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f&title=RSpec%20%e5%86%85%e3%81%a7%e5%8b%95%e7%9a%84%e3%81%ab%20I18n%20%e3%81%ae%e8%a8%b3%e6%96%87%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f09%2f14%2fdynamic-translate-for-i18n-with-rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   

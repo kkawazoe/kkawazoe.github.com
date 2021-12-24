@@ -6,7 +6,11 @@
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Tool</title>
       <link>https://kkawazoe.github.io/tags/tool/</link>
