@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
   background-image: url("https://kkawazoe.github.io/images/logo/libreoffice_logo.svg");
 }
@@ -875,6 +881,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
+  width: 5rem;
 }
 
 
@@ -1733,7 +1752,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          55
+          56
           <span>Posts</span>
         </a>
       </div>
@@ -1768,6 +1787,30 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/">
+          <div class="thumb thumb-60c2664adea71a693389e45d9f8657b9"></div>
+
+          <div class="inner">
+            <h2 class="title">electron-builder で Lint および UnitTest が通った場合のみビルドするようにする</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-05-24T12:00:00JST">May 24, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
+{ ・・・ &#34;scripts&#34;: { &#34;ng&#34;: &#34;ng&#34;, &#34;start&#34;: &#34;ng build --prod &amp;&amp; electron .&#34;, &#34;build&#34;: &#34;ng build&#34;, &#34;test&#34;: &#34;jest&#34;, &#34;lint&#34;: &#34;ng lint&#34;, &#34;postinstall&#34;: &#34;electron-builder install-app-deps&#34;, &#34;release&#34;: &#34;ng build --prod &amp;&amp; node build.js&#34;, }, ・・・ } electron-builder のオプションについては公式を参照
+&#39;use strict&#39;; const builder = require(&#39;electron-builder&#39;); const Platform = builder.Platform; const childProcess = require(&#39;child_process&#39;); const unitTest = new Promise((resolve, reject) =&gt; { childProcess.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2046,29 +2089,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/">
-          <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
-
-          <div class="inner">
-            <h2 class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-19T00:00:00JST">Apr 19, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
-受験料 15,000 円 (日本語版/税別)
-出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2090,6 +2110,27 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
+    <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
+
+    <div class="inner">
+      <div class="title">rails でメソッドの定義場所を表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-02-26T01:28:11JST">Feb 26, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
@@ -2280,27 +2321,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
-    <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
-
-    <div class="inner">
-      <div class="title">vagrant halt 失敗時の対応方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="4007-10-04T09:00:30JST">Oct 4, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2311,7 +2331,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(14)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(15)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
