@@ -6,13 +6,24 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 24 May 2022 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rails で id 等の自動採番項目の不整合を修正する方法(postgres)</title>
-      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/</link>
+      <title>PostgreSQL で CSVをインポートする方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</link>
+      <pubDate>Tue, 24 May 2022 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</guid>
+      <description>PostgreSQL で CSV をインポートする方法を備忘録として残しておく
+方法 \COPY を使用する
+環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &amp;#39;{csvファイルパス}&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER なしの場合 \COPY user FROM &amp;#39;./user.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER ありの場合 \COPY user FROM &amp;#39;./user.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &amp;#39;{csvファイルパス}&amp;#39; WITH CSV DELIMITER &amp;#39;,&amp;#39;; # 例 HEADER なしの場合 \COPY user TO &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</title>
+      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</link>
       <pubDate>Tue, 24 May 2022 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</guid>
       <description>rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
 方法 reset_pk_sequence! を使用する
 環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </description>

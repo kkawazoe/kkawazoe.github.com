@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2022-05-24T09:00:00+09:00</lastmod>
+    <lastmod>2022-05-24T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/postgresql/</loc>
+    <lastmod>2022-05-24T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</loc>
+    <lastmod>2022-05-24T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2022-05-24T09:00:00+09:00</lastmod>
+    <lastmod>2022-05-24T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2022-05-24T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</loc>
     <lastmod>2022-05-24T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2022-05-24T09:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2022-05-24T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</loc>
