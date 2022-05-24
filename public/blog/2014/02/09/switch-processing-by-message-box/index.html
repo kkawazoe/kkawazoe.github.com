@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1867,7 +1867,7 @@ ga('send', 'pageview');
 <p>バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。<br>
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える</p>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:DispMsgBox.bat" data-lang="bash:DispMsgBox.bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:DispMsgBox.bat" data-lang="bash:DispMsgBox.bat">@<span style="color:#66d9ef">echo</span> off
 
 <span style="color:#75715e">rem メッセージボックスの表示</span>
 <span style="color:#66d9ef">set</span> msg=<span style="color:#e6db74">&#34;メッセージボックスのテスト [\n] で改行します。&#34;</span>
@@ -1879,7 +1879,7 @@ ga('send', 'pageview');
 
 <span style="color:#66d9ef">pause</span>
 <span style="color:#66d9ef">exit</span>
-</code></pre></div><pre tabindex="0"><code class="language-vb:msgbox.vbs" data-lang="vb:msgbox.vbs">Option Explicit
+</code></pre></div><pre><code class="language-vb:msgbox.vbs" data-lang="vb:msgbox.vbs">Option Explicit
 rem /*******************************************************
 rem  *  msgbox.vbs msg [,title]
 rem  *

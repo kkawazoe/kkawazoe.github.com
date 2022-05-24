@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1833,10 +1833,9 @@ git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {
 git pull {Fork 元リモート名} {ブランチ名}   トピックブランチ作成
 git checkout -b topic/#{issue番号}-作業者名   開発
   ステージングにあげる
-git add -A   コミットする
+git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u   コミットする
 git commit -m &#34;コメント&#34;   プルリクエストを投げる
-git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-  その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す ※ローカルの変更はそのまま git reset --soft HEAD^ git の状態を一つ前に戻す ※ローカルの変更も戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
+git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</div>
           </div>
         </a>
       </article>
@@ -1909,7 +1908,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
             </ul>
 
             <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
           </div>
