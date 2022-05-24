@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Ruby on Rails - Note To Self ~One Step At A Time~</title>
+    <title>PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -14,13 +14,65 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" title="Note To Self ~One Step At A Time~">
-
 
 
     
+<meta name="description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
 
-    <link rel="canonical" href="https://kkawazoe.github.io/tags/ruby-on-rails/">
+<meta property="og:title" content="PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/postgre_sql_logo.png">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
+<meta property="og:description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
+<meta name="twitter:title" content="PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/postgre_sql_logo.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/kkawazoe.github.io\/"
+    },
+    "headline": "PostgreSQL で CSVをインポートする方法-Note To Self ~One Step At A Time~",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/postgre_sql_logo.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2022-05-24T12:00:00JST",
+    "dateModified": "2022-05-24T12:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Note To Self ~One Step At A Time~"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Note To Self ~One Step At A Time~",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "PostgreSQL で CSV をインポートする方法を備忘録として残しておく"
+  }
+</script>
+
+
+
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1817,177 +1869,155 @@ ga('send', 'pageview');
           </div>
           <div class="mcol c8">
             
+<article class="sn">
 
-<header class="page-title">
-  <h1 class="title">Ruby on Rails</h1>
-</header>
+  <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
+
+  <header class="article-header">
+    <h1 class="title">PostgreSQL で CSVをインポートする方法</h1>
+
+    <ul class="facts">
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T12:00:00JST">May 24, 2022</time></li>
+      
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+      
+      
+      
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/postgresql">PostgreSQL</a> </li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&text=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&t=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body"><p>PostgreSQL で CSV をインポートする方法を備忘録として残しておく</p>
+<h2 id="方法">方法</h2>
+<p>\COPY を使用する</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>PostgreSQL: 13.3</li>
+</ul>
+<h2 id="実際のコード">実際のコード</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">su - postgres
+psql
+<span style="color:#ae81ff">\c</span> <span style="color:#f92672">{</span>DB 名<span style="color:#f92672">}</span>;
+<span style="color:#ae81ff">\C</span>OPY <span style="color:#f92672">{</span>テーブル名<span style="color:#f92672">}</span> FROM <span style="color:#e6db74">&#39;{csvファイルパス}&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV;
+
+<span style="color:#75715e"># 例 HEADER なしの場合</span>
+<span style="color:#ae81ff">\C</span>OPY user FROM <span style="color:#e6db74">&#39;./user.csv&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV;
+<span style="color:#75715e"># 例 HEADER ありの場合</span>
+<span style="color:#ae81ff">\C</span>OPY user FROM <span style="color:#e6db74">&#39;./user.csv&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV HEADER;
+
+<span style="color:#75715e"># エクスポートする場合は以下</span>
+su - postgres
+psql
+<span style="color:#ae81ff">\c</span> <span style="color:#f92672">{</span>DB 名<span style="color:#f92672">}</span>;
+<span style="color:#ae81ff">\C</span>OPY <span style="color:#f92672">{</span>テーブル名<span style="color:#f92672">}</span> TO <span style="color:#e6db74">&#39;{csvファイルパス}&#39;</span> WITH CSV DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
+<span style="color:#75715e"># 例 HEADER なしの場合</span>
+<span style="color:#ae81ff">\C</span>OPY user TO <span style="color:#e6db74">&#39;./user.csv&#39;</span> WITH CSV DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
+<span style="color:#75715e"># 例 HEADER ありの場合</span>
+<span style="color:#ae81ff">\C</span>OPY user TO <span style="color:#e6db74">&#39;./user.csv&#39;</span> WITH CSV HEADER DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
+</code></pre></div><p>Shell Script として行う場合は以下のようにする</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span><span style="color:#75715e"># ユーザを postgres に切り替えたままでコマンドの実行を行う ※CSV インポート</span>
+su - postgres <span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74">psql
+</span><span style="color:#e6db74">\c {DB 名};
+</span><span style="color:#e6db74">\COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV;
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div></div>
+
+  <footer class="article-footer">
+
+    <ul class="facts-tags">
+  
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+  
+      
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/postgresql">PostgreSQL</a> </li>
+      
+  
+    </ul>
+  
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&text=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&t=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  
+  </footer>
+
+</article>
 
 
-<div class="articles">
-  <div class="mrow">
-
+<div class="adj mrow">
+  <div class="mcol c6">
+    <header>Previous Article</header>
     
-    
-    
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
-          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/">
+    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
 
-          <div class="inner">
-            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
+    <div class="inner">
+      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
 
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
 
-            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を'(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
-          </div>
-        </a>
-      </article>
     </div>
+  </a>
+</article>
+
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
-          <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Gretel について パンくずリストを表示する Gem
-github
-実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&#34;表示したい画像&#34;) : &#34;&#34; link icon + {表示文字}, {URL} parent :parent_articles, article.category end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-          <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-          <div class="inner">
-            <h2 class="title">Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-          <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法   Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)  order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)
   </div>
-          </div>
-        </a>
-      </article>
-    </div>
+  <div class="mcol c6">
+    <header>Next Article</header>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-          <div class="thumb thumb-b73c0654cc5a32930a864f256828331a"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails で階層構造になっているテーブルに自分自身への関連を設定する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-21T18:10:43JST">Feb 21, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている
-   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &lt; ApplicationRecord has_many :children, class_name: &#34;Node&#34;, foreign_key: &#34;parrent_id&#34; belongs_to :parrent, class_name: &#34;Node&#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &lt; ActiveRecord::Migration[5.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-
   </div>
 </div>
 
-
-<nav class="paging">
-  
-  <a href="/tags/ruby-on-rails/" rel="prev">Prev</a>
-  
-  
-</nav>
-
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kkawazoe" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
           </div>
           <div class="mcol c2">
