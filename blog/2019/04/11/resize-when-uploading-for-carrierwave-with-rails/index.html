@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1869,13 +1869,13 @@ ga('send', 'pageview');
 <h2 id="実際のコード">実際のコード</h2>
 <p>尚、アスペクト比固定で <code>width</code> および <code>height</code> のみ指定する場合は <code>nil</code> を指定する</p>
 <h3 id="heightのみ指定">heightのみ指定</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/uploaders/my_uploader.rb" data-lang="ruby:app/uploaders/my_uploader.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUploader</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Uploader</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/uploaders/my_uploader.rb" data-lang="ruby:app/uploaders/my_uploader.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUploader</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Uploader</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
   <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MiniMagick</span>
 
   process <span style="color:#e6db74">resize_to_limit</span>: <span style="color:#f92672">[</span><span style="color:#ae81ff">1200</span>, <span style="color:#66d9ef">nil</span><span style="color:#f92672">]</span>
 <span style="color:#66d9ef">end</span>
 </code></pre></div><h3 id="widthのみ指定">widthのみ指定</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/uploaders/my_uploader.rb" data-lang="ruby:app/uploaders/my_uploader.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUploader</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Uploader</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/uploaders/my_uploader.rb" data-lang="ruby:app/uploaders/my_uploader.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUploader</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Uploader</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
   <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">CarrierWave</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MiniMagick</span>
 
   process <span style="color:#e6db74">resize_to_limit</span>: <span style="color:#f92672">[</span><span style="color:#ae81ff">1200</span>, <span style="color:#66d9ef">nil</span><span style="color:#f92672">]</span>

@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1864,7 +1864,7 @@ ga('send', 'pageview');
   
 
   <div class="article-body"><h2 id="実際のソース">実際のソース</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">searchContactMail</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">searchContactMail</span>() {
   <span style="color:#75715e">/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */</span>
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">strTerms</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;noreply&#39;</span>;
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myThreads</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">GmailApp</span>.<span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">strTerms</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>);
