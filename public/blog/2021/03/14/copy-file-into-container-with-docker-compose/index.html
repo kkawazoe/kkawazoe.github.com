@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1872,7 +1872,7 @@ ga('send', 'pageview');
 <h2 id="前提">前提</h2>
 <p>ファイルをコピーする対象のコンテナに紐づいているサービス名 <code>app</code></p>
 <h2 id="方法">方法</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker cp <span style="color:#f92672">{</span>コピーする対象ファイル<span style="color:#f92672">}</span> <span style="color:#e6db74">`</span>docker-compose ps -q <span style="color:#f92672">{</span>サービス名<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>:/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker cp <span style="color:#f92672">{</span>コピーする対象ファイル<span style="color:#f92672">}</span> <span style="color:#e6db74">`</span>docker-compose ps -q <span style="color:#f92672">{</span>サービス名<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>:/
 
 <span style="color:#75715e"># 例 サービス名 app に紐付いているコンテナに test.txt をコピーする</span>
 docker cp test.txt <span style="color:#e6db74">`</span>docker-compose ps -q app<span style="color:#e6db74">`</span>:/

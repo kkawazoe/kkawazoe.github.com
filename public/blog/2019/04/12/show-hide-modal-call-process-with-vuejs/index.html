@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1866,12 +1866,12 @@ ga('send', 'pageview');
   <div class="article-body"><h2 id="実際のコード">実際のコード</h2>
 <h3 id="html側">HTML側</h3>
 <p><code>transition</code> を指定</p>
-<pre tabindex="0"><code class="language-slim" data-lang="slim">.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;
+<pre><code class="language-slim" data-lang="slim">.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;
 </code></pre><h3 id="javascript側">JavaScript側</h3>
 <p><code>transitions</code> 内に HTML の <code>transition</code> で指定した <code>app-modal</code> を指定
 ※キャメルケースに変換すること</p>
 <p>以下のイベントがフックされるようになる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">transition</span>(<span style="color:#e6db74">&#39;expand&#39;</span>, {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">transition</span>(<span style="color:#e6db74">&#39;expand&#39;</span>, {
   <span style="color:#a6e22e">beforeEnter</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">el</span>) {
     <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;beforeEnter&#39;</span>
   },
@@ -1899,7 +1899,7 @@ ga('send', 'pageview');
 </span><span style="color:#75715e"></span>  }
 })
 </code></pre></div><h3 id="参考ソース">参考ソース</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">transitions:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee">transitions:
   appModal:
     afterEnter: <span style="color:#a6e22e">(el, done) -&gt;</span>
       @initDisplayType = <span style="color:#a6e22e">@displayType</span>

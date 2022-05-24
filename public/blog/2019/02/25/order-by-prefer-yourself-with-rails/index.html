@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1877,7 +1877,7 @@ ga('send', 'pageview');
 <ul>
 <li>例. レコードを <code>order</code> 昇順, <code>user_id</code> 昇順で並び替える場合(同じ順位の場合は自分を優先)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"> order(<span style="color:#e6db74">:order</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;field(user_id , </span><span style="color:#e6db74">#{</span>current_user<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">) desc&#34;</span><span style="color:#f92672">]</span>, <span style="color:#e6db74">:user_id</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"> order(<span style="color:#e6db74">:order</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;field(user_id , </span><span style="color:#e6db74">#{</span>current_user<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">) desc&#34;</span><span style="color:#f92672">]</span>, <span style="color:#e6db74">:user_id</span>)
 </code></pre></div><p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。
 また、<code>ORDER BY FIELD</code> で指定した分に対して <code>desc</code> を指定すること。
 ( <code>desc</code> を指定しないと自分以外が優先的に並び替えられてしまう)</p>
