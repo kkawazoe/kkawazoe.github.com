@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -881,6 +887,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
 }
 
 
@@ -1752,7 +1771,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          56
+          57
           <span>Posts</span>
         </a>
       </div>
@@ -1791,6 +1810,30 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/">
+          <div class="thumb thumb-20b12b3796a2e8f19eab02a6a8e700f1"></div>
+
+          <div class="inner">
+            <h2 class="title">github で access token を使用してリポジトリを clone する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-06-20T12:00:00JST">Jun 20, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
+手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
+  Generate new token を押下する
+  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2042,57 +2085,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">
-          <div class="thumb thumb-20b685e429fc8c023c41ac263d5ea869"></div>
-
-          <div class="inner">
-            <h2 class="title">FP3級への道 その2</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-22T00:00:00JST">Apr 22, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
-前回の記事: FP3級への道
-ライフプランニングの手法 ライフプランニングを行う際に利用するツール  ライフイベント表
-家族の将来のライフイベントと、それに必要な資金の額を時系列にまとめた表 キャッシュフロー表
-ライフイベント表と現在の収支状況に基づいて、将来の収支状況と貯蓄残高の予想を
-まとめた表 個人バランスシート
-一定時点における資産と負債のバランスを見るための表
-※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税)  資金計画を立てる際の6つの係数 終価係数 現在の金額を複利で運用した場合の、一定期間後の金額を求める場合に用いる係数
-例. 100万円を年利3%で運用した場合の7年後の金額はいくらか？
-現価係数 一定期間後に一定金額に達するために必要な原本を求めるのに用いる係数
-例. 年利3%で7年後に100万円を用意するためには、元本がいくら必要になるか？
-年金終価係数 毎年一定金額を積み立てた場合の、一定期間後の元利合計を求める場合に用いる係数
-例. 年利3%、毎年10万円を7年後の金額はいくらか？
-減債基金係数 一定期間後に一定金額を用意するための、毎年の積立額を計算するための係数
-例. 年利3%、７年後に100万円を用意するためには毎年いくら積み立てる必要があるか？
-資本回収係数 現在の一定金額を一定期間で取り崩した場合の、毎年の受取金額を計算するための係数
-例. 100万円を年利2%で運用しながら7年噛んで取り崩した場合の毎年の受取金額はいくら？
-年金現価係数 将来の一定期間に渡って、一定額を受け取るために必要な元本を計算するための係数
-例. 7年間に渡って、10万円ずつ受け取りたい。
-年利3%とした場合、必要な元本はいくらか？
-終価係数と年金終価係数の違い 終価係数は、現在の金額を複利で運用した場合の金額を求めるための係数
-=&gt; 定期預金のイメージ
-年金終価係数は、毎年一定金額を積み立てた場合の一定期間後の元利合計を求めるための係数
-=&gt; 積立定期預金のイメージ
-減債基金係数と資本回収係数の違い 減債基金係数は毎年の積立額を求めるための係数
-資本回収係数は毎年の受取金額を求めるための係数
-現価係数はと年金現価係数の違い 現価係数は一定金額に達するために必要な原本を求めるための係数
-年金現価係数は一定額を受け取るために必要な元本を求めるための係数
-参考にした教本 上記内容は以下の教本の内容を参考にしてます
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2114,6 +2106,27 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
+
+    <div class="inner">
+      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(postgres)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
@@ -2304,27 +2317,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
-    <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
-
-    <div class="inner">
-      <div class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-10-06T09:00:00JST">Oct 6, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2335,7 +2327,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(15)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
