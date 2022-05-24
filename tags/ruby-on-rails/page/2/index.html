@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -881,6 +887,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
 }
 
 
@@ -1752,7 +1771,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          56
+          57
           <span>Posts</span>
         </a>
       </div>
@@ -1791,6 +1810,31 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を'(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -1932,6 +1976,27 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
+
+    <div class="inner">
+      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(postgres)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
@@ -2122,27 +2187,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
-    <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
-
-    <div class="inner">
-      <div class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-10-06T09:00:00JST">Oct 6, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2153,7 +2197,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(15)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

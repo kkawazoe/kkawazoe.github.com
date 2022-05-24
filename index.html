@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -881,6 +887,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
 }
 
 
@@ -1752,7 +1771,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          56
+          57
           <span>Posts</span>
         </a>
       </div>
@@ -1787,6 +1806,29 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+          <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で id 等の自動採番項目の不整合を修正する方法(postgres)</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T09:00:00JST">May 24, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
+方法 reset_pk_sequence! を使用する
+環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2010,45 +2052,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
-          <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
-
-          <div class="inner">
-            <h2 class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-06T09:00:00JST">Oct 6, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
-環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
-使用感としてはテンプレートとなる Excel に対して読み書きする場合には
-問題なく使用可能。
-但し、テンプレートに数式やグラフが含まれている場合に行などを
-追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
-あるため注意が必要。
-rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
-sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能。
-テキストを折り返して表示してくれるようになる。
-  change_contents が使えない
-version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
-# require が必要なメソッド require &#39;rubyXL/convenience_methods/cell&#39; require &#39;rubyXL/convenience_methods/color&#39; require &#39;rubyXL/convenience_methods/font&#39; require &#39;rubyXL/convenience_methods/workbook&#39; require &#39;rubyXL/convenience_methods/worksheet&#39; もしくは以下で全て使用可
-require &#39;rubyXL/convenience_methods&#39;   シートのコピーができない
-Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
-参考サイト
-  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
-change_contents の仕様と上記のシートコピーによって生じた現象。
-シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2068,6 +2071,27 @@ change_contents の仕様と上記のシートコピーによって生じた現�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
+
+    <div class="inner">
+      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(postgres)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
@@ -2258,27 +2282,6 @@ change_contents の仕様と上記のシートコピーによって生じた現�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
-    <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
-
-    <div class="inner">
-      <div class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-10-06T09:00:00JST">Oct 6, 2020</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2289,7 +2292,7 @@ change_contents の仕様と上記のシートコピーによって生じた現�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(15)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

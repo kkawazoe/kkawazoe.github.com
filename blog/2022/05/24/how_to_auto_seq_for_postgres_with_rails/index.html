@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~</title>
+    <title>rails で id 等の自動採番項目の不整合を修正する方法(postgres) - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
+<meta name="description" content="rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく">
 
-<meta property="og:title" content="Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rails で id 等の自動採番項目の不整合を修正する方法(postgres) - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
+<meta property="og:description" content="rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
-<meta name="twitter:title" content="Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
+<meta name="twitter:title" content="rails で id 等の自動採番項目の不整合を修正する方法(postgres) - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法-Note To Self ~One Step At A Time~",
+    "headline": "rails で id 等の自動採番項目の不整合を修正する方法(postgres)-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/github_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2021-06-02T12:00:00JST",
-    "dateModified": "2021-06-02T12:00:00JST",
+    "datePublished": "2022-05-24T09:00:00JST",
+    "dateModified": "2022-05-24T09:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "github で PR がたまっている場合に自分がレビュー担当の PR を把握する方法を調査した結果を備忘録として残しておく"
+    "description": "rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgres_with_rails/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1852,13 +1852,13 @@ ga('send', 'pageview');
             
 <article class="sn">
 
-  <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
+  <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
 
   <header class="article-header">
-    <h1 class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</h1>
+    <h1 class="title">rails で id 等の自動採番項目の不整合を修正する方法(postgres)</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-06-02T12:00:00JST">Jun 2, 2021</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T09:00:00JST">May 24, 2022</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1866,34 +1866,33 @@ ga('send', 'pageview');
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/git">Git</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&text=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&t=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&title=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&text=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&t=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&title=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><h2 id="経緯">経緯</h2>
-<p>表題の件を行う必要があり調査を行ったため備忘録として残しておく</p>
-<h3 id="手順">手順</h3>
-<h4 id="1-github-にログインする">1. Github にログインする</h4>
-<h4 id="2-以下を-github-内で検索する">2. 以下を GitHub 内で検索する</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">is:open is:pr review-requested:<span style="color:#f92672">{</span>自分のユーザー名<span style="color:#f92672">}</span>
-</code></pre></div><p>もしくは <a href="https://github.com/pulls/review-requested">rewiew-requested</a> で確認可能<br>
-※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要</p>
-<h3 id="追記">追記</h3>
-<p>以下で検索すればコメント等つけた場合も含めて検索されそう<br>
-※こちらは逆に未レビューのものが対象から外れてしまうため注意が必要</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">is:open is:pr reviewed-by:<span style="color:#f92672">{</span>自分のユーザー名<span style="color:#f92672">}</span>
+  <div class="article-body"><p>rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく</p>
+<h2 id="方法">方法</h2>
+<p>reset_pk_sequence! を使用する</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>rails: 6.1.4</li>
+</ul>
+<h2 id="実際のコード">実際のコード</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>tables<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>table_name<span style="color:#f92672">|</span>
+  <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>reset_pk_sequence!(table_name)
+<span style="color:#66d9ef">end</span>
 </code></pre></div></div>
 
   <footer class="article-footer">
@@ -1905,17 +1904,17 @@ ga('send', 'pageview');
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/git">Git</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&text=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&t=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f&title=Github%20%e3%81%a7%e8%87%aa%e5%88%86%e3%81%ab%e3%83%ac%e3%83%93%e3%83%a5%e3%83%bc%e4%be%9d%e9%a0%bc%e3%81%8c%e6%9d%a5%e3%81%a6%e3%81%84%e3%82%8b%e3%83%97%e3%83%ab%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%82%92%e4%b8%80%e8%a6%a7%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2021%2f06%2f02%2fhow-to-show-reviewer-pullrequest-assign-self%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&title=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&text=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&t=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f&title=rails%20%e3%81%a7%20id%20%e7%ad%89%e3%81%ae%e8%87%aa%e5%8b%95%e6%8e%a1%e7%95%aa%e9%a0%85%e7%9b%ae%e3%81%ae%e4%b8%8d%e6%95%b4%e5%90%88%e3%82%92%e4%bf%ae%e6%ad%a3%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%28postgres%29" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_auto_seq_for_postgres_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -1929,14 +1928,14 @@ ga('send', 'pageview');
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
-    <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
+  <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
+    <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
 
     <div class="inner">
-      <div class="title">特定の RSpec のみ実行されるようにする方法</div>
+      <div class="title">rails でメソッドの定義場所を表示する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-05-14T09:00:00JST">May 14, 2021</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-02-26T01:28:11JST">Feb 26, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -1952,27 +1951,6 @@ ga('send', 'pageview');
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-    <div class="inner">
-      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>
