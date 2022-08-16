@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1905,12 +1905,12 @@ ga('send', 'pageview');
 <p>electron にて ビルドするのに <a href="https://github.com/electron-userland/electron-builder">electron-builder</a> を使用してみた
 その際に最低限 <code>Lint</code>, <code>UnitTest</code> を通ることを担保するようにしたため備忘録として残しておく</p>
 <h2 id="構築環境">構築環境</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">electron: 5.0.1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">electron: 5.0.1
 electron-builder: 20.39.0
 </code></pre></div><h3 id="実際のコード">実際のコード</h3>
 <p><code>package.json</code> に以下の定義がしてある前提
 ※以下は electron x angular(Angular Cli で生成)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json:package.json" data-lang="json:package.json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json:package.json" data-lang="json:package.json">{
   <span style="color:#960050;background-color:#1e0010">・・・</span>
   <span style="color:#f92672">&#34;scripts&#34;</span>: {
     <span style="color:#f92672">&#34;ng&#34;</span>: <span style="color:#e6db74">&#34;ng&#34;</span>,
@@ -1924,7 +1924,7 @@ electron-builder: 20.39.0
   <span style="color:#960050;background-color:#1e0010">・・・</span>
 }
 </code></pre></div><p>electron-builder のオプションについては<a href="https://www.electron.build/">公式</a>を参照</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#39;use strict&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#39;use strict&#39;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron-builder&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Platform</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">Platform</span>;

@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1923,13 +1923,13 @@ ga('send', 'pageview');
 <h2 id="実際のコード">実際のコード</h2>
 <p>例 2019/03/23 0:07:49.91 に実行した場合</p>
 <h3 id="yyyymmdd-表示">yyyy/mm/dd 表示</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
 echo %DATE%
 </code></pre></div><p>=&gt; 2019/03/23</p>
 <h3 id="yyyymmdd-hhmmssfff-表示">yyyy/mm/dd-hh:MM:ss.fff 表示</h3>
 <p>午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
 set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
 set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
@@ -1938,7 +1938,7 @@ echo %timeStamp%
 </code></pre></div><p>=&gt; 2019/03/23-00:07:49.91</p>
 <h3 id="yyyymmddhhmmss-表示">yyyymmddhhMMss 表示</h3>
 <p>%var:~m,n%は変数varのm文字目からn文字を切り出す。(mは0始まり)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
 
 set timeStamp<span style="color:#f92672">=</span>%DATE%-%TIME%
 set timeStamp<span style="color:#f92672">=</span>%timeStamp: <span style="color:#f92672">=</span>0%
