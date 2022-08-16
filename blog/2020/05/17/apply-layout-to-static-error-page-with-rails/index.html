@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -1909,11 +1909,11 @@ ga('send', 'pageview');
 <p>Gem <a href="https://github.com/route/errgent">Errgent</a> を使用して実現する</p>
 <h3 id="確認">確認</h3>
 <p><code>config/environments/development.rb</code> の以下を編集して確認する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">config<span style="color:#f92672">.</span>consider_all_requests_local <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">config<span style="color:#f92672">.</span>consider_all_requests_local <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
 </code></pre></div><h3 id="実際のコード">実際のコード</h3>
 <p>例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する<br>
 =&gt; 生成されるファイル 例. <code>public/404.ja.html</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:generate_error_pages.rake" data-lang="rb:generate_error_pages.rake">desc <span style="color:#e6db74">&#39;Generate Error Pages&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:generate_error_pages.rake" data-lang="rb:generate_error_pages.rake">desc <span style="color:#e6db74">&#39;Generate Error Pages&#39;</span>
 task <span style="color:#e6db74">generate_error_pages</span>: <span style="color:#e6db74">:environment</span> <span style="color:#66d9ef">do</span>
   <span style="color:#66d9ef">I18n</span><span style="color:#f92672">.</span>available_locales<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>locale<span style="color:#f92672">|</span>
     <span style="color:#66d9ef">I18n</span><span style="color:#f92672">.</span>locale <span style="color:#f92672">=</span> locale

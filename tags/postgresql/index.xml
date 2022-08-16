@@ -15,7 +15,7 @@
       <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</guid>
       <description>PostgreSQL で CSV をインポートする方法を備忘録として残しておく
 方法 \COPY を使用する
-環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &amp;#39;{csvファイルパス}&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER なしの場合 \COPY user FROM &amp;#39;./user.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER ありの場合 \COPY user FROM &amp;#39;./user.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &amp;#39;{csvファイルパス}&amp;#39; WITH CSV DELIMITER &amp;#39;,&amp;#39;; # 例 HEADER なしの場合 \COPY user TO &amp;#39;.</description>
+環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &amp;#39;{csvファイルパス}&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &amp;#39;{csvファイルパス}&amp;#39; WITH CSV DELIMITER &amp;#39;,&amp;#39;; # 例 HEADER なしの場合 \COPY users TO &amp;#39;.</description>
     </item>
     
   </channel>
