@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -615,6 +615,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -970,6 +976,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1842,7 +1861,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1920,7 +1939,7 @@ ga('send', 'pageview');
 <p><code>setting.json</code> の設定に以下を追加する</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;https://aka.ms/terminal-profiles-schema&#34;</span>,
 
     <span style="color:#f92672">&#34;defaultProfile&#34;</span>: <span style="color:#e6db74">&#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;</span>,
@@ -1929,8 +1948,8 @@ ga('send', 'pageview');
     {
         <span style="color:#f92672">&#34;defaults&#34;</span>:
         {
-            <span style="color:#f92672">&#34;startingDirectory&#34;</span>: <span style="color:#e6db74">&#34;c:\\work&#34;</span> <span style="color:#75715e">// 追加 ターミナル共通の起動時のディレクトリを指定
-</span><span style="color:#75715e"></span>        },
+            <span style="color:#f92672">&#34;startingDirectory&#34;</span>: <span style="color:#e6db74">&#34;c:\\work&#34;</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">追加</span> <span style="color:#960050;background-color:#1e0010">ターミナル共通の起動時のディレクトリを指定</span>
+        },
         <span style="color:#f92672">&#34;list&#34;</span>:
         [
             {
@@ -1956,8 +1975,8 @@ ga('send', 'pageview');
                 <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>,
                 <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Ubuntu-18.04&#34;</span>,
                 <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;Windows.Terminal.Wsl&#34;</span>,
-                <span style="color:#f92672">&#34;startingDirectory&#34;</span>: <span style="color:#e6db74">&#34;/home/{ユーザ名}/project&#34;</span> <span style="color:#75715e">// 追加 wsl 専用の起動時のディレクトリを指定
-</span><span style="color:#75715e"></span>            }
+                <span style="color:#f92672">&#34;startingDirectory&#34;</span>: <span style="color:#e6db74">&#34;/home/{ユーザ名}/project&#34;</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">追加</span> <span style="color:#960050;background-color:#1e0010">wsl</span> <span style="color:#960050;background-color:#1e0010">専用の起動時のディレクトリを指定</span>
+            }
         ]
     }
 }
@@ -2099,6 +2118,27 @@ ga('send', 'pageview');
 
     <div class="inner">
       <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
@@ -2261,27 +2301,6 @@ ga('send', 'pageview');
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2292,7 +2311,7 @@ ga('send', 'pageview');
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

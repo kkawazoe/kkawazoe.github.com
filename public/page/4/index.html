@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -563,6 +563,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -918,6 +924,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1790,7 +1809,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1825,6 +1844,34 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
+          <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その3</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-24T00:00:00JST">Apr 24, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2  リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
+[死亡保険金の場合]
+   契約者 被保険者 受取人 税金     A A B 相続税   A B A 所得税(一時所得)
+住民税   A B C 贈与税    [満期保険金の場合]
+   契約者 被保険者 受取人 税金     A 誰でも A 所得税(一時所得)
+住民税   A 誰でも B 贈与税    [非課税となる保険金や給付金]</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2025,7 +2072,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
             </ul>
 
             <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
           </div>
@@ -2081,34 +2128,6 @@ github
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-          <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-          <div class="inner">
-            <h2 class="title">Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2158,6 +2177,27 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 
     <div class="inner">
       <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
@@ -2320,27 +2360,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2351,7 +2370,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
