@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -615,6 +615,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -970,6 +976,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1842,7 +1861,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1907,52 +1926,52 @@ ga('send', 'pageview');
 <ol>
 <li>
 <p>Git初期化</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 </code></pre></div></li>
 <li>
 <p>Git接続先設定</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元接続先URL<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元接続先URL<span style="color:#f92672">}</span>
 git remote add <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 先接続先URL<span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>最新ソース取得</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
 <p>トピックブランチ作成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b topic/#<span style="color:#f92672">{</span>issue番号<span style="color:#f92672">}</span>-作業者名
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b topic/#<span style="color:#f92672">{</span>issue番号<span style="color:#f92672">}</span>-作業者名
 </code></pre></div></li>
 <li>
 <p>開発</p>
 </li>
 <li>
 <p>ステージングにあげる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
 <span style="color:#75715e"># untracked files を除いてステージングに挙げる場合は以下</span>
 git add -u
 </code></pre></div></li>
 <li>
 <p>コミットする</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#e6db74">&#34;コメント&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#e6db74">&#34;コメント&#34;</span>
 </code></pre></div></li>
 <li>
 <p>プルリクエストを投げる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div><p>※修正がある場合はgit addから先を繰り返し</p>
 </li>
 </ol>
 <h3 id="その他">その他</h3>
 <h4 id="直前のコミットのコメントを修正">直前のコミットのコメントを修正</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit --amend -m <span style="color:#e6db74">&#34;直前のコミットのコメントを修正&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit --amend -m <span style="color:#e6db74">&#34;直前のコミットのコメントを修正&#34;</span>
 </code></pre></div><h4 id="コミットをまとめる">コミットをまとめる</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 2つ前までのコミットを修正</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 2つ前までのコミットを修正</span>
 $ git rebase -i HEAD~~
 
 squash or s に編集
 
 コメントを修正
 </code></pre></div><h4 id="最新資産へのマージ">最新資産へのマージ</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git pull --rebase base master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git pull --rebase base master
 
 <span style="color:#75715e"># コンフリクトを修正</span>
 <span style="color:#75715e"># コンフリクトの修正をマージする</span>
@@ -1963,52 +1982,52 @@ $ git rebase --continue
 $ git push -f <span style="color:#f92672">{</span>リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 ※強制更新になるため注意
 </code></pre></div><h4 id="git-の状態を一つ前に戻す-ローカルの変更はそのまま">git の状態を一つ前に戻す ※ローカルの変更はそのまま</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --soft HEAD^
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --soft HEAD^
 </code></pre></div><h4 id="git-の状態を一つ前に戻す-ローカルの変更も戻す">git の状態を一つ前に戻す ※ローカルの変更も戻す</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard HEAD^
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard HEAD^
 </code></pre></div><h4 id="stash-の一覧を表示">stash の一覧を表示</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash list
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash list
 </code></pre></div><h4 id="stash-の差分を表示">stash の差分を表示</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD..stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD..stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="stash-の最新を適用">stash の最新を適用</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop
 </code></pre></div><h4 id="stash-n-番目を適用">stash N 番目を適用</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="stash-を全削除">stash を全削除</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash clear
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash clear
 </code></pre></div><h4 id="stash-の最新を削除">stash の最新を削除</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash drop
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash drop
 </code></pre></div><h4 id="stash-n-番目を削除">stash N 番目を削除</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash drop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash drop stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="stash-されたファイルの内指定したファイルを復元">stash されたファイルの内、指定したファイルを復元</h4>
 <p>stash list で表示された stash list 番号およびファイル名を指定して取り出す</p>
 <p>例. stash list 番号 0 の <code>app/hoge.rb</code> ファイルを復元する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span> app/hoge.rb
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span> app/hoge.rb
 </code></pre></div><p>untracked files を復元させる場合は以下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>^3 app/hoge.rb
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>^3 app/hoge.rb
 </code></pre></div><h4 id="untracked-files-を含めて退避">untracked files を含めて退避</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash save -u <span style="color:#e6db74">&#34;untracked files を含めて退避&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash save -u <span style="color:#e6db74">&#34;untracked files を含めて退避&#34;</span>
 </code></pre></div><h4 id="untracked-files-をまとめて削除削除対象表示">untracked files をまとめて削除(削除対象表示)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clean -n
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clean -n
 
 <span style="color:#75715e"># ディレクトリも含める場合</span>
 git clean -dn
 </code></pre></div><h4 id="untracked-files-をまとめて削除">untracked files をまとめて削除</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clean -f
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clean -f
 
 <span style="color:#75715e"># ディレクトリも含める場合</span>
 git clean -df
 </code></pre></div><h4 id="fork-元の任意ブランチを親としてトピックブランチを作成">Fork 元の任意ブランチを親としてトピックブランチを作成</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元のリモート名<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>Fork 元のブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元のリモート名<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>Fork 元のブランチ名<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="プルリクエストの取り下げプルリクエスト出す直前に取り消し">プルリクエストの取り下げ(プルリクエスト出す直前に取り消し)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div><p>=&gt; <code>github</code> 上の 「Compare &amp; pull request」ボタンが消える</p>
 <h4 id="プルリクエストの取り下げプルリクエスト出した直後に取り消し">プルリクエストの取り下げ(プルリクエスト出した直後に取り消し)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push --delete <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div><p>=&gt; <code>github</code> 上は「close」扱いになる</p>
 <h4 id="github-上の-プルリクエストブランチをローカルに持ってくる">github 上の プルリクエストブランチをローカルに持ってくる</h4>
 <p>プルリクエストを行うと <code>github</code> 上では、 <code>pr/{連番}/head</code> と <code>pr/{連番}/merge</code> というブランチが作られるためそれを使用する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git fetch <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#e6db74">&#39;+refs/pull/*:refs/remotes/pr/*&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git fetch <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#e6db74">&#39;+refs/pull/*:refs/remotes/pr/*&#39;</span>
   * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>    refs/pull/9/head -&gt; pull/1/head
   * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>    refs/pull/9/merge -&gt; pull/1/merge
   * <span style="color:#f92672">[</span>new ref<span style="color:#f92672">]</span>   refs/pull/10/head -&gt; pull/10/head
@@ -2017,15 +2036,15 @@ git clean -df
 <span style="color:#75715e"># 例. プルリクエスト 10 を持ってくる場合</span>
 $ git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span style="color:#f92672">}</span> pull/10/head
 </code></pre></div><h4 id="master-ブランチ以外を削除する">master ブランチ以外を削除する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v master | xargs git branch -D
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v master | xargs git branch -D
 </code></pre></div><h4 id="master-および-develop-ブランチ以外を削除する">master および develop ブランチ以外を削除する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v <span style="color:#e6db74">&#34;master\|develop&#34;</span> | xargs git branch -D
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v <span style="color:#e6db74">&#34;master\|develop&#34;</span> | xargs git branch -D
 </code></pre></div><h4 id="マージコミットを-revert-する">マージコミットを revert する</h4>
 <ol>
 <li>
 <p>git log を実行して revert する対象のコミット番号を控える ★で囲まれた部分</p>
 <p>【以下、例】</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit ★341058af5e0d673e15fe8a14111e7c759191bd9f★ <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit ★341058af5e0d673e15fe8a14111e7c759191bd9f★ <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
 Merge: 5c863c9 9828ee6
 </code></pre></div></li>
 <li>
@@ -2033,7 +2052,7 @@ Merge: 5c863c9 9828ee6
 -m の後ろの数字はどちらを正とするかを表している ※ciis9_verup を正にする場合は
 1 another_branch を正にする場合は 2 を指定</p>
 <p>【以下、例】</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit 341058af5e0d673e15fe8a14111e7c759191bd9f <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit 341058af5e0d673e15fe8a14111e7c759191bd9f <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
 Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_sample<span style="color:#f92672">)</span>, 9828ee6: 2<span style="color:#f92672">(</span>another_branch<span style="color:#f92672">)</span>
 </code></pre></div></li>
 <li>
@@ -2061,7 +2080,7 @@ Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_
 <p>上記のため、<code>git status</code> コマンドで差分として上がらず <code>github</code> に上げた際に
 不要なソースが混じってしまう可能性があるため注意する</p>
 <p>対策としては以下のようにチェックアウト元を指定して新規でブランチを作成する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>作成するブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>チェックアウト元ブランチ名<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b <span style="color:#f92672">{</span>作成するブランチ名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>チェックアウト元ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div></div>
 
   <footer class="article-footer">
@@ -2200,6 +2219,27 @@ Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_
 
     <div class="inner">
       <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
@@ -2362,27 +2402,6 @@ Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2393,7 +2412,7 @@ Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

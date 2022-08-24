@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -615,6 +615,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -970,6 +976,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1842,7 +1861,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1956,12 +1975,12 @@ ga('send', 'pageview');
 <li>rails: rails 5.2.2</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/models/node.rb" data-lang="ruby:app/models/node.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/models/node.rb" data-lang="ruby:app/models/node.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
   has_many <span style="color:#e6db74">:children</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">foreign_key</span>: <span style="color:#e6db74">&#34;parrent_id&#34;</span>
 
   belongs_to <span style="color:#e6db74">:parrent</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">optional</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可</span>
 <span style="color:#66d9ef">end</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:db/migrate/{datetime}_create_nodes.rb" data-lang="ruby:db/migrate/{datetime}_create_nodes.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateNodes</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span><span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:db/migrate/{datetime}_create_nodes.rb" data-lang="ruby:db/migrate/{datetime}_create_nodes.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateNodes</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span><span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">change</span>
     create_table <span style="color:#e6db74">:nodes</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
       t<span style="color:#f92672">.</span>string <span style="color:#e6db74">:name</span>
@@ -1973,7 +1992,7 @@ ga('send', 'pageview');
 <span style="color:#66d9ef">end</span>
 </code></pre></div><h2 id="実行例">実行例</h2>
 <p>テーブル構成例のデータが格納済の状態</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># 最上位ノードに紐付く子ノードのレコードを取得</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># 最上位ノードに紐付く子ノードのレコードを取得</span>
 parrent_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>first
 parrent_node<span style="color:#f92672">.</span>children
 <span style="color:#75715e">#=&gt; Node Load (0.8ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`parrent_id` = 1 LIMIT 11</span>
@@ -2143,6 +2162,27 @@ parrent_node<span style="color:#f92672">.</span>parrent
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
     <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
 
@@ -2289,27 +2329,6 @@ parrent_node<span style="color:#f92672">.</span>parrent
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2320,7 +2339,7 @@ parrent_node<span style="color:#f92672">.</span>parrent
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

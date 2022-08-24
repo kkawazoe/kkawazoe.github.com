@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -615,6 +615,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -970,6 +976,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1842,7 +1861,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1905,11 +1924,11 @@ ga('send', 'pageview');
 <p>バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。<br>
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。</p>
 <h2 id="取得する-ini-ファイルの中身">取得する ini ファイルの中身</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt:sample.ini" data-lang="txt:sample.ini"><span style="color:#a6e22e">&lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;#######################################</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt:sample.ini" data-lang="txt:sample.ini"><span style="color:#a6e22e">&lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;#######################################</span>
 <span style="color:#66d9ef">[Path]</span>
 <span style="color:#a6e22e">WorkPath</span><span style="color:#f92672">=</span><span style="color:#e6db74">C:/src/wk                                           &#39;Work Folder Path</span>
 </code></pre></div><h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:getProfileString.bat" data-lang="bash:getProfileString.bat">@<span style="color:#66d9ef">echo</span> off
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:getProfileString.bat" data-lang="bash:getProfileString.bat">@<span style="color:#66d9ef">echo</span> off
 <span style="color:#66d9ef">set</span> iniFileName=sample.ini
 
 <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;usebackq tokens=* delims=&#34;</span> <span style="color:#ae81ff">%%</span>A <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">`call cscript //Nologo getProfileString.vbs &#34;</span>%iniFileName%<span style="color:#e6db74">&#34; Path WorkPath`</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> ret=<span style="color:#ae81ff">%%</span>A
@@ -1918,7 +1937,7 @@ ga('send', 'pageview');
 
 <span style="color:#66d9ef">pause</span>
 <span style="color:#66d9ef">exit</span>
-</code></pre></div><pre tabindex="0"><code class="language-vb:getProfileString.vbs" data-lang="vb:getProfileString.vbs">Option Explicit
+</code></pre></div><pre><code class="language-vb:getProfileString.vbs" data-lang="vb:getProfileString.vbs">Option Explicit
 rem /*****************************************************************
 rem  *  getProfileString.vbs iniFileName, sectionName, entryName
 rem  *
@@ -2181,6 +2200,27 @@ End Function
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
     <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
 
@@ -2327,27 +2367,6 @@ End Function
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2358,7 +2377,7 @@ End Function
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
