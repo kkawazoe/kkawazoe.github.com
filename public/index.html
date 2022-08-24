@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-981d11c3c396b5123d08bde4747c319d {
   background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
 }
@@ -558,12 +564,6 @@ section.footer {
 
   
 .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
-  
-
-  
-.thumb-e57f54a474a16ea1a276535ef085fc33 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
   
@@ -903,6 +903,19 @@ article.lism .thumb {
 
 
 
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
+  width: 5rem;
+}
+
+
+
 .thumb-981d11c3c396b5123d08bde4747c319d {
   background-image: url(https://kkawazoe.github.io/images/logo/postgre_sql_logo.png);
   background-size: contain;
@@ -924,19 +937,6 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
-  width: 5rem;
-}
-
-
-
-.thumb-e57f54a474a16ea1a276535ef085fc33 {
-  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1847,6 +1847,30 @@ ga('send', 'pageview');
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+          <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で別名がつけられているカラムを pluck で取得する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-08-23T22:00:00JST">Aug 23, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
+方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
+環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
+# Book クラス class Book &lt; ApplicationRecord has_many :categories end # Category クラス class Category &lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &#39;サンプル書籍&#39;) book.categories &lt;&lt; Category.create(name: &#39;ビジネス&#39;) book.categories &lt;&lt; Category.create(name: &#39;自己啓発&#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &#39;categories.name as category_name&#39;) .where(id: 1) .pluck(&#39;categories.name as category_name&#39;) # (1.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
           <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
 
@@ -1886,30 +1910,6 @@ ga('send', 'pageview');
             <div class="summary">rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
 方法 reset_pk_sequence! を使用する
 環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
-          <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で別名がつけられているカラムを pluck で取得する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T09:00:00JST">May 24, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
-方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
-環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
-# Book クラス class Book &lt; ApplicationRecord has_many :categories end # Category クラス class Category &lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &#39;サンプル書籍&#39;) book.categories &lt;&lt; Category.create(name: &#39;ビジネス&#39;) book.categories &lt;&lt; Category.create(name: &#39;自己啓発&#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &#39;categories.name as category_name&#39;) .where(id: 1) .pluck(&#39;categories.name as category_name&#39;) # (1.</div>
           </div>
         </a>
       </article>
@@ -2112,6 +2112,27 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
     <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
 
@@ -2138,27 +2159,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
 
     <div class="inner">
       <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
