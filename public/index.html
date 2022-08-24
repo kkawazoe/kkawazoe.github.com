@@ -563,6 +563,12 @@ section.footer {
   
 
   
+.thumb-ab49892d12dbd8885e93954af947b6bc {
+  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+}
+  
+
+  
 .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -924,6 +930,19 @@ article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   margin: 10px;
 }
 article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
+  width: 5rem;
+}
+
+
+
+.thumb-ab49892d12dbd8885e93954af947b6bc {
+  background-image: url(https://kkawazoe.github.io/images/logo/postgre_sql_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-ab49892d12dbd8885e93954af947b6bc {
   width: 5rem;
 }
 
@@ -1809,7 +1828,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          59
+          60
           <span>Posts</span>
         </a>
       </div>
@@ -1887,6 +1906,29 @@ ga('send', 'pageview');
             <div class="summary">PostgreSQL で CSV をインポートする方法を備忘録として残しておく
 方法 \COPY を使用する
 環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &#39;{csvファイルパス}&#39; WITH CSV DELIMITER &#39;,&#39;; # 例 HEADER なしの場合 \COPY users TO &#39;.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_count_specific_string_with_postgre_sql/">
+          <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
+
+          <div class="inner">
+            <h2 class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T12:00:00JST">May 24, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
+方法 sum, length, regexp_replace を使用する
+環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &#39;ユーザテーブル--名前カラム中の「仼」または「髙」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
           </div>
         </a>
       </article>
@@ -2066,31 +2108,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
-          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
-
-          <div class="inner">
-            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2138,6 +2155,27 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
 
     <div class="inner">
       <div class="title">PostgreSQL で CSVをインポートする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_count_specific_string_with_postgre_sql/">
+    <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
+
+    <div class="inner">
+      <div class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
@@ -2300,27 +2338,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
-    <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
-
-    <div class="inner">
-      <div class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T15:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2345,11 +2362,11 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(2)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/angular">angular <span class="count">(1)</span></a></li>
     
   </ul>
 </section>
