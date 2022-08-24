@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -615,6 +615,12 @@ section.footer {
   
 
   
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -970,6 +976,19 @@ article.lism .thumb-981d11c3c396b5123d08bde4747c319d {
   margin: 10px;
 }
 article.lism .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+  width: 5rem;
+}
+
+
+
+.thumb-e57f54a474a16ea1a276535ef085fc33 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e57f54a474a16ea1a276535ef085fc33 {
   width: 5rem;
 }
 
@@ -1842,7 +1861,7 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          58
+          59
           <span>Posts</span>
         </a>
       </div>
@@ -1923,14 +1942,14 @@ ga('send', 'pageview');
 <li>
 <p><code>change_contents</code> が使えない</p>
 <p>version 3.4.0 以降は <code>convenience_methods</code> を呼び出さないと利用不可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># require が必要なメソッド</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># require が必要なメソッド</span>
 require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/cell&#39;</span>
 require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/color&#39;</span>
 require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/font&#39;</span>
 require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/workbook&#39;</span>
 require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#39;</span>
 </code></pre></div><p>もしくは以下で全て使用可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;rubyXL/convenience_methods&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;rubyXL/convenience_methods&#39;</span>
 </code></pre></div></li>
 <li>
 <p>シートのコピーができない</p>
@@ -1961,9 +1980,9 @@ require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#3
 <p>印刷方向を縦向きから横向きにしたい</p>
 <p>基本的にテンプレートの印刷設定を修正するだけで対応可。<br>
 「テンプレート内のシートをコピーして作成。その後、シートを削除する」といった処理の場合は以下の対応を行う。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">worksheet<span style="color:#f92672">.</span>page_setup <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>page_setup
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">worksheet<span style="color:#f92672">.</span>page_setup <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>page_setup
 </code></pre></div><p>以下page_setup内の属性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">paperSize(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">用紙サイズ</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">paperSize(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">用紙サイズ</span>
 scale(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷スケール</span>(<span style="color:#960050;background-color:#1e0010">すべての行を</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">シート内に含める、などの設定を指す</span>)
 firstPageNumber(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号</span>
 fitToWidth(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">幅に合わせる</span>
@@ -2158,6 +2177,27 @@ RubyXL にグラフ描画・サポート機能が対応していないため不�
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
     <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
 
@@ -2304,27 +2344,6 @@ RubyXL にグラフ描画・サポート機能が対応していないため不�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
-    <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
-
-    <div class="inner">
-      <div class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-03-14T10:00:00JST">Mar 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2335,7 +2354,7 @@ RubyXL にグラフ描画・サポート機能が対応していないため不�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(16)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

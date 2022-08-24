@@ -30,6 +30,18 @@
     </item>
     
     <item>
+      <title>rails で別名がつけられているカラムを pluck で取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/</link>
+      <pubDate>Tue, 24 May 2022 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/</guid>
+      <description>rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
+方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
+環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
+# Book クラス class Book &amp;lt; ApplicationRecord has_many :categories end # Category クラス class Category &amp;lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &amp;#39;サンプル書籍&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;ビジネス&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;自己啓発&amp;#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &amp;#39;categories.name as category_name&amp;#39;) .where(id: 1) .pluck(&amp;#39;categories.name as category_name&amp;#39;) # (1.</description>
+    </item>
+    
+    <item>
       <title>rails でメソッドの定義場所を表示する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</link>
       <pubDate>Sat, 26 Feb 2022 01:28:11 +0900</pubDate>
@@ -118,7 +130,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} </description>
 環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
   「Ctrl」+「,」を押下して setting.json を開く
   setting.json の設定に以下を追加する
-  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定  }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
     </item>
     
     <item>
@@ -542,7 +554,7 @@ $ ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;
       
       <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
       <description>実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot;JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
 Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.textContent = &amp;#39;leave&amp;#39; }, afterLeave: function (el) { el.</description>
     </item>
@@ -672,10 +684,10 @@ bundle exec rails s -b 0.</description>
 受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
 2019/03/26 追記 試験用の電卓を購入
-CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバこっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
+CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
+シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
 滝澤ななみ TAC 2018年05月22日</description>
     </item>
@@ -701,7 +713,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-</description>
+ </description>
     </item>
     
     <item>
@@ -711,7 +723,7 @@ created のタイミングで API 等からデータが取得される想定の�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</guid>
       <description>経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 </description>
+実際のソースおよび実行結果  </description>
     </item>
     
     <item>
@@ -823,7 +835,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
       <description>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicitrem /*****************************************************************rem * getProfileString.vbs iniFileName, sectionName, entryNamerem *rem * 引数rem * iniFileName : 設定ファイル名(フルパス)rem * sectionName : セクション名rem * entryName : エントリー名rem * 動作rem * 引数に指定された設定ファイルより指定したrem * 「セクション」,「エントリー」に対応する設定値を返す。rem * 先頭がカンマの場合はコメント行として扱う。rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)をrem * 設定値として扱う。rem * 戻り値rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。)rem *****************************************************************/Dim retDim fsDim readLineObjDim searchFlgDim bufferrem ファイルシステムアクセス用Set fs = CreateObject( &amp;quot;Scripting.</description>
+取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.</description>
     </item>
     
     <item>
@@ -834,7 +846,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
       <description>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicitrem /*******************************************************rem * msgbox.vbs msg [,title]rem *rem * 引数rem * msg :表示するメッセージrem * title :メッセージボックスのタイトルrem * 動作rem * メッセージボックスを表示し、クリックされたボタンにrem * 対応する数値を返す。rem * msg中の 「\n」という文字列は改行に変換する。rem * 戻り値rem * 0:[はい]/1:[いいえ]rem ********************************************************/Dim argsDim arg(99)Dim valueDim cntDim retBtnDim retDim eLevelrem 引数を変数にセットSet args = WScript.</description>
+実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
     </item>
     
   </channel>

@@ -19,6 +19,18 @@
     </item>
     
     <item>
+      <title>rails で別名がつけられているカラムを pluck で取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/</link>
+      <pubDate>Tue, 24 May 2022 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_get_alias_column_pluck_method_with_rails/</guid>
+      <description>rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
+方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
+環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
+# Book クラス class Book &amp;lt; ApplicationRecord has_many :categories end # Category クラス class Category &amp;lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &amp;#39;サンプル書籍&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;ビジネス&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;自己啓発&amp;#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &amp;#39;categories.name as category_name&amp;#39;) .where(id: 1) .pluck(&amp;#39;categories.name as category_name&amp;#39;) # (1.</description>
+    </item>
+    
+    <item>
       <title>rails でメソッドの定義場所を表示する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</link>
       <pubDate>Sat, 26 Feb 2022 01:28:11 +0900</pubDate>
