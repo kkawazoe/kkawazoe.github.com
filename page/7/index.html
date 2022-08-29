@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
+}
+  
+
+  
 .thumb-e57f54a474a16ea1a276535ef085fc33 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -905,6 +911,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url(https://kkawazoe.github.io/images/logo/cent_os_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-87c1ca430b81478141d94a0dac70d197 {
+  width: 5rem;
 }
 
 
@@ -1828,13 +1847,13 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          60
+          61
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          18
+          19
           <span>Tags</span>
         </a>
       </div>
@@ -1863,6 +1882,29 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+          <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+
+          <div class="inner">
+            <h2 class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
+具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
+取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -1906,6 +1948,27 @@ ga('send', 'pageview');
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
+    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
+
+    <div class="inner">
+      <div class="title">CentOS でファイル内の行数を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
@@ -2084,27 +2147,6 @@ ga('send', 'pageview');
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
-    <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
-
-    <div class="inner">
-      <div class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-04-11T09:00:00JST">Apr 11, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         

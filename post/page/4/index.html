@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
+}
+  
+
+  
 .thumb-e57f54a474a16ea1a276535ef085fc33 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -905,6 +911,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url(https://kkawazoe.github.io/images/logo/cent_os_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-87c1ca430b81478141d94a0dac70d197 {
+  width: 5rem;
 }
 
 
@@ -1828,13 +1847,13 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          60
+          61
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          18
+          19
           <span>Tags</span>
         </a>
       </div>
@@ -1867,6 +1886,39 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
+          <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その5</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4  金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
+※PER が低い銘柄は 割安 、高い銘柄は割高
+$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
+※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
+$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$
+$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$
+$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$
+$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$
+参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2129,31 +2181,6 @@ Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent =
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2175,6 +2202,27 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
+    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
+
+    <div class="inner">
+      <div class="title">CentOS でファイル内の行数を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
@@ -2353,27 +2401,6 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
-    <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
-
-    <div class="inner">
-      <div class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-04-11T09:00:00JST">Apr 11, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
