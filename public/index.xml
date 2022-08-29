@@ -6,7 +6,18 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 23 Aug 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Aug 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS でファイル内の行数を取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/</link>
+      <pubDate>Sun, 28 Aug 2022 22:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/</guid>
+      <description>CentOS でファイル内の行数を取得する方法を備忘録として残しておく
+方法 wc コマンドの -l オプションを使用する
+環境  CentOS: CentOS Linux release 8.4.2105  実際のコード # 該当のファイルが存在するディレクトリに移動して実行 wc -l # 拡張子で対象を絞りたい場合は以下 # 例. 拡張子が「.csv」のファイルの行数を取得 wc -l `find ./ -name &amp;#39;*.csv&amp;#39;` </description>
+    </item>
+    
     <item>
       <title>rails で別名がつけられているカラムを pluck で取得する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/</link>

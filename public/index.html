@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
+}
+  
+
+  
 .thumb-e57f54a474a16ea1a276535ef085fc33 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -905,6 +911,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-87c1ca430b81478141d94a0dac70d197 {
+  background-image: url(https://kkawazoe.github.io/images/logo/cent_os_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-87c1ca430b81478141d94a0dac70d197 {
+  width: 5rem;
 }
 
 
@@ -1828,13 +1847,13 @@ ga('send', 'pageview');
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          60
+          61
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          18
+          19
           <span>Tags</span>
         </a>
       </div>
@@ -1863,6 +1882,29 @@ ga('send', 'pageview');
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
+          <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
+
+          <div class="inner">
+            <h2 class="title">CentOS でファイル内の行数を取得する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-08-28T22:00:00JST">Aug 28, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">CentOS でファイル内の行数を取得する方法を備忘録として残しておく
+方法 wc コマンドの -l オプションを使用する
+環境  CentOS: CentOS Linux release 8.4.2105  実際のコード # 該当のファイルが存在するディレクトリに移動して実行 wc -l # 拡張子で対象を絞りたい場合は以下 # 例. 拡張子が「.csv」のファイルの行数を取得 wc -l `find ./ -name &#39;*.csv&#39;` </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2084,30 +2126,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
-          <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
-
-          <div class="inner">
-            <h2 class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-04-11T09:00:00JST">Apr 11, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
-その対処方法を備忘録として残しておく
-環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
-実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2127,6 +2145,27 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
+    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
+
+    <div class="inner">
+      <div class="title">CentOS でファイル内の行数を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
@@ -2305,27 +2344,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} </div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
-    <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
-
-    <div class="inner">
-      <div class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-04-11T09:00:00JST">Apr 11, 2021</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
