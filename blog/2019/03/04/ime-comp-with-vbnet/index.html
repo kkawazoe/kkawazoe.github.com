@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -362,8 +362,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -386,7 +391,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -416,7 +421,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -1978,7 +1984,7 @@ section.sidebar header a {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:mImecomp.vb" data-lang="vb:mImecomp.vb"><span style="color:#66d9ef">Option Strict Off</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:mImecomp.vb" data-lang="vb:mImecomp.vb"><span style="color:#66d9ef">Option Strict Off</span>
 <span style="color:#66d9ef">Option Explicit On</span>
 
 <span style="color:#66d9ef">Imports</span> System.Runtime.InteropServices
@@ -2211,7 +2217,7 @@ section.sidebar header a {
 <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
 </code></pre></div><h3 id="ふりがな取得機能テスト用フォーム">ふりがな取得機能テスト用フォーム</h3>
 <p>初期処理時にふりがな種別を指定する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:Form1.vb" data-lang="vb:Form1.vb"><span style="color:#66d9ef">Imports</span> Microsoft.VisualBasic
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:Form1.vb" data-lang="vb:Form1.vb"><span style="color:#66d9ef">Imports</span> Microsoft.VisualBasic
 <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">Form1</span>
 
     <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">WithEvents</span> ImeComp <span style="color:#f92672">As</span> Imecomp <span style="color:#75715e">&#39;ふりがな取得イベント
@@ -2240,7 +2246,8 @@ section.sidebar header a {
 
 <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
 </code></pre></div><h2 id="実行結果イメージ">実行結果イメージ</h2>
-<figure class="center"><img src="/images/20190304_01/ime_comp.png" width="240" height="320"/><figcaption>
+<figure class="center">
+    <img src="/images/20190304_01/ime_comp.png" width="240" height="320"/> <figcaption>
             <h4>ふりがな自動取得機能 実行結果</h4>
         </figcaption>
 </figure>

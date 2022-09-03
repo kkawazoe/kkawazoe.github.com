@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -362,8 +362,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -386,7 +391,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -416,7 +421,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2019,7 +2025,7 @@ section.sidebar header a {
 <li>
 <p>partials フォルダ配下の以下のファイルを修正する</p>
 <p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
  <span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
    <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
@@ -2063,7 +2069,7 @@ section.sidebar header a {
 <li>
 <p>1 で作成した partial を head or footer で読込</p>
 <p>例 head で読込</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
   ・・・
   {{ partial &#34;mathjax_support.html&#34; . }}
 &lt;/<span style="color:#f92672">head</span>&gt;
@@ -2073,24 +2079,24 @@ section.sidebar header a {
 <h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
 <h4 id="番号あり">番号あり</h4>
 <p>[記入例]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align}
 f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
 &amp;= (x+1)(x+2)
 <span style="color:#66d9ef">\end</span>{align}
 </code></pre></div><p>[表示例]</p>
 <p>\begin{align}
-f(x) &amp;= x^2+3x+2 \\\
+f(x) &amp;= x^2+3x+2 \\\<br>
 &amp;= (x+1)(x+2)
 \end{align}</p>
 <h4 id="番号なし">番号なし</h4>
 <p>[記入例]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align*}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align*}
 f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
 &amp;= (x+1)(x+2)
 <span style="color:#66d9ef">\end</span>{align*}
 </code></pre></div><p>[表示例]</p>
 <p>\begin{align*}
-f(x) &amp;= x^2+3x+2 \\\
+f(x) &amp;= x^2+3x+2 \\\<br>
 &amp;= (x+1)(x+2)
 \end{align*}</p>
 </div>
