@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-f9afb0aec66f3f529b12980068b45c1e {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c6c6175bd2186afa9727ca5c36a00743 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -923,6 +929,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-f9afb0aec66f3f529b12980068b45c1e {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-f9afb0aec66f3f529b12980068b45c1e {
+  width: 5rem;
 }
 
 
@@ -1878,7 +1897,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          62
+          63
           <span>Posts</span>
         </a>
       </div>
@@ -1917,6 +1936,35 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
+          <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で 巨大な csv ファイルをストリーム処理する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-09-03T21:00:00JST">Sep 3, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが
+発生したり、処理時間もすごくかかるため、ストリーム処理に変更などして
+処理の高速化した際の方法を備忘録として残しておく
+方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
+前提 header 付の csv ファイル
+リファクタリング前
+class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&#34;{ファイルパス}&#34; , &#34;r&#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&#34;{ファイルパス}&#34; , &#34;w&#34;) # 変更内容を出力する。 file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
+require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2145,31 +2193,6 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/">
-          <div class="thumb thumb-29825a4d4c5b04cfa5318654886562b0"></div>
-
-          <div class="inner">
-            <h2 class="title">Docker Compose 上で Rails の秘匿情報を扱う</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-04-04T10:46:01JST">Apr 4, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
-以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
-以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:edit -e production </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2189,6 +2212,27 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
+    <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
+
+    <div class="inner">
+      <div class="title">rails で 巨大な csv ファイルをストリーム処理する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T21:00:00JST">Sep 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
@@ -2379,27 +2423,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
-    <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
-
-    <div class="inner">
-      <div class="title">特定の RSpec のみ実行されるようにする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-05-14T09:00:00JST">May 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2410,7 +2433,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(18)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

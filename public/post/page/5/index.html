@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-f9afb0aec66f3f529b12980068b45c1e {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c6c6175bd2186afa9727ca5c36a00743 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -923,6 +929,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-f9afb0aec66f3f529b12980068b45c1e {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-f9afb0aec66f3f529b12980068b45c1e {
+  width: 5rem;
 }
 
 
@@ -1878,7 +1897,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          62
+          63
           <span>Posts</span>
         </a>
       </div>
@@ -1917,6 +1936,32 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
+          <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
+
+          <div class="inner">
+            <h2 class="title">Github への公開鍵の登録</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-15T11:51:14JST">Apr 15, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
+実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2153,36 +2198,6 @@ bundle exec rails s -b 0.</div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">
-          <div class="thumb thumb-39ef9e30c5390d01c651eeb9a897f721"></div>
-
-          <div class="inner">
-            <h2 class="title">FP3級への道</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-11T00:00:00JST">Mar 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
-2018-2019年版　みんなが欲しかった！　FPの教科書3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
-2019/03/26 追記 試験用の電卓を購入
-CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2204,6 +2219,27 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
+    <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
+
+    <div class="inner">
+      <div class="title">rails で 巨大な csv ファイルをストリーム処理する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T21:00:00JST">Sep 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
@@ -2394,27 +2430,6 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/">
-    <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
-
-    <div class="inner">
-      <div class="title">特定の RSpec のみ実行されるようにする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-05-14T09:00:00JST">May 14, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2425,7 +2440,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(18)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
