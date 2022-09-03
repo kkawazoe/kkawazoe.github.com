@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -362,8 +362,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -386,7 +391,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -416,7 +421,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -1970,7 +1976,7 @@ section.sidebar header a {
 <li>rails: rails 6.0.3.6</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">rgb <span style="color:#f92672">=</span> { <span style="color:#e6db74">black</span>: <span style="color:#e6db74">&#39;#0000&#39;</span>, <span style="color:#e6db74">white</span>: <span style="color:#e6db74">&#39;#FFFFFF&#39;</span> }<span style="color:#f92672">.</span>with_indifferent_access
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">rgb <span style="color:#f92672">=</span> { <span style="color:#e6db74">black</span>: <span style="color:#e6db74">&#39;#0000&#39;</span>, <span style="color:#e6db74">white</span>: <span style="color:#e6db74">&#39;#FFFFFF&#39;</span> }<span style="color:#f92672">.</span>with_indifferent_access
 
 rgb<span style="color:#f92672">[</span><span style="color:#e6db74">:black</span><span style="color:#f92672">]</span>   <span style="color:#75715e"># =&gt; &#34;#0000&#34;</span>
 rgb<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;black&#39;</span><span style="color:#f92672">]</span>  <span style="color:#75715e"># =&gt; &#34;#0000&#34;</span>
