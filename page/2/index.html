@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-c6c6175bd2186afa9727ca5c36a00743 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-87c1ca430b81478141d94a0dac70d197 {
   background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
 }
@@ -917,6 +923,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-c6c6175bd2186afa9727ca5c36a00743 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-c6c6175bd2186afa9727ca5c36a00743 {
+  width: 5rem;
 }
 
 
@@ -1859,7 +1878,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          61
+          62
           <span>Posts</span>
         </a>
       </div>
@@ -1894,6 +1913,28 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
+          <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
+
+          <div class="inner">
+            <h2 class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-12T09:00:00JST">May 12, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">HashWithIndifferentAccess に変換して実現する
+環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2129,27 +2170,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-          <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-          <div class="inner">
-            <h2 class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-19T15:25:56JST">Mar 19, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2171,6 +2191,27 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
+
+    <div class="inner">
+      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
@@ -2361,27 +2402,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
-    <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
-
-    <div class="inner">
-      <div class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-05-12T09:00:00JST">May 12, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2392,7 +2412,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(17)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(18)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

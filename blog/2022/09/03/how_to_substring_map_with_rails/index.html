@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~</title>
+    <title>rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
+<meta name="description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
 
-<meta property="og:title" content="PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/postgre_sql_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
+<meta property="og:description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-<meta name="twitter:title" content="PostgreSQL で CSVをインポートする方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="PostgreSQL で CSV をインポートする方法を備忘録として残しておく">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/postgre_sql_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+<meta name="twitter:title" content="rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "PostgreSQL で CSVをインポートする方法-Note To Self ~One Step At A Time~",
+    "headline": "rails で文字列置換を行う際に対応表で置換する方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/postgre_sql_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2022-05-24T12:00:00JST",
-    "dateModified": "2022-05-24T12:00:00JST",
+    "datePublished": "2022-09-03T12:00:00JST",
+    "dateModified": "2022-09-03T12:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "PostgreSQL で CSV をインポートする方法を備忘録として残しておく"
+    "description": "rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1959,13 +1959,13 @@ section.sidebar header a {
             
 <article class="sn">
 
-  <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
+  <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
 
   <header class="article-header">
-    <h1 class="title">PostgreSQL で CSVをインポートする方法</h1>
+    <h1 class="title">rails で文字列置換を行う際に対応表で置換する方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T12:00:00JST">May 24, 2022</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-09-03T12:00:00JST">Sep 3, 2022</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -1973,59 +1973,43 @@ section.sidebar header a {
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/postgresql">PostgreSQL</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&text=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&t=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&text=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&t=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>PostgreSQL で CSV をインポートする方法を備忘録として残しておく</p>
+  <div class="article-body"><p>rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく</p>
 <h2 id="方法">方法</h2>
-<p>\COPY を使用する</p>
+<p>gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する</p>
 <h2 id="環境">環境</h2>
 <ul>
-<li>PostgreSQL: 13.3</li>
+<li>ruby: 3.0.4</li>
+<li>rails: 6.1.6.1</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">su - postgres
-psql
-<span style="color:#ae81ff">\c</span> <span style="color:#f92672">{</span>DB 名<span style="color:#f92672">}</span>;
-<span style="color:#ae81ff">\C</span>OPY <span style="color:#f92672">{</span>テーブル名<span style="color:#f92672">}</span> FROM <span style="color:#e6db74">&#39;{csvファイルパス}&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># 変換用の対応表</span>
+convert_map <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;A&#39;</span>,
+  <span style="color:#e6db74">&#39;b&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;B&#39;</span>,
+  <span style="color:#e6db74">&#39;d&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;D&#39;</span>
+}
+<span style="color:#75715e">#=&gt; {&#34;a&#34;=&gt;&#34;A&#34;, &#34;b&#34;=&gt;&#34;B&#34;, &#34;d&#34;=&gt;&#34;D&#34;}</span>
 
-<span style="color:#75715e"># 例 HEADER なしの場合</span>
-<span style="color:#ae81ff">\C</span>OPY users FROM <span style="color:#e6db74">&#39;./users.csv&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV;
-<span style="color:#75715e"># 例 HEADER ありの場合</span>
-<span style="color:#ae81ff">\C</span>OPY users FROM <span style="color:#e6db74">&#39;./users.csv&#39;</span> DELIMITER <span style="color:#e6db74">&#39;,&#39;</span> CSV HEADER;
-
-<span style="color:#75715e"># エクスポートする場合は以下</span>
-su - postgres
-psql
-<span style="color:#ae81ff">\c</span> <span style="color:#f92672">{</span>DB 名<span style="color:#f92672">}</span>;
-<span style="color:#ae81ff">\C</span>OPY <span style="color:#f92672">{</span>テーブル名<span style="color:#f92672">}</span> TO <span style="color:#e6db74">&#39;{csvファイルパス}&#39;</span> WITH CSV DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
-<span style="color:#75715e"># 例 HEADER なしの場合</span>
-<span style="color:#ae81ff">\C</span>OPY users TO <span style="color:#e6db74">&#39;./users.csv&#39;</span> WITH CSV DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
-<span style="color:#75715e"># 例 HEADER ありの場合</span>
-<span style="color:#ae81ff">\C</span>OPY users TO <span style="color:#e6db74">&#39;./users.csv&#39;</span> WITH CSV HEADER DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
-<span style="color:#75715e"># 例 10 件取得(id 昇順)</span>
-<span style="color:#ae81ff">\C</span>OPY <span style="color:#f92672">(</span><span style="color:#66d9ef">select</span> * from users order by id limit 10<span style="color:#f92672">)</span> TO <span style="color:#e6db74">&#39;./users.csv&#39;</span> WITH CSV HEADER DELIMITER <span style="color:#e6db74">&#39;,&#39;</span>;
-</code></pre></div><p>Shell Script として行う場合は以下のようにする</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span><span style="color:#75715e"># ユーザを postgres に切り替えたままでコマンドの実行を行う ※CSV インポート</span>
-su - postgres <span style="color:#e6db74">&lt;&lt;EOF
-</span><span style="color:#e6db74">psql
-</span><span style="color:#e6db74">\c {DB 名};
-</span><span style="color:#e6db74">\COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV;
-</span><span style="color:#e6db74">EOF</span>
+<span style="color:#75715e"># 以下と同義</span>
+<span style="color:#75715e"># &#34;adcacbd&#34;.gsub(/a|b|d/, { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; })</span>
+<span style="color:#e6db74">&#34;adcacbd&#34;</span><span style="color:#f92672">.</span>gsub(<span style="color:#66d9ef">Regexp</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>convert_map<span style="color:#f92672">.</span>keys<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;|&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>), convert_map)
+<span style="color:#75715e">#=&gt; &#34;ADcAcBD&#34;</span>
 </code></pre></div></div>
 
   <footer class="article-footer">
@@ -2037,17 +2021,17 @@ su - postgres <span style="color:#e6db74">&lt;&lt;EOF
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/postgresql">PostgreSQL</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&text=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&t=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f&title=PostgreSQL%20%e3%81%a7%20CSV%e3%82%92%e3%82%a4%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f05%2f24%2fhow_to_import_csv_with_postgre_sql%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&text=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&t=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -2061,14 +2045,14 @@ su - postgres <span style="color:#e6db74">&lt;&lt;EOF
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/">
-    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
+  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
+    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
 
     <div class="inner">
-      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
+      <div class="title">CentOS でファイル内の行数を取得する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -2084,27 +2068,6 @@ su - postgres <span style="color:#e6db74">&lt;&lt;EOF
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/">
-    <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-08-22T12:00:00JST">Aug 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>
