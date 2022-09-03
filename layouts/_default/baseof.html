@@ -49,6 +49,10 @@
   {{ partial "mathjax_support.html" . }}
 {{ end }}
 
+{{ if not .Site.IsServer }}
+  {{ partial "googleanalytics.html" . }}
+{{ end }}
+
 {{ if and .Site.GoogleAnalytics (ne (getenv "HUGO_ENV") "DEV") }}
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 <script>
