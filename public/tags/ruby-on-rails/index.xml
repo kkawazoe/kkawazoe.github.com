@@ -6,10 +6,21 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 23 Aug 2022 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Sep 2022 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>rails で文字列置換を行う際に対応表で置換する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</link>
+      <pubDate>Sat, 03 Sep 2022 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</guid>
+      <description>rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく
+方法 gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード # 変換用の対応表 convert_map = { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; } #=&amp;gt; {&amp;#34;a&amp;#34;=&amp;gt;&amp;#34;A&amp;#34;, &amp;#34;b&amp;#34;=&amp;gt;&amp;#34;B&amp;#34;, &amp;#34;d&amp;#34;=&amp;gt;&amp;#34;D&amp;#34;} # 以下と同義 # &amp;#34;adcacbd&amp;#34;.gsub(/a|b|d/, { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; }) &amp;#34;adcacbd&amp;#34;.gsub(Regexp.new(&amp;#34;#{convert_map.keys.join(&amp;#39;|&amp;#39;)}&amp;#34;), convert_map) #=&amp;gt; &amp;#34;ADcAcBD&amp;#34; </description>
+    </item>
     
     <item>
       <title>rails で別名がつけられているカラムを pluck で取得する方法</title>
