@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 03 Sep 2022 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Sep 2022 21:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>rails で 巨大な csv ファイルをストリーム処理する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</link>
+      <pubDate>Sat, 03 Sep 2022 21:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</guid>
+      <description>1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが
+発生したり、処理時間もすごくかかるため、ストリーム処理に変更などして
+処理の高速化した際の方法を備忘録として残しておく
+方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
+前提 header 付の csv ファイル
+リファクタリング前
+class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;r&amp;#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;w&amp;#34;) # 変更内容を出力する。 file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
+require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converter def self.</description>
+    </item>
     
     <item>
       <title>rails で文字列置換を行う際に対応表で置換する方法</title>
