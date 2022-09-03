@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/electron/</link>
+    <description>Recent content in Electron on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Fri, 24 May 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>electron-builder で Lint および UnitTest が通った場合のみビルドするようにする</title>
+      <link>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</link>
+      <pubDate>Fri, 24 May 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2019/05/24/pass-lint-and-unit-test-to-build-with-electron-builder/</guid>
+      <description>経緯 electron にて ビルドするのに electron-builder を使用してみた その際に最低限 Lint, UnitTest を通ることを担保するようにしたため備忘録として残しておく
+構築環境 electron: 5.0.1 electron-builder: 20.39.0 実際のコード package.json に以下の定義がしてある前提 ※以下は electron x angular(Angular Cli で生成)
+{ ・・・ &amp;#34;scripts&amp;#34;: { &amp;#34;ng&amp;#34;: &amp;#34;ng&amp;#34;, &amp;#34;start&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; electron .&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;ng build&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;jest&amp;#34;, &amp;#34;lint&amp;#34;: &amp;#34;ng lint&amp;#34;, &amp;#34;postinstall&amp;#34;: &amp;#34;electron-builder install-app-deps&amp;#34;, &amp;#34;release&amp;#34;: &amp;#34;ng build --prod &amp;amp;&amp;amp; node build.js&amp;#34;, }, ・・・ } electron-builder のオプションについては公式を参照
+&amp;#39;use strict&amp;#39;; const builder = require(&amp;#39;electron-builder&amp;#39;); const Platform = builder.Platform; const childProcess = require(&amp;#39;child_process&amp;#39;); const unitTest = new Promise((resolve, reject) =&amp;gt; { childProcess.</description>
+    </item>
+    
+  </channel>
+</rss>
