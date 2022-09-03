@@ -50,7 +50,7 @@
 {{ end }}
 
 {{ if not .Site.IsServer }}
-  {{ partial "googleanalytics.html" . }}
+  {{ partial "google_analytics.html" . }}
 {{ end }}
 
 {{ if and .Site.GoogleAnalytics (ne (getenv "HUGO_ENV") "DEV") }}
