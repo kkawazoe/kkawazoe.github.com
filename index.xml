@@ -13,7 +13,7 @@
       <pubDate>Wed, 14 Sep 2022 23:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</guid>
-      <description>経緯 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく
+      <description>css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく ※中央寄せかつテキストの行頭を揃える
 実際のソースおよび実行結果  </description>
     </item>
     
