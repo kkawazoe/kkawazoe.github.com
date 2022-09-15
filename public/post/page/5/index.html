@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-1afa6021d77784406c145f99fdd96363 {
+  background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
+}
+  
+
+  
 .thumb-f9afb0aec66f3f529b12980068b45c1e {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -923,6 +929,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-1afa6021d77784406c145f99fdd96363 {
+  background-image: url(https://kkawazoe.github.io/images/logo/html_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-1afa6021d77784406c145f99fdd96363 {
+  width: 5rem;
 }
 
 
@@ -1891,7 +1910,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          63
+          64
           <span>Posts</span>
         </a>
       </div>
@@ -1930,6 +1949,31 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を'(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2160,38 +2204,6 @@ bundle exec rails s -b 0.</div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/14/health-insurance-credit-limit-authorization/">
-          <div class="thumb thumb-2901bf721fa3d51df3fd4fe519615afa"></div>
-
-          <div class="inner">
-            <h2 class="title">限度額適用認定証について</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-14T13:54:31JST">Mar 14, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
-できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
-高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
- 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
-しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
-「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
-※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
-※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
- =&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
-自分の場合請求から発行までおよそ2週間程度かかった。
-1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
-※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2213,6 +2225,27 @@ bundle exec rails s -b 0.</div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
+    <div class="thumb thumb-1afa6021d77784406c145f99fdd96363"></div>
+
+    <div class="inner">
+      <div class="title">CSS テキストを左揃えのまま中央寄せにする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T23:00:00JST">Sep 14, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
@@ -2403,27 +2436,6 @@ bundle exec rails s -b 0.</div>
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
-    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
-
-    <div class="inner">
-      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2450,9 +2462,9 @@ bundle exec rails s -b 0.</div>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(2)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
     
   </ul>
 </section>
