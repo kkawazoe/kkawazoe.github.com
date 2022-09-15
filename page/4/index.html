@@ -551,6 +551,12 @@ section.footer {
 }
 
   
+.thumb-1afa6021d77784406c145f99fdd96363 {
+  background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
+}
+  
+
+  
 .thumb-f9afb0aec66f3f529b12980068b45c1e {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -923,6 +929,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-1afa6021d77784406c145f99fdd96363 {
+  background-image: url(https://kkawazoe.github.io/images/logo/html_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-1afa6021d77784406c145f99fdd96363 {
+  width: 5rem;
 }
 
 
@@ -1891,7 +1910,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          63
+          64
           <span>Posts</span>
         </a>
       </div>
@@ -1926,6 +1945,40 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/">
+          <div class="thumb thumb-ac16365a35e08a4f79796da25ad54f94"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その6</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-30T00:00:19JST">Apr 30, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り   直接利回り
+投資金額(購入価格)に対する毎年の利息収入の割合
+$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
+$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
+例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1%}{102円} \times 100 ≒ 0.98% $$
+  応募者利回り
+債権の発行時に購入し、償還まで所有した場合の利回り
+$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
+例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
+$$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
+  最終利回り</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2200,31 +2253,6 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
-          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を'(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2246,6 +2274,27 @@ Vue.js の bind を'(シングルコート)で括る
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
+    <div class="thumb thumb-1afa6021d77784406c145f99fdd96363"></div>
+
+    <div class="inner">
+      <div class="title">CSS テキストを左揃えのまま中央寄せにする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T23:00:00JST">Sep 14, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
@@ -2436,27 +2485,6 @@ Vue.js の bind を'(シングルコート)で括る
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/">
-    <div class="thumb thumb-569c339862a3e91bd980bffef4fc5554"></div>
-
-    <div class="inner">
-      <div class="title">Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-06-02T12:00:00JST">Jun 2, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2483,9 +2511,9 @@ Vue.js の bind を'(シングルコート)で括る
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(2)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/access">access <span class="count">(1)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
     
   </ul>
 </section>

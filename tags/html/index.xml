@@ -6,7 +6,17 @@
     <description>Recent content in HTML on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 06 Mar 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Sep 2022 23:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS テキストを左揃えのまま中央寄せにする方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</link>
+      <pubDate>Wed, 14 Sep 2022 23:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</guid>
+      <description>経緯 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく
+実際のソースおよび実行結果  </description>
+    </item>
+    
     <item>
       <title>CSS で複数行でも3点リーダーを表示する</title>
       <link>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</link>

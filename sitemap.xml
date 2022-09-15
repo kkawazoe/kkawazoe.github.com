@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</loc>
+    <lastmod>2022-09-14T23:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/html/</loc>
+    <lastmod>2022-09-14T23:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2022-09-03T21:00:00+09:00</lastmod>
+    <lastmod>2022-09-14T23:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2022-09-03T21:00:00+09:00</lastmod>
+    <lastmod>2022-09-14T23:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2022-09-14T23:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</loc>
     <lastmod>2022-09-03T21:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2022-09-03T21:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2022-09-03T21:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</loc>
@@ -219,9 +225,6 @@
     <lastmod>2019-03-07T18:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</loc>
-    <lastmod>2019-03-06T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/html/</loc>
     <lastmod>2019-03-06T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/vb.net/</loc>
