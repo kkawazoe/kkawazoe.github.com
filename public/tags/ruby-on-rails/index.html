@@ -1991,8 +1991,10 @@ section.sidebar header a {
             </ul>
 
             <div class="summary">方法 create_list と send メソッドを使用して実現する
-環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを
-紐づけて作成してカラム status を動的に生成する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード user のテストデータを3つ作成 かつ 関連する
+user_status のテストデータを
+紐づけて作成してカラム status を
+動的に生成する
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end </div>
           </div>
         </a>
