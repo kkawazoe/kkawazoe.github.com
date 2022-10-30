@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-1afa6021d77784406c145f99fdd96363 {
   background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
 }
@@ -935,6 +941,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  width: 5rem;
 }
 
 
@@ -1916,7 +1935,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          64
+          65
           <span>Posts</span>
         </a>
       </div>
@@ -1951,6 +1970,30 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+          <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+          <div class="inner">
+            <h2 class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-10-30T21:00:00JST">Oct 30, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">方法 create_list と send メソッドを使用して実現する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを
+紐づけて作成してカラム status を動的に生成する
+let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2165,38 +2208,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-          <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-          <div class="inner">
-            <h2 class="title">libreoffice を使用して Excel を PDF に変換する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-12-11T14:24:49JST">Dec 11, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">アップロードされた Excel を PDF に変換して保存する必要があり
-調査を行った LibreOffice で変換する方法を備忘録として残しておく
-※図形など綺麗に変換されないパターンもあるため注意が必要
-前提 LibreOffice を事前にインストールしておく
-/Applications/LibreOffice.app/Contents/MacOS/soffice にインストールしている場合
-方法 以下のコマンドで変換を行う ※Calc を使用して PDF に変換
-参考
-指定できるフィルタ
-/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&#34;calc_pdf_Export&#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2216,6 +2227,27 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+    <div class="inner">
+      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
@@ -2406,27 +2438,6 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-    <div class="inner">
-      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2437,7 +2448,7 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(20)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

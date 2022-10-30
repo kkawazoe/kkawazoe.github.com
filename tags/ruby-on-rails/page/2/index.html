@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-1afa6021d77784406c145f99fdd96363 {
   background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
 }
@@ -935,6 +941,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  width: 5rem;
 }
 
 
@@ -1916,7 +1935,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          64
+          65
           <span>Posts</span>
         </a>
       </div>
@@ -1955,6 +1974,31 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
+          <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails で静的エラーページにレイアウトを適用する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-17T11:56:06JST">May 17, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
+確認 config/environments/development.rb の以下を編集して確認する
+config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
+=&gt; 生成されるファイル 例. public/404.ja.html
+desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2195,6 +2239,27 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+    <div class="inner">
+      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
     <div class="thumb thumb-1afa6021d77784406c145f99fdd96363"></div>
 
@@ -2383,27 +2448,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-    <div class="inner">
-      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2414,7 +2458,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(20)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
