@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</link>
+      <pubDate>Sun, 30 Oct 2022 21:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</guid>
+      <description>方法 create_list と send メソッドを使用して実現する
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを
+紐づけて作成してカラム status を動的に生成する
+let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&amp;#34;user_status#{i}&amp;#34;), ) end end </description>
+    </item>
+    
+    <item>
       <title>CSS テキストを左揃えのまま中央寄せにする方法</title>
       <link>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</link>
       <pubDate>Wed, 14 Sep 2022 23:00:00 +0900</pubDate>
