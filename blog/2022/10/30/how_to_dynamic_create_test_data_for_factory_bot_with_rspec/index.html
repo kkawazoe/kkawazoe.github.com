@@ -2054,8 +2054,10 @@ section.sidebar header a {
 <li>rails: 6.1.6.1</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<p>user のテストデータを3つ作成 かつ 関連する user_status のテストデータを<br>
-紐づけて作成してカラム status を動的に生成する</p>
+<p>user のテストデータを3つ作成 かつ 関連する<br>
+user_status のテストデータを<br>
+紐づけて作成してカラム status を<br>
+動的に生成する</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
 let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
 let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
