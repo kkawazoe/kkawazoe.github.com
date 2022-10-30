@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-1afa6021d77784406c145f99fdd96363 {
   background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
 }
@@ -935,6 +941,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  width: 5rem;
 }
 
 
@@ -1916,7 +1935,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          64
+          65
           <span>Posts</span>
         </a>
       </div>
@@ -1955,6 +1974,32 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
+          <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
+
+          <div class="inner">
+            <h2 class="title">Hugo に数式を挿入する その2</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-23T15:11:31JST">May 23, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">[前回までの記事]
+ Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
+  partials フォルダ配下の以下のファイルを修正する
+CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2178,29 +2223,6 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
-          <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
-
-          <div class="inner">
-            <h2 class="title">Angular Cli で作成したプロジェクトに Jest を追加する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-05-15T12:00:00JST">May 15, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
-Jest に変更する手順を備忘録として残しておく
-構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4 手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes 2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic 3. 以下のコマンドを実行して動作確認する $ yarn test $ jest PASS src/app/app.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2222,6 +2244,27 @@ Jest に変更する手順を備忘録として残しておく
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+    <div class="inner">
+      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
@@ -2412,27 +2455,6 @@ Jest に変更する手順を備忘録として残しておく
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-    <div class="inner">
-      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2443,7 +2465,7 @@ Jest に変更する手順を備忘録として残しておく
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(20)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

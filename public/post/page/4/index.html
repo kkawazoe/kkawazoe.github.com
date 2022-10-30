@@ -557,6 +557,12 @@ section.footer {
 }
 
   
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-1afa6021d77784406c145f99fdd96363 {
   background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
 }
@@ -935,6 +941,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+  width: 5rem;
 }
 
 
@@ -1916,7 +1935,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          64
+          65
           <span>Posts</span>
         </a>
       </div>
@@ -1955,6 +1974,29 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/">
+          <div class="thumb thumb-72ab90d017fcd661f8dcda8455251487"></div>
+
+          <div class="inner">
+            <h2 class="title">Angular Cli で作成したプロジェクトに Jest を追加する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-05-15T12:00:00JST">May 15, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
+Jest に変更する手順を備忘録として残しておく
+構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4 手順 1. プロジェクトを作成 $ ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes 2. 以下のコマンドを実行する yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic 3. 以下のコマンドを実行して動作確認する $ yarn test $ jest PASS src/app/app.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2233,36 +2275,6 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
-          <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
-
-          <div class="inner">
-            <h2 class="title">Git コマンドについて</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T00:00:00JST">Apr 18, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ   Git初期化
-git init   Git接続先設定
-git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL}   最新ソース取得
-git pull {Fork 元リモート名} {ブランチ名}   トピックブランチ作成
-git checkout -b topic/#{issue番号}-作業者名   開発
-  ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u   コミットする
-git commit -m &#34;コメント&#34;   プルリクエストを投げる
-git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2284,6 +2296,27 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+    <div class="inner">
+      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
@@ -2474,27 +2507,6 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-    <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-    <div class="inner">
-      <div class="title">libreoffice を使用して Excel を PDF に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-12-11T14:24:49JST">Dec 11, 2021</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2505,7 +2517,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(20)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

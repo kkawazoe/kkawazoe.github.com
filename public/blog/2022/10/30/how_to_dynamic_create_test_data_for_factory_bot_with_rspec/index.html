@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>FP3級への道 その4 - Note To Self ~One Step At A Time~</title>
+    <title>rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,37 +17,22 @@
 
 
     
-<meta name="description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険">
+<meta name="description" content="rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法">
 
-<meta property="og:title" content="FP3級への道 その4 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険">
+<meta property="og:description" content="rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
-<meta name="twitter:title" content="FP3級への道 その4 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/fp_logo.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+<meta name="twitter:title" content="rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -58,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "FP3級への道 その4-Note To Self ~One Step At A Time~",
+    "headline": "rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/fp_logo.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2019-04-25T00:00:00JST",
-    "dateModified": "2019-04-25T00:00:00JST",
+    "datePublished": "2022-10-30T21:00:00JST",
+    "dateModified": "2022-10-30T21:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -81,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "学習中に間違えやすいと思った点を備忘録として残しておく\n[前回までの記事]\n FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂\n風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険\n※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外\n=\x26gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険"
+    "description": "rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1960,48 +1945,6 @@ section.sidebar header a {
     </style>
 
 
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true,
-      tags: "ams",
-      autoload: {
-        color: [],
-        colorV2: ['color']
-      },
-      packages: {'[+]': ['noerrors']}
-    },
-    chtml: {
-      matchFontHeight: false,
-      displayAlign: "left",
-      displayIndent: "2em"
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      renderActions: {
-         
-        find_script_mathtex: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = {node: text, delim: '', n: 0};
-            math.end = {node: text, delim: '', n: 0};
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-    loader: {
-      load: ['[tex]/noerrors']
-    }
-  };
-</script>
-<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
-
-
 
 
   
@@ -2073,13 +2016,13 @@ section.sidebar header a {
             
 <article class="sn">
 
-  <div class="thumb thumb-9f9739c9a579e09d86d2f796482b15d3"></div>
+  <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
 
   <header class="article-header">
-    <h1 class="title">FP3級への道 その4</h1>
+    <h1 class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-25T00:00:00JST">Apr 25, 2019</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-10-30T21:00:00JST">Oct 30, 2022</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -2087,111 +2030,46 @@ section.sidebar header a {
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&title=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&text=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&t=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&title=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>学習中に間違えやすいと思った点を備忘録として残しておく</p>
-<p>[前回までの記事]</p>
+  <div class="article-body"><h2 id="方法">方法</h2>
+<p>create_list と send メソッドを使用して実現する</p>
+<h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/">FP3級への道</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">FP3級への道 その2</a></li>
-<li><a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">FP3級への道 その3</a></li>
+<li>ruby: 3.0.4</li>
+<li>rails: 6.1.6.1</li>
 </ul>
-<h2 id="リスクマネジメント">リスクマネジメント</h2>
-<h3 id="火災保険">火災保険</h3>
-<h4 id="補償の範囲">補償の範囲</h4>
-<table>
-<thead>
-<tr>
-<th align="left">損害</th>
-<th align="center">住宅火災保険</th>
-<th align="center">住宅総合保険</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">火災、落雷、爆発、破裂<br>風災、雹災、雪災</td>
-<td align="center">◯</td>
-<td align="center">◯</td>
-</tr>
-<tr>
-<td align="left">水害(水災)</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-<tr>
-<td align="left">給排水設備事故による水漏れ</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-<tr>
-<td align="left">盗難</td>
-<td align="center"><em>×</em></td>
-<td align="center"><em>◯</em></td>
-</tr>
-<tr>
-<td align="left">外部からの落下、飛来、衝突</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-<tr>
-<td align="left">持出家財の損害</td>
-<td align="center">×</td>
-<td align="center">◯</td>
-</tr>
-<tr>
-<td align="left">地震、噴火、津波</td>
-<td align="center"><em>×</em></td>
-<td align="center"><em>×</em></td>
-</tr>
-</tbody>
-</table>
-<h3 id="傷害保険">傷害保険</h3>
-<h4 id="主な傷害保険">主な傷害保険</h4>
-<ul>
-<li>普通傷害保険
-<ul>
-<li>国内外を問わず、日常生活で起こる傷害を補償する保険<br>
-※病気、<em>細菌性食中毒</em>、自殺、地震、噴火、津波を原因とする傷害は<em>対象外</em><br>
-=&gt; 1つの契約で家族全員が補償される「家族傷害保険」もある</li>
-</ul>
-</li>
-<li>交通事故傷害保険
-<ul>
-<li>国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険<br>
-=&gt; 1つの契約で家族全員が補償される「ファミリー交通傷害保険」もある</li>
-</ul>
-</li>
-<li>国内旅行傷害保険
-<ul>
-<li>国内旅行中の傷害を補償する保険<br>
-※<em>細菌性食中毒</em>は保証の<em>対象</em>だが、地震などによる傷害は<em>対象外</em></li>
-</ul>
-</li>
-<li>海外旅行傷害保険
-<ul>
-<li>海外旅行中(家を出てから帰宅するまで)の傷害を補償する保険<br>
-※<em>細菌性食中毒</em>、地震、噴火、津波による傷害も補償の<em>対象</em></li>
-</ul>
-</li>
-</ul>
-<h3 id="参考にした教本">参考にした教本</h3>
-<p>上記内容は以下の教本の内容を参考にしてます</p>
-<table  border="0" cellpadding="5" style="border:none"><tr><td valign="top" style="border:none;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" ><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /></a></td><td valign="top" style="border:none;text-align:left"><font size="-1"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >2018-2019年版　みんなが欲しかった！　FPの問題集3級</a><br /><br />        滝澤ななみ TAC 2018年05月22日<br />        売り上げランキング : <br /><table style="border:none"><tr><td style="border:none;text-align:left;"><div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" >楽天ブックスで購入</a></div><div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"><a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" >Amazonで購入</a></div>                                                                                      </td><td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none">by <a href="https://yomereba.com" rel="nofollow" target="_blank">ヨメレバ</a></td></tr></table></font></td></tr></table>
-</div>
+<h2 id="実際のコード">実際のコード</h2>
+<p>user のテストデータを3つ作成 かつ 関連する user_status のテストデータを<br>
+紐づけて作成してカラム status を動的に生成する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
+let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
+let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
+
+before <span style="color:#66d9ef">do</span>
+  create_list(<span style="color:#e6db74">:user</span>, <span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>each<span style="color:#f92672">.</span>with_index(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>user, i<span style="color:#f92672">|</span>
+    create(
+      <span style="color:#e6db74">:user_status</span>,
+      <span style="color:#e6db74">user</span>: user,
+      <span style="color:#e6db74">status</span>: send(<span style="color:#e6db74">&#34;user_status</span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>),
+    )
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2202,17 +2080,17 @@ section.sidebar header a {
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&text=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&t=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f&title=FP3%e7%b4%9a%e3%81%b8%e3%81%ae%e9%81%93%20%e3%81%9d%e3%81%ae4" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f04%2f25%2froad-to-fp3-part4%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&title=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&text=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&t=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f&title=rspec%20%e3%81%a7%20factory%20bot%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e8%a4%87%e6%95%b0%e3%83%86%e3%82%b9%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e3%81%a8%e5%90%8c%e6%99%82%e3%81%ab%e9%96%a2%e9%80%a3%e3%81%99%e3%82%8b%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e7%b4%90%e3%81%a5%e3%81%91%e3%81%a6%e5%8b%95%e7%9a%84%e3%81%ab%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f10%2f30%2fhow_to_dynamic_create_test_data_for_factory_bot_with_rspec%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -2226,14 +2104,14 @@ section.sidebar header a {
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
-    <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
+  <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
+    <div class="thumb thumb-1afa6021d77784406c145f99fdd96363"></div>
 
     <div class="inner">
-      <div class="title">FP3級への道 その3</div>
+      <div class="title">CSS テキストを左揃えのまま中央寄せにする方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-04-24T00:00:00JST">Apr 24, 2019</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T23:00:00JST">Sep 14, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -2249,27 +2127,6 @@ section.sidebar header a {
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
-    <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
-
-    <div class="inner">
-      <div class="title">FP3級への道 その5</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-04-26T00:00:00JST">Apr 26, 2019</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
   </div>
 </div>
