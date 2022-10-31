@@ -1986,7 +1986,7 @@ section.sidebar header a {
 
             <div class="summary">方法 create_list と send メソッドを使用して実現する
 環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
-let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能
+let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i + 1}&#34;), ) end end </div>
           </div>
         </a>
