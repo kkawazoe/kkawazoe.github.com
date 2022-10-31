@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-a6f1e6445c5efc189728b02759a441ad {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
@@ -935,6 +947,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-a6f1e6445c5efc189728b02759a441ad {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-a6f1e6445c5efc189728b02759a441ad {
+  width: 5rem;
 }
 
 
@@ -1929,7 +1954,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          65
+          66
           <span>Posts</span>
         </a>
       </div>
@@ -1968,6 +1993,45 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/">
+          <div class="thumb thumb-3c8b529163598e21f221b0a5895082a0"></div>
+
+          <div class="inner">
+            <h2 class="title">Gem rubyXL を使用した際に起こったエラーおよび対応について</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-06T09:00:00JST">Oct 6, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
+環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+使用感としてはテンプレートとなる Excel に対して読み書きする場合には
+問題なく使用可能。
+但し、テンプレートに数式やグラフが含まれている場合に行などを
+追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
+あるため注意が必要。
+rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
+sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能。
+テキストを折り返して表示してくれるようになる。
+  change_contents が使えない
+version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
+# require が必要なメソッド require &#39;rubyXL/convenience_methods/cell&#39; require &#39;rubyXL/convenience_methods/color&#39; require &#39;rubyXL/convenience_methods/font&#39; require &#39;rubyXL/convenience_methods/workbook&#39; require &#39;rubyXL/convenience_methods/worksheet&#39; もしくは以下で全て使用可
+require &#39;rubyXL/convenience_methods&#39;   シートのコピーができない
+Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
+参考サイト
+  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+change_contents の仕様と上記のシートコピーによって生じた現象。
+シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2084,7 +2148,7 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を'(シングルコート)で括る
+Vue.js の bind を&rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
@@ -2190,28 +2254,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/">
-          <div class="thumb thumb-b73c0654cc5a32930a864f256828331a"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails で階層構造になっているテーブルに自分自身への関連を設定する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-21T18:10:43JST">Feb 21, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている
-   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &lt; ApplicationRecord has_many :children, class_name: &#34;Node&#34;, foreign_key: &#34;parrent_id&#34; belongs_to :parrent, class_name: &#34;Node&#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &lt; ActiveRecord::Migration[5.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2222,6 +2264,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <a href="/tags/ruby-on-rails/" rel="prev">Prev</a>
   
   
+  <a href="/tags/ruby-on-rails/page/3/" rel="next">Next</a>
+  
 </nav>
 
 
@@ -2231,6 +2275,27 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+    <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
+
+    <div class="inner">
+      <div class="title">ransack で scope を使用して link_to で表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T00:00:00JST">Nov 1, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
@@ -2421,27 +2486,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/">
-    <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
-
-    <div class="inner">
-      <div class="title">rails でメソッドの定義場所を表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-02-26T01:28:11JST">Feb 26, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2452,7 +2496,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(20)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(21)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

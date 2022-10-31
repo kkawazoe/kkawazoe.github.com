@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Posts - Note To Self ~One Step At A Time~</title>
+    <title>ransack で scope を使用して link_to で表示する方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -14,13 +14,65 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/post/index.xml" title="Note To Self ~One Step At A Time~">
-
 
 
     
+<meta name="description" content="ransack で scope を使用して link_to で表示する方法">
 
-    <link rel="canonical" href="https://kkawazoe.github.io/post/">
+<meta property="og:title" content="ransack で scope を使用して link_to で表示する方法 - Note To Self ~One Step At A Time~">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+<meta property="og:site_name" content="Note To Self ~One Step At A Time~">
+<meta property="og:description" content="ransack で scope を使用して link_to で表示する方法">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Note To Self ~One Step At A Time~">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+<meta name="twitter:title" content="ransack で scope を使用して link_to で表示する方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="ransack で scope を使用して link_to で表示する方法">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/kkawazoe.github.io\/"
+    },
+    "headline": "ransack で scope を使用して link_to で表示する方法-Note To Self ~One Step At A Time~",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2022-11-01T00:00:00JST",
+    "dateModified": "2022-11-01T00:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Note To Self ~One Step At A Time~"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Note To Self ~One Step At A Time~",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/kkawazoe.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "ransack で scope を使用して link_to で表示する方法"
+  }
+</script>
+
+
+
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -1981,284 +2033,161 @@ section.sidebar header a {
           </div>
           <div class="mcol c8">
             
+<article class="sn">
 
-<header class="page-title">
-  <h1 class="title">Posts</h1>
-</header>
+  <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
+
+  <header class="article-header">
+    <h1 class="title">ransack で scope を使用して link_to で表示する方法</h1>
+
+    <ul class="facts">
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T00:00:00JST">Nov 1, 2022</time></li>
+      
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+      
+      
+      
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&title=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&text=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&t=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&title=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body"><h2 id="方法">方法</h2>
+<p>ransackable_scopes メソッドを使用して実現する</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>ruby: 2.7.6</li>
+<li>rails: 5.2.8.1</li>
+</ul>
+<h2 id="実際のコード">実際のコード</h2>
+<p>例. User モデルの <code>created_at</code> カラムを基準として N 以内に作成された
+ユーザを取得する</p>
+<p>[model]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># 引数なし</span>
+scope <span style="color:#e6db74">:within_one_month</span>, <span style="color:#f92672">-&gt;</span> {
+  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>months)
+}
+
+<span style="color:#75715e"># 引数あり</span>
+scope <span style="color:#e6db74">:within_days</span>, <span style="color:#f92672">-&gt;</span> (day) {
+  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> (day)<span style="color:#f92672">.</span>days)
+}
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ransackable_scopes</span>(_auth_object <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>)
+  <span style="color:#f92672">%</span>i(within_days within_one_month)
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>[erb]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#f92672">&lt;%=</span>
+  link_to(
+    <span style="color:#e6db74">&#34;1ヶ月以内に作成されたユーザ一覧&#34;</span>,
+    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_one_month</span>: <span style="color:#66d9ef">true</span> }),
+    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
+  )
+
+  link_to(
+    <span style="color:#e6db74">&#34;7日以内に作成されたユーザ一覧&#34;</span>,
+    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_days</span>: <span style="color:#ae81ff">7</span> }),
+    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
+  )
+<span style="color:#f92672">%&gt;</span>
+</code></pre></div><p>[controller]</p>
+<p>通常通りで動作する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>ransack(@q)<span style="color:#f92672">.</span>result
+</code></pre></div></div>
+
+  <footer class="article-footer">
+
+    <ul class="facts-tags">
+  
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
+      
+  
+      
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
+      
+  
+    </ul>
+  
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&title=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&text=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&t=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f&title=ransack%20%e3%81%a7%20scope%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%20link_to%20%e3%81%a7%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_user_scope_for_link_to_with_ransack%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  
+  </footer>
+
+</article>
 
 
-<div class="articles">
-  <div class="mrow">
-
+<div class="adj mrow">
+  <div class="mcol c6">
+    <header>Previous Article</header>
     
-    
-    
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/">
-          <div class="thumb thumb-dbdce5b04f31bb6a45d277876b47adfc"></div>
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
+    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
 
-          <div class="inner">
-            <h2 class="title">AWS 認定ソリューションアーキテクト - アソシエイトへの道</h2>
+    <div class="inner">
+      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
 
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-19T00:00:00JST">Apr 19, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
 
-            <div class="summary">試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
-受験料 15,000 円 (日本語版/税別)
-出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</div>
-          </div>
-        </a>
-      </article>
     </div>
+  </a>
+</article>
+
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/18/about-git-command/">
-          <div class="thumb thumb-b079f192815207959eb2599fb6cb0a3d"></div>
-
-          <div class="inner">
-            <h2 class="title">Git コマンドについて</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-18T00:00:00JST">Apr 18, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ   Git初期化
-git init   Git接続先設定
-git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL}   最新ソース取得
-git pull {Fork 元リモート名} {ブランチ名}   トピックブランチ作成
-git checkout -b topic/#{issue番号}-作業者名   開発
-  ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u   コミットする
-git commit -m &#34;コメント&#34;   プルリクエストを投げる
-git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</div>
-          </div>
-        </a>
-      </article>
-    </div>
+  </div>
+  <div class="mcol c6">
+    <header>Next Article</header>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
-          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&rsquo;(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
-          <div class="thumb thumb-736ca96d6fa58ebca524019f319836ea"></div>
-
-          <div class="inner">
-            <h2 class="title">Github への公開鍵の登録</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-15T11:51:14JST">Apr 15, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
-          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&quot;showModal&quot; transition=&quot;app-modal&quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
-以下のイベントがフックされるようになる
-Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
-          <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Gretel について パンくずリストを表示する Gem
-github
-実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&#34;表示したい画像&#34;) : &#34;&#34; link icon + {表示文字}, {URL} parent :parent_articles, article.category end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-          <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-          <div class="inner">
-            <h2 class="title">Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-          <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
-
-          <div class="inner">
-            <h2 class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その２</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-          <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
-
-          <div class="inner">
-            <h2 class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その１</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-
   </div>
 </div>
 
-
-<nav class="paging">
-  
-  <a href="/post/page/4/" rel="prev">Prev</a>
-  
-  
-  <a href="/post/page/6/" rel="next">Next</a>
-  
-</nav>
-
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kkawazoe" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
           </div>
           <div class="mcol c2">
