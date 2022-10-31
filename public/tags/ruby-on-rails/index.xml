@@ -6,7 +6,24 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 30 Oct 2022 21:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ransack で scope を使用して link_to で表示する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</guid>
+      <description>方法 ransackable_scopes メソッドを使用して実現する
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
+[model]
+# 引数なし scope :within_one_month, -&amp;gt; { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&amp;gt; (day) { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
+&amp;lt;%= link_to( &amp;#34;1ヶ月以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_one_month: true }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) link_to( &amp;#34;7日以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_days: 7 }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) %&amp;gt; [controller]</description>
+    </item>
+    
     <item>
       <title>rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</link>
@@ -198,7 +215,7 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
