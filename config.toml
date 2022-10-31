@@ -20,3 +20,6 @@ enableHighlight = true
 thumbnail = "https://avatars.githubusercontent.com/kkawazoe"
 name = "kkawazoe"
 github = "https://github.com/kkawazoe"
+
+[outputs]
+page = [ "HTML", "AMP", "RSS" ] # if you want AMP enable.
