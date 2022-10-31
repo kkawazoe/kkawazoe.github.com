@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</link>
+    <description>Recent content in Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Thu, 19 Mar 2020 15:25:56 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel でテスト用シートを自動生成するツールを作成する on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/</link>
+    <description>Recent content in Excel でテスト用シートを自動生成するツールを作成する on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2019/04/28/auto-generate-test-sheet-tool-with-excel/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

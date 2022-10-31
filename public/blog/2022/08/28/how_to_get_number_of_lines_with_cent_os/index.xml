@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CentOS でファイル内の行数を取得する方法 on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/</link>
+    <description>Recent content in CentOS でファイル内の行数を取得する方法 on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 28 Aug 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
