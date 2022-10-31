@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hash の Key が Symbol または String どちらでも取得可能にする方法 on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</link>
+    <description>Recent content in Hash の Key が Symbol または String どちらでも取得可能にする方法 on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Wed, 12 May 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

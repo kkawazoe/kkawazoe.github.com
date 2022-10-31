@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL) on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</link>
+    <description>Recent content in rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL) on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Tue, 24 May 2022 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

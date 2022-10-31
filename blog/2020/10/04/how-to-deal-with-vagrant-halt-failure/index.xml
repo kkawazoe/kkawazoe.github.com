@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vagrant halt 失敗時の対応方法 on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</link>
+    <description>Recent content in vagrant halt 失敗時の対応方法 on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 04 Oct 2020 09:00:30 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

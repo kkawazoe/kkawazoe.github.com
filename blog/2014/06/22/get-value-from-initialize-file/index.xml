@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</link>
+    <description>Recent content in Windows7環境でバッチファイルからiniファイルを読込んで値を取得する on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 22 Jun 2014 09:01:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

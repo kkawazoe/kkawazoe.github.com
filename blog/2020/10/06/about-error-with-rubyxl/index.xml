@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gem rubyXL を使用した際に起こったエラーおよび対応について on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</link>
+    <description>Recent content in Gem rubyXL を使用した際に起こったエラーおよび対応について on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Tue, 06 Oct 2020 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

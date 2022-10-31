@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>特定の RSpec のみ実行されるようにする方法 on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</link>
+    <description>Recent content in 特定の RSpec のみ実行されるようにする方法 on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Fri, 14 May 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
