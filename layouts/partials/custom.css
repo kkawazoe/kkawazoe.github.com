@@ -147,3 +147,13 @@ section.sidebar header a {
 .article-info-block a {
   display: block;
 }
+
+figure.center {
+  text-align: center;
+}
+
+figure img {
+  border-color: black;
+  border-style: solid;
+  border-width: 0.5px;
+}
