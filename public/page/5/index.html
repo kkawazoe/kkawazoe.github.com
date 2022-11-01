@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -555,6 +549,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-0ffb3601aeff1406323f07e951604400 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-a6f1e6445c5efc189728b02759a441ad {
@@ -947,6 +947,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-0ffb3601aeff1406323f07e951604400 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-0ffb3601aeff1406323f07e951604400 {
+  width: 5rem;
 }
 
 
@@ -1909,6 +1922,16 @@ section.sidebar header a {
   display: block;
 }
 
+figure.center {
+  text-align: center;
+}
+
+figure img {
+  border-color: black;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
     </style>
 
 
@@ -1954,7 +1977,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          66
+          67
           <span>Posts</span>
         </a>
       </div>
@@ -1989,6 +2012,57 @@ section.sidebar header a {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/">
+          <div class="thumb thumb-20b685e429fc8c023c41ac263d5ea869"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その2</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-22T00:00:00JST">Apr 22, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+前回の記事: FP3級への道
+ライフプランニングの手法 ライフプランニングを行う際に利用するツール  ライフイベント表
+家族の将来のライフイベントと、それに必要な資金の額を時系列にまとめた表 キャッシュフロー表
+ライフイベント表と現在の収支状況に基づいて、将来の収支状況と貯蓄残高の予想を
+まとめた表 個人バランスシート
+一定時点における資産と負債のバランスを見るための表
+※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税)  資金計画を立てる際の6つの係数 終価係数 現在の金額を複利で運用した場合の、一定期間後の金額を求める場合に用いる係数
+例. 100万円を年利3%で運用した場合の7年後の金額はいくらか？
+現価係数 一定期間後に一定金額に達するために必要な原本を求めるのに用いる係数
+例. 年利3%で7年後に100万円を用意するためには、元本がいくら必要になるか？
+年金終価係数 毎年一定金額を積み立てた場合の、一定期間後の元利合計を求める場合に用いる係数
+例. 年利3%、毎年10万円を7年後の金額はいくらか？
+減債基金係数 一定期間後に一定金額を用意するための、毎年の積立額を計算するための係数
+例. 年利3%、７年後に100万円を用意するためには毎年いくら積み立てる必要があるか？
+資本回収係数 現在の一定金額を一定期間で取り崩した場合の、毎年の受取金額を計算するための係数
+例. 100万円を年利2%で運用しながら7年噛んで取り崩した場合の毎年の受取金額はいくら？
+年金現価係数 将来の一定期間に渡って、一定額を受け取るために必要な元本を計算するための係数
+例. 7年間に渡って、10万円ずつ受け取りたい。
+年利3%とした場合、必要な元本はいくらか？
+終価係数と年金終価係数の違い 終価係数は、現在の金額を複利で運用した場合の金額を求めるための係数
+=&gt; 定期預金のイメージ
+年金終価係数は、毎年一定金額を積み立てた場合の一定期間後の元利合計を求めるための係数
+=&gt; 積立定期預金のイメージ
+減債基金係数と資本回収係数の違い 減債基金係数は毎年の積立額を求めるための係数
+資本回収係数は毎年の受取金額を求めるための係数
+現価係数はと年金現価係数の違い 現価係数は一定金額に達するために必要な原本を求めるための係数
+年金現価係数は一定額を受け取るために必要な元本を求めるための係数
+参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2061,7 +2135,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&rsquo;(シングルコート)で括る
+Vue.js の bind を'(シングルコート)で括る
 = link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
@@ -2218,29 +2292,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/">
-          <div class="thumb thumb-db8dc2c4f916f98b1e232d68dbc4deeb"></div>
-
-          <div class="inner">
-            <h2 class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その１</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-25T00:00:00JST">Mar 25, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2262,6 +2313,27 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+
+    <div class="inner">
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
@@ -2452,27 +2524,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/">
-    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
-
-    <div class="inner">
-      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2483,7 +2534,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(21)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
