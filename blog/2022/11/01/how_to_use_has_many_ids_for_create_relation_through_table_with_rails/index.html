@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~</title>
+    <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -17,22 +17,22 @@
 
 
     
-<meta name="description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法  バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。  ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える">
+<meta name="description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
 
-<meta property="og:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-<meta property="og:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
+<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+<meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法  バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。  ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える">
+<meta property="og:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
-<meta name="twitter:title" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法  バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。  ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える">
-<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/bat_file_icon.png">
+<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+<meta name="twitter:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
+<meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
 <script type="application/ld+json">
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える-Note To Self ~One Step At A Time~",
+    "headline": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
-      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/bat_file_icon.png",
+      "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2014-02-09T18:46:00JST",
-    "dateModified": "2014-02-09T18:46:00JST",
+    "datePublished": "2022-11-01T13:00:00JST",
+    "dateModified": "2022-11-01T13:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -66,13 +66,13 @@
         "height": 60
       }
     },
-    "description": "Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える方法 対応方法  バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。  ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える"
+    "description": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/">
+    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -2058,13 +2058,13 @@ figure img {
             
 <article class="sn">
 
-  <div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
+  <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
   <header class="article-header">
-    <h1 class="title">Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</h1>
+    <h1 class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-02-09T18:46:00JST">Feb 9, 2014</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -2072,104 +2072,66 @@ figure img {
       
       
       
-      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
+      <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><h2 id="対応方法">対応方法</h2>
-<p>バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。<br>
-※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える</p>
+  <div class="article-body"><h2 id="方法">方法</h2>
+<p>ransackable_scopes メソッドを使用して実現する</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>ruby: 2.7.6</li>
+<li>rails: 5.2.8.1</li>
+</ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:DispMsgBox.bat" data-lang="bash:DispMsgBox.bat">@<span style="color:#66d9ef">echo</span> off
+<p>[ER 図]</p>
+<figure class="center">
+    <img src="/images/20221101_02/er_diagram.png"
+         alt="ER 図" width="500" height="500"/> 
+</figure>
 
-<span style="color:#75715e">rem メッセージボックスの表示</span>
-<span style="color:#66d9ef">set</span> msg=<span style="color:#e6db74">&#34;メッセージボックスのテスト [\n] で改行します。&#34;</span>
-<span style="color:#66d9ef">set</span> title=<span style="color:#e6db74">&#34;メッセージボックステスト&#34;</span>
+<p>[model]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span>
+  has_many <span style="color:#e6db74">:book_categories</span>, <span style="color:#e6db74">dependent</span>: <span style="color:#e6db74">:destroy</span>
+  has_many <span style="color:#e6db74">:categories</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+<span style="color:#66d9ef">end</span>
 
-<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;usebackq tokens=* delims=&#34;</span> <span style="color:#ae81ff">%%</span>A <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">`call cscript //Nologo msgbox.vbs </span>%msg%<span style="color:#e6db74"> &#34;</span>%title%<span style="color:#e6db74">&#34;`</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> ret=<span style="color:#ae81ff">%%</span>A
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BookCategory</span>
+  belongs_to <span style="color:#e6db74">:book</span>
+  belongs_to <span style="color:#e6db74">:category</span>
+<span style="color:#66d9ef">end</span>
 
-<span style="color:#66d9ef">echo</span> %ret%
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span>
+  has_many <span style="color:#e6db74">:book_categories</span>
+  has_many <span style="color:#e6db74">:books</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>[controller]</p>
+<p>category_ids を配列形式で許可する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>
+  @book <span style="color:#f92672">=</span> <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>save!(book_params)
+<span style="color:#66d9ef">end</span>
 
-<span style="color:#66d9ef">pause</span>
-<span style="color:#66d9ef">exit</span>
-</code></pre></div><pre><code class="language-vb:msgbox.vbs" data-lang="vb:msgbox.vbs">Option Explicit
-rem /*******************************************************
-rem  *  msgbox.vbs msg [,title]
-rem  *
-rem  *  引数
-rem  *    msg   :表示するメッセージ
-rem  *    title :メッセージボックスのタイトル
-rem  *  動作
-rem  *    メッセージボックスを表示し、クリックされたボタンに
-rem  *    対応する数値を返す。
-rem  *    msg中の 「\n」という文字列は改行に変換する。
-rem  *  戻り値
-rem  *    0:[はい]/1:[いいえ]
-rem  ********************************************************/
+<span style="color:#66d9ef">private</span>
 
-Dim args
-Dim arg(99)
-Dim value
-Dim cnt
-Dim retBtn
-Dim ret
-Dim eLevel
-
-rem 引数を変数にセット
-Set args = WScript.Arguments
-cnt = 0
-For Each value In args
-    arg(cnt) = value
-    cnt = cnt + 1
-Next
-
-rem 改行文字の置換
-arg(0) = RepExAll (arg(0), &quot;\\n&quot;, VbCrLf)
-
-eLevel = 0
-retBtn = MsgBox (arg(0), 36, arg(1))
-
-Select Case retBtn
-    Case 6: ret = 0
-    Case 7: ret = 1
-End Select
-
-WScript.Echo ret
-WScript.Quit (eLevel)
-
-rem /*******************************************************
-rem  *  文字列を正規表現文字列で検索して、一致する文字列を
-rem  *  すべて置換文字列に置換して返す
-rem  *
-rem  *  引数
-rem  *    str1 :置換対象文字列
-rem  *    reg  :正規表現文字列
-rem  *    str2 :置換文字列
-rem  *  戻り値
-rem  *    置換後の文字列
-rem  ********************************************************/
-Function RepExAll ( str1, reg, str2 )
-    Dim regExpression
-    Dim Matchers
-    Set regExpression = New RegExp
-    regExpression.Pattern = reg
-    regExpression.IgnoreCase = True
-    regExpression.Global = True
-    RepExAll = regExpression.Replace(str1, str2)
-End Function
-</code></pre></div>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">book_params</span>
+  params<span style="color:#f92672">.</span>require(<span style="color:#e6db74">:book</span>)<span style="color:#f92672">.</span>permit(
+    <span style="color:#e6db74">:title</span>,
+    <span style="color:#e6db74">category_ids</span>: <span style="color:#f92672">[]</span>
+  )
+<span style="color:#66d9ef">end</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2180,17 +2142,17 @@ End Function
       
   
       
-        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/bat">Bat</a> </li>
+        <li><i class="fas fa-tags" aria-hidden="true"></i><a href="https://kkawazoe.github.io/tags/ruby-on-rails">Ruby on Rails</a> </li>
       
   
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&text=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&t=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f&title=Windows7%e7%92%b0%e5%a2%83%e3%81%a7%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%83%9c%e3%83%83%e3%82%af%e3%82%b9%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%a6%e6%8a%bc%e4%b8%8b%e3%81%95%e3%82%8c%e3%81%9f%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6%e5%87%a6%e7%90%86%e3%82%92%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2014%2f02%2f09%2fswitch-processing-by-message-box%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -2203,19 +2165,15 @@ End Function
   <div class="mcol c6">
     <header>Previous Article</header>
     
-  </div>
-  <div class="mcol c6">
-    <header>Next Article</header>
-    
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
-    <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+    <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
 
     <div class="inner">
-      <div class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</div>
+      <div class="title">ransack で scope を使用して link_to で表示する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-06-22T09:01:00JST">Jun 22, 2014</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T00:00:00JST">Nov 1, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -2227,6 +2185,10 @@ End Function
   </a>
 </article>
 
+    
+  </div>
+  <div class="mcol c6">
+    <header>Next Article</header>
     
   </div>
 </div>

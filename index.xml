@@ -6,10 +6,20 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 01 Mar 2019 09:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 01 Nov 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</link>
+      <pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</guid>
+      <description>方法 ransackable_scopes メソッドを使用して実現する
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
+ [model]
+class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
+category_ids を配列形式で許可する
+def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </description>
+    </item>
     
     <item>
       <title>ransack で scope を使用して link_to で表示する方法</title>
@@ -615,7 +625,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+Vue.js の bind を&#39;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
@@ -861,14 +871,12 @@ created のタイミングで API 等からデータが取得される想定の�
       
       <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
       <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため
-「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
- Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
-対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
-※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
- Rambox サービス設定画面   実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ?</description>
+ しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ 実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.</description>
     </item>
     
     <item>
