@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -555,6 +549,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-0ffb3601aeff1406323f07e951604400 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-a6f1e6445c5efc189728b02759a441ad {
@@ -947,6 +947,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-0ffb3601aeff1406323f07e951604400 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-0ffb3601aeff1406323f07e951604400 {
+  width: 5rem;
 }
 
 
@@ -1909,6 +1922,16 @@ section.sidebar header a {
   display: block;
 }
 
+figure.center {
+  text-align: center;
+}
+
+figure img {
+  border-color: black;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
     </style>
 
 
@@ -1954,7 +1977,7 @@ section.sidebar header a {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          66
+          67
           <span>Posts</span>
         </a>
       </div>
@@ -1992,6 +2015,34 @@ section.sidebar header a {
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/">
+          <div class="thumb thumb-3afc112ec5651c1cdade5bc355a7a0f8"></div>
+
+          <div class="inner">
+            <h2 class="title">普通の会社員(SE)が確定申告してみた</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-01T09:00:00JST">Mar 1, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした
+ 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
+=&gt; 年間の損益がマイナスになる    ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は
+未使用(e-tax を使用した場合は※1が不要)
+※マイナンバーカードが必要で発行に1ヵ月程度かかるため
+手順 国税庁 確定申告書等作成コーナーで作成する
+ 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函    まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/">
           <div class="thumb thumb-5be2a40737ee2715ddd6c0983ee493bd"></div>
 
@@ -2006,14 +2057,12 @@ section.sidebar header a {
             </ul>
 
             <div class="summary">確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため
-「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
- Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
-対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
-※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
- Rambox サービス設定画面   実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&#34;.roomListBadges__unreadBadgeText&#34;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ?</div>
+ しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ 実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&#34;.roomListBadges__unreadBadgeText&#34;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ? rambox.setUnreadCount(e) : rambox.</div>
           </div>
         </a>
       </article>
@@ -2174,6 +2223,27 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+
+    <div class="inner">
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
@@ -2364,27 +2434,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/">
-    <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
-
-    <div class="inner">
-      <div class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T09:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2395,7 +2444,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(21)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
