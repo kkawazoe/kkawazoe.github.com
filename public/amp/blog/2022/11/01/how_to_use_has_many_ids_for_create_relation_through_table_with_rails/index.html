@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ⚡>
   <head>
     <meta charset="utf-8">
-    <title>rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -14,26 +15,26 @@
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
 
-<link rel="amphtml" type="text/html" href="https://kkawazoe.github.io/amp/blog/2022/09/03/how_to_substring_map_with_rails/" title="Note To Self ~One Step At A Time~">
+<link rel="canonical" type="text/html" href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/" title="Note To Self ~One Step At A Time~">
 
 
 
     
-<meta name="description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
+<meta name="description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
 
-<meta property="og:title" content="rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+<meta property="og:url" content="https://kkawazoe.github.io/amp/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
+<meta property="og:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
-<meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-<meta name="twitter:title" content="rails で文字列置換を行う際に対応表で置換する方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく">
+<meta name="twitter:url" content="https://kkawazoe.github.io/amp/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+<meta name="twitter:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -45,15 +46,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "rails で文字列置換を行う際に対応表で置換する方法-Note To Self ~One Step At A Time~",
+    "headline": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2022-09-03T12:00:00JST",
-    "dateModified": "2022-09-03T12:00:00JST",
+    "datePublished": "2022-11-01T13:00:00JST",
+    "dateModified": "2022-11-01T13:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Note To Self ~One Step At A Time~"
@@ -68,22 +69,20 @@
         "height": 60
       }
     },
-    "description": "rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく"
+    "description": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法"
   }
 </script>
 
 
 
-    <link rel="canonical" href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+    
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css">
-    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" crossorigin="anonymous">
-    <style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
 
   
 html {
@@ -560,50 +559,6 @@ section.footer {
 
 
 
-  
-    .author {
-  background-color: #fff;
-  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px rgba(63, 63, 68, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  padding: 1rem;
-  border-radius: 4px;
-  text-align: center; }
-  .author .author-thumb {
-    margin: 0 auto 1rem;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    background-color: #eceff1;
-    background-size: cover;
-    background-position: center; }
-  .author .author-name {
-    margin-bottom: .5rem;
-    font-weight: 700; }
-  .author .author-facts {
-    margin-bottom: 1rem; }
-    .author .author-facts li {
-      display: inline; }
-      .author .author-facts li a {
-        display: inline-block;
-        background-color: #eceff1;
-        width: 1.75rem;
-        height: 1.75rem;
-        line-height: 1.75rem;
-        text-align: center;
-        color: #333;
-        font-size: .8rem;
-        border-radius: 2px; }
-        .author .author-facts li a:hover {
-          color: #fff;
-          background-color: #333; }
-  .author .author-description {
-    text-align: left;
-    font-size: .8rem; }
-    .author .author-description p {
-      margin: .5rem 0; }
-
-  
-
-
 .thumb {
   background-image: url("https://kkawazoe.github.io/images/default.jpg");
   background-size: cover;
@@ -611,349 +566,349 @@ section.footer {
 }
 
   
-.thumb-0ffb3601aeff1406323f07e951604400 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-0ffb3601aeff1406323f07e951604400 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-a6f1e6445c5efc189728b02759a441ad {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-a6f1e6445c5efc189728b02759a441ad {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-70c66d7ca09d064e8de72dd1eefeedf1 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-1afa6021d77784406c145f99fdd96363 {
-  background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
-}
+  .thumb-1afa6021d77784406c145f99fdd96363 {
+    background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
+  }
   
 
   
-.thumb-f9afb0aec66f3f529b12980068b45c1e {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-f9afb0aec66f3f529b12980068b45c1e {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-c6c6175bd2186afa9727ca5c36a00743 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-c6c6175bd2186afa9727ca5c36a00743 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-87c1ca430b81478141d94a0dac70d197 {
-  background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
-}
+  .thumb-87c1ca430b81478141d94a0dac70d197 {
+    background-image: url("https://kkawazoe.github.io/images/logo/cent_os_logo.png");
+  }
   
 
   
-.thumb-e57f54a474a16ea1a276535ef085fc33 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-e57f54a474a16ea1a276535ef085fc33 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-ab49892d12dbd8885e93954af947b6bc {
-  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
-}
+  .thumb-ab49892d12dbd8885e93954af947b6bc {
+    background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+  }
   
 
   
-.thumb-981d11c3c396b5123d08bde4747c319d {
-  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
-}
+  .thumb-981d11c3c396b5123d08bde4747c319d {
+    background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+  }
   
 
   
-.thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-8a2d9e64eaabb9a65a8137f1ab7533df {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
-  background-image: url("https://kkawazoe.github.io/images/logo/libreoffice_logo.svg");
-}
+  .thumb-3dcbb42f78cfbdb4a2bd86784a462f50 {
+    background-image: url("https://kkawazoe.github.io/images/logo/libreoffice_logo.svg");
+  }
   
 
   
-.thumb-569c339862a3e91bd980bffef4fc5554 {
-  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
-}
+  .thumb-569c339862a3e91bd980bffef4fc5554 {
+    background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+  }
   
 
   
-.thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-ef7ba2867dac050942fd569077c700f9 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-ef7ba2867dac050942fd569077c700f9 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-766136c42363b1752e86f3f0bba5157c {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-766136c42363b1752e86f3f0bba5157c {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-512b010b5be0e4f46ede454a4ef10009 {
-  background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
-}
+  .thumb-512b010b5be0e4f46ede454a4ef10009 {
+    background-image: url("https://kkawazoe.github.io/images/logo/windows_terminal_logo.png");
+  }
   
 
   
-.thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
-  background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
-}
+  .thumb-13505c52dda3ac47988f4aaa8bf0c6a0 {
+    background-image: url("https://kkawazoe.github.io/images/logo/wsl_logo.png");
+  }
   
 
   
-.thumb-56eac61a7e9139ba6ee39ec63d867b2b {
-  background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
-}
+  .thumb-56eac61a7e9139ba6ee39ec63d867b2b {
+    background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
+  }
   
 
   
-.thumb-3c8b529163598e21f221b0a5895082a0 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-3c8b529163598e21f221b0a5895082a0 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-a2ffdc9f4fab5292d5f4a0a596185d5e {
-  background-image: url("https://kkawazoe.github.io/images/logo/vagrant_logo.svg");
-}
+  .thumb-a2ffdc9f4fab5292d5f4a0a596185d5e {
+    background-image: url("https://kkawazoe.github.io/images/logo/vagrant_logo.svg");
+  }
   
 
   
-.thumb-cf1ebbe74cd06a5a15d2f97d266119eb {
-  background-image: url("https://kkawazoe.github.io/images/logo/hugo_logo.png");
-}
+  .thumb-cf1ebbe74cd06a5a15d2f97d266119eb {
+    background-image: url("https://kkawazoe.github.io/images/logo/hugo_logo.png");
+  }
   
 
   
-.thumb-c643f44b7b7ea0683b36a2c49d8f0bed {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-c643f44b7b7ea0683b36a2c49d8f0bed {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-29825a4d4c5b04cfa5318654886562b0 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-29825a4d4c5b04cfa5318654886562b0 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-2e8100fe2a58f001f5cb3112f1688a02 {
-  background-image: url("https://kkawazoe.github.io/images/logo/gas_logo.svg");
-}
+  .thumb-2e8100fe2a58f001f5cb3112f1688a02 {
+    background-image: url("https://kkawazoe.github.io/images/logo/gas_logo.svg");
+  }
   
 
   
 
   
-.thumb-cab18ab31144abb2194986974e446c40 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-cab18ab31144abb2194986974e446c40 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-7dd68bc68e4ef8e57a557a8a017d443c {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-7dd68bc68e4ef8e57a557a8a017d443c {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-1b0d5d48e442a702a1feb877522791e5 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-1b0d5d48e442a702a1feb877522791e5 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-20b12b3796a2e8f19eab02a6a8e700f1 {
-  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
-}
+  .thumb-20b12b3796a2e8f19eab02a6a8e700f1 {
+    background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+  }
   
 
   
-.thumb-60c2664adea71a693389e45d9f8657b9 {
-  background-image: url("https://kkawazoe.github.io/images/logo/electron_logo.svg");
-}
+  .thumb-60c2664adea71a693389e45d9f8657b9 {
+    background-image: url("https://kkawazoe.github.io/images/logo/electron_logo.svg");
+  }
   
 
   
-.thumb-72ab90d017fcd661f8dcda8455251487 {
-  background-image: url("https://kkawazoe.github.io/images/logo/angular_logo.svg");
-}
+  .thumb-72ab90d017fcd661f8dcda8455251487 {
+    background-image: url("https://kkawazoe.github.io/images/logo/angular_logo.svg");
+  }
   
 
   
-.thumb-ac16365a35e08a4f79796da25ad54f94 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-ac16365a35e08a4f79796da25ad54f94 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-fa0c8854dce4201ca020ba9d24fce43b {
-  background-image: url("https://kkawazoe.github.io/images/logo/excel_logo.svg");
-}
+  .thumb-fa0c8854dce4201ca020ba9d24fce43b {
+    background-image: url("https://kkawazoe.github.io/images/logo/excel_logo.svg");
+  }
   
 
   
-.thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592 {
-  background-image: url("https://kkawazoe.github.io/images/logo/hugo_logo.png");
-}
+  .thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592 {
+    background-image: url("https://kkawazoe.github.io/images/logo/hugo_logo.png");
+  }
   
 
   
-.thumb-931fb086a0fa06c095e15790fb0d6747 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-931fb086a0fa06c095e15790fb0d6747 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-9f9739c9a579e09d86d2f796482b15d3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-9f9739c9a579e09d86d2f796482b15d3 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-a0619f44ba45d95c26d446f8ba4c21e3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-a0619f44ba45d95c26d446f8ba4c21e3 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-67c195c22b76149c2a0d2d5ea82cfc3c {
-  background-image: url("https://kkawazoe.github.io/images/logo/access_logo.svg");
-}
+  .thumb-67c195c22b76149c2a0d2d5ea82cfc3c {
+    background-image: url("https://kkawazoe.github.io/images/logo/access_logo.svg");
+  }
   
 
   
-.thumb-20b685e429fc8c023c41ac263d5ea869 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-20b685e429fc8c023c41ac263d5ea869 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-dbdce5b04f31bb6a45d277876b47adfc {
-  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
-}
+  .thumb-dbdce5b04f31bb6a45d277876b47adfc {
+    background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+  }
   
 
   
-.thumb-b079f192815207959eb2599fb6cb0a3d {
-  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
-}
+  .thumb-b079f192815207959eb2599fb6cb0a3d {
+    background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+  }
   
 
   
-.thumb-bf5b4c28a69b26e419c7d4e52f9bfd26 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
-}
+  .thumb-bf5b4c28a69b26e419c7d4e52f9bfd26 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
+  }
   
 
   
-.thumb-736ca96d6fa58ebca524019f319836ea {
-  background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
-}
+  .thumb-736ca96d6fa58ebca524019f319836ea {
+    background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
+  }
   
 
   
-.thumb-d69d3c99235fb827ed4ea87bdf6e7076 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
-}
+  .thumb-d69d3c99235fb827ed4ea87bdf6e7076 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
+  }
   
 
   
-.thumb-e3c2ee128105a79928dbbb3f0321b964 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-e3c2ee128105a79928dbbb3f0321b964 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-91ddefd9879dbdf0b12d0c27bfbbef5d {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-91ddefd9879dbdf0b12d0c27bfbbef5d {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-22a09971c752ef71760fc42937e3fa65 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-22a09971c752ef71760fc42937e3fa65 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-1ccc7a236ed4851cfa345762b5168343 {
-  background-image: url("https://kkawazoe.github.io/images/logo/slack_logo.svg");
-}
+  .thumb-1ccc7a236ed4851cfa345762b5168343 {
+    background-image: url("https://kkawazoe.github.io/images/logo/slack_logo.svg");
+  }
   
 
   
-.thumb-db8dc2c4f916f98b1e232d68dbc4deeb {
-  background-image: url("https://kkawazoe.github.io/images/logo/slack_logo.svg");
-}
+  .thumb-db8dc2c4f916f98b1e232d68dbc4deeb {
+    background-image: url("https://kkawazoe.github.io/images/logo/slack_logo.svg");
+  }
   
 
   
-.thumb-ecd45247f71b5a0c755e8d46de3ba742 {
-  background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
-}
+  .thumb-ecd45247f71b5a0c755e8d46de3ba742 {
+    background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
+  }
   
 
   
-.thumb-206974e06b087bbe9dd046e97aa00882 {
-  background-image: url("https://kkawazoe.github.io/images/logo/microsoft_windows_logo.svg");
-}
+  .thumb-206974e06b087bbe9dd046e97aa00882 {
+    background-image: url("https://kkawazoe.github.io/images/logo/microsoft_windows_logo.svg");
+  }
   
 
   
 
   
-.thumb-39ef9e30c5390d01c651eeb9a897f721 {
-  background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
-}
+  .thumb-39ef9e30c5390d01c651eeb9a897f721 {
+    background-image: url("https://kkawazoe.github.io/images/logo/fp_logo.png");
+  }
   
 
   
-.thumb-27703da049b375c9d1edda7674dab688 {
-  background-image: url("https://kkawazoe.github.io/images/logo/coffee_script_logo.png");
-}
+  .thumb-27703da049b375c9d1edda7674dab688 {
+    background-image: url("https://kkawazoe.github.io/images/logo/coffee_script_logo.png");
+  }
   
 
   
-.thumb-95d351547a98871ee844c9037d287c88 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
-}
+  .thumb-95d351547a98871ee844c9037d287c88 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
+  }
   
 
   
-.thumb-04e02c5a7ce921261e0b5408f751b9e0 {
-  background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
-}
+  .thumb-04e02c5a7ce921261e0b5408f751b9e0 {
+    background-image: url("https://kkawazoe.github.io/images/logo/html_logo.svg");
+  }
   
 
   
-.thumb-9a1638adc21a38dde3c87ab440a422a1 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vbnet_logo.svg");
-}
+  .thumb-9a1638adc21a38dde3c87ab440a422a1 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vbnet_logo.svg");
+  }
   
 
   
@@ -961,48 +916,46 @@ section.footer {
   
 
   
-.thumb-5be2a40737ee2715ddd6c0983ee493bd {
-  background-image: url("https://kkawazoe.github.io/images/logo/rambox_logo.png");
-}
+  .thumb-5be2a40737ee2715ddd6c0983ee493bd {
+    background-image: url("https://kkawazoe.github.io/images/logo/rambox_logo.png");
+  }
   
 
   
-.thumb-a4983a1e02839d0323fa862d0716f47f {
-  background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
-}
+  .thumb-a4983a1e02839d0323fa862d0716f47f {
+    background-image: url("https://kkawazoe.github.io/images/logo/vuejs_logo.png");
+  }
   
 
   
-.thumb-2d72ccc0731e495240ee4b00bf88ca26 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-2d72ccc0731e495240ee4b00bf88ca26 {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-b73c0654cc5a32930a864f256828331a {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
+  .thumb-b73c0654cc5a32930a864f256828331a {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
   
 
   
-.thumb-b9c0df1dc6dcc004f785e3c0222005f4 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-}
+  .thumb-b9c0df1dc6dcc004f785e3c0222005f4 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+  }
   
 
   
-.thumb-95925b3c3c396d332297caefd1f3c3ee {
-  background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
-}
+  .thumb-95925b3c3c396d332297caefd1f3c3ee {
+    background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
+  }
   
 
   
-.thumb-11d08bed5565731bc48854b764577f97 {
-  background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
-}
+  .thumb-11d08bed5565731bc48854b764577f97 {
+    background-image: url("https://kkawazoe.github.io/images/logo/bat_file_icon.png");
+  }
   
-
-
 
 
 article.lism .thumb {
@@ -1992,87 +1945,33 @@ figure img {
   border-width: 0.5px;
 }
 
+
+
+.l-container { max-width: 40rem; margin: 0 auto; }
     </style>
-
-
-
-
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6MM10MYRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T6MM10MYRV');
-</script>
-
-
-
-
   </head>
+
   <body>
+    
+
     <header class="l-header">
         <h1 class="logo">
           <a href="https://kkawazoe.github.io/">Note To Self ~One Step At A Time~</a>
         </h1>
-        
     </header>
 
     <main>
       <div class="l-container">
-        <div class="mrow">
-          <div class="mcol c2">
-            <aside class="l-sidebar">
-              
-<section class="sidebar">
-  <header>AUTHOR</header>
-  <div class="author">
-    <a href="https://github.com/kkawazoe">
-      
-      <img class="author-thumb" src="https://avatars.githubusercontent.com/kkawazoe">
-      
-    </a>
-    <div class="author-name">kkawazoe</div>
-    <div class="article-info profile-block">
-      <div class="article-info-block">
-        <a href="https://kkawazoe.github.io/">
-          67
-          <span>Posts</span>
-        </a>
-      </div>
-      <div class="article-info-block">
-        <a href="https://kkawazoe.github.io/tags/">
-          19
-          <span>Tags</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-            </aside>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3004453896477629",
-    enable_page_level_ads: true
-  });
-</script>
-
-          </div>
-          <div class="mcol c8">
-            
+        
 <article class="sn">
 
-  <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
+  <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
   <header class="article-header">
-    <h1 class="title">rails で文字列置換を行う際に対応表で置換する方法</h1>
+    <h1 class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</h1>
 
     <ul class="facts">
-      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-09-03T12:00:00JST">Sep 3, 2022</time></li>
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
       
       
       <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://kkawazoe.github.io/post/">POST</a></li>
@@ -2085,38 +1984,60 @@ figure img {
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&text=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&t=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   </header>
 
   
 
-  <div class="article-body"><p>rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく</p>
-<h2 id="方法">方法</h2>
-<p>gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する</p>
+  <div class="article-body"><h2 id="方法">方法</h2>
+<p>ransackable_scopes メソッドを使用して実現する</p>
 <h2 id="環境">環境</h2>
 <ul>
-<li>ruby: 3.0.4</li>
-<li>rails: 6.1.6.1</li>
+<li>ruby: 2.7.6</li>
+<li>rails: 5.2.8.1</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># 変換用の対応表</span>
-convert_map <span style="color:#f92672">=</span> {
-  <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;A&#39;</span>,
-  <span style="color:#e6db74">&#39;b&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;B&#39;</span>,
-  <span style="color:#e6db74">&#39;d&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;D&#39;</span>
-}
-<span style="color:#75715e">#=&gt; {&#34;a&#34;=&gt;&#34;A&#34;, &#34;b&#34;=&gt;&#34;B&#34;, &#34;d&#34;=&gt;&#34;D&#34;}</span>
+<p>[ER 図]</p>
+<figure class="center">
+    <img src="/images/20221101_02/er_diagram.png"
+         alt="ER 図" width="500" height="500"/> 
+</figure>
 
-<span style="color:#75715e"># 以下と同義</span>
-<span style="color:#75715e"># &#34;adcacbd&#34;.gsub(/a|b|d/, { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; })</span>
-<span style="color:#e6db74">&#34;adcacbd&#34;</span><span style="color:#f92672">.</span>gsub(<span style="color:#66d9ef">Regexp</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>convert_map<span style="color:#f92672">.</span>keys<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;|&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>), convert_map)
-<span style="color:#75715e">#=&gt; &#34;ADcAcBD&#34;</span>
+<p>[model]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span>
+  has_many <span style="color:#e6db74">:book_categories</span>, <span style="color:#e6db74">dependent</span>: <span style="color:#e6db74">:destroy</span>
+  has_many <span style="color:#e6db74">:categories</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BookCategory</span>
+  belongs_to <span style="color:#e6db74">:book</span>
+  belongs_to <span style="color:#e6db74">:category</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span>
+  has_many <span style="color:#e6db74">:book_categories</span>
+  has_many <span style="color:#e6db74">:books</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>[controller]</p>
+<p>category_ids を配列形式で許可する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>
+  @book <span style="color:#f92672">=</span> <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>save!(book_params)
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">private</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">book_params</span>
+  params<span style="color:#f92672">.</span>require(<span style="color:#e6db74">:book</span>)<span style="color:#f92672">.</span>permit(
+    <span style="color:#e6db74">:title</span>,
+    <span style="color:#e6db74">category_ids</span>: <span style="color:#f92672">[]</span>
+  )
+<span style="color:#66d9ef">end</span>
 </code></pre></div></div>
 
   <footer class="article-footer">
@@ -2134,11 +2055,11 @@ convert_map <span style="color:#f92672">=</span> {
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&text=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&t=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f&title=rails%20%e3%81%a7%e6%96%87%e5%ad%97%e5%88%97%e7%bd%ae%e6%8f%9b%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e5%af%be%e5%bf%9c%e8%a1%a8%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f09%2f03%2fhow_to_substring_map_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
 </aside>
 
   
@@ -2148,109 +2069,11 @@ convert_map <span style="color:#f92672">=</span> {
 
 
 <div class="adj mrow">
-  <div class="mcol c6">
-    <header>Previous Article</header>
+    <div class="mcol c6">
+      <header>Previous Article</header>
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-  </div>
-  <div class="mcol c6">
-    <header>Next Article</header>
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
-    <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
-
-    <div class="inner">
-      <div class="title">rails で 巨大な csv ファイルをストリーム処理する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T21:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-  </div>
-</div>
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "kkawazoe" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-          </div>
-          <div class="mcol c2">
-            <aside class="l-sidebar">
-              <section class="sidebar">
-  <header>LATESTS</header>
-  <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
-    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
-
-    <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+      <article class="lism">
+  <a href="https://kkawazoe.github.io/amp/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
     <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
 
     <div class="inner">
@@ -2270,258 +2093,13 @@ convert_map <span style="color:#f92672">=</span> {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/">
-    <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
-
-    <div class="inner">
-      <div class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-10-30T21:00:00JST">Oct 30, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
     </div>
-  </a>
-</article>
-
+    <div class="mcol c6">
+      <header>Next Article</header>
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/">
-    <div class="thumb thumb-1afa6021d77784406c145f99fdd96363"></div>
-
-    <div class="inner">
-      <div class="title">CSS テキストを左揃えのまま中央寄せにする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-09-14T23:00:00JST">Sep 14, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
     </div>
-  </a>
-</article>
+</div>
 
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/">
-    <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
-
-    <div class="inner">
-      <div class="title">rails で 巨大な csv ファイルをストリーム処理する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T21:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
-
-    <div class="inner">
-      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/">
-    <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-08-22T12:00:00JST">Aug 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-    <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で CSVをインポートする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-  </div>
-</section>
-
-              
-
-              
-<section class="sidebar">
-  <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
-  <ul class="terms">
-    
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(4)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(2)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/%E6%A0%AA">株 <span class="count">(2)</span></a></li>
-    
-  </ul>
-</section>
-
-
-
-              <section class="sidebar">
-  <header>ABOUT</header>
-  <div>
-    <div class="articles sm">
-      
-      <article class="lism">
-  <a href="https://kkawazoe.github.io/privacy-policy/">
-    <div class="thumb thumb-ba8e20cb6e739a50bc3b05dfc391e82b"></div>
-
-    <div class="inner">
-      <div class="title">プライバシーポリシー</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-03-01T09:00:00JST">Mar 1, 2019</time></li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-      
-    </div>
-  </div>
-</section>
-
-              <section class="sidebar">
-  <div>
-    <div class="articles sm">
-      <a href="https://px.a8.net/svt/ejp?a8mat=3599I4+9YEYYA+50+2HK0TD" rel="nofollow">
-        <img border="0" width="300" height="80" alt="" src="https://www21.a8.net/svt/bgt?aid=190228828602&wid=001&eno=01&mid=s00000000018015042000&mc=1"></a>
-        <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=3599I4+9YEYYA+50+2HK0TD" alt="">
-    </div>
-  </div>
-</section>
-
-            </aside>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3004453896477629",
-    enable_page_level_ads: true
-  });
-</script>
-
-          </div>
-        </div>
       </div>
     </main>
 
@@ -2535,13 +2113,6 @@ convert_map <span style="color:#f92672">=</span> {
       </div>
     </footer>
 
-    
-    <script src="/js/code-title.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/latex.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
   </body>
 </html>
 
