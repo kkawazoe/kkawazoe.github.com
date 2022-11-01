@@ -6,11 +6,7 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>libreoffice を使用して Excel を PDF に変換する方法</title>
       <link>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</link>
@@ -156,14 +152,12 @@ bundle exec rails s -b 0.</description>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
       <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため
-「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
- Rambox バッジおよび未読数   しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
-対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する
-※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
- Rambox サービス設定画面   実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ?</description>
+ しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+ 実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.</description>
     </item>
     
     <item>
