@@ -6,19 +6,14 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 01 Nov 2022 13:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 01 Nov 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</link>
       <pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</guid>
-      <description>方法 ransackable_scopes メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
+      <description>環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
  [model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
 category_ids を配列形式で許可する
@@ -629,7 +624,7 @@ git push {Fork 元リモート名} {ブランチ名} ※修正がある場合は
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+Vue.js の bind を&#39;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
