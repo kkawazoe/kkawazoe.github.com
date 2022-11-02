@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2001,9 +1995,7 @@ figure img {
 
   
 
-  <div class="article-body"><h2 id="方法">方法</h2>
-<p>ransackable_scopes メソッドを使用して実現する</p>
-<h2 id="環境">環境</h2>
+  <div class="article-body"><h2 id="環境">環境</h2>
 <ul>
 <li>ruby: 2.7.6</li>
 <li>rails: 5.2.8.1</li>
