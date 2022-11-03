@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~</title>
+    <title>rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -19,21 +19,21 @@
 
 
     
-<meta name="description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
+<meta name="description" content="rails で has_many の ids を使用して中間テーブルの関連付けを行う方法">
 
-<meta property="og:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
+<meta property="og:description" content="rails で has_many の ids を使用して中間テーブルの関連付けを行う方法">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
-<meta name="twitter:title" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法 - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法">
+<meta name="twitter:title" content="rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 - Note To Self ~One Step At A Time~">
+<meta name="twitter:description" content="rails で has_many の ids を使用して中間テーブルの関連付けを行う方法">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -45,7 +45,7 @@
       "@type": "WebPage",
       "@id":"https:\/\/kkawazoe.github.io\/"
     },
-    "headline": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法-Note To Self ~One Step At A Time~",
+    "headline": "rails で has_many の ids を使用して中間テーブルの関連付けを行う方法-Note To Self ~One Step At A Time~",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/kkawazoe.github.io\/images\/logo\/rails_logo.svg",
@@ -68,7 +68,7 @@
         "height": 60
       }
     },
-    "description": "rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法"
+    "description": "rails で has_many の ids を使用して中間テーブルの関連付けを行う方法"
   }
 </script>
 
@@ -2089,10 +2089,10 @@ figure img {
             
 <article class="sn">
 
-  <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+  <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
   <header class="article-header">
-    <h1 class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</h1>
+    <h1 class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</h1>
 
     <ul class="facts">
       <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
@@ -2108,10 +2108,10 @@ figure img {
     </ul>
 
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
   <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
@@ -2179,10 +2179,10 @@ figure img {
     </ul>
   
     <aside class="share">
-  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
-  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e3%81%8a%e3%81%93%e3%81%aa%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="はてなブックマーク" class="ht" target="_blank" rel="noopener nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&text=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&t=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="Facebookでシェア" class="fb" target="_blank" rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f&title=rails%20%e3%81%a7%20has_many%20%e3%81%ae%20ids%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e4%b8%ad%e9%96%93%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%ae%e9%96%a2%e9%80%a3%e4%bb%98%e3%81%91%e3%82%92%e8%a1%8c%e3%81%86%e6%96%b9%e6%b3%95" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2022%2f11%2f01%2fhow_to_use_has_many_ids_for_create_relation_through_table_with_rails%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
   <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
@@ -2199,14 +2199,14 @@ figure img {
     <header>Previous Article</header>
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
-    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/">
+    <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</div>
+      <div class="title">ransack で scope を使用して link_to で表示する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T00:00:00JST">Nov 1, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -2222,6 +2222,27 @@ figure img {
   </div>
   <div class="mcol c6">
     <header>Next Article</header>
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
+    <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+
+    <div class="inner">
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
   </div>
 </div>
@@ -2255,14 +2276,14 @@ figure img {
   <div class="articles sm">
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
     <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
