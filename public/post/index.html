@@ -2048,24 +2048,27 @@ figure img {
     
     <div class="mcol c6">
       <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+        <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
           <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
 
           <div class="inner">
-            <h2 class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</h2>
+            <h2 class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</h2>
 
             <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-03T18:00:00JST">Nov 3, 2022</time></li>
               <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
               
               
             </ul>
 
-            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
- [model]
-class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
-category_ids を配列形式で許可する
-def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </div>
+            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
+実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下
+※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合に
+javascript のパターンを使用する
+ erb のパターン  association を使用して as: :check_boxes オプションを指定する
+&lt;%= simple_form_for @book do |f| %&gt; &lt;%= f.association :categories, as: :check_boxes %&gt; &lt;%= f.button :submit %&gt; &lt;% end  %&gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
+[&quot;&quot;, 1, 3]
+$(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name=&#34;book[category_ids][]&#34; /&gt;`, ); book.</div>
           </div>
         </a>
       </article>
@@ -2309,14 +2312,14 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
   <div class="articles sm">
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
     <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
 
       <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
