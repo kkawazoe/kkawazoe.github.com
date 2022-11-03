@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -947,6 +959,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -1981,7 +2006,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          67
+          68
           <span>Posts</span>
         </a>
       </div>
@@ -2068,10 +2093,31 @@ figure img {
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
-    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+    <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
 
     <div class="inner">
       <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
+    <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+
+    <div class="inner">
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
@@ -2255,27 +2301,6 @@ figure img {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-    <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で CSVをインポートする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2286,7 +2311,7 @@ figure img {
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(23)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
