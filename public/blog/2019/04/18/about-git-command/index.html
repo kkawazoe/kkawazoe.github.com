@@ -2100,42 +2100,42 @@ figure img {
 <h2 id="実際のコード">実際のコード</h2>
 <h3 id="基本的な流れ">基本的な流れ</h3>
 <ol>
-<li>
-<p>Git初期化</p>
+<li>Git初期化</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
-</code></pre></div></li>
-<li>
-<p>Git接続先設定</p>
+</code></pre></div><ol start="2">
+<li>Git接続先設定</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 元接続先URL<span style="color:#f92672">}</span>
 git remote add <span style="color:#f92672">{</span>Fork 先リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>Fork 先接続先URL<span style="color:#f92672">}</span>
-</code></pre></div></li>
-<li>
-<p>最新ソース取得</p>
+</code></pre></div><ol start="3">
+<li>最新ソース取得</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
-</code></pre></div></li>
-<li>
-<p>トピックブランチ作成</p>
+</code></pre></div><ol start="4">
+<li>トピックブランチ作成</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -b topic/#<span style="color:#f92672">{</span>issue番号<span style="color:#f92672">}</span>-作業者名
-</code></pre></div></li>
+</code></pre></div><ol start="5">
 <li>
 <p>開発</p>
 </li>
 <li>
 <p>ステージングにあげる</p>
+</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
 <span style="color:#75715e"># untracked files を除いてステージングに挙げる場合は以下</span>
 git add -u
-</code></pre></div></li>
-<li>
-<p>コミットする</p>
+</code></pre></div><ol start="7">
+<li>コミットする</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#e6db74">&#34;コメント&#34;</span>
-</code></pre></div></li>
-<li>
-<p>プルリクエストを投げる</p>
+</code></pre></div><ol start="8">
+<li>プルリクエストを投げる</li>
+</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push <span style="color:#f92672">{</span>Fork 元リモート名<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>ブランチ名<span style="color:#f92672">}</span>
 </code></pre></div><p>※修正がある場合はgit addから先を繰り返し</p>
-</li>
-</ol>
 <h3 id="その他">その他</h3>
 <h4 id="直前のコミットのコメントを修正">直前のコミットのコメントを修正</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit --amend -m <span style="color:#e6db74">&#34;直前のコミットのコメントを修正&#34;</span>
@@ -2217,20 +2217,20 @@ $ git checkout -b <span style="color:#f92672">{</span>new ブランチ名<span s
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch | grep -v <span style="color:#e6db74">&#34;master\|develop&#34;</span> | xargs git branch -D
 </code></pre></div><h4 id="マージコミットを-revert-する">マージコミットを revert する</h4>
 <ol>
-<li>
-<p>git log を実行して revert する対象のコミット番号を控える ★で囲まれた部分</p>
+<li>git log を実行して revert する対象のコミット番号を控える ★で囲まれた部分</li>
+</ol>
 <p>【以下、例】</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit ★341058af5e0d673e15fe8a14111e7c759191bd9f★ <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
 Merge: 5c863c9 9828ee6
-</code></pre></div></li>
-<li>
-<p>git revert -m 1 {1 で控えたコミットログ}
--m の後ろの数字はどちらを正とするかを表している ※ciis9_verup を正にする場合は
+</code></pre></div><ol start="2">
+<li>git revert -m 1 {1 で控えたコミットログ}</li>
+</ol>
+<p>-m の後ろの数字はどちらを正とするかを表している ※ciis9_verup を正にする場合は
 1 another_branch を正にする場合は 2 を指定</p>
 <p>【以下、例】</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit 341058af5e0d673e15fe8a14111e7c759191bd9f <span style="color:#f92672">(</span>origin/revert_commit, revert_sample<span style="color:#f92672">)</span>
 Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style="color:#f92672">(</span>revert_sample<span style="color:#f92672">)</span>, 9828ee6: 2<span style="color:#f92672">(</span>another_branch<span style="color:#f92672">)</span>
-</code></pre></div></li>
+</code></pre></div><ol>
 <li>
 <p>git log -p で差戻の内容が正しいことを確認</p>
 </li>
