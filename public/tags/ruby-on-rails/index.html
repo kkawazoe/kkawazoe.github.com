@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2062,9 +2056,7 @@ figure img {
             </ul>
 
             <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
-実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下
-※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合に
-javascript のパターンを使用する
+実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下 ※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
  erb のパターン  association を使用して as: :check_boxes オプションを指定する
 &lt;%= simple_form_for @book do |f| %&gt; &lt;%= f.association :categories, as: :check_boxes %&gt; &lt;%= f.button :submit %&gt; &lt;% end  %&gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
 [&quot;&quot;, 1, 3]
