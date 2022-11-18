@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -558,6 +564,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+  .thumb-8063585970c6e09dc0864c6e8c18c0df {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
+  
 
   
   .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -954,6 +966,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -1988,7 +2013,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   </header>
@@ -2008,8 +2033,8 @@ figure img {
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">### h3
 </span><span style="color:#75715e"></span>
-<span style="color:#75715e">&lt;!-- 改行させたい位置 --&gt;</span>
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span>/&gt;
+&lt;!-- 改行させたい位置 --&gt;
+&lt;div class=&#34;page&#34;/&gt;
 
 # h1
 
@@ -2040,7 +2065,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f&title=Visual%20Studio%20Code%20%e3%81%a7%20Markdown%20PDF%20%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6PDF%e5%87%ba%e5%8a%9b%e3%81%99%e3%82%8b%e9%9a%9b%e3%81%ab%e4%bb%bb%e6%84%8f%e3%81%ae%e5%a0%b4%e6%89%80%e3%81%a7%e6%94%b9%e8%a1%8c%e3%81%95%e3%81%9b%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f02%2f20%2fmarkdown-pdf-page-break%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   

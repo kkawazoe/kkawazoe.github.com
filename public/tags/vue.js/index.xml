@@ -6,7 +6,11 @@
     <description>Recent content in Vue.js on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</title>
       <link>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</link>
@@ -16,7 +20,7 @@
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
@@ -42,7 +46,7 @@ Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textC
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- </description>
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  </description>
     </item>
     
     <item>

@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -947,6 +959,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -1981,7 +2006,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          67
+          68
           <span>Posts</span>
         </a>
       </div>
@@ -2020,6 +2045,29 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
+          <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
+
+          <div class="inner">
+            <h2 class="title">PostgreSQL で CSVをインポートする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T12:00:00JST">May 24, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">PostgreSQL で CSV をインポートする方法を備忘録として残しておく
+方法 \COPY を使用する
+環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &#39;{csvファイルパス}&#39; WITH CSV DELIMITER &#39;,&#39;; # 例 HEADER なしの場合 \COPY users TO &#39;.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2241,29 +2289,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/">
-          <div class="thumb thumb-56eac61a7e9139ba6ee39ec63d867b2b"></div>
-
-          <div class="inner">
-            <h2 class="title">docker-compose で管理しているコンテナ内にファイルをコピーする方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T09:00:00JST">Mar 14, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
-環境  dokcer: 20.10.5 docker-compose: 1.28.5  前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
-方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/ </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2287,11 +2312,32 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
+    <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+
+    <div class="inner">
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
     <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
@@ -2475,27 +2521,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-    <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で CSVをインポートする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2506,7 +2531,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(23)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
