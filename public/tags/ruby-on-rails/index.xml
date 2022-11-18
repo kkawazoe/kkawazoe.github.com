@@ -6,9 +6,29 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 01 Nov 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Nov 2022 18:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</title>
+      <title>rails で中間テーブルをチェックボックス複数選択させて生成する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</link>
+      <pubDate>Thu, 03 Nov 2022 18:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</guid>
+      <description>環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
+実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下
+※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合に
+javascript のパターンを使用する
+ erb のパターン  association を使用して as: :check_boxes オプションを指定する
+&amp;lt;%= simple_form_for @book do |f| %&amp;gt; &amp;lt;%= f.association :categories, as: :check_boxes %&amp;gt; &amp;lt;%= f.button :submit %&amp;gt; &amp;lt;% end  %&amp;gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
+[&amp;quot;&amp;quot;, 1, 3]
+$(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; value=&amp;#34;&amp;#34; name=&amp;#34;book[category_ids][]&amp;#34; /&amp;gt;`, ); book.</description>
+    </item>
+    
+    <item>
+      <title>rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</link>
       <pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate>
       
@@ -224,7 +244,7 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
 実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
 a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
 = link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
     </item>
     
