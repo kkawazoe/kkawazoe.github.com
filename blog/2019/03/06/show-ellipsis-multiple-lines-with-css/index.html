@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -20,7 +20,7 @@
 
     
 <meta name="description" content="経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  ">
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
 
 <meta property="og:title" content="CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/html_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  ">
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/">
 <meta name="twitter:title" content="CSS で複数行でも3点リーダーを表示する - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  ">
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/html_logo.svg">
 
 
@@ -71,7 +71,7 @@
         "height": 60
       }
     },
-    "description": "経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果  "
+    "description": "経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  "
   }
 </script>
 
@@ -367,8 +367,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -391,7 +396,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -421,7 +426,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -606,6 +612,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -1004,6 +1016,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -2038,7 +2063,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          67
+          68
           <span>Posts</span>
         </a>
       </div>
@@ -2092,7 +2117,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   </header>
@@ -2102,27 +2127,11 @@ figure img {
   <div class="article-body"><h2 id="経緯">経緯</h2>
 <p>CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく</p>
 <h2 id="実際のソースおよび実行結果">実際のソースおよび実行結果</h2>
-
-
-
-
-
-
-
-
-
-
-<script
-  data-slug-hash="ywVRKo"
-  data-user="kkawazoe"
-  data-height="500"
-  data-default-tab="result"
-  data-theme-id="8862"
-  class='codepen'
-  async
-  src="https://static.codepen.io/assets/embed/ei.js"
-></script>
-
+<iframe height="500" style="width: 100%;" scrolling="no" title="CSS で3点リーダー付与" src="https://codepen.io/kkawazoe/embed/ywVRKo?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/kkawazoe/pen/ywVRKo">
+  CSS で3点リーダー付与</a> by kkawazoe (<a href="https://codepen.io/kkawazoe">@kkawazoe</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 </div>
 
   <footer class="article-footer">
@@ -2146,7 +2155,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f&title=CSS%20%e3%81%a7%e8%a4%87%e6%95%b0%e8%a1%8c%e3%81%a7%e3%82%823%e7%82%b9%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2019%2f03%2f06%2fshow-ellipsis-multiple-lines-with-css%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   
@@ -2237,11 +2246,32 @@ figure img {
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
+    <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+
+    <div class="inner">
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
     <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
@@ -2425,27 +2455,6 @@ figure img {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-    <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で CSVをインポートする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2456,7 +2465,7 @@ figure img {
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(23)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

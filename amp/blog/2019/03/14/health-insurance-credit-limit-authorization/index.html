@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -102,7 +102,7 @@
         "height": 60
       }
     },
-    "description": "経緯 今回手術＋入院することになり表題を取得する必要が出てきた。\nできればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。\n高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。\n 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。\nしかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。\n「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。\n※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。\n※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。\n =\u0026gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。\n自分の場合請求から発行までおよそ2週間程度かかった。\n1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。\n※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。"
+    "description": "経緯 今回手術＋入院することになり表題を取得する必要が出てきた。\nできればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。\n高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。\n 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。\nしかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。\n「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。\n※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。\n※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。\n =\x26gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。\n自分の場合請求から発行までおよそ2週間程度かかった。\n1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。\n※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。"
   }
 </script>
 
@@ -396,8 +396,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -420,7 +425,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -450,7 +455,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -591,6 +597,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+  .thumb-8063585970c6e09dc0864c6e8c18c0df {
+    background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+  }
+  
 
   
   .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -987,6 +999,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -2021,7 +2046,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f14%2fhealth-insurance-credit-limit-authorization%2f&title=%e9%99%90%e5%ba%a6%e9%a1%8d%e9%81%a9%e7%94%a8%e8%aa%8d%e5%ae%9a%e8%a8%bc%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f14%2fhealth-insurance-credit-limit-authorization%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   </header>
@@ -2067,7 +2092,7 @@ figure img {
   <a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f14%2fhealth-insurance-credit-limit-authorization%2f&title=%e9%99%90%e5%ba%a6%e9%a1%8d%e9%81%a9%e7%94%a8%e8%aa%8d%e5%ae%9a%e8%a8%bc%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title="Pocketに保存" class="pk" target="_blank" rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
   <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f14%2fhealth-insurance-credit-limit-authorization%2f" title="LINEでシェア" class="ln" target="_blank" rel="noopener nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
   <a href="https://kkawazoe.github.io/index.xml" title="RSSでフォロー" class="rs" target="_blank" rel="noopener nofollow"><i class="fa fa-rss" aria-hidden="true"></i></a>
-  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
+  <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml' title="Feedlyでフォロー" target='_blank'><img id='feedlyFollow' src='https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png' alt='follow us in feedly' width='66' height='20'></a>
 </aside>
 
   

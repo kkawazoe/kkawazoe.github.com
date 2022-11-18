@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
 
   
 .thumb-0ffb3601aeff1406323f07e951604400 {
@@ -947,6 +959,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-8063585970c6e09dc0864c6e8c18c0df {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-8063585970c6e09dc0864c6e8c18c0df {
+  width: 5rem;
 }
 
 
@@ -1981,7 +2006,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          67
+          68
           <span>Posts</span>
         </a>
       </div>
@@ -2016,6 +2041,30 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
+          <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
+
+          <div class="inner">
+            <h2 class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その２</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+ 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+ 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2200,7 +2249,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
- </div>
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  </div>
           </div>
         </a>
       </article>
@@ -2222,7 +2271,7 @@ created のタイミングで API 等からデータが取得される想定の�
             </ul>
 
             <div class="summary">経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果  </div>
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  </div>
           </div>
         </a>
       </article>
@@ -2245,34 +2294,6 @@ created のタイミングで API 等からデータが取得される想定の�
 
             <div class="summary">経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
 実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; 変換イベントクラスのコンストラクタ  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; ふりがな取得完了通知イベント  &#39;&#39;&#39;  &#39;&#39;&#39; ふりがな取得が完了したことを通知する  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;  Public Event Converted(ByVal txtSrc As System.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/privacy-policy/">
-          <div class="thumb thumb-ba8e20cb6e739a50bc3b05dfc391e82b"></div>
-
-          <div class="inner">
-            <h2 class="title">プライバシーポリシー</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-01T09:00:00JST">Mar 1, 2019</time></li>
-              
-              
-              
-            </ul>
-
-            <div class="summary">プライバシーポリシー 当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense, A8.net, Rakuten アフィリエイト, Amazon アソシエイト）を利用しています。 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。 また Google Adsense に関して、このプロセスの詳細やこのような情報が広告配信事業者に使用されないようにする方法については、こちらをご覧ください。 また Rakuten アフィリエイト に関して、このプロセスの詳細やこのような情報が広告配信事業者に使用されないようにする方法については、こちらをご覧ください。
-当サイトが使用しているアクセス解析ツールについて 当サイトでは、Googleによるアクセス解析ツール（Google Analytics）を利用しています。 このGoogle Analyticsはトラフィックデータの収集のために Cookieを使用しています。 このトラフィックデータは匿名で収集されており、個人を特定するものではありません。 この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
-免責事項 本サイトの情報は、一部のサービスを除き、無料で提供されています。 当サイトを利用したウェブサイトの閲覧や情報収集については、情報がユーザーの需要に適合するものか否か、 情報の保存や複製その他ユーザーによる任意の利用方法により必要な法的権利を有しているか否か、著作権、秘密保持、名誉毀損、品位保持および 輸出に関する法規その他法令上の義務に従うことなど、ユーザーご自身の責任において行っていただきますようお願いいたします。
-当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。
-当サイトが紹介しているウェブサイトやソフトウェア・アプリケーション・ツールの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など その内容については一切の保証を致しかねます。
-当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について 一切の責任を負いません。
-当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。 引用の範囲を超えるものについては、法的処置を行います。転載する際には、予めご連絡お願いします。
-また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。 権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。 確認後、対応させて頂きます。</div>
           </div>
         </a>
       </article>
@@ -2301,11 +2322,32 @@ created のタイミングで API 等からデータが取得される想定の�
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
+    <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+
+    <div class="inner">
+      <div class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-11-03T18:00:00JST">Nov 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/">
     <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
 
     <div class="inner">
-      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けをおこなう方法</div>
+      <div class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-11-01T13:00:00JST">Nov 1, 2022</time></li>
@@ -2489,27 +2531,6 @@ created のタイミングで API 等からデータが取得される想定の�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/">
-    <div class="thumb thumb-981d11c3c396b5123d08bde4747c319d"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で CSVをインポートする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-05-24T12:00:00JST">May 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2520,7 +2541,7 @@ created のタイミングで API 等からデータが取得される想定の�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(22)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(23)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     

@@ -6,7 +6,11 @@
     <description>Recent content in Git on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 02 Jun 2021 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jun 2021 12:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Github で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</title>
       <link>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</link>
