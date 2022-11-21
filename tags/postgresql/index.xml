@@ -15,7 +15,7 @@
       <guid>https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/</guid>
       <description>PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
 方法 sum, length, regexp_replace を使用する
-環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &amp;#39;ユーザテーブル--名前カラム中の「仼」または「髙」の件数&amp;#39;, coalesce(sum(length(name)-length(regexp_replace(name, &amp;#39;[仼鶴]&amp;#39;,&amp;#39;&amp;#39;,&amp;#39;g&amp;#39;))), 0) from users; </description>
+環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &amp;#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&amp;#39;, coalesce(sum(length(name)-length(regexp_replace(name, &amp;#39;[仼鶴]&amp;#39;,&amp;#39;&amp;#39;,&amp;#39;g&amp;#39;))), 0) from users; </description>
     </item>
     
     <item>
