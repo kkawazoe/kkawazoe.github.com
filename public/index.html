@@ -2273,7 +2273,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 
             <div class="summary">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
 方法 sum, length, regexp_replace を使用する
-環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &#39;ユーザテーブル--名前カラム中の「仼」または「髙」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
+環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
           </div>
         </a>
       </article>
@@ -2613,6 +2613,8 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
+
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   </body>
 </html>
 

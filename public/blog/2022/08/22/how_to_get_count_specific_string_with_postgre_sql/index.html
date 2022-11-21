@@ -2128,7 +2128,7 @@ figure img {
 <li>length 関数で 1 の置換前の文字数および置換後の文字数を取得</li>
 <li>sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「髙」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
 </code></pre></div></div>
 
   <footer class="article-footer">
@@ -2556,6 +2556,8 @@ figure img {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/languages/vbnet.min.js" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     
+
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   </body>
 </html>
 
