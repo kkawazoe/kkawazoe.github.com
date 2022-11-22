@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -959,6 +971,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
 }
 
 
@@ -2019,7 +2044,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          69
+          70
           <span>Posts</span>
         </a>
       </div>
@@ -2061,6 +2086,29 @@ figure img {
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+          <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+          <div class="inner">
+            <h2 class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-22T15:30:00JST">Nov 22, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
+調査を行なった。その結果を備忘録として残しておく。
+手順 コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する 実際の設定ファイル { &#34;[markdown]&#34;: { &#34;files.trimTrailingWhitespace&#34;: false } } </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
           <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
 
@@ -2083,9 +2131,10 @@ figure img {
 参考
 指定できるフィルタ
 /Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&#34;calc_pdf_Export&#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</div>
+/usr/local/bin/soffice を作成して中に以下を記載する
+#!/bin/bash # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34; 以下のコマンドで実行権限を付与する
+sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &gt; /usr/local/bin/soffice &amp;&amp; sudo chmod +x /usr/local/bin/soffice </div>
           </div>
         </a>
       </article>
@@ -2107,10 +2156,10 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
             </ul>
 
             <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
+環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 方法 Windows Terminal を起動する
+「Ctrl」+「,」を押下して setting.json を開く
+setting.json の設定に以下を追加する
+{ &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
           </div>
         </a>
       </article>
@@ -2132,9 +2181,9 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
             </ul>
 
             <div class="summary">経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
-手順   vagrant halt を行う
+手順 vagrant halt を行う
 以下のエラーが発生
-An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &#34;ruby&#34; or &#34;vagrant&#34; processes and kill them.</div>
+An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &#34;ruby&#34; or &#34;vagrant&#34; processes and kill them. Then try again.</div>
           </div>
         </a>
       </article>
@@ -2156,11 +2205,11 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
             </ul>
 
             <div class="summary">[前回までの記事]
- Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+Hugo に数式を挿入する 経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
-  partials フォルダ配下の以下のファイルを修正する
+partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
+&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定 displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
           </div>
         </a>
       </article>
@@ -2181,7 +2230,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
               
             </ul>
 
-            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
+            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
           </div>
         </a>
       </article>
@@ -2206,11 +2255,11 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
 テスト項目ごとにシートを分ける必要があった
 テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため
 ツール化をすることにした
-使用方法   「パラメータ」シートにて以下を指定する
+使用方法 「パラメータ」シートにて以下を指定する
 [設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
-ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
-  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化  For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合  If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得  chkFlg = Worksheets(&#34;パラメータ&#34;).</div>
+シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
+ワークグループ(各シートが選択状態)になる 「パラメータ」シートの「実行」ボタンを押下する
+実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化 For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合 If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得 chkFlg = Worksheets(&#34;パラメータ&#34;).OLEObjects(&#34;Chk_WorkGroup&#34;).Object.Value &#39;ワークシートの追加 For i = 0 To Worksheets(&#34;パラメータ&#34;).</div>
           </div>
         </a>
       </article>
@@ -2233,9 +2282,9 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
 
             <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
-  partials フォルダ配下に以下のファイルを作成する
+partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</div>
+&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</div>
           </div>
         </a>
       </article>
@@ -2256,10 +2305,13 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
               
             </ul>
 
-            <div class="summary">前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</div>
+            <div class="summary">前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; + nbsp)}} </div>
           </div>
         </a>
       </article>
@@ -2281,37 +2333,8 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
             </ul>
 
             <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/">
-          <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
-
-          <div class="inner">
-            <h2 class="title">Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-19T23:35:30JST">Mar 19, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。 そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。
-Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。 ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
-手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&gt;Properties&gt;Security&gt;Editボタンで、 Users の権限に全部チェックを入れる。
-Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
-Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.</div>
+タスク管理 完了/未完了を切り替え 期日を指定 リマインダー機能 昨日完了したタスク 今日期日のタスク 上記以外のタスク 今回使用するツール タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用 google calendar リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない integromat サイトが英語のみ integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+足りない項目 サブタスクかどうか? 期限の情報 [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
           </div>
         </a>
       </article>
@@ -2336,6 +2359,27 @@ bundle exec rails s -b 0.</div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2526,27 +2570,6 @@ bundle exec rails s -b 0.</div>
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2559,7 +2582,7 @@ bundle exec rails s -b 0.</div>
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

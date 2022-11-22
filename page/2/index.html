@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -959,6 +971,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
 }
 
 
@@ -2019,7 +2044,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          69
+          70
           <span>Posts</span>
         </a>
       </div>
@@ -2057,6 +2082,30 @@ figure img {
     
     <div class="mcol c6">
       <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+          <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で別名がつけられているカラムを pluck で取得する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-08-23T22:00:00JST">Aug 23, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
+方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
+環境 rails: 6.1.6.1 実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
+# Book クラス class Book &lt; ApplicationRecord has_many :categories end # Category クラス class Category &lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &#39;サンプル書籍&#39;) book.categories &lt;&lt; Category.create(name: &#39;ビジネス&#39;) book.categories &lt;&lt; Category.create(name: &#39;自己啓発&#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &#39;categories.name as category_name&#39;) .where(id: 1) .pluck(&#39;categories.name as category_name&#39;) # (1.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/">
           <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
 
@@ -2072,7 +2121,7 @@ figure img {
 
             <div class="summary">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
 方法 sum, length, regexp_replace を使用する
-環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
+環境 PostgreSQL: 13.3 実際のコード regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定 select &#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
           </div>
         </a>
       </article>
@@ -2095,7 +2144,7 @@ figure img {
 
             <div class="summary">PostgreSQL で CSV をインポートする方法を備忘録として残しておく
 方法 \COPY を使用する
-環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &#39;{csvファイルパス}&#39; WITH CSV DELIMITER &#39;,&#39;; # 例 HEADER なしの場合 \COPY users TO &#39;.</div>
+環境 PostgreSQL: 13.3 実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &#39;{csvファイルパス}&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &#39;./users.csv&#39; DELIMITER &#39;,&#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &#39;{csvファイルパス}&#39; WITH CSV DELIMITER &#39;,&#39;; # 例 HEADER なしの場合 \COPY users TO &#39;.</div>
           </div>
         </a>
       </article>
@@ -2118,7 +2167,7 @@ figure img {
 
             <div class="summary">rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
 方法 reset_pk_sequence! を使用する
-環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </div>
+環境 rails: 6.1.4 実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </div>
           </div>
         </a>
       </article>
@@ -2142,7 +2191,7 @@ figure img {
             <div class="summary">rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
 例. ActiveRecord::Base.method(:transaction).source_location
-環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
+環境 ruby: 2.6.10 rails: 5.2.3 実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
           </div>
         </a>
       </article>
@@ -2172,9 +2221,10 @@ figure img {
 参考
 指定できるフィルタ
 /Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&#34;calc_pdf_Export&#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</div>
+/usr/local/bin/soffice を作成して中に以下を記載する
+#!/bin/bash # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34; 以下のコマンドで実行権限を付与する
+sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &gt; /usr/local/bin/soffice &amp;&amp; sudo chmod +x /usr/local/bin/soffice </div>
           </div>
         </a>
       </article>
@@ -2221,7 +2271,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
 
             <div class="summary">個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。
 方法 tag オプション を使用して実現する
-環境  rspec: rspec 3.8  実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
+環境 rspec: rspec 3.8 実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
           </div>
         </a>
       </article>
@@ -2243,7 +2293,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
             </ul>
 
             <div class="summary">HashWithIndifferentAccess に変換して実現する
-環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
+環境 rails: rails 6.0.3.6 実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
           </div>
         </a>
       </article>
@@ -2266,33 +2316,8 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
 
             <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
 その対処方法を備忘録として残しておく
-環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
+環境 rails: rails 6.0.3.6 仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&rsquo;〓&rsquo;に変換する
 実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
-          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
-
-          <div class="inner">
-            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
           </div>
         </a>
       </article>
@@ -2319,6 +2344,27 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2509,27 +2555,6 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2542,7 +2567,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

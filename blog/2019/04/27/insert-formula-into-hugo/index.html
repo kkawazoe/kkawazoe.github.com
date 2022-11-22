@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,8 +364,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -388,7 +393,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -418,7 +423,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -603,6 +609,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -1013,6 +1025,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
 }
 
 
@@ -2115,7 +2140,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          69
+          70
           <span>Posts</span>
         </a>
       </div>
@@ -2185,92 +2210,92 @@ figure img {
 <li>
 <p>partials フォルダ配下に以下のファイルを作成する</p>
 <p>CDN で提供されている最新の MathJax.js の URL は、<a href="https://cdnjs.com/">cdnjs.com</a> で確認する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">async</span>
-  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
-  <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
-    <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
-      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
-      <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>]],
-      <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-      <span style="color:#a6e22e">processEnvironments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-      <span style="color:#a6e22e">skipTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
-      <span style="color:#a6e22e">TeX</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">equationNumbers</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">autoNumber</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AMS&#34;</span> },
-           <span style="color:#a6e22e">extensions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;AMSmath.js&#34;</span>, <span style="color:#e6db74">&#34;AMSsymbols.js&#34;</span>] }
-    }
-  });
-  <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Queue</span>(<span style="color:#66d9ef">function</span>() {
-    <span style="color:#75715e">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// hack to overcome a shortcoming of Markdown. Discussion at
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// https://github.com/mojombo/jekyll/issues/199
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">all</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">getAllJax</span>(), <span style="color:#a6e22e">i</span>;
-    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">all</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>) {
-        <span style="color:#a6e22e">all</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">SourceElement</span>().<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; has-jax&#39;</span>;
-    }
-  });
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html:mathjax_support.html" data-lang="html:mathjax_support.html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">async</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>]],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">processEnvironments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">skipTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">TeX</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">equationNumbers</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">autoNumber</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AMS&#34;</span> },
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">extensions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;AMSmath.js&#34;</span>, <span style="color:#e6db74">&#34;AMSsymbols.js&#34;</span>] }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Queue</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// hack to overcome a shortcoming of Markdown. Discussion at
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// https://github.com/mojombo/jekyll/issues/199
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">all</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">getAllJax</span>(), <span style="color:#a6e22e">i</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">all</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">all</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">SourceElement</span>().<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; has-jax&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>1 で作成した partial を head or footer で読込</p>
 <p>例 head で読込</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
-  ・・・
-  {{ partial &#34;mathjax_support.html&#34; . }}
-&lt;/<span style="color:#f92672">head</span>&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  ・・・
+</span></span><span style="display:flex;"><span>  {{ partial &#34;mathjax_support.html&#34; . }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>css を修正(カスタマイズする場合)</p>
 <p>css ファイルで以下の要素に対する修飾を記述する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">has-jax</span> {
-  <span style="color:#66d9ef">font</span>: <span style="color:#66d9ef">inherit</span>;
-  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">inherit</span>;
-  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">inherit</span>;
-  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#515151</span>;
-}
-
-.<span style="color:#a6e22e">has-jax</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">MathJax_Display</span> {
-  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span> <span style="color:#75715e">!important</span>;
-}
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">has-jax</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font</span>: <span style="color:#66d9ef">inherit</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">inherit</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">inherit</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#515151</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">has-jax</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">MathJax_Display</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="チートシート">チートシート</h2>
 <h3 id="ページ内に数式を記述">ページ内に数式を記述</h3>
 <p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#e6db74">$$</span>{}_n \mathrm{ P }_k<span style="color:#e6db74">$$</span>
-</code></pre></div><p>[表示例]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#e6db74">$$</span>{}_n \mathrm{ P }_k<span style="color:#e6db74">$$</span>
+</span></span></code></pre></div><p>[表示例]</p>
 <p>$${}_n \mathrm{ P }_k$$</p>
 <h3 id="インライン形式で数式を記述">インライン形式で数式を記述</h3>
 <p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">次の数式は <span style="color:#e6db74">$</span>{}_n \mathrm{ P }_k<span style="color:#e6db74">$</span> 文章内に埋め込まれます
-</code></pre></div><p>[表示例]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span>次の数式は <span style="color:#e6db74">$</span>{}_n \mathrm{ P }_k<span style="color:#e6db74">$</span> 文章内に埋め込まれます
+</span></span></code></pre></div><p>[表示例]</p>
 <p>次の数式は ${}_n \mathrm{ P }_k$ 文章内に埋め込まれます</p>
 <h3 id="四則演算">四則演算</h3>
 <p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#e6db74">$$</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#e6db74">$$</span>
-<span style="color:#e6db74">$$</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span><span style="color:#e6db74">$$</span>
-<span style="color:#e6db74">$$</span><span style="color:#ae81ff">3</span> \times <span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span><span style="color:#e6db74">$$</span>
-<span style="color:#e6db74">$$</span><span style="color:#ae81ff">6</span> \div <span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#e6db74">$$</span>
-</code></pre></div><p>[表示例]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#e6db74">$$</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#e6db74">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">$$</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span><span style="color:#e6db74">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">$$</span><span style="color:#ae81ff">3</span> \times <span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span><span style="color:#e6db74">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">$$</span><span style="color:#ae81ff">6</span> \div <span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#e6db74">$$</span>
+</span></span></code></pre></div><p>[表示例]</p>
 <p>$$1 + 2 = 3$$
 $$2 - 3 = 5$$
 $$3 \times 2 = 6$$
 $$6 \div 3 = 2$$</p>
 <h3 id="分数">分数</h3>
 <p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#e6db74">$$</span>\frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">2</span>} <span style="color:#f92672">-</span> \frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">3</span>} <span style="color:#f92672">=</span> \frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">6</span>}<span style="color:#e6db74">$$</span>
-<span style="color:#e6db74">$$</span>\frac{a<span style="color:#f92672">+</span>b}{<span style="color:#ae81ff">2</span>ab}<span style="color:#e6db74">$$</span>
-</code></pre></div><p>[表示例]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#e6db74">$$</span>\frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">2</span>} <span style="color:#f92672">-</span> \frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">3</span>} <span style="color:#f92672">=</span> \frac{<span style="color:#ae81ff">1</span>}{<span style="color:#ae81ff">6</span>}<span style="color:#e6db74">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">$$</span>\frac{a<span style="color:#f92672">+</span>b}{<span style="color:#ae81ff">2</span>ab}<span style="color:#e6db74">$$</span>
+</span></span></code></pre></div><p>[表示例]</p>
 <p>$$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
 $$\frac{a+b}{2ab}$$</p>
 <h3 id="複数行で-イコール-の位置を揃える">複数行で =(イコール) の位置を揃える</h3>
 <p>[記入例]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#66d9ef">\begin</span>{align}
-f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
-&amp;= (x+1)(x+2)
-<span style="color:#66d9ef">\end</span>{align}
-</code></pre></div><p>[表示例]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#66d9ef">\begin</span>{align}
+</span></span><span style="display:flex;"><span>f(x) &amp;= x^2+3x+2 <span style="color:#66d9ef">\\\\\\</span>
+</span></span><span style="display:flex;"><span>&amp;= (x+1)(x+2)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\end</span>{align}
+</span></span></code></pre></div><p>[表示例]</p>
 <p>\begin{align*}
-f(x) &amp;= x^2+3x+2 \\\<br>
+f(x) &amp;= x^2+3x+2 \\\
 &amp;= (x+1)(x+2)
 \end{align*}</p>
 </div>
@@ -2360,7 +2385,7 @@ f(x) &amp;= x^2+3x+2 \\\<br>
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -2385,6 +2410,27 @@ f(x) &amp;= x^2+3x+2 \\\<br>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2575,27 +2621,6 @@ f(x) &amp;= x^2+3x+2 \\\<br>
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2608,7 +2633,7 @@ f(x) &amp;= x^2+3x+2 \\\<br>
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

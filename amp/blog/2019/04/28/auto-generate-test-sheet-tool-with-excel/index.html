@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -558,6 +564,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+  .thumb-cc659da25630dda8c57054bfbdb783a3 {
+    background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+  }
+  
 
   
   .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -966,6 +978,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
 }
 
 
@@ -2055,48 +2080,48 @@ figure img {
 </li>
 </ol>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb" data-lang="vb"><span style="color:#75715e">Rem Attribute VBA_ModuleType=VBAModule
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">Option</span> VBASupport 1
-<span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">ExecuteButtonClick</span>()
-    <span style="color:#66d9ef">Dim</span> ws <span style="color:#f92672">As</span> Worksheet
-    <span style="color:#66d9ef">Dim</span> wsArray() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
-    <span style="color:#66d9ef">Dim</span> chkFlg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
-
-    <span style="color:#75715e">&#39;ワークシートの初期化
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> ws <span style="color:#f92672">In</span> Worksheets
-        <span style="color:#75715e">&#39;ワークシート名が&#34;パラメータ&#34;以外の場合
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">If</span> ws.Name <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;パラメータ&#34;</span> <span style="color:#66d9ef">Then</span>
-            Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-            ws.Delete
-            Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-    <span style="color:#66d9ef">Next</span> ws
-
-    <span style="color:#75715e">&#39;チェックボックスの値を取得
-</span><span style="color:#75715e"></span>    chkFlg <span style="color:#f92672">=</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).OLEObjects(<span style="color:#e6db74">&#34;Chk_WorkGroup&#34;</span>).Object.Value
-
-    <span style="color:#75715e">&#39;ワークシートの追加
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">To</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).Cells(2, 3).Value <span style="color:#f92672">-</span> 1
-        Sheets.Add after:<span style="color:#f92672">=</span>ActiveSheet
-        ActiveSheet.Name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;No.&#34;</span> <span style="color:#f92672">&amp;</span> i <span style="color:#f92672">+</span> 1
-        ActiveWindow.Zoom <span style="color:#f92672">=</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).Cells(3, 3).Value
-        <span style="color:#66d9ef">ReDim</span> Preserve wsArray(i)
-        wsArray(i) <span style="color:#f92672">=</span> ActiveSheet.Name
-
-        <span style="color:#75715e">&#39;100の倍数ごとに画面に制御を返す
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">If</span> i <span style="color:#f92672">Mod</span> 100 <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">Then</span>
-            DoEvents
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-    <span style="color:#66d9ef">Next</span>
-
-    <span style="color:#75715e">&#39;作業グループ設定フラグがオンの場合
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">If</span> chkFlg <span style="color:#66d9ef">Then</span>
-        <span style="color:#75715e">&#39;作業グループの設定
-</span><span style="color:#75715e"></span>        Sheets(wsArray).Select
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-
-<span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-</code></pre></div><p><a href="https://kkawazoe.github.io/images/20190428_01/%E3%83%86%E3%82%B9%E3%83%88%E7%94%A8%E3%82%B7%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%83%84%E3%83%BC%E3%83%AB.zip">作成したツール</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#75715e">Rem Attribute VBA_ModuleType=VBAModule
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">Option</span> VBASupport 1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">ExecuteButtonClick</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> ws <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wsArray() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> chkFlg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;ワークシートの初期化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> ws <span style="color:#f92672">In</span> Worksheets
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;ワークシート名が&#34;パラメータ&#34;以外の場合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">If</span> ws.Name <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;パラメータ&#34;</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>            ws.Delete
+</span></span><span style="display:flex;"><span>            Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> ws
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;チェックボックスの値を取得
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    chkFlg <span style="color:#f92672">=</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).OLEObjects(<span style="color:#e6db74">&#34;Chk_WorkGroup&#34;</span>).Object.Value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;ワークシートの追加
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">To</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).Cells(2, 3).Value <span style="color:#f92672">-</span> 1
+</span></span><span style="display:flex;"><span>        Sheets.Add after:<span style="color:#f92672">=</span>ActiveSheet
+</span></span><span style="display:flex;"><span>        ActiveSheet.Name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;No.&#34;</span> <span style="color:#f92672">&amp;</span> i <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>        ActiveWindow.Zoom <span style="color:#f92672">=</span> Worksheets(<span style="color:#e6db74">&#34;パラメータ&#34;</span>).Cells(3, 3).Value
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ReDim</span> Preserve wsArray(i)
+</span></span><span style="display:flex;"><span>        wsArray(i) <span style="color:#f92672">=</span> ActiveSheet.Name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;100の倍数ごとに画面に制御を返す
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">If</span> i <span style="color:#f92672">Mod</span> 100 <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            DoEvents
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;作業グループ設定フラグがオンの場合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">If</span> chkFlg <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;作業グループの設定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Sheets(wsArray).Select
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><p><a href="https://kkawazoe.github.io/images/20190428_01/%E3%83%86%E3%82%B9%E3%83%88%E7%94%A8%E3%82%B7%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%83%84%E3%83%BC%E3%83%AB.zip">作成したツール</a></p>
 </div>
 
   <footer class="article-footer">
