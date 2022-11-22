@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,8 +364,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -388,7 +393,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -418,7 +423,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2148,8 +2154,8 @@ figure img {
 <ul>
 <li>例. レコードを <code>order</code> 昇順, <code>user_id</code> 昇順で並び替える場合(同じ順位の場合は自分を優先)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"> order(<span style="color:#e6db74">:order</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;field(user_id , </span><span style="color:#e6db74">#{</span>current_user<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">) desc&#34;</span><span style="color:#f92672">]</span>, <span style="color:#e6db74">:user_id</span>)
-</code></pre></div><p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span> order(<span style="color:#e6db74">:order</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;field(user_id , </span><span style="color:#e6db74">#{</span>current_user<span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">) desc&#34;</span><span style="color:#f92672">]</span>, <span style="color:#e6db74">:user_id</span>)
+</span></span></code></pre></div><p>※ ポイントとしては第２ソートキーの前に <code>ORDER BY FIELD</code> を使用すること。
 また、<code>ORDER BY FIELD</code> で指定した分に対して <code>desc</code> を指定すること。
 ( <code>desc</code> を指定しないと自分以外が優先的に並び替えられてしまう)</p>
 </li>
@@ -2243,7 +2249,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

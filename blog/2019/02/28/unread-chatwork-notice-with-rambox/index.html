@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,8 +364,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -388,7 +393,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -418,7 +423,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2151,33 +2157,31 @@ figure img {
 「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定</p>
 <h3 id="rambox-の-chatwork-の挙動">Rambox の ChatWork の挙動</h3>
 <p>Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される</p>
-<figure class="center">
-    <img src="/images/20190228_01/rambox_badge.png"
-         alt="Rambox バッジおよび未読数" width="40" height="40"/> 
+<figure class="center"><img src="/images/20190228_01/rambox_badge.png"
+         alt="Rambox バッジおよび未読数" width="40" height="40"/>
 </figure>
 
 <p>しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう</p>
 <h2 id="対処方法">対処方法</h2>
 <p>Rambox のサービス設定画面でカスタムコードを使用して対応する
 ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動</p>
-<figure class="center">
-    <img src="/images/20190228_01/rambox_service_config.png"
-         alt="Rambox サービス設定画面" width="480" height="640"/> 
+<figure class="center"><img src="/images/20190228_01/rambox_service_config.png"
+         alt="Rambox サービス設定画面" width="480" height="640"/>
 </figure>
 
 <h2 id="実際のコード">実際のコード</h2>
 <p>[Custom Code]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkUnread</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;.roomListBadges__unreadBadgeText&#34;</span>);
-    <span style="color:#a6e22e">updateBadge</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>);
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">updateBadge</span>(<span style="color:#a6e22e">e</span>) {
-  <span style="color:#a6e22e">e</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">rambox</span>.<span style="color:#a6e22e">setUnreadCount</span>(<span style="color:#a6e22e">e</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">rambox</span>.<span style="color:#a6e22e">clearUnreadCount</span>();
-}
-
-<span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">checkUnread</span>, <span style="color:#ae81ff">3000</span>);
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkUnread</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;.roomListBadges__unreadBadgeText&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updateBadge</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">updateBadge</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">e</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">rambox</span>.<span style="color:#a6e22e">setUnreadCount</span>(<span style="color:#a6e22e">e</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">rambox</span>.<span style="color:#a6e22e">clearUnreadCount</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">checkUnread</span>, <span style="color:#ae81ff">3000</span>);
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2264,7 +2268,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

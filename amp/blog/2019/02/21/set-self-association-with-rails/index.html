@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2088,40 +2094,40 @@ figure img {
 <li>rails: rails 5.2.2</li>
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:app/models/node.rb" data-lang="ruby:app/models/node.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
-  has_many <span style="color:#e6db74">:children</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">foreign_key</span>: <span style="color:#e6db74">&#34;parrent_id&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby:app/models/node.rb" data-lang="ruby:app/models/node.rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
+</span></span><span style="display:flex;"><span>  has_many <span style="color:#e6db74">:children</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">foreign_key</span>: <span style="color:#e6db74">&#34;parrent_id&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  belongs_to <span style="color:#e6db74">:parrent</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">optional</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-ruby:db/migrate/" data-lang="ruby:db/migrate/">class CreateNodes &lt; ActiveRecord::Migration[5.2]
+  def change
+    create_table :nodes do |t|
+      t.string :name
+      t.references :parrent
 
-  belongs_to <span style="color:#e6db74">:parrent</span>, <span style="color:#e6db74">class_name</span>: <span style="color:#e6db74">&#34;Node&#34;</span>, <span style="color:#e6db74">optional</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby:db/migrate/{datetime}_create_nodes.rb" data-lang="ruby:db/migrate/{datetime}_create_nodes.rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateNodes</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span><span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">change</span>
-    create_table <span style="color:#e6db74">:nodes</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
-      t<span style="color:#f92672">.</span>string <span style="color:#e6db74">:name</span>
-      t<span style="color:#f92672">.</span>references <span style="color:#e6db74">:parrent</span>
-
-      t<span style="color:#f92672">.</span>timestamps
-    <span style="color:#66d9ef">end</span>
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><h2 id="実行例">実行例</h2>
+      t.timestamps
+    end
+  end
+end
+</code></pre><h2 id="実行例">実行例</h2>
 <p>テーブル構成例のデータが格納済の状態</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># 最上位ノードに紐付く子ノードのレコードを取得</span>
-parrent_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>first
-parrent_node<span style="color:#f92672">.</span>children
-<span style="color:#75715e">#=&gt; Node Load (0.8ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`parrent_id` = 1 LIMIT 11</span>
-<span style="color:#75715e">#=&gt; #&lt;ActiveRecord::Associations::CollectionProxy [#&lt;Node id: 2, name: &#34;child_node_1&#34;, parrent_id: 1, created_at: &#34;2019-02-21 09:05:38&#34;, updated_at: &#34;2019-02-21 09:05:38&#34;&gt;, #&lt;Node id: 3, name: &#34;child_node_2&#34;, parrent_id: 1, created_at: &#34;2019-02-21 09:05:38&#34;, updated_at: &#34;2019-02-21 09:05:38&#34;&gt;]&gt;</span>
-
-<span style="color:#75715e"># 子ノードに紐付く親ノードのレコードを取得</span>
-child_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>find(<span style="color:#ae81ff">2</span>)
-child_node<span style="color:#f92672">.</span>parrent
-<span style="color:#75715e">#=&gt; Node Load (0.5ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`id` = 1 LIMIT 1</span>
-<span style="color:#75715e">#=&gt; #&lt;Node id: 1, name: &#34;parrent_node&#34;, parrent_id: nil, created_at: &#34;2019-02-21 09:05:37&#34;, updated_at: &#34;2019-02-21 09:05:37&#34;&gt;</span>
-
-<span style="color:#75715e"># 最上位ノードに紐付く親ノードのレコードを取得</span>
-parrent_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>first
-parrent_node<span style="color:#f92672">.</span>parrent
-<span style="color:#75715e">#=&gt; nil</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># 最上位ノードに紐付く子ノードのレコードを取得</span>
+</span></span><span style="display:flex;"><span>parrent_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>first
+</span></span><span style="display:flex;"><span>parrent_node<span style="color:#f92672">.</span>children
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Node Load (0.8ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`parrent_id` = 1 LIMIT 11</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; #&lt;ActiveRecord::Associations::CollectionProxy [#&lt;Node id: 2, name: &#34;child_node_1&#34;, parrent_id: 1, created_at: &#34;2019-02-21 09:05:38&#34;, updated_at: &#34;2019-02-21 09:05:38&#34;&gt;, #&lt;Node id: 3, name: &#34;child_node_2&#34;, parrent_id: 1, created_at: &#34;2019-02-21 09:05:38&#34;, updated_at: &#34;2019-02-21 09:05:38&#34;&gt;]&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 子ノードに紐付く親ノードのレコードを取得</span>
+</span></span><span style="display:flex;"><span>child_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>find(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>child_node<span style="color:#f92672">.</span>parrent
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Node Load (0.5ms)  SELECT  `nodes`.* FROM `nodes` WHERE `nodes`.`id` = 1 LIMIT 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; #&lt;Node id: 1, name: &#34;parrent_node&#34;, parrent_id: nil, created_at: &#34;2019-02-21 09:05:37&#34;, updated_at: &#34;2019-02-21 09:05:37&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 最上位ノードに紐付く親ノードのレコードを取得</span>
+</span></span><span style="display:flex;"><span>parrent_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">Node</span><span style="color:#f92672">.</span>first
+</span></span><span style="display:flex;"><span>parrent_node<span style="color:#f92672">.</span>parrent
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; nil</span>
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 

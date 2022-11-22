@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2040,41 +2046,40 @@ figure img {
 </ul>
 <h2 id="実際のコード">実際のコード</h2>
 <p>[ER 図]</p>
-<figure class="center">
-    <img src="/images/20221101_02/er_diagram.png"
-         alt="ER 図" width="500" height="500"/> 
+<figure class="center"><img src="/images/20221101_02/er_diagram.png"
+         alt="ER 図" width="500" height="500"/>
 </figure>
 
 <p>[model]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span>
-  has_many <span style="color:#e6db74">:book_categories</span>, <span style="color:#e6db74">dependent</span>: <span style="color:#e6db74">:destroy</span>
-  has_many <span style="color:#e6db74">:categories</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
-<span style="color:#66d9ef">end</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BookCategory</span>
-  belongs_to <span style="color:#e6db74">:book</span>
-  belongs_to <span style="color:#e6db74">:category</span>
-<span style="color:#66d9ef">end</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span>
-  has_many <span style="color:#e6db74">:book_categories</span>
-  has_many <span style="color:#e6db74">:books</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><p>[controller]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span>
+</span></span><span style="display:flex;"><span>  has_many <span style="color:#e6db74">:book_categories</span>, <span style="color:#e6db74">dependent</span>: <span style="color:#e6db74">:destroy</span>
+</span></span><span style="display:flex;"><span>  has_many <span style="color:#e6db74">:categories</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BookCategory</span>
+</span></span><span style="display:flex;"><span>  belongs_to <span style="color:#e6db74">:book</span>
+</span></span><span style="display:flex;"><span>  belongs_to <span style="color:#e6db74">:category</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span>
+</span></span><span style="display:flex;"><span>  has_many <span style="color:#e6db74">:book_categories</span>
+</span></span><span style="display:flex;"><span>  has_many <span style="color:#e6db74">:books</span>, <span style="color:#e6db74">through</span>: <span style="color:#e6db74">:book_categories</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>[controller]</p>
 <p>category_ids を配列形式で許可する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>
-  @book <span style="color:#f92672">=</span> <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>save!(book_params)
-<span style="color:#66d9ef">end</span>
-
-<span style="color:#66d9ef">private</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">book_params</span>
-  params<span style="color:#f92672">.</span>require(<span style="color:#e6db74">:book</span>)<span style="color:#f92672">.</span>permit(
-    <span style="color:#e6db74">:title</span>,
-    <span style="color:#e6db74">category_ids</span>: <span style="color:#f92672">[]</span>
-  )
-<span style="color:#66d9ef">end</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>
+</span></span><span style="display:flex;"><span>  @book <span style="color:#f92672">=</span> <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>save!(book_params)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">book_params</span>
+</span></span><span style="display:flex;"><span>  params<span style="color:#f92672">.</span>require(<span style="color:#e6db74">:book</span>)<span style="color:#f92672">.</span>permit(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">:title</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">category_ids</span>: <span style="color:#f92672">[]</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 

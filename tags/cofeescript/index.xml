@@ -15,7 +15,7 @@
       <guid>https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/</guid>
       <description>JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース  修正前  processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each -&amp;gt; id = $(this).attr(&amp;#34;id&amp;#34;) @processRow id  修正後  processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each (index, element) =&amp;gt; id = $(element).attr(&amp;#34;id&amp;#34;) @processRow id </description>
+実際のソース 修正前 processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each -&amp;gt; id = $(this).attr(&amp;#34;id&amp;#34;) @processRow id 修正後 processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each (index, element) =&amp;gt; id = $(element).attr(&amp;#34;id&amp;#34;) @processRow id </description>
     </item>
     
   </channel>

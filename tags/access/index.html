@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2074,14 +2080,13 @@ figure img {
               
             </ul>
 
-            <div class="summary">実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+            <div class="summary">実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
 パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
-  </div>
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること</div>
           </div>
         </a>
       </article>

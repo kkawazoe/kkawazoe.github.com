@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2046,8 +2052,8 @@ figure img {
 <li>length 関数で 1 の置換前の文字数および置換後の文字数を取得</li>
 <li>sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 

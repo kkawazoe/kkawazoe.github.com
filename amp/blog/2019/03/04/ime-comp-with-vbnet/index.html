@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2047,271 +2053,270 @@ figure img {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:mImecomp.vb" data-lang="vb:mImecomp.vb"><span style="color:#66d9ef">Option Strict Off</span>
-<span style="color:#66d9ef">Option Explicit On</span>
-
-<span style="color:#66d9ef">Imports</span> System.Runtime.InteropServices
-<span style="color:#66d9ef">Delegate</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">fncDelegate</span>(<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> uMsg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> wParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> lParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-
-<span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e">&#39;&#39;&#39; 変換イベントクラス
-</span><span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">ConvertedEventArgs</span>
-    <span style="color:#66d9ef">Inherits</span> EventArgs
-
-    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; 変換イベントクラスのコンストラクタ
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> f <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> r <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>)
-        Furigana <span style="color:#f92672">=</span> f
-        Result <span style="color:#f92672">=</span> r
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Furigana</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
-    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Result</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
-<span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
-
-<span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e">&#39;&#39;&#39; 自動ふりがな取得クラス
-</span><span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">Imecomp</span>
-
-    <span style="color:#66d9ef">Private</span> m_TxtSrcControl <span style="color:#f92672">As</span> Control
-    <span style="color:#66d9ef">Private</span> m_TxtDestControl <span style="color:#f92672">As</span> Control
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">WithEvents</span> M_MsgListner <span style="color:#f92672">As</span> MsgListner
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">ReadOnly</span> m_StrConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-
-    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得完了通知イベント
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得が完了したことを通知する
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Event</span> Converted(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> txtDest <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> e <span style="color:#f92672">As</span> ConvertedEventArgs)
-
-    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; メッセージリスナークラス
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">MsgListner</span>
-        <span style="color:#66d9ef">Inherits</span> NativeWindow
-
-        <span style="color:#75715e">&#39;Windows Message
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_IME_COMPOSITION <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H10F
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_IME_ENDCOMPOSITION <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H10E
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_CHAR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H102
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_KEYDOWN <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H100
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_KEYUP <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H101
-        <span style="color:#75715e">&#39;IME APIs
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetCompositionString</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;ImmGetCompositionStringA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> dw <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByRef</span> lpv <span style="color:#f92672">As</span> <span style="color:#66d9ef">Byte</span>, <span style="color:#66d9ef">ByVal</span> dw2 <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_COMPREADSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H1
-        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_COMPSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H8
-        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_RESULTREADSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H200
-        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_RESULTSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H800
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetOpenStatus</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmSetOpenStatus</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> fOpen <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetContext</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmReleaseContext</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#75715e">&#39;Subclass APIs
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">SetWindowLong</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;SetWindowLongA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> nIndex <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#f92672">&lt;</span>MarshalAs(UnmanagedType.FunctionPtr)<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ByVal</span> dwNewLong <span style="color:#f92672">As</span> fncDelegate) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">SetWindowLong</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;SetWindowLongA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> nIndex <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> dwNewLong <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GWL_WNDPROC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>4)
-        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">CallWindowProc</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;CallWindowProcA&#34;</span> (<span style="color:#66d9ef">ByVal</span> lpPrevWndFunc <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> msg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> wParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> lParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-
-        <span style="color:#66d9ef">Private</span> m_Enabled <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-        <span style="color:#66d9ef">Private</span> convMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> 0
-        <span style="color:#66d9ef">Private</span> pramStrConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> 0
-
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Event</span> Converted(<span style="color:#66d9ef">ByVal</span> imeCompString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> resultConvString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>)
-
-        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Enabled</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
-            <span style="color:#66d9ef">Get</span>
-                <span style="color:#66d9ef">Return</span> m_Enabled
-            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
-            <span style="color:#66d9ef">Set</span>(<span style="color:#66d9ef">ByVal</span> Value <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>)
-                m_Enabled <span style="color:#f92672">=</span> Value
-            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Set</span>
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
-
-        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得対象コントロールのウィンドウプロシージャ
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;m&#34;&gt;Windows メッセージ&lt;/param&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Protected</span> <span style="color:#66d9ef">Overrides</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">WndProc</span>(<span style="color:#66d9ef">ByRef</span> m <span style="color:#f92672">As</span> System.Windows.Forms.Message)
-
-            <span style="color:#66d9ef">Dim</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-            <span style="color:#66d9ef">Dim</span> intLength <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-
-            <span style="color:#66d9ef">If</span> m_Enabled <span style="color:#66d9ef">Then</span>
-                <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">Case</span> m.Msg
-                    <span style="color:#66d9ef">Case</span> WM_IME_COMPOSITION
-                        <span style="color:#66d9ef">Dim</span> bytBuff() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Byte</span>
-                        <span style="color:#66d9ef">Dim</span> strResult <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-                        <span style="color:#66d9ef">Dim</span> strFurigana <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-
-                        hIMC <span style="color:#f92672">=</span> ImmGetContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32)
-
-                        <span style="color:#75715e">&#39;変換後文字列の取得
-</span><span style="color:#75715e"></span>                        intLength <span style="color:#f92672">=</span> ImmGetCompositionString(hIMC, GCS_RESULTSTR, 0, 0)
-                        <span style="color:#66d9ef">If</span> intLength <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
-                            <span style="color:#66d9ef">ReDim</span> bytBuff(intLength <span style="color:#f92672">-</span> 1)
-                            ImmGetCompositionString(hIMC, GCS_RESULTSTR, bytBuff(0), intLength)
-                            strResult <span style="color:#f92672">=</span> System.Text.Encoding.Default.GetString(bytBuff)
-                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-
-                        <span style="color:#75715e">&#39;ふりがな文字列
-</span><span style="color:#75715e"></span>                        intLength <span style="color:#f92672">=</span> ImmGetCompositionString(hIMC, GCS_RESULTREADSTR, 0, 0)
-                        <span style="color:#66d9ef">If</span> intLength <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
-                            <span style="color:#66d9ef">ReDim</span> bytBuff(intLength <span style="color:#f92672">-</span> 1)
-                            ImmGetCompositionString(hIMC, GCS_RESULTREADSTR, bytBuff(0), intLength)
-                            strFurigana <span style="color:#f92672">=</span> System.Text.Encoding.Default.GetString(bytBuff)
-                            convMode <span style="color:#f92672">=</span> IIf(pramStrConvMode <span style="color:#f92672">=</span> 0, vbNarrow, pramStrConvMode)
-                            <span style="color:#75715e">&#39;追加する文字種の判断
-</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">If</span> ChrIsNarrow(StrConv(strResult, VbStrConv.Narrow)) <span style="color:#66d9ef">Then</span> strFurigana <span style="color:#f92672">=</span> strResult
-                            <span style="color:#75715e">&#39;テキストを追加
-</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">Case</span> convMode
-                                <span style="color:#66d9ef">Case</span> VbStrConv.Narrow
-                                    strFurigana <span style="color:#f92672">=</span> StrConv(strFurigana, VbStrConv.Narrow)
-                                <span style="color:#66d9ef">Case</span> VbStrConv.Katakana
-                                    strFurigana <span style="color:#f92672">=</span> StrConv(strFurigana, VbStrConv.Wide)
-                                <span style="color:#66d9ef">Case</span> <span style="color:#66d9ef">Else</span>
-                                    strFurigana <span style="color:#f92672">=</span> StrConv(StrConv(strFurigana, VbStrConv.Wide), convMode)
-                            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Select</span>
-                            <span style="color:#75715e">&#39;イベント起動
-</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">RaiseEvent</span> Converted(strFurigana, strResult)
-                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-                        ImmReleaseContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32, hIMC)
-                    <span style="color:#66d9ef">Case</span> WM_CHAR    <span style="color:#75715e">&#39;半角英数字
-</span><span style="color:#75715e"></span>                        hIMC <span style="color:#f92672">=</span> ImmGetContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32)
-                        <span style="color:#66d9ef">If</span> ImmGetOpenStatus(hIMC) <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">Then</span>
-                            <span style="color:#66d9ef">If</span> m.WParam.ToInt32 <span style="color:#f92672">&gt;=</span> 32 <span style="color:#66d9ef">Then</span>
-                                <span style="color:#75715e">&#39;イベント起動
-</span><span style="color:#75715e"></span>                                <span style="color:#66d9ef">RaiseEvent</span> Converted(Chr(m.WParam.ToInt32), Chr(m.WParam.ToInt32))
-                            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-                        ImmReleaseContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32, hIMC)
-                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Select</span>
-            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-            <span style="color:#66d9ef">MyBase</span>.WndProc(m)
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; メッセージリスナークラスのコンストラクタ
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;target&#34;&gt;入力文字&lt;/param&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;strConvMode&#34;&gt;文字変換モード&lt;/param&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> target <span style="color:#f92672">As</span> IntPtr, <span style="color:#66d9ef">ByRef</span> strConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>)
-            pramStrConvMode <span style="color:#f92672">=</span> strConvMode
-            AssignHandle(target)
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-        <span style="color:#66d9ef">Protected</span> <span style="color:#66d9ef">Overrides</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Finalize</span>()
-            ReleaseHandle()
-            <span style="color:#66d9ef">MyBase</span>.Finalize()
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; 半角文字かどうかを判定して返す
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;target&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;returns&gt;true:半角文字/false:半角文字以外&lt;/returns&gt;
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ChrIsNarrow</span>(<span style="color:#66d9ef">ByRef</span> target <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
-
-            <span style="color:#66d9ef">Dim</span> nPt <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-            <span style="color:#66d9ef">Dim</span> NowPt <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-            <span style="color:#66d9ef">Dim</span> NowCode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
-            <span style="color:#66d9ef">Dim</span> fNarrow <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
-
-            fNarrow <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-            nPt <span style="color:#f92672">=</span> Len(target)
-            <span style="color:#66d9ef">For</span> NowPt <span style="color:#f92672">=</span> 1 <span style="color:#66d9ef">To</span> nPt
-                NowCode <span style="color:#f92672">=</span> Asc(Mid(target, NowPt, 1))
-                <span style="color:#66d9ef">If</span> NowCode <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">Or</span> NowCode <span style="color:#f92672">&gt;</span> 255 <span style="color:#66d9ef">Then</span>
-                    fNarrow <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-                    <span style="color:#66d9ef">Exit</span> <span style="color:#66d9ef">For</span>
-                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-            <span style="color:#66d9ef">Next</span> NowPt
-
-            ChrIsNarrow <span style="color:#f92672">=</span> fNarrow
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Function</span>
-
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
-
-    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; 自動ふりがな取得クラスのコンストラクタ
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;strConvMode&#34;&gt;ふりがなの種類&lt;/param&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> Control, txtDest <span style="color:#f92672">As</span> Control, strConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>)
-        M_MsgListner <span style="color:#f92672">=</span> <span style="color:#66d9ef">New</span> MsgListner(txtSrc.Handle, strConvMode)
-        m_TxtSrcControl <span style="color:#f92672">=</span> txtSrc
-        m_TxtDestControl <span style="color:#f92672">=</span> txtDest
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">TxtSrcControl</span>() <span style="color:#f92672">As</span> Control
-        <span style="color:#66d9ef">Get</span>
-            <span style="color:#66d9ef">Return</span> m_TxtSrcControl
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
-
-    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">TxtDestControl</span>() <span style="color:#f92672">As</span> Control
-        <span style="color:#66d9ef">Get</span>
-            <span style="color:#66d9ef">Return</span> m_TxtDestControl
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
-
-    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Enabled</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
-        <span style="color:#66d9ef">Get</span>
-            <span style="color:#66d9ef">Return</span> M_MsgListner.Enabled
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
-        <span style="color:#66d9ef">Set</span>(<span style="color:#66d9ef">ByVal</span> Value <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>)
-            M_MsgListner.Enabled <span style="color:#f92672">=</span> Value
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Set</span>
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
-
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">M_MsgListner_Converted</span>(<span style="color:#66d9ef">ByVal</span> imeCompString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> resultConvString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>) <span style="color:#66d9ef">Handles</span> M_MsgListner.Converted
-        <span style="color:#66d9ef">RaiseEvent</span> Converted(<span style="color:#66d9ef">Me</span>.TxtSrcControl, <span style="color:#66d9ef">Me</span>.TxtDestControl, <span style="color:#66d9ef">New</span> ConvertedEventArgs(imeCompString, resultConvString))
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-<span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
-</code></pre></div><h3 id="ふりがな取得機能テスト用フォーム">ふりがな取得機能テスト用フォーム</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb:mImecomp.vb" data-lang="vb:mImecomp.vb"><span style="display:flex;"><span><span style="color:#66d9ef">Option Strict Off</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Option Explicit On</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Imports</span> System.Runtime.InteropServices
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Delegate</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">fncDelegate</span>(<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> uMsg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> wParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> lParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; 変換イベントクラス
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">ConvertedEventArgs</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Inherits</span> EventArgs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; 変換イベントクラスのコンストラクタ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> f <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> r <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>)
+</span></span><span style="display:flex;"><span>        Furigana <span style="color:#f92672">=</span> f
+</span></span><span style="display:flex;"><span>        Result <span style="color:#f92672">=</span> r
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Furigana</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Result</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; 自動ふりがな取得クラス
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">Imecomp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> m_TxtSrcControl <span style="color:#f92672">As</span> Control
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> m_TxtDestControl <span style="color:#f92672">As</span> Control
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">WithEvents</span> M_MsgListner <span style="color:#f92672">As</span> MsgListner
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">ReadOnly</span> m_StrConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得完了通知イベント
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得が完了したことを通知する
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Event</span> Converted(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> txtDest <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> e <span style="color:#f92672">As</span> ConvertedEventArgs)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; メッセージリスナークラス
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">MsgListner</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Inherits</span> NativeWindow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;Windows Message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_IME_COMPOSITION <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H10F
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_IME_ENDCOMPOSITION <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H10E
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_CHAR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H102
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_KEYDOWN <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H100
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Const</span> WM_KEYUP <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H101
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;IME APIs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetCompositionString</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;ImmGetCompositionStringA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> dw <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByRef</span> lpv <span style="color:#f92672">As</span> <span style="color:#66d9ef">Byte</span>, <span style="color:#66d9ef">ByVal</span> dw2 <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_COMPREADSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H1
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_COMPSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H8
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_RESULTREADSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H200
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GCS_RESULTSTR <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>H800
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetOpenStatus</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmSetOpenStatus</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> fOpen <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmGetContext</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ImmReleaseContext</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;imm32.dll&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;Subclass APIs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">SetWindowLong</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;SetWindowLongA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> nIndex <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#f92672">&lt;</span>MarshalAs(UnmanagedType.FunctionPtr)<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ByVal</span> dwNewLong <span style="color:#f92672">As</span> fncDelegate) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">SetWindowLong</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;SetWindowLongA&#34;</span> (<span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> nIndex <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> dwNewLong <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Const</span> GWL_WNDPROC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>4)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Declare</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">CallWindowProc</span> <span style="color:#66d9ef">Lib</span> <span style="color:#e6db74">&#34;user32&#34;</span> <span style="color:#66d9ef">Alias</span> <span style="color:#e6db74">&#34;CallWindowProcA&#34;</span> (<span style="color:#66d9ef">ByVal</span> lpPrevWndFunc <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> hWnd <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> msg <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> wParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>, <span style="color:#66d9ef">ByVal</span> lParam <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> m_Enabled <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> convMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Private</span> pramStrConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span> <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Event</span> Converted(<span style="color:#66d9ef">ByVal</span> imeCompString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> resultConvString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Enabled</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Return</span> m_Enabled
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Set</span>(<span style="color:#66d9ef">ByVal</span> Value <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>)
+</span></span><span style="display:flex;"><span>                m_Enabled <span style="color:#f92672">=</span> Value
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Set</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; ふりがな取得対象コントロールのウィンドウプロシージャ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;m&#34;&gt;Windows メッセージ&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Protected</span> <span style="color:#66d9ef">Overrides</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">WndProc</span>(<span style="color:#66d9ef">ByRef</span> m <span style="color:#f92672">As</span> System.Windows.Forms.Message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> hIMC <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> intLength <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">If</span> m_Enabled <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">Case</span> m.Msg
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">Case</span> WM_IME_COMPOSITION
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">Dim</span> bytBuff() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Byte</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">Dim</span> strResult <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">Dim</span> strFurigana <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                        hIMC <span style="color:#f92672">=</span> ImmGetContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">&#39;変換後文字列の取得
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        intLength <span style="color:#f92672">=</span> ImmGetCompositionString(hIMC, GCS_RESULTSTR, 0, 0)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">If</span> intLength <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">ReDim</span> bytBuff(intLength <span style="color:#f92672">-</span> 1)
+</span></span><span style="display:flex;"><span>                            ImmGetCompositionString(hIMC, GCS_RESULTSTR, bytBuff(0), intLength)
+</span></span><span style="display:flex;"><span>                            strResult <span style="color:#f92672">=</span> System.Text.Encoding.Default.GetString(bytBuff)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">&#39;ふりがな文字列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        intLength <span style="color:#f92672">=</span> ImmGetCompositionString(hIMC, GCS_RESULTREADSTR, 0, 0)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">If</span> intLength <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">ReDim</span> bytBuff(intLength <span style="color:#f92672">-</span> 1)
+</span></span><span style="display:flex;"><span>                            ImmGetCompositionString(hIMC, GCS_RESULTREADSTR, bytBuff(0), intLength)
+</span></span><span style="display:flex;"><span>                            strFurigana <span style="color:#f92672">=</span> System.Text.Encoding.Default.GetString(bytBuff)
+</span></span><span style="display:flex;"><span>                            convMode <span style="color:#f92672">=</span> IIf(pramStrConvMode <span style="color:#f92672">=</span> 0, vbNarrow, pramStrConvMode)
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e">&#39;追加する文字種の判断
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">If</span> ChrIsNarrow(StrConv(strResult, VbStrConv.Narrow)) <span style="color:#66d9ef">Then</span> strFurigana <span style="color:#f92672">=</span> strResult
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e">&#39;テキストを追加
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">Select</span> <span style="color:#66d9ef">Case</span> convMode
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">Case</span> VbStrConv.Narrow
+</span></span><span style="display:flex;"><span>                                    strFurigana <span style="color:#f92672">=</span> StrConv(strFurigana, VbStrConv.Narrow)
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">Case</span> VbStrConv.Katakana
+</span></span><span style="display:flex;"><span>                                    strFurigana <span style="color:#f92672">=</span> StrConv(strFurigana, VbStrConv.Wide)
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">Case</span> <span style="color:#66d9ef">Else</span>
+</span></span><span style="display:flex;"><span>                                    strFurigana <span style="color:#f92672">=</span> StrConv(StrConv(strFurigana, VbStrConv.Wide), convMode)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Select</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e">&#39;イベント起動
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">RaiseEvent</span> Converted(strFurigana, strResult)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                        ImmReleaseContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32, hIMC)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">Case</span> WM_CHAR    <span style="color:#75715e">&#39;半角英数字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        hIMC <span style="color:#f92672">=</span> ImmGetContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">If</span> ImmGetOpenStatus(hIMC) <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">If</span> m.WParam.ToInt32 <span style="color:#f92672">&gt;=</span> 32 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#75715e">&#39;イベント起動
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                <span style="color:#66d9ef">RaiseEvent</span> Converted(Chr(m.WParam.ToInt32), Chr(m.WParam.ToInt32))
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                        ImmReleaseContext(<span style="color:#66d9ef">Me</span>.Handle.ToInt32, hIMC)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Select</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">MyBase</span>.WndProc(m)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; メッセージリスナークラスのコンストラクタ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;target&#34;&gt;入力文字&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;strConvMode&#34;&gt;文字変換モード&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> target <span style="color:#f92672">As</span> IntPtr, <span style="color:#66d9ef">ByRef</span> strConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>)
+</span></span><span style="display:flex;"><span>            pramStrConvMode <span style="color:#f92672">=</span> strConvMode
+</span></span><span style="display:flex;"><span>            AssignHandle(target)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Protected</span> <span style="color:#66d9ef">Overrides</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Finalize</span>()
+</span></span><span style="display:flex;"><span>            ReleaseHandle()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">MyBase</span>.Finalize()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; 半角文字かどうかを判定して返す
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;target&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;&#39;&#39; &lt;returns&gt;true:半角文字/false:半角文字以外&lt;/returns&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Function</span> <span style="color:#a6e22e">ChrIsNarrow</span>(<span style="color:#66d9ef">ByRef</span> target <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>) <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> nPt <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> NowPt <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> NowCode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> fNarrow <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            fNarrow <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            nPt <span style="color:#f92672">=</span> Len(target)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">For</span> NowPt <span style="color:#f92672">=</span> 1 <span style="color:#66d9ef">To</span> nPt
+</span></span><span style="display:flex;"><span>                NowCode <span style="color:#f92672">=</span> Asc(Mid(target, NowPt, 1))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">If</span> NowCode <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">Or</span> NowCode <span style="color:#f92672">&gt;</span> 255 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                    fNarrow <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">Exit</span> <span style="color:#66d9ef">For</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Next</span> NowPt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ChrIsNarrow <span style="color:#f92672">=</span> fNarrow
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Function</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; 自動ふりがな取得クラスのコンストラクタ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;/summary&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39;&#39;&#39; &lt;param name=&#34;strConvMode&#34;&gt;ふりがなの種類&lt;/param&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">New</span>(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> Control, txtDest <span style="color:#f92672">As</span> Control, strConvMode <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>)
+</span></span><span style="display:flex;"><span>        M_MsgListner <span style="color:#f92672">=</span> <span style="color:#66d9ef">New</span> MsgListner(txtSrc.Handle, strConvMode)
+</span></span><span style="display:flex;"><span>        m_TxtSrcControl <span style="color:#f92672">=</span> txtSrc
+</span></span><span style="display:flex;"><span>        m_TxtDestControl <span style="color:#f92672">=</span> txtDest
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">TxtSrcControl</span>() <span style="color:#f92672">As</span> Control
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Return</span> m_TxtSrcControl
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">ReadOnly</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">TxtDestControl</span>() <span style="color:#f92672">As</span> Control
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Return</span> m_TxtDestControl
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Property</span> <span style="color:#a6e22e">Enabled</span>() <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Return</span> M_MsgListner.Enabled
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Get</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Set</span>(<span style="color:#66d9ef">ByVal</span> Value <span style="color:#f92672">As</span> <span style="color:#66d9ef">Boolean</span>)
+</span></span><span style="display:flex;"><span>            M_MsgListner.Enabled <span style="color:#f92672">=</span> Value
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Set</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Property</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">M_MsgListner_Converted</span>(<span style="color:#66d9ef">ByVal</span> imeCompString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">ByVal</span> resultConvString <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>) <span style="color:#66d9ef">Handles</span> M_MsgListner.Converted
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">RaiseEvent</span> Converted(<span style="color:#66d9ef">Me</span>.TxtSrcControl, <span style="color:#66d9ef">Me</span>.TxtDestControl, <span style="color:#66d9ef">New</span> ConvertedEventArgs(imeCompString, resultConvString))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
+</span></span></code></pre></div><h3 id="ふりがな取得機能テスト用フォーム">ふりがな取得機能テスト用フォーム</h3>
 <p>初期処理時にふりがな種別を指定する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vb:Form1.vb" data-lang="vb:Form1.vb"><span style="color:#66d9ef">Imports</span> Microsoft.VisualBasic
-<span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">Form1</span>
-
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">WithEvents</span> ImeComp <span style="color:#f92672">As</span> Imecomp <span style="color:#75715e">&#39;ふりがな取得イベント
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Frm1_Load</span>(<span style="color:#66d9ef">ByVal</span> eventSender <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> eventArgs <span style="color:#f92672">As</span> System.EventArgs) <span style="color:#66d9ef">Handles</span> <span style="color:#66d9ef">MyBase</span>.Load
-        ImeComp <span style="color:#f92672">=</span> <span style="color:#66d9ef">New</span> Imecomp(<span style="color:#66d9ef">Me</span>.TextBox1, <span style="color:#66d9ef">Me</span>.TextBox2, VbStrConv.Hiragana) <span style="color:#75715e">&#39;ふりがなの種類（ひらがな）
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;imeComp = New Imecomp(Me.TextBox1, Me.TextBox3, VbStrConv.Katakana) &#39;ふりがなの種類（全角カナ）
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;ImeComp = New Imecomp(Me.TextBox1, Me.TextBox4, VbStrConv.Narrow) &#39;ふりがなの種類（半角カナ）
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">ImeComp_Converted</span>(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, <span style="color:#66d9ef">ByVal</span> txtDest <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, <span style="color:#66d9ef">ByVal</span> e <span style="color:#f92672">As</span> ConvertedEventArgs) <span style="color:#66d9ef">Handles</span> ImeComp.Converted
-        txtDest.Text <span style="color:#f92672">&amp;=</span> e.Furigana
-        <span style="color:#66d9ef">If</span> Len(txtDest.Text) <span style="color:#f92672">&gt;</span> txtDest.MaxLength <span style="color:#66d9ef">Then</span>
-            txtDest.Text <span style="color:#f92672">=</span> Strings.Left(txtDest.Text, txtDest.MaxLength)
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">TextBox1_TextChanged</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> TextBox1.TextChanged
-        <span style="color:#66d9ef">If</span> TextBox1.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#66d9ef">Then</span>
-            TextBox2.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-            TextBox3.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-            TextBox4.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
-    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
-
-
-<span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
-</code></pre></div><h2 id="実行結果イメージ">実行結果イメージ</h2>
-<figure class="center">
-    <img src="/images/20190304_01/ime_comp.png"
-         alt="ふりがな自動取得機能 実行結果" width="240" height="320"/> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb:Form1.vb" data-lang="vb:Form1.vb"><span style="display:flex;"><span><span style="color:#66d9ef">Imports</span> Microsoft.VisualBasic
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Public</span> <span style="color:#66d9ef">Class</span> <span style="color:#a6e22e">Form1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">WithEvents</span> ImeComp <span style="color:#f92672">As</span> Imecomp <span style="color:#75715e">&#39;ふりがな取得イベント
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Frm1_Load</span>(<span style="color:#66d9ef">ByVal</span> eventSender <span style="color:#f92672">As</span> System.Object, <span style="color:#66d9ef">ByVal</span> eventArgs <span style="color:#f92672">As</span> System.EventArgs) <span style="color:#66d9ef">Handles</span> <span style="color:#66d9ef">MyBase</span>.Load
+</span></span><span style="display:flex;"><span>        ImeComp <span style="color:#f92672">=</span> <span style="color:#66d9ef">New</span> Imecomp(<span style="color:#66d9ef">Me</span>.TextBox1, <span style="color:#66d9ef">Me</span>.TextBox2, VbStrConv.Hiragana) <span style="color:#75715e">&#39;ふりがなの種類（ひらがな）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;imeComp = New Imecomp(Me.TextBox1, Me.TextBox3, VbStrConv.Katakana) &#39;ふりがなの種類（全角カナ）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">&#39;ImeComp = New Imecomp(Me.TextBox1, Me.TextBox4, VbStrConv.Narrow) &#39;ふりがなの種類（半角カナ）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">ImeComp_Converted</span>(<span style="color:#66d9ef">ByVal</span> txtSrc <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, <span style="color:#66d9ef">ByVal</span> txtDest <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, <span style="color:#66d9ef">ByVal</span> e <span style="color:#f92672">As</span> ConvertedEventArgs) <span style="color:#66d9ef">Handles</span> ImeComp.Converted
+</span></span><span style="display:flex;"><span>        txtDest.Text <span style="color:#f92672">&amp;=</span> e.Furigana
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> Len(txtDest.Text) <span style="color:#f92672">&gt;</span> txtDest.MaxLength <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            txtDest.Text <span style="color:#f92672">=</span> Strings.Left(txtDest.Text, txtDest.MaxLength)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">TextBox1_TextChanged</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> TextBox1.TextChanged
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> TextBox1.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            TextBox2.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            TextBox3.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            TextBox4.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Class</span>
+</span></span></code></pre></div><h2 id="実行結果イメージ">実行結果イメージ</h2>
+<figure class="center"><img src="/images/20190304_01/ime_comp.png"
+         alt="ふりがな自動取得機能 実行結果" width="240" height="320"/>
 </figure>
 
 </div>
