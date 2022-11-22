@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -564,12 +558,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-  .thumb-cc659da25630dda8c57054bfbdb783a3 {
-    background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-  }
-  
 
   
   .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -978,19 +966,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2069,37 +2044,37 @@ figure img {
 <p>例. User モデルの <code>created_at</code> カラムを基準として N 以内に作成された
 ユーザを取得する</p>
 <p>[model]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#75715e"># 引数なし</span>
-</span></span><span style="display:flex;"><span>scope <span style="color:#e6db74">:within_one_month</span>, <span style="color:#f92672">-&gt;</span> {
-</span></span><span style="display:flex;"><span>  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>months)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 引数あり</span>
-</span></span><span style="display:flex;"><span>scope <span style="color:#e6db74">:within_days</span>, <span style="color:#f92672">-&gt;</span> (day) {
-</span></span><span style="display:flex;"><span>  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> (day)<span style="color:#f92672">.</span>days)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ransackable_scopes</span>(_auth_object <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">%</span>i(within_days within_one_month)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>[erb]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#f92672">&lt;%=</span>
-</span></span><span style="display:flex;"><span>  link_to(
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;1ヶ月以内に作成されたユーザ一覧&#34;</span>,
-</span></span><span style="display:flex;"><span>    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_one_month</span>: <span style="color:#66d9ef">true</span> }),
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
-</span></span><span style="display:flex;"><span>  )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  link_to(
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;7日以内に作成されたユーザ一覧&#34;</span>,
-</span></span><span style="display:flex;"><span>    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_days</span>: <span style="color:#ae81ff">7</span> }),
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
-</span></span><span style="display:flex;"><span>  )
-</span></span><span style="display:flex;"><span><span style="color:#f92672">%&gt;</span>
-</span></span></code></pre></div><p>[controller]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># 引数なし</span>
+scope <span style="color:#e6db74">:within_one_month</span>, <span style="color:#f92672">-&gt;</span> {
+  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>months)
+}
+
+<span style="color:#75715e"># 引数あり</span>
+scope <span style="color:#e6db74">:within_days</span>, <span style="color:#f92672">-&gt;</span> (day) {
+  where(<span style="color:#e6db74">&#39;created_at &gt;=&#39;</span>, <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>zone<span style="color:#f92672">.</span>now <span style="color:#f92672">-</span> (day)<span style="color:#f92672">.</span>days)
+}
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ransackable_scopes</span>(_auth_object <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>)
+  <span style="color:#f92672">%</span>i(within_days within_one_month)
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>[erb]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#f92672">&lt;%=</span>
+  link_to(
+    <span style="color:#e6db74">&#34;1ヶ月以内に作成されたユーザ一覧&#34;</span>,
+    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_one_month</span>: <span style="color:#66d9ef">true</span> }),
+    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
+  )
+
+  link_to(
+    <span style="color:#e6db74">&#34;7日以内に作成されたユーザ一覧&#34;</span>,
+    users_path(@q, <span style="color:#e6db74">q</span>: { <span style="color:#e6db74">within_days</span>: <span style="color:#ae81ff">7</span> }),
+    <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#34;btn btn-primary mr-5&#34;</span>
+  )
+<span style="color:#f92672">%&gt;</span>
+</code></pre></div><p>[controller]</p>
 <p>通常通りで動作する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>ransack(@q)<span style="color:#f92672">.</span>result
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>ransack(@q)<span style="color:#f92672">.</span>result
+</code></pre></div></div>
 
   <footer class="article-footer">
 

@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,13 +364,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -393,7 +388,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -423,8 +418,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -609,12 +603,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-}
-  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -1025,19 +1013,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2098,7 +2073,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          69
           <span>Posts</span>
         </a>
       </div>
@@ -2174,92 +2149,92 @@ figure img {
 <h3 id="前提">前提</h3>
 <p>header 付の csv ファイル</p>
 <p>リファクタリング前</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
-</span></span><span style="display:flex;"><span>    read_only_file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;{ファイルパス}&#34;</span> , <span style="color:#e6db74">&#34;r&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 保存用バッファ</span>
-</span></span><span style="display:flex;"><span>    buffer <span style="color:#f92672">=</span> read_only_file<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># バッファの中身を変換</span>
-</span></span><span style="display:flex;"><span>    buffer<span style="color:#f92672">.</span>gsub!({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ファイルを書き込みモードで開き直す</span>
-</span></span><span style="display:flex;"><span>    file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;{ファイルパス}&#34;</span> , <span style="color:#e6db74">&#34;w&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 変更内容を出力する。</span>
-</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">.</span>write(buffer)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># close</span>
-</span></span><span style="display:flex;"><span>    read_only_file<span style="color:#f92672">.</span>close()
-</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">.</span>close()
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>リファクタリング後</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;csv&#39;</span>
-</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;fileutils&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
-</span></span><span style="display:flex;"><span>    file_basename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{拡張子を除いたファイル名}&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>zero?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 一時ファイルを書き込みモードで開く</span>
-</span></span><span style="display:flex;"><span>      write_file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>)
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># csv の header を書き込む</span>
-</span></span><span style="display:flex;"><span>      write_file<span style="color:#f92672">.</span>write(file<span style="color:#f92672">.</span>readline)
-</span></span><span style="display:flex;"><span>      file<span style="color:#f92672">.</span>rewind
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>new(file, <span style="color:#e6db74">headers</span>: <span style="color:#66d9ef">true</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>row<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 読み込んだ行内の文字列を置換する</span>
-</span></span><span style="display:flex;"><span>        write_file<span style="color:#f92672">.</span>write(row<span style="color:#f92672">.</span>to_s<span style="color:#f92672">.</span>gsub({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>}))
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      write_file<span style="color:#f92672">.</span>close
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FileUtils</span><span style="color:#f92672">.</span>move(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>) <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>ヘッダは force quote なし ボディは force quote ありのようにしたい場合</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>id,名前
-</span></span><span style="display:flex;"><span>&#34;1&#34;,&#34;太郎&#34;
-</span></span></code></pre></div><p>CSV#open メソッドを使用する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;csv&#39;</span>
-</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;fileutils&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
-</span></span><span style="display:flex;"><span>    file_basename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{拡張子を除いたファイル名}&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>zero?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 一時ファイルを書き込みモードで開く</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>csv<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># csv の header を書き込む</span>
-</span></span><span style="display:flex;"><span>        csv <span style="color:#f92672">&lt;&lt;</span> file<span style="color:#f92672">.</span>readline<span style="color:#f92672">.</span>parse_csv
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>      file<span style="color:#f92672">.</span>rewind
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 一時ファイルを追記モードで開く</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">force_quotes</span>: <span style="color:#66d9ef">true</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>csv<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>new(file, <span style="color:#e6db74">headers</span>: <span style="color:#66d9ef">true</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>row<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># 読み込んだ行内の文字列を置換する</span>
-</span></span><span style="display:flex;"><span>          csv <span style="color:#f92672">&lt;&lt;</span> row<span style="color:#f92672">.</span>to_s<span style="color:#f92672">.</span>gsub({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>})<span style="color:#f92672">.</span>parse_csv
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FileUtils</span><span style="color:#f92672">.</span>move(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>) <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>1.4 GB 程の csv ファイルを処理した際にリファクタリング前は
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
+    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
+    read_only_file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;{ファイルパス}&#34;</span> , <span style="color:#e6db74">&#34;r&#34;</span>)
+
+    <span style="color:#75715e"># 保存用バッファ</span>
+    buffer <span style="color:#f92672">=</span> read_only_file<span style="color:#f92672">.</span>read()
+
+    <span style="color:#75715e"># バッファの中身を変換</span>
+    buffer<span style="color:#f92672">.</span>gsub!({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>})
+
+    <span style="color:#75715e"># ファイルを書き込みモードで開き直す</span>
+    file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;{ファイルパス}&#34;</span> , <span style="color:#e6db74">&#34;w&#34;</span>)
+
+    <span style="color:#75715e"># 変更内容を出力する。</span>
+    file<span style="color:#f92672">.</span>write(buffer)
+
+    <span style="color:#75715e"># close</span>
+    read_only_file<span style="color:#f92672">.</span>close()
+    file<span style="color:#f92672">.</span>close()
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>リファクタリング後</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;csv&#39;</span>
+require <span style="color:#e6db74">&#39;fileutils&#39;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
+    file_basename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{拡張子を除いたファイル名}&#34;</span>
+
+    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
+    <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>zero?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>)
+
+      <span style="color:#75715e"># 一時ファイルを書き込みモードで開く</span>
+      write_file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>)
+      <span style="color:#75715e"># csv の header を書き込む</span>
+      write_file<span style="color:#f92672">.</span>write(file<span style="color:#f92672">.</span>readline)
+      file<span style="color:#f92672">.</span>rewind
+
+      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>new(file, <span style="color:#e6db74">headers</span>: <span style="color:#66d9ef">true</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>row<span style="color:#f92672">|</span>
+        <span style="color:#75715e"># 読み込んだ行内の文字列を置換する</span>
+        write_file<span style="color:#f92672">.</span>write(row<span style="color:#f92672">.</span>to_s<span style="color:#f92672">.</span>gsub({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>}))
+      <span style="color:#66d9ef">end</span>
+
+      write_file<span style="color:#f92672">.</span>close
+    <span style="color:#66d9ef">end</span>
+
+    <span style="color:#66d9ef">FileUtils</span><span style="color:#f92672">.</span>move(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>) <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>ヘッダは force quote なし ボディは force quote ありのようにしたい場合</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">id,名前
+&#34;1&#34;,&#34;太郎&#34;
+</code></pre></div><p>CSV#open メソッドを使用する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;csv&#39;</span>
+require <span style="color:#e6db74">&#39;fileutils&#39;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Converter</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">convert</span>
+    file_basename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{拡張子を除いたファイル名}&#34;</span>
+
+    <span style="color:#75715e"># 読み取り専用でファイルを開く</span>
+    <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>zero?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>)
+
+      <span style="color:#75715e"># 一時ファイルを書き込みモードで開く</span>
+      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>csv<span style="color:#f92672">|</span>
+        <span style="color:#75715e"># csv の header を書き込む</span>
+        csv <span style="color:#f92672">&lt;&lt;</span> file<span style="color:#f92672">.</span>readline<span style="color:#f92672">.</span>parse_csv
+      <span style="color:#66d9ef">end</span>
+      file<span style="color:#f92672">.</span>rewind
+
+      <span style="color:#75715e"># 一時ファイルを追記モードで開く</span>
+      <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">force_quotes</span>: <span style="color:#66d9ef">true</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>csv<span style="color:#f92672">|</span>
+        <span style="color:#66d9ef">CSV</span><span style="color:#f92672">.</span>new(file, <span style="color:#e6db74">headers</span>: <span style="color:#66d9ef">true</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>row<span style="color:#f92672">|</span>
+          <span style="color:#75715e"># 読み込んだ行内の文字列を置換する</span>
+          csv <span style="color:#f92672">&lt;&lt;</span> row<span style="color:#f92672">.</span>to_s<span style="color:#f92672">.</span>gsub({<span style="color:#960050;background-color:#1e0010">置換対象文字列</span>}, {<span style="color:#960050;background-color:#1e0010">置換文字列</span>})<span style="color:#f92672">.</span>parse_csv
+        <span style="color:#66d9ef">end</span>
+      <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>
+
+    <span style="color:#66d9ef">FileUtils</span><span style="color:#f92672">.</span>move(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#34;</span>) <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>file_basename<span style="color:#e6db74">}</span><span style="color:#e6db74">_tmp.csv&#34;</span>)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>1.4 GB 程の csv ファイルを処理した際にリファクタリング前は
 1時間40分程度だったものが 5 分程度の処理時間に改善した</p>
 </div>
 
@@ -2348,7 +2323,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    window.disqus_config = function () {
+    var disqus_config = function () {
     
     
     
@@ -2373,27 +2348,6 @@ figure img {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2584,6 +2538,27 @@ figure img {
 </article>
 
     
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
   </div>
 </section>
 
@@ -2596,7 +2571,7 @@ figure img {
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

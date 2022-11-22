@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -555,12 +549,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-}
-  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -971,19 +959,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2044,7 +2019,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          69
           <span>Posts</span>
         </a>
       </div>
@@ -2124,9 +2099,9 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
             </ul>
 
             <div class="summary">経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
-Generate new token を押下する
-2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
+手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
+  Generate new token を押下する
+  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
           </div>
         </a>
       </article>
@@ -2148,9 +2123,9 @@ Generate new token を押下する
             </ul>
 
             <div class="summary">基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ Git初期化 git init Git接続先設定 git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得 git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成 git checkout -b topic/#{issue番号}-作業者名 開発
-ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする git commit -m &#34;コメント&#34; プルリクエストを投げる git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
+実際のコード 基本的な流れ  Git初期化  git init Git接続先設定  git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得  git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成  git checkout -b topic/#{issue番号}-作業者名  開発
+  ステージングにあげる
+  git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする  git commit -m &#34;コメント&#34; プルリクエストを投げる  git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
 その他 直前のコミットのコメントを修正 git commit --amend -m &#34;直前のコミットのコメントを修正&#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す ※ローカルの変更はそのまま git reset --soft HEAD^ git の状態を一つ前に戻す ※ローカルの変更も戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</div>
           </div>
         </a>
@@ -2173,12 +2148,11 @@ git add -A # untracked files を除いてステージングに挙げる場合は
             </ul>
 
             <div class="summary">毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
+実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動</div>
           </div>
         </a>
       </article>
@@ -2196,27 +2170,6 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2407,6 +2360,27 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
 </article>
 
     
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
   </div>
 </section>
 
@@ -2419,7 +2393,7 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

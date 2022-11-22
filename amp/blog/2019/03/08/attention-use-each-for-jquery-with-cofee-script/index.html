@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -22,7 +22,7 @@
     
 <meta name="description" content="JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース 修正前 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id 修正後 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
+実際のソース  修正前  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id  修正後  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
 
 <meta property="og:title" content="CofeeScript で JQuery の each を使用する場合の注意点 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース 修正前 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id 修正後 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
+実際のソース  修正前  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id  修正後  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -40,7 +40,7 @@
 <meta name="twitter:title" content="CofeeScript で JQuery の each を使用する場合の注意点 - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース 修正前 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id 修正後 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
+実際のソース  修正前  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id  修正後  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/coffee_script_logo.png">
 
 
@@ -75,7 +75,7 @@
         "height": 60
       }
     },
-    "description": "JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する\nその場合は以下のように修正する\n実際のソース 修正前 processRows: -\u0026gt; $(\u0026#34;#my-table\u0026gt;tr\u0026#34;).each -\u0026gt; id = $(this).attr(\u0026#34;id\u0026#34;) @processRow id 修正後 processRows: -\u0026gt; $(\u0026#34;#my-table\u0026gt;tr\u0026#34;).each (index, element) =\u0026gt; id = $(element).attr(\u0026#34;id\u0026#34;) @processRow id "
+    "description": "JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する\nその場合は以下のように修正する\n実際のソース  修正前  processRows: -\u0026gt; $(\u0026#34;#my-table\u0026gt;tr\u0026#34;).each -\u0026gt; id = $(this).attr(\u0026#34;id\u0026#34;) @processRow id  修正後  processRows: -\u0026gt; $(\u0026#34;#my-table\u0026gt;tr\u0026#34;).each (index, element) =\u0026gt; id = $(element).attr(\u0026#34;id\u0026#34;) @processRow id "
   }
 </script>
 
@@ -369,13 +369,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -398,7 +393,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -428,8 +423,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -570,12 +564,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-  .thumb-cc659da25630dda8c57054bfbdb783a3 {
-    background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-  }
-  
 
   
   .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -984,19 +972,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2070,18 +2045,18 @@ figure img {
 <ul>
 <li>修正前</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-coffeescript" data-lang="coffeescript"><span style="display:flex;"><span>processRows: <span style="color:#a6e22e">-&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#my-table&gt;tr&#34;</span>).<span style="color:#a6e22e">each</span> <span style="color:#a6e22e">-&gt;</span>
-</span></span><span style="display:flex;"><span>        id = <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@processRow</span> <span style="color:#a6e22e">id</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffeescript" data-lang="coffeescript">processRows: <span style="color:#a6e22e">-&gt;</span>
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#my-table&gt;tr&#34;</span>).<span style="color:#a6e22e">each</span> <span style="color:#a6e22e">-&gt;</span>
+        id = <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
+        <span style="color:#a6e22e">@processRow</span> <span style="color:#a6e22e">id</span>
+</code></pre></div><ul>
 <li>修正後</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-coffeescript" data-lang="coffeescript"><span style="display:flex;"><span>processRows: <span style="color:#a6e22e">-&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#my-table&gt;tr&#34;</span>).<span style="color:#a6e22e">each</span> <span style="color:#a6e22e">(index, element) =&gt;</span>
-</span></span><span style="display:flex;"><span>        id = <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">element</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@processRow</span> <span style="color:#a6e22e">id</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffeescript" data-lang="coffeescript">processRows: <span style="color:#a6e22e">-&gt;</span>
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#my-table&gt;tr&#34;</span>).<span style="color:#a6e22e">each</span> <span style="color:#a6e22e">(index, element) =&gt;</span>
+        id = <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">element</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
+        <span style="color:#a6e22e">@processRow</span> <span style="color:#a6e22e">id</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 

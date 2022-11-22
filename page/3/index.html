@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -555,12 +549,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-}
-  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -971,19 +959,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2044,7 +2019,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          69
           <span>Posts</span>
         </a>
       </div>
@@ -2082,31 +2057,6 @@ figure img {
     
     <div class="mcol c6">
       <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
-          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
-
-          <div class="inner">
-            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 方法 Windows Terminal を起動する
-「Ctrl」+「,」を押下して setting.json を開く
-setting.json の設定に以下を追加する
-{ &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
         <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
           <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
 
@@ -2121,8 +2071,8 @@ setting.json の設定に以下を追加する
             </ul>
 
             <div class="summary">wsl の起動時のユーザを root にする方法を備忘録として残しておく
-環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
-方法 PowerShell で以下のコマンドを実行する $ wsl $ sudo passwd root $ exit $ wsl -s Ubuntu-18.04 $ ubuntu1804 config --default-user root $ wsl #=&gt; root でログインしていることを確認 </div>
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
+方法  PowerShell で以下のコマンドを実行する  $ wsl $ sudo passwd root $ exit $ wsl -s Ubuntu-18.04 $ ubuntu1804 config --default-user root $ wsl #=&gt; root でログインしていることを確認 </div>
           </div>
         </a>
       </article>
@@ -2144,7 +2094,7 @@ setting.json の設定に以下を追加する
             </ul>
 
             <div class="summary">docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
-環境 dokcer: 20.10.5 docker-compose: 1.28.5 前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
+環境  dokcer: 20.10.5 docker-compose: 1.28.5  前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
 方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/ </div>
           </div>
         </a>
@@ -2167,27 +2117,24 @@ setting.json の設定に以下を追加する
             </ul>
 
             <div class="summary">Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
-環境 rails: rails 5.2.2 rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
 使用感としてはテンプレートとなる Excel に対して読み書きする場合には
 問題なく使用可能。
 但し、テンプレートに数式やグラフが含まれている場合に行などを
 追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
 あるため注意が必要。
-rubyXL 発生した障害とその対応 テキストの折り返しがsheet.add_cellではできない
+rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
 sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能。
 テキストを折り返して表示してくれるようになる。
-change_contents が使えない
+  change_contents が使えない
 version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
 # require が必要なメソッド require &#39;rubyXL/convenience_methods/cell&#39; require &#39;rubyXL/convenience_methods/color&#39; require &#39;rubyXL/convenience_methods/font&#39; require &#39;rubyXL/convenience_methods/workbook&#39; require &#39;rubyXL/convenience_methods/worksheet&#39; もしくは以下で全て使用可
-require &#39;rubyXL/convenience_methods&#39; シートのコピーができない
+require &#39;rubyXL/convenience_methods&#39;   シートのコピーができない
 Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
 参考サイト
-シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
 change_contents の仕様と上記のシートコピーによって生じた現象。
-シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →
-該当するコピーシートすべての内容が書き換わる という動作をしている。
-=&gt; add_cell による値の挿入だと上記の現象は発生しないため、左記の方法で対応。
-上記の場合は書式設定等は rubyXL 側で行う必要がある。</div>
+シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</div>
           </div>
         </a>
       </article>
@@ -2209,9 +2156,9 @@ change_contents の仕様と上記のシートコピーによって生じた現�
             </ul>
 
             <div class="summary">経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
-手順 vagrant halt を行う
+手順   vagrant halt を行う
 以下のエラーが発生
-An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &#34;ruby&#34; or &#34;vagrant&#34; processes and kill them. Then try again.</div>
+An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &#34;ruby&#34; or &#34;vagrant&#34; processes and kill them.</div>
           </div>
         </a>
       </article>
@@ -2233,11 +2180,11 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
             </ul>
 
             <div class="summary">[前回までの記事]
-Hugo に数式を挿入する 経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+ Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
-partials フォルダ配下の以下のファイルを修正する
+  partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定 displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
+&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
           </div>
         </a>
       </article>
@@ -2258,7 +2205,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 Gem Errgent を使用して実現する
+            <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
 確認 config/environments/development.rb の以下を編集して確認する
 config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
 =&gt; 生成されるファイル 例. public/404.ja.html
@@ -2283,7 +2230,7 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
+            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
 $ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する
@@ -2308,7 +2255,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               
             </ul>
 
-            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
+            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
           </div>
         </a>
       </article>
@@ -2330,13 +2277,34 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
             </ul>
 
             <div class="summary">[前回までの記事]
-普通の会社員(SE)が確定申告してみた 経緯 前回、確定申告をして損失の繰り越し控除を行った
+ 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
 今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1 ※1 対応するスマートフォンでも可 参考資料
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
 スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
 手順 e-tax 確定申告書等作成コーナーで作成する
-「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「はい」を選択 前年の譲渡損失を入力 「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択 「源泉徴収票」の内容を転記 「住民税等入力」 「入力終了(次へ) &gt;」ボタンを押下 住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある
-また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</div>
+ 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
+          <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
+
+          <div class="inner">
+            <h2 class="title">RSpec 内で動的に I18n の訳文を追加する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-09-14T09:56:37JST">Sep 14, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
+I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
           </div>
         </a>
       </article>
@@ -2363,27 +2331,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2574,6 +2521,27 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 </article>
 
     
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
   </div>
 </section>
 
@@ -2586,7 +2554,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
