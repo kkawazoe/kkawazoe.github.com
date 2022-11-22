@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -20,12 +20,11 @@
 
     
 <meta name="description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
+実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動">
 
 <meta property="og:title" content="Github への公開鍵の登録 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -33,12 +32,11 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
+実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -46,12 +44,11 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
 <meta name="twitter:title" content="Github への公開鍵の登録 - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
+実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; &gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/github_logo.png">
 
 
@@ -86,7 +83,7 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.">
         "height": 60
       }
     },
-    "description": "毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく\n実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行\n$ ssh-keygen -t rsa -b 4096 -C \u0026#34;your_email@example.com\u0026#34; -f \u0026#34;id_rsa\u0026#34; \u0026gt; Generating public\/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)\n\u0026gt; Enter a file in which to save the key (\/Users\/you\/.ssh\/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)\n\u0026gt; Enter passphrase (empty for no passphrase): [Type a passphrase] \u0026gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する\n4-1. バックグラウンドでssh-agentを起動\n$ eval \u0026#34;$(ssh-agent -s)\u0026#34; \u0026gt; Agent pid 59566 ※ macOS Sierra 10."
+    "description": "毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく\n実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行\n$ ssh-keygen -t rsa -b 4096 -C \u0026#34;your_email@example.com\u0026#34; -f \u0026#34;id_rsa\u0026#34; \u0026gt; Generating public\/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)\n\u0026gt; Enter a file in which to save the key (\/Users\/you\/.ssh\/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)\n\u0026gt; Enter passphrase (empty for no passphrase): [Type a passphrase] \u0026gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する\n4-1. バックグラウンドでssh-agentを起動"
   }
 </script>
 
@@ -382,13 +379,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -411,7 +403,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -441,8 +433,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -627,12 +618,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-}
-  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -1043,19 +1028,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2116,7 +2088,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          69
           <span>Posts</span>
         </a>
       </div>
@@ -2183,37 +2155,37 @@ figure img {
 <ol>
 <li>
 <p>以下のコマンドを GitHub のEメールアドレスに置き換えて実行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span> -f <span style="color:#e6db74">&#34;id_rsa&#34;</span>
-</span></span><span style="display:flex;"><span>&gt; Generating public/private rsa key pair.
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span> -f <span style="color:#e6db74">&#34;id_rsa&#34;</span>
+&gt; Generating public/private rsa key pair.
+</code></pre></div></li>
 <li>
 <p>以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; Enter a file in which to save the key <span style="color:#f92672">(</span>/Users/you/.ssh/id_rsa<span style="color:#f92672">)</span>: <span style="color:#f92672">[</span>Press enter<span style="color:#f92672">]</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; Enter a file in which to save the key <span style="color:#f92672">(</span>/Users/you/.ssh/id_rsa<span style="color:#f92672">)</span>: <span style="color:#f92672">[</span>Press enter<span style="color:#f92672">]</span>
+</code></pre></div></li>
 <li>
 <p>以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: <span style="color:#f92672">[</span>Type a passphrase<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>&gt; Enter same passphrase again: <span style="color:#f92672">[</span>Type passphrase again<span style="color:#f92672">]</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: <span style="color:#f92672">[</span>Type a passphrase<span style="color:#f92672">]</span>
+&gt; Enter same passphrase again: <span style="color:#f92672">[</span>Type passphrase again<span style="color:#f92672">]</span>
+</code></pre></div></li>
 <li>
 <p>SSH キーを ssh-agent に追加する</p>
 <p>4-1. バックグラウンドでssh-agentを起動</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>&gt; Agent pid <span style="color:#ae81ff">59566</span>
-</span></span></code></pre></div><p>※ macOS Sierra 10.12.2 以降を使用している場合は <code>~/.ssh/config</code> ファイルを変更して自動的にキーを <code>ssh-agent</code> にロードしパスフレーズをキーチェーンに格納する必要あり</p>
-<pre tabindex="0"><code class="language-bash:~/.ssh/config" data-lang="bash:~/.ssh/config">Host *
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+&gt; Agent pid <span style="color:#ae81ff">59566</span>
+</code></pre></div><p>※ macOS Sierra 10.12.2 以降を使用している場合は <code>~/.ssh/config</code> ファイルを変更して自動的にキーを <code>ssh-agent</code> にロードしパスフレーズをキーチェーンに格納する必要あり</p>
+<pre><code class="language-bash:~/.ssh/config" data-lang="bash:~/.ssh/config">Host *
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
 </code></pre></li>
 <li>
 <p>SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add -K ~/.ssh/id_rsa
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add -K ~/.ssh/id_rsa
+</code></pre></div></li>
 <li>
 <p>公開鍵をクリップボードにコピーする</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pbcopy &lt; ~/.ssh/id_rsa.pub
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pbcopy &lt; ~/.ssh/id_rsa.pub
+</code></pre></div></li>
 <li>
 <p>SSH キーを GitHub アカウントに追加する</p>
 </li>
@@ -2222,22 +2194,22 @@ figure img {
 <ol>
 <li>
 <p>以下のコマンドを GitHub のEメールアドレスに置き換えて実行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">ssh-keygen</span> <span style="color:#a6e22e">-t</span> <span style="color:#a6e22e">rsa</span> <span style="color:#a6e22e">-b</span> <span style="color:#ae81ff">4096</span> <span style="color:#a6e22e">-C</span> <span style="color:#a6e22e">&#34;your_email@example.com&#34;</span> <span style="color:#a6e22e">-f</span> <span style="color:#a6e22e">&#34;id_rsa&#34;</span>
-</span></span><span style="display:flex;"><span>&gt; <span style="color:#a6e22e">Generating</span> <span style="color:#a6e22e">public</span>/private <span style="color:#a6e22e">rsa</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">pair.</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">ssh-keygen</span> <span style="color:#a6e22e">-t</span> <span style="color:#a6e22e">rsa</span> <span style="color:#a6e22e">-b</span> <span style="color:#ae81ff">4096</span> <span style="color:#a6e22e">-C</span> <span style="color:#a6e22e">&#34;your_email@example.com&#34;</span> <span style="color:#a6e22e">-f</span> <span style="color:#a6e22e">&#34;id_rsa&#34;</span>
+&gt; <span style="color:#a6e22e">Generating</span> <span style="color:#a6e22e">public</span>/private <span style="color:#a6e22e">rsa</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">pair.</span>
+</code></pre></div></li>
 <li>
 <p>以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span>&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">file</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">save</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">key</span> <span style="color:#e6db74">(/c/Users/you/.ssh/id_rsa)</span><span style="color:#a6e22e">:</span>[<span style="color:#a6e22e">Press</span> <span style="color:#a6e22e">enter</span>]
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps">&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">file</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">which</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">save</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">key</span> <span style="color:#e6db74">(/c/Users/you/.ssh/id_rsa)</span><span style="color:#a6e22e">:</span>[<span style="color:#a6e22e">Press</span> <span style="color:#a6e22e">enter</span>]
+</code></pre></div></li>
 <li>
 <p>以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span>&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#e6db74">(empty for no passphrase)</span><span style="color:#a6e22e">:</span> [<span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">passphrase</span>]
-</span></span><span style="display:flex;"><span>&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again:</span> [<span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again</span>]
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps">&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#e6db74">(empty for no passphrase)</span><span style="color:#a6e22e">:</span> [<span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">passphrase</span>]
+&gt; <span style="color:#a6e22e">Enter</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again:</span> [<span style="color:#a6e22e">Type</span> <span style="color:#a6e22e">passphrase</span> <span style="color:#a6e22e">again</span>]
+</code></pre></div></li>
 <li>
 <p>公開鍵をクリップボードにコピーする</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">~</span>/.ssh/id_rsa.pub <span style="color:#a6e22e">|</span> <span style="color:#a6e22e">clip</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps" data-lang="ps"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">~</span>/.ssh/id_rsa.pub <span style="color:#a6e22e">|</span> <span style="color:#a6e22e">clip</span>
+</code></pre></div></li>
 <li>
 <p>SSH キーを GitHub アカウントに追加する</p>
 </li>
@@ -2249,32 +2221,32 @@ figure img {
 </li>
 <li>
 <p><code>~/.ssh/config</code> を編集する ※ない場合は新規作成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host github.com <span style="color:#75715e"># メインアカウント</span>
-</span></span><span style="display:flex;"><span>  HostName github.com
-</span></span><span style="display:flex;"><span>  User git
-</span></span><span style="display:flex;"><span>  Port <span style="color:#ae81ff">22</span>
-</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_rsa
-</span></span><span style="display:flex;"><span>  TCPKeepAlive yes
-</span></span><span style="display:flex;"><span>  IdentitiesOnly yes
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Host github.com.sub <span style="color:#75715e"># サブアカウント</span>
-</span></span><span style="display:flex;"><span>  HostName github.com
-</span></span><span style="display:flex;"><span>  User git
-</span></span><span style="display:flex;"><span>  Port <span style="color:#ae81ff">22</span>
-</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_rsa_sub
-</span></span><span style="display:flex;"><span>  TCPKeepAlive yes
-</span></span><span style="display:flex;"><span>  IdentitiesOnly yes
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github.com <span style="color:#75715e"># メインアカウント</span>
+  HostName github.com
+  User git
+  Port <span style="color:#ae81ff">22</span>
+  IdentityFile ~/.ssh/id_rsa
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+Host github.com.sub <span style="color:#75715e"># サブアカウント</span>
+  HostName github.com
+  User git
+  Port <span style="color:#ae81ff">22</span>
+  IdentityFile ~/.ssh/id_rsa_sub
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+</code></pre></div></li>
 <li>
 <p>Githubに公開鍵を登録する</p>
 <p>Githubにログインして、[Settings] &gt; [SSH keys] &gt; [Add SSH key]で作成した公開鍵を登録する</p>
 </li>
 <li>
 <p>以下のコマンドを実行して設定が上手くいっていることを確認する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -T git@github.com
-</span></span><span style="display:flex;"><span>ssh -T git@github.com.sub
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hi {yourname}! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -T git@github.com
+ssh -T git@github.com.sub
+<span style="color:#75715e"># Hi {yourname}! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span>
+</code></pre></div></li>
 </ol>
 </div>
 
@@ -2363,7 +2335,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    window.disqus_config = function () {
+    var disqus_config = function () {
     
     
     
@@ -2388,27 +2360,6 @@ figure img {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2599,6 +2550,27 @@ figure img {
 </article>
 
     
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
+    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
+
+    <div class="inner">
+      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
   </div>
 </section>
 
@@ -2611,7 +2583,7 @@ figure img {
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

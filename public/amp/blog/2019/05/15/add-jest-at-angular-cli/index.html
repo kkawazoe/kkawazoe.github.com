@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -564,12 +558,6 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
-
-  
-  .thumb-cc659da25630dda8c57054bfbdb783a3 {
-    background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
-  }
-  
 
   
   .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -978,19 +966,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-cc659da25630dda8c57054bfbdb783a3 {
-  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
-  width: 5rem;
 }
 
 
@@ -2061,127 +2036,127 @@ figure img {
   <div class="article-body"><p>Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため<br>
 Jest に変更する手順を備忘録として残しておく</p>
 <h2 id="構築環境">構築環境</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Angular CLI: 7.3.9
-</span></span><span style="display:flex;"><span>Node: 10.15.3
-</span></span><span style="display:flex;"><span>OS: darwin x64
-</span></span><span style="display:flex;"><span>Angular:
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Package                      Version
-</span></span><span style="display:flex;"><span>------------------------------------------------------
-</span></span><span style="display:flex;"><span>@angular-devkit/architect    0.13.9
-</span></span><span style="display:flex;"><span>@angular-devkit/core         7.3.9
-</span></span><span style="display:flex;"><span>@angular-devkit/schematics   7.3.9
-</span></span><span style="display:flex;"><span>@schematics/angular          7.3.9
-</span></span><span style="display:flex;"><span>@schematics/update           0.13.9
-</span></span><span style="display:flex;"><span>rxjs                         6.3.3
-</span></span><span style="display:flex;"><span>typescript                   3.2.4
-</span></span></code></pre></div><h3 id="手順">手順</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Angular CLI: 7.3.9
+Node: 10.15.3
+OS: darwin x64
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.13.9
+@angular-devkit/core         7.3.9
+@angular-devkit/schematics   7.3.9
+@schematics/angular          7.3.9
+@schematics/update           0.13.9
+rxjs                         6.3.3
+typescript                   3.2.4
+</code></pre></div><h3 id="手順">手順</h3>
 <h4 id="1-プロジェクトを作成">1. プロジェクトを作成</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ng new JEST-EXAMPLE --style<span style="color:#f92672">=</span>styl
-</span></span><span style="display:flex;"><span>? Would you like to add Angular routing? Yes
-</span></span></code></pre></div><h4 id="2-以下のコマンドを実行する">2. 以下のコマンドを実行する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn global add @briebug/jest-schematic
-</span></span><span style="display:flex;"><span>ng g @briebug/jest-schematic:add
-</span></span><span style="display:flex;"><span>ng add @briebug/jest-schematic
-</span></span></code></pre></div><h4 id="3-以下のコマンドを実行して動作確認する">3. 以下のコマンドを実行して動作確認する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ yarn test
-</span></span><span style="display:flex;"><span>$ jest
-</span></span><span style="display:flex;"><span>PASS  src/app/app.component.spec.ts
-</span></span><span style="display:flex;"><span>AppComponent
-</span></span><span style="display:flex;"><span>    ✓ should create the app <span style="color:#f92672">(</span>89ms<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    ✓ should have as title <span style="color:#e6db74">&#39;JEST-EXAMPLE&#39;</span> <span style="color:#f92672">(</span>28ms<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    ✓ should render title in a h1 tag <span style="color:#f92672">(</span>29ms<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Test Suites: <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
-</span></span><span style="display:flex;"><span>Tests:       <span style="color:#ae81ff">3</span> passed, <span style="color:#ae81ff">3</span> total
-</span></span><span style="display:flex;"><span>Snapshots:   <span style="color:#ae81ff">0</span> total
-</span></span><span style="display:flex;"><span>Time:        3.913s
-</span></span><span style="display:flex;"><span>Ran all test suites.
-</span></span><span style="display:flex;"><span>✨  Done in 4.76s.
-</span></span></code></pre></div><p>上記だけでも動くが snapshot テストを行うためには以下が追加で必要</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ng new JEST-EXAMPLE --style<span style="color:#f92672">=</span>styl
+? Would you like to add Angular routing? Yes
+</code></pre></div><h4 id="2-以下のコマンドを実行する">2. 以下のコマンドを実行する</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn global add @briebug/jest-schematic
+ng g @briebug/jest-schematic:add
+ng add @briebug/jest-schematic
+</code></pre></div><h4 id="3-以下のコマンドを実行して動作確認する">3. 以下のコマンドを実行して動作確認する</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn test
+$ jest
+PASS  src/app/app.component.spec.ts
+AppComponent
+    ✓ should create the app <span style="color:#f92672">(</span>89ms<span style="color:#f92672">)</span>
+    ✓ should have as title <span style="color:#e6db74">&#39;JEST-EXAMPLE&#39;</span> <span style="color:#f92672">(</span>28ms<span style="color:#f92672">)</span>
+    ✓ should render title in a h1 tag <span style="color:#f92672">(</span>29ms<span style="color:#f92672">)</span>
+
+Test Suites: <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
+Tests:       <span style="color:#ae81ff">3</span> passed, <span style="color:#ae81ff">3</span> total
+Snapshots:   <span style="color:#ae81ff">0</span> total
+Time:        3.913s
+Ran all test suites.
+✨  Done in 4.76s.
+</code></pre></div><p>上記だけでも動くが snapshot テストを行うためには以下が追加で必要</p>
 <h4 id="4-srcappappcomponentspects-を修正">4. src/app/app.component.spec.ts を修正</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">TestBed</span>, <span style="color:#66d9ef">async</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core/testing&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RouterTestingModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/router/testing&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AppComponent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./app.component&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;AppComponent&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">beforeEach</span>(<span style="color:#66d9ef">async</span>(() <span style="color:#f92672">=&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">TestBed</span>.<span style="color:#a6e22e">configureTestingModule</span>({
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">RouterTestingModule</span>
-</span></span><span style="display:flex;"><span>      ],
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">AppComponent</span>,
-</span></span><span style="display:flex;"><span>      ],
-</span></span><span style="display:flex;"><span>    }).<span style="color:#a6e22e">compileComponents</span>();
-</span></span><span style="display:flex;"><span>  }));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;snapshots&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;正しく render されること&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fixture</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">TestBed</span>.<span style="color:#a6e22e">createComponent</span>(<span style="color:#a6e22e">AppComponent</span>);
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">fixture</span>).<span style="color:#a6e22e">toMatchSnapshot</span>();
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h4 id="5-srctsconfigspecjson-を修正">5. src/tsconfig.spec.json を修正</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;extends&#34;</span>: <span style="color:#e6db74">&#34;../tsconfig.json&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;outDir&#34;</span>: <span style="color:#e6db74">&#34;../out-tsc spec&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;types&#34;</span>: [
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jasmine&#34;</span>, <span style="color:#75715e">//=&gt; &#34;jest&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#34;node&#34;</span>
-</span></span><span style="display:flex;"><span>    ],
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;module&#34;</span>: <span style="color:#e6db74">&#34;commonjs&#34;</span>
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;files&#34;</span>: [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;polyfills.ts&#34;</span>
-</span></span><span style="display:flex;"><span>  ],
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;include&#34;</span>: [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;**/*.spec.ts&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;**/*.d.ts&#34;</span>
-</span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="6-srcangularjson-から以下を削除">6. src/angular.json から以下を削除</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">・・・</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;test&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:karma&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;options&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;src/test.ts&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;polyfills&#34;</span>: <span style="color:#e6db74">&#34;src/polyfills.ts&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tsConfig&#34;</span>: <span style="color:#e6db74">&#34;src/tsconfig.spec.json&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;karmaConfig&#34;</span>: <span style="color:#e6db74">&#34;src/karma.conf.js&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;styles&#34;</span>: [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;src/styles.styl&#34;</span>
-</span></span><span style="display:flex;"><span>      ],
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;scripts&#34;</span>: [],
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;assets&#34;</span>: [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;src/favicon.ico&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;src/assets&#34;</span>
-</span></span><span style="display:flex;"><span>      ]
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">・・・</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="7-以下のコマンドを実行する">7. 以下のコマンドを実行する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn remove @types/jasmine @types/jasminewd2
-</span></span><span style="display:flex;"><span>yarn add @types/jest
-</span></span></code></pre></div><h4 id="8-以下のコマンドを実行して動作確認する">8. 以下のコマンドを実行して動作確認する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ jest
-</span></span><span style="display:flex;"><span>PASS  src/app/app.component.spec.ts
-</span></span><span style="display:flex;"><span>AppComponent
-</span></span><span style="display:flex;"><span>    snapshots
-</span></span><span style="display:flex;"><span>    ✓ 正しく render されること <span style="color:#f92672">(</span>109ms<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Test Suites: <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
-</span></span><span style="display:flex;"><span>Tests:       <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
-</span></span><span style="display:flex;"><span>Snapshots:   <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
-</span></span><span style="display:flex;"><span>Time:        1.711s, estimated 3s
-</span></span><span style="display:flex;"><span>Ran all test suites.
-</span></span><span style="display:flex;"><span>✨  Done in 2.43s.
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">TestBed</span>, <span style="color:#66d9ef">async</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/core/testing&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">RouterTestingModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@angular/router/testing&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AppComponent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./app.component&#39;</span>;
+
+<span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;AppComponent&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#a6e22e">beforeEach</span>(<span style="color:#66d9ef">async</span>(() <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#a6e22e">TestBed</span>.<span style="color:#a6e22e">configureTestingModule</span>({
+      <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+        <span style="color:#a6e22e">RouterTestingModule</span>
+      ],
+      <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [
+        <span style="color:#a6e22e">AppComponent</span>,
+      ],
+    }).<span style="color:#a6e22e">compileComponents</span>();
+  }));
+
+  <span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;snapshots&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;正しく render されること&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fixture</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">TestBed</span>.<span style="color:#a6e22e">createComponent</span>(<span style="color:#a6e22e">AppComponent</span>);
+      <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">fixture</span>).<span style="color:#a6e22e">toMatchSnapshot</span>();
+    });
+  });
+});
+</code></pre></div><h4 id="5-srctsconfigspecjson-を修正">5. src/tsconfig.spec.json を修正</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;extends&#34;</span>: <span style="color:#e6db74">&#34;../tsconfig.json&#34;</span>,
+  <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
+    <span style="color:#f92672">&#34;outDir&#34;</span>: <span style="color:#e6db74">&#34;../out-tsc spec&#34;</span>,
+    <span style="color:#f92672">&#34;types&#34;</span>: [
+      <span style="color:#e6db74">&#34;jasmine&#34;</span>, <span style="color:#960050;background-color:#1e0010">//=&gt;</span> <span style="color:#e6db74">&#34;jest&#34;</span>
+      <span style="color:#e6db74">&#34;node&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;module&#34;</span>: <span style="color:#e6db74">&#34;commonjs&#34;</span>
+  },
+  <span style="color:#f92672">&#34;files&#34;</span>: [
+    <span style="color:#e6db74">&#34;polyfills.ts&#34;</span>
+  ],
+  <span style="color:#f92672">&#34;include&#34;</span>: [
+    <span style="color:#e6db74">&#34;**/*.spec.ts&#34;</span>,
+    <span style="color:#e6db74">&#34;**/*.d.ts&#34;</span>
+  ]
+}
+</code></pre></div><h4 id="6-srcangularjson-から以下を削除">6. src/angular.json から以下を削除</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#960050;background-color:#1e0010">・・・</span>
+  <span style="color:#f92672">&#34;test&#34;</span>: {
+    <span style="color:#f92672">&#34;builder&#34;</span>: <span style="color:#e6db74">&#34;@angular-devkit/build-angular:karma&#34;</span>,
+    <span style="color:#f92672">&#34;options&#34;</span>: {
+      <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;src/test.ts&#34;</span>,
+      <span style="color:#f92672">&#34;polyfills&#34;</span>: <span style="color:#e6db74">&#34;src/polyfills.ts&#34;</span>,
+      <span style="color:#f92672">&#34;tsConfig&#34;</span>: <span style="color:#e6db74">&#34;src/tsconfig.spec.json&#34;</span>,
+      <span style="color:#f92672">&#34;karmaConfig&#34;</span>: <span style="color:#e6db74">&#34;src/karma.conf.js&#34;</span>,
+      <span style="color:#f92672">&#34;styles&#34;</span>: [
+        <span style="color:#e6db74">&#34;src/styles.styl&#34;</span>
+      ],
+      <span style="color:#f92672">&#34;scripts&#34;</span>: [],
+      <span style="color:#f92672">&#34;assets&#34;</span>: [
+        <span style="color:#e6db74">&#34;src/favicon.ico&#34;</span>,
+        <span style="color:#e6db74">&#34;src/assets&#34;</span>
+      ]
+    }
+  },
+  <span style="color:#960050;background-color:#1e0010">・・・</span>
+}
+</code></pre></div><h4 id="7-以下のコマンドを実行する">7. 以下のコマンドを実行する</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn remove @types/jasmine @types/jasminewd2
+yarn add @types/jest
+</code></pre></div><h4 id="8-以下のコマンドを実行して動作確認する">8. 以下のコマンドを実行して動作確認する</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ jest
+PASS  src/app/app.component.spec.ts
+AppComponent
+    snapshots
+    ✓ 正しく render されること <span style="color:#f92672">(</span>109ms<span style="color:#f92672">)</span>
+
+Test Suites: <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
+Tests:       <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
+Snapshots:   <span style="color:#ae81ff">1</span> passed, <span style="color:#ae81ff">1</span> total
+Time:        1.711s, estimated 3s
+Ran all test suites.
+✨  Done in 2.43s.
+</code></pre></div></div>
 
   <footer class="article-footer">
 
