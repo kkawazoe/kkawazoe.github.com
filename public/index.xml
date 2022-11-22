@@ -6,7 +6,18 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 22 Nov 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2022 15:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio Code で拡張子毎に設定値を変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link>
+      <pubDate>Tue, 22 Nov 2022 15:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid>
+      <description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
+調査を行なった。その結果を備忘録として残しておく。
+手順 コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する 実際の設定ファイル { &amp;#34;[markdown]&amp;#34;: { &amp;#34;files.trimTrailingWhitespace&amp;#34;: false } } </description>
+    </item>
+    
     <item>
       <title>rails console で オートコンプリートを無効にする方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</link>
@@ -15,7 +26,7 @@
       <guid>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</guid>
       <description>ruby 3.1 以降から irb でオートコンプリートが効くようになったがそれを無効にする方法を調査した
 その結果を備忘録として残しておく
-環境  ruby: 3.1.2 rails: 6.1.7  方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
+環境 ruby: 3.1.2 rails: 6.1.7 方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
 ※他の設定値については 参考 を参照
 IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </description>
     </item>
@@ -26,12 +37,12 @@ IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </description>
       <pubDate>Thu, 03 Nov 2022 18:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</guid>
-      <description>環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
+      <description>環境 ruby: 2.7.6 rails: 5.2.8.1 前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
 実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下 ※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
- erb のパターン  association を使用して as: :check_boxes オプションを指定する
-&amp;lt;%= simple_form_for @book do |f| %&amp;gt; &amp;lt;%= f.association :categories, as: :check_boxes %&amp;gt; &amp;lt;%= f.button :submit %&amp;gt; &amp;lt;% end  %&amp;gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
+erb のパターン association を使用して as: :check_boxes オプションを指定する
+&amp;lt;%= simple_form_for @book do |f| %&amp;gt; &amp;lt;%= f.association :categories, as: :check_boxes %&amp;gt; &amp;lt;%= f.button :submit %&amp;gt; &amp;lt;% end %&amp;gt; javascript のパターン 最終的に生成される params が以下のようになるように組み立てる
 [&amp;quot;&amp;quot;, 1, 3]
-$(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; value=&amp;#34;&amp;#34; name=&amp;#34;book[category_ids][]&amp;#34; /&amp;gt;`, ); book.</description>
+$(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; value=&amp;#34;&amp;#34; name=&amp;#34;book[category_ids][]&amp;#34; /&amp;gt;`, ); book.category_ids.forEach((category_id) =&amp;gt; { $(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; value=&amp;#34;${category_id}&amp;#34; name=&amp;#34;book[category_ids][]&amp;#34; id=&amp;#34;book_category_ids_${category_id}&amp;#34; /&amp;gt;`, ); }); erb + javascript javascript のパターンの &amp;lt;input type=&amp;quot;hidden&amp;quot; value=&amp;quot;&amp;quot; name=&amp;quot;book[category_ids][]&amp;quot; /&amp;gt; 部分を erb で行うパターン</description>
     </item>
     
     <item>
@@ -40,8 +51,8 @@ $(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; v
       <pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</guid>
-      <description>環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
- [model]
+      <description>環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード [ER 図]
+[model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
 category_ids を配列形式で許可する
 def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </description>
@@ -54,7 +65,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
       
       <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</guid>
       <description>方法 ransackable_scopes メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
+環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
 [model]
 # 引数なし scope :within_one_month, -&amp;gt; { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&amp;gt; (day) { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
 &amp;lt;%= link_to( &amp;#34;1ヶ月以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_one_month: true }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) link_to( &amp;#34;7日以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_days: 7 }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) %&amp;gt; [controller]</description>
@@ -67,7 +78,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
       
       <guid>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</guid>
       <description>方法 create_list と send メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
+環境 ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0 実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&amp;#34;user_status#{i}&amp;#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&amp;#34;user_status#{i + 1}&amp;#34;), ) end end </description>
     </item>
@@ -80,7 +91,7 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
       <guid>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</guid>
       <description>css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく
 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える
-See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen.  </description>
+See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen. </description>
     </item>
     
     <item>
@@ -91,7 +102,7 @@ See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@k
       <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</guid>
       <description>1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが 発生したり、処理時間もすごくかかるため、ストリーム処理に変更などして 処理の高速化した際の方法を備忘録として残しておく
 方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
-環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
+環境 ruby: 3.0.4 rails: 6.1.6.1 実際のコード csv ファイルの特定の文字列を置換する処理
 前提 header 付の csv ファイル
 リファクタリング前
 class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;r&amp;#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;w&amp;#34;) # 変更内容を出力する。 file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
@@ -106,7 +117,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</guid>
       <description>rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく
 方法 gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する
-環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード # 変換用の対応表 convert_map = { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; } #=&amp;gt; {&amp;#34;a&amp;#34;=&amp;gt;&amp;#34;A&amp;#34;, &amp;#34;b&amp;#34;=&amp;gt;&amp;#34;B&amp;#34;, &amp;#34;d&amp;#34;=&amp;gt;&amp;#34;D&amp;#34;} # 以下と同義 # &amp;#34;adcacbd&amp;#34;.gsub(/a|b|d/, { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; }) &amp;#34;adcacbd&amp;#34;.gsub(Regexp.new(&amp;#34;#{convert_map.keys.join(&amp;#39;|&amp;#39;)}&amp;#34;), convert_map) #=&amp;gt; &amp;#34;ADcAcBD&amp;#34; </description>
+環境 ruby: 3.0.4 rails: 6.1.6.1 実際のコード # 変換用の対応表 convert_map = { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; } #=&amp;gt; {&amp;#34;a&amp;#34;=&amp;gt;&amp;#34;A&amp;#34;, &amp;#34;b&amp;#34;=&amp;gt;&amp;#34;B&amp;#34;, &amp;#34;d&amp;#34;=&amp;gt;&amp;#34;D&amp;#34;} # 以下と同義 # &amp;#34;adcacbd&amp;#34;.gsub(/a|b|d/, { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; }) &amp;#34;adcacbd&amp;#34;.gsub(Regexp.new(&amp;#34;#{convert_map.keys.join(&amp;#39;|&amp;#39;)}&amp;#34;), convert_map) #=&amp;gt; &amp;#34;ADcAcBD&amp;#34; </description>
     </item>
     
     <item>
@@ -117,7 +128,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/</guid>
       <description>CentOS でファイル内の行数を取得する方法を備忘録として残しておく
 方法 wc コマンドの -l オプションを使用する
-環境  CentOS: CentOS Linux release 8.4.2105  実際のコード # 該当のファイルが存在するディレクトリに移動して実行 wc -l # 拡張子で対象を絞りたい場合は以下 # 例. 拡張子が「.csv」のファイルの行数を取得 wc -l `find ./ -name &amp;#39;*.csv&amp;#39;` </description>
+環境 CentOS: CentOS Linux release 8.4.2105 実際のコード # 該当のファイルが存在するディレクトリに移動して実行 wc -l # 拡張子で対象を絞りたい場合は以下 # 例. 拡張子が「.csv」のファイルの行数を取得 wc -l `find ./ -name &amp;#39;*.csv&amp;#39;` </description>
     </item>
     
     <item>
@@ -128,7 +139,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/</guid>
       <description>rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
 方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
-環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
+環境 rails: 6.1.6.1 実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
 # Book クラス class Book &amp;lt; ApplicationRecord has_many :categories end # Category クラス class Category &amp;lt; ApplicationRecord belongs_to :book end # データ準備 book = Book.create!(name: &amp;#39;サンプル書籍&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;ビジネス&amp;#39;) book.categories &amp;lt;&amp;lt; Category.create(name: &amp;#39;自己啓発&amp;#39;) # 別名を付与したカラムを取得 category_names = Book.joins(:categories) .select(:name, &amp;#39;categories.name as category_name&amp;#39;) .where(id: 1) .pluck(&amp;#39;categories.name as category_name&amp;#39;) # (1.</description>
     </item>
     
@@ -140,7 +151,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/</guid>
       <description>PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
 方法 sum, length, regexp_replace を使用する
-環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &amp;#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&amp;#39;, coalesce(sum(length(name)-length(regexp_replace(name, &amp;#39;[仼鶴]&amp;#39;,&amp;#39;&amp;#39;,&amp;#39;g&amp;#39;))), 0) from users; </description>
+環境 PostgreSQL: 13.3 実際のコード regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定 select &amp;#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&amp;#39;, coalesce(sum(length(name)-length(regexp_replace(name, &amp;#39;[仼鶴]&amp;#39;,&amp;#39;&amp;#39;,&amp;#39;g&amp;#39;))), 0) from users; </description>
     </item>
     
     <item>
@@ -151,7 +162,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</guid>
       <description>PostgreSQL で CSV をインポートする方法を備忘録として残しておく
 方法 \COPY を使用する
-環境  PostgreSQL: 13.3  実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &amp;#39;{csvファイルパス}&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &amp;#39;{csvファイルパス}&amp;#39; WITH CSV DELIMITER &amp;#39;,&amp;#39;; # 例 HEADER なしの場合 \COPY users TO &amp;#39;.</description>
+環境 PostgreSQL: 13.3 実際のコード su - postgres psql \c {DB 名}; \COPY {テーブル名} FROM &amp;#39;{csvファイルパス}&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER なしの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV; # 例 HEADER ありの場合 \COPY users FROM &amp;#39;./users.csv&amp;#39; DELIMITER &amp;#39;,&amp;#39; CSV HEADER; # エクスポートする場合は以下 su - postgres psql \c {DB 名}; \COPY {テーブル名} TO &amp;#39;{csvファイルパス}&amp;#39; WITH CSV DELIMITER &amp;#39;,&amp;#39;; # 例 HEADER なしの場合 \COPY users TO &amp;#39;.</description>
     </item>
     
     <item>
@@ -162,7 +173,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</guid>
       <description>rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
 方法 reset_pk_sequence! を使用する
-環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </description>
+環境 rails: 6.1.4 実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </description>
     </item>
     
     <item>
@@ -174,7 +185,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <description>rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
 例. ActiveRecord::Base.method(:transaction).source_location
-環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&amp;gt; [&amp;#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&amp;#34;, 211] </description>
+環境 ruby: 2.6.10 rails: 5.2.3 実際のコード ActiveRecord::Base.method(:transaction).source_location =&amp;gt; [&amp;#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&amp;#34;, 211] </description>
     </item>
     
     <item>
@@ -192,9 +203,10 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
 参考
 指定できるフィルタ
 /Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&amp;#34;calc_pdf_Export&amp;#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</description>
+/usr/local/bin/soffice を作成して中に以下を記載する
+#!/bin/bash # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34; 以下のコマンドで実行権限を付与する
+sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &amp;gt; /usr/local/bin/soffice &amp;amp;&amp;amp; sudo chmod +x /usr/local/bin/soffice </description>
     </item>
     
     <item>
@@ -217,7 +229,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       <guid>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</guid>
       <description>個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。
 方法 tag オプション を使用して実現する
-環境  rspec: rspec 3.8  実際のコード # # :key =&amp;gt; &amp;#39;value&amp;#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &amp;#34;group with tagged specs&amp;#34; do it &amp;#34;example I&amp;#39;m working now&amp;#34;, focus: true do; end it &amp;#34;special example with string&amp;#34;, type: &amp;#39;special&amp;#39; do; end it &amp;#34;special example with symbol&amp;#34;, type: :special do; end it &amp;#34;slow example&amp;#34;, skip: true do; end it &amp;#34;ordinary example&amp;#34;, speed: &amp;#39;slow&amp;#39; do; end end 実行方法 例.</description>
+環境 rspec: rspec 3.8 実際のコード # # :key =&amp;gt; &amp;#39;value&amp;#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &amp;#34;group with tagged specs&amp;#34; do it &amp;#34;example I&amp;#39;m working now&amp;#34;, focus: true do; end it &amp;#34;special example with string&amp;#34;, type: &amp;#39;special&amp;#39; do; end it &amp;#34;special example with symbol&amp;#34;, type: :special do; end it &amp;#34;slow example&amp;#34;, skip: true do; end it &amp;#34;ordinary example&amp;#34;, speed: &amp;#39;slow&amp;#39; do; end end 実行方法 例.</description>
     </item>
     
     <item>
@@ -227,7 +239,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       
       <guid>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</guid>
       <description>HashWithIndifferentAccess に変換して実現する
-環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &amp;#39;#0000&amp;#39;, white: &amp;#39;#FFFFFF&amp;#39; }.with_indifferent_access rgb[:black] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:white] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[:&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; </description>
+環境 rails: rails 6.0.3.6 実際のコード rgb = { black: &amp;#39;#0000&amp;#39;, white: &amp;#39;#FFFFFF&amp;#39; }.with_indifferent_access rgb[:black] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:white] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[:&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; </description>
     </item>
     
     <item>
@@ -238,7 +250,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       <guid>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</guid>
       <description>CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
 その対処方法を備忘録として残しておく
-環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&#39;〓&#39;に変換する
+環境 rails: rails 6.0.3.6 仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&amp;rsquo;〓&amp;rsquo;に変換する
 実際のコード str = &amp;#39;〜変換不可能文字を含む文字列〜&amp;#39; NKF.nkf(&amp;#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&amp;#39;, str).encode(&amp;#39;UTF-8&amp;#39;, &amp;#39;CP932&amp;#39;) #=&amp;gt; &amp;#34;〓変換不可能文字を含む文字列〓&amp;#34; </description>
     </item>
     
@@ -249,10 +261,10 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       
       <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid>
       <description>windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 方法 Windows Terminal を起動する
+「Ctrl」+「,」を押下して setting.json を開く
+setting.json の設定に以下を追加する
+{ &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
     </item>
     
     <item>
@@ -262,8 +274,8 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       
       <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</guid>
       <description>wsl の起動時のユーザを root にする方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
-方法  PowerShell で以下のコマンドを実行する  $ wsl $ sudo passwd root $ exit $ wsl -s Ubuntu-18.04 $ ubuntu1804 config --default-user root $ wsl #=&amp;gt; root でログインしていることを確認 </description>
+環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
+方法 PowerShell で以下のコマンドを実行する $ wsl $ sudo passwd root $ exit $ wsl -s Ubuntu-18.04 $ ubuntu1804 config --default-user root $ wsl #=&amp;gt; root でログインしていることを確認 </description>
     </item>
     
     <item>
@@ -273,7 +285,7 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       
       <guid>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</guid>
       <description>docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
-環境  dokcer: 20.10.5 docker-compose: 1.28.5  前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
+環境 dokcer: 20.10.5 docker-compose: 1.28.5 前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
 方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/ </description>
     </item>
     
@@ -284,24 +296,27 @@ is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマン�
       
       <guid>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</guid>
       <description>Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
-環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+環境 rails: rails 5.2.2 rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
 使用感としてはテンプレートとなる Excel に対して読み書きする場合には
 問題なく使用可能。
 但し、テンプレートに数式やグラフが含まれている場合に行などを
 追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
 あるため注意が必要。
-rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
+rubyXL 発生した障害とその対応 テキストの折り返しがsheet.add_cellではできない
 sheet.add_cell(col, row, &#39;text&#39;).change_text_wrap によって実装可能。
 テキストを折り返して表示してくれるようになる。
-  change_contents が使えない
+change_contents が使えない
 version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
 # require が必要なメソッド require &amp;#39;rubyXL/convenience_methods/cell&amp;#39; require &amp;#39;rubyXL/convenience_methods/color&amp;#39; require &amp;#39;rubyXL/convenience_methods/font&amp;#39; require &amp;#39;rubyXL/convenience_methods/workbook&amp;#39; require &amp;#39;rubyXL/convenience_methods/worksheet&amp;#39; もしくは以下で全て使用可
-require &amp;#39;rubyXL/convenience_methods&amp;#39;   シートのコピーができない
+require &amp;#39;rubyXL/convenience_methods&amp;#39; シートのコピーができない
 Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
 参考サイト
-  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
 change_contents の仕様と上記のシートコピーによって生じた現象。
-シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</description>
+シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →
+該当するコピーシートすべての内容が書き換わる という動作をしている。
+=&amp;gt; add_cell による値の挿入だと上記の現象は発生しないため、左記の方法で対応。
+上記の場合は書式設定等は rubyXL 側で行う必要がある。</description>
     </item>
     
     <item>
@@ -311,9 +326,9 @@ change_contents の仕様と上記のシートコピーによって生じた現�
       
       <guid>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</guid>
       <description>経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
-手順   vagrant halt を行う
+手順 vagrant halt を行う
 以下のエラーが発生
-An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them.</description>
+An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them. Then try again.</description>
     </item>
     
     <item>
@@ -323,11 +338,11 @@ An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&a
       
       <guid>https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/</guid>
       <description>[前回までの記事]
- Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+Hugo に数式を挿入する 経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
-  partials フォルダ配下の以下のファイルを修正する
+partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定 displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
     </item>
     
     <item>
@@ -336,7 +351,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Sun, 17 May 2020 11:56:06 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/</guid>
-      <description>環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
+      <description>環境 rails: rails 5.2.3 方法 Gem Errgent を使用して実現する
 確認 config/environments/development.rb の以下を編集して確認する
 config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
 =&amp;gt; 生成されるファイル 例. public/404.ja.html
@@ -349,7 +364,7 @@ desc &amp;#39;Generate Error Pages&amp;#39; task generate_error_pages: :environm
       <pubDate>Sat, 04 Apr 2020 10:46:01 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</guid>
-      <description>環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
+      <description>環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
 $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&amp;#34;vim&amp;#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する
@@ -362,7 +377,7 @@ $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない
       <pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid>
-      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
+      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
     </item>
     
     <item>
@@ -372,12 +387,13 @@ $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない
       
       <guid>https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/</guid>
       <description>[前回までの記事]
- 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
+普通の会社員(SE)が確定申告してみた 経緯 前回、確定申告をして損失の繰り越し控除を行った
 今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
+想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1 ※1 対応するスマートフォンでも可 参考資料
 スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
 手順 e-tax 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &amp;gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある</description>
+「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「はい」を選択 前年の譲渡損失を入力 「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択 「源泉徴収票」の内容を転記 「住民税等入力」 「入力終了(次へ) &amp;gt;」ボタンを押下 住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 e-tax 経由で送信する まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある
+また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</description>
     </item>
     
     <item>
@@ -386,7 +402,7 @@ $ docker-compose exec rails bash #=&amp;gt; コンテナが起動していない
       <pubDate>Sat, 14 Sep 2019 09:56:37 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/</guid>
-      <description>環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
+      <description>環境 rails: rails 5.2.3 方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t(:test) #=&amp;gt; テスト </description>
     </item>
     
@@ -396,11 +412,11 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <pubDate>Sun, 21 Jul 2019 18:12:58 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/</guid>
-      <description>環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+      <description>環境 rails: rails 5.2.3 方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
 以下が対象
- Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
+Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &amp;lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
 以下が対象
- Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.first end end </description>
+Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &amp;lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;amp;.first end end </description>
     </item>
     
     <item>
@@ -411,13 +427,13 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       <guid>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格
+FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6 受験結果 2019年5月 一応　FP 3級合格
 勉強時間は一月半程度
 後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
 FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
 2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
 【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-   等級 学科/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい</description>
+等級 学科/実技 試験科目 合格率 3級 学科 42.76％ 3級 実技 個人資産相談業務 54.35％ 大体例年通りくらいの合格率だったらしい</description>
     </item>
     
     <item>
@@ -427,9 +443,9 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
       
       <guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid>
       <description>経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する
-  Generate new token を押下する
-  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </description>
+手順 1. アクセストークンを作成する GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する
+Generate new token を押下する
+2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </description>
     </item>
     
     <item>
@@ -463,18 +479,20 @@ Jest に変更する手順を備忘録として残しておく
       <guid>https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り   直接利回り
+FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 金融資産運用 債権 債権の利回り 直接利回り
 投資金額(購入価格)に対する毎年の利息収入の割合
 $$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
 $$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
 例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
 $$ \frac{1%}{102円} \times 100 ≒ 0.98% $$
-  応募者利回り
+応募者利回り
 債権の発行時に購入し、償還まで所有した場合の利回り
 $$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
 例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
 $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
-  最終利回り</description>
+最終利回り
+既に発行されている債権を時価で購入し、償還まで所有した場合の利回り
+$$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$</description>
     </item>
     
     <item>
@@ -487,11 +505,11 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
 テスト項目ごとにシートを分ける必要があった
 テスト項目が多い場合手作業で シート作成 =&amp;gt; シート名変更をするのは手間だったため
 ツール化をすることにした
-使用方法   「パラメータ」シートにて以下を指定する
+使用方法 「パラメータ」シートにて以下を指定する
 [設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
-ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
-  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &amp;#39;ワークシートの初期化  For Each ws In Worksheets &amp;#39;ワークシート名が&amp;#34;パラメータ&amp;#34;以外の場合  If ws.Name &amp;lt;&amp;gt; &amp;#34;パラメータ&amp;#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &amp;#39;チェックボックスの値を取得  chkFlg = Worksheets(&amp;#34;パラメータ&amp;#34;).</description>
+シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
+ワークグループ(各シートが選択状態)になる 「パラメータ」シートの「実行」ボタンを押下する
+実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &amp;#39;ワークシートの初期化 For Each ws In Worksheets &amp;#39;ワークシート名が&amp;#34;パラメータ&amp;#34;以外の場合 If ws.Name &amp;lt;&amp;gt; &amp;#34;パラメータ&amp;#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &amp;#39;チェックボックスの値を取得 chkFlg = Worksheets(&amp;#34;パラメータ&amp;#34;).OLEObjects(&amp;#34;Chk_WorkGroup&amp;#34;).Object.Value &amp;#39;ワークシートの追加 For i = 0 To Worksheets(&amp;#34;パラメータ&amp;#34;).</description>
     </item>
     
     <item>
@@ -502,9 +520,9 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
       <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
-  partials フォルダ配下に以下のファイルを作成する
+partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</description>
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</description>
     </item>
     
     <item>
@@ -515,7 +533,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <guid>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4  金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
+FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
 ※PER が低い銘柄は 割安 、高い銘柄は割高
 $$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
 ※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
@@ -525,7 +543,8 @@ $$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 10
 $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$
 参考にした教本 上記内容は以下の教本の内容を参考にしてます
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description>
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
     </item>
     
     <item>
@@ -536,10 +555,16 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
- FP3級への道 FP3級への道 その2 FP3級への道 その3  リスクマネジメント 火災保険 補償の範囲    損害 住宅火災保険 住宅総合保険     火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯   水害(水災) × ◯   給排水設備事故による水漏れ × ◯   盗難 × ◯   外部からの落下、飛来、衝突 × ◯   持出家財の損害 × ◯   地震、噴火、津波 × ×    傷害保険 主な傷害保険  普通傷害保険  国内外を問わず、日常生活で起こる傷害を補償する保険
+FP3級への道 FP3級への道 その2 FP3級への道 その3 リスクマネジメント 火災保険 補償の範囲 損害 住宅火災保険 住宅総合保険 火災、落雷、爆発、破裂
+風災、雹災、雪災 ◯ ◯ 水害(水災) × ◯ 給排水設備事故による水漏れ × ◯ 盗難 × ◯ 外部からの落下、飛来、衝突 × ◯ 持出家財の損害 × ◯ 地震、噴火、津波 × × 傷害保険 主な傷害保険 普通傷害保険 国内外を問わず、日常生活で起こる傷害を補償する保険
 ※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&amp;gt; 1つの契約で家族全員が補償される「家族傷害保険」もある   交通事故傷害保険  国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険</description>
+=&amp;gt; 1つの契約で家族全員が補償される「家族傷害保険」もある 交通事故傷害保険 国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険
+=&amp;gt; 1つの契約で家族全員が補償される「ファミリー交通傷害保険」もある 国内旅行傷害保険 国内旅行中の傷害を補償する保険
+※細菌性食中毒は保証の対象だが、地震などによる傷害は対象外 海外旅行傷害保険 海外旅行中(家を出てから帰宅するまで)の傷害を補償する保険
+※細菌性食中毒、地震、噴火、津波による傷害も補償の対象 参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
     </item>
     
     <item>
@@ -550,12 +575,17 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
- FP3級への道 FP3級への道 その2  リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
+FP3級への道 FP3級への道 その2 リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
 [死亡保険金の場合]
-   契約者 被保険者 受取人 税金     A A B 相続税   A B A 所得税(一時所得)
-住民税   A B C 贈与税    [満期保険金の場合]
-   契約者 被保険者 受取人 税金     A 誰でも A 所得税(一時所得)
-住民税   A 誰でも B 贈与税    [非課税となる保険金や給付金]</description>
+契約者 被保険者 受取人 税金 A A B 相続税 A B A 所得税(一時所得)
+住民税 A B C 贈与税 [満期保険金の場合]
+契約者 被保険者 受取人 税金 A 誰でも A 所得税(一時所得)
+住民税 A 誰でも B 贈与税 [非課税となる保険金や給付金]
+入院給付金 高度障害保険金 手術給付金 特定疾病保険金 リビングニーズ特約保険金 等
+参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
     </item>
     
     <item>
@@ -564,14 +594,13 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</guid>
-      <description>実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+      <description>実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
 パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
-  </description>
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること</description>
     </item>
     
     <item>
@@ -582,12 +611,12 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</guid>
       <description>学習中に間違えやすいと思った点を備忘録として残しておく
 前回の記事: FP3級への道
-ライフプランニングの手法 ライフプランニングを行う際に利用するツール  ライフイベント表
+ライフプランニングの手法 ライフプランニングを行う際に利用するツール ライフイベント表
 家族の将来のライフイベントと、それに必要な資金の額を時系列にまとめた表 キャッシュフロー表
 ライフイベント表と現在の収支状況に基づいて、将来の収支状況と貯蓄残高の予想を
 まとめた表 個人バランスシート
 一定時点における資産と負債のバランスを見るための表
-※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税)  資金計画を立てる際の6つの係数 終価係数 現在の金額を複利で運用した場合の、一定期間後の金額を求める場合に用いる係数
+※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税) 資金計画を立てる際の6つの係数 終価係数 現在の金額を複利で運用した場合の、一定期間後の金額を求める場合に用いる係数
 例. 100万円を年利3%で運用した場合の7年後の金額はいくらか？
 現価係数 一定期間後に一定金額に達するために必要な原本を求めるのに用いる係数
 例. 年利3%で7年後に100万円を用意するためには、元本がいくら必要になるか？
@@ -610,7 +639,8 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
 年金現価係数は一定額を受け取るために必要な元本を求めるための係数
 参考にした教本 上記内容は以下の教本の内容を参考にしてます
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description>
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
     </item>
     
     <item>
@@ -621,7 +651,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</guid>
       <description>試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
 受験料 15,000 円 (日本語版/税別)
-出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</description>
+出題範囲 分野 試験に占める 割合 分野 1: 回復性の高いアーキテクチャを設計する 34% 分野 2: パフォーマンスに優れたアーキテクチャを定義する 24% 分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26% 分野 4: コスト最適化アーキテクチャを設計する 10% 分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6% 合計 100% 出題範囲詳細 分野 1: 回復性の高いアーキテクチャを設計する 1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。 分野 2: パフォーマンスに優れたアーキテクチャを定義する 2.1 パフォーマンスの高いストレージとデータベースを選択する。 2.2 キャッシュを使用してパフォーマンスを向上させる。 2.3 伸縮性と拡張性を備えたソリューションを設計する。 分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 3.1 アプリケーション層をセキュリティ保護する方法を定義する。 3.2 データをセキュリティ保護する方法を定義する。 3.3 単一の VPC アプリケーション用のネットワークインフラストラクチャーを定義する。 分野 4: コスト最適化アーキテクチャを設計する 4.</description>
     </item>
     
     <item>
@@ -631,9 +661,9 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       
       <guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid>
       <description>基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ  Git初期化  git init Git接続先設定  git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得  git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成  git checkout -b topic/#{issue番号}-作業者名  開発
-  ステージングにあげる
-  git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする  git commit -m &amp;#34;コメント&amp;#34; プルリクエストを投げる  git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
+実際のコード 基本的な流れ Git初期化 git init Git接続先設定 git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得 git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成 git checkout -b topic/#{issue番号}-作業者名 開発
+ステージングにあげる
+git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする git commit -m &amp;#34;コメント&amp;#34; プルリクエストを投げる git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
 その他 直前のコミットのコメントを修正 git commit --amend -m &amp;#34;直前のコミットのコメントを修正&amp;#34; コミットをまとめる # 2つ前までのコミットを修正 $ git rebase -i HEAD~~ squash or s に編集 コメントを修正 最新資産へのマージ $ git pull --rebase base master # コンフリクトを修正 # コンフリクトの修正をマージする $ git add -A $ git rebase --continue ※git commitではないので注意 $ git push -f {リモート名} {ブランチ名} ※強制更新になるため注意 git の状態を一つ前に戻す ※ローカルの変更はそのまま git reset --soft HEAD^ git の状態を一つ前に戻す ※ローカルの変更も戻す git reset --hard HEAD^ stash の一覧を表示 git stash list stash の差分を表示 git diff HEAD.</description>
     </item>
     
@@ -644,10 +674,10 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       
       <guid>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</guid>
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
-= link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
+実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ
+a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34; RailsHelper での a タグ
+Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34; </description>
     </item>
     
     <item>
@@ -657,11 +687,12 @@ Vue.js の bind を&#39;(シングルコート)で括る
       
       <guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid>
       <description>毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;#34;id_rsa&amp;#34; &amp;gt; Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動</description>
+実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;#34;id_rsa&amp;#34; &amp;gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動
+$ eval &amp;#34;$(ssh-agent -s)&amp;#34; &amp;gt; Agent pid 59566 ※ macOS Sierra 10.</description>
     </item>
     
     <item>
@@ -671,9 +702,9 @@ $ ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;
       
       <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
       <description>実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+.app-modal-mask v-show=&amp;#34;showModal&amp;#34; transition=&amp;#34;app-modal&amp;#34; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
 以下のイベントがフックされるようになる
-Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.textContent = &amp;#39;leave&amp;#39; }, afterLeave: function (el) { el.</description>
+Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.textContent = &amp;#39;leave&amp;#39; }, afterLeave: function (el) { el.</description>
     </item>
     
     <item>
@@ -684,9 +715,9 @@ Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textC
       <guid>https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/</guid>
       <description>Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
+heightのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &amp;lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて resize_to_fit 画像が指定したサイズ未満の時
 =&amp;gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&amp;gt; なにもしない  </description>
+=&amp;gt; なにもしない </description>
     </item>
     
     <item>
@@ -707,13 +738,15 @@ github
       
       <guid>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</guid>
       <description>経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
+構築環境 ruby: ruby 1.8.7 rails: rails 2.3.18 手順 Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
+Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
+DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
 gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</description>
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz) 動作確認用のフォルダを作成
+以下の gem をインストールする
+このサイトで1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</description>
     </item>
     
     <item>
@@ -722,10 +755,13 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       <pubDate>Thu, 28 Mar 2019 12:09:59 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/</guid>
-      <description>前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</description>
+      <description>前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &amp;#34;content&amp;#34;); newline&amp;#34;:white_medium_square:&amp;#34; + nbsp)}} </description>
     </item>
     
     <item>
@@ -735,8 +771,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       
       <guid>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</guid>
       <description>したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
+タスク管理 完了/未完了を切り替え 期日を指定 リマインダー機能 昨日完了したタスク 今日期日のタスク 上記以外のタスク 今回使用するツール タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用 google calendar リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない integromat サイトが英語のみ integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+足りない項目 サブタスクかどうか? 期限の情報 [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
     </item>
     
     <item>
@@ -765,10 +801,11 @@ Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下�
 手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる。
 Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.</description>
+IEの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0 インターネットオプションのLocal intranetに「localhost:3000」を登録
+Edgeの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0 インターネットオプションの Local intranet に「localhost:3000」を登録
+about:flags を入力し、「Developer Settings」の「allow localhost loopback(this might put your device at risk)」のチェックを外す</description>
     </item>
     
     <item>
@@ -780,12 +817,12 @@ bundle exec rails s -b 0.</description>
       <description>経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
 できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
 高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
- 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
+医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
 しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
 「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
 ※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
 ※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
- =&amp;gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
+=&amp;gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
 自分の場合請求から発行までおよそ2週間程度かかった。
 1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
 ※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</description>
@@ -798,7 +835,7 @@ bundle exec rails s -b 0.</description>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</guid>
       <description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
+受験する科目 学科 FP 協会・金融財政事情研究会で共通 実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい FP 協会 資産設計提案業務 金融財政事情研究会 個人資産相談業務 ※今回受験 保険顧客資産相談業務 使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
 売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
@@ -806,7 +843,8 @@ bundle exec rails s -b 0.</description>
 CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
 シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description>
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </description>
     </item>
     
     <item>
@@ -817,7 +855,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
       <guid>https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/</guid>
       <description>JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース  修正前  processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each -&amp;gt; id = $(this).attr(&amp;#34;id&amp;#34;) @processRow id  修正後  processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each (index, element) =&amp;gt; id = $(element).attr(&amp;#34;id&amp;#34;) @processRow id </description>
+実際のソース 修正前 processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each -&amp;gt; id = $(this).attr(&amp;#34;id&amp;#34;) @processRow id 修正後 processRows: -&amp;gt; $(&amp;#34;#my-table&amp;gt;tr&amp;#34;).each (index, element) =&amp;gt; id = $(element).attr(&amp;#34;id&amp;#34;) @processRow id </description>
     </item>
     
     <item>
@@ -830,7 +868,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  </description>
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen. </description>
     </item>
     
     <item>
@@ -840,7 +878,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/</guid>
       <description>経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  </description>
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen. </description>
     </item>
     
     <item>
@@ -850,7 +888,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/</guid>
       <description>経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&amp;gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
-実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; 変換イベントクラス &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; Public Class ConvertedEventArgs Inherits EventArgs &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt;  &amp;#39;&amp;#39;&amp;#39; 変換イベントクラスのコンストラクタ  &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt;  &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;f&amp;#34;&amp;gt;ふりがな文字列&amp;lt;/param&amp;gt;  &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;r&amp;#34;&amp;gt;変換後文字列&amp;lt;/param&amp;gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; 自動ふりがな取得クラス &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt;  &amp;#39;&amp;#39;&amp;#39; ふりがな取得完了通知イベント  &amp;#39;&amp;#39;&amp;#39;  &amp;#39;&amp;#39;&amp;#39; ふりがな取得が完了したことを通知する  &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt;  &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;txtSrc&amp;#34;&amp;gt;ふりがな取得対象テキストボックス&amp;lt;/param&amp;gt;  &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;txtDest&amp;#34;&amp;gt;ふりがな出力対象テキストボックス&amp;lt;/param&amp;gt;  &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;e&amp;#34;&amp;gt;変換イベントクラス&amp;lt;/param&amp;gt;  Public Event Converted(ByVal txtSrc As System.</description>
+実際のコード ふりがな取得機能の実装クラス 以下のふりがなに対応(半角および全角英数はそのまま取得) ひらがな 全角カナ 半角カナ Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; 変換イベントクラス &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; Public Class ConvertedEventArgs Inherits EventArgs &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; 変換イベントクラスのコンストラクタ &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;f&amp;#34;&amp;gt;ふりがな文字列&amp;lt;/param&amp;gt; &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;r&amp;#34;&amp;gt;変換後文字列&amp;lt;/param&amp;gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; 自動ふりがな取得クラス &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &amp;#39;&amp;#39;&amp;#39; &amp;lt;summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; ふりがな取得完了通知イベント &amp;#39;&amp;#39;&amp;#39; &amp;#39;&amp;#39;&amp;#39; ふりがな取得が完了したことを通知する &amp;#39;&amp;#39;&amp;#39; &amp;lt;/summary&amp;gt; &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;txtSrc&amp;#34;&amp;gt;ふりがな取得対象テキストボックス&amp;lt;/param&amp;gt; &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;txtDest&amp;#34;&amp;gt;ふりがな出力対象テキストボックス&amp;lt;/param&amp;gt; &amp;#39;&amp;#39;&amp;#39; &amp;lt;param name=&amp;#34;e&amp;#34;&amp;gt;変換イベントクラス&amp;lt;/param&amp;gt; Public Event Converted(ByVal txtSrc As System.</description>
     </item>
     
     <item>
@@ -876,13 +914,15 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/</guid>
       <description>経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした
- 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
-=&amp;gt; 年間の損益がマイナスになる    ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
-想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は
+昨年末(2018年12月)の株式市場が全体的に下落 手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
+=&amp;gt; 年間の損益がマイナスになる ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
+想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2 今回は、 e-tax を使用せずに確定申告したため※2は
 未使用(e-tax を使用した場合は※1が不要)
 ※マイナンバーカードが必要で発行に1ヵ月程度かかるため
 手順 国税庁 確定申告書等作成コーナーで作成する
- 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択     「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択  「源泉徴収票」の内容を転記   住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函    まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに</description>
+「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&amp;gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「いいえ」を選択※来年はここで「はい」を選択 「入力終了(次へ) &amp;gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&amp;gt;「給与」を選択 「源泉徴収票」の内容を転記 住所・氏名等入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &amp;gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する 郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函 まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに
+確定申告が完了した
+来年度はもう少し簡略化できそうなので忘れないようにする</description>
     </item>
     
     <item>
@@ -891,13 +931,13 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
       <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
-      <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+      <description>確認環境 Windows10 Rambox: 0.6.3 経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+候補 Franz Station Rambox Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
- しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
- 実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.</description>
+実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.clearUnreadCount(); } setInterval(checkUnread, 3000); </description>
     </item>
     
     <item>
@@ -906,7 +946,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <pubDate>Tue, 26 Feb 2019 17:29:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/</guid>
-      <description>確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ja&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;img :src=&amp;#34;url&amp;#34; v-on:load=&amp;#34;load&amp;#34; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { url: &amp;#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;#34; // ※1  }, methods: { // ※4  load: function() { console.</description>
+      <description>確認環境 Vue.js: v2.6.7 方法 読み込み開始検知 img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2 読み込み完了検知 img タグに以下のイベントを追加 v-on:load=&amp;quot;メソッド名&amp;quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4 実際のコード &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ja&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;画像の読み込みの開始および完了を検知する方法&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;img :src=&amp;#34;url&amp;#34; v-on:load=&amp;#34;load&amp;#34; /&amp;gt; &amp;lt;!-- ※3 --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { url: &amp;#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&amp;#34; // ※1 }, methods: { // ※4 load: function() { console.</description>
     </item>
     
     <item>
@@ -915,9 +955,8 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/</guid>
-      <description>確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法   Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)  order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)
-  </description>
+      <description>確認環境 ruby: ruby 2.5.3 rails: rails 5.2.2 方法 Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
+例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先) order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)</description>
     </item>
     
     <item>
@@ -927,7 +966,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       
       <guid>https://kkawazoe.github.io/blog/2019/02/21/set-self-association-with-rails/</guid>
       <description>テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている
-   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;#34;Node&amp;#34;, foreign_key: &amp;#34;parrent_id&amp;#34; belongs_to :parrent, class_name: &amp;#34;Node&amp;#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &amp;lt; ActiveRecord::Migration[5.</description>
+id name parent_id 1 parrent_node null 2 child_node_1 1 3 child_node_2 1 4 child_node_1_1 2 5 child_node_1_2 2 6 child_node_2_1 3 7 child_node_2_2 3 確認環境 ruby: ruby 2.5.3 rails: rails 5.2.2 実際のコード class Node &amp;lt; ApplicationRecord has_many :children, class_name: &amp;#34;Node&amp;#34;, foreign_key: &amp;#34;parrent_id&amp;#34; belongs_to :parrent, class_name: &amp;#34;Node&amp;#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &amp;lt; ActiveRecord::Migration[5.2] def change create_table :nodes do |t| t.</description>
     </item>
     
     <item>
@@ -939,7 +978,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
 情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2  ### h3  &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2  ### h3  </description>
+実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2 ### h3 </description>
     </item>
     
     <item>
@@ -950,7 +989,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</guid>
       <description>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;quot;Scripting.</description>
+取得する ini ファイルの中身 &amp;lt;設定値&amp;gt;*****************************************************&amp;#39;&amp;lt;コメント&amp;gt;####################################### [Path] WorkPath=C:/src/wk &amp;#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo getProfileString.vbs &amp;#34;%iniFileName%&amp;#34; Path WorkPath`) do set ret=%%A echo &amp;#34;%ret%&amp;#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &amp;#34;Scripting.</description>
     </item>
     
     <item>
@@ -961,7 +1000,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <guid>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</guid>
       <description>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する。
 ※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
-実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg%&amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
+実際のコード @echo off rem メッセージボックスの表示 set msg=&amp;#34;メッセージボックスのテスト [\n] で改行します。&amp;#34; set title=&amp;#34;メッセージボックステスト&amp;#34; for /f &amp;#34;usebackq tokens=* delims=&amp;#34; %%A in (`call cscript //Nologo msgbox.vbs %msg% &amp;#34;%title%&amp;#34;`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す。 rem * msg中の 「\n」という文字列は改行に変換する。 rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</description>
     </item>
     
   </channel>

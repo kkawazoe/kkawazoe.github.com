@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -549,6 +555,12 @@ section.footer {
   background-size: cover;
   background-position: center;
 }
+
+  
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
 
   
 .thumb-41e6389e68271e7e71c586fc5710f320 {
@@ -959,6 +971,19 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
 }
 
 
@@ -2019,7 +2044,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          69
+          70
           <span>Posts</span>
         </a>
       </div>
@@ -2077,12 +2102,12 @@ figure img {
             <div class="summary">経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
 できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
 高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
- 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
+医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
 しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
 「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
 ※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
 ※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
- =&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
+=&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
 自分の場合請求から発行までおよそ2週間程度かかった。
 1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
 ※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</div>
@@ -2103,6 +2128,27 @@ figure img {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T15:30:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
@@ -2293,27 +2339,6 @@ figure img {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2326,7 +2351,7 @@ figure img {
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     
