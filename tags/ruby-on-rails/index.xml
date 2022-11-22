@@ -116,8 +116,8 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <guid>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</guid>
       <description>rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
-例. &amp;lsquo;x&amp;rsquo;.method(:size).source_location
-環境  ruby: 3.1.1  実際のコード &amp;#39;x&amp;#39;.method(&amp;#39;:size&amp;#39;).source_location </description>
+例. ActiveRecord::Base.method(:transaction).source_location
+環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&amp;gt; [&amp;#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&amp;#34;, 211] </description>
     </item>
     
     <item>
