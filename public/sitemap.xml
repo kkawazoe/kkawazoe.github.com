@@ -3,24 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2022-11-22T14:30:00+09:00</lastmod>
+    <lastmod>2022-11-22T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2022-11-22T14:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
-    <lastmod>2022-11-22T14:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
-    <lastmod>2022-11-22T14:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</loc>
-    <lastmod>2022-11-22T14:30:00+09:00</lastmod>
+    <lastmod>2022-11-22T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</loc>
     <lastmod>2022-11-22T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2022-11-22T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2022-11-22T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</loc>
@@ -72,6 +66,9 @@
     <lastmod>2022-02-26T01:28:11+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</loc>
+    <lastmod>2021-12-11T14:24:49+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
     <lastmod>2021-12-11T14:24:49+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/git/</loc>
