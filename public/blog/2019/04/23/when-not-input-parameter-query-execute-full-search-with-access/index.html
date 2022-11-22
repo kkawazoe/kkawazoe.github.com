@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -19,42 +19,39 @@
 
 
     
-<meta name="description" content="実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+<meta name="description" content="実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
 パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
-  ">
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること">
 
 <meta property="og:title" content="Access でパラメータクエリが未入力の場合は全検索する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/access_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+<meta property="og:description" content="実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
 パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
-  ">
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/">
 <meta name="twitter:title" content="Access でパラメータクエリが未入力の場合は全検索する - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+<meta name="twitter:description" content="実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
 抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
 [抽出条件]
-[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
 パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
 [抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
-  ">
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/access_logo.svg">
 
 
@@ -89,7 +86,7 @@
         "height": 60
       }
     },
-    "description": "実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合\n抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する\n[抽出条件]\n[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合\nパラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する\n[抽出条件]\n[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること\n  "
+    "description": "実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合\n抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する\n[抽出条件]\n[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合\nパラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する\n[抽出条件]\n[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること"
   }
 </script>
 
@@ -385,8 +382,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -409,7 +411,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -439,7 +441,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2161,14 +2164,14 @@ figure img {
 <p>パラメータが未入力の際に全ての検索条件を無視して全検索する場合</p>
 <p>抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する</p>
 <p>[抽出条件]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[パラメータ] Or [パラメータ] Is Null
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[パラメータ] Or [パラメータ] Is Null
+</span></span></code></pre></div></li>
 <li>
 <p>パラメータが未入力の際に関係する抽出条件のみを全検索する場合</p>
 <p>パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する</p>
 <p>[抽出条件]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[抽出対象フィールド] Or Is Null
-</code></pre></div><p>※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[抽出対象フィールド] Or Is Null
+</span></span></code></pre></div><p>※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること</p>
 </li>
 </ol>
 </div>
@@ -2258,7 +2261,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

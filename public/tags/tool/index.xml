@@ -22,9 +22,10 @@
 参考
 指定できるフィルタ
 /Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&amp;#34;calc_pdf_Export&amp;#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</description>
+/usr/local/bin/soffice を作成して中に以下を記載する
+#!/bin/bash # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34; 以下のコマンドで実行権限を付与する
+sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &amp;gt; /usr/local/bin/soffice &amp;amp;&amp;amp; sudo chmod +x /usr/local/bin/soffice </description>
     </item>
     
     <item>
@@ -34,10 +35,10 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
       
       <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid>
       <description>windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 方法 Windows Terminal を起動する
+「Ctrl」+「,」を押下して setting.json を開く
+setting.json の設定に以下を追加する
+{ &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
     </item>
     
     <item>
@@ -47,9 +48,9 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
       
       <guid>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</guid>
       <description>経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
-手順   vagrant halt を行う
+手順 vagrant halt を行う
 以下のエラーが発生
-An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them.</description>
+An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them. Then try again.</description>
     </item>
     
     <item>
@@ -59,11 +60,11 @@ An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&a
       
       <guid>https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/</guid>
       <description>[前回までの記事]
- Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
+Hugo に数式を挿入する 経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
-  partials フォルダ配下の以下のファイルを修正する
+partials フォルダ配下の以下のファイルを修正する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定 displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
     </item>
     
     <item>
@@ -72,7 +73,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid>
-      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
+      <description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description>
     </item>
     
     <item>
@@ -85,11 +86,11 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
 テスト項目ごとにシートを分ける必要があった
 テスト項目が多い場合手作業で シート作成 =&amp;gt; シート名変更をするのは手間だったため
 ツール化をすることにした
-使用方法   「パラメータ」シートにて以下を指定する
+使用方法 「パラメータ」シートにて以下を指定する
 [設定項目]
- シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
-ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
-  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &amp;#39;ワークシートの初期化  For Each ws In Worksheets &amp;#39;ワークシート名が&amp;#34;パラメータ&amp;#34;以外の場合  If ws.Name &amp;lt;&amp;gt; &amp;#34;パラメータ&amp;#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &amp;#39;チェックボックスの値を取得  chkFlg = Worksheets(&amp;#34;パラメータ&amp;#34;).</description>
+シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
+ワークグループ(各シートが選択状態)になる 「パラメータ」シートの「実行」ボタンを押下する
+実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &amp;#39;ワークシートの初期化 For Each ws In Worksheets &amp;#39;ワークシート名が&amp;#34;パラメータ&amp;#34;以外の場合 If ws.Name &amp;lt;&amp;gt; &amp;#34;パラメータ&amp;#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &amp;#39;チェックボックスの値を取得 chkFlg = Worksheets(&amp;#34;パラメータ&amp;#34;).OLEObjects(&amp;#34;Chk_WorkGroup&amp;#34;).Object.Value &amp;#39;ワークシートの追加 For i = 0 To Worksheets(&amp;#34;パラメータ&amp;#34;).</description>
     </item>
     
     <item>
@@ -100,9 +101,9 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
-  partials フォルダ配下に以下のファイルを作成する
+partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</description>
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</description>
     </item>
     
     <item>
@@ -111,10 +112,13 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Thu, 28 Mar 2019 12:09:59 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/</guid>
-      <description>前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</description>
+      <description>前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &amp;#34;content&amp;#34;); newline&amp;#34;:white_medium_square:&amp;#34; + nbsp)}} </description>
     </item>
     
     <item>
@@ -124,8 +128,8 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       
       <guid>https://kkawazoe.github.io/blog/2019/03/25/manage-task-with-slack-and-todoist-and-integromat/</guid>
       <description>したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
- タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
- 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
+タスク管理 完了/未完了を切り替え 期日を指定 リマインダー機能 昨日完了したタスク 今日期日のタスク 上記以外のタスク 今回使用するツール タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用 google calendar リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない integromat サイトが英語のみ integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+足りない項目 サブタスクかどうか? 期限の情報 [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</description>
     </item>
     
     <item>
@@ -139,10 +143,11 @@ Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下�
 手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる。
 Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.</description>
+IEの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0 インターネットオプションのLocal intranetに「localhost:3000」を登録
+Edgeの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0 インターネットオプションの Local intranet に「localhost:3000」を登録
+about:flags を入力し、「Developer Settings」の「allow localhost loopback(this might put your device at risk)」のチェックを外す</description>
     </item>
     
     <item>
@@ -151,13 +156,13 @@ bundle exec rails s -b 0.</description>
       <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
-      <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+      <description>確認環境 Windows10 Rambox: 0.6.3 経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+候補 Franz Station Rambox Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
- しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
- 実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.</description>
+実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ? rambox.setUnreadCount(e) : rambox.clearUnreadCount(); } setInterval(checkUnread, 3000); </description>
     </item>
     
     <item>
@@ -169,7 +174,7 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
 情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2  ### h3  &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2  ### h3  </description>
+実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2 ### h3 </description>
     </item>
     
   </channel>

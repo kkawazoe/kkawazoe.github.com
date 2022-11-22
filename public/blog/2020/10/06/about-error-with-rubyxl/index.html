@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,8 +364,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -388,7 +393,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -418,7 +423,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2156,15 +2162,15 @@ figure img {
 <li>
 <p><code>change_contents</code> が使えない</p>
 <p>version 3.4.0 以降は <code>convenience_methods</code> を呼び出さないと利用不可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#75715e"># require が必要なメソッド</span>
-require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/cell&#39;</span>
-require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/color&#39;</span>
-require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/font&#39;</span>
-require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/workbook&#39;</span>
-require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#39;</span>
-</code></pre></div><p>もしくは以下で全て使用可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;rubyXL/convenience_methods&#39;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#75715e"># require が必要なメソッド</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/cell&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/color&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/font&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/workbook&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#39;</span>
+</span></span></code></pre></div><p>もしくは以下で全て使用可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubyXL/convenience_methods&#39;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>シートのコピーができない</p>
 <p><code>Marshal.load</code> なども試してみたが、上手くいかなかったので以下を参考にして対応。<br>
@@ -2194,25 +2200,25 @@ require <span style="color:#e6db74">&#39;rubyXL/convenience_methods/worksheet&#3
 <p>印刷方向を縦向きから横向きにしたい</p>
 <p>基本的にテンプレートの印刷設定を修正するだけで対応可。<br>
 「テンプレート内のシートをコピーして作成。その後、シートを削除する」といった処理の場合は以下の対応を行う。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">worksheet<span style="color:#f92672">.</span>page_setup <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>page_setup
-</code></pre></div><p>以下page_setup内の属性</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">paperSize(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">用紙サイズ</span>
-scale(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷スケール</span>(<span style="color:#960050;background-color:#1e0010">すべての行を</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">シート内に含める、などの設定を指す</span>)
-firstPageNumber(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号</span>
-fitToWidth(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">幅に合わせる</span>
-fitToHeight(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">高さに合わせる</span>
-horizonDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">水平</span><span style="color:#66d9ef">DPI</span>
-verticalDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">垂直</span><span style="color:#66d9ef">DPI</span>
-copies(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷する部数</span>
-usePrinterDefaults(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">デフォルトのプリンタを利用するかどうか</span>
-blackAndWhite(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">白黒印刷をするかどうか</span>
-draft(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">簡易印刷するかどうか</span>(<span style="color:#960050;background-color:#1e0010">罫線や塗りつぶしの色</span>(<span style="color:#960050;background-color:#1e0010">網掛け</span>)<span style="color:#960050;background-color:#1e0010">などの書式やグラフや図形などのオブジェクトを省略して印刷</span>)
-useFirstPageNumber(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号を使用するかどうか</span>
-pageOrder(downThenOver<span style="color:#960050;background-color:#1e0010">・</span>overThenDownの2択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">ページの順序．昇順か降順か</span>
-orientaion(default<span style="color:#960050;background-color:#1e0010">・</span>portrait<span style="color:#960050;background-color:#1e0010">・</span>landscapeの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">オリエンテーション</span>(<span style="color:#960050;background-color:#1e0010">印刷時の向き．デフォルト・縦・横</span>)
-cellComments(none<span style="color:#960050;background-color:#1e0010">・</span>asDisplayed<span style="color:#960050;background-color:#1e0010">・</span>atEndの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">セルコメントを印刷する</span>
-errors(displayed<span style="color:#960050;background-color:#1e0010">・</span>blank<span style="color:#960050;background-color:#1e0010">・</span>dash<span style="color:#960050;background-color:#1e0010">・</span><span style="color:#66d9ef">NAの4択</span>)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷エラー処理</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>worksheet<span style="color:#f92672">.</span>page_setup <span style="color:#f92672">=</span> template<span style="color:#f92672">.</span>page_setup
+</span></span></code></pre></div><p>以下page_setup内の属性</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>paperSize(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">用紙サイズ</span>
+</span></span><span style="display:flex;"><span>scale(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷スケール</span>(<span style="color:#960050;background-color:#1e0010">すべての行を</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">シート内に含める、などの設定を指す</span>)
+</span></span><span style="display:flex;"><span>firstPageNumber(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号</span>
+</span></span><span style="display:flex;"><span>fitToWidth(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">幅に合わせる</span>
+</span></span><span style="display:flex;"><span>fitToHeight(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">高さに合わせる</span>
+</span></span><span style="display:flex;"><span>horizonDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">水平</span><span style="color:#66d9ef">DPI</span>
+</span></span><span style="display:flex;"><span>verticalDpi(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">垂直</span><span style="color:#66d9ef">DPI</span>
+</span></span><span style="display:flex;"><span>copies(unsigned int型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷する部数</span>
+</span></span><span style="display:flex;"><span>usePrinterDefaults(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">デフォルトのプリンタを利用するかどうか</span>
+</span></span><span style="display:flex;"><span>blackAndWhite(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">白黒印刷をするかどうか</span>
+</span></span><span style="display:flex;"><span>draft(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">簡易印刷するかどうか</span>(<span style="color:#960050;background-color:#1e0010">罫線や塗りつぶしの色</span>(<span style="color:#960050;background-color:#1e0010">網掛け</span>)<span style="color:#960050;background-color:#1e0010">などの書式やグラフや図形などのオブジェクトを省略して印刷</span>)
+</span></span><span style="display:flex;"><span>useFirstPageNumber(boolean型)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">最初のページ番号を使用するかどうか</span>
+</span></span><span style="display:flex;"><span>pageOrder(downThenOver<span style="color:#960050;background-color:#1e0010">・</span>overThenDownの2択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">ページの順序．昇順か降順か</span>
+</span></span><span style="display:flex;"><span>orientaion(default<span style="color:#960050;background-color:#1e0010">・</span>portrait<span style="color:#960050;background-color:#1e0010">・</span>landscapeの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">オリエンテーション</span>(<span style="color:#960050;background-color:#1e0010">印刷時の向き．デフォルト・縦・横</span>)
+</span></span><span style="display:flex;"><span>cellComments(none<span style="color:#960050;background-color:#1e0010">・</span>asDisplayed<span style="color:#960050;background-color:#1e0010">・</span>atEndの3択)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">セルコメントを印刷する</span>
+</span></span><span style="display:flex;"><span>errors(displayed<span style="color:#960050;background-color:#1e0010">・</span>blank<span style="color:#960050;background-color:#1e0010">・</span>dash<span style="color:#960050;background-color:#1e0010">・</span><span style="color:#66d9ef">NAの4択</span>)<span style="color:#f92672">...</span><span style="color:#960050;background-color:#1e0010">印刷エラー処理</span>
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="rubyxl-では実装できないパターンについて">rubyXL では実装できないパターンについて</h2>
 <ol>
@@ -2324,7 +2330,7 @@ RubyXL にグラフ描画・サポート機能が対応していないため不�
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
