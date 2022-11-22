@@ -1,0 +1,13 @@
+name: schedulered_post
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Post build hooks
+      run: sh ./scheduled_post.sh
