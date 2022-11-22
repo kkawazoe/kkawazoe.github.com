@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -21,10 +21,10 @@
 
     
 <meta name="description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
+実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34; RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34; ">
 
 <meta property="og:title" content="Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -32,10 +32,10 @@ Vue.js の bind を&#39;(シングルコート)で括る
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
+実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34; RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34; ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -43,10 +43,10 @@ Vue.js の bind を&#39;(シングルコート)で括る
 <meta name="twitter:url" content="https://kkawazoe.github.io/amp/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
 <meta name="twitter:title" content="Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法 - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   ">
+実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34; RailsHelper での a タグ
+Vue.js の bind を&rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34; ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
@@ -81,7 +81,7 @@ Vue.js の bind を&#39;(シングルコート)で括る
         "height": 60
       }
     },
-    "description": "経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく\n実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ\na.btn.home href=\u0026#34;#{root_path}\u0026#34; @touchStart=\u0026#34;onTouchStartForBtn\u0026#34; @touchEnd=\u0026#34;onTouchEndForBtn\u0026#34; @touchmove=\u0026#34;onTouchMoveForBtn\u0026#34;   RailsHelper での a タグ\nVue.js の bind を\u0027(シングルコート)で括る\n= link_to national_rankings_path, class: \u0026#39;btn ranking\u0026#39;, \u0026#39;@touchStart\u0026#39;: \u0026#34;onTouchStartForBtn\u0026#34;, \u0026#39;@touchEnd\u0026#39;: \u0026#34;onTouchEndForBtn\u0026#34;, \u0026#39;@touchmove\u0026#39;: \u0026#34;onTouchMoveForBtn\u0026#34;   "
+    "description": "経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく\n実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ\na.btn.home href=\u0026#34;#{root_path}\u0026#34; @touchStart=\u0026#34;onTouchStartForBtn\u0026#34; @touchEnd=\u0026#34;onTouchEndForBtn\u0026#34; @touchmove=\u0026#34;onTouchMoveForBtn\u0026#34; RailsHelper での a タグ\nVue.js の bind を\u0026rsquo;(シングルコート)で括る\n= link_to national_rankings_path, class: \u0026#39;btn ranking\u0026#39;, \u0026#39;@touchStart\u0026#39;: \u0026#34;onTouchStartForBtn\u0026#34;, \u0026#39;@touchEnd\u0026#39;: \u0026#34;onTouchEndForBtn\u0026#34;, \u0026#39;@touchmove\u0026#39;: \u0026#34;onTouchMoveForBtn\u0026#34; "
   }
 </script>
 
@@ -375,8 +375,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -399,7 +404,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -429,7 +434,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2053,13 +2059,13 @@ figure img {
 <ul>
 <li>
 <p>通常 a タグ</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">a<span style="color:#f92672">.</span>btn<span style="color:#f92672">.</span>home href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>root_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> @touchStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span> @touchEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span> @touchmove<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>a<span style="color:#f92672">.</span>btn<span style="color:#f92672">.</span>home href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>root_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> @touchStart<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span> @touchEnd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span> @touchmove<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>RailsHelper での a タグ</p>
-<p>Vue.js の bind を'(シングルコート)で括る</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">=</span> link_to national_rankings_path, <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#39;btn ranking&#39;</span>, <span style="color:#e6db74">&#39;@touchStart&#39;</span>: <span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchEnd&#39;</span>: <span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchmove&#39;</span>: <span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
-</code></pre></div></li>
+<p>Vue.js の bind を&rsquo;(シングルコート)で括る</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">=</span> link_to national_rankings_path, <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#39;btn ranking&#39;</span>, <span style="color:#e6db74">&#39;@touchStart&#39;</span>: <span style="color:#e6db74">&#34;onTouchStartForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchEnd&#39;</span>: <span style="color:#e6db74">&#34;onTouchEndForBtn&#34;</span>, <span style="color:#e6db74">&#39;@touchmove&#39;</span>: <span style="color:#e6db74">&#34;onTouchMoveForBtn&#34;</span>
+</span></span></code></pre></div></li>
 </ul>
 </div>
 

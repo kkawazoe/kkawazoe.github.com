@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,8 +310,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -334,7 +339,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -364,7 +369,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2075,7 +2081,7 @@ figure img {
             </ul>
 
             <div class="summary">経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
-実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; 変換イベントクラスのコンストラクタ  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; ふりがな取得完了通知イベント  &#39;&#39;&#39;  &#39;&#39;&#39; ふりがな取得が完了したことを通知する  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;  Public Event Converted(ByVal txtSrc As System.</div>
+実際のコード ふりがな取得機能の実装クラス 以下のふりがなに対応(半角および全角英数はそのまま取得) ひらがな 全角カナ 半角カナ Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラスのコンストラクタ &#39;&#39;&#39; &lt;/summary&gt; &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; ふりがな取得完了通知イベント &#39;&#39;&#39; &#39;&#39;&#39; ふりがな取得が完了したことを通知する &#39;&#39;&#39; &lt;/summary&gt; &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt; Public Event Converted(ByVal txtSrc As System.</div>
           </div>
         </a>
       </article>

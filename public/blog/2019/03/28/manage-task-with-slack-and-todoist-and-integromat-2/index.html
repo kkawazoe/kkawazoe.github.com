@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -19,30 +19,39 @@
 
 
     
-<meta name="description" content="前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正">
+<meta name="description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; &#43; nbsp)}} ">
 
 <meta property="og:title" content="Slack ＋ Todoist ＋ Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正">
+<meta property="og:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; &#43; nbsp)}} ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
 <meta name="twitter:title" content="Slack ＋ Todoist ＋ Integromat でタスク管理 その２ - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正">
+<meta name="twitter:description" content="前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
+map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
+※「\n」では改行しないため「newline」を使用する
+:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; &#43; nbsp)}} ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/slack_logo.svg">
 
 
@@ -77,7 +86,7 @@
         "height": 60
       }
     },
-    "description": "前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する\n  「スパナ」アイコンを押下後「JSON」を選択して以下を指定\n 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定\n 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正"
+    "description": "前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する\n「スパナ」アイコンを押下後「JSON」を選択して以下を指定\n「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定\n「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正\nmap() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。\n※「\\n」では改行しないため「newline」を使用する\n:white_medium_square:{{nbsp}}{{join(map(33.array; \u0026#34;content\u0026#34;); newline\u0026#34;:white_medium_square:\u0026#34; \u002b nbsp)}} "
   }
 </script>
 
@@ -373,8 +382,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -397,7 +411,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -427,7 +441,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2207,8 +2222,8 @@ figure img {
 <em>※「\n」では改行しないため「newline」を使用する</em></p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; + nbsp)}}
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; + nbsp)}}
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2295,7 +2310,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

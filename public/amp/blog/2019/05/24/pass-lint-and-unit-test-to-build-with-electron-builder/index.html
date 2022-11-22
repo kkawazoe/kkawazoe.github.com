@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.106.0">
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,8 +363,13 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body code,
-article.sn > .article-body pre {
+article.sn > .article-body h2 code {
+  font-size: 1.1rem; }
+
+article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
+  font-size: .9rem; }
+
+article.sn > .article-body code, article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -387,7 +392,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code {
+article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -417,7 +422,8 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2037,93 +2043,93 @@ figure img {
 <p>electron にて ビルドするのに <a href="https://github.com/electron-userland/electron-builder">electron-builder</a> を使用してみた
 その際に最低限 <code>Lint</code>, <code>UnitTest</code> を通ることを担保するようにしたため備忘録として残しておく</p>
 <h2 id="構築環境">構築環境</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">electron: 5.0.1
-electron-builder: 20.39.0
-</code></pre></div><h3 id="実際のコード">実際のコード</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>electron: 5.0.1
+</span></span><span style="display:flex;"><span>electron-builder: 20.39.0
+</span></span></code></pre></div><h3 id="実際のコード">実際のコード</h3>
 <p><code>package.json</code> に以下の定義がしてある前提
 ※以下は electron x angular(Angular Cli で生成)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json:package.json" data-lang="json:package.json">{
-  <span style="color:#960050;background-color:#1e0010">・・・</span>
-  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-    <span style="color:#f92672">&#34;ng&#34;</span>: <span style="color:#e6db74">&#34;ng&#34;</span>,
-    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; electron .&#34;</span>,
-    <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;ng build&#34;</span>,
-    <span style="color:#f92672">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;jest&#34;</span>,
-    <span style="color:#f92672">&#34;lint&#34;</span>: <span style="color:#e6db74">&#34;ng lint&#34;</span>,
-    <span style="color:#f92672">&#34;postinstall&#34;</span>: <span style="color:#e6db74">&#34;electron-builder install-app-deps&#34;</span>,
-    <span style="color:#f92672">&#34;release&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; node build.js&#34;</span>,
-  },
-  <span style="color:#960050;background-color:#1e0010">・・・</span>
-}
-</code></pre></div><p>electron-builder のオプションについては<a href="https://www.electron.build/">公式</a>を参照</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron-builder&#39;</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Platform</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">Platform</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">childProcess</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>);
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">unitTest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn test&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#75715e">// エラー時は例外を投げる
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
-    }
-    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;UnitTest OK!&#39;</span>);
-  });
-});
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lint</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn lint&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
-      <span style="color:#75715e">// エラー時は例外を投げる
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
-    }
-    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;Lint OK!&#39;</span>);
-  });
-});
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#a6e22e">builder</span>
-    .<span style="color:#a6e22e">build</span>({
-      <span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">WINDOWS</span>.<span style="color:#a6e22e">createTarget</span>(),
-      <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">directories</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;release&#39;</span>,
-          <span style="color:#a6e22e">buildResources</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dist&#39;</span>,
-        },
-        <span style="color:#a6e22e">productName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Example App&#39;</span>,
-        <span style="color:#a6e22e">files</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;**/*&#39;</span>, <span style="color:#e6db74">&#39;dist/**/*&#39;</span>],
-        <span style="color:#a6e22e">win</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> [
-            {
-              <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nsis&#39;</span>,
-              <span style="color:#a6e22e">arch</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;x64&#39;</span>],
-            },
-          ],
-        },
-        <span style="color:#a6e22e">nsis</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">createDesktopShortcut</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;always&#39;</span>,
-        },
-      },
-    })
-    .<span style="color:#a6e22e">then</span>(() =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Build OK!&#39;</span>);
-    })
-    .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-    });
-};
-
-Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint</span>, <span style="color:#a6e22e">unitTest</span>])
-  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">values</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>));
-    <span style="color:#a6e22e">build</span>();
-  })
-  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
-  });
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json:package.json" data-lang="json:package.json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">・・・</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ng&#34;</span>: <span style="color:#e6db74">&#34;ng&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; electron .&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;ng build&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;jest&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;lint&#34;</span>: <span style="color:#e6db74">&#34;ng lint&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;postinstall&#34;</span>: <span style="color:#e6db74">&#34;electron-builder install-app-deps&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;release&#34;</span>: <span style="color:#e6db74">&#34;ng build --prod &amp;&amp; node build.js&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">・・・</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>electron-builder のオプションについては<a href="https://www.electron.build/">公式</a>を参照</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript:build.js" data-lang="javascript:build.js"><span style="display:flex;"><span><span style="color:#e6db74">&#39;use strict&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">builder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron-builder&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Platform</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">builder</span>.<span style="color:#a6e22e">Platform</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">childProcess</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;child_process&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">unitTest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn test&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// エラー時は例外を投げる
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;UnitTest OK!&#39;</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lint</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">childProcess</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#39;yarn lint&#39;</span>, (<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">stdout</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// エラー時は例外を投げる
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">stdout</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;Lint OK!&#39;</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">builder</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">build</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">targets</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">WINDOWS</span>.<span style="color:#a6e22e">createTarget</span>(),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">directories</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;release&#39;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">buildResources</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dist&#39;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">productName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Example App&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">files</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;**/*&#39;</span>, <span style="color:#e6db74">&#39;dist/**/*&#39;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">win</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nsis&#39;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">arch</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;x64&#39;</span>],
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>          ],
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">nsis</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">createDesktopShortcut</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;always&#39;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Build OK!&#39;</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">lint</span>, <span style="color:#a6e22e">unitTest</span>])
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">values</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span></code></pre></div></div>
 
   <footer class="article-footer">
 
