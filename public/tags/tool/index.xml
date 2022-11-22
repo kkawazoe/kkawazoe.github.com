@@ -6,7 +6,18 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 11 Dec 2021 14:24:49 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2022 14:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio Code で拡張子毎に設定値を変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link>
+      <pubDate>Tue, 22 Nov 2022 14:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid>
+      <description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
+調査を行なった。その結果を備忘録として残しておく。
+手順  コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する  実際の設定ファイル { &amp;#34;[markdown]&amp;#34;: { &amp;#34;files.trimTrailingWhitespace&amp;#34;: false } } </description>
+    </item>
+    
     <item>
       <title>libreoffice を使用して Excel を PDF に変換する方法</title>
       <link>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</link>
