@@ -551,6 +551,18 @@ section.footer {
 }
 
   
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
+
+  
+.thumb-41e6389e68271e7e71c586fc5710f320 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-8063585970c6e09dc0864c6e8c18c0df {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -953,6 +965,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-cc659da25630dda8c57054bfbdb783a3 {
+  background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-cc659da25630dda8c57054bfbdb783a3 {
+  width: 5rem;
+}
+
+
+
+.thumb-41e6389e68271e7e71c586fc5710f320 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-41e6389e68271e7e71c586fc5710f320 {
+  width: 5rem;
 }
 
 
@@ -2000,7 +2038,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          68
+          70
           <span>Posts</span>
         </a>
       </div>
@@ -2035,6 +2073,54 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+          <div class="inner">
+            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
+  「Ctrl」+「,」を押下して setting.json を開く
+  setting.json の設定に以下を追加する
+  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/">
+          <div class="thumb thumb-13505c52dda3ac47988f4aaa8bf0c6a0"></div>
+
+          <div class="inner">
+            <h2 class="title">wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T10:00:00JST">Mar 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">wsl の起動時のユーザを root にする方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  前提 wsl の有効化およびディストリビューションのインストールは完了している前提 ※ wsl のインストールについては 参考 を参照
+方法  PowerShell で以下のコマンドを実行する  $ wsl $ sudo passwd root $ exit $ wsl -s Ubuntu-18.04 $ ubuntu1804 config --default-user root $ wsl #=&gt; root でログインしていることを確認 </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2246,53 +2332,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
-          <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-          <div class="inner">
-            <h2 class="title">RSpec 内で動的に I18n の訳文を追加する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-09-14T09:56:37JST">Sep 14, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
-I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/07/21/how-to-handle-tokens-in-rails/">
-          <div class="thumb thumb-7dd68bc68e4ef8e57a557a8a017d443c"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails でトークンを扱う方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-07-21T18:12:58JST">Jul 21, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
-以下が対象
- Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
-以下が対象
- Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2314,6 +2353,48 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
+    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T14:00:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/">
+    <div class="thumb thumb-41e6389e68271e7e71c586fc5710f320"></div>
+
+    <div class="inner">
+      <div class="title">rails console で オートコンプリートを無効にする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T13:00:00JST">Nov 22, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/">
@@ -2483,48 +2564,6 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/">
-    <div class="thumb thumb-e57f54a474a16ea1a276535ef085fc33"></div>
-
-    <div class="inner">
-      <div class="title">rails で別名がつけられているカラムを pluck で取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-08-23T22:00:00JST">Aug 23, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/">
-    <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
-
-    <div class="inner">
-      <div class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-08-22T12:00:00JST">Aug 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2535,9 +2574,9 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(23)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(12)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(8)</span></a></li>
     

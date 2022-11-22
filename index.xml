@@ -6,7 +6,31 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 03 Nov 2022 18:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2022 14:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio Code で拡張子毎に設定値を変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link>
+      <pubDate>Tue, 22 Nov 2022 14:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid>
+      <description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
+調査を行なった。その結果を備忘録として残しておく。
+手順  コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する  実際の設定ファイル { &amp;#34;[markdown]&amp;#34;: { &amp;#34;files.trimTrailingWhitespace&amp;#34;: false } } </description>
+    </item>
+    
+    <item>
+      <title>rails console で オートコンプリートを無効にする方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</link>
+      <pubDate>Tue, 22 Nov 2022 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</guid>
+      <description>ruby 3.1 以降から irb でオートコンプリートが効くようになったがそれを無効にする方法を調査した
+その結果を備忘録として残しておく
+環境  ruby: 3.1.2 rails: 6.1.7  方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
+※他の設定値については 参考 を参照
+IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </description>
+    </item>
+    
     <item>
       <title>rails で中間テーブルをチェックボックス複数選択させて生成する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</link>
