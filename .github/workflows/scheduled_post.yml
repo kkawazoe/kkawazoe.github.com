@@ -1,4 +1,4 @@
-name: schedulered_post
+name: scheduled_post
 
 on:
   schedule:
