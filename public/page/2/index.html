@@ -2099,8 +2099,8 @@ figure img {
 
             <div class="summary">rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
-例. &lsquo;x&rsquo;.method(:size).source_location
-環境  ruby: 3.1.1  実際のコード &#39;x&#39;.method(&#39;:size&#39;).source_location </div>
+例. ActiveRecord::Base.method(:transaction).source_location
+環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
           </div>
         </a>
       </article>
