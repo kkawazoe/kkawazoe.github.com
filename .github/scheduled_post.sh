@@ -3,6 +3,11 @@
 echo "************ Deleting old publication ************"
 rm -rf public
 
+echo "************ theme install ************"
+cd themes
+git clone https://github.com/dim0627/hugo_theme_robust.git
+cd ..
+
 echo "************ Generating site ************"
 hugo
 
