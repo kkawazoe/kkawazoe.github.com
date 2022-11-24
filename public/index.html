@@ -2117,9 +2117,7 @@ figure img {
             <div class="summary">Ruby Gold 認定試験の Ver 3.1 の勉強時に学んだことを備忘録として残しておく
 環境 ruby: 3.1.2 Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
 以下は同じ意味
-h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.map{[_1, _2 * 2]}.to_h #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} #=&gt; hash に対して map! はエラーとなる &lt;&lt;EOF, &lt;&lt;-EOF, &lt;&lt;~EOF の動作の違い 詳細は ヒアドキュメント 参照
-・&lt;&lt;EOF
-print &lt;&lt;EOF # 識別子 EOS までがリテラルになる the string next line EOF 以下と同じ意味</div>
+h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h.transform_values{_1 * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.</div>
           </div>
         </a>
       </article>

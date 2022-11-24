@@ -2089,6 +2089,13 @@ figure img {
 </span></span><span style="display:flex;"><span>h<span style="color:#f92672">.</span>transform_values{<span style="color:#f92672">|</span>v<span style="color:#f92672">|</span> v <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6}</span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h<span style="color:#f92672">.</span>transform_values{_1 <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h <span style="color:#f92672">=</span> { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">c</span>: <span style="color:#ae81ff">3</span>  }
+</span></span><span style="display:flex;"><span>h<span style="color:#f92672">.</span>map{<span style="color:#f92672">|</span>key, value<span style="color:#f92672">|</span> <span style="color:#f92672">[</span>key, value <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>}<span style="color:#f92672">.</span>to_h
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6}</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>h <span style="color:#f92672">=</span> { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">c</span>: <span style="color:#ae81ff">3</span>  }
 </span></span><span style="display:flex;"><span>h<span style="color:#f92672">.</span>map{<span style="color:#f92672">[</span>_1, _2 <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>}<span style="color:#f92672">.</span>to_h
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6}</span>
