@@ -557,6 +557,18 @@ section.footer {
 }
 
   
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-cc659da25630dda8c57054bfbdb783a3 {
   background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
 }
@@ -971,6 +983,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  width: 5rem;
+}
+
+
+
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  width: 5rem;
 }
 
 
@@ -2044,7 +2082,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          72
           <span>Posts</span>
         </a>
       </div>
@@ -2079,6 +2117,53 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
+          <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
+
+          <div class="inner">
+            <h2 class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
+資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
+情報元 Markdown PDF の「Page Break」の項目に記載あり
+実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --&gt; &lt;div class=&#34;page&#34;/&gt; # h1 ## h2 ### h3 </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+          <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+
+          <div class="inner">
+            <h2 class="title">Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
+具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
+取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &#34;Scripting.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2122,6 +2207,48 @@ figure img {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/">
+    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道 その2</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T00:00:00JST">Nov 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/">
+    <div class="thumb thumb-e5c267a5be8eba578b44c5ace1bef791"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-11-23T00:00:00JST">Nov 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
@@ -2291,48 +2418,6 @@ figure img {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
-
-    <div class="inner">
-      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2343,7 +2428,7 @@ figure img {
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
