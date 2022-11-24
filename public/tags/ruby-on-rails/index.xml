@@ -6,7 +6,33 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 22 Nov 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Nov 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3.1 への道 その2</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/</link>
+      <pubDate>Thu, 24 Nov 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/</guid>
+      <description>Ruby Gold 認定試験の Ver 3.1 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+Ruby Gold 認定試験 Ver 3.1 への道 環境 ruby: 3.1.2 __FILE__ __FILE__ が書いてあるファイルのファイル名を表す 似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す
+puts __FILE__ puts $0 require_relative &amp;#39;./file_name&amp;#39; $ ruby file_name.rb __FILE__: file_name.rb $0: file_name.rb $ ruby require_file_name.rb __FILE__: /Users/XXX/work/ruby_gold/file_name.rb $0: require_file_name.rb 累乗の計算 def exponentiation(n) n ** n end puts exponentiation(-1) #=&amp;gt; -1 puts exponentiation(1i) #=&amp;gt; 0.20787957635076193+0.0i 複素数 確認リスト ・private_send or public_send ・method_missing ・filter_map ・%r $0 $1 ・引数の異なるメソッドを継承先のクラスで定義した際の super の挙動 ・累乗の計算 1i 1I %i(1) -1</description>
+    </item>
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3.1 への道</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/</link>
+      <pubDate>Wed, 23 Nov 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/</guid>
+      <description>Ruby Gold 認定試験の Ver 3.1 の勉強時に学んだことを備忘録として残しておく
+環境 ruby: 3.1.2 Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
+以下は同じ意味
+h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.map{[_1, _2 * 2]}.to_h #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} #=&amp;gt; hash に対して map! はエラーとなる &amp;lt;&amp;lt;EOF, &amp;lt;&amp;lt;-EOF, &amp;lt;&amp;lt;~EOF の動作の違い 詳細は ヒアドキュメント 参照
+・&amp;lt;&amp;lt;EOF
+print &amp;lt;&amp;lt;EOF # 識別子 EOS までがリテラルになる the string next line EOF 以下と同じ意味</description>
+    </item>
+    
     <item>
       <title>rails console で オートコンプリートを無効にする方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</link>
