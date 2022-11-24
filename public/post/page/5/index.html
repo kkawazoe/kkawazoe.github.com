@@ -557,12 +557,6 @@ section.footer {
 }
 
   
-.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
-  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
-}
-  
-
-  
 .thumb-e5c267a5be8eba578b44c5ace1bef791 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -983,19 +977,6 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
-}
-
-
-
-.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
-  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 10px;
-}
-article.lism .thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
-  width: 5rem;
 }
 
 
@@ -2082,7 +2063,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          72
+          71
           <span>Posts</span>
         </a>
       </div>
@@ -2121,31 +2102,6 @@ figure img {
     
     
     
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">
-          <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
-
-          <div class="inner">
-            <h2 class="title">Hugo に数式を挿入する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
-手順 参考 と同じく Mathjax を使用して実現する
-partials フォルダ配下に以下のファイルを作成する
-CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</div>
-          </div>
-        </a>
-      </article>
-    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2425,6 +2381,30 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
       </article>
     </div>
     
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
+          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&#34;showModal&#34; transition=&#34;app-modal&#34; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+以下のイベントがフックされるようになる
+Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
 
   </div>
 </div>
@@ -2446,27 +2426,6 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/">
-    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
-
-    <div class="inner">
-      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道 その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T00:00:00JST">Nov 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/">
@@ -2657,6 +2616,27 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
 </article>
 
     
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
+    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
+
+    <div class="inner">
+      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
   </div>
 </section>
 
@@ -2667,7 +2647,7 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(25)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
