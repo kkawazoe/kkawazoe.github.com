@@ -557,6 +557,18 @@ section.footer {
 }
 
   
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-cc659da25630dda8c57054bfbdb783a3 {
   background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
 }
@@ -971,6 +983,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  width: 5rem;
+}
+
+
+
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  width: 5rem;
 }
 
 
@@ -2044,7 +2082,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          72
           <span>Posts</span>
         </a>
       </div>
@@ -2083,6 +2121,55 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
+          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">実際のコード HTML側 transition を指定
+.app-modal-mask v-show=&#34;showModal&#34; transition=&#34;app-modal&#34; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
+以下のイベントがフックされるようになる
+Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
+          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
+
+          <div class="inner">
+            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
+実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて resize_to_fit 画像が指定したサイズ未満の時
+=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
+=&gt; なにもしない </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2307,54 +2394,6 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/">
-          <div class="thumb thumb-27703da049b375c9d1edda7674dab688"></div>
-
-          <div class="inner">
-            <h2 class="title">CofeeScript で JQuery の each を使用する場合の注意点</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-08T17:21:18JST">Mar 8, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
-その場合は以下のように修正する
-実際のソース 修正前 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id 修正後 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/07/initial-screen-display-scroll-to-center-specific-elementelement-with-vuejs/">
-          <div class="thumb thumb-95d351547a98871ee844c9037d287c88"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-07T18:00:00JST">Mar 7, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
-created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
-例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen. </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2376,6 +2415,48 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/">
+    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道 その2</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T00:00:00JST">Nov 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/">
+    <div class="thumb thumb-e5c267a5be8eba578b44c5ace1bef791"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-11-23T00:00:00JST">Nov 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
@@ -2545,48 +2626,6 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
-
-    <div class="inner">
-      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2597,7 +2636,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     

@@ -557,6 +557,18 @@ section.footer {
 }
 
   
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-cc659da25630dda8c57054bfbdb783a3 {
   background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
 }
@@ -971,6 +983,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  width: 5rem;
+}
+
+
+
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  width: 5rem;
 }
 
 
@@ -2044,7 +2082,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          72
           <span>Posts</span>
         </a>
       </div>
@@ -2079,6 +2117,65 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">
+          <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
+
+          <div class="inner">
+            <h2 class="title">Hugo に数式を挿入する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
+手順 参考 と同じく Mathjax を使用して実現する
+partials フォルダ配下に以下のファイルを作成する
+CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/">
+          <div class="thumb thumb-931fb086a0fa06c095e15790fb0d6747"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その5</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-26T00:00:00JST">Apr 26, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
+※PER が低い銘柄は 割安 、高い銘柄は割高
+$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
+※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
+$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$
+$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$
+$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$
+$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$
+参考にした教本 上記内容は以下の教本の内容を参考にしてます
+2018-2019年版　みんなが欲しかった！　FPの問題集3級
+滝澤ななみ TAC 2018年05月22日
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2324,55 +2421,6 @@ $ eval &#34;$(ssh-agent -s)&#34; &gt; Agent pid 59566 ※ macOS Sierra 10.</div>
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
-          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&#34;showModal&#34; transition=&#34;app-modal&#34; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
-以下のイベントがフックされるようになる
-Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.textContent = &#39;leave&#39; }, afterLeave: function (el) { el.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2394,6 +2442,48 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/">
+    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道 その2</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T00:00:00JST">Nov 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/">
+    <div class="thumb thumb-e5c267a5be8eba578b44c5ace1bef791"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-11-23T00:00:00JST">Nov 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
@@ -2563,48 +2653,6 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
-
-    <div class="inner">
-      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2615,7 +2663,7 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     

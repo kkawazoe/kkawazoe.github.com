@@ -557,6 +557,18 @@ section.footer {
 }
 
   
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-cc659da25630dda8c57054bfbdb783a3 {
   background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
 }
@@ -971,6 +983,32 @@ section.footer {
 
 article.lism .thumb {
   width: 6rem;
+}
+
+
+
+.thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-91f6ed1cf23a417c564b4053d4f5ede7 {
+  width: 5rem;
+}
+
+
+
+.thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+article.lism .thumb-e5c267a5be8eba578b44c5ace1bef791 {
+  width: 5rem;
 }
 
 
@@ -2044,7 +2082,7 @@ figure img {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          70
+          72
           <span>Posts</span>
         </a>
       </div>
@@ -2083,6 +2121,52 @@ figure img {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/">
+          <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
+
+          <div class="inner">
+            <h2 class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-12T09:00:00JST">May 12, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">HashWithIndifferentAccess に変換して実現する
+環境 rails: rails 6.0.3.6 実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/">
+          <div class="thumb thumb-766136c42363b1752e86f3f0bba5157c"></div>
+
+          <div class="inner">
+            <h2 class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-04-11T09:00:00JST">Apr 11, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
+その対処方法を備忘録として残しておく
+環境 rails: rails 6.0.3.6 仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&rsquo;〓&rsquo;に変換する
+実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2297,55 +2381,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
-          <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
-
-          <div class="inner">
-            <h2 class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-19T15:25:56JST">Mar 19, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/03/07/tried-tax-returns-part2/">
-          <div class="thumb thumb-a5549a850a409626ccf336d1e48a489f"></div>
-
-          <div class="inner">
-            <h2 class="title">普通の会社員(SE)が確定申告してみた その2</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-07T09:00:00JST">Mar 7, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">[前回までの記事]
-普通の会社員(SE)が確定申告してみた 経緯 前回、確定申告をして損失の繰り越し控除を行った
-今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1 ※1 対応するスマートフォンでも可 参考資料
-スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
-手順 e-tax 確定申告書等作成コーナーで作成する
-「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「はい」を選択 前年の譲渡損失を入力 「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択 「源泉徴収票」の内容を転記 「住民税等入力」 「入力終了(次へ) &gt;」ボタンを押下 住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある
-また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2367,6 +2402,48 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/24/road_to_ruby_gold_ver_3_1_part2/">
+    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道 その2</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T00:00:00JST">Nov 24, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/">
+    <div class="thumb thumb-e5c267a5be8eba578b44c5ace1bef791"></div>
+
+    <div class="inner">
+      <div class="title">Ruby Gold 認定試験 Ver 3.1 への道</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="23007-11-23T00:00:00JST">Nov 23, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
@@ -2536,48 +2613,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/">
-    <div class="thumb thumb-c6c6175bd2186afa9727ca5c36a00743"></div>
-
-    <div class="inner">
-      <div class="title">rails で文字列置換を行う際に対応表で置換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-09-03T12:00:00JST">Sep 3, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/">
-    <div class="thumb thumb-87c1ca430b81478141d94a0dac70d197"></div>
-
-    <div class="inner">
-      <div class="title">CentOS でファイル内の行数を取得する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-08-28T22:00:00JST">Aug 28, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -2588,7 +2623,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(24)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(13)</span></a></li>
     
