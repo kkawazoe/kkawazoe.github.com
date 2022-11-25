@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2121,7 +2115,7 @@ figure img {
             <div class="summary">rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
 例. ActiveRecord::Base.method(:transaction).source_location
-環境 ruby: 2.6.10 rails: 5.2.3 実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
+環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
           </div>
         </a>
       </article>
@@ -2144,7 +2138,7 @@ figure img {
 
             <div class="summary">個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。
 方法 tag オプション を使用して実現する
-環境 rspec: rspec 3.8 実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
+環境  rspec: rspec 3.8  実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
           </div>
         </a>
       </article>
@@ -2166,7 +2160,7 @@ figure img {
             </ul>
 
             <div class="summary">HashWithIndifferentAccess に変換して実現する
-環境 rails: rails 6.0.3.6 実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
+環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
           </div>
         </a>
       </article>
@@ -2189,7 +2183,7 @@ figure img {
 
             <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
 その対処方法を備忘録として残しておく
-環境 rails: rails 6.0.3.6 仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&rsquo;〓&rsquo;に変換する
+環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
 実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
           </div>
         </a>
@@ -2212,27 +2206,24 @@ figure img {
             </ul>
 
             <div class="summary">Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
-環境 rails: rails 5.2.2 rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
 使用感としてはテンプレートとなる Excel に対して読み書きする場合には
 問題なく使用可能。
 但し、テンプレートに数式やグラフが含まれている場合に行などを
 追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
 あるため注意が必要。
-rubyXL 発生した障害とその対応 テキストの折り返しがsheet.add_cellではできない
+rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
 sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能。
 テキストを折り返して表示してくれるようになる。
-change_contents が使えない
+  change_contents が使えない
 version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
 # require が必要なメソッド require &#39;rubyXL/convenience_methods/cell&#39; require &#39;rubyXL/convenience_methods/color&#39; require &#39;rubyXL/convenience_methods/font&#39; require &#39;rubyXL/convenience_methods/workbook&#39; require &#39;rubyXL/convenience_methods/worksheet&#39; もしくは以下で全て使用可
-require &#39;rubyXL/convenience_methods&#39; シートのコピーができない
+require &#39;rubyXL/convenience_methods&#39;   シートのコピーができない
 Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
 参考サイト
-シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
 change_contents の仕様と上記のシートコピーによって生じた現象。
-シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →
-該当するコピーシートすべての内容が書き換わる という動作をしている。
-=&gt; add_cell による値の挿入だと上記の現象は発生しないため、左記の方法で対応。
-上記の場合は書式設定等は rubyXL 側で行う必要がある。</div>
+シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</div>
           </div>
         </a>
       </article>
@@ -2253,7 +2244,7 @@ change_contents の仕様と上記のシートコピーによって生じた現�
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 Gem Errgent を使用して実現する
+            <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
 確認 config/environments/development.rb の以下を編集して確認する
 config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
 =&gt; 生成されるファイル 例. public/404.ja.html
@@ -2278,7 +2269,7 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
+            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
 $ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する
@@ -2303,7 +2294,7 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 I18n::Backend::Base#store_translations を使用する
+            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
           </div>
         </a>
@@ -2325,11 +2316,11 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+            <div class="summary">環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
 以下が対象
-Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
 以下が対象
-Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
           </div>
         </a>
       </article>
@@ -2351,10 +2342,10 @@ Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &
             </ul>
 
             <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用) 通常 a タグ
-a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34; RailsHelper での a タグ
-Vue.js の bind を&rsquo;(シングルコート)で括る
-= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34; </div>
+実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
+a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;   RailsHelper での a タグ
+Vue.js の bind を'(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34;   </div>
           </div>
         </a>
       </article>

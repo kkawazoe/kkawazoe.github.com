@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -364,13 +364,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -393,7 +388,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -423,8 +418,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2189,34 +2183,34 @@ figure img {
 <h2 id="実際のコード">実際のコード</h2>
 <p>user のテストデータを3つ作成 かつ 関連する user_status のテストデータを
 紐付けおよびカラム status を動的に生成する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
-</span></span><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
-</span></span><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>before <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>  create_list(<span style="color:#e6db74">:user</span>, <span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>each<span style="color:#f92672">.</span>with_index(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>user, i<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>    create(
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:user_status</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">user</span>: user,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">status</span>: send(<span style="color:#e6db74">&#34;user_status</span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>),
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>rspec 5.2 以降であれば以下も可能 <a href="https://github.com/thoughtbot/factory_bot/issues/787">参考</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
-</span></span><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
-</span></span><span style="display:flex;"><span>let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>before <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>  create_list(<span style="color:#e6db74">:user</span>, <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>user, i<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>    create(
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:user_status</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">user</span>: user,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">status</span>: send(<span style="color:#e6db74">&#34;user_status</span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>),
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
+let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
+let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
+
+before <span style="color:#66d9ef">do</span>
+  create_list(<span style="color:#e6db74">:user</span>, <span style="color:#ae81ff">3</span>)<span style="color:#f92672">.</span>each<span style="color:#f92672">.</span>with_index(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>user, i<span style="color:#f92672">|</span>
+    create(
+      <span style="color:#e6db74">:user_status</span>,
+      <span style="color:#e6db74">user</span>: user,
+      <span style="color:#e6db74">status</span>: send(<span style="color:#e6db74">&#34;user_status</span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>),
+    )
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>rspec 5.2 以降であれば以下も可能 <a href="https://github.com/thoughtbot/factory_bot/issues/787">参考</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">let(<span style="color:#e6db74">:user_status1</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Active</span> }
+let(<span style="color:#e6db74">:user_status2</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Locked</span> }
+let(<span style="color:#e6db74">:user_status3</span>) { <span style="color:#66d9ef">UserStatus</span><span style="color:#f92672">::</span><span style="color:#66d9ef">InActive</span> }
+
+before <span style="color:#66d9ef">do</span>
+  create_list(<span style="color:#e6db74">:user</span>, <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>user, i<span style="color:#f92672">|</span>
+    create(
+      <span style="color:#e6db74">:user_status</span>,
+      <span style="color:#e6db74">user</span>: user,
+      <span style="color:#e6db74">status</span>: send(<span style="color:#e6db74">&#34;user_status</span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>),
+    )
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2303,7 +2297,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    window.disqus_config = function () {
+    var disqus_config = function () {
     
     
     
