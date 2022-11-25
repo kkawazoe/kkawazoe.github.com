@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2089,34 +2083,34 @@ figure img {
 <li>Authorization: Token XXX</li>
 <li>Authorization: Bearer XXX</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ApplicationController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">API</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># authenticate_with_http_token を使用するために必要</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HttpAuthentication</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Token</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ControllerMethods</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  before_action <span style="color:#e6db74">:authenticate</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate</span>
-</span></span><span style="display:flex;"><span>    authenticate_with_http_token  <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>token, options<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 認証処理 および レスポンスが必要な場合は記述</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h3 id="トークンの取得">トークンの取得</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ApplicationController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">API</span>
+  <span style="color:#75715e"># authenticate_with_http_token を使用するために必要</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HttpAuthentication</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Token</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ControllerMethods</span>
+
+  before_action <span style="color:#e6db74">:authenticate</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate</span>
+    authenticate_with_http_token  <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>token, options<span style="color:#f92672">|</span>
+      <span style="color:#75715e"># 認証処理 および レスポンスが必要な場合は記述</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h3 id="トークンの取得">トークンの取得</h3>
 <p>トークンの取得については <a href="https://apidock.com/rails/v5.2.3/ActionController/HttpAuthentication/Token/token_and_options">token_and_options</a> を使用する</p>
 <p>以下が対象</p>
 <ul>
 <li>Authorization: Token XXX</li>
 <li>Authorization: Bearer XXX</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ApplicationController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">API</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># token_and_options を使用するために必要</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HttpAuthentication</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Token</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">access_token</span>
-</span></span><span style="display:flex;"><span>    token_and_options(request)<span style="color:#f92672">&amp;.</span>first
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ApplicationController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">API</span>
+  <span style="color:#75715e"># token_and_options を使用するために必要</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">ActionController</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HttpAuthentication</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Token</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">access_token</span>
+    token_and_options(request)<span style="color:#f92672">&amp;.</span>first
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
