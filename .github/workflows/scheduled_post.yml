@@ -1,9 +1,8 @@
 name: GitHub Pages
 
 on:
-  push:
-    branches:
-      - source  # 発火させたい branch
+  schedule:
+   - cron: '0 * * * *'
 
 jobs:
   deploy:
