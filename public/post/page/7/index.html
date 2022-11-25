@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2122,7 +2116,7 @@ figure img {
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen. </div>
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  </div>
           </div>
         </a>
       </article>
@@ -2144,7 +2138,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
             </ul>
 
             <div class="summary">経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく
-実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen. </div>
+実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  </div>
           </div>
         </a>
       </article>
@@ -2166,7 +2160,7 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
             </ul>
 
             <div class="summary">経緯 最近、周りで VB.NET を使っている人が複数人出てきた恐らく2020年にWindows7 サポート終了となるため VB6 =&gt; VB.NET へのコンバージョンの案件が増えていると思われる。 そのため、以前行った際に苦労したふりがな機能について備忘録として残しておくことにする
-実際のコード ふりがな取得機能の実装クラス 以下のふりがなに対応(半角および全角英数はそのまま取得) ひらがな 全角カナ 半角カナ Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラスのコンストラクタ &#39;&#39;&#39; &lt;/summary&gt; &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt; Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; ふりがな取得完了通知イベント &#39;&#39;&#39; &#39;&#39;&#39; ふりがな取得が完了したことを通知する &#39;&#39;&#39; &lt;/summary&gt; &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt; &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt; Public Event Converted(ByVal txtSrc As System.</div>
+実際のコード ふりがな取得機能の実装クラス  以下のふりがなに対応(半角および全角英数はそのまま取得)  ひらがな 全角カナ 半角カナ    Option Strict Off Option Explicit On Imports System.Runtime.InteropServices Delegate Function fncDelegate(ByVal hWnd As Integer, ByVal uMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 変換イベントクラス &#39;&#39;&#39; &lt;/summary&gt; Public Class ConvertedEventArgs Inherits EventArgs &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; 変換イベントクラスのコンストラクタ  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;f&#34;&gt;ふりがな文字列&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;r&#34;&gt;変換後文字列&lt;/param&gt;  Public Sub New(ByVal f As String, ByVal r As String) Furigana = f Result = r End Sub Public ReadOnly Property Furigana() As String Public ReadOnly Property Result() As String End Class &#39;&#39;&#39; &lt;summary&gt; &#39;&#39;&#39; 自動ふりがな取得クラス &#39;&#39;&#39; &lt;/summary&gt; Public Class Imecomp Private m_TxtSrcControl As Control Private m_TxtDestControl As Control Private WithEvents M_MsgListner As MsgListner Private ReadOnly m_StrConvMode As Integer &#39;&#39;&#39; &lt;summary&gt;  &#39;&#39;&#39; ふりがな取得完了通知イベント  &#39;&#39;&#39;  &#39;&#39;&#39; ふりがな取得が完了したことを通知する  &#39;&#39;&#39; &lt;/summary&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtSrc&#34;&gt;ふりがな取得対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;txtDest&#34;&gt;ふりがな出力対象テキストボックス&lt;/param&gt;  &#39;&#39;&#39; &lt;param name=&#34;e&#34;&gt;変換イベントクラス&lt;/param&gt;  Public Event Converted(ByVal txtSrc As System.</div>
           </div>
         </a>
       </article>
@@ -2188,15 +2182,13 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
             </ul>
 
             <div class="summary">経緯 株式投資を行っているが「特定口座(源泉徴収あり)」で行っているため例年であれば会社の年末調整のみで完結するはずだが以下の状況のため確定申告をすることにした
-昨年末(2018年12月)の株式市場が全体的に下落 手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
-=&gt; 年間の損益がマイナスになる ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
-想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2 今回は、 e-tax を使用せずに確定申告したため※2は
+ 昨年末(2018年12月)の株式市場が全体的に下落  手持ち株が元本割れになる 普段は塩漬けにしているが一旦売却
+=&gt; 年間の損益がマイナスになる    ※確定申告をすると3年間の損失の繰越控除が可能になるらしい
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバー通知カード※1 本人確認書類(免許証等)※1 マイナンバーカード※2 ICカードリーダー※2  今回は、 e-tax を使用せずに確定申告したため※2は
 未使用(e-tax を使用した場合は※1が不要)
 ※マイナンバーカードが必要で発行に1ヵ月程度かかるため
 手順 国税庁 確定申告書等作成コーナーで作成する
-「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「いいえ」を選択※来年はここで「はい」を選択 「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択 「源泉徴収票」の内容を転記 住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する 郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函 まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに
-確定申告が完了した
-来年度はもう少し簡略化できそうなので忘れないようにする</div>
+ 「作成開始」ボタンを押下 「印刷して書面を提出」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 「平成30年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成29年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「いいえ」を選択※来年はここで「はい」を選択     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 帳票を印刷する 以下の方法で確定申告書類を提出する  郵便又は信書便で送付 税務署の受付に持参 税務署の時間外収受箱へ投函    まとめ 今回は一つ一つ手順をまとめながら作業したが1時間程度で意外と手間取られずに</div>
           </div>
         </a>
       </article>
@@ -2217,13 +2209,13 @@ See the Pen Vue.js で画面初期表示時に特定の要素をスクロール�
               
             </ul>
 
-            <div class="summary">確認環境 Windows10 Rambox: 0.6.3 経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
-候補 Franz Station Rambox Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
+            <div class="summary">確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
-しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+ しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
-実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&#34;.roomListBadges__unreadBadgeText&#34;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ? rambox.setUnreadCount(e) : rambox.clearUnreadCount(); } setInterval(checkUnread, 3000); </div>
+ 実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(&#34;.roomListBadges__unreadBadgeText&#34;); updateBadge(elements.length); } function updateBadge(e) { e &gt;= 1 ? rambox.setUnreadCount(e) : rambox.</div>
           </div>
         </a>
       </article>
@@ -2244,7 +2236,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               
             </ul>
 
-            <div class="summary">確認環境 Vue.js: v2.6.7 方法 読み込み開始検知 img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2 読み込み完了検知 img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4 実際のコード &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1 }, methods: { // ※4 load: function() { console.</div>
+            <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のコード &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1  }, methods: { // ※4  load: function() { console.</div>
           </div>
         </a>
       </article>
@@ -2265,8 +2257,9 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               
             </ul>
 
-            <div class="summary">確認環境 ruby: ruby 2.5.3 rails: rails 5.2.2 方法 Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
-例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先) order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
+            <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法   Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
+ 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)  order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)
+  </div>
           </div>
         </a>
       </article>
@@ -2288,7 +2281,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
             </ul>
 
             <div class="summary">テーブル構成例 [Nodesテーブル] 最上位のノード以外は親ノードを持っている
-id name parent_id 1 parrent_node null 2 child_node_1 1 3 child_node_2 1 4 child_node_1_1 2 5 child_node_1_2 2 6 child_node_2_1 3 7 child_node_2_2 3 確認環境 ruby: ruby 2.5.3 rails: rails 5.2.2 実際のコード class Node &lt; ApplicationRecord has_many :children, class_name: &#34;Node&#34;, foreign_key: &#34;parrent_id&#34; belongs_to :parrent, class_name: &#34;Node&#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &lt; ActiveRecord::Migration[5.2] def change create_table :nodes do |t| t.</div>
+   id name parent_id     1 parrent_node null   2 child_node_1 1   3 child_node_2 1   4 child_node_1_1 2   5 child_node_1_2 2   6 child_node_2_1 3   7 child_node_2_2 3    確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  実際のコード class Node &lt; ApplicationRecord has_many :children, class_name: &#34;Node&#34;, foreign_key: &#34;parrent_id&#34; belongs_to :parrent, class_name: &#34;Node&#34;, optional: true # rails5 から default が require になっているため　`optional: true` を指定しないと `nil` での保存が不可 end class CreateNodes &lt; ActiveRecord::Migration[5.</div>
           </div>
         </a>
       </article>
@@ -2312,7 +2305,7 @@ id name parent_id 1 parrent_node null 2 child_node_1 1 3 child_node_2 1 4 child_
             <div class="summary">経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
 情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --&gt; &lt;div class=&#34;page&#34;/&gt; # h1 ## h2 ### h3 </div>
+実際のコード # h1 ## h2  ### h3  &lt;!-- 改行させたい位置 --&gt; &lt;div class=&#34;page&#34;/&gt; # h1 ## h2  ### h3  </div>
           </div>
         </a>
       </article>
@@ -2335,7 +2328,7 @@ id name parent_id 1 parrent_node null 2 child_node_1 1 3 child_node_2 1 4 child_
 
             <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。
-取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &#34;Scripting.</div>
+取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す。 rem * 先頭がカンマの場合はコメント行として扱う。 rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う。 rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す。) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting.</div>
           </div>
         </a>
       </article>

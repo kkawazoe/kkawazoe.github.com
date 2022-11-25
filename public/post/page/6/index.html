@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2120,9 +2114,9 @@ figure img {
 
             <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
 実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて resize_to_fit 画像が指定したサイズ未満の時
+heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
 =&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない </div>
+=&gt; なにもしない  </div>
           </div>
         </a>
       </article>
@@ -2167,15 +2161,13 @@ github
             </ul>
 
             <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境 ruby: ruby 1.8.7 rails: rails 2.3.18 手順 Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
+  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
+  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
+ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
 gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz) 動作確認用のフォルダを作成
-以下の gem をインストールする
-このサイトで1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</div>
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
           </div>
         </a>
       </article>
@@ -2196,13 +2188,10 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
               
             </ul>
 
-            <div class="summary">前回の残りTODO operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする 手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-「スパナ」アイコンを押下後「JSON」を選択して以下を指定
-「Parse JSON」 「Data structure」 「Add data structure」 「Specification」 「Generate」を押下して API の戻り値を貼り付けて生成 「JSON string」 「Data」を指定 「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
-「Array aggregator」 「Source Module」 手順１ で作成したJSON 「Target structure type」 「Custom」を指定 「Aggregated fields」 必要な項目を指定 前回作成した slack の Text を以下のように修正
-map() で 「content」の内容を配列で取得後 join() で改行および空白を追加する。
-※「\n」では改行しないため「newline」を使用する
-:white_medium_square:{{nbsp}}{{join(map(33.array; &#34;content&#34;); newline&#34;:white_medium_square:&#34; + nbsp)}} </div>
+            <div class="summary">前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
+  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
+ 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
+ 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</div>
           </div>
         </a>
       </article>
@@ -2224,8 +2213,8 @@ map() で 「content」の内容を配列で取得後 join() で改行および�
             </ul>
 
             <div class="summary">したいこと 日々のタスクを管理したいというよりも忘れがちな〇月に契約更新とかの数か月、数年先のタスクを管理したい
-タスク管理 完了/未完了を切り替え 期日を指定 リマインダー機能 昨日完了したタスク 今日期日のタスク 上記以外のタスク 今回使用するツール タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用 google calendar リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない integromat サイトが英語のみ integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
-足りない項目 サブタスクかどうか? 期限の情報 [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
+ タスク管理  完了/未完了を切り替え 期日を指定   リマインダー機能  昨日完了したタスク 今日期日のタスク 上記以外のタスク    今回使用するツール  タスク管理 シンプルで管理しやすい todoist を使用 リマインダー機能 slack の channel への通知を使用  google calendar  リマインダーが直前になる todoist と連携可能だが「期日指定なし」が連携されない   integromat  サイトが英語のみ      integromat での todoist について integromat から使用できる todoist の 「Search for a task」では以下の項目しか返ってこないため要件を満たせない
+ 足りない項目  サブタスクかどうか? 期限の情報    [OUTPUT] Bundle 1: (Collection) Task ID: タスクID User ID: ユーザID Project ID: プロジェクトID Content: 内容 Deleted: 削除されているかどうか(true/false) Archived: アーカイブされているかどうか(true/false) Completed: 完了されているかどうか(true/false) The ID of the assigned user: アサインされているユーザID Date created: 作成日時 LabelsArray ラベル配列 そのため、todoist api を叩くことで実装する</div>
           </div>
         </a>
       </article>
@@ -2278,11 +2267,10 @@ Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下�
 手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&gt;Properties&gt;Security&gt;Editボタンで、 Users の権限に全部チェックを入れる。
 Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合 サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0 インターネットオプションのLocal intranetに「localhost:3000」を登録
-Edgeの場合 サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0 インターネットオプションの Local intranet に「localhost:3000」を登録
-about:flags を入力し、「Developer Settings」の「allow localhost loopback(this might put your device at risk)」のチェックを外す</div>
+IEの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
+  Edgeの場合   サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.</div>
           </div>
         </a>
       </article>
@@ -2306,12 +2294,12 @@ about:flags を入力し、「Developer Settings」の「allow localhost loopbac
             <div class="summary">経緯 今回手術＋入院することになり表題を取得する必要が出てきた。
 できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく。
 高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある。
-医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
+ 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります。
 しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります。
 「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります。
 ※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります。
 ※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります。保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります。
-=&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
+ =&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい。
 自分の場合請求から発行までおよそ2週間程度かかった。
 1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう。
 ※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい。</div>
@@ -2336,7 +2324,7 @@ about:flags を入力し、「Developer Settings」の「allow localhost loopbac
             </ul>
 
             <div class="summary">ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
-受験する科目 学科 FP 協会・金融財政事情研究会で共通 実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい FP 協会 資産設計提案業務 金融財政事情研究会 個人資産相談業務 ※今回受験 保険顧客資産相談業務 使用する教材 今回使用する教材は以下
+受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
 売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
@@ -2344,8 +2332,7 @@ about:flags を入力し、「Developer Settings」の「allow localhost loopbac
 CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
 シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
 2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ </div>
+滝澤ななみ TAC 2018年05月22日</div>
           </div>
         </a>
       </article>
@@ -2368,7 +2355,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 
             <div class="summary">JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
 その場合は以下のように修正する
-実際のソース 修正前 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id 修正後 processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id </div>
+実際のソース  修正前  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id  修正後  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id </div>
           </div>
         </a>
       </article>

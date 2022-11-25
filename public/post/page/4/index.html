@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2119,13 +2113,12 @@ figure img {
             </ul>
 
             <div class="summary">[前回までの記事]
-普通の会社員(SE)が確定申告してみた 経緯 前回、確定申告をして損失の繰り越し控除を行った
+ 普通の会社員(SE)が確定申告してみた  経緯 前回、確定申告をして損失の繰り越し控除を行った
 今年は、前回利用しなかった e-tax で行う + 申請方法が変わったらしいので備忘録として残しておく
-想定ケース 会社員で年末調整済 株は特定口座(源泉徴収あり)で取引 確定申告手順 事前準備 源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1 ※1 対応するスマートフォンでも可 参考資料
+想定ケース  会社員で年末調整済 株は特定口座(源泉徴収あり)で取引  確定申告手順 事前準備  源泉徴収票 特定口座年間取引報告書 マイナンバーカード ICカードリーダ※1  ※1 対応するスマートフォンでも可 参考資料
 スマートフォンだと頻繁にエラーになってしまったため IC カードリーダで行う
 手順 e-tax 確定申告書等作成コーナーで作成する
-「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択 配当所得の課税方法の選択 「申告分離課税」を選択 株式等の売却・配当・利子等の入力 「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する 平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方 「はい」を選択 前年の譲渡損失を入力 「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択 「源泉徴収票」の内容を転記 「住民税等入力」 「入力終了(次へ) &gt;」ボタンを押下 住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある
-また、e-tax 自体は便利だが使用するにあたっての事前準備が大変なため来年はもう少し効率よくしたい</div>
+ 「作成開始」ボタンを押下 「e-tax で提出 マイナンバーカード方式」ボタンを押下 「利用規約に同意して次へ」ボタンを押下 マイナンバーカードをICカードリーダライタにセットし、「マイナンバーカードの読み取り」ボタンを押下 「令和元年分の申告書等の作成」&gt;「所得税」を選択 「左記以外の所得のある方（全ての所得対応）」の「作成開始」ボタンを押下 生年月日を入力後、「入力終了(次へ) &gt;」ボタンを押下 「上場株式等の譲渡所得等」を選択  配当所得の課税方法の選択  「申告分離課税」を選択   株式等の売却・配当・利子等の入力  「特定口座年間取引報告書の内容を入力する」を選択 入力例を参考に「特定口座年間取引報告書」の内容を転記する   平成30年分の申告で上場株式等に係る譲渡損失の金額を繰り越した方  「はい」を選択 前年の譲渡損失を入力     「入力終了(次へ) &gt;」ボタンを押下 内容確認後、「確認終了(次へ)」ボタンを押下 「収入金額等」&gt;「給与」を選択  「源泉徴収票」の内容を転記   「住民税等入力」  「入力終了(次へ) &gt;」ボタンを押下   住所・氏名等入力後、「入力終了(次へ) &gt;」ボタンを押下 マイナンバー入力後、「入力終了(次へ) &gt;」ボタンを押下 e-tax 経由で送信する  まとめ 前年の資料を残していなかったため税務署にて去年の資料を確認する手間が発生してしまったので今回以降はきちんと残しておく必要がある</div>
           </div>
         </a>
       </article>
@@ -2146,7 +2139,7 @@ figure img {
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 I18n::Backend::Base#store_translations を使用する
+            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
           </div>
         </a>
@@ -2168,11 +2161,11 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
+            <div class="summary">環境  rails: rails 5.2.3  方法 トークンの認証 トークンの認証については authenticate_with_http_token を使用する
 以下が対象
-Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # authenticate_with_http_token を使用するために必要 include ActionController::HttpAuthentication::Token::ControllerMethods before_action :authenticate def authenticate authenticate_with_http_token do |token, options| # 認証処理 および レスポンスが必要な場合は記述 end end end トークンの取得 トークンの取得については token_and_options を使用する
 以下が対象
-Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
+ Authorization: Token XXX Authorization: Bearer XXX  class ApplicationController &lt; ActionController::API # token_and_options を使用するために必要 include ActionController::HttpAuthentication::Token def access_token token_and_options(request)&amp;.first end end </div>
           </div>
         </a>
       </article>
@@ -2195,13 +2188,13 @@ Authorization: Token XXX Authorization: Bearer XXX class ApplicationController &
 
             <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6 受験結果 2019年5月 一応　FP 3級合格
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6  受験結果 2019年5月 一応　FP 3級合格
 勉強時間は一月半程度
 後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
 FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
 2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
 【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-等級 学科/実技 試験科目 合格率 3級 学科 42.76％ 3級 実技 個人資産相談業務 54.35％ 大体例年通りくらいの合格率だったらしい</div>
+   等級 学科/実技 試験科目 合格率     3級 学科  42.76％   3級 実技 個人資産相談業務 54.35％    大体例年通りくらいの合格率だったらしい</div>
           </div>
         </a>
       </article>
@@ -2223,9 +2216,9 @@ FP に関しては試験受ける・受けないはともかくとして勉強�
             </ul>
 
             <div class="summary">経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
-Generate new token を押下する
-2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
+手順 1. アクセストークンを作成する   GitHub アカウントにログインし，Settings &gt; Developer settings から Personal access tokens を選択する
+  Generate new token を押下する
+  2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
           </div>
         </a>
       </article>
@@ -2295,20 +2288,18 @@ Jest に変更する手順を備忘録として残しておく
 
             <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
 [前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 金融資産運用 債権 債権の利回り 直接利回り
+ FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5  金融資産運用 債権 債権の利回り   直接利回り
 投資金額(購入価格)に対する毎年の利息収入の割合
 $$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
 $$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
 例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
 $$ \frac{1%}{102円} \times 100 ≒ 0.98% $$
-応募者利回り
+  応募者利回り
 債権の発行時に購入し、償還まで所有した場合の利回り
 $$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
 例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
 $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
-最終利回り
-既に発行されている債権を時価で購入し、償還まで所有した場合の利回り
-$$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$</div>
+  最終利回り</div>
           </div>
         </a>
       </article>
@@ -2333,11 +2324,11 @@ $$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価�
 テスト項目ごとにシートを分ける必要があった
 テスト項目が多い場合手作業で シート作成 =&gt; シート名変更をするのは手間だったため
 ツール化をすることにした
-使用方法 「パラメータ」シートにて以下を指定する
+使用方法   「パラメータ」シートにて以下を指定する
 [設定項目]
-シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
-ワークグループ(各シートが選択状態)になる 「パラメータ」シートの「実行」ボタンを押下する
-実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化 For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合 If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得 chkFlg = Worksheets(&#34;パラメータ&#34;).OLEObjects(&#34;Chk_WorkGroup&#34;).Object.Value &#39;ワークシートの追加 For i = 0 To Worksheets(&#34;パラメータ&#34;).</div>
+ シート数: 作成するシート数 表示倍率: 作成するシートの表示倍率 シート作成後ワークグループ設定: チェックをつけるとシートを作成後に
+ワークグループ(各シートが選択状態)になる    「パラメータ」シートの「実行」ボタンを押下する
+  実際のコード Rem Attribute VBA_ModuleType=VBAModule Option VBASupport 1 Sub ExecuteButtonClick() Dim ws As Worksheet Dim wsArray() As String Dim chkFlg As Long &#39;ワークシートの初期化  For Each ws In Worksheets &#39;ワークシート名が&#34;パラメータ&#34;以外の場合  If ws.Name &lt;&gt; &#34;パラメータ&#34; Then Application.DisplayAlerts = False ws.Delete Application.DisplayAlerts = True End If Next ws &#39;チェックボックスの値を取得  chkFlg = Worksheets(&#34;パラメータ&#34;).</div>
           </div>
         </a>
       </article>
@@ -2360,9 +2351,9 @@ $$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価�
 
             <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
-partials フォルダ配下に以下のファイルを作成する
+  partials フォルダ配下に以下のファイルを作成する
 CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown.</div>
+&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</div>
           </div>
         </a>
       </article>

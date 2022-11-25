@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -310,13 +310,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -339,7 +334,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -369,8 +364,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2119,7 +2113,7 @@ figure img {
             </ul>
 
             <div class="summary">Ruby Gold 認定試験の Ver 3.1 の勉強時に学んだことを備忘録として残しておく
-環境 ruby: 3.1.2 Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
+環境  ruby: 3.1.2  Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
 以下は同じ意味
 h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h.transform_values{_1 * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.</div>
           </div>
@@ -2144,7 +2138,7 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
 
             <div class="summary">経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
 調査を行なった。その結果を備忘録として残しておく。
-手順 コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する 実際の設定ファイル { &#34;[markdown]&#34;: { &#34;files.trimTrailingWhitespace&#34;: false } } </div>
+手順  コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する  実際の設定ファイル { &#34;[markdown]&#34;: { &#34;files.trimTrailingWhitespace&#34;: false } } </div>
           </div>
         </a>
       </article>
@@ -2167,7 +2161,7 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
 
             <div class="summary">ruby 3.1 以降から irb でオートコンプリートが効くようになったがそれを無効にする方法を調査した
 その結果を備忘録として残しておく
-環境 ruby: 3.1.2 rails: 6.1.7 方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
+環境  ruby: 3.1.2 rails: 6.1.7  方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
 ※他の設定値については 参考 を参照
 IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </div>
           </div>
@@ -2190,12 +2184,12 @@ IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </div>
               
             </ul>
 
-            <div class="summary">環境 ruby: 2.7.6 rails: 5.2.8.1 前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
+            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
 実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下 ※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
-erb のパターン association を使用して as: :check_boxes オプションを指定する
-&lt;%= simple_form_for @book do |f| %&gt; &lt;%= f.association :categories, as: :check_boxes %&gt; &lt;%= f.button :submit %&gt; &lt;% end %&gt; javascript のパターン 最終的に生成される params が以下のようになるように組み立てる
+ erb のパターン  association を使用して as: :check_boxes オプションを指定する
+&lt;%= simple_form_for @book do |f| %&gt; &lt;%= f.association :categories, as: :check_boxes %&gt; &lt;%= f.button :submit %&gt; &lt;% end  %&gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
 [&quot;&quot;, 1, 3]
-$(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name=&#34;book[category_ids][]&#34; /&gt;`, ); book.category_ids.forEach((category_id) =&gt; { $(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;${category_id}&#34; name=&#34;book[category_ids][]&#34; id=&#34;book_category_ids_${category_id}&#34; /&gt;`, ); }); erb + javascript javascript のパターンの &lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;book[category_ids][]&quot; /&gt; 部分を erb で行うパターン</div>
+$(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name=&#34;book[category_ids][]&#34; /&gt;`, ); book.</div>
           </div>
         </a>
       </article>
@@ -2216,8 +2210,8 @@ $(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name
               
             </ul>
 
-            <div class="summary">環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード [ER 図]
-[model]
+            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
+ [model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
 category_ids を配列形式で許可する
 def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </div>
@@ -2242,7 +2236,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
             </ul>
 
             <div class="summary">方法 ransackable_scopes メソッドを使用して実現する
-環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
 [model]
 # 引数なし scope :within_one_month, -&gt; { where(&#39;created_at &gt;=&#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&gt; (day) { where(&#39;created_at &gt;=&#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
 &lt;%= link_to( &#34;1ヶ月以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_one_month: true }), class: &#34;btn btn-primary mr-5&#34; ) link_to( &#34;7日以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_days: 7 }), class: &#34;btn btn-primary mr-5&#34; ) %&gt; [controller]</div>
@@ -2267,7 +2261,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
             </ul>
 
             <div class="summary">方法 create_list と send メソッドを使用して実現する
-環境 ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0 実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
+環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i + 1}&#34;), ) end end </div>
           </div>
@@ -2292,7 +2286,7 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
 
             <div class="summary">css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく
 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える
-See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen. </div>
+See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen.  </div>
           </div>
         </a>
       </article>
@@ -2315,7 +2309,7 @@ See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@k
 
             <div class="summary">1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが 発生したり、処理時間もすごくかかるため、ストリーム処理に変更などして 処理の高速化した際の方法を備忘録として残しておく
 方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
-環境 ruby: 3.0.4 rails: 6.1.6.1 実際のコード csv ファイルの特定の文字列を置換する処理
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
 前提 header 付の csv ファイル
 リファクタリング前
 class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&#34;{ファイルパス}&#34; , &#34;r&#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&#34;{ファイルパス}&#34; , &#34;w&#34;) # 変更内容を出力する。 file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
@@ -2342,7 +2336,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 
             <div class="summary">rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく
 方法 gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する
-環境 ruby: 3.0.4 rails: 6.1.6.1 実際のコード # 変換用の対応表 convert_map = { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; } #=&gt; {&#34;a&#34;=&gt;&#34;A&#34;, &#34;b&#34;=&gt;&#34;B&#34;, &#34;d&#34;=&gt;&#34;D&#34;} # 以下と同義 # &#34;adcacbd&#34;.gsub(/a|b|d/, { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; }) &#34;adcacbd&#34;.gsub(Regexp.new(&#34;#{convert_map.keys.join(&#39;|&#39;)}&#34;), convert_map) #=&gt; &#34;ADcAcBD&#34; </div>
+環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード # 変換用の対応表 convert_map = { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; } #=&gt; {&#34;a&#34;=&gt;&#34;A&#34;, &#34;b&#34;=&gt;&#34;B&#34;, &#34;d&#34;=&gt;&#34;D&#34;} # 以下と同義 # &#34;adcacbd&#34;.gsub(/a|b|d/, { &#39;a&#39; =&gt; &#39;A&#39;, &#39;b&#39; =&gt; &#39;B&#39;, &#39;d&#39; =&gt; &#39;D&#39; }) &#34;adcacbd&#34;.gsub(Regexp.new(&#34;#{convert_map.keys.join(&#39;|&#39;)}&#34;), convert_map) #=&gt; &#34;ADcAcBD&#34; </div>
           </div>
         </a>
       </article>

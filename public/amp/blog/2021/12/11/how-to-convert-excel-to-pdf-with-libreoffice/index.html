@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2087,26 +2081,26 @@ figure img {
 <p>以下のコマンドで変換を行う ※Calc を使用して PDF に変換<br>
 <a href="https://help.libreoffice.org/Common/Starting_the_Software_With_Parameters/ja">参考</a><br>
 <a href="https://github.com/LibreOffice/core/tree/master/filter/source/config/fragments/filters">指定できるフィルタ</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:<span style="color:#e6db74">&#34;calc_pdf_Export&#34;</span> <span style="color:#f92672">{</span>Excel File Path<span style="color:#f92672">}</span>
-</span></span></code></pre></div><h2 id="その他">その他</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:<span style="color:#e6db74">&#34;calc_pdf_Export&#34;</span> <span style="color:#f92672">{</span>Excel File Path<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="その他">その他</h2>
 <p>以下のようにすることで soffice コマンドを登録可能</p>
 <ol>
 <li>
 <p>/usr/local/bin/soffice を作成して中に以下を記載する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Need to do this because symlink won&#39;t work</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># It complains about some .plist files</span>
-</span></span><span style="display:flex;"><span>/Applications/LibreOffice.app/Contents/MacOS/soffice <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Need to do this because symlink won&#39;t work</span>
+<span style="color:#75715e"># It complains about some .plist files</span>
+/Applications/LibreOffice.app/Contents/MacOS/soffice <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+</code></pre></div></li>
 <li>
 <p>以下のコマンドで実行権限を付与する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod +x /usr/loca/bin/soffice
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod +x /usr/loca/bin/soffice
+</code></pre></div></li>
 </ol>
 <p>上記を sh として gist に置いているので以下でも可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &gt; /usr/local/bin/soffice <span style="color:#f92672">&amp;&amp;</span> sudo chmod +x /usr/local/bin/soffice
-</span></span></code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl sudo curl https://gist.githubusercontent.com/kkawazoe/6e8096e3b800905b43e555c32689ca4f/raw/17311ce29e3ed1b7419bd4314015ed0a36c3c7e7/soffice.sh &gt; /usr/local/bin/soffice <span style="color:#f92672">&amp;&amp;</span> sudo chmod +x /usr/local/bin/soffice
+</code></pre></div></div>
 
   <footer class="article-footer">
 

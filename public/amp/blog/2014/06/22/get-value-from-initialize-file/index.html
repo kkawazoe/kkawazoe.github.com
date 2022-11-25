@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.81.0" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 
@@ -363,13 +363,8 @@ article.sn > .article-body strong {
 article.sn > .article-body em {
   color: #8bc34a; }
 
-article.sn > .article-body h2 code {
-  font-size: 1.1rem; }
-
-article.sn > .article-body h1 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code {
-  font-size: .9rem; }
-
-article.sn > .article-body code, article.sn > .article-body pre {
+article.sn > .article-body code,
+article.sn > .article-body pre {
   font-family: Menlo, Consolas, monospace;
   font-size: .7rem; }
 
@@ -392,7 +387,7 @@ article.sn > .article-body pre > code {
   article.sn > .article-body pre > code {
     padding: 1rem; } }
 
-article.sn > .article-body p code, article.sn > .article-body h1 code, article.sn > .article-body h2 code, article.sn > .article-body h3 code, article.sn > .article-body h4 code, article.sn > .article-body h5 code, article.sn > .article-body h6 code, article.sn > .article-body li code {
+article.sn > .article-body p code {
   background-color: #eceff1;
   color: #333;
   border-radius: 4px;
@@ -422,8 +417,7 @@ article.sn > .article-body img,
 article.sn > .article-body figure img,
 article.sn > .article-body figure amp-img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 article.sn > .article-body figcaption {
   color: #cfd8dc;
@@ -2081,20 +2075,20 @@ figure img {
 <p>バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する。<br>
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する。</p>
 <h2 id="取得する-ini-ファイルの中身">取得する ini ファイルの中身</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt:sample.ini" data-lang="txt:sample.ini"><span style="display:flex;"><span><span style="color:#a6e22e">&lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;#######################################</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Path]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkPath</span><span style="color:#f92672">=</span><span style="color:#e6db74">C:/src/wk                                           &#39;Work Folder Path</span>
-</span></span></code></pre></div><h2 id="実際のコード">実際のコード</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash:getProfileString.bat" data-lang="bash:getProfileString.bat"><span style="display:flex;"><span>@<span style="color:#66d9ef">echo</span> off
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> iniFileName=sample.ini
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;usebackq tokens=* delims=&#34;</span> <span style="color:#ae81ff">%%</span>A <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">`call cscript //Nologo getProfileString.vbs &#34;</span>%iniFileName%<span style="color:#e6db74">&#34; Path WorkPath`</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> ret=<span style="color:#ae81ff">%%</span>A
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span>%ret%<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pause</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">exit</span>
-</span></span></code></pre></div><pre tabindex="0"><code class="language-vb:getProfileString.vbs" data-lang="vb:getProfileString.vbs">Option Explicit
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt:sample.ini" data-lang="txt:sample.ini"><span style="color:#a6e22e">&lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;#######################################</span>
+<span style="color:#66d9ef">[Path]</span>
+<span style="color:#a6e22e">WorkPath</span><span style="color:#f92672">=</span><span style="color:#e6db74">C:/src/wk                                           &#39;Work Folder Path</span>
+</code></pre></div><h2 id="実際のコード">実際のコード</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:getProfileString.bat" data-lang="bash:getProfileString.bat">@<span style="color:#66d9ef">echo</span> off
+<span style="color:#66d9ef">set</span> iniFileName=sample.ini
+
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;usebackq tokens=* delims=&#34;</span> <span style="color:#ae81ff">%%</span>A <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">`call cscript //Nologo getProfileString.vbs &#34;</span>%iniFileName%<span style="color:#e6db74">&#34; Path WorkPath`</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> ret=<span style="color:#ae81ff">%%</span>A
+
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span>%ret%<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">pause</span>
+<span style="color:#66d9ef">exit</span>
+</code></pre></div><pre><code class="language-vb:getProfileString.vbs" data-lang="vb:getProfileString.vbs">Option Explicit
 rem /*****************************************************************
 rem  *  getProfileString.vbs iniFileName, sectionName, entryName
 rem  *
@@ -2119,8 +2113,8 @@ Dim searchFlg
 Dim buffer
 
 rem ファイルシステムアクセス用
-Set fs = CreateObject( &#34;Scripting.FileSystemObject&#34; )
-ret = &#34;&#34;
+Set fs = CreateObject( &quot;Scripting.FileSystemObject&quot; )
+ret = &quot;&quot;
 
 rem ファイルを開く
 on error resume next
@@ -2141,16 +2135,16 @@ Do While not readLineObj.AtEndOfStream
     buffer = readLineObj.ReadLine
 
     rem 空の行以外の場合
-    if Trim(buffer) &lt;&gt; &#34;&#34; then
+    if Trim(buffer) &lt;&gt; &quot;&quot; then
         rem 対象セクションの場合
-        if Ucase(Trim(buffer)) = &#34;[&#34; &amp; Ucase( Wscript.Arguments(1) ) &amp; &#34;]&#34; then
+        if Ucase(Trim(buffer)) = &quot;[&quot; &amp; Ucase( Wscript.Arguments(1) ) &amp; &quot;]&quot; then
             searchFlg = true
         else
             rem 設定値を取得
             ret = GetProfileString(buffer, Wscript.Arguments(2), searchFlg)
             rem エントリー名が見つからなかった場合
             if searchFlg And IsEmpty(ret) then
-                ret = &#34;&#34;
+                ret = &quot;&quot;
             end if
             rem 設定値を取得できた場合はループを抜ける
             if searchFlg And (Len(ret) &lt;&gt; 0) then Exit Do
@@ -2181,17 +2175,17 @@ Function GetProfileString ( buffer, sectionName, searchFlg )
     Dim entries
     Dim entry
 
-    ret = &#34;&#34;
+    ret = &quot;&quot;
     if searchFlg then
         rem 次のセクションの場合
-        if Left(Trim(buffer) ,1) = &#34;[&#34; then
+        if Left(Trim(buffer) ,1) = &quot;[&quot; then
             rem ループを抜ける
             GetProfileString = Empty
             Exit Function
         end if
 
-        entries = Split(buffer, &#34;&#39;&#34;)
-        entry = Split(entries(0), &#34;=&#34;)
+        entries = Split(buffer, &quot;'&quot;)
+        entry = Split(entries(0), &quot;=&quot;)
 
         rem エントリーの場合
         if (Ubound(entry) = 1) then
