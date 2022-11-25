@@ -26,9 +26,8 @@ git clone git@github.com:kkawazoe/kkawazoe.github.com.git --recursive
 
 - 作業は `source` ブランチで行う
 - 記事編集後に `git add --all && git commit` を行う
-- デプロイは以下で行う
-  - Mac: `./deploy.sh`
-  - Windows: `.\deploy.bat`
+- `git push origin source` で `push` を行う
+- deploy は `source` ブランチの `push` に反応して `github actions` で行われる
 
 ## テーマ(submodule)を後から取り込む場合
 
