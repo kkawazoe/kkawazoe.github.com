@@ -1,8 +1,7 @@
-name: GitHub Pages
-
 on:
-  schedule:
-   - cron: '* 13 * * *'
+  push:
+    branches:
+      - source  # 発火させたい branch
 
 jobs:
   deploy:
