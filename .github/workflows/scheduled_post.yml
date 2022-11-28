@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: Scheduled Post
 
 on:
   schedule:
