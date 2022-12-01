@@ -2,7 +2,7 @@ name: Scheduled Post
 
 on:
   schedule:
-   - cron: '* 13 * * *'
+  - cron: '* 13 * * *'
 
 jobs:
   deploy:
@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          repository: 'master'
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
