@@ -28,7 +28,7 @@ git clone git@github.com:kkawazoe/kkawazoe.github.com.git --recursive
 - 記事編集後に `git add --all && git commit` を行う
 - `git push origin source` で `push` を行う
 - deploy は `source` ブランチの `push` に反応して `github actions` で行われる
-- 投稿日を未来日に設定した場合、日時処理(13:00)でもデプロイされる
+- 投稿日を未来日に設定した場合、日次処理(13:00)でもデプロイされる
 
 ## テーマ(submodule)を後から取り込む場合
 
