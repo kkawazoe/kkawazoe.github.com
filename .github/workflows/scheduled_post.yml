@@ -2,7 +2,7 @@ name: Scheduled Post
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Run every day at 13:00pm(JST).
+    - cron: '0 4 * * *' # Run every day at 13:00pm(JST).
 
 jobs:
   deploy:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: 'source'
+          ref: 'source'     # Checkout Branch Name
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
