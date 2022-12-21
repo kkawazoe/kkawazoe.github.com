@@ -281,7 +281,10 @@
     <loc>https://kkawazoe.github.io/blog/2019/03/04/ime-comp-with-vbnet/</loc>
     <lastmod>2019-03-04T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/privacy-policy/</loc>
+    <loc>https://kkawazoe.github.io/other/</loc>
+    <lastmod>2019-03-01T09:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/other/privacy-policy/</loc>
     <lastmod>2019-03-01T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2019/03/01/tried-tax-returns/</loc>
@@ -311,6 +314,10 @@
     <loc>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</loc>
     <lastmod>2014-02-09T18:46:00+09:00</lastmod>
   </url><url>
+    <loc>https://kkawazoe.github.io/index.js</loc>
+  </url><url>
     <loc>https://kkawazoe.github.io/categories/</loc>
+  </url><url>
+    <loc>https://kkawazoe.github.io/search/</loc>
   </url>
 </urlset>
