@@ -1,0 +1,15 @@
+{{ define "escape" }}
+  {{- trim (replace . "\n" " ") " " | replaceRE " +" " " | jsonify -}}
+{{ end }}
+
+var data = [
+{{- range $index, $page := where .Site.Pages "Params.type" "post" }}
+  {
+    url: {{ $page.Permalink | jsonify }},
+    title: {{ $page.Title | jsonify }},
+    image: {{ $page.Params.thumbnail | jsonify }},
+    date: {{ $page.Date.Format "2006-01-02" | jsonify }},
+    body: {{ template "escape" (printf "%s %s" $page.Title $page.Plain) }}
+  },
+{{- end }}
+];

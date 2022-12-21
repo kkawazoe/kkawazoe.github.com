@@ -81,6 +81,25 @@ section.sidebar header a {
   text-decoration: underline;
 }
 
+section.sidebar p {
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+
+section.sidebar input[type="search"] {
+  color: #666;
+  font-size: 1em;
+  font-weight: bolder;
+  border: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  padding: 5px;
+}
+
+section.sidebar input[id="searchButton"] {
+  margin-left: 0.5rem;
+}
+
 .author {
   padding: 1rem 0 0;
 }
@@ -161,4 +180,81 @@ figure img {
 
 #feedlyFollow {
   vertical-align: middle;
+}
+
+#searchbox > input {
+  color: #666;
+  font-size: 1em;
+  font-weight: bolder;
+  border: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  padding: 5px;
+}
+
+input::-webkit-input-placeholder {
+  color: #999;
+}
+
+#result {
+  margin: 1em;
+}
+
+
+.search-item-wrap{
+  border-radius: 1rem;
+  box-shadow: 3px 3px 7px #a7a7a7, -3px -3px 7px #f7f7f7;
+  margin-bottom: 1rem;
+}
+
+.search-item-wrap a{
+  text-decoration: none;
+  color: #444;
+}
+
+.search-item-head {
+  padding: 0 0.5em;
+}
+
+.search-item-info{
+  min-width: 40%;
+  padding: 0.5rem;
+}
+
+.search-item-title{
+  font-size: 1.4rem;
+  font-weight: bolder;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #009FE8;
+}
+
+.search-item-date{
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.search-item-excerpt {
+  background: #fff;
+  margin: 0.5em 0 1em;
+  padding: 0.5em;
+  border-radius: 0 0 1rem 1rem;
+  font-size: smaller;
+}
+
+.search-item-excerpt b {
+  background: #A3DDE3;
+}
+
+.search-item-image {
+  padding: 1rem;
+  margin: auto;
+  width: 300px;
+}
+
+.search-item-image > img {
+  display: block;
+  height: 300px;
+  object-fit: fill;
+  width: 100%;
 }

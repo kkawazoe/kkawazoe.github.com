@@ -1,0 +1,115 @@
+{{ define "main" }}
+
+<div class="entry-content">
+  <div>
+    <script src="/index.js"></script>
+
+    <div id="searchbox">
+      <input id="query" onkeyup="location.replace('#' + this.value)" size="15" autocomplete="off" autofocus placeholder="検索ワード" />
+      <span id="inputWord"></span> <span id="resultCount"></span>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // ハッシュフラグメントの値で検索を実行
+      function searchWithHash() {
+        const hash = decodeURI(location.hash.substring(1));
+        search(hash);
+
+        // 必要があれば input 要素の値を更新
+        const queryElem = document.getElementById('query');
+        if (queryElem.value !== hash) {
+          queryElem.value = hash;
+        }
+      }
+
+      function search(query) {
+        var result = searchData(query);
+        var html = createHtml(result);
+        showResult(html);
+        showResultCount(result.length, data.length);
+      }
+
+      function searchData(query) {
+        var result = [];
+
+        query = query.trim();
+        if (query.length < 1) {
+          return result;
+        }
+        var re = new RegExp(query, 'i');
+        for (var i = 0; i < data.length; ++i) {
+          var pos = data[i].body.search(re);
+          if (pos != -1) {
+            result.push([i, pos, pos + query.length]);
+          }
+        }
+        return result;
+      }
+
+      function createHtml(result) {
+        var htmls = [];
+        for (var i = 0; i < result.length; ++i) {
+          var dataIndex = result[i][0];
+          var startPos = result[i][1];
+          var endPos = result[i][2];
+          var url = data[dataIndex].url;
+          var title = data[dataIndex].title;
+          var image = data[dataIndex].image;
+          var date = data[dataIndex].date;
+          var lastmod = data[dataIndex].lastmod;
+          var body = data[dataIndex].body;
+          htmls.push(createEntry(url, title, image, date, lastmod, body, startPos, endPos));
+        }
+        return htmls.join('');
+      }
+
+      function createEntry(url, title, image, date, lastmod, body, startPos, endPos) {
+        return '<div class="search-item-wrap">' +
+                  '<a href="' + url + '">' +
+                    '<div class="search-item-head">' +
+                      '<div class="search-item-image">' +
+                        '<img src="/' + image + '">' +
+                      '</div>' +
+                      '<div class="search-item-info">' +
+                        '<p class="search-item-title">'+ title + '</p>' +
+                        '<p class="search-item-date">' + ' 公開日:' + date + '</p>' +
+                      '</div>' +
+                    '</div>' +
+                    '<div class="search-item-excerpt">' +
+                      '<p class="search-item-text">' + excerpt(body, startPos, endPos) + '</p>' +
+                    '</div>' +
+                  '</a>' +
+                '</div>';
+      }
+
+      function excerpt(body, startPos, endPos) {
+        return [
+          body.substring(startPos - 30, startPos),
+          '<b>', body.substring(startPos, endPos), '</b>',
+          body.substring(endPos, endPos + 200)
+        ].join('');
+      }
+
+      function showResult(html) {
+        var el = document.getElementById('result');
+        el.innerHTML = html;
+      }
+
+      function showResultCount(count, total) {
+        var el = document.getElementById('resultCount');
+        el.innerHTML = '<b>' + count + '</b> 件見つかりました（' + total + '件中）';
+      }
+
+      // ハッシュフラグメント付きの URL でページを開いたときに検索
+      window.addEventListener('DOMContentLoaded', searchWithHash);
+
+      // ページ表示後にハッシュフラグメントが変化したら検索
+      window.addEventListener('hashchange', searchWithHash);
+    </script>
+
+    <noscript><p class="notice">注意: この検索機能は JavaScript を使用しています。</p></noscript>
+  </div>
+</div>
+
+{{ end }}
