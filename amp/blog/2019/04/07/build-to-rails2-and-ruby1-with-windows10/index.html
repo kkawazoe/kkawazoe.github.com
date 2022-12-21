@@ -22,10 +22,8 @@
 
     
 <meta name="description" content="経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)  3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする  4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz) 動作確認用のフォルダを作成 以下の gem をインストールする  このサイトで1.">
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
 
 <meta property="og:title" content="Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -33,10 +31,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)  3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする  4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz) 動作確認用のフォルダを作成 以下の gem をインストールする  このサイトで1.">
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -44,10 +40,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 <meta name="twitter:url" content="https://kkawazoe.github.io/amp/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
 <meta name="twitter:title" content="Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する - Note To Self ~One Step At A Time~">
 <meta name="twitter:description" content="経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)  3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする  4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz) 動作確認用のフォルダを作成 以下の gem をインストールする  このサイトで1.">
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -82,7 +76,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
         "height": 60
       }
     },
-    "description": "経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく\n構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)  3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する\nruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする  4-1. 以下のコマンドを入力する\ngem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする\n$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2\/v3 read server hello A: tlsv1 alert protocol version (https:\/\/rubygems.org\/latest_specs.4.8.gz) 動作確認用のフォルダを作成 以下の gem をインストールする  このサイトで1."
+    "description": "経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく\n構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする\n$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2\/v3 read server hello A: tlsv1 alert protocol version (https:\/\/rubygems."
   }
 </script>
 
@@ -2501,13 +2495,17 @@ input::-webkit-input-placeholder {
 <li>Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)</li>
 <li>DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)</li>
 </ol>
-<p>3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する</p>
+<ul>
+<li>3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ruby dk.rb init
 ruby dk.rb install
 </code></pre></div><ol start="4">
 <li>rubygems-update のバージョンをダウングレードする</li>
 </ol>
-<p>4-1. 以下のコマンドを入力する</p>
+<ul>
+<li>4-1. 以下のコマンドを入力する</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem update --system 1.3.7
 </code></pre></div><p>※以下のエラーが起きる場合は<a href="https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html#updating-rubygems">このサイト</a>を参考に手動で rubygems-update をダウングレードする</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$  gem update --system
@@ -2517,28 +2515,40 @@ SSL_connect returned<span style="color:#f92672">=</span><span style="color:#ae81
 <li>動作確認用のフォルダを作成</li>
 <li>以下の gem をインストールする</li>
 </ol>
-<p><a href="https://rubygems.org/gems">このサイト</a>で1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</p>
+<ul>
+<li>6-1. <a href="https://rubygems.org/gems">このサイト</a>で1.8.7に対応しているバージョンを調べてバージョン指定でインストールする</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install rake -v 0.8.7
 gem install rails -v 2.3.18
 gem install rdoc -v 2.4.2
-</code></pre></div><p>rake を先にインストールしないと Ruby のバージョンが古い旨のエラーが発生するため先インストールする
-7. 動作確認用の Rails プロジェクトを作成する</p>
+</code></pre></div><p>※rake を先にインストールしないと Ruby のバージョンが古い旨のエラーが発生するため先インストールする</p>
+<ol start="7">
+<li>動作確認用の Rails プロジェクトを作成する</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails sample-rails
 cd sample-rails
 ruby script/generate scaffold user name:string age:integer
 </code></pre></div><ol start="8">
 <li>db のマイグレートを行う</li>
 </ol>
-<p>8-1. デフォルトの sqlite3 用の Gem をインストールする</p>
+<ul>
+<li>8-1. デフォルトの sqlite3 用の Gem をインストールする</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install sqlite3 -v 1.3.3
-</code></pre></div><p>8-2. DLL ファイルをダウンロードする</p>
+</code></pre></div><ul>
+<li>
+<p>8-2. DLL ファイルをダウンロードする</p>
 <ul>
 <li><a href="http://www.sqlite.org/sqlitedll-3_7_3.zip">sqlitedll-3_7_3.zip</a> をダウンロードする<br>
 ※最新のやつだとエラーになるため古いやつをダウンロードすること</li>
 <li>ダウンロードしたやつを解凍して <code>sqlite3.dll</code><br>
 を Ruby のインストールフォルダ/bin(例. C:\Ruby187\bin)にコピーする</li>
 </ul>
+</li>
+<li>
 <p>8-3. 以下のコマンドを入力して db のマイグレートを行う</p>
+</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rake db:create
 rake db:migrate
 </code></pre></div><ol start="9">
