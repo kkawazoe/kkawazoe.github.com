@@ -2,40 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</loc>
+    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
+    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/</loc>
-    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
+    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
-    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
+    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/tool/</loc>
-    <lastmod>2022-11-22T17:00:00+09:00</lastmod>
+    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/git/</loc>
+    <lastmod>2022-12-17T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</loc>
+    <lastmod>2022-12-17T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/</loc>
+    <lastmod>2022-12-16T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2022-12-16T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</loc>
+    <lastmod>2022-12-05T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
+    <lastmod>2022-12-05T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/</loc>
+    <lastmod>2022-12-02T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</loc>
+    <lastmod>2022-12-01T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</loc>
+    <lastmod>2022-11-25T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</loc>
+    <lastmod>2022-11-24T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</loc>
+    <lastmod>2022-11-23T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</loc>
     <lastmod>2022-11-22T17:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/11/22/how-to-disable-auto-complete-with-rails-console/</loc>
     <lastmod>2022-11-22T13:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/11/03/how-to-select-check-box-for-create-through-table-with-rails/</loc>
     <lastmod>2022-11-03T18:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/</loc>
     <lastmod>2022-11-01T13:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/</loc>
     <lastmod>2022-11-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</loc>
+    <loc>https://kkawazoe.github.io/tags/rspec/</loc>
+    <lastmod>2022-10-30T21:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/10/30/how-to-dynamic-create-test-data-for-factory-bot-with-rspec/</loc>
     <lastmod>2022-10-30T21:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/09/14/text-align-left-center-with-css/</loc>
@@ -44,52 +77,49 @@
     <loc>https://kkawazoe.github.io/tags/html/</loc>
     <lastmod>2022-09-14T23:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/</loc>
     <lastmod>2022-09-03T21:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/09/03/how-to-substring-map-with-rails/</loc>
     <lastmod>2022-09-03T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/08/28/how_to_get_number_of_lines_with_cent_os/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/08/28/how-to-get-number-of-lines-with-cent-os/</loc>
     <lastmod>2022-08-28T22:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/linux/</loc>
     <lastmod>2022-08-28T22:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/08/23/how-to-get-alias-column-pluck-method-with-rails/</loc>
     <lastmod>2022-08-23T22:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/postgresql/</loc>
     <lastmod>2022-08-22T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/08/22/how_to_get_count_specific_string_with_postgre_sql/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/08/22/how-to-get-count-specific-string-with-postgre-sql/</loc>
     <lastmod>2022-08-22T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/05/24/how-to-import-csv-with-postgre-sql/</loc>
     <lastmod>2022-05-24T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/05/24/how-to-auto-seq-for-postgre-sql-with-rails/</loc>
     <lastmod>2022-05-24T09:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</loc>
+    <loc>https://kkawazoe.github.io/blog/2022/02/26/how-to-source-location-rails/</loc>
     <lastmod>2022-02-26T01:28:11+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/</loc>
     <lastmod>2021-12-11T14:24:49+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/tags/git/</loc>
-    <lastmod>2021-06-02T12:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</loc>
     <lastmod>2021-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</loc>
+    <loc>https://kkawazoe.github.io/blog/2021/05/14/how-to-execute-specified-rspec/</loc>
     <lastmod>2021-05-14T09:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</loc>
+    <loc>https://kkawazoe.github.io/blog/2021/05/12/how-to-either-obtained-value-symbol-or-string-key-of-hash/</loc>
     <lastmod>2021-05-12T09:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</loc>
+    <loc>https://kkawazoe.github.io/blog/2021/04/11/convert-string-code-utf8-to-cp932-with-nkf/</loc>
     <lastmod>2021-04-11T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</loc>
@@ -138,9 +168,6 @@
     <lastmod>2019-07-21T18:12:58+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</loc>
-    <lastmod>2019-07-06T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</loc>
     <lastmod>2019-07-06T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</loc>
