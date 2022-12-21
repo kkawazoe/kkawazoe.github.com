@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2342,7 +2342,7 @@ figure img {
             </ul>
 
             <div class="summary">docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
-環境 dokcer: 20.10.5 docker-compose: 1.28.5 前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
+環境  dokcer: 20.10.5 docker-compose: 1.28.5  前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
 方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/ </div>
           </div>
         </a>
@@ -2364,7 +2364,7 @@ figure img {
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
+            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
 $ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する

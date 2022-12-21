@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2319,418 +2319,418 @@ figure img {
 </ul>
 <h3 id="キーワード引数">キーワード引数</h3>
 <p>キーワード引数で <code>a:</code> のようなデフォルト値を指定しない場合、構文エラーにはならないが、呼び出し時に指定しなかった場合に <code>ArgumentError</code> になる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeywordArgument</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">a</span>:, <span style="color:#e6db74">b</span>: <span style="color:#e6db74">&#39;bbb&#39;</span>)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;a: </span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b: </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>keyword_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">KeywordArgument</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>keyword_argument<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">a</span>: <span style="color:#e6db74">&#39;aaa&#39;</span>, <span style="color:#e6db74">b</span>: <span style="color:#e6db74">&#39;BBB&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; a: aaa, b: BBB</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>keyword_argument<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">a</span>: <span style="color:#e6db74">&#39;aaa&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; a: aaa, b: bbb</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>keyword_argument<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; ./keyword_argument.rb:2:in `foo&#39;: missing keyword: :a (ArgumentError)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt;	from ./keyword_argument.rb:8:in `&lt;main&gt;&#39;</span>
-</span></span></code></pre></div><h3 id="グローバル変数-クラス変数-インスタンス変数">グローバル変数, クラス変数, インスタンス変数</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeywordArgument</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">a</span>:, <span style="color:#e6db74">b</span>: <span style="color:#e6db74">&#39;bbb&#39;</span>)
+    puts <span style="color:#e6db74">&#34;a: </span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b: </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+keyword_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">KeywordArgument</span><span style="color:#f92672">.</span>new
+keyword_argument<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">a</span>: <span style="color:#e6db74">&#39;aaa&#39;</span>, <span style="color:#e6db74">b</span>: <span style="color:#e6db74">&#39;BBB&#39;</span>)
+<span style="color:#75715e">#=&gt; a: aaa, b: BBB</span>
+
+keyword_argument<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">a</span>: <span style="color:#e6db74">&#39;aaa&#39;</span>)
+<span style="color:#75715e">#=&gt; a: aaa, b: bbb</span>
+
+keyword_argument<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; ./keyword_argument.rb:2:in `foo&#39;: missing keyword: :a (ArgumentError)</span>
+<span style="color:#75715e">#=&gt;	from ./keyword_argument.rb:8:in `&lt;main&gt;&#39;</span>
+</code></pre></div><h3 id="グローバル変数-クラス変数-インスタンス変数">グローバル変数, クラス変数, インスタンス変数</h3>
 <h4 id="グローバル変数">グローバル変数</h4>
 <p>グローバル変数のため全体で同じ変数を参照</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GlobalArgument</span>
-</span></span><span style="display:flex;"><span>  $count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts $count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts $count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendGlobalArgument</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">GlobalArgument</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts $count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>global_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">GlobalArgument</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>global_argument2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendGlobalArgument</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>global_argument<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 1</span>
-</span></span><span style="display:flex;"><span>global_argument2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 3</span>
-</span></span><span style="display:flex;"><span>global_argument<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 4</span>
-</span></span><span style="display:flex;"><span>global_argument2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 6</span>
-</span></span></code></pre></div><h4 id="クラス変数">クラス変数</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GlobalArgument</span>
+  $count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts $count
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
+    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts $count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendGlobalArgument</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">GlobalArgument</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    $count <span style="color:#f92672">=</span> $count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+    puts $count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+global_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">GlobalArgument</span><span style="color:#f92672">.</span>new
+global_argument2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendGlobalArgument</span><span style="color:#f92672">.</span>new
+
+global_argument<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 1</span>
+global_argument2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 3</span>
+global_argument<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 4</span>
+global_argument2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 6</span>
+</code></pre></div><h4 id="クラス変数">クラス変数</h4>
 <p>クラスごとに変数が管理される</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassVariable</span>
-</span></span><span style="display:flex;"><span>  @@count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @@count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @@count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendClassVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ClassVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @@count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>class_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">ClassVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>class_argument2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendClassVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>class_argument<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 1</span>
-</span></span><span style="display:flex;"><span>class_argument2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 3</span>
-</span></span><span style="display:flex;"><span>class_argument<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 4</span>
-</span></span><span style="display:flex;"><span>class_argument2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 6</span>
-</span></span></code></pre></div><h4 id="インスタンス変数">インスタンス変数</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassVariable</span>
+  @@count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @@count
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
+    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @@count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendClassVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ClassVariable</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @@count <span style="color:#f92672">=</span> @@count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+    puts @@count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+class_argument <span style="color:#f92672">=</span> <span style="color:#66d9ef">ClassVariable</span><span style="color:#f92672">.</span>new
+class_argument2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendClassVariable</span><span style="color:#f92672">.</span>new
+
+class_argument<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 1</span>
+class_argument2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 3</span>
+class_argument<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 4</span>
+class_argument2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 6</span>
+</code></pre></div><h4 id="インスタンス変数">インスタンス変数</h4>
 <p>グローバル変数、クラス変数と同じ要領で書くとエラー</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceVariable</span>
-</span></span><span style="display:flex;"><span>  @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">InstanceVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">InstanceVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendInstanceVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>instance_variable<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; ./instance_variable.rb:5:in `increment&#39;: undefined method `+&#39; for nil:NilClass (NoMethodError)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; @count = @count + 1</span>
-</span></span></code></pre></div><p>accessor もしくは initialize メソッドでの初期化が必要<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceVariable</span>
+  @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">InstanceVariable</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">InstanceVariable</span><span style="color:#f92672">.</span>new
+instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendInstanceVariable</span><span style="color:#f92672">.</span>new
+
+instance_variable<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; ./instance_variable.rb:5:in `increment&#39;: undefined method `+&#39; for nil:NilClass (NoMethodError)</span>
+<span style="color:#75715e">#=&gt; @count = @count + 1</span>
+</code></pre></div><p>accessor もしくは initialize メソッドでの初期化が必要<br>
 ※インスタンスごとに変数が管理される</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">InstanceVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">InstanceVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendInstanceVariable</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>instance_variable<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 1</span>
-</span></span><span style="display:flex;"><span>instance_variable2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 2</span>
-</span></span><span style="display:flex;"><span>instance_variable<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 2</span>
-</span></span><span style="display:flex;"><span>instance_variable2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 4</span>
-</span></span></code></pre></div><p>singleton を include した場合は同一インスタンスを返却するようになる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;singleton&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingletonInstanceVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Singleton</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendSingletonInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">SingletonInstanceVariable</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
-</span></span><span style="display:flex;"><span>    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts @count
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># SingletonInstanceVariable.new は使えない =&gt; NoMethodError</span>
-</span></span><span style="display:flex;"><span>instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">SingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
-</span></span><span style="display:flex;"><span>instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendSingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
-</span></span><span style="display:flex;"><span>instance_variable3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">SingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>instance_variable<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 1</span>
-</span></span><span style="display:flex;"><span>instance_variable2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 2</span>
-</span></span><span style="display:flex;"><span>instance_variable3<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 2</span>
-</span></span><span style="display:flex;"><span>instance_variable<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 3</span>
-</span></span><span style="display:flex;"><span>instance_variable2<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 4</span>
-</span></span><span style="display:flex;"><span>instance_variable3<span style="color:#f92672">.</span>increment
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; 4</span>
-</span></span></code></pre></div><h3 id="引数の異なるメソッドを継承先のクラスで定義した際の-super-の挙動">引数の異なるメソッドを継承先のクラスで定義した際の super の挙動</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceVariable</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
+    @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">InstanceVariable</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">InstanceVariable</span><span style="color:#f92672">.</span>new
+instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendInstanceVariable</span><span style="color:#f92672">.</span>new
+
+instance_variable<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 1</span>
+instance_variable2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 2</span>
+instance_variable<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 2</span>
+instance_variable2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 4</span>
+</code></pre></div><p>singleton を include した場合は同一インスタンスを返却するようになる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">require <span style="color:#e6db74">&#39;singleton&#39;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingletonInstanceVariable</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Singleton</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
+    @count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExtendSingletonInstanceVariable</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">SingletonInstanceVariable</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment</span>
+    @count <span style="color:#f92672">=</span> @count <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+    puts @count
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># SingletonInstanceVariable.new は使えない =&gt; NoMethodError</span>
+instance_variable <span style="color:#f92672">=</span> <span style="color:#66d9ef">SingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
+instance_variable2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">ExtendSingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
+instance_variable3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">SingletonInstanceVariable</span><span style="color:#f92672">.</span>instance
+
+instance_variable<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 1</span>
+instance_variable2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 2</span>
+instance_variable3<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 2</span>
+instance_variable<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 3</span>
+instance_variable2<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 4</span>
+instance_variable3<span style="color:#f92672">.</span>increment
+<span style="color:#75715e">#=&gt; 4</span>
+</code></pre></div><h3 id="引数の異なるメソッドを継承先のクラスで定義した際の-super-の挙動">引数の異なるメソッドを継承先のクラスで定義した際の super の挙動</h3>
 <p>super 指定時に <code>()</code> を省略した場合は super と同じ指定がされたものと見なされるため Arguments Error となる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; ./inheritance_method.rb:2:in `foo&#39;: wrong number of arguments (given 1, expected 2) (ArgumentError)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; from ./inheritance_method.rb:9:in `foo&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; from ./inheritance_method.rb:19:in `&lt;main&gt;&#39;</span>
-</span></span></code></pre></div><p>デフォルト値を指定してある場合は呼び出せる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;BBB&#39;</span>)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo a=aaa, b=BBB</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Bar#foo a=aaa</span>
-</span></span></code></pre></div><p>もしくは、super に渡す引数を指定する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(a, <span style="color:#e6db74">&#39;BB&#39;</span>)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo a=aaa, b=BB</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Bar#foo a=aaa</span>
-</span></span></code></pre></div><h3 id="method_missing">method_missing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b)
+    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
+    <span style="color:#66d9ef">super</span>
+    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
+foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
+<span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
+
+bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
+bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
+<span style="color:#75715e">#=&gt; ./inheritance_method.rb:2:in `foo&#39;: wrong number of arguments (given 1, expected 2) (ArgumentError)</span>
+<span style="color:#75715e">#=&gt; from ./inheritance_method.rb:9:in `foo&#39;</span>
+<span style="color:#75715e">#=&gt; from ./inheritance_method.rb:19:in `&lt;main&gt;&#39;</span>
+</code></pre></div><p>デフォルト値を指定してある場合は呼び出せる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;BBB&#39;</span>)
+    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
+    <span style="color:#66d9ef">super</span>
+    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
+foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
+<span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
+
+bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
+bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
+<span style="color:#75715e">#=&gt; Foo#foo a=aaa, b=BBB</span>
+<span style="color:#75715e">#=&gt; Bar#foo a=aaa</span>
+</code></pre></div><p>もしくは、super に渡す引数を指定する</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a, b)
+    puts <span style="color:#e6db74">&#34;Foo#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">, b=</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a)
+    <span style="color:#66d9ef">super</span>(a, <span style="color:#e6db74">&#39;BB&#39;</span>)
+    puts <span style="color:#e6db74">&#34;Bar#foo a=</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">Foo</span><span style="color:#f92672">.</span>new
+foo<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>)
+<span style="color:#75715e">#=&gt; Foo#foo a=A, b=B</span>
+
+bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
+bar<span style="color:#f92672">.</span>foo(<span style="color:#e6db74">&#39;aaa&#39;</span>)
+<span style="color:#75715e">#=&gt; Foo#foo a=aaa, b=BB</span>
+<span style="color:#75715e">#=&gt; Bar#foo a=aaa</span>
+</code></pre></div><h3 id="method_missing">method_missing</h3>
 <p>該当のメソッドが存在しなかった場合に呼び出されるメソッド</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> M
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;C#method_missing&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> M
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;A#method_missing&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">&lt;</span> A
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#34;B#method_missing&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>obj <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>obj<span style="color:#f92672">.</span>test_method
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; &#34;B#method_missing&#34;</span>
-</span></span></code></pre></div><h3 id="object-クラスに定義したメソッドについて">Object クラスに定義したメソッドについて</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">module</span> M
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
+    puts <span style="color:#e6db74">&#34;C#method_missing&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
+  <span style="color:#66d9ef">include</span> M
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
+    puts <span style="color:#e6db74">&#34;A#method_missing&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">&lt;</span> A
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(id, <span style="color:#f92672">*</span>args)
+    puts <span style="color:#e6db74">&#34;B#method_missing&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+obj <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>new
+obj<span style="color:#f92672">.</span>test_method
+<span style="color:#75715e">#=&gt; &#34;B#method_missing&#34;</span>
+</code></pre></div><h3 id="object-クラスに定義したメソッドについて">Object クラスに定義したメソッドについて</h3>
 <p>クラス定義に使用する Class クラスは、 Object クラスの子孫にあたるため Object クラスに定義したメソッドは呼び出し可能</p>
 <p>[Class クラスの継承リスト]<br>
 Class &lt; Module &lt; Object &lt; Kernel &lt; BasicObject</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Object</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#39;Object#foo&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#39;Foo#foo&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#e6db74">&#39;Bar#foo&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>bar<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Object#foo</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Foo#foo</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Bar#foo</span>
-</span></span></code></pre></div><h3 id="定数の探索範囲">定数の探索範囲</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> M
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">.</span>freeze
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> M
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AAA&#39;</span><span style="color:#f92672">.</span>freeze
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    puts M<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">&lt;</span> A
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;BBB&#39;</span><span style="color:#f92672">.</span>freeze
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">&lt;</span> B
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTANT_C</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CCC&#39;</span><span style="color:#f92672">.</span>freeze
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">CONSTANT_D</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DDD&#39;</span><span style="color:#f92672">.</span>freeze
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#66d9ef">CONSTANT_C</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  puts CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt; uninitialized constant C::D::CONSTANT_A (NameError)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt; Did you mean?  C::D::CONSTANT_D</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt;                C::CONSTANT_C</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># puts ::CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt; uninitialized constant CONSTANT_A (NameError)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt; super: no superclass method `foo&#39; for #&lt;C::D:0x000000010502f840&gt; (NoMethodError)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=&gt; Did you mean?  for</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#f92672">::</span>A<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>    puts <span style="color:#f92672">::</span>B<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> C<span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> C<span style="color:#f92672">::</span>D<span style="color:#f92672">.</span>new
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>a<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; A</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; AAA</span>
-</span></span><span style="display:flex;"><span>b<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; A</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; AAA</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; BBB</span>
-</span></span><span style="display:flex;"><span>c<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; A</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; AAA</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; BBB</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; BBB</span>
-</span></span><span style="display:flex;"><span>d<span style="color:#f92672">.</span>foo
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; CCC</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; AAA</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; BBB</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Object</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    puts <span style="color:#e6db74">&#39;Object#foo&#39;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    <span style="color:#66d9ef">super</span>
+    puts <span style="color:#e6db74">&#39;Foo#foo&#39;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Foo</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    <span style="color:#66d9ef">super</span>
+    puts <span style="color:#e6db74">&#39;Bar#foo&#39;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+bar <span style="color:#f92672">=</span> <span style="color:#66d9ef">Bar</span><span style="color:#f92672">.</span>new
+bar<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; Object#foo</span>
+<span style="color:#75715e">#=&gt; Foo#foo</span>
+<span style="color:#75715e">#=&gt; Bar#foo</span>
+</code></pre></div><h3 id="定数の探索範囲">定数の探索範囲</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">module</span> M
+  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">.</span>freeze
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
+  <span style="color:#66d9ef">include</span> M
+
+  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;AAA&#39;</span><span style="color:#f92672">.</span>freeze
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    puts M<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
+    puts <span style="color:#66d9ef">CONSTANT_A</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">&lt;</span> A
+  <span style="color:#66d9ef">CONSTANT_A</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;BBB&#39;</span><span style="color:#f92672">.</span>freeze
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    <span style="color:#66d9ef">super</span>
+    puts <span style="color:#66d9ef">CONSTANT_A</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">&lt;</span> B
+  <span style="color:#66d9ef">CONSTANT_C</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CCC&#39;</span><span style="color:#f92672">.</span>freeze
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    <span style="color:#66d9ef">super</span>
+
+    puts <span style="color:#66d9ef">CONSTANT_A</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span>
+   <span style="color:#66d9ef">CONSTANT_D</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;DDD&#39;</span><span style="color:#f92672">.</span>freeze
+
+   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>
+    puts <span style="color:#66d9ef">CONSTANT_C</span>
+
+    <span style="color:#75715e">#  puts CONSTANT_A</span>
+    <span style="color:#75715e">#=&gt; uninitialized constant C::D::CONSTANT_A (NameError)</span>
+    <span style="color:#75715e">#=&gt; Did you mean?  C::D::CONSTANT_D</span>
+    <span style="color:#75715e">#=&gt;                C::CONSTANT_C</span>
+
+    <span style="color:#75715e"># puts ::CONSTANT_A</span>
+    <span style="color:#75715e">#=&gt; uninitialized constant CONSTANT_A (NameError)</span>
+
+    <span style="color:#66d9ef">super</span>
+    <span style="color:#75715e">#=&gt; super: no superclass method `foo&#39; for #&lt;C::D:0x000000010502f840&gt; (NoMethodError)</span>
+    <span style="color:#75715e">#=&gt; Did you mean?  for</span>
+
+    puts <span style="color:#f92672">::</span>A<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
+    puts <span style="color:#f92672">::</span>B<span style="color:#f92672">::</span><span style="color:#66d9ef">CONSTANT_A</span>
+   <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+a <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>new
+b <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>new
+c <span style="color:#f92672">=</span> C<span style="color:#f92672">.</span>new
+d <span style="color:#f92672">=</span> C<span style="color:#f92672">::</span>D<span style="color:#f92672">.</span>new
+
+a<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; A</span>
+<span style="color:#75715e">#=&gt; AAA</span>
+b<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; A</span>
+<span style="color:#75715e">#=&gt; AAA</span>
+<span style="color:#75715e">#=&gt; BBB</span>
+c<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; A</span>
+<span style="color:#75715e">#=&gt; AAA</span>
+<span style="color:#75715e">#=&gt; BBB</span>
+<span style="color:#75715e">#=&gt; BBB</span>
+d<span style="color:#f92672">.</span>foo
+<span style="color:#75715e">#=&gt; CCC</span>
+<span style="color:#75715e">#=&gt; AAA</span>
+<span style="color:#75715e">#=&gt; BBB</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 

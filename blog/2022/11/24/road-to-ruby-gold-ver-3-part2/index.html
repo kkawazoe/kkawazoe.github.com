@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2413,44 +2413,44 @@ figure img {
 <h3 id="__file__"><code>__FILE__</code></h3>
 <p><code>__FILE__</code> が書いてあるファイルのファイル名を表す
 似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb:file_name.rb" data-lang="rb:file_name.rb"><span style="display:flex;"><span>puts __FILE__
-</span></span><span style="display:flex;"><span>puts $0
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb:require_file_name.rb" data-lang="rb:require_file_name.rb"><span style="display:flex;"><span>require_relative <span style="color:#e6db74">&#39;./file_name&#39;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> ruby file_name<span style="color:#f92672">.</span>rb
-</span></span><span style="display:flex;"><span>__FILE__: file_name<span style="color:#f92672">.</span>rb
-</span></span><span style="display:flex;"><span>$0: file_name<span style="color:#f92672">.</span>rb
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> ruby require_file_name<span style="color:#f92672">.</span>rb
-</span></span><span style="display:flex;"><span>__FILE__: file_name<span style="color:#f92672">.</span>rb
-</span></span><span style="display:flex;"><span>$0: require_file_name<span style="color:#f92672">.</span>rb
-</span></span></code></pre></div><h3 id="累乗の計算">累乗の計算</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponentiation</span>(n)
-</span></span><span style="display:flex;"><span>  n <span style="color:#f92672">**</span> n
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>puts exponentiation(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">#=&gt; -1</span>
-</span></span><span style="display:flex;"><span>puts exponentiation(<span style="color:#ae81ff">1</span>i) <span style="color:#75715e">#=&gt; 0.20787957635076193+0.0i 複素数</span>
-</span></span></code></pre></div><h3 id="正規表現--の-1-等">正規表現 =~ の $1 等</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb:regex.rb" data-lang="rb:regex.rb"><span style="display:flex;"><span><span style="color:#e6db74">&#39;www.ruby.co.jp&#39;</span><span style="color:#f92672">.</span>match(<span style="color:#e6db74">%r(www(\.ruby\.co)(\.jp))</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>e<span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match e= </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match e[0]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match e[1]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match e[2]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match $0 </span><span style="color:#e6db74">#{</span>$0<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match $&amp; </span><span style="color:#e6db74">#{</span>$&amp;<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match $1 </span><span style="color:#e6db74">#{</span>$1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;match $2 </span><span style="color:#e6db74">#{</span>$2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match e= www.ruby.co.jp</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match e[0]= www.ruby.co.jp</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match e[1]= .ruby.co</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match e[2]= .jp</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match $0 regex.rb # 実行ファイル名</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match $&amp; www.ruby.co.jp</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match $1 .ruby.co</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; match $2 .jp</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:file_name.rb" data-lang="rb:file_name.rb">puts __FILE__
+puts $0
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:require_file_name.rb" data-lang="rb:require_file_name.rb">require_relative <span style="color:#e6db74">&#39;./file_name&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#960050;background-color:#1e0010">$</span> ruby file_name<span style="color:#f92672">.</span>rb
+__FILE__: file_name<span style="color:#f92672">.</span>rb
+$0: file_name<span style="color:#f92672">.</span>rb
+
+<span style="color:#960050;background-color:#1e0010">$</span> ruby require_file_name<span style="color:#f92672">.</span>rb
+__FILE__: file_name<span style="color:#f92672">.</span>rb
+$0: require_file_name<span style="color:#f92672">.</span>rb
+</code></pre></div><h3 id="累乗の計算">累乗の計算</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponentiation</span>(n)
+  n <span style="color:#f92672">**</span> n
+<span style="color:#66d9ef">end</span>
+
+puts exponentiation(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">#=&gt; -1</span>
+puts exponentiation(<span style="color:#ae81ff">1</span>i) <span style="color:#75715e">#=&gt; 0.20787957635076193+0.0i 複素数</span>
+</code></pre></div><h3 id="正規表現--の-1-等">正規表現 =~ の $1 等</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:regex.rb" data-lang="rb:regex.rb"><span style="color:#e6db74">&#39;www.ruby.co.jp&#39;</span><span style="color:#f92672">.</span>match(<span style="color:#e6db74">%r(www(\.ruby\.co)(\.jp))</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>e<span style="color:#f92672">|</span>
+  puts <span style="color:#e6db74">&#34;match e= </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match e[0]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match e[1]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match e[2]= </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match $0 </span><span style="color:#e6db74">#{</span>$0<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match $&amp; </span><span style="color:#e6db74">#{</span>$&amp;<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match $1 </span><span style="color:#e6db74">#{</span>$1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  puts <span style="color:#e6db74">&#34;match $2 </span><span style="color:#e6db74">#{</span>$2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e">#=&gt; match e= www.ruby.co.jp</span>
+<span style="color:#75715e">#=&gt; match e[0]= www.ruby.co.jp</span>
+<span style="color:#75715e">#=&gt; match e[1]= .ruby.co</span>
+<span style="color:#75715e">#=&gt; match e[2]= .jp</span>
+<span style="color:#75715e">#=&gt; match $0 regex.rb # 実行ファイル名</span>
+<span style="color:#75715e">#=&gt; match $&amp; www.ruby.co.jp</span>
+<span style="color:#75715e">#=&gt; match $1 .ruby.co</span>
+<span style="color:#75715e">#=&gt; match $2 .jp</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
@@ -2537,7 +2537,7 @@ figure img {
 
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    window.disqus_config = function () {
+    var disqus_config = function () {
     
     
     

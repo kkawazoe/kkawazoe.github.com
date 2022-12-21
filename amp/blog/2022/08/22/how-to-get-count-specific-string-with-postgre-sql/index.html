@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2319,8 +2319,8 @@ figure img {
 <li>length 関数で 1 の置換前の文字数および置換後の文字数を取得</li>
 <li>sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
-</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;</span>, coalesce<span style="color:#f92672">(</span>sum<span style="color:#f92672">(</span>length<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>-length<span style="color:#f92672">(</span>regexp_replace<span style="color:#f92672">(</span>name, <span style="color:#e6db74">&#39;[仼鶴]&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span><span style="color:#f92672">)))</span>, 0<span style="color:#f92672">)</span> from users;
+</code></pre></div></div>
 
   <footer class="article-footer">
 

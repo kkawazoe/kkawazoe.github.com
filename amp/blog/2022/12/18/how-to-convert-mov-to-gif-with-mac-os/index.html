@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2312,23 +2312,23 @@ figure img {
 <ol>
 <li>ffmpeg, Image Magick のインストール</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install ffmpeg
-</span></span><span style="display:flex;"><span>brew install imagemagick
-</span></span></code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ffmpeg
+brew install imagemagick
+</code></pre></div><ol start="2">
 <li>gif に変換</li>
 </ol>
 <p>ファイルサイズを少なくするために圧縮も行う</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd 動画のあるディレクトリ
-</span></span><span style="display:flex;"><span>ffmpeg -i <span style="color:#f92672">{</span>変換対象<span style="color:#f92672">}</span>.mov -an -r <span style="color:#ae81ff">20</span> %06d.png   <span style="color:#75715e"># 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成</span>
-</span></span><span style="display:flex;"><span>convert *.png -resize 50% output_%06d.png   <span style="color:#75715e"># 作成した png を 50% にリサイズ</span>
-</span></span><span style="display:flex;"><span>convert output_*.png result.gif             <span style="color:#75715e"># gif に変換</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 生成された gif の確認は以下で行える ※Google Chrome インストールしている場合</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>open -a /Applications/Google<span style="color:#ae81ff">\ </span>Chrome.app result.gif
-</span></span></code></pre></div><p>画像が多少荒くても良いのであれば以下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i <span style="color:#f92672">{</span>変換対象<span style="color:#f92672">}</span>.mov -r <span style="color:#ae81ff">24</span> result.gif
-</span></span></code></pre></div><p><a target="_blank" href="https://icons8.com/icon/vCiwbOh7Uo7G/mac-os-logo">Mac Os Logo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd 動画のあるディレクトリ
+ffmpeg -i <span style="color:#f92672">{</span>変換対象<span style="color:#f92672">}</span>.mov -an -r <span style="color:#ae81ff">20</span> %06d.png   <span style="color:#75715e"># 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成</span>
+convert *.png -resize 50% output_%06d.png   <span style="color:#75715e"># 作成した png を 50% にリサイズ</span>
+convert output_*.png result.gif             <span style="color:#75715e"># gif に変換</span>
+
+<span style="color:#75715e"># 生成された gif の確認は以下で行える ※Google Chrome インストールしている場合</span>
+
+open -a /Applications/Google<span style="color:#ae81ff">\ </span>Chrome.app result.gif
+</code></pre></div><p>画像が多少荒くても良いのであれば以下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i <span style="color:#f92672">{</span>変換対象<span style="color:#f92672">}</span>.mov -r <span style="color:#ae81ff">24</span> result.gif
+</code></pre></div><p><a target="_blank" href="https://icons8.com/icon/vCiwbOh7Uo7G/mac-os-logo">Mac Os Logo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
 </div>
 
   <footer class="article-footer">

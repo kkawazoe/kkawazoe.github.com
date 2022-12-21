@@ -9,7 +9,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2342,7 +2342,7 @@ figure img {
             </ul>
 
             <div class="summary">方法 create_list と send メソッドを使用して実現する
-環境 ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0 実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを紐付けおよびカラム status を動的に生成する
+環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを紐付けおよびカラム status を動的に生成する
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i + 1}&#34;), ) end end </div>
           </div>
@@ -2367,7 +2367,7 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
 
             <div class="summary">個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく
 方法 tag オプション を使用して実現する
-環境 rspec: rspec 3.8 実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
+環境  rspec: rspec 3.8  実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
           </div>
         </a>
       </article>
@@ -2388,7 +2388,7 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
               
             </ul>
 
-            <div class="summary">環境 rails: rails 5.2.3 方法 I18n::Backend::Base#store_translations を使用する
+            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
 I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
           </div>
         </a>

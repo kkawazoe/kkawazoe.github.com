@@ -10,7 +10,7 @@
 <link rel="dns-prefetch preconnect" href="https://use.fontawesome.com"  crossorigin>
 <meta name="theme-color" content="#263238">
 
-<meta name="generator" content="Hugo 0.106.0">
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="apple-touch-icon" href="https://kkawazoe.github.io/images/logo.png">
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
@@ -2317,48 +2317,48 @@ figure img {
 ※Rails 6 では <code>not_*</code> の scope も自動的に定義される <a href="https://github.com/rails/rails/pull/35381">参考</a><br>
 ※Rails 7 では新しい構文が追加されたため、今後オプションの指定が従来のやり方だと非推奨になる可能性がある <a href="https://github.com/rails/rails/pull/41328">参考</a></p>
 <p>[モデル定義]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Article</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
-</span></span><span style="display:flex;"><span>  enum <span style="color:#e6db74">status</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">draft</span>: <span style="color:#ae81ff">0</span>,      <span style="color:#75715e"># 下書き</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">published</span>: <span style="color:#ae81ff">1</span>,  <span style="color:#75715e"># 公開中</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">closed</span>: <span style="color:#ae81ff">2</span>,     <span style="color:#75715e"># 掲載終了</span>
-</span></span><span style="display:flex;"><span>  }, <span style="color:#e6db74">_prefix</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>[Rails Console]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># enum 確認</span>
-</span></span><span style="display:flex;"><span>Article.statuses
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; {&#34;draft&#34;=&gt;0, &#34;published&#34;=&gt;1, &#34;closed&#34;=&gt;2}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># scope</span>
-</span></span><span style="display:flex;"><span>Article.status_published
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Article Load (7.8ms) SELECT `articles`.* FROM `articles` WHERE `articles`.`status` = 1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以下と同義</span>
-</span></span><span style="display:flex;"><span>Article.where<span style="color:#f92672">(</span>status: :published<span style="color:#f92672">)</span>.to_sql
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; &#34;SELECT `articles`.* FROM `articles` WHERE `articles`.`status` = 1&#34;</span>
-</span></span></code></pre></div><p>他にも以下のヘルパーが使用できる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rb" data-lang="rb"><span style="display:flex;"><span>article <span style="color:#f92672">=</span> <span style="color:#66d9ef">Article</span><span style="color:#f92672">.</span>status_published<span style="color:#f92672">.</span>first
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># status が published かどうか</span>
-</span></span><span style="display:flex;"><span>article<span style="color:#f92672">.</span>status_published?
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># status を closed に更新</span>
-</span></span><span style="display:flex;"><span>article<span style="color:#f92672">.</span>status_closed!
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; TRANSACTION (0.5ms)  BEGIN</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; Article Update (0.9ms)  UPDATE &#34;articles&#34; SET &#34;status&#34; = $1, &#34;updated_at&#34; = $2</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; WHERE &#34;articles&#34;.&#34;id&#34; #=&gt;= $3  [[&#34;status&#34;, 2], [&#34;updated_at&#34;, &#34;2022-12-04 10:17:57.666814&#34;], [&#34;id&#34;, 1]]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; TRANSACTION (8.0ms)  COMMIT</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>article
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; &lt;Article:0x000055a42ece8f38</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; id: 1,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; name: &#34;サンプル記事&#34;,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; status: &#34;closed&#34;,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; created_at: Sun, 04 Dec 2022 10:10:22.903934000 UTC +00:00,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#=&gt; updated_at: Sun, 04 Dec 2022 10:17:57.666814000 UTC +00:00&gt;</span>
-</span></span></code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Article</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
+  enum <span style="color:#e6db74">status</span>: {
+    <span style="color:#e6db74">draft</span>: <span style="color:#ae81ff">0</span>,      <span style="color:#75715e"># 下書き</span>
+    <span style="color:#e6db74">published</span>: <span style="color:#ae81ff">1</span>,  <span style="color:#75715e"># 公開中</span>
+    <span style="color:#e6db74">closed</span>: <span style="color:#ae81ff">2</span>,     <span style="color:#75715e"># 掲載終了</span>
+  }, <span style="color:#e6db74">_prefix</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>[Rails Console]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enum 確認</span>
+Article.statuses
+<span style="color:#75715e">#=&gt; {&#34;draft&#34;=&gt;0, &#34;published&#34;=&gt;1, &#34;closed&#34;=&gt;2}</span>
+
+<span style="color:#75715e"># scope</span>
+Article.status_published
+<span style="color:#75715e">#=&gt; Article Load (7.8ms) SELECT `articles`.* FROM `articles` WHERE `articles`.`status` = 1</span>
+
+<span style="color:#75715e"># 以下と同義</span>
+Article.where<span style="color:#f92672">(</span>status: :published<span style="color:#f92672">)</span>.to_sql
+<span style="color:#75715e">#=&gt; &#34;SELECT `articles`.* FROM `articles` WHERE `articles`.`status` = 1&#34;</span>
+</code></pre></div><p>他にも以下のヘルパーが使用できる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb">article <span style="color:#f92672">=</span> <span style="color:#66d9ef">Article</span><span style="color:#f92672">.</span>status_published<span style="color:#f92672">.</span>first
+
+<span style="color:#75715e"># status が published かどうか</span>
+article<span style="color:#f92672">.</span>status_published?
+<span style="color:#75715e">#=&gt; true</span>
+
+<span style="color:#75715e"># status を closed に更新</span>
+article<span style="color:#f92672">.</span>status_closed!
+<span style="color:#75715e">#=&gt; TRANSACTION (0.5ms)  BEGIN</span>
+<span style="color:#75715e">#=&gt; Article Update (0.9ms)  UPDATE &#34;articles&#34; SET &#34;status&#34; = $1, &#34;updated_at&#34; = $2</span>
+<span style="color:#75715e">#=&gt; WHERE &#34;articles&#34;.&#34;id&#34; #=&gt;= $3  [[&#34;status&#34;, 2], [&#34;updated_at&#34;, &#34;2022-12-04 10:17:57.666814&#34;], [&#34;id&#34;, 1]]</span>
+<span style="color:#75715e">#=&gt; TRANSACTION (8.0ms)  COMMIT</span>
+<span style="color:#75715e">#=&gt; true</span>
+
+article
+<span style="color:#75715e">#=&gt; &lt;Article:0x000055a42ece8f38</span>
+<span style="color:#75715e">#=&gt; id: 1,</span>
+<span style="color:#75715e">#=&gt; name: &#34;サンプル記事&#34;,</span>
+<span style="color:#75715e">#=&gt; status: &#34;closed&#34;,</span>
+<span style="color:#75715e">#=&gt; created_at: Sun, 04 Dec 2022 10:10:22.903934000 UTC +00:00,</span>
+<span style="color:#75715e">#=&gt; updated_at: Sun, 04 Dec 2022 10:17:57.666814000 UTC +00:00&gt;</span>
+</code></pre></div></div>
 
   <footer class="article-footer">
 
