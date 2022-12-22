@@ -6,25 +6,45 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 23 Nov 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Dec 2022 13:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>Ruby Gold 認定試験 Ver 3.1 への道</title>
-      <link>https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/</link>
-      <pubDate>Wed, 23 Nov 2022 00:00:00 +0900</pubDate>
+      <title>Rails で Active Record のデータを hash 形式に変換する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/</link>
+      <pubDate>Fri, 16 Dec 2022 13:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/11/23/road_to_ruby_gold_ver_3_1/</guid>
-      <description>Ruby Gold 認定試験の Ver 3.1 の勉強時に学んだことを備忘録として残しておく
-環境  ruby: 3.1.2  Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
-以下は同じ意味
-h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h.transform_values{_1 * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.</description>
+      <guid>https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/</guid>
+      <description>Rails で Active Record のデータを キーが id, 値が Active Record であるような Hash を作る方法を備忘録として残しておく
+環境  ruby: 3.0.4 rails: 6.1.0  実際のコード index_by, inject, pluck + to_h メソッドのいずれかを使用する
+前提 データの登録状態
+   id book_id name     1 1 少年誌   2 1 青年誌   3 1 ビジネス   4 1 自己啓発    [Rails Console]
+categories = Category.all.index_by(&amp;amp;:id) #=&amp;gt; { #=&amp;gt; 1=&amp;gt; #=&amp;gt; #&amp;lt;Category:0x0000562b92c5fcb0 #=&amp;gt; id: 1, #=&amp;gt; book_id: 1, #=&amp;gt; name: &amp;#34;少年誌&amp;#34;, #=&amp;gt; created_at: Wed, 24 Aug 2022 02:54:05.</description>
+    </item>
+    
+    <item>
+      <title>Rails における Enum について</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/</link>
+      <pubDate>Fri, 02 Dec 2022 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/</guid>
+      <description>Rails における Enum の挙動について調査した内容を備忘録として残しておく
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード DB のカラムに対応する enum を定義した場合、自動的に scope が定義される
+※Rails 6 では not_* の scope も自動的に定義される 参考
+※Rails 7 では新しい構文が追加されたため、今後オプションの指定が従来のやり方だと非推奨になる可能性がある 参考
+[モデル定義]
+class Article &amp;lt; ApplicationRecord enum status: { draft: 0, # 下書き published: 1, # 公開中 closed: 2, # 掲載終了 }, _prefix: true end [Rails Console]
+# enum 確認 Article.statuses #=&amp;gt; {&amp;#34;draft&amp;#34;=&amp;gt;0, &amp;#34;published&amp;#34;=&amp;gt;1, &amp;#34;closed&amp;#34;=&amp;gt;2} # scope Article.status_published #=&amp;gt; Article Load (7.</description>
     </item>
     
     <item>
       <title>rails console で オートコンプリートを無効にする方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</link>
+      <link>https://kkawazoe.github.io/blog/2022/11/22/how-to-disable-auto-complete-with-rails-console/</link>
       <pubDate>Tue, 22 Nov 2022 13:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/11/22/how_to_disable_auto_complete_with_rails_console/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-disable-auto-complete-with-rails-console/</guid>
       <description>ruby 3.1 以降から irb でオートコンプリートが効くようになったがそれを無効にする方法を調査した
 その結果を備忘録として残しておく
 環境  ruby: 3.1.2 rails: 6.1.7  方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
@@ -34,12 +54,13 @@ IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </description>
     
     <item>
       <title>rails で中間テーブルをチェックボックス複数選択させて生成する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/11/03/how-to-select-check-box-for-create-through-table-with-rails/</link>
       <pubDate>Thu, 03 Nov 2022 18:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/11/03/how_to_select_check_box_for_create_through_table_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/11/03/how-to-select-check-box-for-create-through-table-with-rails/</guid>
       <description>環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
-実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下 ※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
+実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下
+※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
  erb のパターン  association を使用して as: :check_boxes オプションを指定する
 &amp;lt;%= simple_form_for @book do |f| %&amp;gt; &amp;lt;%= f.association :categories, as: :check_boxes %&amp;gt; &amp;lt;%= f.button :submit %&amp;gt; &amp;lt;% end  %&amp;gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
 [&amp;quot;&amp;quot;, 1, 3]
@@ -48,10 +69,10 @@ $(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; v
     
     <item>
       <title>rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/</link>
       <pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_use_has_many_ids_for_create_relation_through_table_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/</guid>
       <description>環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
  [model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
@@ -61,12 +82,12 @@ def create @book = Book.save!(book_params) end private def book_params params.re
     
     <item>
       <title>ransack で scope を使用して link_to で表示する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</link>
+      <link>https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/</link>
       <pubDate>Tue, 01 Nov 2022 00:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/11/01/how_to_user_scope_for_link_to_with_ransack/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/</guid>
       <description>方法 ransackable_scopes メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成された ユーザを取得する
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成されたユーザを取得する
 [model]
 # 引数なし scope :within_one_month, -&amp;gt; { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&amp;gt; (day) { where(&amp;#39;created_at &amp;gt;=&amp;#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
 &amp;lt;%= link_to( &amp;#34;1ヶ月以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_one_month: true }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) link_to( &amp;#34;7日以内に作成されたユーザ一覧&amp;#34;, users_path(@q, q: { within_days: 7 }), class: &amp;#34;btn btn-primary mr-5&amp;#34; ) %&amp;gt; [controller]</description>
@@ -74,37 +95,38 @@ def create @book = Book.save!(book_params) end private def book_params params.re
     
     <item>
       <title>rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</link>
+      <link>https://kkawazoe.github.io/blog/2022/10/30/how-to-dynamic-create-test-data-for-factory-bot-with-rspec/</link>
       <pubDate>Sun, 30 Oct 2022 21:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/10/30/how_to_dynamic_create_test_data_for_factory_bot_with_rspec/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/10/30/how-to-dynamic-create-test-data-for-factory-bot-with-rspec/</guid>
       <description>方法 create_list と send メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを 紐付けおよびカラム status を動的に生成する
+環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを紐付けおよびカラム status を動的に生成する
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&amp;#34;user_status#{i}&amp;#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
 let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&amp;#34;user_status#{i + 1}&amp;#34;), ) end end </description>
     </item>
     
     <item>
       <title>rails で 巨大な csv ファイルをストリーム処理する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/</link>
       <pubDate>Sat, 03 Sep 2022 21:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_excute_stream_too_big_file_size_csv_with_rails/</guid>
-      <description>1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが 発生したり、処理時間もすごくかかるため、ストリーム処理に変更などして 処理の高速化した際の方法を備忘録として残しておく
+      <guid>https://kkawazoe.github.io/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/</guid>
+      <description>1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが発生する場合がある
+さらに処理時間もすごくかかるため、ストリーム処理に変更などして処理の高速化した際の方法を備忘録として残しておく
 方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
 環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
 前提 header 付の csv ファイル
 リファクタリング前
-class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;r&amp;#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;w&amp;#34;) # 変更内容を出力する。 file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
+class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;r&amp;#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&amp;#34;{ファイルパス}&amp;#34; , &amp;#34;w&amp;#34;) # 変更内容を出力する file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
 require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converter def self.</description>
     </item>
     
     <item>
       <title>rails で文字列置換を行う際に対応表で置換する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/09/03/how-to-substring-map-with-rails/</link>
       <pubDate>Sat, 03 Sep 2022 12:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/09/03/how_to_substring_map_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/09/03/how-to-substring-map-with-rails/</guid>
       <description>rails で文字列置換を行う際に対応表で置換する方法を備忘録として残しておく
 方法 gsub メソッドに対して、第1引数に正規表現、第2引数に Hash を渡すことで実現する
 環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード # 変換用の対応表 convert_map = { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; } #=&amp;gt; {&amp;#34;a&amp;#34;=&amp;gt;&amp;#34;A&amp;#34;, &amp;#34;b&amp;#34;=&amp;gt;&amp;#34;B&amp;#34;, &amp;#34;d&amp;#34;=&amp;gt;&amp;#34;D&amp;#34;} # 以下と同義 # &amp;#34;adcacbd&amp;#34;.gsub(/a|b|d/, { &amp;#39;a&amp;#39; =&amp;gt; &amp;#39;A&amp;#39;, &amp;#39;b&amp;#39; =&amp;gt; &amp;#39;B&amp;#39;, &amp;#39;d&amp;#39; =&amp;gt; &amp;#39;D&amp;#39; }) &amp;#34;adcacbd&amp;#34;.gsub(Regexp.new(&amp;#34;#{convert_map.keys.join(&amp;#39;|&amp;#39;)}&amp;#34;), convert_map) #=&amp;gt; &amp;#34;ADcAcBD&amp;#34; </description>
@@ -112,10 +134,10 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
     
     <item>
       <title>rails で別名がつけられているカラムを pluck で取得する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/08/23/how-to-get-alias-column-pluck-method-with-rails/</link>
       <pubDate>Tue, 23 Aug 2022 22:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/08/23/how_to_get_alias_column_pluck_method_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/08/23/how-to-get-alias-column-pluck-method-with-rails/</guid>
       <description>rails で別名がつけられているカラムを pluck で取得する方法を備忘録として残しておく
 方法 シンボルでの指定ではなく、文字列で as 句含めて指定する
 環境  rails: 6.1.6.1  実際のコード 例. Book と Category クラスの関係が 1 対 多 である場合
@@ -124,10 +146,10 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
     
     <item>
       <title>rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</title>
-      <link>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/05/24/how-to-auto-seq-for-postgre-sql-with-rails/</link>
       <pubDate>Tue, 24 May 2022 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/05/24/how_to_auto_seq_for_postgre_sql_with_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/05/24/how-to-auto-seq-for-postgre-sql-with-rails/</guid>
       <description>rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
 方法 reset_pk_sequence! を使用する
 環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </description>
@@ -135,10 +157,10 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
     
     <item>
       <title>rails でメソッドの定義場所を表示する方法</title>
-      <link>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</link>
+      <link>https://kkawazoe.github.io/blog/2022/02/26/how-to-source-location-rails/</link>
       <pubDate>Sat, 26 Feb 2022 01:28:11 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2022/02/26/how_to_source_location_rails/</guid>
+      <guid>https://kkawazoe.github.io/blog/2022/02/26/how-to-source-location-rails/</guid>
       <description>rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
 方法 XXX.method(:{method}).source_location を使用する
 例. ActiveRecord::Base.method(:transaction).source_location
@@ -147,31 +169,31 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
     
     <item>
       <title>特定の RSpec のみ実行されるようにする方法</title>
-      <link>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</link>
+      <link>https://kkawazoe.github.io/blog/2021/05/14/how-to-execute-specified-rspec/</link>
       <pubDate>Fri, 14 May 2021 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2021/05/14/how_to_execute_specified_rspec/</guid>
-      <description>個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく。
+      <guid>https://kkawazoe.github.io/blog/2021/05/14/how-to-execute-specified-rspec/</guid>
+      <description>個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく
 方法 tag オプション を使用して実現する
 環境  rspec: rspec 3.8  実際のコード # # :key =&amp;gt; &amp;#39;value&amp;#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &amp;#34;group with tagged specs&amp;#34; do it &amp;#34;example I&amp;#39;m working now&amp;#34;, focus: true do; end it &amp;#34;special example with string&amp;#34;, type: &amp;#39;special&amp;#39; do; end it &amp;#34;special example with symbol&amp;#34;, type: :special do; end it &amp;#34;slow example&amp;#34;, skip: true do; end it &amp;#34;ordinary example&amp;#34;, speed: &amp;#39;slow&amp;#39; do; end end 実行方法 例.</description>
     </item>
     
     <item>
       <title>Hash の Key が Symbol または String どちらでも取得可能にする方法</title>
-      <link>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</link>
+      <link>https://kkawazoe.github.io/blog/2021/05/12/how-to-either-obtained-value-symbol-or-string-key-of-hash/</link>
       <pubDate>Wed, 12 May 2021 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2021/05/12/how_to_either_obtained_value_symbol_or_string_key_of_hash/</guid>
+      <guid>https://kkawazoe.github.io/blog/2021/05/12/how-to-either-obtained-value-symbol-or-string-key-of-hash/</guid>
       <description>HashWithIndifferentAccess に変換して実現する
 環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &amp;#39;#0000&amp;#39;, white: &amp;#39;#FFFFFF&amp;#39; }.with_indifferent_access rgb[:black] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:&amp;#39;black&amp;#39;] # =&amp;gt; &amp;#34;#0000&amp;#34; rgb[:white] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; rgb[:&amp;#39;white&amp;#39;] # =&amp;gt; &amp;#34;#FFFFFF&amp;#34; </description>
     </item>
     
     <item>
       <title>nkf を使用して UTF-8 を CP932 に文字コード変換する方法</title>
-      <link>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</link>
+      <link>https://kkawazoe.github.io/blog/2021/04/11/convert-string-code-utf8-to-cp932-with-nkf/</link>
       <pubDate>Sun, 11 Apr 2021 09:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2021/04/11/convert_string_code_utf8_to_cp932_with_nkf/</guid>
+      <guid>https://kkawazoe.github.io/blog/2021/04/11/convert-string-code-utf8-to-cp932-with-nkf/</guid>
       <description>CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
 その対処方法を備忘録として残しておく
 環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は&#39;〓&#39;に変換する
@@ -187,22 +209,18 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
       <description>Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
 環境  rails: rails 5.2.2  rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
 使用感としてはテンプレートとなる Excel に対して読み書きする場合には
-問題なく使用可能。
+問題なく使用可能
 但し、テンプレートに数式やグラフが含まれている場合に行などを
 追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
-あるため注意が必要。
-rubyXL 発生した障害とその対応   テキストの折り返しがsheet.add_cellではできない
-sheet.add_cell(col, row, &#39;text&#39;).change_text_wrap によって実装可能。
-テキストを折り返して表示してくれるようになる。
-  change_contents が使えない
-version 3.4.0 以降は convenience_methods を呼び出さないと利用不可。
+あるため注意が必要
+rubyXL 発生した障害とその対応  テキストの折り返しがsheet.add_cellではできない  sheet.add_cell(col, row, &#39;text&#39;).change_text_wrap によって実装可能
+テキストを折り返して表示してくれるようになる
+change_contents が使えない  version 3.4.0 以降は convenience_methods を呼び出さないと利用不可
 # require が必要なメソッド require &amp;#39;rubyXL/convenience_methods/cell&amp;#39; require &amp;#39;rubyXL/convenience_methods/color&amp;#39; require &amp;#39;rubyXL/convenience_methods/font&amp;#39; require &amp;#39;rubyXL/convenience_methods/workbook&amp;#39; require &amp;#39;rubyXL/convenience_methods/worksheet&amp;#39; もしくは以下で全て使用可
-require &amp;#39;rubyXL/convenience_methods&amp;#39;   シートのコピーができない
-Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応。
+require &amp;#39;rubyXL/convenience_methods&amp;#39; シートのコピーができない  Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応
 参考サイト
-  シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
-change_contents の仕様と上記のシートコピーによって生じた現象。
-シートの書式等をコピー → change_contents で書式設定を保持したまま内容を変更 →</description>
+シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう  change_contents の仕様と上記のシートコピーによって生じた現象
+ ① シートの書式等をコピー ② change_contents で書式設定を保持したまま内容を変更 ③ 該当するコピーシートすべての内容が書き換わる という動作をしている</description>
     </item>
     
     <item>
@@ -261,10 +279,8 @@ I18n.backend.store_translations( :ja, test: &amp;#39;テスト&amp;#39; ) I18n.t
       
       <guid>https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/</guid>
       <description>経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
-実際のコード(html テンプレートエンジンは slim を使用)   通常 a タグ
-a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;   RailsHelper での a タグ
-Vue.js の bind を&#39;(シングルコート)で括る
-= link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34;   </description>
+実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ  a.btn.home href=&amp;#34;#{root_path}&amp;#34; @touchStart=&amp;#34;onTouchStartForBtn&amp;#34; @touchEnd=&amp;#34;onTouchEndForBtn&amp;#34; @touchmove=&amp;#34;onTouchMoveForBtn&amp;#34;  RailsHelper での a タグ  Vue.js の bind を&amp;rsquo;(シングルコート)で括る
+= link_to national_rankings_path, class: &amp;#39;btn ranking&amp;#39;, &amp;#39;@touchStart&amp;#39;: &amp;#34;onTouchStartForBtn&amp;#34;, &amp;#39;@touchEnd&amp;#39;: &amp;#34;onTouchEndForBtn&amp;#34;, &amp;#39;@touchmove&amp;#39;: &amp;#34;onTouchMoveForBtn&amp;#34; </description>
     </item>
     
     <item>
@@ -298,12 +314,7 @@ github
       
       <guid>https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/</guid>
       <description>経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順   Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
-  Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
-  DevKit を展開する。(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
-3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する
-ruby dk.rb init ruby dk.rb install   rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する
-gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
 $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</description>
     </item>
     
@@ -313,9 +324,11 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       <pubDate>Mon, 25 Feb 2019 16:50:14 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/</guid>
-      <description>確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法   Mysqlの FIELD 関数を使用する。※FIELD 関数の結果で ORDER BY する
- 例. レコードを order 昇順, user_id 昇順で並び替える場合(同じ順位の場合は自分を優先)  order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること。 また、ORDER BY FIELD で指定した分に対して desc を指定すること。 ( desc を指定しないと自分以外が優先的に並び替えられてしまう)
-  </description>
+      <description>確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する※FIELD 関数の結果で ORDER BY する  例. レコードを order 昇順, user_id 昇順で並び替える場合
+※同じ順位の場合は自分を優先
+order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること
+また、ORDER BY FIELD で指定した分に対して desc を指定すること
+※ desc を指定しないと自分以外が優先的に並び替えられてしまう)</description>
     </item>
     
     <item>

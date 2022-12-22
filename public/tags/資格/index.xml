@@ -6,7 +6,78 @@
     <description>Recent content in 資格 on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 06 Jul 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Dec 2022 13:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3 への道 その5</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</link>
+      <pubDate>Mon, 05 Dec 2022 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</guid>
+      <description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3 Ruby Gold 認定試験 Ver 3 への道 その4  受験結果 無事に合格した
+前回、 ver 2 受験時と難易度的には同じくらいだったように思う
+なので、基本的にはオブジェクト指向周りを再確認する
+3 系から追加された 「hash 明示(**hash)」などはリリースノートで確認して置いた方が良いが 2.2 〜 2.7 系での変更点についても押さえておくとより良いと思う
+Github NEWS.md
+リリースノート
+勉強に使用したもの  公式の模擬問題
+基本的には、上記をやって該当のコードを自分でコーディングしながら、色々変更して動作確認するのが一番良さそう  </description>
+    </item>
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3 への道 その4</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</link>
+      <pubDate>Thu, 01 Dec 2022 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</guid>
+      <description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3  環境  ruby: 3.1.2  キーワード引数 キーワード引数で a: のようなデフォルト値を指定しない場合、構文エラーにはならないが、呼び出し時に指定しなかった場合に ArgumentError になる
+class KeywordArgument def foo(a:, b: &amp;#39;bbb&amp;#39;) puts &amp;#34;a: #{a}, b: #{b}&amp;#34; end end keyword_argument = KeywordArgument.new keyword_argument.foo(a: &amp;#39;aaa&amp;#39;, b: &amp;#39;BBB&amp;#39;) #=&amp;gt; a: aaa, b: BBB keyword_argument.foo(a: &amp;#39;aaa&amp;#39;) #=&amp;gt; a: aaa, b: bbb keyword_argument.</description>
+    </item>
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3 への道 その3</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</link>
+      <pubDate>Fri, 25 Nov 2022 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</guid>
+      <description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2  環境  ruby: 3.1.2  public_send メソッド Object#public_send メソッドは private メソッドを呼び出せない
+private_send メソッドは存在しない ※private メソッドを 呼び出す場合は Object#send or BasicObject#__send__ メソッドを使用する
+class PublicTest def public_method puts &amp;#39;call public methods&amp;#39; end private def private_method puts &amp;#39;call private methods&amp;#39; end end test = PublicTest.new test.public_method test.private_method #=&amp;gt; call public methods #=&amp;gt; public_send.</description>
+    </item>
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3 への道 その2</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</link>
+      <pubDate>Thu, 24 Nov 2022 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</guid>
+      <description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道  環境  ruby: 3.1.2  __FILE__ __FILE__ が書いてあるファイルのファイル名を表す 似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す
+puts __FILE__ puts $0 require_relative &amp;#39;./file_name&amp;#39; $ ruby file_name.rb __FILE__: file_name.rb $0: file_name.rb $ ruby require_file_name.rb __FILE__: file_name.rb $0: require_file_name.rb 累乗の計算 def exponentiation(n) n ** n end puts exponentiation(-1) #=&amp;gt; -1 puts exponentiation(1i) #=&amp;gt; 0.20787957635076193+0.0i 複素数 正規表現 =~ の $1 等 &amp;#39;www.ruby.co.jp&amp;#39;.match(%r(www(\.ruby\.co)(\.jp))) do |e| puts &amp;#34;match e= #{e}&amp;#34; puts &amp;#34;match e[0]= #{e[0]}&amp;#34; puts &amp;#34;match e[1]= #{e[1]}&amp;#34; puts &amp;#34;match e[2]= #{e[2]}&amp;#34; puts &amp;#34;match $0 #{$0}&amp;#34; puts &amp;#34;match $&amp;amp; #{$&amp;amp;}&amp;#34; puts &amp;#34;match $1 #{$1}&amp;#34; puts &amp;#34;match $2 #{$2}&amp;#34; end #=&amp;gt; match e= www.</description>
+    </item>
+    
+    <item>
+      <title>Ruby Gold 認定試験 Ver 3 への道</title>
+      <link>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</link>
+      <pubDate>Wed, 23 Nov 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</guid>
+      <description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+環境  ruby: 3.1.2  Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
+以下は同じ意味
+h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h.transform_values{_1 * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.</description>
+    </item>
+    
     <item>
       <title>FP3級への道 その7</title>
       <link>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</link>
@@ -121,7 +192,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
 資本回収係数 現在の一定金額を一定期間で取り崩した場合の、毎年の受取金額を計算するための係数
 例. 100万円を年利2%で運用しながら7年噛んで取り崩した場合の毎年の受取金額はいくら？
 年金現価係数 将来の一定期間に渡って、一定額を受け取るために必要な元本を計算するための係数
-例. 7年間に渡って、10万円ずつ受け取りたい。
+例. 7年間に渡って、10万円ずつ受け取りたい
 年利3%とした場合、必要な元本はいくらか？
 終価係数と年金終価係数の違い 終価係数は、現在の金額を複利で運用した場合の金額を求めるための係数
 =&amp;gt; 定期預金のイメージ
@@ -144,7 +215,7 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <guid>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</guid>
       <description>試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
 受験料 15,000 円 (日本語版/税別)
-出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する。 1.2 AWS サービスを使用した分離機構を設計する方法を定義する。 1.3 多層アーキテクチャソリューションを設計する方法を定義する。 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する。   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</description>
+出題範囲    分野 試験に占める 割合     分野 1: 回復性の高いアーキテクチャを設計する 34%   分野 2: パフォーマンスに優れたアーキテクチャを定義する 24%   分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26%   分野 4: コスト最適化アーキテクチャを設計する 10%   分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6%   合計 100%    出題範囲詳細  分野 1: 回復性の高いアーキテクチャを設計する  1.1 信頼性と回復性の高いストレージを選択する 1.2 AWS サービスを使用した分離機構を設計する方法を定義する 1.3 多層アーキテクチャソリューションを設計する方法を定義する 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する   分野 2: パフォーマンスに優れたアーキテクチャを定義する  2.</description>
     </item>
     
     <item>
@@ -153,11 +224,11 @@ $$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + �
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</guid>
-      <description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった。 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく。
+      <description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく
 受験する科目  学科  FP 協会・金融財政事情研究会で共通   実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい  FP 協会  資産設計提案業務   金融財政事情研究会  個人資産相談業務 ※今回受験 保険顧客資産相談業務      使用する教材 今回使用する教材は以下
 2018-2019年版　みんなが欲しかった！　FPの教科書3級
 滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう。 必要があれば追加で購入する。 とりあえず、5月の受験を目指す。
+売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう 必要があれば追加で購入する とりあえず、5月の受験を目指す
 2019/03/26 追記 試験用の電卓を購入
 CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
 シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため

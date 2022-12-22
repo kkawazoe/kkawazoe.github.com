@@ -6,15 +6,47 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 22 Nov 2022 17:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac OS で mov を gif に変換する方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</guid>
+      <description>Mac OS で mov を gif に変換する方法を備忘録として残しておく
+手順 ffmpeg を使用する ※ファイルのリサイズのために Image Magick も使用
+ ffmpeg, Image Magick のインストール  brew install ffmpeg brew install imagemagick gif に変換  ファイルサイズを少なくするために圧縮も行う
+cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d.png # 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成 convert *.png -resize 50% output_%06d.png # 作成した png を 50% にリサイズ convert output_*.png result.gif # gif に変換 # 生成された gif の確認は以下で行える ※Google Chrome インストールしている場合 open -a /Applications/Google\ Chrome.</description>
+    </item>
+    
+    <item>
+      <title>Hugo と GitHub Pages の構成で自動デプロイを行う方法</title>
+      <link>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</guid>
+      <description>元々バッチを使用して手動でデプロイを行っていたが、自動デプロイする方法がないか調査を行った
+その結果を備忘録として残しておく
+前提 [構成]
+ Hugo + GitHub Pages(master ブランチが対象)
+※source ブランチを Hugo で変換して master ブランチに静的サイト用の資産を配置する Hugo テーマは submodule として取り込み  実際のコード GitHub Actions を使用する
+リポジトリ直下に .github/workflows フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される
+※ source ブランチの push をトリガーに自動デプロイを行う
+ source ブランチをチェックアウト Hugo(Docker) を使用して、静的サイト用の資産を作成 master ブランチに push して GitHub Pages にデプロイする  name: Deploy on: push: branches: - source # 発火させたい branch jobs: deploy: runs-on: ubuntu-22.04 steps: - uses: actions/checkout@v3 with: submodules: true # Fetch Hugo themes (true OR recursive) fetch-depth: 0 # Fetch all history for .</description>
+    </item>
+    
     <item>
       <title>Visual Studio Code で拡張子毎に設定値を変更する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link>
       <pubDate>Tue, 22 Nov 2022 17:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid>
-      <description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため
-調査を行なった。その結果を備忘録として残しておく。
+      <description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため調査を行なった
+その結果を備忘録として残しておく
 手順  コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する  実際の設定ファイル { &amp;#34;[markdown]&amp;#34;: { &amp;#34;files.trimTrailingWhitespace&amp;#34;: false } } </description>
     </item>
     
@@ -33,9 +65,8 @@
 参考
 指定できるフィルタ
 /Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&amp;#34;calc_pdf_Export&amp;#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
-  /usr/local/bin/soffice を作成して中に以下を記載する
-#!/bin/bash  # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34;   以下のコマンドで実行権限を付与する
-sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いているので以下でも可</description>
+ /usr/local/bin/soffice を作成して中に以下を記載する  #!/bin/bash  # Need to do this because symlink won&amp;#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &amp;#34;$@&amp;#34; 以下のコマンドで実行権限を付与する  sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.</description>
     </item>
     
     <item>
@@ -45,10 +76,7 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
       
       <guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid>
       <description>windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
-環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法   Windows Terminal を起動する
-  「Ctrl」+「,」を押下して setting.json を開く
-  setting.json の設定に以下を追加する
-  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法  Windows Terminal を起動する 「Ctrl」+「,」を押下して setting.json を開く setting.json の設定に以下を追加する  { &amp;#34;$schema&amp;#34;: &amp;#34;https://aka.ms/terminal-profiles-schema&amp;#34;, &amp;#34;defaultProfile&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;profiles&amp;#34;: { &amp;#34;defaults&amp;#34;: { &amp;#34;startingDirectory&amp;#34;: &amp;#34;c:\\work&amp;#34; // 追加 ターミナル共通の起動時のディレクトリを指定 }, &amp;#34;list&amp;#34;: [ { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Windows PowerShell&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;powershell.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Command Prompt&amp;#34;, &amp;#34;commandline&amp;#34;: &amp;#34;cmd.exe&amp;#34;, &amp;#34;hidden&amp;#34;: false }, { &amp;#34;guid&amp;#34;: &amp;#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&amp;#34;, &amp;#34;hidden&amp;#34;: false, &amp;#34;name&amp;#34;: &amp;#34;Azure Cloud Shell&amp;#34;, &amp;#34;source&amp;#34;: &amp;#34;Windows.</description>
     </item>
     
     <item>
@@ -58,8 +86,7 @@ sudo chmod +x /usr/loca/bin/soffice   上記を sh として gist に置いて�
       
       <guid>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</guid>
       <description>経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
-手順   vagrant halt を行う
-以下のエラーが発生
+手順  vagrant halt を行う  以下のエラーが発生
 An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&amp;#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &amp;#34;ruby&amp;#34; or &amp;#34;vagrant&amp;#34; processes and kill them.</description>
     </item>
     
@@ -72,8 +99,7 @@ An action &amp;#39;halt&amp;#39; was attempted on the machine &amp;#39;default&a
       <description>[前回までの記事]
  Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
 手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
-  partials フォルダ配下の以下のファイルを修正する
-CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+ partials フォルダ配下の以下のファイルを修正する  CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; MathJax = { tex: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], processEscapes: true, tags: &amp;#34;ams&amp;#34;, autoload: { color: [], colorV2: [&amp;#39;color&amp;#39;] }, packages: {&amp;#39;[+]&amp;#39;: [&amp;#39;noerrors&amp;#39;]} }, chtml: { matchFontHeight: false, displayAlign: &amp;#34;left&amp;#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &amp;#34;2em&amp;#34; }, options: { skipHtmlTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], renderActions: { /* これを記述しないと インライン数式(例.</description>
     </item>
     
@@ -111,8 +137,7 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <guid>https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/</guid>
       <description>経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
 手順 参考 と同じく Mathjax を使用して実現する
-  partials フォルダ配下に以下のファイルを作成する
-CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
+ partials フォルダ配下に以下のファイルを作成する  CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</description>
     </item>
     
@@ -145,15 +170,17 @@ CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確�
       <pubDate>Tue, 19 Mar 2019 23:35:30 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/</guid>
-      <description>経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い。 そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく。
-Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う。 ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする。
-手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う。 「C:/Windows/System32/drivers/etc」に hosts ファイルがある。 そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる。
-Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする。 ※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること。
+      <description>経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い
+そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく
+Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う
+ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする
+手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う
+「C:/Windows/System32/drivers/etc」に hosts ファイルがある
+そのファイルを右クリック&amp;gt;Properties&amp;gt;Security&amp;gt;Editボタンで、 Users の権限に全部チェックを入れる
+Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする
+※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること
 Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
-IEの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.0.0.0   インターネットオプションのLocal intranetに「localhost:3000」を登録
-  Edgeの場合   サーバの起動の際に以下のコマンドで行う
-bundle exec rails s -b 0.</description>
+IEの場合  サーバの起動の際に以下のコマンドで行う  bundle exec rails s -b 0.0.0.0 インターネットオプションのLocal intranetに「localhost:3000」を登録  Edgeの場合  サーバの起動の際に以下のコマンドで行う  bundle exec rails s -b 0.0.0.0 インターネットオプションの Local intranet に「localhost:3000」を登録 about:flags を入力し、「Developer Settings」の「allow localhost loopback(this might put your device at risk)」のチェックを外す  </description>
     </item>
     
     <item>
@@ -162,7 +189,7 @@ bundle exec rails s -b 0.</description>
       <pubDate>Thu, 28 Feb 2019 12:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/</guid>
-      <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した。
+      <description>確認環境  Windows10 Rambox: 0.6.3  経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した
 候補  Franz Station Rambox  Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 =&amp;gt; 「PDF を開く」の手間が発生してしまうため Rambox に決定
 Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
  しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
@@ -177,8 +204,8 @@ function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.ro
       <pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</guid>
-      <description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している。
-資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した。
+      <description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している
+資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した
 情報元 Markdown PDF の「Page Break」の項目に記載あり
 実際のコード # h1 ## h2  ### h3  &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2  ### h3  </description>
     </item>
