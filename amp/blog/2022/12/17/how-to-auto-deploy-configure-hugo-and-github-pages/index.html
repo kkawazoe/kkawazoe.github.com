@@ -2511,6 +2511,9 @@ input::-webkit-input-placeholder {
           <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># Fetch Hugo themes (true OR recursive)</span>
           <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>    <span style="color:#75715e"># Fetch all history for .GitInfo and .Lastmod</span>
 
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deleting old publication</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">rm -rf public</span>
+
       - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
         <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
         <span style="color:#f92672">with</span>:
@@ -2542,6 +2545,9 @@ input::-webkit-input-placeholder {
           <span style="color:#f92672">ref</span>: <span style="color:#e6db74">&#39;source&#39;</span>     <span style="color:#75715e"># Checkout Branch Name</span>
           <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># Fetch Hugo themes (true OR recursive)</span>
           <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>    <span style="color:#75715e"># Fetch all history for .GitInfo and .Lastmod</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deleting old publication</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">rm -rf public</span>
 
       - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
         <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
