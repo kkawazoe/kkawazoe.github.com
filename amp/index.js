@@ -111,7 +111,7 @@ var data = [
     title: "CSS テキストを左揃えのまま中央寄せにする方法",
     image: "images/logo/html_logo.svg",
     date: "2022-09-14",
-    body: "CSS テキストを左揃えのまま中央寄せにする方法 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen."
+    body: "CSS テキストを左揃えのまま中央寄せにする方法 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen."
   },
   {
     url: "https://kkawazoe.github.io/amp/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/",
@@ -482,7 +482,7 @@ var data = [
     title: "Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する",
     image: "images/logo/vuejs_logo.png",
     date: "2019-03-07",
-    body: "Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する 経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen."
+    body: "Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する 経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen."
   },
   {
     url: "https://kkawazoe.github.io/amp/blog/2019/03/06/show-ellipsis-multiple-lines-with-css/",
