@@ -1,2 +1,3 @@
 !.gitkeep
 .hugo_build.lock
+public/*
