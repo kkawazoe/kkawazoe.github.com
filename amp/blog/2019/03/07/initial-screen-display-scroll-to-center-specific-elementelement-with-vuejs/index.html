@@ -25,7 +25,7 @@
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  ">
 
 <meta property="og:title" content="Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
@@ -36,7 +36,7 @@ See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  "
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@ See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  "
 実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する
 created のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる
 例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する
-See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  ">
+See the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  ">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/vuejs_logo.png">
 
 
@@ -82,7 +82,7 @@ See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  "
         "height": 60
       }
     },
-    "description": "経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する\ncreated のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる\n例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する\nSee the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen.  "
+    "description": "経緯 web アプリでランキング画面のようにリスト内の自分の行を中心に表示のようなことを行いたい場合があり調査した結果を備忘録として残しておく\n実際のソースおよび実行結果 画面初期表示時に id = 1(Taro) のデータをスクロールエリアの中央に表示する\ncreated のタイミングで API 等からデータが取得される想定のため変数 users 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる\n例はスクロールエリアの height が固定のパターンであるが可変の場合は画面サイズを使用して計算する\nSee the Pen Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する by kkawazoe (@kkawazoe) on CodePen.  "
   }
 </script>
 
@@ -2494,11 +2494,19 @@ input::-webkit-input-placeholder {
 <p>画面初期表示時に <code>id = 1(Taro)</code> のデータをスクロールエリアの中央に表示する<br>
 <code>created</code> のタイミングで <code>API</code> 等からデータが取得される想定のため変数 <code>users</code> 監視しておいて変わったタイミングで画面中央にスクロール位置を移動させる<br>
 例はスクロールエリアの <code>height</code> が固定のパターンであるが可変の場合は画面サイズを使用して計算する</p>
-<amp-iframe height="500" style="width: 100%;" scrolling="no" title=Vue.js&#32;で画面初期表示時に特定の要素をスクロールエリア中央に表示する src=https://codepen.io/kkawazoe/embed/xBqwvx?default-tab&#61;result
-  frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href=https://codepen.io/kkawazoe/pen/xBqwvx>
-    CSS で3点リーダー付与</a> by kkawazoe (<a href="https://codepen.io/kkawazoe">@kkawazoe</a>)
-  on <a href="https://codepen.io">CodePen</a>.
+<amp-iframe
+  height="500"
+  style="width: 100%;"
+  scrolling="no"
+  title=Vue.js&#32;で画面初期表示時に特定の要素をスクロールエリア中央に表示する
+  src=https://codepen.io/kkawazoe/embed/xBqwvx?default-tab&#61;result
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true">
+    See the Pen <a href=https://codepen.io/kkawazoe/pen/xBqwvx>Vue.js で画面初期表示時に特定の要素をスクロールエリア中央に表示する</a>
+    by kkawazoe (<a href="https://codepen.io/kkawazoe">@kkawazoe</a>)
+    on <a href="https://codepen.io">CodePen</a>.
 </amp-iframe>
 
 </div>
