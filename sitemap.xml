@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</loc>
-    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
+    <lastmod>2022-12-27T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2022-12-18T00:00:00+09:00</lastmod>
+    <lastmod>2022-12-27T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/</loc>
+    <lastmod>2022-12-27T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2022-12-27T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2022-12-27T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</loc>
     <lastmod>2022-12-18T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/tool/</loc>
@@ -24,9 +30,6 @@
     <lastmod>2022-12-17T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/</loc>
-    <lastmod>2022-12-16T13:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
     <lastmod>2022-12-16T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</loc>

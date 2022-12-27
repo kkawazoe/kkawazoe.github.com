@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-cc14cd8499faeb279f8aaf4456545cd0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-0df7dd9e003d9990cdacaa0c00fef126 {
   background-image: url("https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg");
 }
@@ -1048,6 +1054,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-cc14cd8499faeb279f8aaf4456545cd0 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-cc14cd8499faeb279f8aaf4456545cd0 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-0df7dd9e003d9990cdacaa0c00fef126 {
@@ -2461,7 +2481,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          79
+          80
           <span>Posts</span>
         </a>
       </div>
@@ -2517,6 +2537,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/">
+          <div class="thumb thumb-cc14cd8499faeb279f8aaf4456545cd0"></div>
+
+          <div class="inner">
+            <h2 class="title">Ransack でソートキーを複数指定する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-27T13:00:00JST">Dec 27, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Ransack でソートキーを複数指定する方法を備忘録として残しておく
+環境  ruby: 3.0.4 rails: 6.1.0  実際のコード sort_link ヘルパーメソッドの第三引数に指定する
+※その他の機能については参考を参照
+# ソート順序 第1ソートキー: last_name, 第2ソートキー: first_name # 画面上のソートリンクをクリックする度に両方のキーの昇順、降順が入れ替わる &lt;%= sort_link(@q, :last_name, %i(last_name first_name), &#39;Last Name&#39;) %&gt; 第2ソートキーを常に昇順 or 降順固定にする場合は以下のようにする
+&lt;%= sort_link(@q, :last_name, %i(last_name first_name), &#39;Last Name&#39;) %&gt; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2749,29 +2794,6 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-          <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-          <div class="inner">
-            <h2 class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-22T17:00:00JST">Nov 22, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため調査を行なった
-その結果を備忘録として残しておく
-手順  コマンドパレットを開く Configure language specific settings を入力して選択する 拡張子を質問されるので markdown を選択する settings.json ファイルに以下のように編集する  実際の設定ファイル { &#34;[markdown]&#34;: { &#34;files.trimTrailingWhitespace&#34;: false } } </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2791,6 +2813,27 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/">
+    <div class="thumb thumb-cc14cd8499faeb279f8aaf4456545cd0"></div>
+
+    <div class="inner">
+      <div class="title">Ransack でソートキーを複数指定する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="27007-12-27T13:00:00JST">Dec 27, 2022</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/">
@@ -2981,27 +3024,6 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/">
-    <div class="thumb thumb-cc659da25630dda8c57054bfbdb783a3"></div>
-
-    <div class="inner">
-      <div class="title">Visual Studio Code で拡張子毎に設定値を変更する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="22007-11-22T17:00:00JST">Nov 22, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3012,7 +3034,7 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(26)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(27)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(15)</span></a></li>
     
