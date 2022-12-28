@@ -496,7 +496,7 @@ var data = [
     title: "CSS で複数行でも3点リーダーを表示する",
     image: "images/logo/html_logo.svg",
     date: "2019-03-06",
-    body: "CSS で複数行でも3点リーダーを表示する 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく 実際のソースおよび実行結果 See the Pen CSS で3点リーダー付与 by kkawazoe (@kkawazoe) on CodePen."
+    body: "CSS で複数行でも3点リーダーを表示する 経緯 CSS で3点リーダーを表示したい場合がよくあるが複数行の場合でも同様の対応を行いたい場合があり調査した結果を備忘録として残しておく 実際のソースおよび実行結果"
   },
   {
     url: "https://kkawazoe.github.io/amp/blog/2019/03/04/ime-comp-with-vbnet/",
