@@ -118,7 +118,7 @@ var data = [
     title: "CSS テキストを左揃えのまま中央寄せにする方法",
     image: "images/logo/html_logo.svg",
     date: "2022-09-14",
-    body: "CSS テキストを左揃えのまま中央寄せにする方法 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える See the Pen CSS でテキストを左揃えのまま中央寄せ by kkawazoe (@kkawazoe) on CodePen."
+    body: "CSS テキストを左揃えのまま中央寄せにする方法 css でテキストを左揃えのまま中央寄せにする方法を備忘録として残しておく 実際のソースおよび実行結果 中央寄せかつテキストの行頭を揃える"
   },
   {
     url: "https://kkawazoe.github.io/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/",
