@@ -3,8 +3,6 @@ title: "プライバシーポリシー"
 slug: "privacy-policy"
 thumbnail: "images/default.jpg"
 date: 2019-03-01T09:00:00+09:00
-_build:
-  list: false
 ---
 
 # プライバシーポリシー
