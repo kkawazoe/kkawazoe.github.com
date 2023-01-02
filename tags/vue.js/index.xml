@@ -25,9 +25,8 @@
       
       <guid>https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/</guid>
       <description>実際のコード HTML側 transition を指定
-.app-modal-mask v-show=&amp;quot;showModal&amp;quot; transition=&amp;quot;app-modal&amp;quot; JavaScript側 transitions 内に HTML の transition で指定した app-modal を指定 ※キャメルケースに変換すること
-以下のイベントがフックされるようになる
-Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.textContent = &amp;#39;leave&amp;#39; }, afterLeave: function (el) { el.</description>
+&amp;lt;template&amp;gt; &amp;lt;transition name=&amp;#34;app-modal&amp;#34; v-on:after-enter=&amp;#34;afterEnter&amp;#34; v-on:leave=&amp;#34;leave&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;overlay&amp;#34; v-on:click=&amp;#34;clickEvent&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;content&amp;#34; v-on:click=&amp;#34;stopEvent&amp;#34;&amp;gt; &amp;lt;p&amp;gt;&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;button @click=&amp;#34;clickEvent&amp;#34;&amp;gt;close&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/template&amp;gt; JavaScript側 以下のイベントがフックされるようになる
+Vue.transition(&amp;#39;expand&amp;#39;, { beforeEnter: function (el) { el.textContent = &amp;#39;beforeEnter&amp;#39; }, enter: function (el) { el.textContent = &amp;#39;enter&amp;#39; }, afterEnter: function (el) { el.textContent = &amp;#39;afterEnter&amp;#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &amp;#39;beforeLeave&amp;#39; }, leave: function (el) { el.</description>
     </item>
     
     <item>
