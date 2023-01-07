@@ -2218,7 +2218,7 @@ section.sidebar input[type="search"] {
   padding: 5px;
 }
 
-section.sidebar input[id="searchButton"] {
+section.sidebar input[id="search-button"] {
   margin-left: 0.5rem;
 }
 
@@ -2304,7 +2304,7 @@ figure img {
   vertical-align: middle;
 }
 
-#searchbox > input {
+#search-content > input {
   color: #666;
   font-size: 1em;
   font-weight: bolder;
@@ -2312,6 +2312,32 @@ figure img {
   border-color: #ccc;
   border-width: 1px;
   padding: 5px;
+  margin-right: 5px;
+}
+
+#search-area {
+  display: flex;
+  align-items: center;
+}
+
+#search-button {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  #search-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #search-content > input {
+    margin-right: 0;
+  }
+
+  #result-count {
+    margin: 15px auto 0;
+  }
 }
 
 input::-webkit-input-placeholder {
@@ -2405,9 +2431,17 @@ input::-webkit-input-placeholder {
   <div>
     <script src="/index.js"></script>
 
-    <div id="searchbox">
-      <input id="query" onkeyup="location.replace('#' + this.value)" size="15" autocomplete="off" autofocus placeholder="検索ワード" />
-      <span id="inputWord"></span> <span id="resultCount"></span>
+    <div id="search-box">
+      <div id="search-content">
+        <input id="query"
+          onkeyup="location.replace('#' + this.value)"
+          size="15"
+          autocomplete="off"
+          autofocus
+          placeholder="検索ワード"
+        />
+        <span id="result-count"></span>
+      </div>
       <div id="result"></div>
     </div>
 
@@ -2498,7 +2532,7 @@ input::-webkit-input-placeholder {
       }
 
       function showResultCount(count, total) {
-        var el = document.getElementById('resultCount');
+        var el = document.getElementById('result-count');
         el.innerHTML = '<b>' + count + '</b> 件見つかりました（' + total + '件中）';
       }
 
