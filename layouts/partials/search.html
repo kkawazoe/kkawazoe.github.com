@@ -2,16 +2,18 @@
 <section class="sidebar">
   <form>
     <p>ページ内検索</p>
-    <input id="searchKeyword" type="search" size="15" autocomplete="off" placeholder="検索ワード">
-    <input id="searchButton" type="submit" value="検索">
+    <div id="search-area">
+      <input id="search-keyword" type="search" size="15" autocomplete="off" placeholder="検索ワード">
+      <input id="search-button" type="submit" value="検索">
+    </div>
   </form>
 
   <script>
     const SEARCH_URL = '/search/';
     
     window.addEventListener('DOMContentLoaded', () => {
-      const searchButton = document.getElementById('searchButton');
-      const searchKeyword = document.getElementById('searchKeyword');
+      const searchButton = document.getElementById('search-button');
+      const searchKeyword = document.getElementById('search-keyword');
     
       // 検索ボタンのクリックで検索ページへジャンプ
       searchButton.addEventListener('click', e => {

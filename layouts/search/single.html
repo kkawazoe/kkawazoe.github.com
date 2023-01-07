@@ -4,9 +4,17 @@
   <div>
     <script src="/index.js"></script>
 
-    <div id="searchbox">
-      <input id="query" onkeyup="location.replace('#' + this.value)" size="15" autocomplete="off" autofocus placeholder="検索ワード" />
-      <span id="inputWord"></span> <span id="resultCount"></span>
+    <div id="search-box">
+      <div id="search-content">
+        <input id="query"
+          onkeyup="location.replace('#' + this.value)"
+          size="15"
+          autocomplete="off"
+          autofocus
+          placeholder="検索ワード"
+        />
+        <span id="result-count"></span>
+      </div>
       <div id="result"></div>
     </div>
 
@@ -97,7 +105,7 @@
       }
 
       function showResultCount(count, total) {
-        var el = document.getElementById('resultCount');
+        var el = document.getElementById('result-count');
         el.innerHTML = '<b>' + count + '</b> 件見つかりました（' + total + '件中）';
       }
 

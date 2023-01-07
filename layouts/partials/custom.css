@@ -96,7 +96,7 @@ section.sidebar input[type="search"] {
   padding: 5px;
 }
 
-section.sidebar input[id="searchButton"] {
+section.sidebar input[id="search-button"] {
   margin-left: 0.5rem;
 }
 
@@ -182,7 +182,7 @@ figure img {
   vertical-align: middle;
 }
 
-#searchbox > input {
+#search-content > input {
   color: #666;
   font-size: 1em;
   font-weight: bolder;
@@ -190,6 +190,32 @@ figure img {
   border-color: #ccc;
   border-width: 1px;
   padding: 5px;
+  margin-right: 5px;
+}
+
+#search-area {
+  display: flex;
+  align-items: center;
+}
+
+#search-button {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  #search-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #search-content > input {
+    margin-right: 0;
+  }
+
+  #result-count {
+    margin: 15px auto 0;
+  }
 }
 
 input::-webkit-input-placeholder {
