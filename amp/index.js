@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/",
+    title: "Gem でよく見る initializer で動作を変更する方法",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-01-11",
+    body: "Gem でよく見る initializer で動作を変更する方法 Gem でよく見る initializer で動作を変更する方法を備忘録として残しておく 環境 ruby: 3.0.4 前提 以下のような構成になっている想定 lib ├── sample_gem │ └── configuration.rb └── sample_gem.rb 実際のコード 以下のようなクラスを定義する module SampleGem # gem のクラス名 class Configuration attr_accessor :sample_confime_name # config で使用する config 名 def initialize @sample_confime_name = false end end def self.configuration @configuration ||= Configuration.new end def self.configuration=(config) @configuration = config end # ``` # SampleGem.configure do |config| # config.sample_confime_name = false # end # ``` def self.configure yield configuration end end 以下のように、require する require \u0026#39;sample_gem/configuration\u0026#39; とすると initializer 側で以下のように設定を変更できる SampleGem.configure do |config| config.sample_confime_name = true end"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/",
     title: "Ransack でソートキーを複数指定する方法",
     image: "images/logo/rails_logo.svg",

@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 27 Dec 2022 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jan 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gem でよく見る initializer で動作を変更する方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/</link>
+      <pubDate>Wed, 11 Jan 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/</guid>
+      <description>Gem でよく見る initializer で動作を変更する方法を備忘録として残しておく
+環境  ruby: 3.0.4  前提 以下のような構成になっている想定
+lib ├── sample_gem │ └── configuration.rb └── sample_gem.rb 実際のコード 以下のようなクラスを定義する
+module SampleGem # gem のクラス名 class Configuration attr_accessor :sample_confime_name # config で使用する config 名 def initialize @sample_confime_name = false end end def self.configuration @configuration ||= Configuration.new end def self.configuration=(config) @configuration = config end # ``` # SampleGem.configure do |config| # config.sample_confime_name = false # end # ``` def self.configure yield configuration end end 以下のように、require する</description>
+    </item>
+    
     <item>
       <title>Ransack でソートキーを複数指定する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/</link>
