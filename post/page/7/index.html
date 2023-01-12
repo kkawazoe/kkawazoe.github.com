@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-1986abf40a69184928a0e3c57a4654b4 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-b3d06f2617d7c137e190ada153abe91a {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1056,6 +1062,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-1986abf40a69184928a0e3c57a4654b4 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-1986abf40a69184928a0e3c57a4654b4 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-b3d06f2617d7c137e190ada153abe91a {
@@ -2519,7 +2539,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          81
+          82
           <span>Posts</span>
         </a>
       </div>
@@ -2554,6 +2574,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/12/show-hide-modal-call-process-with-vuejs/">
+          <div class="thumb thumb-d69d3c99235fb827ed4ea87bdf6e7076"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js でモーダルが表示/非表示された際に呼ばれる処理の実装</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-12T00:00:00JST">Apr 12, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">実際のコード HTML側 transition を指定
+&lt;template&gt; &lt;transition name=&#34;app-modal&#34; v-on:after-enter=&#34;afterEnter&#34; v-on:leave=&#34;leave&#34;&gt; &lt;div id=&#34;overlay&#34; v-on:click=&#34;clickEvent&#34;&gt; &lt;div id=&#34;content&#34; v-on:click=&#34;stopEvent&#34;&gt; &lt;p&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/p&gt; &lt;button @click=&#34;clickEvent&#34;&gt;close&lt;/button&gt; &lt;/div&gt; &lt;/div&gt; &lt;/transition&gt; &lt;/template&gt; JavaScript側 以下のイベントがフックされるようになる
+Vue.transition(&#39;expand&#39;, { beforeEnter: function (el) { el.textContent = &#39;beforeEnter&#39; }, enter: function (el) { el.textContent = &#39;enter&#39; }, afterEnter: function (el) { el.textContent = &#39;afterEnter&#39; }, enterCancelled: function (el) { // 取り消しハンドル  }, beforeLeave: function (el) { el.textContent = &#39;beforeLeave&#39; }, leave: function (el) { el.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2793,29 +2836,6 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/08/attention-use-each-for-jquery-with-cofee-script/">
-          <div class="thumb thumb-27703da049b375c9d1edda7674dab688"></div>
-
-          <div class="inner">
-            <h2 class="title">CofeeScript で JQuery の each を使用する場合の注意点</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-08T17:21:18JST">Mar 8, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">JQueryの取得した要素分繰り返すeachを使用した場合にeachの内部でCoffeeScriptの@を使用するとJQueryのthisとして扱われてしまいReferenceErrorが発生する
-その場合は以下のように修正する
-実際のソース  修正前  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each -&gt; id = $(this).attr(&#34;id&#34;) @processRow id  修正後  processRows: -&gt; $(&#34;#my-table&gt;tr&#34;).each (index, element) =&gt; id = $(element).attr(&#34;id&#34;) @processRow id </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2837,6 +2857,27 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
+    <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
+
+    <div class="inner">
+      <div class="title">rails で画面表示時に小数部分の0を省略して表示する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-01-12T13:00:00JST">Jan 12, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/">
@@ -3027,27 +3068,6 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/">
-    <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
-
-    <div class="inner">
-      <div class="title">Ruby Gold 認定試験 Ver 3 への道 その2</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="24007-11-24T12:00:00JST">Nov 24, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3058,7 +3078,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(28)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(29)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(15)</span></a></li>
     

@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/",
+    title: "rails で画面表示時に小数部分の0を省略して表示する方法",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-01-12",
+    body: "rails で画面表示時に小数部分の0を省略して表示する方法 rails で画面表示時に小数部分の0を省略して表示する方法を備忘録として残しておく 環境 ruby: 3.0.4 rails: 6.1.0 実際のコード number_to_human メソッドを使用する ※参考 ※strip_insignidicant_zeros オプションのデフォルトが true のため その他のヘルパーについてはNumberHelperを参照 # erb ファイルに記載する場合は ActiveSupport::NumberHelper. は省略可 ActiveSupport::NumberHelper.number_to_human(1.0) #=\u0026gt; \u0026#34;1\u0026#34; ActiveSupport::NumberHelper.number_to_human(1.5) #=\u0026gt; \u0026#34;1.5\u0026#34; ActiveSupport::NumberHelper.number_to_human(1.530) #=\u0026gt; \u0026#34;1.53\u0026#34; ActiveSupport::NumberHelper.number_to_human(1.5301) #=\u0026gt; \u0026#34;1.53\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;1.0\u0026#39;) #=\u0026gt; \u0026#34;1\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;1.5\u0026#39;) #=\u0026gt; \u0026#34;1.5\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;1.530\u0026#39;) #=\u0026gt; \u0026#34;1.53\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;1.5301\u0026#39;) #=\u0026gt; \u0026#34;1.53\u0026#34; ActiveSupport::NumberHelper.number_to_human(Date.parse(\u0026#39;2023-01-12\u0026#39;)) #=\u0026gt; Thu, 12 Jan 2023 ActiveSupport::NumberHelper.number_to_human(\u0026#39;2023-01-12\u0026#39;) #=\u0026gt; \u0026#34;2023-01-12\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;2023.01.12\u0026#39;) #=\u0026gt; \u0026#34;2023-01-12\u0026#34; ActiveSupport::NumberHelper.number_to_human(\u0026#39;2023.01.12\u0026#39;) #=\u0026gt; \u0026#34;2023.01.12\u0026#34;"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/",
     title: "Gem でよく見る initializer で動作を変更する方法",
     image: "images/logo/rails_logo.svg",
