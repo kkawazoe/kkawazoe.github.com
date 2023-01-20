@@ -2695,7 +2695,7 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
 ※source ブランチを Hugo で変換して master ブランチに静的サイト用の資産を配置する Hugo テーマは submodule として取り込み  実際のコード GitHub Actions を使用する
 リポジトリ直下に .github/workflows フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される
 ※ source ブランチの push をトリガーに自動デプロイを行う
- source ブランチをチェックアウト Hugo(Docker) を使用して、静的サイト用の資産を作成 master ブランチに push して GitHub Pages にデプロイする  name: Deploy on: push: branches: - source  # 発火させたい branch jobs: deploy: runs-on: ubuntu-22.04 steps: - uses: actions/checkout@v3 with: submodules: true # Fetch Hugo themes (true OR recursive) fetch-depth: 0 # Fetch all history for .</div>
+ source ブランチをチェックアウト Hugo(Docker) を使用して、静的サイト用の資産を作成 master ブランチに push して GitHub Pages にデプロイする  name: Deploy on: push: branches: - source  # Target Branch Name jobs: deploy: runs-on: ubuntu-22.04 steps: - uses: actions/checkout@v3 with: submodules: true # Fetch Hugo themes (true OR recursive) fetch-depth: 0 # Fetch all history for .</div>
           </div>
         </a>
       </article>
