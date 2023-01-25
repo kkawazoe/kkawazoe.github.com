@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-0fd1a171cc55c8621e035d64e2f2c3d5 {
+  background-image: url("https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg");
+}
+  
+
+  
 .thumb-1986abf40a69184928a0e3c57a4654b4 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1062,6 +1068,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-0fd1a171cc55c8621e035d64e2f2c3d5 {
+      background-image: url(https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-0fd1a171cc55c8621e035d64e2f2c3d5 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-1986abf40a69184928a0e3c57a4654b4 {
@@ -2539,7 +2559,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          82
+          83
           <span>Posts</span>
         </a>
       </div>
@@ -2574,6 +2594,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/">
+          <div class="thumb thumb-c9bec176eee759d0fa450ec255872ac2"></div>
+
+          <div class="inner">
+            <h2 class="title">Ruby Gold 認定試験 Ver 3 への道 その3</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-25T12:00:00JST">Nov 25, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2  環境  ruby: 3.1.2  public_send メソッド Object#public_send メソッドは private メソッドを呼び出せない
+private_send メソッドは存在しない ※private メソッドを 呼び出す場合は Object#send or BasicObject#__send__ メソッドを使用する
+class PublicTest def public_method puts &#39;call public methods&#39; end private def private_method puts &#39;call private methods&#39; end end test = PublicTest.new test.public_method test.private_method #=&gt; call public methods #=&gt; public_send.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2795,34 +2840,6 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/09/03/how-to-excute-stream-too-big-file-size-csv-with-rails/">
-          <div class="thumb thumb-f9afb0aec66f3f529b12980068b45c1e"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で 巨大な csv ファイルをストリーム処理する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-09-03T21:00:00JST">Sep 3, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">1 GB を超えるような csv ファイルを一度に読み込むとメモリエラーが発生する場合がある
-さらに処理時間もすごくかかるため、ストリーム処理に変更などして処理の高速化した際の方法を備忘録として残しておく
-方法 File#open メソッドと CSV#new メソッドを組み合わせて実現する
-環境  ruby: 3.0.4 rails: 6.1.6.1  実際のコード csv ファイルの特定の文字列を置換する処理
-前提 header 付の csv ファイル
-リファクタリング前
-class Converter def self.convert # 読み取り専用でファイルを開く read_only_file = File.open(&#34;{ファイルパス}&#34; , &#34;r&#34;) # 保存用バッファ buffer = read_only_file.read() # バッファの中身を変換 buffer.gsub!({置換対象文字列}, {置換文字列}) # ファイルを書き込みモードで開き直す file = File.open(&#34;{ファイルパス}&#34; , &#34;w&#34;) # 変更内容を出力する file.write(buffer) # close read_only_file.close() file.close() end end リファクタリング後
-require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2844,6 +2861,27 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/">
+    <div class="thumb thumb-0fd1a171cc55c8621e035d64e2f2c3d5"></div>
+
+    <div class="inner">
+      <div class="title">Mac(M1) で Path を通す方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="25007-01-25T13:00:00JST">Jan 25, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
@@ -3034,27 +3072,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/">
-    <div class="thumb thumb-c9bec176eee759d0fa450ec255872ac2"></div>
-
-    <div class="inner">
-      <div class="title">Ruby Gold 認定試験 Ver 3 への道 その3</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="25007-11-25T12:00:00JST">Nov 25, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3067,7 +3084,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(29)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(15)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(16)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     

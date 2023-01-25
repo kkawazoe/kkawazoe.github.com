@@ -6,7 +6,18 @@
     <description>Recent content in Tool on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac(M1) で Path を通す方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/</link>
+      <pubDate>Wed, 25 Jan 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/</guid>
+      <description>Mac(M1) でパスを通す際に Intel の場合と同じ手順では上手くいかなかったので備忘録として残しておく
+手順 例. mysql の path を通す場合 ※Homebrew でインストールしたもの
+ インストール先の path を確認  $ brew --prefix mysql@5.7 #=&amp;gt; /opt/homebrew/opt/mysql@5.7 ~/.zshrc に追記する  $ echo &amp;#39;export PATH=&amp;#34;$PATH:/opt/homebrew/opt/mysql@5.7/bin&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zshrc $ source ~/.zshrc 動作確認  $ mysql--version #=&amp;gt; mysql Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using EditLine wrapper </description>
+    </item>
+    
     <item>
       <title>Mac OS で mov を gif に変換する方法</title>
       <link>https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/</link>

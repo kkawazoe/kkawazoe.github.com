@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/",
+    title: "Mac(M1) で Path を通す方法",
+    image: "images/logo/icons8-mac-os-logo.svg",
+    date: "2023-01-25",
+    body: "Mac(M1) で Path を通す方法 Mac(M1) でパスを通す際に Intel の場合と同じ手順では上手くいかなかったので備忘録として残しておく 手順 例. mysql の path を通す場合 ※Homebrew でインストールしたもの インストール先の path を確認 $ brew --prefix mysql@5.7 #=\u0026gt; /opt/homebrew/opt/mysql@5.7 ~/.zshrc に追記する $ echo \u0026#39;export PATH=\u0026#34;$PATH:/opt/homebrew/opt/mysql@5.7/bin\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.zshrc $ source ~/.zshrc 動作確認 $ mysql--version #=\u0026gt; mysql Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using EditLine wrapper"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/",
     title: "rails で画面表示時に小数部分の0を省略して表示する方法",
     image: "images/logo/rails_logo.svg",
