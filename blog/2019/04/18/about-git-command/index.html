@@ -2787,8 +2787,14 @@ $ git push -f <span style="color:#f92672">{</span>リモート名<span style="co
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git reset --hard HEAD^
 </code></pre></div><h4 id="stash-の一覧を表示">stash の一覧を表示</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash list
+</code></pre></div><h4 id="stash-内のファイル一覧を表示">stash 内のファイル一覧を表示</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash show stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
 </code></pre></div><h4 id="stash-の差分を表示">stash の差分を表示</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD..stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+<span style="color:#75715e"># or</span>
+git stash show -p stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="stash-の差分を表示ファイル指定">stash の差分を表示(ファイル指定)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff HEAD stash@<span style="color:#f92672">{</span>N<span style="color:#f92672">}</span> -- app/hoge.rb
 </code></pre></div><h4 id="stash-の最新を適用">stash の最新を適用</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash pop
 </code></pre></div><h4 id="stash-n-番目を適用">stash N 番目を適用</h4>
