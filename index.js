@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/",
+    title: "GitHub の PR で折りたたみコンテンツを使用する方法",
+    image: "images/logo/github_logo.png",
+    date: "2023-01-27",
+    body: "GitHub の PR で折りたたみコンテンツを使用する方法 GitHub の PR を作成する際に縦に長くなりすぎるため、折りたたみコンテンツを使用している その方法を備忘録として残しておく 実際のコード html タグの details, summary タグを使用する ※画像を入れる場合は、1行空行を入れないと展開されないため要注意 \u0026lt;details\u0026gt; \u0026lt;summary\u0026gt;その１\u0026lt;/summary\u0026gt; ![画像1](/images/logo/github_logo.png) \u0026lt;/details\u0026gt;"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/",
     title: "Mac(M1) で Path を通す方法",
     image: "images/logo/icons8-mac-os-logo.svg",
