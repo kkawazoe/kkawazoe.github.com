@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-7f07e8580924b8f0fe451687b6486a46 {
   background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
 }
@@ -1074,6 +1080,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-7f07e8580924b8f0fe451687b6486a46 {
@@ -2579,7 +2599,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          84
+          85
           <span>Posts</span>
         </a>
       </div>
@@ -2614,6 +2634,37 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
+          <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
+
+          <div class="inner">
+            <h2 class="title">libreoffice を使用して Excel を PDF に変換する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-12-11T14:24:49JST">Dec 11, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">アップロードされた Excel を PDF に変換して保存する必要があり
+調査を行った LibreOffice で変換する方法を備忘録として残しておく
+※図形など綺麗に変換されないパターンもあるため注意が必要
+前提 LibreOffice を事前にインストールしておく
+/Applications/LibreOffice.app/Contents/MacOS/soffice にインストールしている場合
+方法 以下のコマンドで変換を行う ※Calc を使用して PDF に変換
+参考
+指定できるフィルタ
+/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&#34;calc_pdf_Export&#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
+ /usr/local/bin/soffice を作成して中に以下を記載する  #!/bin/bash  # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34; 以下のコマンドで実行権限を付与する  sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
+sudo curl sudo curl https://gist.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2835,31 +2886,6 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/05/23/insert-formula-into-hugo-part2/">
-          <div class="thumb thumb-cf1ebbe74cd06a5a15d2f97d266119eb"></div>
-
-          <div class="inner">
-            <h2 class="title">Hugo に数式を挿入する その2</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-23T15:11:31JST">May 23, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">[前回までの記事]
- Hugo に数式を挿入する  経緯 mathjax のバージョンを 3 系 にアップデートした際に単純にいかなかったので備忘録として残しておく
-手順 参考 を見ながらアップデートする ※version2 から version 3 への変換を利用
- partials フォルダ配下の以下のファイルを修正する  CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34;&gt; MathJax = { tex: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], processEscapes: true, tags: &#34;ams&#34;, autoload: { color: [], colorV2: [&#39;color&#39;] }, packages: {&#39;[+]&#39;: [&#39;noerrors&#39;]} }, chtml: { matchFontHeight: false, displayAlign: &#34;left&#34;, // version 2 で css で変更していた 数式の表示位置の設定  displayIndent: &#34;2em&#34; }, options: { skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], renderActions: { /* これを記述しないと インライン数式(例.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2881,6 +2907,27 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
+    <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
+
+    <div class="inner">
+      <div class="title">rails で複合項目で一意性チェックを行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-02-03T00:00:00JST">Feb 3, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/">
@@ -3071,27 +3118,6 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/">
-    <div class="thumb thumb-096cc9bdf5e6513097f8799c3e5d46e1"></div>
-
-    <div class="inner">
-      <div class="title">Rails における Enum について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-12-02T13:00:00JST">Dec 2, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3102,7 +3128,7 @@ An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but ano
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(29)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(30)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

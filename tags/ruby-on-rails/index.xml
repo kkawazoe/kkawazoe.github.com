@@ -6,7 +6,22 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 12 Jan 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails で複合項目で一意性チェックを行う方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</guid>
+      <description>rails で複合項目で一意性チェックを行う方法を備忘録として残しておく
+環境  ruby: 3.0.5 rails: 6.1.7  実際のコード [ER 図]
+ [model]
+uniqueness + scope で validate を行う
+class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category # book_id + category_id で一意かどうかをチェック validates :book_id, uniqueness: { scope: :category_id } end class Category has_many :book_categories has_many :books, through: :book_categories end [migrate]
+unique index を追加する
+class CreateBookCategoriess &amp;lt; ActiveRecord::Migration[6.1] def change create_table :book_categories do |t| t.</description>
+    </item>
+    
     <item>
       <title>rails で画面表示時に小数部分の0を省略して表示する方法</title>
       <link>https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/</link>

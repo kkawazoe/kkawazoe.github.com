@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-7f07e8580924b8f0fe451687b6486a46 {
   background-image: url("https://kkawazoe.github.io/images/logo/github_logo.png");
 }
@@ -1074,6 +1080,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-7f07e8580924b8f0fe451687b6486a46 {
@@ -2579,7 +2599,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          84
+          85
           <span>Posts</span>
         </a>
       </div>
@@ -2614,6 +2634,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/05/17/apply-layout-to-static-error-page-with-rails/">
+          <div class="thumb thumb-c643f44b7b7ea0683b36a2c49d8f0bed"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails で静的エラーページにレイアウトを適用する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-05-17T11:56:06JST">May 17, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  rails: rails 5.2.3  方法 Gem Errgent を使用して実現する
+確認 config/environments/development.rb の以下を編集して確認する
+config.consider_all_requests_local = false 実際のコード 例. エラーコード 404, 500 ロケール毎に静的エラーページを生成する
+=&gt; 生成されるファイル 例. public/404.ja.html
+desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I18n.available_locales.each do |locale| I18n.locale = locale renderer = Errgent::Renderer.new( codes: [404, 500] layout: &#39;layouts/error_page&#39;, # where to find your layout by default output: &#34;public/%s.#{locale}.html&#34; # where to put generated pages by default, %s is the replacement for @code ) renderer.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2849,6 +2894,27 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
   <div class="articles sm">
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
+    <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
+
+    <div class="inner">
+      <div class="title">rails で複合項目で一意性チェックを行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-02-03T00:00:00JST">Feb 3, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/">
     <div class="thumb thumb-7f07e8580924b8f0fe451687b6486a46"></div>
 
@@ -3037,27 +3103,6 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/">
-    <div class="thumb thumb-096cc9bdf5e6513097f8799c3e5d46e1"></div>
-
-    <div class="inner">
-      <div class="title">Rails における Enum について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-12-02T13:00:00JST">Dec 2, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3068,7 +3113,7 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(29)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(30)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

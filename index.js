@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/",
+    title: "rails で複合項目で一意性チェックを行う方法",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-02-03",
+    body: "rails で複合項目で一意性チェックを行う方法 rails で複合項目で一意性チェックを行う方法を備忘録として残しておく 環境 ruby: 3.0.5 rails: 6.1.7 実際のコード [ER 図] [model] uniqueness + scope で validate を行う class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category # book_id + category_id で一意かどうかをチェック validates :book_id, uniqueness: { scope: :category_id } end class Category has_many :book_categories has_many :books, through: :book_categories end [migrate] unique index を追加する class CreateBookCategoriess \u0026lt; ActiveRecord::Migration[6.1] def change create_table :book_categories do |t| t.references :book, foreign_key: true t.references :category, foreign_key: true t.timestamps end add_index :book_categories, [:book_id, :category_id], unique: true change_table_comment :book_categories, \u0026#39;本のカテゴリー\u0026#39; end end [rspec] FactoryBot + shoulda-matchers 導入している場合 require \u0026#39;rails_helper\u0026#39; describe BookCategory, type: :model do describe \u0026#39;validations\u0026#39; do subject { FactoryBot.build(:book_category) } context \u0026#39;book_id\u0026#39; do it { is_expected.to validate_uniqueness_of(:book_id).scoped_to(:category_id) } end end end"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/",
     title: "GitHub の PR で折りたたみコンテンツを使用する方法",
     image: "images/logo/github_logo.png",
