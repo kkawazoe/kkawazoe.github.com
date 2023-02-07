@@ -2625,6 +2625,9 @@ input::-webkit-input-placeholder {
 ├── sample_gem
 │   └── configuration.rb
 └── sample_gem.rb
+spec
+├── configration_spec.rb
+└── spec_helper.rb
 </code></pre></div><h3 id="実際のコード">実際のコード</h3>
 <p>以下のようなクラスを定義する</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:lib/sample_gem/configuration.rb" data-lang="rb:lib/sample_gem/configuration.rb"><span style="color:#66d9ef">module</span> SampleGem <span style="color:#75715e"># gem のクラス名</span>
@@ -2658,6 +2661,35 @@ input::-webkit-input-placeholder {
 </code></pre></div><p>とすると initializer 側で以下のように設定を変更できる</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:config/initializers/sample_gem.rb" data-lang="rb:config/initializers/sample_gem.rb"><span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
   config<span style="color:#f92672">.</span>sample_confime_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h3 id="rspec">RSpec</h3>
+<p>spec_helper で以下を設定しておかないと、設定が引き継がれた状態でテストが実行される</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:spec/configration_spec.rb" data-lang="rb:spec/configration_spec.rb"><span style="color:#66d9ef">RSpec</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
+  config<span style="color:#f92672">.</span>before { restore_default_config }
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">restore_default_config</span>
+  <span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configuration <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>設定のテストは以下のようにする</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb:spec/configration_spec.rb" data-lang="rb:spec/configration_spec.rb">require <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>expand_path(<span style="color:#e6db74">&#39;../lib/sample_gem/configuration&#39;</span>, <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>dirname(__FILE__))
+require <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>expand_path(<span style="color:#e6db74">&#39;spec_helper&#39;</span>, <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>dirname(__FILE__))
+
+describe <span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Configuration</span> <span style="color:#66d9ef">do</span>
+  let(<span style="color:#e6db74">:config</span>) { <span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configuration }
+
+  context <span style="color:#e6db74">&#34;when sample_confime_name is set to true&#34;</span> <span style="color:#66d9ef">do</span>
+    it <span style="color:#e6db74">&#34;returns true&#34;</span> <span style="color:#66d9ef">do</span>
+      <span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configure { <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span> config<span style="color:#f92672">.</span>sample_confime_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> }
+      expect(<span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configuration<span style="color:#f92672">.</span>sample_confime_name)<span style="color:#f92672">.</span>to eq <span style="color:#66d9ef">true</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+
+  context <span style="color:#e6db74">&#34;when sample_confime_name is not specified&#34;</span> <span style="color:#66d9ef">do</span>
+    it <span style="color:#e6db74">&#34;defaults to false&#34;</span> <span style="color:#66d9ef">do</span>
+      expect(<span style="color:#66d9ef">SampleGem</span><span style="color:#f92672">.</span>configuration<span style="color:#f92672">.</span>sample_confime_name)<span style="color:#f92672">.</span>to eq <span style="color:#66d9ef">false</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
 <span style="color:#66d9ef">end</span>
 </code></pre></div></div>
 
