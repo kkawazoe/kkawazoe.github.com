@@ -6,7 +6,19 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Feb 2023 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails で遷移元の URL を取得してリダイレクトする方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/</link>
+      <pubDate>Wed, 08 Feb 2023 09:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/</guid>
+      <description>rails で遷移元の URL を取得してリダイレクトする方法を備忘録として残しておく
+環境  ruby: 2.7.6 rails: 5.2.8.1  仕様  お気に入り登録のようにDB更新を行いたいが、画面遷移はさせたくない
+(遷移元が複数ある かつ ユーザビリティ的に良くない)ため 画面遷移させないようにしたい  実際のソース controller の該当アクションを以下のようにする
+class FavoritesController &amp;lt; ApplicationController def create redirect_back fallback_location: root_path end end # 以下も上手くいくが referer が取得できなかった場合を考えると上が良さそう class FavoritesController &amp;lt; ApplicationController def create redirect_to request.referer end end </description>
+    </item>
+    
     <item>
       <title>rails で複合項目で一意性チェックを行う方法</title>
       <link>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</link>

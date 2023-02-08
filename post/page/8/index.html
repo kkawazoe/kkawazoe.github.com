@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-f079deeecb2143fc29ee73e4070ef36b {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1080,6 +1086,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-f079deeecb2143fc29ee73e4070ef36b {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-f079deeecb2143fc29ee73e4070ef36b {
+      width: 5rem;
+    }
+  
 
   
     .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
@@ -2599,7 +2619,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          85
+          86
           <span>Posts</span>
         </a>
       </div>
@@ -2634,6 +2654,33 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/">
+          <div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
+
+          <div class="inner">
+            <h2 class="title">バッチファイルでタイムスタンプを付与する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-23T00:07:49JST">Mar 23, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
+yyyy/mm/dd 表示 @echo off echo %DATE% =&gt; 2019/03/23
+yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =&gt; 2019/03/23-00:07:49.91
+yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す(mは0始まり)
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =&gt; 20190323000749</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2875,27 +2922,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
-          <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
-
-          <div class="inner">
-            <h2 class="title">Vue.js で画像の読み込みの開始および完了を検知する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のソース &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1  }, methods: { // ※4  load: function() { console.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2917,6 +2943,27 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
+    <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
+
+    <div class="inner">
+      <div class="title">rails で遷移元の URL を取得してリダイレクトする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T09:00:00JST">Feb 8, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
@@ -3107,27 +3154,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/">
-    <div class="thumb thumb-e9e48977efad1f22aefc97a4dbdab477"></div>
-
-    <div class="inner">
-      <div class="title">Ruby Gold 認定試験 Ver 3 への道 その5</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="5007-12-05T13:00:00JST">Dec 5, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3138,7 +3164,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(30)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(31)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

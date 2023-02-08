@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/",
+    title: "rails で遷移元の URL を取得してリダイレクトする方法",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-02-08",
+    body: "rails で遷移元の URL を取得してリダイレクトする方法 rails で遷移元の URL を取得してリダイレクトする方法を備忘録として残しておく 環境 ruby: 2.7.6 rails: 5.2.8.1 仕様 お気に入り登録のようにDB更新を行いたいが、画面遷移はさせたくない (遷移元が複数ある かつ ユーザビリティ的に良くない)ため 画面遷移させないようにしたい 実際のソース controller の該当アクションを以下のようにする class FavoritesController \u0026lt; ApplicationController def create redirect_back fallback_location: root_path end end # 以下も上手くいくが referer が取得できなかった場合を考えると上が良さそう class FavoritesController \u0026lt; ApplicationController def create redirect_to request.referer end end"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/",
     title: "rails で複合項目で一意性チェックを行う方法",
     image: "images/logo/rails_logo.svg",

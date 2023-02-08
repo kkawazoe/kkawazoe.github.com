@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-f079deeecb2143fc29ee73e4070ef36b {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1080,6 +1086,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-f079deeecb2143fc29ee73e4070ef36b {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-f079deeecb2143fc29ee73e4070ef36b {
+      width: 5rem;
+    }
+  
 
   
     .thumb-2c4989a71616aacbb826a0f3c9f0dc21 {
@@ -2599,7 +2619,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          85
+          86
           <span>Posts</span>
         </a>
       </div>
@@ -2657,6 +2677,36 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/">
+          <div class="thumb thumb-e9e48977efad1f22aefc97a4dbdab477"></div>
+
+          <div class="inner">
+            <h2 class="title">Ruby Gold 認定試験 Ver 3 への道 その5</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-05T13:00:00JST">Dec 5, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3 Ruby Gold 認定試験 Ver 3 への道 その4  受験結果 無事に合格した
+前回、 ver 2 受験時と難易度的には同じくらいだったように思う
+なので、基本的にはオブジェクト指向周りを再確認する
+3 系から追加された 「hash 明示(**hash)」などはリリースノートで確認して置いた方が良いが 2.2 〜 2.7 系での変更点についても押さえておくとより良いと思う
+Github NEWS.md
+リリースノート
+勉強に使用したもの  公式の模擬問題
+基本的には、上記をやって該当のコードを自分でコーディングしながら、色々変更して動作確認するのが一番良さそう  </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2882,31 +2932,6 @@ def create @book = Book.save!(book_params) end private def book_params params.re
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/">
-          <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
-
-          <div class="inner">
-            <h2 class="title">ransack で scope を使用して link_to で表示する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T00:00:00JST">Nov 1, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">方法 ransackable_scopes メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成されたユーザを取得する
-[model]
-# 引数なし scope :within_one_month, -&gt; { where(&#39;created_at &gt;=&#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&gt; (day) { where(&#39;created_at &gt;=&#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
-&lt;%= link_to( &#34;1ヶ月以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_one_month: true }), class: &#34;btn btn-primary mr-5&#34; ) link_to( &#34;7日以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_days: 7 }), class: &#34;btn btn-primary mr-5&#34; ) %&gt; [controller]</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2928,6 +2953,27 @@ def create @book = Book.save!(book_params) end private def book_params params.re
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
+    <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
+
+    <div class="inner">
+      <div class="title">rails で遷移元の URL を取得してリダイレクトする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T09:00:00JST">Feb 8, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
@@ -3118,27 +3164,6 @@ def create @book = Book.save!(book_params) end private def book_params params.re
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/">
-    <div class="thumb thumb-e9e48977efad1f22aefc97a4dbdab477"></div>
-
-    <div class="inner">
-      <div class="title">Ruby Gold 認定試験 Ver 3 への道 その5</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="5007-12-05T13:00:00JST">Dec 5, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3149,7 +3174,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(30)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(31)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     
