@@ -2647,7 +2647,7 @@ input::-webkit-input-placeholder {
 <span style="color:#75715e"># 画面上のソートリンクをクリックする度に両方のキーの昇順、降順が入れ替わる</span>
 <span style="color:#f92672">&lt;%=</span> sort_link(@q, <span style="color:#e6db74">:last_name</span>, <span style="color:#f92672">%</span>i(last_name first_name), <span style="color:#e6db74">&#39;Last Name&#39;</span>) <span style="color:#f92672">%&gt;</span>
 </code></pre></div><p>第2ソートキーを常に昇順 or 降順固定にする場合は以下のようにする</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#f92672">&lt;%=</span> sort_link(@q, <span style="color:#e6db74">:last_name</span>, <span style="color:#f92672">%</span>i(last_name first_name), <span style="color:#e6db74">&#39;Last Name&#39;</span>) <span style="color:#f92672">%&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rb" data-lang="rb"><span style="color:#f92672">&lt;%=</span> sort_link(@q, <span style="color:#e6db74">:last_name</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">:last_name</span>, <span style="color:#e6db74">&#39;first_name asc&#39;</span><span style="color:#f92672">]</span>, <span style="color:#e6db74">&#39;Last Name&#39;</span>) <span style="color:#f92672">%&gt;</span>
 </code></pre></div></div>
 
   <footer class="article-footer">

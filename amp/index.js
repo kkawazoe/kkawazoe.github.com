@@ -48,7 +48,7 @@ var data = [
     title: "Ransack でソートキーを複数指定する方法",
     image: "images/logo/rails_logo.svg",
     date: "2022-12-27",
-    body: "Ransack でソートキーを複数指定する方法 Ransack でソートキーを複数指定する方法を備忘録として残しておく 環境 ruby: 3.0.4 rails: 6.1.0 実際のコード sort_link ヘルパーメソッドの第三引数に指定する ※その他の機能については参考を参照 # ソート順序 第1ソートキー: last_name, 第2ソートキー: first_name # 画面上のソートリンクをクリックする度に両方のキーの昇順、降順が入れ替わる \u0026lt;%= sort_link(@q, :last_name, %i(last_name first_name), \u0026#39;Last Name\u0026#39;) %\u0026gt; 第2ソートキーを常に昇順 or 降順固定にする場合は以下のようにする \u0026lt;%= sort_link(@q, :last_name, %i(last_name first_name), \u0026#39;Last Name\u0026#39;) %\u0026gt;"
+    body: "Ransack でソートキーを複数指定する方法 Ransack でソートキーを複数指定する方法を備忘録として残しておく 環境 ruby: 3.0.4 rails: 6.1.0 実際のコード sort_link ヘルパーメソッドの第三引数に指定する ※その他の機能については参考を参照 # ソート順序 第1ソートキー: last_name, 第2ソートキー: first_name # 画面上のソートリンクをクリックする度に両方のキーの昇順、降順が入れ替わる \u0026lt;%= sort_link(@q, :last_name, %i(last_name first_name), \u0026#39;Last Name\u0026#39;) %\u0026gt; 第2ソートキーを常に昇順 or 降順固定にする場合は以下のようにする \u0026lt;%= sort_link(@q, :last_name, [:last_name, \u0026#39;first_name asc\u0026#39;], \u0026#39;Last Name\u0026#39;) %\u0026gt;"
   },
   {
     url: "https://kkawazoe.github.io/amp/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/",
