@@ -2787,11 +2787,12 @@ input::-webkit-input-placeholder {
     <span style="color:#f92672">-</span> render <span style="color:#e6db74">json</span>: @books, <span style="color:#e6db74">each_serializer</span>: <span style="color:#66d9ef">Book</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ListSerializer</span>
     <span style="color:#f92672">+</span> render <span style="color:#e6db74">json</span>: <span style="color:#66d9ef">Panko</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ArraySerializer</span><span style="color:#f92672">.</span>new(@books, <span style="color:#e6db74">each_serializer</span>: <span style="color:#66d9ef">Book</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ListSerializer</span>)<span style="color:#f92672">.</span>to_json
   <span style="color:#66d9ef">end</span>
-</code></pre></div><p>単一の serializer を使用する場合 ※変更なし</p>
+</code></pre></div><p>単一の serializer を使用する場合</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.rb" data-lang=".rb">  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show</span>
     @book <span style="color:#f92672">=</span> <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>find(params<span style="color:#f92672">[</span><span style="color:#e6db74">:id</span><span style="color:#f92672">]</span>)
 
-    render <span style="color:#e6db74">json</span>: @book, <span style="color:#e6db74">serializer</span>: <span style="color:#66d9ef">BookSerializer</span>
+    <span style="color:#f92672">-</span> render <span style="color:#e6db74">json</span>: @book, <span style="color:#e6db74">serializer</span>: <span style="color:#66d9ef">BookSerializer</span>
+    <span style="color:#f92672">+</span> render <span style="color:#e6db74">json</span>: <span style="color:#66d9ef">BookSerializer</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>serialize_to_json(@book)
   <span style="color:#66d9ef">end</span>
 </code></pre></div><h2 id="性能比較について">性能比較について</h2>
 <p><a href="https://panko.dev/docs/performance.html">参考</a> を参照</p>
