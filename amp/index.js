@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/",
+    title: "rails で ActiveModelSerializers から PankoSerializer に移行する",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-02-11",
+    body: "rails で ActiveModelSerializers から PankoSerializer に移行する rails で ActiveModelSerializers から PankoSerializer に移行する手順を備忘録として残しておく ※今回のは、単純な serializer のみのため、panko_serializer について検証が必要 環境 ruby: 3.0.5 rails: 6.1.7 active_model_serializers: 0.10.13 panko_serializer: 0.7.9 実際のソース [Gemfile] - gem \u0026#39;active_model_serializers\u0026#39; + gem \u0026#39;panko_serializer\u0026#39; [serializer] 継承するクラスを変更 - class Book::ListSerializer \u0026lt; Panko::Serializer + class Book::ListSerializer \u0026lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller] each_serializer を使用する場合 def index @books = Book.all - render json: @books, each_serializer: Book::ListSerializer + render json: Panko::ArraySerializer.new(@books, each_serializer: Book::ListSerializer).to_json end 単一の serializer を使用する場合 ※変更なし def show @book = Book.find(params[:id]) render json: @book, serializer: BookSerializer end 性能比較について 参考 を参照"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/",
     title: "rails で遷移元の URL を取得してリダイレクトする方法",
     image: "images/logo/rails_logo.svg",

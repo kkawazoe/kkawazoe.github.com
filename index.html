@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-c7f133a297368851965175fe06b726e7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-f079deeecb2143fc29ee73e4070ef36b {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1086,6 +1092,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-c7f133a297368851965175fe06b726e7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-c7f133a297368851965175fe06b726e7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-f079deeecb2143fc29ee73e4070ef36b {
@@ -2619,7 +2639,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          86
+          87
           <span>Posts</span>
         </a>
       </div>
@@ -2677,6 +2697,34 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
+          <div class="thumb thumb-c7f133a297368851965175fe06b726e7"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で ActiveModelSerializers から PankoSerializer に移行する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-02-11T13:00:00JST">Feb 11, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で ActiveModelSerializers から PankoSerializer に移行する手順を備忘録として残しておく
+※今回のは、単純な serializer のみのため、panko_serializer について検証が必要
+環境  ruby: 3.0.5 rails: 6.1.7 active_model_serializers: 0.10.13 panko_serializer: 0.7.9  実際のソース [Gemfile]
+- gem &#39;active_model_serializers&#39; + gem &#39;panko_serializer&#39; [serializer]
+継承するクラスを変更
+- class Book::ListSerializer &lt; Panko::Serializer + class Book::ListSerializer &lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
+each_serializer を使用する場合
+def index @books = Book.all - render json: @books, each_serializer: Book::ListSerializer + render json: Panko::ArraySerializer.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2903,31 +2951,6 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/">
-          <div class="thumb thumb-d4a5b77960546f53838bd509c8bd7149"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails で Active Record のデータを hash 形式に変換する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-16T13:00:00JST">Dec 16, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Rails で Active Record のデータを キーが id, 値が Active Record であるような Hash を作る方法を備忘録として残しておく
-環境  ruby: 3.0.4 rails: 6.1.0  実際のコード index_by, inject, pluck + to_h メソッドのいずれかを使用する
-前提 データの登録状態
-   id book_id name     1 1 少年誌   2 1 青年誌   3 1 ビジネス   4 1 自己啓発    [Rails Console]
-categories = Category.all.index_by(&amp;:id) #=&gt; { #=&gt; 1=&gt; #=&gt; #&lt;Category:0x0000562b92c5fcb0 #=&gt; id: 1, #=&gt; book_id: 1, #=&gt; name: &#34;少年誌&#34;, #=&gt; created_at: Wed, 24 Aug 2022 02:54:05.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2947,6 +2970,27 @@ categories = Category.all.index_by(&amp;:id) #=&gt; { #=&gt; 1=&gt; #=&gt; #&lt;
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
+    <div class="thumb thumb-c7f133a297368851965175fe06b726e7"></div>
+
+    <div class="inner">
+      <div class="title">rails で ActiveModelSerializers から PankoSerializer に移行する</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-02-11T13:00:00JST">Feb 11, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
@@ -3137,27 +3181,6 @@ categories = Category.all.index_by(&amp;:id) #=&gt; { #=&gt; 1=&gt; #=&gt; #&lt;
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/">
-    <div class="thumb thumb-d4a5b77960546f53838bd509c8bd7149"></div>
-
-    <div class="inner">
-      <div class="title">Rails で Active Record のデータを hash 形式に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-12-16T13:00:00JST">Dec 16, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3168,7 +3191,7 @@ categories = Category.all.index_by(&amp;:id) #=&gt; { #=&gt; 1=&gt; #=&gt; #&lt;
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(31)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(32)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

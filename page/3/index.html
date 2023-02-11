@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-c7f133a297368851965175fe06b726e7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-f079deeecb2143fc29ee73e4070ef36b {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1086,6 +1092,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-c7f133a297368851965175fe06b726e7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-c7f133a297368851965175fe06b726e7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-f079deeecb2143fc29ee73e4070ef36b {
@@ -2619,7 +2639,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          86
+          87
           <span>Posts</span>
         </a>
       </div>
@@ -2677,6 +2697,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/">
+          <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
+ [model]
+class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
+category_ids を配列形式で許可する
+def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2894,29 +2939,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/05/24/how-to-auto-seq-for-postgre-sql-with-rails/">
-          <div class="thumb thumb-8a2d9e64eaabb9a65a8137f1ab7533df"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で id 等の自動採番項目の不整合を修正する方法(PostgreSQL)</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-05-24T09:00:00JST">May 24, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で 自動採番項目の不整合を修正する方法を備忘録として残しておく
-方法 reset_pk_sequence! を使用する
-環境  rails: 6.1.4  実際のコード ActiveRecord::Base.connection.tables.each do |table_name| ActiveRecord::Base.connection.reset_pk_sequence!(table_name) end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2938,6 +2960,27 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
+    <div class="thumb thumb-c7f133a297368851965175fe06b726e7"></div>
+
+    <div class="inner">
+      <div class="title">rails で ActiveModelSerializers から PankoSerializer に移行する</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-02-11T13:00:00JST">Feb 11, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
@@ -3128,27 +3171,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/">
-    <div class="thumb thumb-d4a5b77960546f53838bd509c8bd7149"></div>
-
-    <div class="inner">
-      <div class="title">Rails で Active Record のデータを hash 形式に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-12-16T13:00:00JST">Dec 16, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3159,7 +3181,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(31)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(32)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

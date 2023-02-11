@@ -3,18 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2023-02-08T09:00:00+09:00</lastmod>
+    <lastmod>2023-02-11T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2023-02-08T09:00:00+09:00</lastmod>
+    <lastmod>2023-02-11T13:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/</loc>
-    <lastmod>2023-02-08T09:00:00+09:00</lastmod>
+    <loc>https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/</loc>
+    <lastmod>2023-02-11T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2023-02-08T09:00:00+09:00</lastmod>
+    <lastmod>2023-02-11T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2023-02-11T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/</loc>
     <lastmod>2023-02-08T09:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</loc>

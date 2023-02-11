@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-c7f133a297368851965175fe06b726e7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-f079deeecb2143fc29ee73e4070ef36b {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1086,6 +1092,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-c7f133a297368851965175fe06b726e7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-c7f133a297368851965175fe06b726e7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-f079deeecb2143fc29ee73e4070ef36b {
@@ -2619,7 +2639,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          86
+          87
           <span>Posts</span>
         </a>
       </div>
@@ -2654,6 +2674,30 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/04/11/convert-string-code-utf8-to-cp932-with-nkf/">
+          <div class="thumb thumb-382c814625d13558372afcd986f759f7"></div>
+
+          <div class="inner">
+            <h2 class="title">nkf を使用して UTF-8 を CP932 に文字コード変換する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-04-11T09:00:00JST">Apr 11, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">CSV 出力処理実装時に文字コード変換を行う必要があり対応を行った
+その対処方法を備忘録として残しておく
+環境  rails: rails 6.0.3.6  仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
+実際のコード str = &#39;〜変換不可能文字を含む文字列〜&#39; NKF.nkf(&#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&#39;, str).encode(&#39;UTF-8&#39;, &#39;CP932&#39;) #=&gt; &#34;〓変換不可能文字を含む文字列〓&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2881,31 +2925,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
-          <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
-
-          <div class="inner">
-            <h2 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する※FIELD 関数の結果で ORDER BY する  例. レコードを order 昇順, user_id 昇順で並び替える場合
-※同じ順位の場合は自分を優先
-order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること
-また、ORDER BY FIELD で指定した分に対して desc を指定すること
-※ desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2927,6 +2946,27 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
+    <div class="thumb thumb-c7f133a297368851965175fe06b726e7"></div>
+
+    <div class="inner">
+      <div class="title">rails で ActiveModelSerializers から PankoSerializer に移行する</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-02-11T13:00:00JST">Feb 11, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
@@ -3117,27 +3157,6 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/">
-    <div class="thumb thumb-d4a5b77960546f53838bd509c8bd7149"></div>
-
-    <div class="inner">
-      <div class="title">Rails で Active Record のデータを hash 形式に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-12-16T13:00:00JST">Dec 16, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3148,7 +3167,7 @@ order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) �
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(31)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(32)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     
