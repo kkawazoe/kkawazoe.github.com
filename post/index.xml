@@ -18,7 +18,7 @@
 環境  ruby: 3.0.5 rails: 6.1.7 active_model_serializers: 0.10.13 panko_serializer: 0.7.9  実際のソース [Gemfile]
 - gem &amp;#39;active_model_serializers&amp;#39; + gem &amp;#39;panko_serializer&amp;#39; [serializer]
 継承するクラスを変更
-- class Book::ListSerializer &amp;lt; Panko::Serializer + class Book::ListSerializer &amp;lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
+- class Book::ListSerializer &amp;lt; ActiveModel::Serializer + class Book::ListSerializer &amp;lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
 each_serializer を使用する場合
 def index @books = Book.all - render json: @books, each_serializer: Book::ListSerializer + render json: Panko::ArraySerializer.</description>
     </item>

@@ -2765,7 +2765,7 @@ input::-webkit-input-placeholder {
 <span style="color:#f92672">+</span> gem <span style="color:#e6db74">&#39;panko_serializer&#39;</span>
 </code></pre></div><p>[serializer]</p>
 <p>継承するクラスを変更</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.rb" data-lang=".rb"><span style="color:#f92672">-</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ListSerializer</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Panko</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Serializer</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.rb" data-lang=".rb"><span style="color:#f92672">-</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ListSerializer</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveModel</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Serializer</span>
 <span style="color:#f92672">+</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ListSerializer</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Panko</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Serializer</span>
   attributes(
     <span style="color:#e6db74">:id</span>,

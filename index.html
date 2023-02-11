@@ -2718,7 +2718,7 @@ input::-webkit-input-placeholder {
 環境  ruby: 3.0.5 rails: 6.1.7 active_model_serializers: 0.10.13 panko_serializer: 0.7.9  実際のソース [Gemfile]
 - gem &#39;active_model_serializers&#39; + gem &#39;panko_serializer&#39; [serializer]
 継承するクラスを変更
-- class Book::ListSerializer &lt; Panko::Serializer + class Book::ListSerializer &lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
+- class Book::ListSerializer &lt; ActiveModel::Serializer + class Book::ListSerializer &lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
 each_serializer を使用する場合
 def index @books = Book.all - render json: @books, each_serializer: Book::ListSerializer + render json: Panko::ArraySerializer.</div>
           </div>
