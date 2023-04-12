@@ -2724,7 +2724,7 @@ input::-webkit-input-placeholder {
           <div class="thumb thumb-d69cd8abb41192bcef392a32b424fdbc"></div>
 
           <div class="inner">
-            <h2 class="title">rails で本番環境で画像が表示されない場合に注意すること(jpeg)</h2>
+            <h2 class="title">rails で本番環境で画像が表示されない場合に確認すること(jpeg)</h2>
 
             <ul class="facts">
               <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-04-12T13:00:00JST">Apr 12, 2023</time></li>
@@ -2733,11 +2733,11 @@ input::-webkit-input-placeholder {
               
             </ul>
 
-            <div class="summary">rails で本番環境で画像が表示されない場合に注意することを備忘録として残しておく
+            <div class="summary">rails で本番環境で画像が表示されない場合に確認することを備忘録として残しておく
 ※表示されない画像が jpeg の場合
 環境  ruby: 3.0.5 rails: 6.1.7  事象について 開発環境では表示されていた画像が本番環境にデプロイしてみると画像が表示されない事象が発生した。
 ※scss の background-image の image-url かと思ったが view ファイルの image_tag で発生していた
-[sass-rails](&lt;https://github.com/rails/sass-rails)
+sass-rails
 原因について assets-precompile 時に xxx.jpeg =&gt; xxx.jpg に統一されるため、 Not Found 扱いになるらしい
 上記のため、 image_tag で指定している拡張子を jpg に指定してあげる必要がある
 ※可能であれば、画像自体の拡張子を jpg に統一してあげると手戻りがないと思われる</div>
@@ -2996,7 +2996,7 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
     <div class="thumb thumb-d69cd8abb41192bcef392a32b424fdbc"></div>
 
     <div class="inner">
-      <div class="title">rails で本番環境で画像が表示されない場合に注意すること(jpeg)</div>
+      <div class="title">rails で本番環境で画像が表示されない場合に確認すること(jpeg)</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-04-12T13:00:00JST">Apr 12, 2023</time></li>
