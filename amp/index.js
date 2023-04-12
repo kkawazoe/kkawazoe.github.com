@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/",
+    title: "rails で本番環境で画像が表示されない場合に注意すること(jpeg)",
+    image: "images/logo/rails_logo.svg",
+    date: "2023-04-12",
+    body: "rails で本番環境で画像が表示されない場合に注意すること(jpeg) rails で本番環境で画像が表示されない場合に注意することを備忘録として残しておく ※表示されない画像が jpeg の場合 環境 ruby: 3.0.5 rails: 6.1.7 事象について 開発環境では表示されていた画像が本番環境にデプロイしてみると画像が表示されない事象が発生した。 ※scss の background-image の image-url かと思ったが view ファイルの image_tag で発生していた [sass-rails](\u0026lt;https://github.com/rails/sass-rails) 原因について assets-precompile 時に xxx.jpeg =\u0026gt; xxx.jpg に統一されるため、 Not Found 扱いになるらしい 上記のため、 image_tag で指定している拡張子を jpg に指定してあげる必要がある ※可能であれば、画像自体の拡張子を jpg に統一してあげると手戻りがないと思われる"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/",
     title: "rails で ActiveModelSerializers から PankoSerializer に移行する",
     image: "images/logo/rails_logo.svg",

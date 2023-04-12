@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-d69cd8abb41192bcef392a32b424fdbc {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c7f133a297368851965175fe06b726e7 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1092,6 +1098,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-d69cd8abb41192bcef392a32b424fdbc {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d69cd8abb41192bcef392a32b424fdbc {
+      width: 5rem;
+    }
+  
 
   
     .thumb-c7f133a297368851965175fe06b726e7 {
@@ -2639,7 +2659,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          87
+          88
           <span>Posts</span>
         </a>
       </div>
@@ -2674,6 +2694,33 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/03/how-to-select-check-box-for-create-through-table-with-rails/">
+          <div class="thumb thumb-8063585970c6e09dc0864c6e8c18c0df"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で中間テーブルをチェックボックス複数選択させて生成する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-03T18:00:00JST">Nov 3, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  前提 rails で has_many の ids を使用して中間テーブルの関連付けを行う方法 の構成を参照
+実際のコード erb で行うパターンと javascript で行うパターンはそれぞれ以下
+※基本的には erb で行うと思うが、 erb の構成に対して値を受け渡す場合にjavascript のパターンを使用する
+ erb のパターン  association を使用して as: :check_boxes オプションを指定する
+&lt;%= simple_form_for @book do |f| %&gt; &lt;%= f.association :categories, as: :check_boxes %&gt; &lt;%= f.button :submit %&gt; &lt;% end  %&gt; javascript のパターン  最終的に生成される params が以下のようになるように組み立てる
+[&quot;&quot;, 1, 3]
+$(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name=&#34;book[category_ids][]&#34; /&gt;`, ); book.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2894,28 +2941,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/05/12/how-to-either-obtained-value-symbol-or-string-key-of-hash/">
-          <div class="thumb thumb-ef7ba2867dac050942fd569077c700f9"></div>
-
-          <div class="inner">
-            <h2 class="title">Hash の Key が Symbol または String どちらでも取得可能にする方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-12T09:00:00JST">May 12, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">HashWithIndifferentAccess に変換して実現する
-環境  rails: rails 6.0.3.6  実際のコード rgb = { black: &#39;#0000&#39;, white: &#39;#FFFFFF&#39; }.with_indifferent_access rgb[:black] # =&gt; &#34;#0000&#34; rgb[&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:&#39;black&#39;] # =&gt; &#34;#0000&#34; rgb[:white] # =&gt; &#34;#FFFFFF&#34; rgb[&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; rgb[:&#39;white&#39;] # =&gt; &#34;#FFFFFF&#34; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2937,6 +2962,27 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/">
+    <div class="thumb thumb-d69cd8abb41192bcef392a32b424fdbc"></div>
+
+    <div class="inner">
+      <div class="title">rails で本番環境で画像が表示されない場合に注意すること(jpeg)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-04-12T13:00:00JST">Apr 12, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
@@ -3127,27 +3173,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/">
-    <div class="thumb thumb-1a7c929b8fd873cd65c515bacae3f5a6"></div>
-
-    <div class="inner">
-      <div class="title">Hugo と GitHub Pages の構成で自動デプロイを行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-12-17T00:00:00JST">Dec 17, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3158,7 +3183,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(32)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(33)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     
