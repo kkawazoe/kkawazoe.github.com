@@ -2716,7 +2716,7 @@ input::-webkit-input-placeholder {
 </code></pre><ol start="5">
 <li>SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add -K ~/.ssh/id_rsa
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add --apple-use-keychain ~/.ssh/id_rsa
 </code></pre></div><ol start="6">
 <li>公開鍵をクリップボードにコピーする</li>
 </ol>
