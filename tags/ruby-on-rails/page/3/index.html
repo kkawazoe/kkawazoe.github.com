@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-755189180c7d3046db90262b358671b7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-d69cd8abb41192bcef392a32b424fdbc {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1098,6 +1104,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-755189180c7d3046db90262b358671b7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-755189180c7d3046db90262b358671b7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-d69cd8abb41192bcef392a32b424fdbc {
@@ -2659,7 +2679,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          88
+          89
           <span>Posts</span>
         </a>
       </div>
@@ -2694,6 +2714,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/05/14/how-to-execute-specified-rspec/">
+          <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
+
+          <div class="inner">
+            <h2 class="title">特定の RSpec のみ実行されるようにする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-14T09:00:00JST">May 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく
+方法 tag オプション を使用して実現する
+環境  rspec: rspec 3.8  実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2921,29 +2964,6 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/09/set-image-before-gretel-with-rails/">
-          <div class="thumb thumb-91ddefd9879dbdf0b12d0c27bfbbef5d"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem Gretel で項目の前に画像を置く</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-09T17:36:18JST">Apr 9, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Gretel について パンくずリストを表示する Gem
-github
-実際のコード # articles#index crumb :articles do |article| icon = article.flg ? image_tag(&#34;表示したい画像&#34;) : &#34;&#34; link icon + {表示文字}, {URL} parent :parent_articles, article.category end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2965,6 +2985,27 @@ github
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/">
+    <div class="thumb thumb-755189180c7d3046db90262b358671b7"></div>
+
+    <div class="inner">
+      <div class="title">rails で routes.rb を分割管理する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="29007-04-29T13:00:00JST">Apr 29, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/">
@@ -3155,27 +3196,6 @@ github
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/">
-    <div class="thumb thumb-0df7dd9e003d9990cdacaa0c00fef126"></div>
-
-    <div class="inner">
-      <div class="title">Mac OS で mov を gif に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="18007-12-18T00:00:00JST">Dec 18, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3186,7 +3206,7 @@ github
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(33)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

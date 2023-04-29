@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-755189180c7d3046db90262b358671b7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-d69cd8abb41192bcef392a32b424fdbc {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1098,6 +1104,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-755189180c7d3046db90262b358671b7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-755189180c7d3046db90262b358671b7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-d69cd8abb41192bcef392a32b424fdbc {
@@ -2659,7 +2679,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          88
+          89
           <span>Posts</span>
         </a>
       </div>
@@ -2717,6 +2737,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/">
+          <div class="thumb thumb-755189180c7d3046db90262b358671b7"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で routes.rb を分割管理する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-04-29T13:00:00JST">Apr 29, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">プロジェクト自体が大きくなってきた際に routes.rb にまとめて記載すると見づらくて
+追加しようとした際にわかりずらい課題が発生した
+そのため、rails で routes.rb を分割管理する方法を備忘録として残しておく
+参考
+環境  ruby: 3.0.5 rails: 6.1.7  方法  concern を使用して共通の routes を定義する draw を使用して別ファイルに分割する  前提 config |-routes | |-concerns.rb # プロジェクト共通の routes | |-foo_service_provider.rb # Foo サービス用の routes | |-hoge_service_provider.rb # Hoge サービス用の routes | |-service_provider_common.rb # サービス共通の routes |-routes.rb 実際の例 concern :loggable do get &#34;login&#34;, to: &#34;sessions#new&#34; post &#34;login&#34;, to: &#34;sessions#create&#34; delete &#34;logout&#34;, to: &#34;sessions#destroy&#34; end concern :data do namespace :data do get &#34;download&#34; end end namespace :service_provider, path: &#34;services&#34; do concerns :loggable scope :home, as: :home do get &#34;/&#34;, to: &#34;home#index&#34; end end draw(:service_provider_common) namespace :service_provider, path: &#34;services&#34; do concerns :data end draw(:service_provider_common) namespace :service_provider, path: &#34;services&#34; do resources :users, only: [:index, :show] end # == Route Map # # Prefix Verb URI Pattern Controller#Action # admin_login GET /admin/login(.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2947,30 +2992,6 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/">
-          <div class="thumb thumb-0df7dd9e003d9990cdacaa0c00fef126"></div>
-
-          <div class="inner">
-            <h2 class="title">Mac OS で mov を gif に変換する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-18T00:00:00JST">Dec 18, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Mac OS で mov を gif に変換する方法を備忘録として残しておく
-手順 ffmpeg を使用する ※ファイルのリサイズのために Image Magick も使用
- ffmpeg, Image Magick のインストール  brew install ffmpeg brew install imagemagick gif に変換  ファイルサイズを少なくするために圧縮も行う
-cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d.png # 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成 convert *.png -resize 50% output_%06d.png # 作成した png を 50% にリサイズ convert output_*.png result.gif # gif に変換 # 生成された gif の確認は以下で行える ※Google Chrome インストールしている場合 open -a /Applications/Google\ Chrome.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2990,6 +3011,27 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/">
+    <div class="thumb thumb-755189180c7d3046db90262b358671b7"></div>
+
+    <div class="inner">
+      <div class="title">rails で routes.rb を分割管理する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="29007-04-29T13:00:00JST">Apr 29, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/">
@@ -3180,27 +3222,6 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/">
-    <div class="thumb thumb-0df7dd9e003d9990cdacaa0c00fef126"></div>
-
-    <div class="inner">
-      <div class="title">Mac OS で mov を gif に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="18007-12-18T00:00:00JST">Dec 18, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3211,7 +3232,7 @@ cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(33)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     

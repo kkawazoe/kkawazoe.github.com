@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 12 Apr 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Apr 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails で routes.rb を分割管理する方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/</link>
+      <pubDate>Sat, 29 Apr 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/</guid>
+      <description>プロジェクト自体が大きくなってきた際に routes.rb にまとめて記載すると見づらくて
+追加しようとした際にわかりずらい課題が発生した
+そのため、rails で routes.rb を分割管理する方法を備忘録として残しておく
+参考
+環境  ruby: 3.0.5 rails: 6.1.7  方法  concern を使用して共通の routes を定義する draw を使用して別ファイルに分割する  前提 config |-routes | |-concerns.rb # プロジェクト共通の routes | |-foo_service_provider.rb # Foo サービス用の routes | |-hoge_service_provider.rb # Hoge サービス用の routes | |-service_provider_common.rb # サービス共通の routes |-routes.rb 実際の例 concern :loggable do get &amp;#34;login&amp;#34;, to: &amp;#34;sessions#new&amp;#34; post &amp;#34;login&amp;#34;, to: &amp;#34;sessions#create&amp;#34; delete &amp;#34;logout&amp;#34;, to: &amp;#34;sessions#destroy&amp;#34; end concern :data do namespace :data do get &amp;#34;download&amp;#34; end end namespace :service_provider, path: &amp;#34;services&amp;#34; do concerns :loggable scope :home, as: :home do get &amp;#34;/&amp;#34;, to: &amp;#34;home#index&amp;#34; end end draw(:service_provider_common) namespace :service_provider, path: &amp;#34;services&amp;#34; do concerns :data end draw(:service_provider_common) namespace :service_provider, path: &amp;#34;services&amp;#34; do resources :users, only: [:index, :show] end # == Route Map # # Prefix Verb URI Pattern Controller#Action # admin_login GET /admin/login(.</description>
+    </item>
+    
     <item>
       <title>rails で本番環境で画像が表示されない場合に確認すること(jpeg)</title>
       <link>https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/</link>

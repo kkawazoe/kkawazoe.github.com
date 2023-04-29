@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-755189180c7d3046db90262b358671b7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-d69cd8abb41192bcef392a32b424fdbc {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1098,6 +1104,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-755189180c7d3046db90262b358671b7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-755189180c7d3046db90262b358671b7 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-d69cd8abb41192bcef392a32b424fdbc {
@@ -2659,7 +2679,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          88
+          89
           <span>Posts</span>
         </a>
       </div>
@@ -2694,6 +2714,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/22/how-to-disable-auto-complete-with-rails-console/">
+          <div class="thumb thumb-41e6389e68271e7e71c586fc5710f320"></div>
+
+          <div class="inner">
+            <h2 class="title">rails console で オートコンプリートを無効にする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-22T13:00:00JST">Nov 22, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">ruby 3.1 以降から irb でオートコンプリートが効くようになったがそれを無効にする方法を調査した
+その結果を備忘録として残しておく
+環境  ruby: 3.1.2 rails: 6.1.7  方法 カレントディレクトに .irbrc ファイルを作成して以下のように編集する
+※他の設定値については 参考 を参照
+IRB.conf[:USE_AUTOCOMPLETE] = false IRB.conf[:SAVE_HISTORY] = nil </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2917,29 +2962,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/08/22/how-to-get-count-specific-string-with-postgre-sql/">
-          <div class="thumb thumb-ab49892d12dbd8885e93954af947b6bc"></div>
-
-          <div class="inner">
-            <h2 class="title">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-08-22T12:00:00JST">Aug 22, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
-方法 sum, length, regexp_replace を使用する
-環境  PostgreSQL: 13.3  実際のコード  regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定  select &#39;ユーザテーブル--名前カラム中の「仼」または「鶴」の件数&#39;, coalesce(sum(length(name)-length(regexp_replace(name, &#39;[仼鶴]&#39;,&#39;&#39;,&#39;g&#39;))), 0) from users; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -2961,6 +2983,27 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/">
+    <div class="thumb thumb-755189180c7d3046db90262b358671b7"></div>
+
+    <div class="inner">
+      <div class="title">rails で routes.rb を分割管理する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="29007-04-29T13:00:00JST">Apr 29, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/">
@@ -3151,27 +3194,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2022/12/18/how-to-convert-mov-to-gif-with-mac-os/">
-    <div class="thumb thumb-0df7dd9e003d9990cdacaa0c00fef126"></div>
-
-    <div class="inner">
-      <div class="title">Mac OS で mov を gif に変換する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="18007-12-18T00:00:00JST">Dec 18, 2022</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3182,7 +3204,7 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(33)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(17)</span></a></li>
     
