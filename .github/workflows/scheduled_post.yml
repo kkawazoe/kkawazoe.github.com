@@ -2,7 +2,7 @@ name: Scheduled Post
 
 on:
   schedule:
-    - cron: '0 3 * * *' # Run every day at 12:00pm(JST).
+    - cron: '30 3 * * *' # Run every day at 12:30pm(JST).
 
 jobs:
   deploy:
