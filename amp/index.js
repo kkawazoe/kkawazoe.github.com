@@ -4,9 +4,9 @@ var data = [
   {
     url: "https://kkawazoe.github.io/amp/blog/2023/06/05/how-to-run-go-tour-locally/",
     title: "Go Tour のローカルでの実行方法",
-    image: "images/golang_logo.jpg",
+    image: "images/golang_logo.png",
     date: "2023-06-05",
-    body: "Go Tour のローカルでの実行方法 Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生した その解決方法を備忘録として残しておく 環境 OS : MacOS Ventura(13.4) golang: go1.20.4 エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=\u0026gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する tour"
+    body: "Go Tour のローカルでの実行方法 Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく 環境 OS : MacOS Ventura(13.4) golang: go1.20.4 エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=\u0026gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する tour"
   },
   {
     url: "https://kkawazoe.github.io/amp/blog/2023/04/29/how-to-manage-split-routes-with-rails/",
