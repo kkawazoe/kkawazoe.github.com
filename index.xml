@@ -6,7 +6,20 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 29 Apr 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Tour のローカルでの実行方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link>
+      <pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</guid>
+      <description>Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生した
+その解決方法を備忘録として残しておく
+環境 OS : MacOS Ventura(13.4) golang: go1.20.4
+エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=&amp;gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する
+tour </description>
+    </item>
+    
     <item>
       <title>rails で routes.rb を分割管理する方法</title>
       <link>https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/</link>
