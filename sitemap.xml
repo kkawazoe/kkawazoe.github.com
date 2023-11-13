@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/</loc>
+    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/</loc>
+    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/post/</loc>
+    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
+    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</loc>
     <lastmod>2023-06-05T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/golang/</loc>
-    <lastmod>2023-06-05T12:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2023-06-05T12:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2023-06-05T12:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2023-06-05T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/</loc>
@@ -39,9 +45,6 @@
     <lastmod>2023-01-27T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/</loc>
-    <lastmod>2023-01-27T13:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
     <lastmod>2023-01-27T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/</loc>

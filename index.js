@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/",
+    title: "Mac(Intel) に Warp をインストールする方法",
+    image: "images/logo/icons8-mac-os-logo.svg",
+    date: "2023-11-13",
+    body: "Mac(Intel) に Warp をインストールする方法 Mac(Intel) に Warp をインストールする方法を備忘録として残しておく 手順 home brew を使用してインストール $ brew install --cask warp 設定 公式サイト を参照"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/",
     title: "Go Tour のローカルでの実行方法",
     image: "images/logo/golang_logo.png",

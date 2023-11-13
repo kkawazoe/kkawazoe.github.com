@@ -6,7 +6,17 @@
     <description>Recent content on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Mon, 05 Jun 2023 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Nov 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac(Intel) に Warp をインストールする方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/</link>
+      <pubDate>Mon, 13 Nov 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/</guid>
+      <description>Mac(Intel) に Warp をインストールする方法を備忘録として残しておく
+手順  home brew を使用してインストール  $ brew install --cask warp 設定 公式サイト を参照</description>
+    </item>
+    
     <item>
       <title>Go Tour のローカルでの実行方法</title>
       <link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link>
