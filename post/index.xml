@@ -1202,7 +1202,7 @@ order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :use
     </item>
     
     <item>
-      <title>Windows7環境でバッチファイルからiniファイルを読込んで値を取得する</title>
+      <title>Windows 環境でバッチファイルからiniファイルを読込んで値を取得する</title>
       <link>https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/</link>
       <pubDate>Sun, 22 Jun 2014 09:01:00 +0900</pubDate>
       
@@ -1213,7 +1213,7 @@ order(:order, [&amp;#34;field(user_id , #{current_user.id}) desc&amp;#34;], :use
     </item>
     
     <item>
-      <title>Windows7環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</title>
+      <title>Windows 環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</title>
       <link>https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/</link>
       <pubDate>Sun, 09 Feb 2014 18:46:00 +0900</pubDate>
       
