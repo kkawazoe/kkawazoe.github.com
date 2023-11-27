@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Mon, 13 Nov 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Nov 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby on Rails</title>
+      <link>https://kkawazoe.github.io/tags/ruby-on-rails/</link>
+      <pubDate>Sun, 26 Nov 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/tags/ruby-on-rails/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Tool</title>
       <link>https://kkawazoe.github.io/tags/tool/</link>
@@ -22,15 +31,6 @@
       <pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby on Rails</title>
-      <link>https://kkawazoe.github.io/tags/ruby-on-rails/</link>
-      <pubDate>Sat, 29 Apr 2023 13:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/tags/ruby-on-rails/</guid>
       <description></description>
     </item>
     

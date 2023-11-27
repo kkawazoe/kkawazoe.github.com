@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c17942d1db448e058145d3d0bb66469b {
   background-image: url("https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg");
 }
@@ -1116,6 +1122,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-c17942d1db448e058145d3d0bb66469b {
@@ -2719,7 +2739,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          91
+          92
           <span>Posts</span>
         </a>
       </div>
@@ -2777,6 +2797,32 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
+          <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で複数検索条件のリファクタリング</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-11-26T13:00:00JST">Nov 26, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">検索条件の入力が複数あるような画面で入力があった条件のもののみを AND 条件としたい場合メソッド内に if 文が乱立してしまい可読性が下がってしまう
+そのため、将来的に条件が追加された場合でも可読性が下がらないようにリファクタリングした方法を備忘録として残しておく
+環境  ruby: 3.0.5 rails: 6.1.7  方法  検索条件をそれぞれ scope に切り出す  scope 内で skip 条件を next if で記載する   メソッドでそれぞれの scope を呼び出す  前提 検索条件はメソッドの引数として Hash 形式で渡される
+実際の例 タイトルと内容で入力があったもので検索を行い、条件にあった本を取得する
+※全ての条件が未入力の場合は全件表示
+class Book &lt; ApplicationRecord scope :with_title, -&gt; (title) do next if title.blank? where(&#39;title LIKE ?&#39;, &#34;%#{title}%&#34;) end scope :with_summary, -&gt; (summary) do next if summary.blank? where(&#39;summary LIKE ?&#39;, &#34;%#{summary}%&#34;) end def self.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3002,31 +3048,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
-          <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で画面表示時に小数部分の0を省略して表示する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-01-12T13:00:00JST">Jan 12, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で画面表示時に小数部分の0を省略して表示する方法を備忘録として残しておく
-環境  ruby: 3.0.4 rails: 6.1.0  実際のコード number_to_human メソッドを使用する ※参考
-※strip_insignidicant_zeros オプションのデフォルトが true のため
-その他のヘルパーについてはNumberHelperを参照
-# erb ファイルに記載する場合は ActiveSupport::NumberHelper. は省略可 ActiveSupport::NumberHelper.number_to_human(1.0) #=&gt; &#34;1&#34; ActiveSupport::NumberHelper.number_to_human(1.5) #=&gt; &#34;1.5&#34; ActiveSupport::NumberHelper.number_to_human(1.530) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(1.5301) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.0&#39;) #=&gt; &#34;1&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.5&#39;) #=&gt; &#34;1.5&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.530&#39;) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.5301&#39;) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(Date.parse(&#39;2023-01-12&#39;)) #=&gt; Thu, 12 Jan 2023 ActiveSupport::NumberHelper.number_to_human(&#39;2023-01-12&#39;) #=&gt; &#34;2023-01-12&#34; ActiveSupport::NumberHelper.number_to_human(&#39;2023.01.12&#39;) #=&gt; &#34;2023-01-12&#34; ActiveSupport::NumberHelper.number_to_human(&#39;2023.01.12&#39;) #=&gt; &#34;2023.01.12&#34; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3046,6 +3067,27 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
+    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
+
+    <div class="inner">
+      <div class="title">rails で複数検索条件のリファクタリング</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/">
@@ -3236,27 +3278,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
-    <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
-
-    <div class="inner">
-      <div class="title">rails で画面表示時に小数部分の0を省略して表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-01-12T13:00:00JST">Jan 12, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3267,7 +3288,7 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
     

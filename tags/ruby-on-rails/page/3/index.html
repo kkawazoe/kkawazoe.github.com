@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c17942d1db448e058145d3d0bb66469b {
   background-image: url("https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg");
 }
@@ -1116,6 +1122,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-c17942d1db448e058145d3d0bb66469b {
@@ -2719,7 +2739,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          91
+          92
           <span>Posts</span>
         </a>
       </div>
@@ -2754,6 +2774,30 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/02/26/how-to-source-location-rails/">
+          <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
+
+          <div class="inner">
+            <h2 class="title">rails でメソッドの定義場所を表示する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-02-26T01:28:11JST">Feb 26, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
+方法 XXX.method(:{method}).source_location を使用する
+例. ActiveRecord::Base.method(:transaction).source_location
+環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2979,31 +3023,6 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/11/resize-when-uploading-for-carrierwave-with-rails/">
-          <div class="thumb thumb-e3c2ee128105a79928dbbb3f0321b964"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby on Rails の Gem CarrierWave でアップロードする際に画像をリサイズする</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-11T13:49:45JST">Apr 11, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Carrier Wave について ファイルアップロード機能を提供する Gem github
-実際のコード 尚、アスペクト比固定で width および height のみ指定する場合は nil を指定する
-heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end widthのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include CarrierWave::MiniMagick process resize_to_limit: [1200, nil] end resize_to_fit と resize_to_limit の違いについて  resize_to_fit 画像が指定したサイズ未満の時
-=&gt; アスペクト比を維持しながら指定したサイズまで拡大する resize_to_limit 画像が指定したサイズ未満の時
-=&gt; なにもしない  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3025,6 +3044,27 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
+    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
+
+    <div class="inner">
+      <div class="title">rails で複数検索条件のリファクタリング</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/">
@@ -3215,27 +3255,6 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
-    <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
-
-    <div class="inner">
-      <div class="title">rails で画面表示時に小数部分の0を省略して表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-01-12T13:00:00JST">Jan 12, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3246,7 +3265,7 @@ heightのみ指定 class MyUploader &lt; CarrierWave::Uploader::Base include Car
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
     

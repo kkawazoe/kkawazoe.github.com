@@ -6,7 +6,21 @@
     <description>Recent content in Ruby on Rails on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 29 Apr 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Nov 2023 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails で複数検索条件のリファクタリング</title>
+      <link>https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/</link>
+      <pubDate>Sun, 26 Nov 2023 13:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/</guid>
+      <description>検索条件の入力が複数あるような画面で入力があった条件のもののみを AND 条件としたい場合メソッド内に if 文が乱立してしまい可読性が下がってしまう
+そのため、将来的に条件が追加された場合でも可読性が下がらないようにリファクタリングした方法を備忘録として残しておく
+環境  ruby: 3.0.5 rails: 6.1.7  方法  検索条件をそれぞれ scope に切り出す  scope 内で skip 条件を next if で記載する   メソッドでそれぞれの scope を呼び出す  前提 検索条件はメソッドの引数として Hash 形式で渡される
+実際の例 タイトルと内容で入力があったもので検索を行い、条件にあった本を取得する
+※全ての条件が未入力の場合は全件表示
+class Book &amp;lt; ApplicationRecord scope :with_title, -&amp;gt; (title) do next if title.blank? where(&amp;#39;title LIKE ?&amp;#39;, &amp;#34;%#{title}%&amp;#34;) end scope :with_summary, -&amp;gt; (summary) do next if summary.blank? where(&amp;#39;summary LIKE ?&amp;#39;, &amp;#34;%#{summary}%&amp;#34;) end def self.</description>
+    </item>
+    
     <item>
       <title>rails で routes.rb を分割管理する方法</title>
       <link>https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/</link>

@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+  background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
+}
+  
+
+  
 .thumb-c17942d1db448e058145d3d0bb66469b {
   background-image: url("https://kkawazoe.github.io/images/logo/icons8-mac-os-logo.svg");
 }
@@ -1116,6 +1122,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      background-image: url(https://kkawazoe.github.io/images/logo/rails_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-c17942d1db448e058145d3d0bb66469b {
@@ -2719,7 +2739,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          91
+          92
           <span>Posts</span>
         </a>
       </div>
@@ -2777,6 +2797,27 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/">
+          <div class="thumb thumb-2e8100fe2a58f001f5cb3112f1688a02"></div>
+
+          <div class="inner">
+            <h2 class="title">Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-03-19T15:25:56JST">Mar 19, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &#39;noreply&#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列  var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &lt; myMsgs.length; i++) { for (var j = 0; j &lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &gt; 0) { var mySheet = SpreadsheetApp.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3016,30 +3057,6 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/27/insert-formula-into-hugo/">
-          <div class="thumb thumb-3dcf9ef2b2af6cdf1f9d6a95f2f31592"></div>
-
-          <div class="inner">
-            <h2 class="title">Hugo に数式を挿入する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-27T00:00:00JST">Apr 27, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 Hugo で運用しているサイトに数式を埋め込む必要があり 調査した結果を備忘録として残しておく
-手順 参考 と同じく Mathjax を使用して実現する
- partials フォルダ配下に以下のファイルを作成する  CDN で提供されている最新の MathJax.js の URL は、cdnjs.com で確認する
-&lt;script type=&#34;text/javascript&#34; async src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } }); MathJax.Hub.Queue(function() { // Fix &lt;code&gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3061,6 +3078,27 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
+    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
+
+    <div class="inner">
+      <div class="title">rails で複数検索条件のリファクタリング</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/">
@@ -3251,27 +3289,6 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
-    <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
-
-    <div class="inner">
-      <div class="title">rails で画面表示時に小数部分の0を省略して表示する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-01-12T13:00:00JST">Jan 12, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3282,7 +3299,7 @@ $$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
   <header><a href="https://kkawazoe.github.io/tags">TAGS</a></header>
   <ul class="terms">
     
-    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(34)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
     
