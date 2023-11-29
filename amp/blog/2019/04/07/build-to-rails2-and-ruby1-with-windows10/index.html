@@ -83,6 +83,9 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 
 
     
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <meta name="amp-google-client-id-api" content="googleanalytics">
+    
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -2715,6 +2718,11 @@ input::-webkit-input-placeholder {
   </head>
 
   <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "G-T6MM10MYRV"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
     
 
     <header class="l-header">
