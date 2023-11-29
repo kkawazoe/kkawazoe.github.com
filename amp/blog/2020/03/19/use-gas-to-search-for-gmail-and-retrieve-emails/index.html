@@ -2713,10 +2713,18 @@ input::-webkit-input-placeholder {
 
   <body>
     
-    <amp-analytics type="googleanalytics" id="analytics1">
-      <script type="application/json"> { "vars": { "account": "G-T6MM10MYRV"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars" : {
+          "gtag_id": "G-T6MM10MYRV}",
+          "config" : {
+            "G-T6MM10MYRV}": { "groups": "default" }
+          }
+        }
+      }
       </script>
-    </amp-analytics>
+      </amp-analytics>
     
 
     <header class="l-header">
@@ -2887,6 +2895,7 @@ input::-webkit-input-placeholder {
         </aside>
       </div>
     </footer>
+
   </body>
 </html>
 
