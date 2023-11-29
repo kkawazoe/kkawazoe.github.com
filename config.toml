@@ -3,7 +3,7 @@ languageCode = "jp"
 title = "Note To Self ~One Step At A Time~"
 theme = "hugo_theme_robust"
 enableRobotsTXT = true
-googleAnalytics = ""
+googleAnalytics = "G-T6MM10MYRV"
 disqusShortname = "kkawazoe"
 
 [permalinks]
