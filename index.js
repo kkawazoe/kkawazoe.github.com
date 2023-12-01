@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/",
+    title: "Google Tag Manager でローカル環境のデバッグを行う方法",
+    image: "images/logo/google_tag_manager_logo.svg",
+    date: "2023-12-01",
+    body: "Google Tag Manager でローカル環境のデバッグを行う方法 Google Tag Manager でローカル環境のデバッグを行う方法を備忘録として残しておく 前提 Google Tag Manager(以下 GTM) に検証用のコンテナを準備して コンテナ ID をローカル環境に設定してあること ローカル環境を起動してブラウザでアクセスできる状態であること 方法 GTM にログイン [プレビュー]リンクから Tag Assistant を起動 Tag Assistantの「Your website’s URL」にローカル環境のURLを入力 [Connect] ボタンを押下"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/",
     title: "rails で複数検索条件のリファクタリング",
     image: "images/logo/rails_logo.svg",

@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-fa7a1714bfec99cce2332dd64189ff4a {
+  background-image: url("https://kkawazoe.github.io/images/logo/google_tag_manager_logo.svg");
+}
+  
+
+  
 .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
   background-image: url("https://kkawazoe.github.io/images/logo/rails_logo.svg");
 }
@@ -1122,6 +1128,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-fa7a1714bfec99cce2332dd64189ff4a {
+      background-image: url(https://kkawazoe.github.io/images/logo/google_tag_manager_logo.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-fa7a1714bfec99cce2332dd64189ff4a {
+      width: 5rem;
+    }
+  
 
   
     .thumb-7f95700f36f470d26d10c3b4ef5f86d2 {
@@ -2736,13 +2756,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          92
+          93
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          21
+          22
           <span>Tags</span>
         </a>
       </div>
@@ -2771,6 +2791,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/05/14/how-to-execute-specified-rspec/">
+          <div class="thumb thumb-eb7e9f9d3b8c495cc2d7cbd9f3dfd193"></div>
+
+          <div class="inner">
+            <h2 class="title">特定の RSpec のみ実行されるようにする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-05-14T09:00:00JST">May 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">個別カスタマイズ等で追加した RSpec のみ実行させる必要があり、調査した結果を備忘録として残しておく
+方法 tag オプション を使用して実現する
+環境  rspec: rspec 3.8  実際のコード # # :key =&gt; &#39;value&#39; 形式でタグを付与可能 # Group(describe, context, it) に対して付与可能 # RSpec.describe &#34;group with tagged specs&#34; do it &#34;example I&#39;m working now&#34;, focus: true do; end it &#34;special example with string&#34;, type: &#39;special&#39; do; end it &#34;special example with symbol&#34;, type: :special do; end it &#34;slow example&#34;, skip: true do; end it &#34;ordinary example&#34;, speed: &#39;slow&#39; do; end end 実行方法 例.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2995,31 +3038,6 @@ desc &#39;Generate Error Pages&#39; task generate_error_pages: :environment do I
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/">
-          <div class="thumb thumb-29825a4d4c5b04cfa5318654886562b0"></div>
-
-          <div class="inner">
-            <h2 class="title">Docker Compose 上で Rails の秘匿情報を扱う</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-04-04T10:46:01JST">Apr 4, 2020</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 前提  credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails  確認 例. production 環境の秘匿情報を確認する
-以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
-以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=&gt; コンテナが起動していない場合は docker-compose run rails bash $ EDITOR=&#34;vim&#34; bin/rails env_credentials:edit -e production </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3041,6 +3059,27 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/">
+    <div class="thumb thumb-fa7a1714bfec99cce2332dd64189ff4a"></div>
+
+    <div class="inner">
+      <div class="title">Google Tag Manager でローカル環境のデバッグを行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-12-01T12:30:00JST">Dec 1, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
@@ -3219,27 +3258,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="27007-01-27T13:00:00JST">Jan 27, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/">
-    <div class="thumb thumb-0fd1a171cc55c8621e035d64e2f2c3d5"></div>
-
-    <div class="inner">
-      <div class="title">Mac(M1) で Path を通す方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="25007-01-25T13:00:00JST">Jan 25, 2023</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
