@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-0a0e7d244a84dca79cf97e485dc050bd {
+  background-image: url("https://kkawazoe.github.io/images/logo/google_analytics_logo.png");
+}
+  
+
+  
 .thumb-fa7a1714bfec99cce2332dd64189ff4a {
   background-image: url("https://kkawazoe.github.io/images/logo/google_tag_manager_logo.svg");
 }
@@ -1128,6 +1134,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-0a0e7d244a84dca79cf97e485dc050bd {
+      background-image: url(https://kkawazoe.github.io/images/logo/google_analytics_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-0a0e7d244a84dca79cf97e485dc050bd {
+      width: 5rem;
+    }
+  
 
   
     .thumb-fa7a1714bfec99cce2332dd64189ff4a {
@@ -2756,13 +2776,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          93
+          94
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          22
+          23
           <span>Tags</span>
         </a>
       </div>
@@ -2791,6 +2811,28 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
+          <div class="thumb thumb-0a0e7d244a84dca79cf97e485dc050bd"></div>
+
+          <div class="inner">
+            <h2 class="title">Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-02T12:00:00JST">Dec 2, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Google Analytics(GA) で Google Tag Manager(以下 GTM) で設定したイベントパラメータを計測および表示を行う方法を備忘録として残しておく
+前提  ソースコードに GTM との連携用のスクリプトが導入済であること ソースコード上に以下のようなカスタムイベント発火のコードが設定されていること  pushDataLayer({ event: &#34;watch_video&#34;, userID: userId, datetime: `${date}${time}`, }); 方法  [管理] &gt; [データの収集と修正] &gt; [データ ストリーム]を選択 対象のサイトを選択 測定 ID をコピーして退避しておく [Google マーケティング プラットフォーム] &gt; [タグマネージャー]を選択  GTM での作業 変数の登録  [変数] &gt; [ユーザ定義変数] &gt; [新規]ボタンを押下 変数名に「user_id」と入力 変数のタイプに[データレイヤーの変数]を選択 データレイヤーの変数名に「userId」を入力 [保存]ボタンを押下 「datetime」も同じように登録する  トリガーの登録  [トリガー] &gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガーの設定]の中央アイコンを押下 [その他] &gt; [カスタムイベント]を選択 イベント名に「watch_video」を入力 [保存]ボタンを押下  タグの登録  [タグ] &gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガー]の中央アイコンを押下 トリガーの登録で登録した「動画再生」を選択 [タグの設定]の中央アイコンを押下 [Google アナリティクス] &gt; [Google アナリティクス: GA4 イベント]を選択 測定 ID に事前に退避しておいた測定 ID を入力 イベント名に「watch_video」を入力 イベント パラメータに 「user_id」を入力 値に「{{user_id}}」を入力 イベント パラメータに 「datetime」を入力 値に「{{datetime}}」を入力 [保存]ボタンを押下 [プレビュー]ボタンを押下してカスタムイベントが測定されることを確認 [公開]ボタンを押下  GA での作業 カスタムディメンションの設定  Google Analytics にログイン [管理]&gt;[データの表示]&gt;[カスタム定義]を選択 [カスタム ディメンションを作成]を押下 ディメンション名に「ユーザID」と入力 範囲に「イベント」を選択 説明に任意の値を入力 イベント パラメータに「user_id」を入力 「保存」ボタンを押下 datetime も同じように登録 ※ディメンション名は「イベント実行時間」  動画再生時間収集用の探索の設定 ※探索は前日までのデータしか対象にできないため設定の確認は後日に行うことになる</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3017,31 +3059,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/">
-          <div class="thumb thumb-7f07e8580924b8f0fe451687b6486a46"></div>
-
-          <div class="inner">
-            <h2 class="title">GitHub の PR で折りたたみコンテンツを使用する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-01-27T13:00:00JST">Jan 27, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">GitHub の PR を作成する際に縦に長くなりすぎるため、折りたたみコンテンツを使用している
-その方法を備忘録として残しておく
-実際のコード html タグの details, summary タグを使用する
-※画像を入れる場合は、1行空行を入れないと展開されないため要注意
-&lt;details&gt; &lt;summary&gt;その１&lt;/summary&gt; ![画像1](/images/logo/github_logo.png) &lt;/details&gt; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3061,6 +3078,27 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
+    <div class="thumb thumb-0a0e7d244a84dca79cf97e485dc050bd"></div>
+
+    <div class="inner">
+      <div class="title">Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-12-02T12:00:00JST">Dec 2, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/">
@@ -3251,27 +3289,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/">
-    <div class="thumb thumb-7f07e8580924b8f0fe451687b6486a46"></div>
-
-    <div class="inner">
-      <div class="title">GitHub の PR で折りたたみコンテンツを使用する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="27007-01-27T13:00:00JST">Jan 27, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3300,7 +3317,7 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/html">html <span class="count">(2)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/google-tag-manager">google-tag-manager <span class="count">(2)</span></a></li>
     
   </ul>
 </section>

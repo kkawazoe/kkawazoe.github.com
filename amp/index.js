@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/",
+    title: "Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法",
+    image: "images/logo/google_analytics_logo.png",
+    date: "2023-12-02",
+    body: "Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法 Google Analytics(GA) で Google Tag Manager(以下 GTM) で設定したイベントパラメータを計測および表示を行う方法を備忘録として残しておく 前提 ソースコードに GTM との連携用のスクリプトが導入済であること ソースコード上に以下のようなカスタムイベント発火のコードが設定されていること pushDataLayer({ event: \u0026#34;watch_video\u0026#34;, userID: userId, datetime: `${date}${time}`, }); 方法 [管理] \u0026gt; [データの収集と修正] \u0026gt; [データ ストリーム]を選択 対象のサイトを選択 測定 ID をコピーして退避しておく [Google マーケティング プラットフォーム] \u0026gt; [タグマネージャー]を選択 GTM での作業 変数の登録 [変数] \u0026gt; [ユーザ定義変数] \u0026gt; [新規]ボタンを押下 変数名に「user_id」と入力 変数のタイプに[データレイヤーの変数]を選択 データレイヤーの変数名に「userId」を入力 [保存]ボタンを押下 「datetime」も同じように登録する トリガーの登録 [トリガー] \u0026gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガーの設定]の中央アイコンを押下 [その他] \u0026gt; [カスタムイベント]を選択 イベント名に「watch_video」を入力 [保存]ボタンを押下 タグの登録 [タグ] \u0026gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガー]の中央アイコンを押下 トリガーの登録で登録した「動画再生」を選択 [タグの設定]の中央アイコンを押下 [Google アナリティクス] \u0026gt; [Google アナリティクス: GA4 イベント]を選択 測定 ID に事前に退避しておいた測定 ID を入力 イベント名に「watch_video」を入力 イベント パラメータに 「user_id」を入力 値に「{{user_id}}」を入力 イベント パラメータに 「datetime」を入力 値に「{{datetime}}」を入力 [保存]ボタンを押下 [プレビュー]ボタンを押下してカスタムイベントが測定されることを確認 [公開]ボタンを押下 GA での作業 カスタムディメンションの設定 Google Analytics にログイン [管理]\u0026gt;[データの表示]\u0026gt;[カスタム定義]を選択 [カスタム ディメンションを作成]を押下 ディメンション名に「ユーザID」と入力 範囲に「イベント」を選択 説明に任意の値を入力 イベント パラメータに「user_id」を入力 「保存」ボタンを押下 datetime も同じように登録 ※ディメンション名は「イベント実行時間」 動画再生時間収集用の探索の設定 ※探索は前日までのデータしか対象にできないため設定の確認は後日に行うことになる [探索]を選択 [空白]を選択 ディメンションの右横にある[+]ボタンを押下 [カスタム]\u0026gt;[ユーザID]のチェックを入れる [カスタム]\u0026gt;[イベント実行時間]のチェックを入れる [インポート]ボタンを押下 期間を対象期間に変更する [フィルタ]\u0026gt;[イベント名]を選択 [条件]\u0026gt;[マッチ タイプを選択してください]に「次と完全一致」を選択 [条件]\u0026gt;「式を入力」に「watch_video」を入力 後は、表示したい項目を行、列、値に組み込んでいく"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/12/01/debug-to-local-environment-with-gtm/",
     title: "Google Tag Manager でローカル環境のデバッグを行う方法",
     image: "images/logo/google_tag_manager_logo.svg",
