@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-45092d75eb0a3cf25727c188bf4908c0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
+.thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+}
+  
+
+  
 .thumb-0a0e7d244a84dca79cf97e485dc050bd {
   background-image: url("https://kkawazoe.github.io/images/logo/google_analytics_logo.png");
 }
@@ -1134,6 +1146,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      background-image: url(https://kkawazoe.github.io/images/logo/postgre_sql_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-0a0e7d244a84dca79cf97e485dc050bd {
@@ -2776,13 +2816,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          94
+          96
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          23
+          26
           <span>Tags</span>
         </a>
       </div>
@@ -2834,6 +2874,63 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/">
+          <div class="thumb thumb-e9e48977efad1f22aefc97a4dbdab477"></div>
+
+          <div class="inner">
+            <h2 class="title">Ruby Gold 認定試験 Ver 3 への道 その5</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-05T13:00:00JST">Dec 5, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
+[前回までの記事]
+ Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3 Ruby Gold 認定試験 Ver 3 への道 その4  受験結果 無事に合格した
+前回、 ver 2 受験時と難易度的には同じくらいだったように思う
+なので、基本的にはオブジェクト指向周りを再確認する
+3 系から追加された 「hash 明示(**hash)」などはリリースノートで確認して置いた方が良いが 2.2 〜 2.7 系での変更点についても押さえておくとより良いと思う
+Github NEWS.md
+リリースノート
+勉強に使用したもの  公式の模擬問題
+基本的には、上記をやって該当のコードを自分でコーディングしながら、色々変更して動作確認するのが一番良さそう  </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/12/02/about-enum-in-rails/">
+          <div class="thumb thumb-096cc9bdf5e6513097f8799c3e5d46e1"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails における Enum について</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-02T13:00:00JST">Dec 2, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Rails における Enum の挙動について調査した内容を備忘録として残しておく
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード DB のカラムに対応する enum を定義した場合、自動的に scope が定義される
+※Rails 6 では not_* の scope も自動的に定義される 参考
+※Rails 7 では新しい構文が追加されたため、今後オプションの指定が従来のやり方だと非推奨になる可能性がある 参考
+[モデル定義]
+class Article &lt; ApplicationRecord enum status: { draft: 0, # 下書き published: 1, # 公開中 closed: 2, # 掲載終了 }, _prefix: true end [Rails Console]
+# enum 確認 Article.statuses #=&gt; {&#34;draft&#34;=&gt;0, &#34;published&#34;=&gt;1, &#34;closed&#34;=&gt;2} # scope Article.status_published #=&gt; Article Load (7.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3032,55 +3129,6 @@ def create @book = Book.save!(book_params) end private def book_params params.re
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/">
-          <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
-
-          <div class="inner">
-            <h2 class="title">ransack で scope を使用して link_to で表示する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T00:00:00JST">Nov 1, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">方法 ransackable_scopes メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成されたユーザを取得する
-[model]
-# 引数なし scope :within_one_month, -&gt; { where(&#39;created_at &gt;=&#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&gt; (day) { where(&#39;created_at &gt;=&#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
-&lt;%= link_to( &#34;1ヶ月以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_one_month: true }), class: &#34;btn btn-primary mr-5&#34; ) link_to( &#34;7日以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_days: 7 }), class: &#34;btn btn-primary mr-5&#34; ) %&gt; [controller]</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/10/30/how-to-dynamic-create-test-data-for-factory-bot-with-rspec/">
-          <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
-
-          <div class="inner">
-            <h2 class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-10-30T21:00:00JST">Oct 30, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">方法 create_list と send メソッドを使用して実現する
-環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを紐付けおよびカラム status を動的に生成する
-let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
-let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i + 1}&#34;), ) end end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3102,6 +3150,48 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
+    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
+
+    <div class="inner">
+      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
+    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
+
+    <div class="inner">
+      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
@@ -3271,48 +3361,6 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
-    <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
-
-    <div class="inner">
-      <div class="title">rails で遷移元の URL を取得してリダイレクトする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T09:00:00JST">Feb 8, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
-    <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
-
-    <div class="inner">
-      <div class="title">rails で複合項目で一意性チェックを行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-02-03T00:00:00JST">Feb 3, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3325,17 +3373,17 @@ let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locke
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/rspec">rspec <span class="count">(3)</span></a></li>
     

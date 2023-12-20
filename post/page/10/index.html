@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-45092d75eb0a3cf25727c188bf4908c0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
+.thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+}
+  
+
+  
 .thumb-0a0e7d244a84dca79cf97e485dc050bd {
   background-image: url("https://kkawazoe.github.io/images/logo/google_analytics_logo.png");
 }
@@ -1134,6 +1146,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      background-image: url(https://kkawazoe.github.io/images/logo/postgre_sql_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-0a0e7d244a84dca79cf97e485dc050bd {
@@ -2776,13 +2816,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          94
+          96
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          23
+          26
           <span>Tags</span>
         </a>
       </div>
@@ -2811,6 +2851,52 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/02/26/detect-loaded-and-start-reading-for-img-with-vuejs/">
+          <div class="thumb thumb-a4983a1e02839d0323fa862d0716f47f"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js で画像の読み込みの開始および完了を検知する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-26T17:29:00JST">Feb 26, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">確認環境  Vue.js: v2.6.7  方法 読み込み開始検知  img タグの :src に展開する URL を変数化 ※1 Vue.js 側の watch で1.の変数を監視 ※2  読み込み完了検知  img タグに以下のイベントを追加 v-on:load=&quot;メソッド名&quot; ※3 Vue.js 側に1.で指定したメソッドを定義 ※4  実際のソース &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ja&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;title&gt;画像の読み込みの開始および完了を検知する方法&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;img :src=&#34;url&#34; v-on:load=&#34;load&#34; /&gt; &lt;!-- ※3 --&gt; &lt;/div&gt; &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script&gt; var app = new Vue({ el: &#39;#app&#39;, data: { url: &#34;https://raw.githubusercontent.com/vuejs/art/master/logo.png&#34; // ※1  }, methods: { // ※4  load: function() { console.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/02/25/order-by-prefer-yourself-with-rails/">
+          <div class="thumb thumb-2d72ccc0731e495240ee4b00bf88ca26"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails の order by で自分を優先的に取得する(MySql 限定)</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-25T16:50:14JST">Feb 25, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">確認環境  ruby: ruby 2.5.3 rails: rails 5.2.2  方法  Mysqlの FIELD 関数を使用する※FIELD 関数の結果で ORDER BY する  例. レコードを order 昇順, user_id 昇順で並び替える場合
+※同じ順位の場合は自分を優先
+order(:order, [&#34;field(user_id , #{current_user.id}) desc&#34;], :user_id) ※ ポイントとしては第２ソートキーの前に ORDER BY FIELD を使用すること
+また、ORDER BY FIELD で指定した分に対して desc を指定すること
+※ desc を指定しないと自分以外が優先的に並び替えられてしまう)</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2923,6 +3009,48 @@ input::-webkit-input-placeholder {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
+    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
+
+    <div class="inner">
+      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
+    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
+
+    <div class="inner">
+      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
@@ -3092,48 +3220,6 @@ input::-webkit-input-placeholder {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
-    <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
-
-    <div class="inner">
-      <div class="title">rails で遷移元の URL を取得してリダイレクトする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T09:00:00JST">Feb 8, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
-    <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
-
-    <div class="inner">
-      <div class="title">rails で複合項目で一意性チェックを行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-02-03T00:00:00JST">Feb 3, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3146,17 +3232,17 @@ input::-webkit-input-placeholder {
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/rspec">rspec <span class="count">(3)</span></a></li>
     

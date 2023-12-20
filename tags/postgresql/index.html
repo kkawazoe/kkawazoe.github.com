@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-45092d75eb0a3cf25727c188bf4908c0 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
+.thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+  background-image: url("https://kkawazoe.github.io/images/logo/postgre_sql_logo.png");
+}
+  
+
+  
 .thumb-0a0e7d244a84dca79cf97e485dc050bd {
   background-image: url("https://kkawazoe.github.io/images/logo/google_analytics_logo.png");
 }
@@ -1134,6 +1146,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-45092d75eb0a3cf25727c188bf4908c0 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      background-image: url(https://kkawazoe.github.io/images/logo/postgre_sql_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-b225a88609f3af7ed0f2a6dba88d8e07 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-0a0e7d244a84dca79cf97e485dc050bd {
@@ -2776,13 +2816,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          94
+          96
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          23
+          26
           <span>Tags</span>
         </a>
       </div>
@@ -2811,6 +2851,32 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
+          <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
+
+          <div class="inner">
+            <h2 class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-20T12:00:00JST">Dec 20, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
+方法 事前作業 AWS Console にて接続に必要な情報を控えておく
+EC2 踏み台の Public IP を確認
+ EC2 &gt; リソース &gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  RDS  RDS &gt; データベース &gt; 該当の DB 識別子を選択  その他 DB のパスワード (Secrets Manager)の設定確認方法
+ AWS Secrets Manager &gt; DB のユーザパスワードを選択 シークレットの値 &gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する
+ 接続  ホスト名/アドレス: {事前作業で確認した RDS の DB 識別子} ポート番号: 5432 ※別のを指定している場合はそちらに従う 管理用データベース: postgres ※別のを指定している場合はそちらに従う ユーザ名: postgres ※別のを指定している場合はそちらに従う パスワード: {事前作業で確認した DB のパスワード}   SSH トンネル  SSH トンネリングを使用: オン トンネルホスト: {事前作業で確認した EC2 の Public IP} トンネルポート番号: 22 ユーザ名: ec2-user 認証: 識別情報ファイルを選択 識別情報ファイル: 該当 EC2 接続用の pem キーを選択    </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2893,6 +2959,48 @@ input::-webkit-input-placeholder {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
+    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
+
+    <div class="inner">
+      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
+    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
+
+    <div class="inner">
+      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
@@ -3062,48 +3170,6 @@ input::-webkit-input-placeholder {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
-    <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
-
-    <div class="inner">
-      <div class="title">rails で遷移元の URL を取得してリダイレクトする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T09:00:00JST">Feb 8, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
-    <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
-
-    <div class="inner">
-      <div class="title">rails で複合項目で一意性チェックを行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="3007-02-03T00:00:00JST">Feb 3, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3116,17 +3182,17 @@ input::-webkit-input-placeholder {
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(18)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/rspec">rspec <span class="count">(3)</span></a></li>
     

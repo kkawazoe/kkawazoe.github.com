@@ -2,6 +2,20 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/",
+    title: "AWS と Firebase を連携して Push 通知を行う場合の設定について",
+    image: "images/logo/aws_logo.png",
+    date: "2023-12-20",
+    body: "AWS と Firebase を連携して Push 通知を行う場合の設定について AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく 方法 Amazon Pinpoint を使用 Amazon Pinpoint \u0026gt; 使用を開始する \u0026gt; Pinpoint campaign orchestration を選択 [プロジェクトを管理]ボタンを押下 該当のプロジェクト名を選択 設定 \u0026gt; プッシュ通知 を選択 [編集]ボタンを押下 Apple Push Notification service (APNs) デフォルトの認証タイプ キー認証情報(推奨) 有効にする APN チャネルを選択 任意のチャネルを選択 キー ID Apple Developer Programで確認 バンドル識別子 Apple Developer Programで確認 チーム識別子 Apple Developer Programで確認 認証キー(.p8 ファイル) Apple Developer Programで取得 Firebase Cloud Messaging (FCM) デフォルトの認証タイプ トークン認証情報(推奨) サービス json (.json ファイル) Firebase で発行可能な秘密鍵を選択 ※google-services.json ではないので注意"
+  },
+  {
+    url: "https://kkawazoe.github.io/amp/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/",
+    title: "pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法",
+    image: "images/logo/postgre_sql_logo.png",
+    date: "2023-12-20",
+    body: "pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法 pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく 方法 事前作業 AWS Console にて接続に必要な情報を控えておく EC2 踏み台の Public IP を確認 EC2 \u0026gt; リソース \u0026gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS \u0026gt; データベース \u0026gt; 該当の DB 識別子を選択 その他 DB のパスワード (Secrets Manager)の設定確認方法 AWS Secrets Manager \u0026gt; DB のユーザパスワードを選択 シークレットの値 \u0026gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する 接続 ホスト名/アドレス: {事前作業で確認した RDS の DB 識別子} ポート番号: 5432 ※別のを指定している場合はそちらに従う 管理用データベース: postgres ※別のを指定している場合はそちらに従う ユーザ名: postgres ※別のを指定している場合はそちらに従う パスワード: {事前作業で確認した DB のパスワード} SSH トンネル SSH トンネリングを使用: オン トンネルホスト: {事前作業で確認した EC2 の Public IP} トンネルポート番号: 22 ユーザ名: ec2-user 認証: 識別情報ファイルを選択 識別情報ファイル: 該当 EC2 接続用の pem キーを選択"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/",
     title: "Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法",
     image: "images/logo/google_analytics_logo.png",

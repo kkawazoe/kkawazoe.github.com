@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/tags/aws/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/firebase/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/pgadmin/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/postgresql/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/post/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
+    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/tags/google-analytics/</loc>
     <lastmod>2023-12-02T12:00:00+09:00</lastmod>
   </url><url>
@@ -9,15 +39,6 @@
     <lastmod>2023-12-02T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/google-tag-manager/</loc>
-    <lastmod>2023-12-02T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2023-12-02T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2023-12-02T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2023-12-02T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/</loc>
@@ -30,9 +51,6 @@
     <lastmod>2023-11-26T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/</loc>
-    <lastmod>2023-11-13T13:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
     <lastmod>2023-11-13T13:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</loc>
@@ -145,9 +163,6 @@
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/08/23/how-to-get-alias-column-pluck-method-with-rails/</loc>
     <lastmod>2022-08-23T22:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/postgresql/</loc>
-    <lastmod>2022-08-22T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2022/08/22/how-to-get-count-specific-string-with-postgre-sql/</loc>
     <lastmod>2022-08-22T12:00:00+09:00</lastmod>
