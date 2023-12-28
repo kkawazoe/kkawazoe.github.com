@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/",
+    title: "Amazon Pinpoint API で push 通知を送信する方法",
+    image: "images/logo/aws_logo.png",
+    date: "2023-12-28",
+    body: "Amazon Pinpoint API で push 通知を送信する方法 Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく 前提構成: 前回記事を参照 方法 デベロッパーガイドを参照 ※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう リファクタリング前 ・・・ if (service == \u0026#39;GCM\u0026#39;) { var messageRequest = { \u0026#39;Addresses\u0026#39;: { [token]: { \u0026#39;ChannelType\u0026#39;: \u0026#39;GCM\u0026#39; } }, \u0026#39;MessageConfiguration\u0026#39;: { \u0026#39;GCMMessage\u0026#39;: { \u0026#39;Action\u0026#39;: action, \u0026#39;Body\u0026#39;: message, \u0026#39;Priority\u0026#39;: priority, \u0026#39;SilentPush\u0026#39;: silent, \u0026#39;Title\u0026#39;: title, \u0026#39;TimeToLive\u0026#39;: ttl, \u0026#39;Url\u0026#39;: url } } }; } else if (service == \u0026#39;APNS\u0026#39;) { var messageRequest = { \u0026#39;Addresses\u0026#39;: { [token]: { \u0026#39;ChannelType\u0026#39; : \u0026#39;APNS\u0026#39; } }, \u0026#39;MessageConfiguration\u0026#39;: { \u0026#39;APNSMessage\u0026#39;: { \u0026#39;Action\u0026#39;: action, \u0026#39;Body\u0026#39;: message, \u0026#39;Priority\u0026#39;: priority, \u0026#39;SilentPush\u0026#39;: silent, \u0026#39;Title\u0026#39;: title, \u0026#39;TimeToLive\u0026#39;: ttl, \u0026#39;Url\u0026#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { \u0026#39;Addresses\u0026#39;: { [token]: { \u0026#39;ChannelType\u0026#39;: service } }, \u0026#39;MessageConfiguration\u0026#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { \u0026#39;Action\u0026#39;: action, \u0026#39;Body\u0026#39;: message, \u0026#39;Priority\u0026#39;: priority, \u0026#39;SilentPush\u0026#39;: silent, \u0026#39;Title\u0026#39;: title, \u0026#39;TimeToLive\u0026#39;: ttl, \u0026#39;Url\u0026#39;: url } } }; ・・・"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/",
     title: "AWS と Firebase を連携して Push 通知を行う場合の設定について",
     image: "images/logo/aws_logo.png",

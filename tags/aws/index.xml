@@ -6,7 +6,20 @@
     <description>Recent content in AWS on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 20 Dec 2023 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Pinpoint API で push 通知を送信する方法</title>
+      <link>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</link>
+      <pubDate>Thu, 28 Dec 2023 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</guid>
+      <description>Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく
+前提構成: 前回記事を参照
+方法 デベロッパーガイドを参照
+※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう
+リファクタリング前 ・・・ if (service == &amp;#39;GCM&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: &amp;#39;GCM&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;GCMMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } else if (service == &amp;#39;APNS&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39; : &amp;#39;APNS&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;APNSMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: service } }, &amp;#39;MessageConfiguration&amp;#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; ・・・ </description>
+    </item>
+    
     <item>
       <title>AWS と Firebase を連携して Push 通知を行う場合の設定について</title>
       <link>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</link>
