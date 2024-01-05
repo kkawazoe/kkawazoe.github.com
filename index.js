@@ -44,11 +44,11 @@ var data = [
     body: "rails で複数検索条件のリファクタリング 検索条件の入力が複数あるような画面で入力があった条件のもののみを AND 条件としたい場合メソッド内に if 文が乱立してしまい可読性が下がってしまう そのため、将来的に条件が追加された場合でも可読性が下がらないようにリファクタリングした方法を備忘録として残しておく 環境 ruby: 3.0.5 rails: 6.1.7 方法 検索条件をそれぞれ scope に切り出す scope 内で skip 条件を next if で記載する メソッドでそれぞれの scope を呼び出す 前提 検索条件はメソッドの引数として Hash 形式で渡される 実際の例 タイトルと内容で入力があったもので検索を行い、条件にあった本を取得する ※全ての条件が未入力の場合は全件表示 class Book \u0026lt; ApplicationRecord scope :with_title, -\u0026gt; (title) do next if title.blank? where(\u0026#39;title LIKE ?\u0026#39;, \u0026#34;%#{title}%\u0026#34;) end scope :with_summary, -\u0026gt; (summary) do next if summary.blank? where(\u0026#39;summary LIKE ?\u0026#39;, \u0026#34;%#{summary}%\u0026#34;) end def self.search(options: {}) with_title(options[:title]) .with_summary(options[:summary]) end end"
   },
   {
-    url: "https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-intel-for-mac/",
-    title: "Mac(Intel) に Warp をインストールする方法",
+    url: "https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-mac/",
+    title: "Mac に Warp をインストールする方法",
     image: "images/logo/icons8-mac-os-logo.svg",
     date: "2023-11-13",
-    body: "Mac(Intel) に Warp をインストールする方法 Mac(Intel) に Warp をインストールする方法を備忘録として残しておく 手順 home brew を使用してインストール $ brew install --cask warp 設定 公式サイト を参照"
+    body: "Mac に Warp をインストールする方法 Mac に Warp をインストールする方法を備忘録として残しておく 手順 home brew を使用してインストール $ brew install --cask warp 設定 公式サイト を参照"
   },
   {
     url: "https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/",
