@@ -20,21 +20,21 @@
 
 
     
-<meta name="description" content="rails で複数検索条件のリファクタリング方法を備忘録として残しておく">
+<meta name="description" content="rails で複数検索条件のリファクタリングした際の内容を備忘録として残しておく">
 
 <meta property="og:title" content="rails で複数検索条件のリファクタリング - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="rails で複数検索条件のリファクタリング方法を備忘録として残しておく">
+<meta property="og:description" content="rails で複数検索条件のリファクタリングした際の内容を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Note To Self ~One Step At A Time~">
 <meta name="twitter:url" content="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
 <meta name="twitter:title" content="rails で複数検索条件のリファクタリング - Note To Self ~One Step At A Time~">
-<meta name="twitter:description" content="rails で複数検索条件のリファクタリング方法を備忘録として残しておく">
+<meta name="twitter:description" content="rails で複数検索条件のリファクタリングした際の内容を備忘録として残しておく">
 <meta name="twitter:image" content="https://kkawazoe.github.io/images/logo/rails_logo.svg">
 
 
@@ -69,7 +69,7 @@
         "height": 60
       }
     },
-    "description": "rails で複数検索条件のリファクタリング方法を備忘録として残しておく"
+    "description": "rails で複数検索条件のリファクタリングした際の内容を備忘録として残しておく"
   }
 </script>
 
@@ -2947,8 +2947,8 @@ input::-webkit-input-placeholder {
 
   
 
-  <div class="article-body"><p>検索条件の入力が複数あるような画面で入力があった条件のもののみを AND 条件としたい場合メソッド内に if 文が乱立してしまい可読性が下がってしまう<br>
-そのため、将来的に条件が追加された場合でも可読性が下がらないようにリファクタリングした方法を備忘録として残しておく</p>
+  <div class="article-body"><p>検索条件の入力が複数あるような画面で入力があった条件のみを AND 条件としたい場合、メソッド内に if 文が乱立してしまい、可読性が下がってしまう<br>
+そのため、将来的に条件が追加された場合でも、可読性が下がらないように、リファクタリングした内容を備忘録として残しておく</p>
 <h2 id="環境">環境</h2>
 <ul>
 <li>ruby: 3.0.5</li>
@@ -2966,7 +2966,7 @@ input::-webkit-input-placeholder {
 <h2 id="前提">前提</h2>
 <p>検索条件はメソッドの引数として Hash 形式で渡される</p>
 <h3 id="実際の例">実際の例</h3>
-<p>タイトルと内容で入力があったもので検索を行い、条件にあった本を取得する<br>
+<p>タイトルと内容で入力があった場合に AND 条件で検索を行い、条件にあった本を取得する<br>
 ※全ての条件が未入力の場合は全件表示</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.rb" data-lang=".rb"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Book</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
   scope <span style="color:#e6db74">:with_title</span>, <span style="color:#f92672">-&gt;</span> (title) <span style="color:#66d9ef">do</span>
