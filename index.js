@@ -2,6 +2,20 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/",
+    title: "Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法",
+    image: "images/logo/aws_logo.png",
+    date: "2024-01-16",
+    body: "Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法 Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する 実際のコード aws cognito-idp list-users \\ --user-pool-id {該当のユーザプール ID} \\ --filter \u0026#34;{検索に使用する属性} = \\\u0026#34;{検索文字列}\\\u0026#34;\u0026#34; \\ --attributes-to-get \u0026#34;{取得する属性(スペース区切りで複数指定可)}\u0026#34; \\ | jq -r \u0026#39;.Users[] | [.Username, .Attributes[].Value] | @csv\u0026#39; \\ | tr -d \u0026#39;\u0026#34;\u0026#39; \\ \u0026gt; user_pool_list.csv"
+  },
+  {
+    url: "https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/",
+    title: "Amazon Lamdba で登録されている関数一覧を取得する方法",
+    image: "images/logo/aws_logo.png",
+    date: "2024-01-16",
+    body: "Amazon Lamdba で登録されている関数一覧を取得する方法 Amazon Lamdba で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する 実際のコード aws lambda list-functions --region {リージョン名} \\ | jq \u0026#39;.Functions[] | [.FunctionName]\u0026#39; \\ | jq -rs \u0026#39;map([.[]])[] | @csv\u0026#39; \\ | tr -d \u0026#39;\u0026#34;\u0026#39; \u0026gt; lambda-functions-list.csv"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/",
     title: "Amazon Pinpoint API で push 通知を送信する方法",
     image: "images/logo/aws_logo.png",

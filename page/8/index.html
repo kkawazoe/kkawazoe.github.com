@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
+.thumb-73ec13fd4a20de795829c3ac53550dc2 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-19bbac5161d32e8f26568f47bffb9694 {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1152,6 +1164,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-73ec13fd4a20de795829c3ac53550dc2 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-73ec13fd4a20de795829c3ac53550dc2 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-19bbac5161d32e8f26568f47bffb9694 {
@@ -2836,7 +2876,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          97
+          99
           <span>Posts</span>
         </a>
       </div>
@@ -2894,6 +2934,62 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/">
+          <div class="thumb thumb-a0619f44ba45d95c26d446f8ba4c21e3"></div>
+
+          <div class="inner">
+            <h2 class="title">FP3級への道 その3</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-24T00:00:00JST">Apr 24, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">学習中に間違えやすいと思った点を備忘録として残しておく
+[前回までの記事]
+ FP3級への道 FP3級への道 その2  リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
+[死亡保険金の場合]
+   契約者 被保険者 受取人 税金     A A B 相続税   A B A 所得税(一時所得)
+住民税   A B C 贈与税    [満期保険金の場合]
+   契約者 被保険者 受取人 税金     A 誰でも A 所得税(一時所得)
+住民税   A 誰でも B 贈与税    [非課税となる保険金や給付金]</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/">
+          <div class="thumb thumb-67c195c22b76149c2a0d2d5ea82cfc3c"></div>
+
+          <div class="inner">
+            <h2 class="title">Access でパラメータクエリが未入力の場合は全検索する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-23T00:00:00JST">Apr 23, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">実際のコード   パラメータが未入力の際に全ての検索条件を無視して全検索する場合
+抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
+[抽出条件]
+[パラメータ] Or [パラメータ] Is Null   パラメータが未入力の際に関係する抽出条件のみを全検索する場合
+パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
+[抽出条件]
+[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること
+  </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3112,53 +3208,6 @@ github
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/04/07/build-to-rails2-and-ruby1-with-windows10/">
-          <div class="thumb thumb-22a09971c752ef71760fc42937e3fa65"></div>
-
-          <div class="inner">
-            <h2 class="title">Windows10 に Ruby1.8.7 ＋ Rails2.3.18 を構築する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-07T04:24:08JST">Apr 7, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境  ruby: ruby 1.8.7 rails: rails 2.3.18  手順  Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)   3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する  ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする   4-1. 以下のコマンドを入力する  gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
-$ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/28/manage-task-with-slack-and-todoist-and-integromat-2/">
-          <div class="thumb thumb-1ccc7a236ed4851cfa345762b5168343"></div>
-
-          <div class="inner">
-            <h2 class="title">Slack ＋ Todoist ＋ Integromat でタスク管理 その２</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-28T12:09:59JST">Mar 28, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">前回の残りTODO  operation を使いすぎなためAPIの戻り値を配列化してメッセージを構築するようにする  手順 前回構築した API と Slack の処理の間に以下の処理を追加する
-  「スパナ」アイコンを押下後「JSON」を選択して以下を指定
- 「Parse JSON」  「Data structure」  「Add data structure」  「Specification」  「Generate」を押下して API の戻り値を貼り付けて生成       「JSON string」  「Data」を指定        「スパナ」アイコンを押下後「Flow Control」を選択して以下を指定
- 「Array aggregator」  「Source Module」  手順１ で作成したJSON   「Target structure type」  「Custom」を指定   「Aggregated fields」  必要な項目を指定        前回作成した slack の Text を以下のように修正</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3180,6 +3229,48 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/">
+    <div class="thumb thumb-28d72c3b71e5ac90a3b921bc5c1d0def"></div>
+
+    <div class="inner">
+      <div class="title">Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-01-16T12:30:00JST">Jan 16, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/">
+    <div class="thumb thumb-73ec13fd4a20de795829c3ac53550dc2"></div>
+
+    <div class="inner">
+      <div class="title">Amazon Lamdba で登録されている関数一覧を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-01-16T12:00:00JST">Jan 16, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/">
@@ -3349,48 +3440,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/04/29/how-to-manage-split-routes-with-rails/">
-    <div class="thumb thumb-755189180c7d3046db90262b358671b7"></div>
-
-    <div class="inner">
-      <div class="title">rails で routes.rb を分割管理する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="29007-04-29T13:00:00JST">Apr 29, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/04/12/not-displayed-image-jpeg-for-production-with-rails/">
-    <div class="thumb thumb-d69cd8abb41192bcef392a32b424fdbc"></div>
-
-    <div class="inner">
-      <div class="title">rails で本番環境で画像が表示されない場合に確認すること(jpeg)</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="12007-04-12T13:00:00JST">Apr 12, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3409,6 +3458,8 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(4)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
@@ -3416,8 +3467,6 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/rspec">rspec <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(2)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/docker-compose">docker-compose <span class="count">(2)</span></a></li>
     

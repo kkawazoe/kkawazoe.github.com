@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</loc>
-    <lastmod>2023-12-28T12:00:00+09:00</lastmod>
+    <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</loc>
+    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/aws/</loc>
-    <lastmod>2023-12-28T12:00:00+09:00</lastmod>
+    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2023-12-28T12:00:00+09:00</lastmod>
+    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2023-12-28T12:00:00+09:00</lastmod>
+    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</loc>
+    <lastmod>2024-01-16T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</loc>
     <lastmod>2023-12-28T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</loc>
