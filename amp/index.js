@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2024/01/17/tips-about-aws/",
+    title: "AWS についての Tips",
+    image: "images/logo/aws_logo.png",
+    date: "2024-01-17",
+    body: "AWS についての Tips AWS についての Tips について備忘録として残しておく ※適宜、更新予定 DB の接続情報の確認 EC2 踏み台の Public IP を確認 EC2 \u0026gt; リソース \u0026gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS \u0026gt; データベース \u0026gt; 該当の DB 識別子を選択 Secret Maneger DB のパスワードの設定確認方法 AWS Secrets Manager \u0026gt; DB のユーザパスワードを選択 シークレットの値 \u0026gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する Amazon EventBridge Scheduler Amazon EventBridge \u0026gt; スケジューラ \u0026gt; スケジュール \u0026gt; 該当のスケジュールを選択 スケジュール \u0026gt; cron 式 を確認 ECS 割愛 ※使用パターンが出た時に改めて記載 AWS Batch 割愛 ※使用パターンが出た時に改めて記載 ソース ソース内で cron あるいは schedule で検索 環境変数について CloudFormation CloudFormation を使用している場合には以下を確認することで設定値を確認可能 CloudFormation \u0026gt; スタック \u0026gt; 該当のスタック [パラメータ]タブの該当の値を確認"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/",
     title: "Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法",
     image: "images/logo/aws_logo.png",

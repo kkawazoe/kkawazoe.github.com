@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1164,6 +1170,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+      width: 5rem;
+    }
+  
 
   
     .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
@@ -2876,7 +2896,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          99
+          100
           <span>Posts</span>
         </a>
       </div>
@@ -2934,6 +2954,28 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+          <div class="inner">
+            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法  Windows Terminal を起動する 「Ctrl」+「,」を押下して setting.json を開く setting.json の設定に以下を追加する  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定  }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3163,28 +3205,6 @@ $ docker-compose exec rails bash #=&gt; コンテナが起動していない場�
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/09/14/dynamic-translate-for-i18n-with-rspec/">
-          <div class="thumb thumb-cab18ab31144abb2194986974e446c40"></div>
-
-          <div class="inner">
-            <h2 class="title">RSpec 内で動的に I18n の訳文を追加する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-09-14T09:56:37JST">Sep 14, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  rails: rails 5.2.3  方法 I18n::Backend::Base#store_translations を使用する
-I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) #=&gt; テスト </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3206,6 +3226,27 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
+    <div class="thumb thumb-a758e1d3455d03a5b31d258ca86d8a0d"></div>
+
+    <div class="inner">
+      <div class="title">AWS についての Tips</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-01-17T12:30:00JST">Jan 17, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/">
@@ -3396,27 +3437,6 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/">
-    <div class="thumb thumb-02402c1327ea51224e06cf30902a34ca"></div>
-
-    <div class="inner">
-      <div class="title">Go Tour のローカルでの実行方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="5007-06-05T12:30:00JST">Jun 5, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3435,7 +3455,7 @@ I18n.backend.store_translations( :ja, test: &#39;テスト&#39; ) I18n.t(:test) 
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(4)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(5)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
     

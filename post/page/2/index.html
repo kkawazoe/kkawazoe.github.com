@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1164,6 +1170,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
+      width: 5rem;
+    }
+  
 
   
     .thumb-28d72c3b71e5ac90a3b921bc5c1d0def {
@@ -2876,7 +2896,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          99
+          100
           <span>Posts</span>
         </a>
       </div>
@@ -2911,6 +2931,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/">
+          <div class="thumb thumb-02402c1327ea51224e06cf30902a34ca"></div>
+
+          <div class="inner">
+            <h2 class="title">Go Tour のローカルでの実行方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-06-05T12:30:00JST">Jun 5, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく
+環境  OS : MacOS Ventura(13.4) golang: go1.20.4  エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=&gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する
+tour </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3140,31 +3183,6 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/12/27/how-to-assignment-multiple-sort-key-with-ransack/">
-          <div class="thumb thumb-cc14cd8499faeb279f8aaf4456545cd0"></div>
-
-          <div class="inner">
-            <h2 class="title">Ransack でソートキーを複数指定する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-27T13:00:00JST">Dec 27, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Ransack でソートキーを複数指定する方法を備忘録として残しておく
-環境  ruby: 3.0.4 rails: 6.1.0  実際のコード sort_link ヘルパーメソッドの第三引数に指定する
-※その他の機能については参考を参照
-# ソート順序 第1ソートキー: last_name, 第2ソートキー: first_name # 画面上のソートリンクをクリックする度に両方のキーの昇順、降順が入れ替わる &lt;%= sort_link(@q, :last_name, %i(last_name first_name), &#39;Last Name&#39;) %&gt; 第2ソートキーを常に昇順 or 降順固定にする場合は以下のようにする
-&lt;%= sort_link(@q, :last_name, [:last_name, &#39;first_name asc&#39;], &#39;Last Name&#39;) %&gt; </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3186,6 +3204,27 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
+    <div class="thumb thumb-a758e1d3455d03a5b31d258ca86d8a0d"></div>
+
+    <div class="inner">
+      <div class="title">AWS についての Tips</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-01-17T12:30:00JST">Jan 17, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/">
@@ -3376,27 +3415,6 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/">
-    <div class="thumb thumb-02402c1327ea51224e06cf30902a34ca"></div>
-
-    <div class="inner">
-      <div class="title">Go Tour のローカルでの実行方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="5007-06-05T12:30:00JST">Jun 5, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3415,7 +3433,7 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(4)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(5)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
     

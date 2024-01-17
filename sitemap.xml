@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</loc>
-    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
-  </url><url>
     <loc>https://kkawazoe.github.io/tags/aws/</loc>
-    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
+    <lastmod>2024-01-17T12:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</loc>
+    <lastmod>2024-01-17T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
+    <lastmod>2024-01-17T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2024-01-16T12:30:00+09:00</lastmod>
+    <lastmod>2024-01-17T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2024-01-17T12:30:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</loc>
     <lastmod>2024-01-16T12:30:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</loc>

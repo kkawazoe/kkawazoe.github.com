@@ -6,7 +6,21 @@
     <description>Recent content in AWS on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 16 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS についての Tips</title>
+      <link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link>
+      <pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</guid>
+      <description>AWS についての Tips について備忘録として残しておく
+※適宜、更新予定
+DB の接続情報の確認 EC2 踏み台の Public IP を確認
+ EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  RDS  RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択  Secret Maneger DB のパスワードの設定確認方法
+ AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する
+Amazon EventBridge Scheduler  Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択 スケジュール &amp;gt; cron 式 を確認  ECS 割愛 ※使用パターンが出た時に改めて記載</description>
+    </item>
+    
     <item>
       <title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title>
       <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link>
