@@ -5,8 +5,6 @@ thumbnail: "images/default.jpg"
 date: 2019-03-01T09:00:00+09:00
 ---
 
-# プライバシーポリシー
-
 ## 当サイトに掲載されている広告について
 
 当サイトでは、第三者配信の広告サービス（Google Adsense, Rakuten アフィリエイト, Amazon アソシエイト）を利用しています。
