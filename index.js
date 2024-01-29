@@ -2,11 +2,18 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/",
+    title: "Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法",
+    image: "images/logo/aws_logo.png",
+    date: "2024-01-29",
+    body: "Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法 Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する 実際のコード ユーザ登録 \u0026ndash;user-attributes は必要に応じて増やす ※「\u0026ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能 aws cognito-idp admin-create-user \\ --user-pool-id {ユーザプール ID} \\ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \\ --user-attributes Name=email,Value={E メールアドレス} \\ Name=email_verified,Value=TRUE \\ --message-action SUPPRESS パスワード設定 \u0026ndash;no-permanent は仮パスワード扱い ※「\u0026ndash;permanent」オプションを付与で恒久パスワード扱いになる aws cognito-idp admin-set-user-password \\ --user-pool-id {ユーザプール ID} \\ --username {ユーザ名 or sub} \\ --password {password} \\ --no-permanent"
+  },
+  {
     url: "https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/",
     title: "AWS についての Tips",
     image: "images/logo/aws_logo.png",
     date: "2024-01-17",
-    body: "AWS についての Tips AWS についての Tips について備忘録として残しておく ※適宜、更新予定 DB の接続情報の確認 EC2 踏み台の Public IP を確認 EC2 \u0026gt; リソース \u0026gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS \u0026gt; データベース \u0026gt; 該当の DB 識別子を選択 Secret Maneger DB のパスワードの設定確認方法 AWS Secrets Manager \u0026gt; DB のユーザパスワードを選択 シークレットの値 \u0026gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する Amazon EventBridge Scheduler Amazon EventBridge \u0026gt; スケジューラ \u0026gt; スケジュール \u0026gt; 該当のスケジュールを選択 スケジュール \u0026gt; cron 式 を確認 ECS 割愛 ※使用パターンが出た時に改めて記載 AWS Batch 割愛 ※使用パターンが出た時に改めて記載 ソース ソース内で cron あるいは schedule で検索 環境変数について CloudFormation CloudFormation を使用している場合には以下を確認することで設定値を確認可能 CloudFormation \u0026gt; スタック \u0026gt; 該当のスタック [パラメータ]タブの該当の値を確認"
+    body: "AWS についての Tips AWS についての Tips について備忘録として残しておく ※適宜、更新予定 DB の接続情報の確認 EC2 踏み台の Public IP を確認 EC2 \u0026gt; リソース \u0026gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS \u0026gt; データベース \u0026gt; 該当の DB 識別子を選択 Secret Maneger DB のパスワードの設定確認方法 AWS Secrets Manager \u0026gt; DB のユーザパスワードを選択 シークレットの値 \u0026gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する Amazon EventBridge Scheduler Amazon EventBridge \u0026gt; スケジューラ \u0026gt; スケジュール \u0026gt; 該当のスケジュールを選択 スケジュール \u0026gt; cron 式 を確認 Amazon EventBridge Rule Cloud Formation で設定した場合はこっちを確認する ※Cloud Formation の定義を見た方が良いと思われる Amazon EventBridge \u0026gt; バス \u0026gt; ルール \u0026gt; 該当の関数を選択 イベントスケジュール \u0026gt; cron 式を確認 ECS 割愛 ※使用パターンが出た時に改めて記載 AWS Batch 割愛 ※使用パターンが出た時に改めて記載 ソース ソース内で cron あるいは schedule で検索 環境変数について CloudFormation CloudFormation を使用している場合には以下を確認することで設定値を確認可能 CloudFormation \u0026gt; スタック \u0026gt; 該当のスタック [パラメータ]タブの該当の値を確認"
   },
   {
     url: "https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/",

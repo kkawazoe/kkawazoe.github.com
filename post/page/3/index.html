@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-02f7361c91fa442b01871da54dfb772c {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1170,6 +1176,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-02f7361c91fa442b01871da54dfb772c {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-02f7361c91fa442b01871da54dfb772c {
+      width: 5rem;
+    }
+  
 
   
     .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
@@ -2896,7 +2916,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          100
+          101
           <span>Posts</span>
         </a>
       </div>
@@ -2931,6 +2951,30 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/01/11/how-to-change-behavior-with-initializer-often-seen-in-gem/">
+          <div class="thumb thumb-b3d06f2617d7c137e190ada153abe91a"></div>
+
+          <div class="inner">
+            <h2 class="title">Gem でよく見る initializer で動作を変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-01-11T13:00:00JST">Jan 11, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Gem でよく見る initializer で動作を変更する方法を備忘録として残しておく
+環境  ruby: 3.0.4  前提 以下のような構成になっている想定
+lib ├── sample_gem │ └── configuration.rb └── sample_gem.rb spec ├── configration_spec.rb └── spec_helper.rb 実際のコード 以下のようなクラスを定義する
+module SampleGem # gem のクラス名 class Configuration attr_accessor :sample_confime_name # config で使用する config 名 def initialize @sample_confime_name = false end end def self.configuration @configuration ||= Configuration.new end def self.configuration=(config) @configuration = config end # ``` # SampleGem.configure do |config| # config.sample_confime_name = false # end # ``` def self.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3164,30 +3208,6 @@ puts __FILE__ puts $0 require_relative &#39;./file_name&#39; $ ruby file_name.rb
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/">
-          <div class="thumb thumb-e5c267a5be8eba578b44c5ace1bef791"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby Gold 認定試験 Ver 3 への道</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-23T00:00:00JST">Nov 23, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-環境  ruby: 3.1.2  Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
-以下は同じ意味
-h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h.transform_values{_1 * 2} #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&gt; {:a=&gt;2, :b=&gt;4, :c=&gt;6} h = { a: 1, b: 2, c: 3 } h.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3209,6 +3229,27 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/">
+    <div class="thumb thumb-02f7361c91fa442b01871da54dfb772c"></div>
+
+    <div class="inner">
+      <div class="title">Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="29007-01-29T12:30:00JST">Jan 29, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
@@ -3399,27 +3440,6 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/11/13/how-to-install-warp-with-mac/">
-    <div class="thumb thumb-c17942d1db448e058145d3d0bb66469b"></div>
-
-    <div class="inner">
-      <div class="title">Mac に Warp をインストールする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="13007-11-13T13:00:00JST">Nov 13, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3436,9 +3456,9 @@ h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&gt; {:a=&gt;2, :b=&gt;
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(6)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(5)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/postgresql">postgresql <span class="count">(4)</span></a></li>
     

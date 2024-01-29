@@ -6,7 +6,22 @@
     <description>Recent content in AWS on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 17 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title>
+      <link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link>
+      <pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid>
+      <description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
+方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
+実際のコード  ユーザ登録  &amp;ndash;user-attributes は必要に応じて増やす
+※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
+aws cognito-idp admin-create-user \ --user-pool-id {ユーザプール ID} \ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \ --user-attributes Name=email,Value={E メールアドレス} \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定  &amp;ndash;no-permanent は仮パスワード扱い
+※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる
+aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID} \ --username {ユーザ名 or sub} \ --password {password} \ --no-permanent </description>
+    </item>
+    
     <item>
       <title>AWS についての Tips</title>
       <link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link>
@@ -18,7 +33,7 @@
 DB の接続情報の確認 EC2 踏み台の Public IP を確認
  EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  RDS  RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択  Secret Maneger DB のパスワードの設定確認方法
  AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する
-Amazon EventBridge Scheduler  Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択 スケジュール &amp;gt; cron 式 を確認  ECS 割愛 ※使用パターンが出た時に改めて記載</description>
+Amazon EventBridge Scheduler  Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択 スケジュール &amp;gt; cron 式 を確認  Amazon EventBridge Rule Cloud Formation で設定した場合はこっちを確認する</description>
     </item>
     
     <item>
