@@ -8,6 +8,9 @@
     <loc>https://kkawazoe.github.io/tags/aws/</loc>
     <lastmod>2024-01-29T12:30:00+09:00</lastmod>
   </url><url>
+    <loc>https://kkawazoe.github.io/tags/aws-cognito/</loc>
+    <lastmod>2024-01-29T12:30:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/</loc>
     <lastmod>2024-01-29T12:30:00+09:00</lastmod>
   </url><url>
@@ -25,6 +28,12 @@
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</loc>
     <lastmod>2024-01-16T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/aws-lamdba/</loc>
+    <lastmod>2024-01-16T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/amazon-pinpoint/</loc>
+    <lastmod>2023-12-28T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</loc>
     <lastmod>2023-12-28T12:00:00+09:00</lastmod>

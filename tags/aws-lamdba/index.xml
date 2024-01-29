@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Lamdba on Note To Self ~One Step At A Time~</title>
+    <link>https://kkawazoe.github.io/tags/aws-lamdba/</link>
+    <description>Recent content in AWS Lamdba on Note To Self ~One Step At A Time~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Tue, 16 Jan 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws-lamdba/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Lamdba で登録されている関数一覧を取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</link>
+      <pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</guid>
+      <description>Amazon Lamdba で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
+方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
+実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; &amp;gt; lambda-functions-list.csv </description>
+    </item>
+    
+  </channel>
+</rss>
