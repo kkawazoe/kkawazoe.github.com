@@ -15,11 +15,13 @@
       <guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid>
       <description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード  ユーザ登録  &amp;ndash;user-attributes は必要に応じて増やす
+実際のコード   ユーザ登録
+&amp;ndash;user-attributes は必要に応じて増やす
 ※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
-aws cognito-idp admin-create-user \ --user-pool-id {ユーザプール ID} \ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \ --user-attributes Name=email,Value={E メールアドレス} \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定  &amp;ndash;no-permanent は仮パスワード扱い
+  aws cognito-idp admin-create-user \ --user-pool-id {ユーザプール ID} \ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \ --user-attributes Name=email,Value={E メールアドレス} \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS  パスワード設定
+&amp;ndash;no-permanent は仮パスワード扱い
 ※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる
-aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID} \ --username {ユーザ名 or sub} \ --password {password} \ --no-permanent </description>
+  aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID} \ --username {ユーザ名 or sub} \ --password {password} \ --no-permanent </description>
     </item>
     
     <item>

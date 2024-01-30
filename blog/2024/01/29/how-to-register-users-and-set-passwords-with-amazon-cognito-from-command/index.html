@@ -3034,10 +3034,12 @@ input::-webkit-input-placeholder {
 <p>該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する</p>
 <h2 id="実際のコード">実際のコード</h2>
 <ol>
-<li>ユーザ登録</li>
-</ol>
+<li>
+<p>ユーザ登録</p>
 <p>&ndash;user-attributes は必要に応じて増やす<br>
 ※「&ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能</p>
+</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.sh" data-lang=".sh">aws cognito-idp admin-create-user <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--user-pool-id <span style="color:#f92672">{</span>ユーザプール ID<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--username <span style="color:#f92672">{</span>E メールアドレス ※E メールアドレスをユーザ名に設定した場合<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
@@ -3045,10 +3047,12 @@ input::-webkit-input-placeholder {
 </span><span style="color:#ae81ff"></span>Name<span style="color:#f92672">=</span>email_verified,Value<span style="color:#f92672">=</span>TRUE <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--message-action SUPPRESS
 </code></pre></div><ol start="2">
-<li>パスワード設定</li>
-</ol>
+<li>
+<p>パスワード設定</p>
 <p>&ndash;no-permanent は仮パスワード扱い<br>
 ※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる</p>
+</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.sh" data-lang=".sh">aws cognito-idp admin-set-user-password <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--user-pool-id <span style="color:#f92672">{</span>ユーザプール ID<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--username <span style="color:#f92672">{</span>ユーザ名 or sub<span style="color:#f92672">}</span> <span style="color:#ae81ff">\
