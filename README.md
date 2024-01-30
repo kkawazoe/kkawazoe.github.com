@@ -12,7 +12,7 @@ GitHub Pages
 ### HUGO のインストール
 
 [参考](https://gohugo.io/getting-started/installing/) の手順でインストールする  
-※以下の手順で使用するテーマを使用する場合は `hugo-extended` の方をインストールする
+※以下の手順で使用するテーマの場合は `hugo-extended` の方をインストールする
 
 ### source ブランチの内容の取り込み
 
