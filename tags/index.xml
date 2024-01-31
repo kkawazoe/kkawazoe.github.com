@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Mon, 29 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS</title>
       <link>https://kkawazoe.github.io/tags/aws/</link>
-      <pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
       
       <guid>https://kkawazoe.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS Synthetics Canary</title>
+      <link>https://kkawazoe.github.io/tags/aws-synthetics-canary/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/tags/aws-synthetics-canary/</guid>
       <description></description>
     </item>
     

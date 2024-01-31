@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-02f7361c91fa442b01871da54dfb772c {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1176,6 +1182,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-02f7361c91fa442b01871da54dfb772c {
@@ -2916,13 +2936,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          101
+          102
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          29
+          30
           <span>Tags</span>
         </a>
       </div>
@@ -2974,6 +2994,28 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/">
+          <div class="thumb thumb-29baf4cac3200fe9caf9aff46aaf04b1"></div>
+
+          <div class="inner">
+            <h2 class="title">外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2024-01-31T00:00:00JST">Jan 31, 2024</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく
+方法  CloudWatch &gt; Synthetics Canary を選択 「Canary を作成」ボタンを押下 以下を設定  設計図を使用する 設計図: API Canary Canary ビルダー: 任意の Canary 名 Amazon API Gateway API を使用中: チェックを入れる API を選択: API Gateway から API とステージを選択  使用している API, ステージを選択   Host Name: 使用している Host Name を指定 HTTP リクエスト  HTTP リクエストを追加ボタンを押下  監視したい API の情報を設定     スクリプトエディタ: スクリプトを参照 スケジュール: 任意のスケジュールを選択 アクセス許可  IAM ロール: 既存のロールを選択  ポリシーを参照       「保存」ボタンを押下  実際のコード スクリプト 基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3196,32 +3238,6 @@ EC2 踏み台の Public IP を確認
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
-          <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で複数検索条件のリファクタリング</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-11-26T13:00:00JST">Nov 26, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">検索条件の入力が複数あるような画面で入力があった条件のみを AND 条件としたい場合、メソッド内に if 文が乱立してしまい、可読性が下がってしまう
-そのため、将来的に条件が追加された場合でも、可読性が下がらないようにリファクタリングした内容を備忘録として残しておく
-環境  ruby: 3.0.5 rails: 6.1.7  方法  検索条件をそれぞれ scope に切り出す  scope 内で skip 条件を next if で記載する   メソッドでそれぞれの scope を呼び出す  前提 検索条件はメソッドの引数として Hash 形式で渡される
-実際の例 タイトルと内容で入力があった場合に AND 条件で検索を行い、条件にあった本を取得する
-※全ての条件が未入力の場合は全件表示
-class Book &lt; ApplicationRecord scope :with_title, -&gt; (title) do next if title.blank? where(&#39;title LIKE ?&#39;, &#34;%#{title}%&#34;) end scope :with_summary, -&gt; (summary) do next if summary.blank? where(&#39;summary LIKE ?&#39;, &#34;%#{summary}%&#34;) end def self.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3241,6 +3257,27 @@ class Book &lt; ApplicationRecord scope :with_title, -&gt; (title) do next if ti
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/">
+    <div class="thumb thumb-29baf4cac3200fe9caf9aff46aaf04b1"></div>
+
+    <div class="inner">
+      <div class="title">外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="31007-01-31T00:00:00JST">Jan 31, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/">
@@ -3431,27 +3468,6 @@ class Book &lt; ApplicationRecord scope :with_title, -&gt; (title) do next if ti
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
-    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
-
-    <div class="inner">
-      <div class="title">rails で複数検索条件のリファクタリング</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3468,7 +3484,7 @@ class Book &lt; ApplicationRecord scope :with_title, -&gt; (title) do next if ti
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(7)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(8)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     

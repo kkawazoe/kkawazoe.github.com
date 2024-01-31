@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-02f7361c91fa442b01871da54dfb772c {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1176,6 +1182,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-02f7361c91fa442b01871da54dfb772c {
@@ -2916,13 +2936,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          101
+          102
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          29
+          30
           <span>Tags</span>
         </a>
       </div>
@@ -2974,6 +2994,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/">
+          <div class="thumb thumb-1986abf40a69184928a0e3c57a4654b4"></div>
+
+          <div class="inner">
+            <h2 class="title">rails で画面表示時に小数部分の0を省略して表示する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-01-12T13:00:00JST">Jan 12, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">rails で画面表示時に小数部分の0を省略して表示する方法を備忘録として残しておく
+環境  ruby: 3.0.4 rails: 6.1.0  実際のコード number_to_human メソッドを使用する ※参考
+※strip_insignidicant_zeros オプションのデフォルトが true のため
+その他のヘルパーについてはNumberHelperを参照
+# erb ファイルに記載する場合は ActiveSupport::NumberHelper. は省略可 ActiveSupport::NumberHelper.number_to_human(1.0) #=&gt; &#34;1&#34; ActiveSupport::NumberHelper.number_to_human(1.5) #=&gt; &#34;1.5&#34; ActiveSupport::NumberHelper.number_to_human(1.530) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(1.5301) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.0&#39;) #=&gt; &#34;1&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.5&#39;) #=&gt; &#34;1.5&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.530&#39;) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(&#39;1.5301&#39;) #=&gt; &#34;1.53&#34; ActiveSupport::NumberHelper.number_to_human(Date.parse(&#39;2023-01-12&#39;)) #=&gt; Thu, 12 Jan 2023 ActiveSupport::NumberHelper.number_to_human(&#39;2023-01-12&#39;) #=&gt; &#34;2023-01-12&#34; ActiveSupport::NumberHelper.number_to_human(&#39;2023.01.12&#39;) #=&gt; &#34;2023-01-12&#34; ActiveSupport::NumberHelper.number_to_human(&#39;2023.01.12&#39;) #=&gt; &#34;2023.01.12&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3207,30 +3252,6 @@ class PublicTest def public_method puts &#39;call public methods&#39; end privat
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/">
-          <div class="thumb thumb-91f6ed1cf23a417c564b4053d4f5ede7"></div>
-
-          <div class="inner">
-            <h2 class="title">Ruby Gold 認定試験 Ver 3 への道 その2</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-24T12:00:00JST">Nov 24, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-[前回までの記事]
- Ruby Gold 認定試験 Ver 3 への道  環境  ruby: 3.1.2  __FILE__ __FILE__ が書いてあるファイルのファイル名を表す 似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す
-puts __FILE__ puts $0 require_relative &#39;./file_name&#39; $ ruby file_name.rb __FILE__: file_name.rb $0: file_name.rb $ ruby require_file_name.rb __FILE__: file_name.rb $0: require_file_name.rb 累乗の計算 def exponentiation(n) n ** n end puts exponentiation(-1) #=&gt; -1 puts exponentiation(1i) #=&gt; 0.20787957635076193+0.0i 複素数 正規表現 =~ の $1 等 &#39;www.ruby.co.jp&#39;.match(%r(www(\.ruby\.co)(\.jp))) do |e| puts &#34;match e= #{e}&#34; puts &#34;match e[0]= #{e[0]}&#34; puts &#34;match e[1]= #{e[1]}&#34; puts &#34;match e[2]= #{e[2]}&#34; puts &#34;match $0 #{$0}&#34; puts &#34;match $&amp; #{$&amp;}&#34; puts &#34;match $1 #{$1}&#34; puts &#34;match $2 #{$2}&#34; end #=&gt; match e= www.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3252,6 +3273,27 @@ puts __FILE__ puts $0 require_relative &#39;./file_name&#39; $ ruby file_name.rb
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/">
+    <div class="thumb thumb-29baf4cac3200fe9caf9aff46aaf04b1"></div>
+
+    <div class="inner">
+      <div class="title">外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="31007-01-31T00:00:00JST">Jan 31, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/">
@@ -3442,27 +3484,6 @@ puts __FILE__ puts $0 require_relative &#39;./file_name&#39; $ ruby file_name.rb
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
-    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
-
-    <div class="inner">
-      <div class="title">rails で複数検索条件のリファクタリング</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3479,7 +3500,7 @@ puts __FILE__ puts $0 require_relative &#39;./file_name&#39; $ ruby file_name.rb
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(7)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(8)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     

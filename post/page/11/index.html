@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-02f7361c91fa442b01871da54dfb772c {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1176,6 +1182,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-02f7361c91fa442b01871da54dfb772c {
@@ -2916,13 +2936,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          101
+          102
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          29
+          30
           <span>Tags</span>
         </a>
       </div>
@@ -2951,6 +2971,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/">
+          <div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+
+          <div class="inner">
+            <h2 class="title">Windows 環境でバッチファイルからiniファイルを読込んで値を取得する</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2014-06-22T09:01:00JST">Jun 22, 2014</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する
+具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する
+取得する ini ファイルの中身 &lt;設定値&gt;*****************************************************&#39;&lt;コメント&gt;####################################### [Path] WorkPath=C:/src/wk &#39;Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f &#34;usebackq tokens=* delims=&#34; %%A in (`call cscript //Nologo getProfileString.vbs &#34;%iniFileName%&#34; Path WorkPath`) do set ret=%%A echo &#34;%ret%&#34; pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す rem * 先頭がカンマの場合はコメント行として扱う rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( &quot;Scripting.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -2994,6 +3037,27 @@ input::-webkit-input-placeholder {
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/">
+    <div class="thumb thumb-29baf4cac3200fe9caf9aff46aaf04b1"></div>
+
+    <div class="inner">
+      <div class="title">外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="31007-01-31T00:00:00JST">Jan 31, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/">
@@ -3184,27 +3248,6 @@ input::-webkit-input-placeholder {
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/11/26/refactoring-to-multi-search-conditional-with-rails/">
-    <div class="thumb thumb-7f95700f36f470d26d10c3b4ef5f86d2"></div>
-
-    <div class="inner">
-      <div class="title">rails で複数検索条件のリファクタリング</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="26007-11-26T13:00:00JST">Nov 26, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3221,7 +3264,7 @@ input::-webkit-input-placeholder {
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(7)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(8)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
