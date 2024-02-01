@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-03d1b14f9c70df9bafb8247863227bb1 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1182,6 +1188,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-03d1b14f9c70df9bafb8247863227bb1 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-03d1b14f9c70df9bafb8247863227bb1 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-29baf4cac3200fe9caf9aff46aaf04b1 {
@@ -2936,7 +2956,7 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          102
+          103
           <span>Posts</span>
         </a>
       </div>
@@ -2971,6 +2991,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/">
+          <div class="thumb thumb-fa7a1714bfec99cce2332dd64189ff4a"></div>
+
+          <div class="inner">
+            <h2 class="title">Google Tag Manager でローカル環境のデバッグを行う方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-01T12:00:00JST">Dec 1, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Google Tag Manager でローカル環境のデバッグを行う方法を備忘録として残しておく
+前提  Google Tag Manager(以下 GTM) に検証用のコンテナを準備して
+コンテナ ID をローカル環境に設定してあること ローカル環境を起動してブラウザでアクセスできる状態であること  方法  GTM にログイン [プレビュー]リンクから Tag Assistant を起動 Tag Assistantの「Your website’s URL」にローカル環境のURLを入力 [Connect] ボタンを押下  </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3199,29 +3242,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/01/25/how-to-through-a-path-with-m1-for-mac/">
-          <div class="thumb thumb-0fd1a171cc55c8621e035d64e2f2c3d5"></div>
-
-          <div class="inner">
-            <h2 class="title">Mac(M1) で Path を通す方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-01-25T13:00:00JST">Jan 25, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">Mac(M1) でパスを通す際に Intel の場合と同じ手順では上手くいかなかったので備忘録として残しておく
-手順 例. mysql の path を通す場合 ※Homebrew でインストールしたもの
- インストール先の path を確認  $ brew --prefix mysql@5.7 #=&gt; /opt/homebrew/opt/mysql@5.7 ~/.zshrc に追記する  $ echo &#39;export PATH=&#34;$PATH:/opt/homebrew/opt/mysql@5.7/bin&#34;&#39; &gt;&gt; ~/.zshrc $ source ~/.zshrc 動作確認  $ mysql--version #=&gt; mysql Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using EditLine wrapper </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3243,6 +3263,27 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/">
+    <div class="thumb thumb-03d1b14f9c70df9bafb8247863227bb1"></div>
+
+    <div class="inner">
+      <div class="title">Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-02-01T00:00:00JST">Feb 1, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/">
@@ -3433,27 +3474,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/01/debug-to-local-environment-with-gtm/">
-    <div class="thumb thumb-fa7a1714bfec99cce2332dd64189ff4a"></div>
-
-    <div class="inner">
-      <div class="title">Google Tag Manager でローカル環境のデバッグを行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="1007-12-01T12:00:00JST">Dec 1, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3470,7 +3490,7 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(8)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(9)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
@@ -3478,11 +3498,11 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
     
     <li><a href="https://kkawazoe.github.io/tags/vue.js">vue.js <span class="count">(4)</span></a></li>
     
+    <li><a href="https://kkawazoe.github.io/tags/aws-cognito">aws-cognito <span class="count">(3)</span></a></li>
+    
     <li><a href="https://kkawazoe.github.io/tags/bat">bat <span class="count">(3)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/rspec">rspec <span class="count">(3)</span></a></li>
-    
-    <li><a href="https://kkawazoe.github.io/tags/amazon-pinpoint">amazon-pinpoint <span class="count">(2)</span></a></li>
     
   </ul>
 </section>

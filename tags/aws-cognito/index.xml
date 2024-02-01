@@ -6,7 +6,19 @@
     <description>Recent content in AWS Cognito on Note To Self ~One Step At A Time~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Mon, 29 Jan 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws-cognito/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws-cognito/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title>
+      <link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid>
+      <description>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
+方法 以下の２つの方法が考えられる
+ Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
+※リストアはユーザ CSV インポート機能で行う  実際のコード const { stringify } = require(&amp;#34;csv-stringify/sync&amp;#34;); module.exports = async (params) =&amp;gt; { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require(&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;); const cognito = new CognitoIdentityProvider(); module.exports = async (param) =&amp;gt; { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</description>
+    </item>
+    
     <item>
       <title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title>
       <link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link>
