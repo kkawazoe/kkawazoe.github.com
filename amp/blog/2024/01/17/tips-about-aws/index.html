@@ -3062,6 +3062,44 @@ input::-webkit-input-placeholder {
 </ul>
 </li>
 </ul>
+<h2 id="cognito-のメールについて">Cognito のメールについて</h2>
+<h3 id="送信元メールアドレスの変更">送信元メールアドレスの変更</h3>
+<ol>
+<li>Amazon Cognito &gt; ユーザープール &gt; {対象のユーザプール} を選択</li>
+<li>メッセージング &gt; E メール &gt; 「編集」ボタンを押下</li>
+<li>以下のように設定
+<ul>
+<li>E メールプロバイダー: Amazon SES で E メールを送信 - 推奨</li>
+<li>送信元の E メールアドレス: 任意の E メールアドレス
+<ul>
+<li>SES で検証済である必要あり</li>
+</ul>
+</li>
+<li>送信者の名前 - オプション
+<ul>
+<li>任意のメールアドレス</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="メッセージ本文の変更">メッセージ本文の変更</h3>
+<ol>
+<li>Amazon Cognito &gt; ユーザープール &gt; {対象のユーザプール} を選択</li>
+<li>メッセージング &gt; メッセージテンプレート &gt; メッセージタイプを選択
+<ul>
+<li>検証メッセージ: 確認コード</li>
+<li>招待メッセージ: 仮パスワード</li>
+<li>MFA メッセージ: 2 段階認証</li>
+</ul>
+</li>
+<li>「編集」ボタンを押下</li>
+<li>件名, メッセージを修正して「変更を保存」ボタンを押下
+<ul>
+<li>HTML コードでカスタマイズ可能なため、改行は<code>&lt;br&gt;</code>タグで行う</li>
+</ul>
+</li>
+</ol>
 </div>
 
   <footer class="article-footer">
