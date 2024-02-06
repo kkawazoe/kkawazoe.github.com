@@ -558,6 +558,12 @@ section.footer {
 }
 
   
+.thumb-90e1d6556913ef10e9a03d9225bb34af {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-03d1b14f9c70df9bafb8247863227bb1 {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1188,6 +1194,20 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-90e1d6556913ef10e9a03d9225bb34af {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-90e1d6556913ef10e9a03d9225bb34af {
+      width: 5rem;
+    }
+  
 
   
     .thumb-03d1b14f9c70df9bafb8247863227bb1 {
@@ -2956,13 +2976,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          103
+          104
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          30
+          31
           <span>Tags</span>
         </a>
       </div>
@@ -3014,6 +3034,29 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2019/04/17/description-rails-helper-with-vuejs-and-rails/">
+          <div class="thumb thumb-bf5b4c28a69b26e419c7d4e52f9bfd26"></div>
+
+          <div class="inner">
+            <h2 class="title">Vue.js ＋ Rails で RailsHelper と組み合わせた場合の記述方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-04-17T00:00:00JST">Apr 17, 2019</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 Vue.js を Rails のフロントとして使用した場合に RailsHelper と組み合わせると若干記述が複雑になったため備忘録として残しておく
+実際のコード(html テンプレートエンジンは slim を使用)  通常 a タグ  a.btn.home href=&#34;#{root_path}&#34; @touchStart=&#34;onTouchStartForBtn&#34; @touchEnd=&#34;onTouchEndForBtn&#34; @touchmove=&#34;onTouchMoveForBtn&#34;  RailsHelper での a タグ  Vue.js の bind を'(シングルコート)で括る
+= link_to national_rankings_path, class: &#39;btn ranking&#39;, &#39;@touchStart&#39;: &#34;onTouchStartForBtn&#34;, &#39;@touchEnd&#39;: &#34;onTouchEndForBtn&#34;, &#39;@touchmove&#39;: &#34;onTouchMoveForBtn&#34; </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3238,38 +3281,6 @@ IEの場合  サーバの起動の際に以下のコマンドで行う  bundle e
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/03/14/health-insurance-credit-limit-authorization/">
-          <div class="thumb thumb-2901bf721fa3d51df3fd4fe519615afa"></div>
-
-          <div class="inner">
-            <h2 class="title">限度額適用認定証について</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-03-14T13:54:31JST">Mar 14, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 今回手術＋入院することになり表題を取得する必要が出てきた
-できればお世話になりたくないのが理想ではあるが念の為備忘録として残しておく
-高額療養費制度との違い 協会けんぽのホームページを読むと以下の違いがある
- 医療機関等の窓口でのお支払いが高額な負担となった場合は、あとから申請いただくことにより自己負担限度額を超えた額が払い戻される「高額療養費制度」があります
-しかし、あとから払い戻されるとはいえ、一時的な支払いは大きな負担になります
-「限度額適用認定証」を保険証と併せて医療機関等の窓口（※1）に提示すると、1ヵ月 （1日から月末まで）の窓口でのお支払いが自己負担限度額まで（※2）となります
-※1 保険医療機関（入院・外来別）、保険薬局等それぞれでの取扱いとなります
-※2 同月に入院や外来など複数受診がある場合は、高額療養費の申請が必要となることがあります保険外負担分（差額ベッド代など）や、入院時の食事負担額等は対象外となります
- =&gt; 会計の際の請求額が減らされるか後で還付されるかの違いがあるらしい
-自分の場合請求から発行までおよそ2週間程度かかった
-1月単位での扱いになるらしいので早めの手続きを心掛けると良さそう
-※基本的には高額になりそうな場合には病院側から上記の制度について取ってくださいと指示がでるので問題にはなりにくいが申請しないと適用されない制度は数多くあるため、今後も機会をみて把握しておきたい</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3291,6 +3302,27 @@ IEの場合  サーバの起動の際に以下のコマンドで行う  bundle e
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/">
+    <div class="thumb thumb-90e1d6556913ef10e9a03d9225bb34af"></div>
+
+    <div class="inner">
+      <div class="title">Amazon SES でカスタムドメインに対して DMARC 対応を行う方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-02-06T12:00:00JST">Feb 6, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/">
@@ -3481,27 +3513,6 @@ IEの場合  サーバの起動の際に以下のコマンドで行う  bundle e
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/">
-    <div class="thumb thumb-0a0e7d244a84dca79cf97e485dc050bd"></div>
-
-    <div class="inner">
-      <div class="title">Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2007-12-02T12:00:00JST">Dec 2, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3518,7 +3529,7 @@ IEの場合  サーバの起動の際に以下のコマンドで行う  bundle e
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(9)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(10)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     

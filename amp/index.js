@@ -2,6 +2,13 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/",
+    title: "Amazon SES でカスタムドメインに対して DMARC 対応を行う方法",
+    image: "images/logo/aws_logo.png",
+    date: "2024-02-06",
+    body: "Amazon SES でカスタムドメインに対して DMARC 対応を行う方法 Amazon SES でカスタムドメインに対して DMARC 対応を行う方法について調査した内容を備忘録として残しておく 前提 対象のドメインを「検証済み ID」として作成済 DKIM が設定済 DNS サービスの提供元が Route 53 方法 Amazon SES \u0026gt; 設定: 検証済み ID を選択 対象の ID を選択 カスタム MAIL FROM ドメイン \u0026gt; 「編集」ボタンを押下 以下のように設定して「保存」ボタンを押下 カスタム MAIL FROM ドメインの使用: チェック MAIL FROM ドメイン: 任意の値 MX 障害時の動作: 以下のどちらか デフォルトの MAIL FROM ドメインの使用 メッセージの拒否 DNS レコードの発行を行う Route 53 \u0026gt; ホストゾーン \u0026gt; {対象のドメイン} を選択 「レコードを作成」を押下 以下を設定する レコード名: _dmarc レコードタイプ: TXT 値: v=DMARC1; p=none テストEメール確認して OK なら値を「v=DMARC1; p=reject」に変更 Amazon SES の DMARC 認証プロトコルへの準拠参照 確認方法 例えば、以下のような方法で確認する テスト E メールを送信して SPF, DKIM, DMARC が pass になっていることを確認 DMARC Inspector"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/",
     title: "Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法",
     image: "images/logo/aws_logo.png",
