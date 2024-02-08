@@ -2,6 +2,20 @@
 
 var data = [
   {
+    url: "https://kkawazoe.github.io/amp/blog/2024/02/08/configuring-rancher-desktop/",
+    title: "Rancher Desktop の設定について",
+    image: "images/logo/docker_logo.png",
+    date: "2024-02-08",
+    body: "Rancher Desktop の設定について 普段個人で開発している時は Docker Desktop を使用しているが仕事で使用する場合には従業員数等で有償となる そのため、代替ツールとして Rancher Desktop を調査した結果を備忘録として残しておく 設定について 以下の設定を変更することで動作が速くなる可能性がある 「Preferences」ボタンを押下 Virtual Machine \u0026gt; Volumes \u0026gt; Mount Type を以下に変更する Mount Type: virtiofs"
+  },
+  {
+    url: "https://kkawazoe.github.io/amp/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/",
+    title: "Visual Studio Code Dev Containers での開発環境構築について",
+    image: "images/logo/vscode_logo.png",
+    date: "2024-02-08",
+    body: "Visual Studio Code Dev Containers での開発環境構築について Visual Studio Code Dev Containers での開発環境構築について調査した結果を備忘録として残しておく Dev Containers について 以下のような構成になる 引用元: https://code.visualstudio.com/docs/devcontainers/containers 以下のようなメリットがある プロジェクトごとのミドルウェアなどをコンテナに閉じ込めることができる ホスト環境を汚さない VS Code の Extention もコンテナに閉じ込められる 環境構築を自動化できる 新規に作成したり、別のPCでの作り直しが簡単 環境構築について 前提条件 VS Code で以下の Extention をインストールする Remote Development Dev Containers ※テンプレートを使用する場合 Docker Docker Desktop or Rancher Desktop 実際の例 新規で作成する場合 VS Code の左下の「\u0026gt;\u0026lt;」ボタンを押下 「新しい開発コンテナー\u0026hellip;」 を選択 ベースとなる設定を選択する 基本的には Dockerfile or Docker Compose の話になるのでそちらに慣れていれば問題なくできると思われる テンプレートの使用 コマンドパレットで「Add Dev Container Configuration Files\u0026hellip;」を選択 「ワークスペースに構成を追加する」を選択 「すべての定義を表示\u0026hellip;」を選択 以降は新規で作成する場合と同様 4-1. ℹ️を押下することでテンプレートの使い方やカスタマイズ方法が表示される"
+  },
+  {
     url: "https://kkawazoe.github.io/amp/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/",
     title: "Amazon SES でカスタムドメインに対して DMARC 対応を行う方法",
     image: "images/logo/aws_logo.png",

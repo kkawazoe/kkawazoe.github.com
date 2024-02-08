@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-d09e980ed00064aceda111431e5cc3c7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
+}
+  
+
+  
+.thumb-d20de6096f01bc09ac79b2769d6645e9 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
+
+  
 .thumb-90e1d6556913ef10e9a03d9225bb34af {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1194,6 +1206,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/docker_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-90e1d6556913ef10e9a03d9225bb34af {
@@ -2976,13 +3016,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          104
+          106
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          31
+          33
           <span>Tags</span>
         </a>
       </div>
@@ -3011,6 +3051,51 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/">
+          <div class="thumb thumb-512b010b5be0e4f46ede454a4ef10009"></div>
+
+          <div class="inner">
+            <h2 class="title">windows terminal でターミナル毎に起動時のディレクトリを変更する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-03-14T15:00:00JST">Mar 14, 2021</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく
+環境  windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04  方法  Windows Terminal を起動する 「Ctrl」+「,」を押下して setting.json を開く setting.json の設定に以下を追加する  { &#34;$schema&#34;: &#34;https://aka.ms/terminal-profiles-schema&#34;, &#34;defaultProfile&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;profiles&#34;: { &#34;defaults&#34;: { &#34;startingDirectory&#34;: &#34;c:\\work&#34; // 追加 ターミナル共通の起動時のディレクトリを指定  }, &#34;list&#34;: [ { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Windows PowerShell&#34;, &#34;commandline&#34;: &#34;powershell.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;name&#34;: &#34;Command Prompt&#34;, &#34;commandline&#34;: &#34;cmd.exe&#34;, &#34;hidden&#34;: false }, { &#34;guid&#34;: &#34;{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}&#34;, &#34;hidden&#34;: false, &#34;name&#34;: &#34;Azure Cloud Shell&#34;, &#34;source&#34;: &#34;Windows.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/">
+          <div class="thumb thumb-a2ffdc9f4fab5292d5f4a0a596185d5e"></div>
+
+          <div class="inner">
+            <h2 class="title">vagrant halt 失敗時の対応方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2020-10-04T09:00:30JST">Oct 4, 2020</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">経緯 vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく
+手順  vagrant halt を行う  以下のエラーが発生
+An action &#39;halt&#39; was attempted on the machine &#39;default&#39;, but another process is already executing an action on the machine. ess at a time. Please wait until the other Vagrant process finishes modifying this machine, then try again. If you believe this message is in error, please check the process listing for any &#34;ruby&#34; or &#34;vagrant&#34; processes and kill them.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3216,30 +3301,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/">
-          <div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
-
-          <div class="inner">
-            <h2 class="title">Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2019-02-20T00:24:14JST">Feb 20, 2019</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している
-資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した
-情報元 Markdown PDF の「Page Break」の項目に記載あり
-実際のコード # h1 ## h2  ### h3  &lt;!-- 改行させたい位置 --&gt; &lt;div class=&#34;page&#34;/&gt; # h1 ## h2  ### h3  </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3250,6 +3311,8 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
   <a href="/tags/tool/" rel="prev">Prev</a>
   
   
+  <a href="/tags/tool/page/3/" rel="next">Next</a>
+  
 </nav>
 
 
@@ -3259,6 +3322,48 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/">
+    <div class="thumb thumb-d09e980ed00064aceda111431e5cc3c7"></div>
+
+    <div class="inner">
+      <div class="title">Rancher Desktop の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/">
+    <div class="thumb thumb-d20de6096f01bc09ac79b2769d6645e9"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code Dev Containers での開発環境構築について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/">
@@ -3428,48 +3533,6 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
-    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
-
-    <div class="inner">
-      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
-    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
-
-    <div class="inner">
-      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3482,7 +3545,7 @@ function checkUnread() { const elements = document.querySelectorAll(&#34;.roomLi
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(21)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     

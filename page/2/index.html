@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-d09e980ed00064aceda111431e5cc3c7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
+}
+  
+
+  
+.thumb-d20de6096f01bc09ac79b2769d6645e9 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
+
+  
 .thumb-90e1d6556913ef10e9a03d9225bb34af {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1194,6 +1206,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/docker_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-90e1d6556913ef10e9a03d9225bb34af {
@@ -2976,13 +3016,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          104
+          106
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          31
+          33
           <span>Tags</span>
         </a>
       </div>
@@ -3034,6 +3074,56 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
+          <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
+
+          <div class="inner">
+            <h2 class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-20T12:00:00JST">Dec 20, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく
+方法 Amazon Pinpoint を使用
+ Amazon Pinpoint &gt; 使用を開始する &gt; Pinpoint campaign orchestration を選択 [プロジェクトを管理]ボタンを押下 該当のプロジェクト名を選択 設定 &gt; プッシュ通知 を選択 [編集]ボタンを押下  Apple Push Notification service (APNs)  デフォルトの認証タイプ  キー認証情報(推奨)   有効にする APN チャネルを選択  任意のチャネルを選択   キー ID  Apple Developer Programで確認   バンドル識別子  Apple Developer Programで確認   チーム識別子  Apple Developer Programで確認   認証キー(.p8 ファイル)  Apple Developer Programで取得    Firebase Cloud Messaging (FCM)  デフォルトの認証タイプ  トークン認証情報(推奨)   サービス json (.</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
+          <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
+
+          <div class="inner">
+            <h2 class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-20T12:00:00JST">Dec 20, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
+方法 事前作業 AWS Console にて接続に必要な情報を控えておく
+EC2 踏み台の Public IP を確認
+ EC2 &gt; リソース &gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  Elastic IP が紐付けられている場合は以下を確認する
+ EC2 &gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認  RDS プロキシの設定がされている場合は以下を確認する
+ RDS &gt; プロキシ &gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認  その他 DB のパスワード (Secrets Manager)の設定確認方法
+ AWS Secrets Manager &gt; DB のユーザパスワードを選択 シークレットの値 &gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3231,57 +3321,6 @@ def index @books = Book.all - render json: @books, each_serializer: Book::ListSe
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/02/08/how-to-redirect-to-get-transition-url-with-rails/">
-          <div class="thumb thumb-f079deeecb2143fc29ee73e4070ef36b"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で遷移元の URL を取得してリダイレクトする方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-02-08T09:00:00JST">Feb 8, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で遷移元の URL を取得してリダイレクトする方法を備忘録として残しておく
-環境  ruby: 2.7.6 rails: 5.2.8.1  仕様  お気に入り登録のようにDB更新を行いたいが、画面遷移はさせたくない
-(遷移元が複数ある かつ ユーザビリティ的に良くない)ため 画面遷移させないようにしたい  実際のソース controller の該当アクションを以下のようにする
-class FavoritesController &lt; ApplicationController def create redirect_back fallback_location: root_path end end # 以下も上手くいくが referer が取得できなかった場合を考えると上が良さそう class FavoritesController &lt; ApplicationController def create redirect_to request.referer end end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/">
-          <div class="thumb thumb-2c4989a71616aacbb826a0f3c9f0dc21"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で複合項目で一意性チェックを行う方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-02-03T00:00:00JST">Feb 3, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で複合項目で一意性チェックを行う方法を備忘録として残しておく
-環境  ruby: 3.0.5 rails: 6.1.7  実際のコード [ER 図]
- [model]
-uniqueness + scope で validate を行う
-class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category # book_id + category_id で一意かどうかをチェック validates :book_id, uniqueness: { scope: :category_id } end class Category has_many :book_categories has_many :books, through: :book_categories end [migrate]
-unique index を追加する
-class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_table :book_categories do |t| t.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3303,6 +3342,48 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/">
+    <div class="thumb thumb-d09e980ed00064aceda111431e5cc3c7"></div>
+
+    <div class="inner">
+      <div class="title">Rancher Desktop の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/">
+    <div class="thumb thumb-d20de6096f01bc09ac79b2769d6645e9"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code Dev Containers での開発環境構築について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/">
@@ -3472,48 +3553,6 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
-    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
-
-    <div class="inner">
-      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
-    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
-
-    <div class="inner">
-      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3526,7 +3565,7 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(21)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     

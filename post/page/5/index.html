@@ -558,6 +558,18 @@ section.footer {
 }
 
   
+.thumb-d09e980ed00064aceda111431e5cc3c7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/docker_logo.png");
+}
+  
+
+  
+.thumb-d20de6096f01bc09ac79b2769d6645e9 {
+  background-image: url("https://kkawazoe.github.io/images/logo/vscode_logo.png");
+}
+  
+
+  
 .thumb-90e1d6556913ef10e9a03d9225bb34af {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1194,6 +1206,34 @@ article.lism .thumb {
   width: 6rem;
 }
 
+
+  
+    .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/docker_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d09e980ed00064aceda111431e5cc3c7 {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      background-image: url(https://kkawazoe.github.io/images/logo/vscode_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-d20de6096f01bc09ac79b2769d6645e9 {
+      width: 5rem;
+    }
+  
 
   
     .thumb-90e1d6556913ef10e9a03d9225bb34af {
@@ -2976,13 +3016,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          104
+          106
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          31
+          33
           <span>Tags</span>
         </a>
       </div>
@@ -3011,6 +3051,55 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/">
+          <div class="thumb thumb-a6f1e6445c5efc189728b02759a441ad"></div>
+
+          <div class="inner">
+            <h2 class="title">ransack で scope を使用して link_to で表示する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T00:00:00JST">Nov 1, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">方法 ransackable_scopes メソッドを使用して実現する
+環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード 例. User モデルの created_at カラムを基準として N 以内に作成されたユーザを取得する
+[model]
+# 引数なし scope :within_one_month, -&gt; { where(&#39;created_at &gt;=&#39;, Time.zone.now - 1.months) } # 引数あり scope :within_days, -&gt; (day) { where(&#39;created_at &gt;=&#39;, Time.zone.now - (day).days) } def self.ransackable_scopes(_auth_object = nil) %i(within_days within_one_month) end [erb]
+&lt;%= link_to( &#34;1ヶ月以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_one_month: true }), class: &#34;btn btn-primary mr-5&#34; ) link_to( &#34;7日以内に作成されたユーザ一覧&#34;, users_path(@q, q: { within_days: 7 }), class: &#34;btn btn-primary mr-5&#34; ) %&gt; [controller]</div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/10/30/how-to-dynamic-create-test-data-for-factory-bot-with-rspec/">
+          <div class="thumb thumb-70c66d7ca09d064e8de72dd1eefeedf1"></div>
+
+          <div class="inner">
+            <h2 class="title">rspec で factory bot を使用して複数テストを作成すると同時に関連するクラスを紐づけて動的に生成する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-10-30T21:00:00JST">Oct 30, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">方法 create_list と send メソッドを使用して実現する
+環境  ruby: 2.7.6 rails: 5.2.8.1 rspec 3.7.0  実際のコード user のテストデータを3つ作成 かつ 関連する user_status のテストデータを紐付けおよびカラム status を動的に生成する
+let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3).each.with_index(1) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i}&#34;), ) end end rspec 5.2 以降であれば以下も可能 参考
+let(:user_status1) { UserStatus::Active } let(:user_status2) { UserStatus::Locked } let(:user_status3) { UserStatus::InActive } before do create_list(:user, 3) do |user, i| create( :user_status, user: user, status: send(&#34;user_status#{i + 1}&#34;), ) end end </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3202,61 +3291,6 @@ require &#39;csv&#39; require &#39;fileutils&#39; class Converter def self.</div
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/02/26/how-to-source-location-rails/">
-          <div class="thumb thumb-df65a2c8281ef83ac9fa6cb2b3f3f5b4"></div>
-
-          <div class="inner">
-            <h2 class="title">rails でメソッドの定義場所を表示する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-02-26T01:28:11JST">Feb 26, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で エラーが出てどのクラスのメソッドが呼ばれているかを確認する方法を備忘録として残しておく
-方法 XXX.method(:{method}).source_location を使用する
-例. ActiveRecord::Base.method(:transaction).source_location
-環境  ruby: 2.6.10 rails: 5.2.3  実際のコード ActiveRecord::Base.method(:transaction).source_location =&gt; [&#34;/usr/local/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/transactions.rb&#34;, 211] </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2021/12/11/how-to-convert-excel-to-pdf-with-libreoffice/">
-          <div class="thumb thumb-3dcbb42f78cfbdb4a2bd86784a462f50"></div>
-
-          <div class="inner">
-            <h2 class="title">libreoffice を使用して Excel を PDF に変換する方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2021-12-11T14:24:49JST">Dec 11, 2021</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">アップロードされた Excel を PDF に変換して保存する必要があり
-調査を行った LibreOffice で変換する方法を備忘録として残しておく
-※図形など綺麗に変換されないパターンもあるため注意が必要
-前提 LibreOffice を事前にインストールしておく
-/Applications/LibreOffice.app/Contents/MacOS/soffice にインストールしている場合
-方法 以下のコマンドで変換を行う ※Calc を使用して PDF に変換
-参考
-指定できるフィルタ
-/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf:&#34;calc_pdf_Export&#34; {Excel File Path} その他 以下のようにすることで soffice コマンドを登録可能
- /usr/local/bin/soffice を作成して中に以下を記載する  #!/bin/bash  # Need to do this because symlink won&#39;t work # It complains about some .plist files /Applications/LibreOffice.app/Contents/MacOS/soffice &#34;$@&#34; 以下のコマンドで実行権限を付与する  sudo chmod +x /usr/loca/bin/soffice 上記を sh として gist に置いているので以下でも可
-sudo curl https://gist.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3278,6 +3312,48 @@ sudo curl https://gist.</div>
               <section class="sidebar">
   <header>LATESTS</header>
   <div class="articles sm">
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/">
+    <div class="thumb thumb-d09e980ed00064aceda111431e5cc3c7"></div>
+
+    <div class="inner">
+      <div class="title">Rancher Desktop の設定について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/">
+    <div class="thumb thumb-d20de6096f01bc09ac79b2769d6645e9"></div>
+
+    <div class="inner">
+      <div class="title">Visual Studio Code Dev Containers での開発環境構築について</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="8007-02-08T12:00:00JST">Feb 8, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
     
     <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/">
@@ -3447,48 +3523,6 @@ sudo curl https://gist.</div>
 </article>
 
     
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/">
-    <div class="thumb thumb-45092d75eb0a3cf25727c188bf4908c0"></div>
-
-    <div class="inner">
-      <div class="title">AWS と Firebase を連携して Push 通知を行う場合の設定について</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/">
-    <div class="thumb thumb-b225a88609f3af7ed0f2a6dba88d8e07"></div>
-
-    <div class="inner">
-      <div class="title">pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-12-20T12:00:00JST">Dec 20, 2023</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
   </div>
 </section>
 
@@ -3501,7 +3535,7 @@ sudo curl https://gist.</div>
     
     <li><a href="https://kkawazoe.github.io/tags/ruby-on-rails">ruby-on-rails <span class="count">(35)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(19)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/tool">tool <span class="count">(21)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     

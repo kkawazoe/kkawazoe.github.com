@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kkawazoe.github.io/tags/docker/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/post/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/tool/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://kkawazoe.github.io/tags/vs-code/</loc>
+    <lastmod>2024-02-08T12:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://kkawazoe.github.io/tags/amazon-ses/</loc>
     <lastmod>2024-02-06T12:00:00+09:00</lastmod>
   </url><url>
@@ -9,15 +33,6 @@
     <lastmod>2024-02-06T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/aws/</loc>
-    <lastmod>2024-02-06T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/</loc>
-    <lastmod>2024-02-06T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/post/</loc>
-    <lastmod>2024-02-06T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/</loc>
     <lastmod>2024-02-06T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</loc>
@@ -66,9 +81,6 @@
     <lastmod>2023-12-20T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/postgresql/</loc>
-    <lastmod>2023-12-20T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://kkawazoe.github.io/tags/tool/</loc>
     <lastmod>2023-12-20T12:00:00+09:00</lastmod>
   </url><url>
     <loc>https://kkawazoe.github.io/tags/google-analytics/</loc>
