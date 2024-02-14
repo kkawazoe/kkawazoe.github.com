@@ -3102,6 +3102,36 @@ input::-webkit-input-placeholder {
 <li>以降は新規で作成する場合と同様
 4-1. ℹ️を押下することでテンプレートの使い方やカスタマイズ方法が表示される</li>
 </ol>
+<h2 id="tips">Tips</h2>
+<h3 id="ホスト側の-db-クライアントから接続したい場合">ホスト側の DB クライアントから接続したい場合</h3>
+<p>以下の２つのファイルの設定を修正する必要がある<br>
+※ポート番号はホスト側と被らないようにしておくこと</p>
+<h4 id="ソースコードでの設定">ソースコードでの設定</h4>
+<p>設定変更した際はリビルドを行うこと</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.yml:.devcontainer/docker-compose.yml" data-lang=".yml:.devcontainer/docker-compose.yml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+
+<span style="color:#f92672">services</span>:
+  <span style="color:#75715e"># 省略・・・</span>
+  <span style="color:#f92672">db</span>:
+    <span style="color:#75715e"># 省略・・・</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#e6db74">&#34;5433:5432&#34;</span>
+  <span style="color:#75715e"># 省略・・・</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.json:.devcontainer/devcontainer.json" data-lang=".json:.devcontainer/devcontainer.json">{
+  <span style="color:#75715e">// 省略・・・
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">&#34;forwardPorts&#34;</span>: [<span style="color:#e6db74">&#34;5433:5432&#34;</span>],
+  <span style="color:#75715e">// 省略・・・
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h4 id="db-クライアントでの設定">DB クライアントでの設定</h4>
+<p>ポイントとなる設定は以下</p>
+<ul>
+<li>ホスト名/アドレス: 127.0.0.1</li>
+<li>ポート番号: 5433 ※ソースコード側でマッピングした値</li>
+</ul>
+<figure class="center"><img src="/images/20240208_01/pgadmin4.png"
+         alt="Architecture Containers" width="500" height="500"/>
+</figure>
+
 </div>
 
   <footer class="article-footer">
