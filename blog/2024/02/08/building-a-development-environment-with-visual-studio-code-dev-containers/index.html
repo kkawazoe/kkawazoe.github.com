@@ -3209,7 +3209,27 @@ input::-webkit-input-placeholder {
          alt="Architecture Containers" width="500" height="500"/>
 </figure>
 
-</div>
+<h3 id="vs-code-の設定および拡張機能の追加">VS Code の設定および拡張機能の追加</h3>
+<p>以下を設定することで開発者間で同じ設定と拡張機能をインストールした状態で開発が行える</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.json:.devcontainer/devcontainer.json" data-lang=".json:.devcontainer/devcontainer.json">{
+  <span style="color:#f92672">&#34;customizations&#34;</span>: {
+    <span style="color:#f92672">&#34;vscode&#34;</span>: {
+      <span style="color:#75715e">// 設定値は、拡張機能 &gt; ⚙️ &gt; 拡張機能 ID のコピーで取得
+</span><span style="color:#75715e"></span>      <span style="color:#f92672">&#34;extensions&#34;</span>: [
+        <span style="color:#e6db74">&#34;misogi.ruby-rubocop&#34;</span>
+      ],
+      <span style="color:#75715e">// 設定値は、 settings.json で取得
+</span><span style="color:#75715e"></span>      <span style="color:#f92672">&#34;settings&#34;</span>: {
+        <span style="color:#f92672">&#34;editor.tabSize&#34;</span>: <span style="color:#ae81ff">2</span>,
+        <span style="color:#f92672">&#34;editor.renderWhitespace&#34;</span>: <span style="color:#e6db74">&#34;all&#34;</span>,
+        <span style="color:#f92672">&#34;files.trimTrailingWhitespace&#34;</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;files.insertFinalNewline&#34;</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;diffEditor.ignoreTrimWhitespace&#34;</span>: <span style="color:#66d9ef">false</span>
+      }
+    }
+  }
+}
+</code></pre></div></div>
 
   <footer class="article-footer">
 
