@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.io/tags/docker/</link>
-    <description>Recent content in Docker on Note To Self ~One Step At A Time~</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Thu, 08 Feb 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Rancher Desktop の設定について</title>
-      <link>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</link>
-      <pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</guid>
-      <description>普段個人で開発している時は Docker Desktop を使用しているが仕事で使用する場合には従業員数等で有償となる
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/docker/</link><description>Recent content in Docker on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 08 Feb 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Rancher Desktop の設定について</title><link>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</link><pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</guid><description>普段個人で開発している時は Docker Desktop を使用しているが仕事で使用する場合には従業員数等で有償となる
 そのため、代替ツールとして Rancher Desktop を調査した結果を備忘録として残しておく
 設定について 以下の設定を変更することで動作が速くなる可能性がある
- 「Preferences」ボタンを押下 Virtual Machine &amp;gt; Volumes &amp;gt; Mount Type を以下に変更する  Mount Type: virtiofs    </description>
-    </item>
-    
-  </channel>
-</rss>
+「Preferences」ボタンを押下 Virtual Machine &amp;gt; Volumes &amp;gt; Mount Type を以下に変更する Mount Type: virtiofs</description></item></channel></rss>

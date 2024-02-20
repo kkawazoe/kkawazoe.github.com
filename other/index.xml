@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Others on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.io/other/</link>
-    <description>Recent content in Others on Note To Self ~One Step At A Time~</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Fri, 01 Mar 2019 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/other/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>プライバシーポリシー</title>
-      <link>https://kkawazoe.github.io/other/privacy-policy/</link>
-      <pubDate>Fri, 01 Mar 2019 09:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/other/privacy-policy/</guid>
-      <description>当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense, Rakuten アフィリエイト, Amazon アソシエイト）を利用しています。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Others on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/other/</link><description>Recent content in Others on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Fri, 01 Mar 2019 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/other/index.xml" rel="self" type="application/rss+xml"/><item><title>プライバシーポリシー</title><link>https://kkawazoe.github.io/other/privacy-policy/</link><pubDate>Fri, 01 Mar 2019 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/other/privacy-policy/</guid><description>当サイトに掲載されている広告について 当サイトでは、第三者配信の広告サービス（Google Adsense, Rakuten アフィリエイト, Amazon アソシエイト）を利用しています。
 広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報 『Cookie』
 (氏名、住所、メール アドレス、電話番号は含まれません)を使用することがあります。
 また Google Adsense に関して、このプロセスの詳細やこのような情報が広告配信事業者に使用されないようにする方法については、こちらをご覧ください。
@@ -32,8 +17,4 @@
 また当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。
 権利を侵害する目的ではございません。
 記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。
-確認後、対応させて頂きます。</description>
-    </item>
-    
-  </channel>
-</rss>
+確認後、対応させて頂きます。</description></item></channel></rss>

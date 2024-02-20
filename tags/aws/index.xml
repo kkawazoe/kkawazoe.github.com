@@ -1,146 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AWS on Note To Self ~One Step At A Time~</title>
-    <link>https://kkawazoe.github.io/tags/aws/</link>
-    <description>Recent content in AWS on Note To Self ~One Step At A Time~</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Tue, 20 Feb 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Amazon IAM で登録されている関数一覧を取得する方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</link>
-      <pubDate>Tue, 20 Feb 2024 12:30:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</guid>
-      <description>Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws/</link><description>Recent content in AWS on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 20 Feb 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Amazon IAM で登録されている関数一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</link><pubDate>Tue, 20 Feb 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</guid><description>Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws iam list-users \ | jq -r &amp;#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; iam_users_list.csv </description>
-    </item>
-    
-    <item>
-      <title>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</link>
-      <pubDate>Tue, 06 Feb 2024 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</guid>
-      <description>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法について調査した内容を備忘録として残しておく
-前提  対象のドメインを「検証済み ID」として作成済 DKIM が設定済 DNS サービスの提供元が Route 53  方法  Amazon SES &amp;gt; 設定: 検証済み ID を選択 対象の ID を選択 カスタム MAIL FROM ドメイン &amp;gt; 「編集」ボタンを押下 以下のように設定して「保存」ボタンを押下  カスタム MAIL FROM ドメインの使用: チェック MAIL FROM ドメイン: 任意の値 MX 障害時の動作: 以下のどちらか  デフォルトの MAIL FROM ドメインの使用 メッセージの拒否     DNS レコードの発行を行う Route 53 &amp;gt; ホストゾーン &amp;gt; {対象のドメイン} を選択 「レコードを作成」を押下 以下を設定する  レコード名: _dmarc レコードタイプ: TXT 値: v=DMARC1; p=none   テストEメール確認して OK なら値を「v=DMARC1; p=reject」に変更  Amazon SES の DMARC 認証プロトコルへの準拠参照    確認方法 例えば、以下のような方法で確認する</description>
-    </item>
-    
-    <item>
-      <title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link>
-      <pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid>
-      <description>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
+実際のコード aws iam list-users \ | jq -r &amp;#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; iam_users_list.csv</description></item><item><title>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</link><pubDate>Tue, 06 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</guid><description>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法について調査した内容を備忘録として残しておく
+前提 対象のドメインを「検証済み ID」として作成済 DKIM が設定済 DNS サービスの提供元が Route 53 方法 Amazon SES &amp;gt; 設定: 検証済み ID を選択 対象の ID を選択 カスタム MAIL FROM ドメイン &amp;gt; 「編集」ボタンを押下 以下のように設定して「保存」ボタンを押下 カスタム MAIL FROM ドメインの使用: チェック MAIL FROM ドメイン: 任意の値 MX 障害時の動作: 以下のどちらか デフォルトの MAIL FROM ドメインの使用 メッセージの拒否 DNS レコードの発行を行う Route 53 &amp;gt; ホストゾーン &amp;gt; {対象のドメイン} を選択 「レコードを作成」を押下 以下を設定する レコード名: _dmarc レコードタイプ: TXT 値: v=DMARC1; p=none テストEメール確認して OK なら値を「v=DMARC1; p=reject」に変更 Amazon SES の DMARC 認証プロトコルへの準拠参照 確認方法 例えば、以下のような方法で確認する</description></item><item><title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid><description>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
 方法 以下の２つの方法が考えられる
- Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
-※リストアはユーザ CSV インポート機能で行う  実際のコード const { stringify } = require(&amp;#34;csv-stringify/sync&amp;#34;); module.exports = async (params) =&amp;gt; { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require(&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;); const cognito = new CognitoIdentityProvider(); module.exports = async (param) =&amp;gt; { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</description>
-    </item>
-    
-    <item>
-      <title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link>
-      <pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid>
-      <description>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく
-方法  CloudWatch &amp;gt; Synthetics Canary を選択 「Canary を作成」ボタンを押下 以下を設定  設計図を使用する 設計図: API Canary Canary ビルダー: 任意の Canary 名 Amazon API Gateway API を使用中: チェックを入れる API を選択: API Gateway から API とステージを選択  使用している API, ステージを選択   Host Name: 使用している Host Name を指定 HTTP リクエスト  HTTP リクエストを追加ボタンを押下  監視したい API の情報を設定     スクリプトエディタ: スクリプトを参照 スケジュール: 任意のスケジュールを選択 アクセス許可  IAM ロール: 既存のロールを選択  ポリシーを参照       「保存」ボタンを押下  実際のコード スクリプト 基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</description>
-    </item>
-    
-    <item>
-      <title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link>
-      <pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid>
-      <description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
+Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
+※リストアはユーザ CSV インポート機能で行う 実際のコード const { stringify } = require(&amp;#34;csv-stringify/sync&amp;#34;); module.exports = async (params) =&amp;gt; { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require(&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;); const cognito = new CognitoIdentityProvider(); module.exports = async (param) =&amp;gt; { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</description></item><item><title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title><link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid><description>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく
+方法 CloudWatch &amp;gt; Synthetics Canary を選択 「Canary を作成」ボタンを押下 以下を設定 設計図を使用する 設計図: API Canary Canary ビルダー: 任意の Canary 名 Amazon API Gateway API を使用中: チェックを入れる API を選択: API Gateway から API とステージを選択 使用している API, ステージを選択 Host Name: 使用している Host Name を指定 HTTP リクエスト HTTP リクエストを追加ボタンを押下 監視したい API の情報を設定 スクリプトエディタ: スクリプトを参照 スケジュール: 任意のスケジュールを選択 アクセス許可 IAM ロール: 既存のロールを選択 ポリシーを参照 「保存」ボタンを押下 実際のコード スクリプト 基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</description></item><item><title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title><link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link><pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid><description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード   ユーザ登録
+実際のコード ユーザ登録
 &amp;ndash;user-attributes は必要に応じて増やす
 ※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
-  aws cognito-idp admin-create-user \ --user-pool-id {ユーザプール ID} \ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \ --user-attributes Name=email,Value={E メールアドレス} \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS  パスワード設定
+aws cognito-idp admin-create-user \ --user-pool-id {ユーザプール ID} \ --username {E メールアドレス ※E メールアドレスをユーザ名に設定した場合} \ --user-attributes Name=email,Value={E メールアドレス} \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定
 &amp;ndash;no-permanent は仮パスワード扱い
 ※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる
-  aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID} \ --username {ユーザ名 or sub} \ --password {password} \ --no-permanent </description>
-    </item>
-    
-    <item>
-      <title>AWS についての Tips</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link>
-      <pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</guid>
-      <description>AWS についての Tips について備忘録として残しておく
+aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID} \ --username {ユーザ名 or sub} \ --password {password} \ --no-permanent</description></item><item><title>AWS についての Tips</title><link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link><pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</guid><description>AWS についての Tips について備忘録として残しておく
 ※適宜、更新予定
 DB の接続情報の確認 EC2 踏み台の Public IP を確認
- EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  RDS  RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択  Secret Maneger DB のパスワードの設定確認方法
- AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する
-Amazon EventBridge Scheduler  Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択 スケジュール &amp;gt; cron 式 を確認  Amazon EventBridge Rule Cloud Formation で設定した場合はこっちを確認する</description>
-    </item>
-    
-    <item>
-      <title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link>
-      <pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid>
-      <description>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
+EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択 Secret Maneger DB のパスワードの設定確認方法
+AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する
+Amazon EventBridge Scheduler Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択 スケジュール &amp;gt; cron 式 を確認 Amazon EventBridge Rule Cloud Formation で設定した場合はこっちを確認する</description></item><item><title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link><pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid><description>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter &amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34; \ --attributes-to-get &amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34; \ | jq -r &amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; user_pool_list.csv </description>
-    </item>
-    
-    <item>
-      <title>Amazon Lambda で登録されている関数一覧を取得する方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</link>
-      <pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</guid>
-      <description>Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
+実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter &amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34; \ --attributes-to-get &amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34; \ | jq -r &amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; user_pool_list.csv</description></item><item><title>Amazon Lambda で登録されている関数一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</link><pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</guid><description>Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; lambda-functions-list.csv </description>
-    </item>
-    
-    <item>
-      <title>Amazon Pinpoint API で push 通知を送信する方法</title>
-      <link>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</link>
-      <pubDate>Thu, 28 Dec 2023 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</guid>
-      <description>Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく
+実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; lambda-functions-list.csv</description></item><item><title>Amazon Pinpoint API で push 通知を送信する方法</title><link>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</link><pubDate>Thu, 28 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</guid><description>Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく
 前提構成: 前回記事を参照
 方法 デベロッパーガイドを参照
 ※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう
-リファクタリング前 ・・・ if (service == &amp;#39;GCM&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: &amp;#39;GCM&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;GCMMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } else if (service == &amp;#39;APNS&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39; : &amp;#39;APNS&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;APNSMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: service } }, &amp;#39;MessageConfiguration&amp;#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; ・・・ </description>
-    </item>
-    
-    <item>
-      <title>AWS と Firebase を連携して Push 通知を行う場合の設定について</title>
-      <link>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</link>
-      <pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</guid>
-      <description>AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく
+リファクタリング前 ・・・ if (service == &amp;#39;GCM&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: &amp;#39;GCM&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;GCMMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } else if (service == &amp;#39;APNS&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39; : &amp;#39;APNS&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;APNSMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: service } }, &amp;#39;MessageConfiguration&amp;#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; ・・・</description></item><item><title>AWS と Firebase を連携して Push 通知を行う場合の設定について</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</guid><description>AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく
 方法 Amazon Pinpoint を使用
- Amazon Pinpoint &amp;gt; 使用を開始する &amp;gt; Pinpoint campaign orchestration を選択 [プロジェクトを管理]ボタンを押下 該当のプロジェクト名を選択 設定 &amp;gt; プッシュ通知 を選択 [編集]ボタンを押下  Apple Push Notification service (APNs)  デフォルトの認証タイプ  キー認証情報(推奨)   有効にする APN チャネルを選択  任意のチャネルを選択   キー ID  Apple Developer Programで確認   バンドル識別子  Apple Developer Programで確認   チーム識別子  Apple Developer Programで確認   認証キー(.p8 ファイル)  Apple Developer Programで取得    Firebase Cloud Messaging (FCM)  デフォルトの認証タイプ  トークン認証情報(推奨)   サービス json (.</description>
-    </item>
-    
-    <item>
-      <title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title>
-      <link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link>
-      <pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate>
-      
-      <guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid>
-      <description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
+Amazon Pinpoint &amp;gt; 使用を開始する &amp;gt; Pinpoint campaign orchestration を選択 [プロジェクトを管理]ボタンを押下 該当のプロジェクト名を選択 設定 &amp;gt; プッシュ通知 を選択 [編集]ボタンを押下 Apple Push Notification service (APNs) デフォルトの認証タイプ キー認証情報(推奨) 有効にする APN チャネルを選択 任意のチャネルを選択 キー ID Apple Developer Programで確認 バンドル識別子 Apple Developer Programで確認 チーム識別子 Apple Developer Programで確認 認証キー(.p8 ファイル) Apple Developer Programで取得 Firebase Cloud Messaging (FCM) デフォルトの認証タイプ トークン認証情報(推奨) サービス json (.</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
 方法 事前作業 AWS Console にて接続に必要な情報を控えておく
 EC2 踏み台の Public IP を確認
- EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認  Elastic IP が紐付けられている場合は以下を確認する
- EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認  RDS プロキシの設定がされている場合は以下を確認する
- RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認  その他 DB のパスワード (Secrets Manager)の設定確認方法
- AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する  pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description>
-    </item>
-    
-  </channel>
-</rss>
+EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 Elastic IP が紐付けられている場合は以下を確認する
+EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認 RDS プロキシの設定がされている場合は以下を確認する
+RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認 その他 DB のパスワード (Secrets Manager)の設定確認方法
+AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description></item></channel></rss>
