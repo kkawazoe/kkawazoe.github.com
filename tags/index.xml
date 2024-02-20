@@ -71,11 +71,20 @@
     </item>
     
     <item>
-      <title>AWS Lamdba</title>
-      <link>https://kkawazoe.github.io/tags/aws-lamdba/</link>
+      <title>AWS IAM</title>
+      <link>https://kkawazoe.github.io/tags/aws-iam/</link>
+      <pubDate>Sat, 20 Jan 2024 12:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/tags/aws-iam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS Lambda</title>
+      <link>https://kkawazoe.github.io/tags/aws-lambda/</link>
       <pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/tags/aws-lamdba/</guid>
+      <guid>https://kkawazoe.github.io/tags/aws-lambda/</guid>
       <description></description>
     </item>
     

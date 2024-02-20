@@ -594,6 +594,12 @@ section.footer {
   
 
   
+.thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1287,6 +1293,20 @@ article.lism .thumb {
     }
 
     article.lism .thumb-02f7361c91fa442b01871da54dfb772c {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
       width: 5rem;
     }
   
@@ -3016,13 +3036,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          106
+          107
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          33
+          34
           <span>Tags</span>
         </a>
       </div>
@@ -3074,6 +3094,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2022/12/16/how-to-convert-active-record-to-hash-with-rails/">
+          <div class="thumb thumb-d4a5b77960546f53838bd509c8bd7149"></div>
+
+          <div class="inner">
+            <h2 class="title">Rails で Active Record のデータを hash 形式に変換する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-12-16T13:00:00JST">Dec 16, 2022</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Rails で Active Record のデータを キーが id, 値が Active Record であるような Hash を作る方法を備忘録として残しておく
+環境  ruby: 3.0.4 rails: 6.1.0  実際のコード index_by, inject, pluck + to_h メソッドのいずれかを使用する
+前提 データの登録状態
+   id book_id name     1 1 少年誌   2 1 青年誌   3 1 ビジネス   4 1 自己啓発    [Rails Console]
+categories = Category.all.index_by(&amp;:id) #=&gt; { #=&gt; 1=&gt; #=&gt; #&lt;Category:0x0000562b92c5fcb0 #=&gt; id: 1, #=&gt; book_id: 1, #=&gt; name: &#34;少年誌&#34;, #=&gt; created_at: Wed, 24 Aug 2022 02:54:05.</div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3304,31 +3349,6 @@ $(&#39;form&#39;).append( `&lt;input type=&#34;hidden&#34; value=&#34;&#34; name
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/">
-          <div class="thumb thumb-0ffb3601aeff1406323f07e951604400"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2022-11-01T13:00:00JST">Nov 1, 2022</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">環境  ruby: 2.7.6 rails: 5.2.8.1  実際のコード [ER 図]
- [model]
-class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
-category_ids を配列形式で許可する
-def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3478,6 +3498,27 @@ def create @book = Book.save!(book_params) end private def book_params params.re
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/20/how-to-get-a-list-of-registered-users-in-amazon-iam/">
+    <div class="thumb thumb-df4db3fec41425dc65dfe482eb4e4eb7"></div>
+
+    <div class="inner">
+      <div class="title">Amazon IAM で登録されている関数一覧を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-01-20T12:30:00JST">Jan 20, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
     <div class="thumb thumb-a758e1d3455d03a5b31d258ca86d8a0d"></div>
 
@@ -3520,35 +3561,14 @@ def create @book = Book.save!(book_params) end private def book_params params.re
 
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/">
+  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/">
     <div class="thumb thumb-73ec13fd4a20de795829c3ac53550dc2"></div>
 
     <div class="inner">
-      <div class="title">Amazon Lamdba で登録されている関数一覧を取得する方法</div>
+      <div class="title">Amazon Lambda で登録されている関数一覧を取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-01-16T12:00:00JST">Jan 16, 2024</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/">
-    <div class="thumb thumb-19bbac5161d32e8f26568f47bffb9694"></div>
-
-    <div class="inner">
-      <div class="title">Amazon Pinpoint API で push 通知を送信する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-12-28T12:00:00JST">Dec 28, 2023</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -3577,7 +3597,7 @@ def create @book = Book.save!(book_params) end private def book_params params.re
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     

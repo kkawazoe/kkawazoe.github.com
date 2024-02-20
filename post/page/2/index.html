@@ -594,6 +594,12 @@ section.footer {
   
 
   
+.thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
 .thumb-a758e1d3455d03a5b31d258ca86d8a0d {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
@@ -1287,6 +1293,20 @@ article.lism .thumb {
     }
 
     article.lism .thumb-02f7361c91fa442b01871da54dfb772c {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
       width: 5rem;
     }
   
@@ -3016,13 +3036,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          106
+          107
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          33
+          34
           <span>Tags</span>
         </a>
       </div>
@@ -3051,6 +3071,31 @@ input::-webkit-input-placeholder {
     
     
     
+    
+    <div class="mcol c6">
+      <article class="li">
+        <a href="https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/">
+          <div class="thumb thumb-19bbac5161d32e8f26568f47bffb9694"></div>
+
+          <div class="inner">
+            <h2 class="title">Amazon Pinpoint API で push 通知を送信する方法</h2>
+
+            <ul class="facts">
+              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-12-28T12:00:00JST">Dec 28, 2023</time></li>
+              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+              
+              
+            </ul>
+
+            <div class="summary">Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく
+前提構成: 前回記事を参照
+方法 デベロッパーガイドを参照
+※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう
+リファクタリング前 ・・・ if (service == &#39;GCM&#39;) { var messageRequest = { &#39;Addresses&#39;: { [token]: { &#39;ChannelType&#39;: &#39;GCM&#39; } }, &#39;MessageConfiguration&#39;: { &#39;GCMMessage&#39;: { &#39;Action&#39;: action, &#39;Body&#39;: message, &#39;Priority&#39;: priority, &#39;SilentPush&#39;: silent, &#39;Title&#39;: title, &#39;TimeToLive&#39;: ttl, &#39;Url&#39;: url } } }; } else if (service == &#39;APNS&#39;) { var messageRequest = { &#39;Addresses&#39;: { [token]: { &#39;ChannelType&#39; : &#39;APNS&#39; } }, &#39;MessageConfiguration&#39;: { &#39;APNSMessage&#39;: { &#39;Action&#39;: action, &#39;Body&#39;: message, &#39;Priority&#39;: priority, &#39;SilentPush&#39;: silent, &#39;Title&#39;: title, &#39;TimeToLive&#39;: ttl, &#39;Url&#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { &#39;Addresses&#39;: { [token]: { &#39;ChannelType&#39;: service } }, &#39;MessageConfiguration&#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { &#39;Action&#39;: action, &#39;Body&#39;: message, &#39;Priority&#39;: priority, &#39;SilentPush&#39;: silent, &#39;Title&#39;: title, &#39;TimeToLive&#39;: ttl, &#39;Url&#39;: url } } }; ・・・ </div>
+          </div>
+        </a>
+      </article>
+    </div>
     
     <div class="mcol c6">
       <article class="li">
@@ -3270,34 +3315,6 @@ sass-rails
       </article>
     </div>
     
-    <div class="mcol c6">
-      <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2023/02/11/migration-active-model-serializers-to-panko-serializer-with-rails/">
-          <div class="thumb thumb-c7f133a297368851965175fe06b726e7"></div>
-
-          <div class="inner">
-            <h2 class="title">rails で ActiveModelSerializers から PankoSerializer に移行する</h2>
-
-            <ul class="facts">
-              <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2023-02-11T13:00:00JST">Feb 11, 2023</time></li>
-              <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-              
-              
-            </ul>
-
-            <div class="summary">rails で ActiveModelSerializers から PankoSerializer に移行する手順を備忘録として残しておく
-※今回のは、単純な serializer のみのため、panko_serializer について検証が必要
-環境  ruby: 3.0.5 rails: 6.1.7 active_model_serializers: 0.10.13 panko_serializer: 0.7.9  実際のソース [Gemfile]
-- gem &#39;active_model_serializers&#39; + gem &#39;panko_serializer&#39; [serializer]
-継承するクラスを変更
-- class Book::ListSerializer &lt; ActiveModel::Serializer + class Book::ListSerializer &lt; Panko::Serializer attributes( :id, :title, :summary, :restrict, :to_favorite_registered_count ) def restrict Book.restricts[object.restrict] end end [controller]
-each_serializer を使用する場合
-def index @books = Book.all - render json: @books, each_serializer: Book::ListSerializer + render json: Panko::ArraySerializer.</div>
-          </div>
-        </a>
-      </article>
-    </div>
-    
 
   </div>
 </div>
@@ -3447,6 +3464,27 @@ def index @books = Book.all - render json: @books, each_serializer: Book::ListSe
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/20/how-to-get-a-list-of-registered-users-in-amazon-iam/">
+    <div class="thumb thumb-df4db3fec41425dc65dfe482eb4e4eb7"></div>
+
+    <div class="inner">
+      <div class="title">Amazon IAM で登録されている関数一覧を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-01-20T12:30:00JST">Jan 20, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
     <div class="thumb thumb-a758e1d3455d03a5b31d258ca86d8a0d"></div>
 
@@ -3489,35 +3527,14 @@ def index @books = Book.all - render json: @books, each_serializer: Book::ListSe
 
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/">
+  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/">
     <div class="thumb thumb-73ec13fd4a20de795829c3ac53550dc2"></div>
 
     <div class="inner">
-      <div class="title">Amazon Lamdba で登録されている関数一覧を取得する方法</div>
+      <div class="title">Amazon Lambda で登録されている関数一覧を取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-01-16T12:00:00JST">Jan 16, 2024</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/">
-    <div class="thumb thumb-19bbac5161d32e8f26568f47bffb9694"></div>
-
-    <div class="inner">
-      <div class="title">Amazon Pinpoint API で push 通知を送信する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-12-28T12:00:00JST">Dec 28, 2023</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -3546,7 +3563,7 @@ def index @books = Book.all - render json: @books, each_serializer: Book::ListSe
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     

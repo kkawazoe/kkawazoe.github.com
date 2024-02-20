@@ -57,6 +57,17 @@
     </item>
     
     <item>
+      <title>Amazon IAM で登録されている関数一覧を取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2024/01/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</link>
+      <pubDate>Sat, 20 Jan 2024 12:30:00 +0900</pubDate>
+      
+      <guid>https://kkawazoe.github.io/blog/2024/01/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</guid>
+      <description>Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
+方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
+実際のコード aws iam list-users \ | jq -r &amp;#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; iam_users_list.csv </description>
+    </item>
+    
+    <item>
       <title>AWS についての Tips</title>
       <link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link>
       <pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate>
@@ -82,14 +93,14 @@ Amazon EventBridge Scheduler  Amazon EventBridge &amp;gt; スケジューラ &am
     </item>
     
     <item>
-      <title>Amazon Lamdba で登録されている関数一覧を取得する方法</title>
-      <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</link>
+      <title>Amazon Lambda で登録されている関数一覧を取得する方法</title>
+      <link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</link>
       <pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate>
       
-      <guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/</guid>
-      <description>Amazon Lamdba で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
+      <guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</guid>
+      <description>Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; &amp;gt; lambda-functions-list.csv </description>
+実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; lambda-functions-list.csv </description>
     </item>
     
     <item>

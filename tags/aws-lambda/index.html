@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>AWS Lamdba - Note To Self ~One Step At A Time~</title>
+    <title>AWS Lambda - Note To Self ~One Step At A Time~</title>
     <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com"  crossorigin>
@@ -15,13 +15,13 @@
 <link rel="shortcut icon" href="https://kkawazoe.github.io/images/favicon.ico" />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/tags/aws-lamdba/index.xml" title="Note To Self ~One Step At A Time~">
+<link rel="alternate" type="application/rss+xml" href="https://kkawazoe.github.io/tags/aws-lambda/index.xml" title="Note To Self ~One Step At A Time~">
 
 
 
     
 
-    <link rel="canonical" href="https://kkawazoe.github.io/tags/aws-lamdba/">
+    <link rel="canonical" href="https://kkawazoe.github.io/tags/aws-lambda/">
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
@@ -589,6 +589,12 @@ section.footer {
 
   
 .thumb-02f7361c91fa442b01871da54dfb772c {
+  background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
+}
+  
+
+  
+.thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
   background-image: url("https://kkawazoe.github.io/images/logo/aws_logo.png");
 }
   
@@ -1287,6 +1293,20 @@ article.lism .thumb {
     }
 
     article.lism .thumb-02f7361c91fa442b01871da54dfb772c {
+      width: 5rem;
+    }
+  
+
+  
+    .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
+      background-image: url(https://kkawazoe.github.io/images/logo/aws_logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+
+    article.lism .thumb-df4db3fec41425dc65dfe482eb4e4eb7 {
       width: 5rem;
     }
   
@@ -3016,13 +3036,13 @@ input::-webkit-input-placeholder {
     <div class="article-info profile-block">
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/">
-          106
+          107
           <span>Posts</span>
         </a>
       </div>
       <div class="article-info-block">
         <a href="https://kkawazoe.github.io/tags/">
-          33
+          34
           <span>Tags</span>
         </a>
       </div>
@@ -3041,7 +3061,7 @@ input::-webkit-input-placeholder {
             
 
 <header class="page-title">
-  <h1 class="title">AWS Lamdba</h1>
+  <h1 class="title">AWS Lambda</h1>
 </header>
 
 
@@ -3054,11 +3074,11 @@ input::-webkit-input-placeholder {
     
     <div class="mcol c6">
       <article class="li">
-        <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/">
+        <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/">
           <div class="thumb thumb-73ec13fd4a20de795829c3ac53550dc2"></div>
 
           <div class="inner">
-            <h2 class="title">Amazon Lamdba で登録されている関数一覧を取得する方法</h2>
+            <h2 class="title">Amazon Lambda で登録されている関数一覧を取得する方法</h2>
 
             <ul class="facts">
               <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2024-01-16T12:00:00JST">Jan 16, 2024</time></li>
@@ -3067,9 +3087,9 @@ input::-webkit-input-placeholder {
               
             </ul>
 
-            <div class="summary">Amazon Lamdba で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
+            <div class="summary">Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws lambda list-functions --region {リージョン名} \ | jq &#39;.Functions[] | [.FunctionName]&#39; \ | jq -rs &#39;map([.[]])[] | @csv&#39; \ | tr -d &#39;&#34;&#39; &gt; lambda-functions-list.csv </div>
+実際のコード aws lambda list-functions --region {リージョン名} \ | jq &#39;.Functions[] | [.FunctionName]&#39; \ | jq -rs &#39;map([.[]])[] | @csv&#39; \ | tr -d &#39;&#34;&#39; \ &gt; lambda-functions-list.csv </div>
           </div>
         </a>
       </article>
@@ -3215,6 +3235,27 @@ input::-webkit-input-placeholder {
 
     
     <article class="lism">
+  <a href="https://kkawazoe.github.io/blog/2024/01/20/how-to-get-a-list-of-registered-users-in-amazon-iam/">
+    <div class="thumb thumb-df4db3fec41425dc65dfe482eb4e4eb7"></div>
+
+    <div class="inner">
+      <div class="title">Amazon IAM で登録されている関数一覧を取得する方法</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="20007-01-20T12:30:00JST">Jan 20, 2024</time></li>
+        
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    
+    <article class="lism">
   <a href="https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/">
     <div class="thumb thumb-a758e1d3455d03a5b31d258ca86d8a0d"></div>
 
@@ -3257,35 +3298,14 @@ input::-webkit-input-placeholder {
 
     
     <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-cognito/">
+  <a href="https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/">
     <div class="thumb thumb-73ec13fd4a20de795829c3ac53550dc2"></div>
 
     <div class="inner">
-      <div class="title">Amazon Lamdba で登録されている関数一覧を取得する方法</div>
+      <div class="title">Amazon Lambda で登録されている関数一覧を取得する方法</div>
 
       <ul class="facts sm">
         <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="16007-01-16T12:00:00JST">Jan 16, 2024</time></li>
-        
-        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
-        
-        
-        
-      </ul>
-
-    </div>
-  </a>
-</article>
-
-    
-    <article class="lism">
-  <a href="https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/">
-    <div class="thumb thumb-19bbac5161d32e8f26568f47bffb9694"></div>
-
-    <div class="inner">
-      <div class="title">Amazon Pinpoint API で push 通知を送信する方法</div>
-
-      <ul class="facts sm">
-        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="28007-12-28T12:00:00JST">Dec 28, 2023</time></li>
         
         <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
         
@@ -3314,7 +3334,7 @@ input::-webkit-input-placeholder {
     
     <li><a href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC">資格 <span class="count">(13)</span></a></li>
     
-    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(10)</span></a></li>
+    <li><a href="https://kkawazoe.github.io/tags/aws">aws <span class="count">(11)</span></a></li>
     
     <li><a href="https://kkawazoe.github.io/tags/git">git <span class="count">(6)</span></a></li>
     
