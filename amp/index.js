@@ -1,10 +1,10 @@
 var data = [
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/",
-title: "Amazon IAM で登録されている関数一覧を取得する方法",
+title: "Amazon IAM で登録されているユーザ一覧を取得する方法",
 image: "images/logo/aws_logo.png",
 date: "2024-02-20",
-body: "Amazon IAM で登録されている関数一覧を取得する方法 Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する 実際のコード aws iam list-users \\ | jq -r \u0026#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv\u0026#39; \\ | tr -d \u0026#39;\u0026#34;\u0026#39; \\ \u0026gt; iam_users_list.csv"
+body: "Amazon IAM で登録されているユーザ一覧を取得する方法 Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく 方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する 実際のコード aws iam list-users \\ | jq -r \u0026#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv\u0026#39; \\ | tr -d \u0026#39;\u0026#34;\u0026#39; \\ \u0026gt; iam_users_list.csv"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/02/08/configuring-rancher-desktop/",

@@ -1,7 +1,7 @@
 <!doctype html><html>
 <head>
 <meta charset=utf-8>
-<title>Amazon IAM で登録されている関数一覧を取得する方法 - Note To Self ~One Step At A Time~</title>
+<title>Amazon IAM で登録されているユーザ一覧を取得する方法 - Note To Self ~One Step At A Time~</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -12,7 +12,7 @@
 <link rel="shortcut icon" href=https://kkawazoe.github.io/images/favicon.ico>
 <link rel=amphtml type=text/html href=https://kkawazoe.github.io/amp/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/ title="Note To Self ~One Step At A Time~">
 <meta name=description content="Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく">
-<meta property="og:title" content="Amazon IAM で登録されている関数一覧を取得する方法 - Note To Self ~One Step At A Time~">
+<meta property="og:title" content="Amazon IAM で登録されているユーザ一覧を取得する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/aws_logo.png">
@@ -22,10 +22,10 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="Note To Self ~One Step At A Time~">
 <meta name=twitter:url content="https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/">
-<meta name=twitter:title content="Amazon IAM で登録されている関数一覧を取得する方法 - Note To Self ~One Step At A Time~">
+<meta name=twitter:title content="Amazon IAM で登録されているユーザ一覧を取得する方法 - Note To Self ~One Step At A Time~">
 <meta name=twitter:description content="Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく">
 <meta name=twitter:image content="https://kkawazoe.github.io/images/logo/aws_logo.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"Amazon IAM で登録されている関数一覧を取得する方法-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/aws_logo.png","height":800,"width":800},"datePublished":"2024-02-20T12:30:00JST","dateModified":"2024-02-20T12:30:00JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"Amazon IAM で登録されているユーザ一覧を取得する方法-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/aws_logo.png","height":800,"width":800},"datePublished":"2024-02-20T12:30:00JST","dateModified":"2024-02-20T12:30:00JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく"}</script>
 <link rel=canonical href=https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css>
@@ -75,7 +75,7 @@
 <article class=sn>
 <div class="thumb thumb-df4db3fec41425dc65dfe482eb4e4eb7"></div>
 <header class=article-header>
-<h1 class=title>Amazon IAM で登録されている関数一覧を取得する方法</h1>
+<h1 class=title>Amazon IAM で登録されているユーザ一覧を取得する方法</h1>
 <ul class=facts>
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-02-20T12:30:00JST>Feb 20, 2024</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -83,10 +83,10 @@
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/aws-iam>AWS IAM</a> </li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&text=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&t=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&text=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&t=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
 <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 <a href=https://kkawazoe.github.io/index.xml title=RSSでフォロー class=rs target=_blank rel="noopener nofollow"><i class="fa fa-rss" aria-hidden=true></i></a>
 <a href=https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml title=Feedlyでフォロー target=_blank><img id=feedlyFollow src=https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png alt="follow us in feedly" width=66 height=20></a>
@@ -108,10 +108,10 @@
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/aws-iam>AWS IAM</a> </li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&text=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&t=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e9%96%a2%e6%95%b0%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&text=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&t=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f&title=Amazon%20IAM%20%e3%81%a7%e7%99%bb%e9%8c%b2%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a6%e3%83%bc%e3%82%b6%e4%b8%80%e8%a6%a7%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
 <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fkkawazoe.github.io%2fblog%2f2024%2f02%2f20%2fhow-to-get-a-list-of-registered-users-in-amazon-iam%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 <a href=https://kkawazoe.github.io/index.xml title=RSSでフォロー class=rs target=_blank rel="noopener nofollow"><i class="fa fa-rss" aria-hidden=true></i></a>
 <a href=https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml title=Feedlyでフォロー target=_blank><img id=feedlyFollow src=https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png alt="follow us in feedly" width=66 height=20></a>
@@ -152,7 +152,7 @@
 <a href=https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/>
 <div class="thumb thumb-df4db3fec41425dc65dfe482eb4e4eb7"></div>
 <div class=inner>
-<div class=title>Amazon IAM で登録されている関数一覧を取得する方法</div>
+<div class=title>Amazon IAM で登録されているユーザ一覧を取得する方法</div>
 <ul class="facts sm">
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=20007-02-20T12:30:00JST>Feb 20, 2024</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
