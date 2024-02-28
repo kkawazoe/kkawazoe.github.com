@@ -181,6 +181,38 @@
 </ul>
 </li>
 </ol>
+<h2 id=cognito-の検索について>Cognito の検索について</h2>
+<h3 id=検索に使用できる属性>検索に使用できる属性</h3>
+<p>検索に使用できる属性は以下の通り<br>
+※カスタム属性は使用できない</p>
+<ul>
+<li>username ※大文字/小文字区別</li>
+<li>email</li>
+<li>phone_number</li>
+<li>name</li>
+<li>given_name</li>
+<li>family_name</li>
+<li>preferred_username</li>
+<li>cognito:user_status
+<ul>
+<li>コンソールでは status</li>
+<li>大文字/小文字区別しない</li>
+</ul>
+</li>
+<li>status
+<ul>
+<li>コンソールでは有効</li>
+<li>大文字/小文字区別</li>
+</ul>
+</li>
+<li>sub</li>
+</ul>
+<h3 id=検索条件について>検索条件について</h3>
+<p>以下の条件が指定可能 ※部分一致は不可</p>
+<ul>
+<li>完全一致 <code>=</code></li>
+<li>前方一致 <code>^=</code></li>
+</ul>
 </div>
 <footer class=article-footer>
 <ul class=facts-tags>
