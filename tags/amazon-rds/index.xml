@@ -10,7 +10,6 @@ revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from 
 DB ユーザ追加
 以下のコマンドを使用してユーザを追加する
 ※実運用時は、適宜必要な権限を付与する
-postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; Secrets Manager にデータベース認証情報設定
+postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; # 例. ログイン属性, 接続数制限なし, パスワード指定 postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; Secrets Manager にデータベース認証情報設定
 AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する
-設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け
-3-1. Amazon RDS のマネジメントコンソールから Amazon RDS Proxy に作成したシークレットを関連付ける</description></item></channel></rss>
+設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け</description></item></channel></rss>

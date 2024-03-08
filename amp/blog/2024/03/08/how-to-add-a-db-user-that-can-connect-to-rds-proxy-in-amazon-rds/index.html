@@ -79,7 +79,10 @@
 ※実運用時は、適宜必要な権限を付与する</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>postgres<span style=color:#f92672>=</span>&gt; CREATE ROLE &lt;&lt;ロール名&gt;&gt; LOGIN PASSWORD <span style=color:#e6db74>&#39;&lt;&lt;パスワード&gt;&gt;&#39;</span>;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>postgres<span style=color:#f92672>=</span>&gt; CREATE ROLE <span style=color:#e6db74>&lt;&lt;ロール名&gt;&gt; LOGIN PASSWORD &#39;&lt;&lt;パスワード&gt;&gt;&#39;;
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74># 例. ログイン属性, 接続数制限なし, パスワード指定
+</span><span style=color:#e6db74>postgres=&gt; CREATE ROLE &lt;&lt;ロール名</span>&gt;&gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD <span style=color:#e6db74>&#39;&lt;&lt;パスワード&gt;&gt;&#39;</span>;
 </code></pre></div><ol start=2>
 <li>
 <p>Secrets Manager にデータベース認証情報設定</p>
