@@ -1,5 +1,19 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/",
+title: "Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法",
+image: "images/logo/aws_logo.png",
+date: "2024-03-08",
+body: "Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法 Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく 前提 構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照 前回の記事: Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法 手順 Role に対して適宜必要な権限を付与 例. public Schema の全テーブルへの全権限を付与 grant all on all tables in schema public to \u0026lt;\u0026lt;DB ユーザ\u0026gt;\u0026gt;; アクセス制御を行うテーブルからアクセス権限を取り消す 例. public T_USER_HISTORY テーブルのアクセス権限を取り消す revoke select on \u0026#34;public\u0026#34;.\u0026#34;T_USER_HISTORY\u0026#34; from \u0026lt;\u0026lt;DB ユーザ\u0026gt;\u0026gt;; 権限の確認 該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する \\dp #=\u0026gt; \u0026lt;\u0026lt;DB ユーザ\u0026gt;\u0026gt;=awdDxt/postgres"
+},
+{
+url: "https://kkawazoe.github.io/amp/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/",
+title: "Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法",
+image: "images/logo/aws_logo.png",
+date: "2024-03-08",
+body: "Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法 Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく 前提 以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8 手順 参考 DB ユーザ追加 以下のコマンドを使用してユーザを追加する ※実運用時は、適宜必要な権限を付与する postgres=\u0026gt; CREATE ROLE \u0026lt;\u0026lt;ロール名\u0026gt;\u0026gt; LOGIN PASSWORD \u0026#39;\u0026lt;\u0026lt;パスワード\u0026gt;\u0026gt;\u0026#39;; Secrets Manager にデータベース認証情報設定 AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する 設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け 3-1. Amazon RDS のマネジメントコンソールから Amazon RDS Proxy に作成したシークレットを関連付ける 3-2. 対象のAmazon RDS Proxy を選択し、アクション \u0026gt; 変更 の順に選択する 3-3. 作成したシークレットを追加し、「プロキシを変更」ボタンを押下する IAM Role の変更 Amazon RDS Proxy で利用している IAM Role に対して、secrets への権限許可を追加する ※Resource に追加 接続確認 psql -h \u0026lt;\u0026lt;RDS Proxy のエンドポイント\u0026gt;\u0026gt; -p 5432 -U \u0026lt;\u0026lt;作成した DB ユーザ\u0026gt;\u0026gt;"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/03/06/how-to-deploy-a-whole-directory-of-static-files-to-aws-s3-with-github-actions/",
 title: "GitHub Actions で AWS S3 に静的ファイルのディレクトリごとデプロイする方法",
 image: "images/logo/github_logo.png",
