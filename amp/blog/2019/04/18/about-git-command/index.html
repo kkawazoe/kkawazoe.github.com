@@ -53,6 +53,7 @@
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-04-18T00:00:00JST>Apr 18, 2019</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/git>Git</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/github>Github</a> </li>
 </ul>
 <aside class=share>
 <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
@@ -218,16 +219,24 @@ $ git pull origin sample_branch --rebase
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git branch | grep -v master | xargs git branch -D
 </code></pre></div><h4 id=master-および-develop-ブランチ以外を削除する>master および develop ブランチ以外を削除する</h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git branch | grep -v <span style=color:#e6db74>&#34;master\|develop&#34;</span> | xargs git branch -D
-</code></pre></div><h4 id=マージコミットを-revert-する>マージコミットを revert する</h4>
+</code></pre></div><h4 id=特定のコミットをマージする>特定のコミットをマージする</h4>
 <ol>
-<li>git log を実行して revert する対象のコミット番号を控える<br>
-※★で囲まれた部分</li>
+<li>
+<p>git log を実行して merge する対象のコミット番号を控える<br>
+※★で囲まれた部分</p>
+</li>
+<li>
+<p>git cherry-pick {1 で控えたコミット番号}</p>
+</li>
+</ol>
+<h4 id=マージコミットを-revert-する>マージコミットを revert する</h4>
+<ol>
+<li>git log を実行して revert する対象のコミット番号を控える</li>
 </ol>
 <p>【以下、例】</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>commit ★341058af5e0d673e15fe8a14111e7c759191bd9f★ <span style=color:#f92672>(</span>origin/revert_commit, revert_sample<span style=color:#f92672>)</span>
-Merge: 5c863c9 9828ee6
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>commit 2c5f38104b1b1896d82b3eca80b9ce39ce1548cd
 </code></pre></div><ol start=2>
-<li>git revert -m 1 {1 で控えたコミットログ}</li>
+<li>git revert -m 1 {1 で控えたコミット番号}</li>
 </ol>
 <p>-m の後ろの数字はどちらを正とするかを表している<br>
 ※main branch を正にする場合は 1<br>
@@ -266,6 +275,7 @@ Merge: 5c863c9 9828ee6 ← 5c863c9: 1<span style=color:#f92672>(</span>revert_sa
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/git>Git</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/github>Github</a> </li>
 </ul>
 <aside class=share>
 <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f04%2f18%2fabout-git-command%2f&title=Git%20%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
