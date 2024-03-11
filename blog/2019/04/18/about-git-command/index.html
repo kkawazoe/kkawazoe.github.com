@@ -248,13 +248,9 @@ $ git pull origin sample_branch --rebase
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git branch | grep -v <span style=color:#e6db74>&#34;master\|develop&#34;</span> | xargs git branch -D
 </code></pre></div><h4 id=特定のコミットをマージする>特定のコミットをマージする</h4>
 <ol>
-<li>
-<p>git log を実行して merge する対象のコミット番号を控える<br>
-※★で囲まれた部分</p>
-</li>
-<li>
-<p>git cherry-pick {1 で控えたコミット番号}</p>
-</li>
+<li>git log を実行して merge する対象のコミット番号を控える<br>
+※★で囲まれた部分</li>
+<li>git cherry-pick {1 で控えたコミット番号}</li>
 </ol>
 <h4 id=マージコミットを-revert-する>マージコミットを revert する</h4>
 <ol>
