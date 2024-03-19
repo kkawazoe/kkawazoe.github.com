@@ -186,6 +186,10 @@
 <li>完全一致 <code>=</code></li>
 <li>前方一致 <code>^=</code></li>
 </ul>
+<h2 id=s3-について>S3 について</h2>
+<h3 id=空オブジェクトの扱いについて>空オブジェクトの扱いについて</h3>
+<p><code>aws s3 cp</code> や <code>aws s3 sync</code> では空オブジェクト(空フォルダ等)は同期されないため注意が必要<br>
+※ダミーファイルを置く等しないといけない</p>
 </div>
 <footer class=article-footer>
 <ul class=facts-tags>
