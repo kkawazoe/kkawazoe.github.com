@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/",
+title: "Amazon Linux 2 に PostgreSQL 13 をインストールする方法",
+image: "images/logo/aws_logo.svg",
+date: "2024-03-29",
+body: "Amazon Linux 2 に PostgreSQL 13 をインストールする方法 Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく 手順 postgresql13 を以下のコマンドでインストールする sudo amazon-linux-extras install postgresql13 以下のエラーが発生 failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found Installation failed. Check that you have permissions to install. 以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること sudo sed -i \u0026quot;s/\\$releasever/7/g\u0026quot; \u0026quot;/etc/yum.repos.d/pgdg-redhat-all.repo\u0026quot; 再度、 postgresql13 をインストールする 以下のエラーが発生 failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-7-x86_64/repodata/repomd.xml: [Errno -1] repomd.xml signature could not be verified for pgdg-common Installation failed. Check that you have permissions to install. 以下の対象ファイルの内容を更新 ※事前にバックアップすること 更新対象ファイル /etc/pki/rpm-gpg/PGDG-RPM-GPG-KEY-RHEL 更新内容の参照ファイル: PGDG-RPM-GPG-KEY-RHEL7 ダウンロード先 再度、 postgresql13 をインストールする"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/",
 title: "Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法",
 image: "images/logo/aws_logo.svg",
