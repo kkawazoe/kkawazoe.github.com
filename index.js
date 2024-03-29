@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/",
+title: "AWS EC2 Instance Connect で接続する方法",
+image: "images/logo/aws_logo.svg",
+date: "2024-03-30",
+body: "AWS EC2 Instance Connect で接続する方法 AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく 前提 AWS EC2 Instance Connect をインストールしておく 手順 Amazon EC2 コンソール を開く ナビゲーションペインで、[インスタンス] を選択する インスタンスを選択し、[接続] を選択する [EC2 Instance Connect] を選択する ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く 以下のエラーが発生 インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください 公式のトラブルシューティングを確認 =\u0026gt; セキュリティグループに、EC2 Instance Connect サービス IP がリストされてないが原因だった 以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r \u0026#39;.prefixes[] | select(.region==\u0026#34;\u0026lt;\u0026lt;対象リージョン\u0026gt;\u0026gt;\u0026#34;) | select(.service==\u0026#34;EC2_INSTANCE_CONNECT\u0026#34;) | .ip_prefix\u0026#39; セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する 再度、EC2 Instance Connect に接続する"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/",
 title: "Amazon Linux 2 に PostgreSQL 13 をインストールする方法",
 image: "images/logo/aws_logo.svg",
