@@ -267,9 +267,9 @@ input::-webkit-input-placeholder {
 }
 
 .mt-30 {
-  margin-top: 30px !important;
+  margin-top: 30px;
 }
 
 .w-100 {
-  width: 100% !important;
+  width: 100%;
 }
