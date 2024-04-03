@@ -3,3 +3,4 @@ public/*
 !.gitkeep
 resources/_gen/*
 .DS_Store
+.go-version
