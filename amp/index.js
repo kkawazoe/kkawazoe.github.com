@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/",
+title: "Go 言語用のデバッグ環境を VS Code 上に構築する方法",
+image: "images/logo/golang_logo.png",
+date: "2024-04-03",
+body: "Go 言語用のデバッグ環境を VS Code 上に構築する方法 Go 言語用のデバッグ環境を VS Code 上に構築する方法を備忘録として残しておく ※環境変数読み込み時にロードエラーになっていた 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Go をインストール済 $GOPATH を設定済 $GOPATH/bin を環境変数 $PATH へ追加済 サーバ情報 host: 127.0.0.1 port: 3000 ディレクトリ構成 以下のような構成になっている想定 ※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する cmd ├── main.go .env 手順 VSCode に Go 言語の拡張機能をインストール コマンドパレットから Go: Install/Update Tools を選択 以下のツールを選択して実行 gopls@latest dlv@latest launch.json を編集 { // IntelliSense を使用して利用可能な属性を学べます。 // 既存の属性の説明をホバーして表示します。 // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387 \u0026#34;version\u0026#34;: \u0026#34;0.2.0\u0026#34;, \u0026#34;configurations\u0026#34;: [ { \u0026#34;name\u0026#34;: \u0026#34;Launch Program\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;go\u0026#34;, \u0026#34;request\u0026#34;: \u0026#34;launch\u0026#34;, \u0026#34;mode\u0026#34;: \u0026#34;debug\u0026#34;, \u0026#34;program\u0026#34;: \u0026#34;${workspaceFolder}/cmd/\u0026#34;, \u0026#34;host\u0026#34;: \u0026#34;127.0.0.1\u0026#34;, \u0026#34;port\u0026#34;: 3000, \u0026#34;cwd\u0026#34;: \u0026#34;${workspaceFolder}\u0026#34;, // ※1 } ] } ※1 設定することで cwd が移動して .env ファイルがロード可能になる"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/",
 title: "AWS EC2 Instance Connect で接続する方法",
 image: "images/logo/aws_logo.svg",
