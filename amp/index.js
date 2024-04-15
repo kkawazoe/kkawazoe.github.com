@@ -11,7 +11,7 @@ url: "https://kkawazoe.github.io/amp/blog/2024/04/04/how-to-build-a-jmeter-envir
 title: "JMeter の環境構築方法",
 image: "images/logo/jmeter_logo.svg",
 date: "2024-04-04",
-body: "JMeter の環境構築方法 JMeter の環境構築方法を備忘録として残しておく 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Java Version: OpenJDK 21 手順 Java をインストールする ※Eclipse Temurin™ brew tap homebrew/cask-versions brew install --cask temurin21 JMeter をダウンロードする 以下のコマンドを実行して JMeter を起動する jmeter"
+body: "JMeter の環境構築方法 JMeter の環境構築方法を備忘録として残しておく 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Java Version: OpenJDK 21 手順 Java をインストールする ※Eclipse Temurin™ brew tap homebrew/cask-versions brew install --cask temurin21 JMeter をダウンロードする JMeter でダウンロードしても良い brew install jmeter 以下のコマンドを実行して JMeter を起動する jmeter"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/",
