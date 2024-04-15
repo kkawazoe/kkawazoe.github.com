@@ -1,5 +1,19 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/",
+title: "Mac でディレクトリ内の差分比較を行う方法",
+image: "images/logo/icons8-mac-os-logo.svg",
+date: "2024-04-15",
+body: "Mac でディレクトリ内の差分比較を行う方法 普段 Diff ツールに CompareMerge2 を使用しているが無料版だと 200 アイテムまでの制限があるため他の方法を調査した方法を備忘録として残しておく 手順 diff コマンドを使用する 差分ファイル名のみ表示する -r オプション: 再起的に比較する -q オプション: 差分のあるファイルのみ表示 差分の内容は非表示 diff -r -q dir001/ dir002/ 差分ファイル数をカウントする ディレクトリの差分はない前提 diff -r -q dir001/ dir002/ | wc #=\u0026gt; 0 0 0"
+},
+{
+url: "https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/",
+title: "JMeter の環境構築方法",
+image: "images/logo/jmeter_logo.svg",
+date: "2024-04-04",
+body: "JMeter の環境構築方法 JMeter の環境構築方法を備忘録として残しておく 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Java Version: OpenJDK 21 手順 Java をインストールする ※Eclipse Temurin™ brew tap homebrew/cask-versions brew install --cask temurin21 JMeter をダウンロードする 以下のコマンドを実行して JMeter を起動する jmeter"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/",
 title: "Go 言語用のデバッグ環境を VS Code 上に構築する方法",
 image: "images/logo/golang_logo.png",
