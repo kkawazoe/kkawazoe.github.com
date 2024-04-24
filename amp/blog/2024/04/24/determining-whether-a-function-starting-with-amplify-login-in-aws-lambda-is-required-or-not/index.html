@@ -129,7 +129,7 @@ PROFILE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;default&
 <span style=color:#75715e># AWSのリージョンのリストを取得する</span>
 REGIONS<span style=color:#f92672>=(</span><span style=color:#e6db74>`</span>aws --profile <span style=color:#e6db74>${</span>PROFILE<span style=color:#e6db74>}</span> ec2 describe-regions --query Regions<span style=color:#f92672>[</span>*<span style=color:#f92672>]</span>.RegionName --output text<span style=color:#e6db74>`</span><span style=color:#f92672>)</span>
 
-<span style=color:#75715e># リージョン毎に Lambda 関数のリストを出力する</span>
+<span style=color:#75715e># リージョン毎に Lambda 関数のリストを出力する ※Lambda 関数名 昇順</span>
 <span style=color:#66d9ef>for</span> region in <span style=color:#e6db74>${</span>REGIONS[@]<span style=color:#e6db74>}</span>
 <span style=color:#66d9ef>do</span>
     echo <span style=color:#e6db74>&#34;[</span><span style=color:#e6db74>${</span>region<span style=color:#e6db74>}</span><span style=color:#e6db74>]&#34;</span>
