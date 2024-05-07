@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/",
+title: "GitHub Actions をローカルで実行する方法",
+image: "images/logo/github_logo.png",
+date: "2024-05-07",
+body: "GitHub Actions をローカルで実行する方法 GitHub Actions をローカルで実行する方法を備忘録として残しておく 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Container 管理ツール Rancher Desktop 使用ツール act GitHub Actions 既に作成済想定 act のインストール Home Brew でインストールする brew install act 使用方法 act で実行可能な一覧を表示する act -l WARN ⚠ You are using Apple M-series chip and you have not specified container architecture, you might encounter issues while running act. If so, try running it with \u0026#39;--container-architecture linux/amd64\u0026#39;. ⚠ Stage Job ID Job name Workflow name Workflow file Events 0 ci ci ci ci.yml push,pull_request act コマンドを使用して実行する 例. push 時の Job 確認 ※M1 なので \u0026lsquo;\u0026ndash;container-architecture linux/amd64\u0026rsquo; を付与して実行 act push --container-architecture linux/amd64 Trouble Shooting docker host に関するエラー act push --container-architecture linux/amd64 INFO[0000] Using docker host \u0026#39;127.0.0.1\u0026#39;, and daemon socket \u0026#39;127.0.0.1\u0026#39; [ci/ci] 🚀 Start image=catthehacker/ubuntu:act-latest [ci/ci] 🐳 docker pull image=catthehacker/ubuntu:act-latest platform=linux/amd64 username= forcePull=true Error: failed to connect to docker daemon: unable to parse docker host `127.0.0.1` 参考 を実施する export DOCKER_HOST=$(docker context inspect --format \u0026#39;{{.Endpoints.docker.Host}}\u0026#39;) マウントできないに関するエラー act push --container-architecture linux/amd64 INFO[0000] Using docker host \u0026#39;unix:///Users/\u0026lt;\u0026lt;User Name\u0026gt;\u0026gt;/.rd/docker.sock\u0026#39;, and daemon socket \u0026#39;unix:///Users/\u0026lt;\u0026lt;User Name\u0026gt;\u0026gt;/.rd/docker.sock\u0026#39; [ci/ci] 🚀 Start image=catthehacker/ubuntu:act-latest [ci/ci] 🐳 docker pull image=catthehacker/ubuntu:act-latest platform=linux/amd64 username= forcePull=true Error: failed to list containers: error during connect: Get \u0026#34;http://%2FUsers%2F\u0026lt;\u0026lt;User Name\u0026gt;\u0026gt;%2F.rd%2Fdocker.sock/v1.45/containers/json?all=1\u0026#34;: EOF 参考 を実施する --container-daemon-socket -"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/04/25/about-terraform-commands/",
 title: "Terraform のコマンドについて",
 image: "images/logo/terraform_logo.svg",
