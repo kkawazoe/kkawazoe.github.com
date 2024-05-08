@@ -196,7 +196,9 @@ git stash show -p stash@<span style=color:#f92672>{</span>N<span style=color:#f9
 <h4 id=プルリクエストの取り下げプルリクエスト出した直後に取り消し>プルリクエストの取り下げ(プルリクエスト出した直後に取り消し)</h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git push --delete <span style=color:#f92672>{</span>Fork 先リモート名<span style=color:#f92672>}</span> <span style=color:#f92672>{</span>ブランチ名<span style=color:#f92672>}</span>
 </code></pre></div><p>=> <code>github</code> 上は「close」扱いになる</p>
-<h4 id=github-上の-プルリクエストブランチをローカルに持ってくる>github 上の プルリクエストブランチをローカルに持ってくる</h4>
+<h4 id=リモートブランチの削除>リモートブランチの削除</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git push --delete <span style=color:#f92672>{</span>Fork 先リモート名<span style=color:#f92672>}</span> <span style=color:#f92672>{</span>ブランチ名<span style=color:#f92672>}</span>
+</code></pre></div><h4 id=github-上の-プルリクエストブランチをローカルに持ってくる>github 上の プルリクエストブランチをローカルに持ってくる</h4>
 <p>プルリクエストで push された branch を指定してもってくる</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ git fetch <span style=color:#f92672>{</span>リモート名<span style=color:#f92672>}</span>
 <span style=color:#75715e># 例. ブランチ sample_branch を持ってくる場合</span>
