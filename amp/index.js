@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/05/08/how-to-run-github-actions-locally/",
+title: "Circle CI で環境変数を切り替える方法",
+image: "images/logo/circleci_logo.svg",
+date: "2024-05-08",
+body: "Circle CI で環境変数を切り替える方法 Circle CI で環境変数を切り替える方法を備忘録として残しておく 実際のコード run ステップを使用して BASH_ENV にエクスポートする ※参考を参照 steps: - run: name: Setup Environment Variables command: |echo \u0026#39;export PATH=\u0026#34;$GOPATH\u0026#34;/bin:\u0026#34;$PATH\u0026#34;\u0026#39; \u0026gt;\u0026gt; \u0026#34;$BASH_ENV\u0026#34; echo \u0026#39;export GIT_SHA1=\u0026#34;$CIRCLE_SHA1\u0026#34;\u0026#39; \u0026gt;\u0026gt; \u0026#34;$BASH_ENV\u0026#34;"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/05/07/how-to-run-github-actions-locally/",
 title: "GitHub Actions をローカルで実行する方法",
 image: "images/logo/github_logo.png",
