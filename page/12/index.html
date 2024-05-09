@@ -219,7 +219,7 @@ id name parent_id 1 parrent_node null 2 child_node_1 1 3 child_node_2 1 4 child_
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2014-06-22T09:01:00JST>Jun 22, 2014</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>対応方法 バッチファイルから ini ファイルを読込む場合VBSを使用することで実現する
+<div class=summary>対応方法 バッチファイルから ini ファイルを読込む場合 VBS を使用することで実現する
 具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する
 取得する ini ファイルの中身 &lt;設定値>*****************************************************'&lt;コメント>####################################### [Path] WorkPath=C:/src/wk 'Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f "usebackq tokens=* delims=" %%A in (`call cscript //Nologo getProfileString.vbs "%iniFileName%" Path WorkPath`) do set ret=%%A echo "%ret%" pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す rem * 先頭がカンマの場合はコメント行として扱う rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( "Scripting.</div>
 </div>
