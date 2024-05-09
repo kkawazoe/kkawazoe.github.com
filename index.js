@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/05/09/how-to-retrieve-the-list-of-certificates-managed-by-aws-certificate-manager-for-all-regions/",
+title: "AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法",
+image: "images/logo/aws_logo.svg",
+date: "2024-05-09",
+body: "AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法 AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法について調査した結果を備忘録として残しておく 実際のコード # AWSのリージョンのリストを取得する REGIONS=(`aws ec2 describe-regions --query Regions[*].RegionName --output text`) # リージョン毎に証明書のリストを出力する # 証明書 Arn, ドメイン名, タイプ, ステータス, 使用中かどうか for region in ${REGIONS[@]} do echo \u0026#34;[${region}]\u0026#34; aws acm list-certificates --output text --region ${region} --query \u0026#34;CertificateSummaryList[].[CertificateArn, DomainName, Type, Status, InUse]\u0026#34; | sort -k 1 | column -t -s \u0026#34;`printf \u0026#39;\\t\u0026#39;`\u0026#34; echo \u0026#34;---------------------\u0026#34; done"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/05/08/how-to-run-github-actions-locally/",
 title: "Circle CI で環境変数を切り替える方法",
 image: "images/logo/circleci_logo.svg",
