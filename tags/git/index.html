@@ -91,9 +91,8 @@ Generate new token を押下する
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ Git 初期化 git init Git 接続先設定 git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得 git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成 git checkout -b topic/#{issue番号}-作業者名 開発
-ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする git commit -m "コメント" プルリクエストを投げる git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</div>
+実際のコード 基本的な流れ Git 初期化 git init Git 接続先設定 git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得 git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成 git checkout -b topic/#{issue番号}-作業者名 開発 ステージングにあげる git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする git commit -m "コメント" プルリクエストを投げる git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
+その他 ローカルの修正を元に戻す 一部ファイルのみ戻す場合</div>
 </div>
 </a>
 </article>
