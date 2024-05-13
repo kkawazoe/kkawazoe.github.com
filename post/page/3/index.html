@@ -132,9 +132,10 @@ aws cognito-idp admin-set-user-password \ --user-pool-id {ユーザプール ID}
 <div class=summary>AWS についての Tips について備忘録として残しておく
 ※適宜、更新予定
 DB の接続情報の確認 EC2 踏み台の Public IP を確認
-EC2 > リソース > 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS > データベース > 該当の DB 識別子を選択 Secret Maneger DB のパスワードの設定確認方法
-AWS Secrets Manager > DB のユーザパスワードを選択 シークレットの値 > [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する
-Amazon EventBridge Scheduler Amazon EventBridge > スケジューラ > スケジュール > 該当のスケジュールを選択 スケジュール > cron 式 を確認 Amazon EventBridge Rule Cloud Formation で設定した場合はこっちを確認する</div>
+※通常は Elastic IP を付与しているので固定のはず
+EC2 > リソース > 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS > データベース > 該当の DB 識別子を選択 接続とセキュリティ > エンドポイントを確認 RDS プロキシを設定している場合は以下
+RDS > データベース > 該当の DB 識別子を選択 プロキシ > 該当のプロキシ識別子を選択 プロキシエンドポイント > エンドポイントを確認 Secret Manager DB のパスワードの設定確認方法
+AWS Secrets Manager > DB のユーザパスワードを選択 シークレットの値 > [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する</div>
 </div>
 </a>
 </article>

@@ -68,7 +68,8 @@
 ※適宜、更新予定</p>
 <h2 id=db-の接続情報の確認>DB の接続情報の確認</h2>
 <h3 id=ec2>EC2</h3>
-<p>踏み台の Public IP を確認</p>
+<p>踏み台の Public IP を確認<br>
+※通常は Elastic IP を付与しているので固定のはず</p>
 <ol>
 <li>EC2 > リソース > 該当のリソースを選択</li>
 <li>パブリック IPv4 アドレス を確認</li>
@@ -76,8 +77,15 @@
 <h3 id=rds>RDS</h3>
 <ol>
 <li>RDS > データベース > 該当の DB 識別子を選択</li>
+<li>接続とセキュリティ > エンドポイントを確認</li>
 </ol>
-<h3 id=secret-maneger>Secret Maneger</h3>
+<p>RDS プロキシを設定している場合は以下</p>
+<ol>
+<li>RDS > データベース > 該当の DB 識別子を選択</li>
+<li>プロキシ > 該当のプロキシ識別子を選択</li>
+<li>プロキシエンドポイント > エンドポイントを確認</li>
+</ol>
+<h3 id=secret-manager>Secret Manager</h3>
 <p>DB のパスワードの設定確認方法</p>
 <ol>
 <li>AWS Secrets Manager > DB のユーザパスワードを選択</li>
