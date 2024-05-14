@@ -112,7 +112,7 @@
 <h3 id=実際の例>実際の例</h3>
 <p>タイトルと内容で入力があった場合に AND 条件で検索を行い、条件にあった本を取得する<br>
 ※全ての条件が未入力の場合は全件表示</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Book</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ApplicationRecord</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Book</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ApplicationRecord</span>
   scope <span style=color:#e6db74>:with_title</span>, <span style=color:#f92672>-&gt;</span> (title) <span style=color:#66d9ef>do</span>
     <span style=color:#66d9ef>next</span> <span style=color:#66d9ef>if</span> title<span style=color:#f92672>.</span>blank?
 

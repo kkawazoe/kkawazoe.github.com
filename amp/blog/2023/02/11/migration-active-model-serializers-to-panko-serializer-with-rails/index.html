@@ -75,11 +75,11 @@
 </ul>
 <h2 id=実際のソース>実際のソース</h2>
 <p>[Gemfile]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb><span style=color:#f92672>-</span> gem <span style=color:#e6db74>&#39;active_model_serializers&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#f92672>-</span> gem <span style=color:#e6db74>&#39;active_model_serializers&#39;</span>
 <span style=color:#f92672>+</span> gem <span style=color:#e6db74>&#39;panko_serializer&#39;</span>
 </code></pre></div><p>[serializer]</p>
 <p>継承するクラスを変更</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb><span style=color:#f92672>-</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Book</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ListSerializer</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ActiveModel</span><span style=color:#f92672>::</span><span style=color:#66d9ef>Serializer</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#f92672>-</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Book</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ListSerializer</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ActiveModel</span><span style=color:#f92672>::</span><span style=color:#66d9ef>Serializer</span>
 <span style=color:#f92672>+</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Book</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ListSerializer</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>Panko</span><span style=color:#f92672>::</span><span style=color:#66d9ef>Serializer</span>
   attributes(
     <span style=color:#e6db74>:id</span>,
@@ -95,14 +95,14 @@
 <span style=color:#66d9ef>end</span>
 </code></pre></div><p>[controller]</p>
 <p>each_serializer を使用する場合</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>index</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>index</span>
     @books <span style=color:#f92672>=</span> <span style=color:#66d9ef>Book</span><span style=color:#f92672>.</span>all
 
     <span style=color:#f92672>-</span> render <span style=color:#e6db74>json</span>: @books, <span style=color:#e6db74>each_serializer</span>: <span style=color:#66d9ef>Book</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ListSerializer</span>
     <span style=color:#f92672>+</span> render <span style=color:#e6db74>json</span>: <span style=color:#66d9ef>Panko</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ArraySerializer</span><span style=color:#f92672>.</span>new(@books, <span style=color:#e6db74>each_serializer</span>: <span style=color:#66d9ef>Book</span><span style=color:#f92672>::</span><span style=color:#66d9ef>ListSerializer</span>)<span style=color:#f92672>.</span>to_json
   <span style=color:#66d9ef>end</span>
 </code></pre></div><p>単一の serializer を使用する場合</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>show</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>show</span>
     @book <span style=color:#f92672>=</span> <span style=color:#66d9ef>Book</span><span style=color:#f92672>.</span>find(params<span style=color:#f92672>[</span><span style=color:#e6db74>:id</span><span style=color:#f92672>]</span>)
 
     <span style=color:#f92672>-</span> render <span style=color:#e6db74>json</span>: @book, <span style=color:#e6db74>serializer</span>: <span style=color:#66d9ef>BookSerializer</span>

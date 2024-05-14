@@ -67,7 +67,7 @@
 </header>
 <div class=article-body><p>AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法について調査した結果を備忘録として残しておく</p>
 <h3 id=実際のコード>実際のコード</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh><span style=color:#75715e># AWSのリージョンのリストを取得する</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e># AWSのリージョンのリストを取得する</span>
 REGIONS<span style=color:#f92672>=(</span><span style=color:#e6db74>`</span>aws ec2 describe-regions --query Regions<span style=color:#f92672>[</span>*<span style=color:#f92672>]</span>.RegionName --output text<span style=color:#e6db74>`</span><span style=color:#f92672>)</span>
 
 <span style=color:#75715e># リージョン毎に証明書のリストを出力する</span>

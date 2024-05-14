@@ -105,7 +105,7 @@
 </ul>
 <h2 id=実際のソース>実際のソース</h2>
 <p>controller の該当アクションを以下のようにする</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb data-lang=.rb><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FavoritesController</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ApplicationController</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FavoritesController</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ApplicationController</span>
   <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>create</span>
     redirect_back <span style=color:#e6db74>fallback_location</span>: root_path
   <span style=color:#66d9ef>end</span>

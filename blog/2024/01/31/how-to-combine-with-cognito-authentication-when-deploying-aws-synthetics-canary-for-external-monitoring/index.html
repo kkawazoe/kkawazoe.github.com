@@ -136,7 +136,7 @@
 <h2 id=実際のコード>実際のコード</h2>
 <h3 id=スクリプト>スクリプト</h3>
 <p>基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.js data-lang=.js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>synthetics</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;Synthetics&#39;</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>synthetics</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;Synthetics&#39;</span>);
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>log</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;SyntheticsLogger&#39;</span>);
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>syntheticsConfiguration</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>synthetics</span>.<span style=color:#a6e22e>getConfiguration</span>();
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>AWS</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;aws-sdk&#39;</span>); <span style=color:#75715e>// 追加
@@ -234,7 +234,7 @@
 <p>追加部分のみ抜粋<br>
 cognito-idp:InitiateAuth へのアクセス許可が必要<br>
 ※Secret Manager は必要に応じて追加</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.json data-lang=.json>{
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
     <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#e6db74>&#34;2012-10-17&#34;</span>,
     <span style=color:#f92672>&#34;Statement&#34;</span>: [
         <span style=color:#960050;background-color:#1e0010>・・・</span>

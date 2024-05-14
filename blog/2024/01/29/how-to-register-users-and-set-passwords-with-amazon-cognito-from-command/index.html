@@ -103,7 +103,7 @@
 ※「&ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>aws cognito-idp admin-create-user <span style=color:#ae81ff>\
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws cognito-idp admin-create-user <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-pool-id <span style=color:#f92672>{</span>ユーザプール ID<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--username <span style=color:#f92672>{</span>E メールアドレス ※E メールアドレスをユーザ名に設定した場合<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-attributes Name<span style=color:#f92672>=</span>email,Value<span style=color:#f92672>={</span>E メールアドレス<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
@@ -116,7 +116,7 @@
 ※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる</p>
 </li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>aws cognito-idp admin-set-user-password <span style=color:#ae81ff>\
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws cognito-idp admin-set-user-password <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-pool-id <span style=color:#f92672>{</span>ユーザプール ID<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--username <span style=color:#f92672>{</span>ユーザ名 or sub<span style=color:#f92672>}</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--password <span style=color:#f92672>{</span>password<span style=color:#f92672>}</span> <span style=color:#ae81ff>\

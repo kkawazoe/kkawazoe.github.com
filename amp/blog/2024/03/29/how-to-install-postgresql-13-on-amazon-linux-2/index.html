@@ -71,20 +71,20 @@
 <ol>
 <li>postgresql13 を以下のコマンドでインストールする</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>sudo amazon-linux-extras install postgresql13
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>sudo amazon-linux-extras install postgresql13
 </code></pre></div><p>以下のエラーが発生</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>failure: repodata/repomd.xml from pgdg-common: <span style=color:#f92672>[</span>Errno 256<span style=color:#f92672>]</span> No more mirrors to try.
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>failure: repodata/repomd.xml from pgdg-common: <span style=color:#f92672>[</span>Errno 256<span style=color:#f92672>]</span> No more mirrors to try.
 https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: <span style=color:#f92672>[</span>Errno 14<span style=color:#f92672>]</span> HTTPS Error <span style=color:#ae81ff>404</span> - Not Found
 Installation failed. Check that you have permissions to install.
 </code></pre></div><ol start=2>
 <li>以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること</li>
 </ol>
-<pre tabindex=0><code class=language-.sh:/etc/yum.repos.d/pgdg-redhat-all.repo data-lang=.sh:/etc/yum.repos.d/pgdg-redhat-all.repo>sudo sed -i &quot;s/\$releasever/7/g&quot; &quot;/etc/yum.repos.d/pgdg-redhat-all.repo&quot;
+<pre tabindex=0><code class=language-sh:/etc/yum.repos.d/pgdg-redhat-all.repo data-lang=sh:/etc/yum.repos.d/pgdg-redhat-all.repo>sudo sed -i &quot;s/\$releasever/7/g&quot; &quot;/etc/yum.repos.d/pgdg-redhat-all.repo&quot;
 </code></pre><ol start=3>
 <li>再度、 postgresql13 をインストールする</li>
 </ol>
 <p>以下のエラーが発生</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>failure: repodata/repomd.xml from pgdg-common: <span style=color:#f92672>[</span>Errno 256<span style=color:#f92672>]</span> No more mirrors to try.
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>failure: repodata/repomd.xml from pgdg-common: <span style=color:#f92672>[</span>Errno 256<span style=color:#f92672>]</span> No more mirrors to try.
 https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-7-x86_64/repodata/repomd.xml: <span style=color:#f92672>[</span>Errno -1<span style=color:#f92672>]</span> repomd.xml signature could not be verified <span style=color:#66d9ef>for</span> pgdg-common
 Installation failed. Check that you have permissions to install.
 </code></pre></div><ol start=4>

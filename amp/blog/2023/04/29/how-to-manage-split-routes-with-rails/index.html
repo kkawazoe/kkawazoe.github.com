@@ -86,7 +86,7 @@
  |  |-service_provider_common.rb <span style=color:#75715e># サービス共通の routes</span>
  |-routes.rb
 </code></pre></div><h3 id=実際の例>実際の例</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb:config/routes/concerns.rb data-lang=.rb:config/routes/concerns.rb>concern <span style=color:#e6db74>:loggable</span> <span style=color:#66d9ef>do</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb:config/routes/concerns.rb data-lang=rb:config/routes/concerns.rb>concern <span style=color:#e6db74>:loggable</span> <span style=color:#66d9ef>do</span>
   get <span style=color:#e6db74>&#34;login&#34;</span>, <span style=color:#e6db74>to</span>: <span style=color:#e6db74>&#34;sessions#new&#34;</span>
   post <span style=color:#e6db74>&#34;login&#34;</span>, <span style=color:#e6db74>to</span>: <span style=color:#e6db74>&#34;sessions#create&#34;</span>
   delete <span style=color:#e6db74>&#34;logout&#34;</span>, <span style=color:#e6db74>to</span>: <span style=color:#e6db74>&#34;sessions#destroy&#34;</span>
@@ -97,7 +97,7 @@ concern <span style=color:#e6db74>:data</span> <span style=color:#66d9ef>do</spa
     get <span style=color:#e6db74>&#34;download&#34;</span>
   <span style=color:#66d9ef>end</span>
 <span style=color:#66d9ef>end</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb:config/routes/foo_service_provider.rb data-lang=.rb:config/routes/foo_service_provider.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb:config/routes/foo_service_provider.rb data-lang=rb:config/routes/foo_service_provider.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
   concerns <span style=color:#e6db74>:loggable</span>
 
   scope <span style=color:#e6db74>:home</span>, <span style=color:#e6db74>as</span>: <span style=color:#e6db74>:home</span> <span style=color:#66d9ef>do</span>
@@ -106,15 +106,15 @@ concern <span style=color:#e6db74>:data</span> <span style=color:#66d9ef>do</spa
 <span style=color:#66d9ef>end</span>
 
 draw(<span style=color:#e6db74>:service_provider_common</span>)
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb:config/routes/hoge_service_provider.rb data-lang=.rb:config/routes/hoge_service_provider.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb:config/routes/hoge_service_provider.rb data-lang=rb:config/routes/hoge_service_provider.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
   concerns <span style=color:#e6db74>:data</span>
 <span style=color:#66d9ef>end</span>
 
 draw(<span style=color:#e6db74>:service_provider_common</span>)
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb:config/routes/service_provider_common.rb data-lang=.rb:config/routes/service_provider_common.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb:config/routes/service_provider_common.rb data-lang=rb:config/routes/service_provider_common.rb>namespace <span style=color:#e6db74>:service_provider</span>, <span style=color:#e6db74>path</span>: <span style=color:#e6db74>&#34;services&#34;</span> <span style=color:#66d9ef>do</span>
   resources <span style=color:#e6db74>:users</span>, <span style=color:#e6db74>only</span>: <span style=color:#f92672>[</span><span style=color:#e6db74>:index</span>, <span style=color:#e6db74>:show</span><span style=color:#f92672>]</span>
 <span style=color:#66d9ef>end</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.rb:config/routes.rb data-lang=.rb:config/routes.rb><span style=color:#75715e># == Route Map</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb:config/routes.rb data-lang=rb:config/routes.rb><span style=color:#75715e># == Route Map</span>
 <span style=color:#75715e>#</span>
 <span style=color:#75715e>#                              Prefix Verb   URI Pattern                            Controller#Action</span>
 <span style=color:#75715e>#                         admin_login GET    /admin/login(.:format)                 admin/sessions#new</span>

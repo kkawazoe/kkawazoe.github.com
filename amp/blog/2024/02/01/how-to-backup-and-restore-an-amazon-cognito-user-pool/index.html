@@ -74,7 +74,7 @@
 ※リストアは<a href=https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html%E3%81%A7%E8%A1%8C%E3%81%86>ユーザ CSV インポート機能</a>で行う</li>
 </ul>
 <h2 id=実際のコード>実際のコード</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.js:convertCsvString.js data-lang=.js:convertCsvString.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>stringify</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;csv-stringify/sync&#34;</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js:convertCsvString.js data-lang=js:convertCsvString.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>stringify</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;csv-stringify/sync&#34;</span>);
 
 <span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>params</span>) =&gt; {
     <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>csvString</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>params</span>, {
@@ -84,7 +84,7 @@
 
     <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>csvString</span>;
 };
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.js:getCognitoUsers.js data-lang=.js:getCognitoUsers.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>CognitoIdentityProvider</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;@aws-sdk/client-cognito-identity-provider&#34;</span>);
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js:getCognitoUsers.js data-lang=js:getCognitoUsers.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>CognitoIdentityProvider</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;@aws-sdk/client-cognito-identity-provider&#34;</span>);
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cognito</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CognitoIdentityProvider</span>();
 
 <span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>param</span>) =&gt; {
@@ -123,7 +123,7 @@
     <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>cognitoUsers</span>;
 };
 </code></pre></div><p>※① <a href=https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html#cognito-user-pools-using-import-tool-downloading-csv-header-using-cli>CSV ファイルヘッダーのダウンロード (AWS CLI)</a>で必要な項目を取得して設定する</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.js:index.js data-lang=.js:index.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>S3Client</span>, <span style=color:#a6e22e>PutObjectCommand</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;@aws-sdk/client-s3&#34;</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js:index.js data-lang=js:index.js><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>S3Client</span>, <span style=color:#a6e22e>PutObjectCommand</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;@aws-sdk/client-s3&#34;</span>);
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>convertCsvString</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;./convertCsvString&#34;</span>);
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>getCognitoUsers</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;./getCognitoUsers&#34;</span>);
 

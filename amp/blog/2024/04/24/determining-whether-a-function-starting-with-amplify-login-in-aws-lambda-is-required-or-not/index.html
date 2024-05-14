@@ -70,7 +70,7 @@
 <h3 id=調査に至った事象>調査に至った事象</h3>
 <p>AWS より以下のメールが配信されていた<br>
 対象の Lambda 関数を確認すると掲題のものが指摘を受けていたが、作成した記憶がなかったため、要否の判断がつかなかったため、調査を行なった</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.md data-lang=.md>[アクションが必要です] AWS Lambda での Node.js 16 のサポート終了について | [Action Required] AWS Lambda end of support for Node.js 16
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>[アクションが必要です] AWS Lambda での Node.js 16 のサポート終了について | [Action Required] AWS Lambda end of support for Node.js 16
 
 English follows Japanese | 英語のメッセージは日本語の後にございます
 いつもお世話になっております。
@@ -114,7 +114,7 @@ aws lambda list-functions --region us-west-2 --output text --query &#34;Function
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh:nodejs_16_lambda_functions_list.sh data-lang=.sh:nodejs_16_lambda_functions_list.sh><span style=color:#75715e>#!/bin/sh
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:nodejs_16_lambda_functions_list.sh data-lang=sh:nodejs_16_lambda_functions_list.sh><span style=color:#75715e>#!/bin/sh
 </span><span style=color:#75715e></span>
 CMDNAME<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>basename $0<span style=color:#e6db74>`</span>
 <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $# -gt <span style=color:#ae81ff>1</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>

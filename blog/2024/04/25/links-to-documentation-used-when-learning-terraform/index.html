@@ -115,7 +115,7 @@
 <h2 id=trouble-shooting>Trouble Shooting</h2>
 <h3 id=quick-start-tutorialhttpsdeveloperhashicorpcomterraformtutorialsaws-get-startedinstall-cliquick-start-tutorial-でエラーが発生する><a href=https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#quick-start-tutorial>Quick start tutorial</a> でエラーが発生する</h3>
 <p>以下のコマンド実行時にエラーが発生</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>terraform apply
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>terraform apply
 
 Error: Error pinging Docker server: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 │
@@ -123,13 +123,13 @@ Error: Error pinging Docker server: Cannot connect to the Docker daemon at unix:
 │   on main.tf line 10, in provider <span style=color:#e6db74>&#34;docker&#34;</span>:
 │   10: provider <span style=color:#e6db74>&#34;docker&#34;</span> <span style=color:#f92672>{</span>
 </code></pre></div><p>以下のコマンドで docker の sock のパスを確認する</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh>docker context ls
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>docker context ls
 NAME                DESCRIPTION                               DOCKER ENDPOINT                                ERROR
 default             Current DOCKER_HOST based configuration   unix:///var/run/docker.sock          
 rancher-desktop *   Rancher Desktop moby context              unix:///Users/&lt;&lt;user name&gt;&gt;/.rd/docker.sock
 </code></pre></div><p>Rancher Desktop を使用していたためパスが異なっていたのが原因<br>
 <code>main.tf</code> ファイルを以下のように修正して再実行する</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.tf:main.tf data-lang=.tf:main.tf><span style=color:#66d9ef>provider</span> <span style=color:#e6db74>&#34;docker&#34;</span> {
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf:main.tf data-lang=tf:main.tf><span style=color:#66d9ef>provider</span> <span style=color:#e6db74>&#34;docker&#34;</span> {
   <span style=color:#a6e22e>host</span> = <span style=color:#e6db74>&#34;unix:///Users/&lt;&lt;user name&gt;&gt;/.rd/docker.sock&#34;</span><span style=color:#75715e> // 追加
 </span><span style=color:#75715e></span>}
 </code></pre></div></div>

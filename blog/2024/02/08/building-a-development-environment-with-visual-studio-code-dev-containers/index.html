@@ -146,7 +146,7 @@
 ※ポート番号はホスト側と被らないようにしておくこと</p>
 <h4 id=ソースコードでの設定>ソースコードでの設定</h4>
 <p>設定変更した際はリビルドを行うこと</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml:.devcontainer/docker-compose.yml data-lang=.yml:.devcontainer/docker-compose.yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#39;3&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml:.devcontainer/docker-compose.yml data-lang=yml:.devcontainer/docker-compose.yml><span style=color:#f92672>version</span>: <span style=color:#e6db74>&#39;3&#39;</span>
 
 <span style=color:#f92672>services</span>:
   <span style=color:#75715e># 省略・・・</span>
@@ -155,7 +155,7 @@
     <span style=color:#f92672>ports</span>:
       - <span style=color:#e6db74>&#34;5433:5432&#34;</span>
   <span style=color:#75715e># 省略・・・</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.json:.devcontainer/devcontainer.json data-lang=.json:.devcontainer/devcontainer.json>{
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json:.devcontainer/devcontainer.json data-lang=json:.devcontainer/devcontainer.json>{
   <span style=color:#75715e>// 省略・・・
 </span><span style=color:#75715e></span>  <span style=color:#f92672>&#34;forwardPorts&#34;</span>: [<span style=color:#e6db74>&#34;5433:5432&#34;</span>],
   <span style=color:#75715e>// 省略・・・
@@ -170,7 +170,7 @@
 </figure>
 <h3 id=vs-code-の設定および拡張機能の追加>VS Code の設定および拡張機能の追加</h3>
 <p>以下を設定することで開発者間で同じ設定と拡張機能をインストールした状態で開発が行える</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.json:.devcontainer/devcontainer.json data-lang=.json:.devcontainer/devcontainer.json>{
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json:.devcontainer/devcontainer.json data-lang=json:.devcontainer/devcontainer.json>{
   <span style=color:#f92672>&#34;customizations&#34;</span>: {
     <span style=color:#f92672>&#34;vscode&#34;</span>: {
       <span style=color:#75715e>// 設定値は、拡張機能 &gt; ⚙️ &gt; 拡張機能 ID のコピーで取得
