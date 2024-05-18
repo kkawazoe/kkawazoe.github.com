@@ -5,7 +5,7 @@ brew install act 使用方法 act で実行可能な一覧を表示する act -l
 その方法を備忘録として残しておく
 実際のコード html タグの details, summary タグを使用する
 ※画像を入れる場合は、1行空行を入れないと展開されないため要注意
-&amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;その１&amp;lt;/summary&amp;gt; ![画像1](/images/logo/github_logo.png) &amp;lt;/details&amp;gt;</description></item><item><title>Hugo と GitHub Pages の構成で自動デプロイを行う方法</title><link>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</guid><description>元々バッチを使用して手動でデプロイを行っていたが、自動デプロイする方法がないか調査を行った
+&amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;その１&amp;lt;/summary&amp;gt; ![画像1](/images/logo/github_logo.svg) &amp;lt;/details&amp;gt;</description></item><item><title>Hugo と GitHub Pages の構成で自動デプロイを行う方法</title><link>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</guid><description>元々バッチを使用して手動でデプロイを行っていたが、自動デプロイする方法がないか調査を行った
 その結果を備忘録として残しておく
 前提 [構成]
 Hugo + GitHub Pages(master ブランチが対象)
