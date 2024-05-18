@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/",
+title: "(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 その2",
+image: "images/logo/aws_logo.svg",
+date: "2024-05-19",
+body: "(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 その2 AWS 認定ソリューションアーキテクト - アソシエイトを学習する中で間違えやすいポイントを備忘録として残しておく [前回までの記事] (新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 受験結果 無事に合格した 実際に組んでみたり、ベストプラクティスを確認することが大事だと感じた 勉強に使用したもの udemy"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/",
 title: "(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道",
 image: "images/logo/aws_logo.svg",
