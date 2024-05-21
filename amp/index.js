@@ -67,7 +67,7 @@ url: "https://kkawazoe.github.io/amp/blog/2024/04/19/aws-related-link-summary/",
 title: "AWS 関連のリンクまとめ",
 image: "images/logo/aws_logo.svg",
 date: "2024-04-19",
-body: "AWS 関連のリンクまとめ AWS 関連のリンクについて毎回探してしまうためまとめておく ※一度でも調査に使用したものをまとめていく ベストプラクティスおよびサービスの導入理由 Well-Architected セキュリティの柱 検知 インフラストラクチャ保護 データ保護 AWS ホワイトペーバーとガイド DDos 耐性のベストプラクティス サービスの状態 各サービスごとのリンク Cognito ユーザプールの大文字・小文字の区別 RDS Amazon Aurora DB Aurora DB クラスターのバックアップと復元 Amazon Aurora Serverless V1 Amazon Pinpoint プッシュ通知の送信 API Reference SES DMARC 対応 送信制限 本番稼働する際の制限解除について E メール受信時のフィードバックについて SNS 米国製品番号について ACM ACM 証明書について サポートされるリージョンについて 自動更新について VPC AWS サービスが利用する IP アドレス範囲について WAF Managed Rules CloudFront フィールドレベル暗号化を使用した機密データの保護"
+body: "AWS 関連のリンクまとめ AWS 関連のリンクについて毎回探してしまうためまとめておく ※一度でも調査に使用したものをまとめていく ベストプラクティスおよびサービスの導入理由 Well-Architected セキュリティの柱 検知 インフラストラクチャ保護 データ保護 AWS ホワイトペーバーとガイド DDos 耐性のベストプラクティス サービスの状態 各サービスごとのリンク Cognito ユーザプールの大文字・小文字の区別 RDS Amazon Aurora DB Aurora DB クラスターのバックアップと復元 Amazon Aurora Serverless V1 Amazon Pinpoint プッシュ通知の送信 API Reference SES DMARC 対応 送信制限 本番稼働する際の制限解除について E メール受信時のフィードバックについて SNS 米国製品番号について ACM ACM 証明書について サポートされるリージョンについて 自動更新について VPC AWS サービスが利用する IP アドレス範囲について WAF Managed Rules CloudFront フィールドレベル暗号化を使用した機密データの保護 API Gateway Amazon API Gateway のクォータと重要な注意点"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/",
