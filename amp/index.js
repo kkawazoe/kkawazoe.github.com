@@ -242,7 +242,7 @@ url: "https://kkawazoe.github.io/amp/blog/2023/11/13/how-to-install-warp-with-ma
 title: "Mac に Warp をインストールする方法",
 image: "images/logo/icons8-mac-os-logo.svg",
 date: "2023-11-13",
-body: "Mac に Warp をインストールする方法 Mac に Warp をインストールする方法を備忘録として残しておく 手順 home brew を使用してインストール $ brew install --cask warp 設定 公式サイト を参照"
+body: "Mac に Warp をインストールする方法 Mac に Warp をインストールする方法を備忘録として残しておく 手順 home brew を使用してインストール $ brew install --cask warp 設定 公式サイト を参照 注意点 日本語を入力中は Terminal 上に表示がされない Vim や Github のコミットメッセージ等に厳しい ※2023/11/13 時点 issue で長い間リクエストはされているが Feature Request"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2023/06/05/how-to-run-go-tour-locally/",
