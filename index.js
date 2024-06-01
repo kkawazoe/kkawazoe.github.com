@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/",
+title: "M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法",
+image: "images/logo/nodejs_logo.svg",
+date: "2024-05-30",
+body: "M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法 M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法を備忘録として残しておく 前提 CPU: Apple M1 macOS: Sonoma 14.5 Node.js Version: 14.21.3 インストール時のエラー nodenv install 14.21.3 #=\u0026gt; BUILD FAILED (OS X 14.5 using node-build 4.9.138) 解決方法 以下のコマンドでインストールを行う arch -x86_64 nodenv install 14.21.3 原因 Apple M1 は ARM(darwin-arm64) だが公式では 16 以降が対応 そのため未満のバージョンをインストールした際にエラーになる場合がある Node.js 16 CHANGELOG"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/",
 title: "(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 その2",
 image: "images/logo/aws_logo.svg",
