@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/",
+title: "SendGrid の設定および動作確認方法について",
+image: "images/logo/send_grid_logo.svg",
+date: "2024-06-01",
+body: "SendGrid の設定および動作確認方法について SendGrid の設定および動作確認方法を備忘録として残しておく 前提 2024/4/1 以降の新しい方式 Domain Authentication DNS: Amazon Route 53 実際の手順 SendGrid 管理画面にて API Key を作成 参考 SendGrid 管理画面にて Domain Authentication の設定を行う Domain Authentication(SPF/DKIM設定) テストメールを送信して動作確認を行う 参考 メールテンプレートを作成 参考 メールテンプレートを使用した動作確認を行う 参考1 参考2 Curl での動作確認 テンプレートなし [構文] curl -X POST https://api.sendgrid.com/v3/mail/send \\ -d \u0026#34;JSONデータを指定\u0026#34; \\ -H \u0026#34;Authorization: Bearer \u0026lt;\u0026lt;API Key\u0026gt;\u0026gt;\u0026#34; \\ -H \u0026#34;Content-Type: application/json\u0026#34; [JSON データ] { \u0026#34;personalizations\u0026#34;: [ { \u0026#34;to\u0026#34;: [ { \u0026#34;email\u0026#34;: \u0026#34;\u0026lt;\u0026lt;送信先メールアドレス\u0026gt;\u0026gt;\u0026#34; } ], \u0026#34;subject\u0026#34;: \u0026#34;\u0026lt;\u0026lt;件名\u0026gt;\u0026gt;\u0026#34; } ], \u0026#34;from\u0026#34;: { \u0026#34;email\u0026#34;: \u0026#34;\u0026lt;\u0026lt;送信元メールアドレス\u0026gt;\u0026gt;\u0026#34; }, \u0026#34;content\u0026#34;: [ { \u0026#34;type\u0026#34;: \u0026#34;text/plain\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;\u0026lt;\u0026lt;本文\u0026gt;\u0026gt;\u0026#34; } ] } テンプレートあり [構文] curl -X POST https://api.sendgrid.com/v3/mail/send \\ -d \u0026#34;JSONデータを指定\u0026#34; \\ -H \u0026#34;Authorization: Bearer \u0026lt;\u0026lt;API Key\u0026gt;\u0026gt;\u0026#34; \\ -H \u0026#34;Content-Type: application/json\u0026#34; [JSON データ] dynamic_template_data 配下にパラメータを渡す ※手順4 のコードエディタ上ではルート直下で指定のため注意 { \u0026#34;personalizations\u0026#34;: [ { \u0026#34;to\u0026#34;: [ { \u0026#34;email\u0026#34;: \u0026#34;\u0026lt;\u0026lt;送信先メールアドレス\u0026gt;\u0026gt;\u0026#34; } ], \u0026#34;dynamic_template_data\u0026#34;: { \u0026#34;user_name\u0026#34;: \u0026#34;ユーザ名\u0026#34; } } ], \u0026#34;template_id\u0026#34;: \u0026#34;\u0026lt;\u0026lt;テンプレート ID\u0026gt;\u0026gt;\u0026#34;, \u0026#34;from\u0026#34;: { \u0026#34;email\u0026#34;: \u0026#34;\u0026lt;\u0026lt;送信元メールアドレス\u0026gt;\u0026gt;\u0026#34; } }"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/",
 title: "M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法",
 image: "images/logo/nodejs_logo.svg",
