@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/",
+title: "Circle CI をローカルで実行する方法",
+image: "images/logo/circleci_logo.svg",
+date: "2024-06-04",
+body: "Circle CI をローカルで実行する方法 Circle CI をローカルで実行する方法を備忘録として残しておく 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Container 管理ツール Rancher Desktop 使用ツール Circle CI CLI Circle CI 定義ファイル 既に作成済想定 Circle CI CLI のインストール Home Brew でインストールする brew install circleci 使用方法 CLI で定義ファイルの文法チェックを行う circleci config validate #=\u0026gt; Config file at .circleci/config.yml is valid. circleci コマンドを使用して実行する 例. build Job 確認 ※version 2.1 の場合は一度 config ファイルの変換を行ってから実行する circleci config process .circleci/config.yml \u0026gt; config-for-v2.yml circleci local execute -c config-for-v2.yml build 制約 公式を参照"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/",
 title: "SendGrid の設定および動作確認方法について",
 image: "images/logo/send_grid_logo.svg",
