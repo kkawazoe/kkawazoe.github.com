@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/",
+title: "S3 でアップロードされているオブジェクトの総数を取得する方法",
+image: "images/logo/aws_logo.svg",
+date: "2024-06-13",
+body: "S3 でアップロードされているオブジェクトの総数を取得する方法 S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく 実際のコード aws s3 ls s3://\u0026lt;\u0026lt;バケット名\u0026gt;\u0026gt; --recursive --human-readable --summarize"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/",
 title: "Circle CI をローカルで実行する方法",
 image: "images/logo/circleci_logo.svg",
