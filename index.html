@@ -80,7 +80,8 @@
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく
-実際のコード aws s3 ls s3://&lt;&lt;バケット名>> --recursive --human-readable --summarize </div>
+実際のコード aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> --recursive --human-readable --summarize その他 最終更新日の降順でソートして出力 UI 上だとできないのでコマンドを使用する
+aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> | sort -nr </div>
 </div>
 </a>
 </article>

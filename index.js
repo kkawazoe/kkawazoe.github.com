@@ -4,7 +4,7 @@ url: "https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-
 title: "S3 でアップロードされているオブジェクトの総数を取得する方法",
 image: "images/logo/aws_logo.svg",
 date: "2024-06-13",
-body: "S3 でアップロードされているオブジェクトの総数を取得する方法 S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく 実際のコード aws s3 ls s3://\u0026lt;\u0026lt;バケット名\u0026gt;\u0026gt; --recursive --human-readable --summarize"
+body: "S3 でアップロードされているオブジェクトの総数を取得する方法 S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく 実際のコード aws s3 ls s3://\u0026lt;\u0026lt;bucket-name/path/to/\u0026gt;\u0026gt; --recursive --human-readable --summarize その他 最終更新日の降順でソートして出力 UI 上だとできないのでコマンドを使用する aws s3 ls s3://\u0026lt;\u0026lt;bucket-name/path/to/\u0026gt;\u0026gt; | sort -nr"
 },
 {
 url: "https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/",
