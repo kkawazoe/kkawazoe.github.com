@@ -1,10 +1,10 @@
 var data = [
 {
-url: "https://kkawazoe.github.io/amp/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman./",
+url: "https://kkawazoe.github.io/amp/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/",
 title: "Cognito 認証が必要な API を Postman から動作させる方法",
 image: "images/logo/aws_logo.svg",
 date: "2024-06-26",
-body: "Cognito 認証が必要な API を Postman から動作させる方法 Cognito 認証が必要な API を Postman から動作させる方法について調査した結果を備忘録として残しておく 実際の設定 以下の通りに URL と Header, Body を設定する 他の API で使用するために変数に格納する Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する"
+body: "Cognito 認証が必要な API を Postman から動作させる方法 Cognito 認証が必要な API を Postman から動作させる方法について調査した結果を備忘録として残しておく 実際の設定 以下の通りに URL と Header, Body を設定する Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する Postman 設定その４"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/",
