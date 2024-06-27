@@ -136,6 +136,7 @@
 </span><span style=color:#ae81ff></span>     -H <span style=color:#e6db74>&#34;Authorization: Bearer &lt;&lt;API Key&gt;&gt;&#34;</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>     -H <span style=color:#e6db74>&#34;Content-Type: application/json&#34;</span>
 </code></pre></div><p>[JSON データ]</p>
+<p>VS Code を使用している場合は <a href="https://marketplace.visualstudio.com/items?itemName=nextfaze.json-parse-stringify">JSON Parse & Stringify</a> を使用すると JSON の Parse & Stringify が容易のため推奨</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;personalizations&#34;</span>: [
     {
@@ -164,8 +165,14 @@
 </span><span style=color:#ae81ff></span>     -H <span style=color:#e6db74>&#34;Authorization: Bearer &lt;&lt;API Key&gt;&gt;&#34;</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>     -H <span style=color:#e6db74>&#34;Content-Type: application/json&#34;</span>
 </code></pre></div><p>[JSON データ]</p>
-<p>dynamic_template_data 配下にパラメータを渡す<br>
-※手順4 のコードエディタ上ではルート直下で指定のため注意</p>
+<ul>
+<li>VS Code を使用している場合は <a href="https://marketplace.visualstudio.com/items?itemName=nextfaze.json-parse-stringify">JSON Parse & Stringify</a> を使用すると JSON の Parse & Stringify が容易のため推奨</li>
+<li>dynamic_template_data 配下にパラメータを渡す
+<ul>
+<li>手順4 のコードエディタ上では dynamic_template_data 配下のみを指定するため注意</li>
+</ul>
+</li>
+</ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;personalizations&#34;</span>: [
     {
