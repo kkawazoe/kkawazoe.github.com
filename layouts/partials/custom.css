@@ -14,6 +14,13 @@ article.sn > .article-body pre > code.hljs[data-filename] {
   padding-top: 2em;
 }
 
+article.sn > .article-body figcaption {
+  color: #000;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-top: .5rem;
+}
+
 .hljs[data-filename]::before {
   content: attr(data-filename);
   position: absolute;

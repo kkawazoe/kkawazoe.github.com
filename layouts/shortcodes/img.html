@@ -1,0 +1,21 @@
+<figure{{ if .Get "class" }} class="{{ .Get "class" }}"{{ end }}>
+  {{ if .Get "href" }}
+    <a href="{{ .Get "href" }}" rel="noopener" target="_blank">
+  {{ end }}
+
+  <img src="{{ .Get "src" | absURL }}"
+    alt="{{ .Get "caption" }}"
+    {{ with (.Get "w") }} width="{{ . }}"{{ end }}
+    {{ with (.Get "h") }} height="{{ . }}"{{ end }}
+  >
+
+  {{ if .Get "href" }}
+    </a>
+  {{ end }}
+
+  {{ if .Get "caption" }}
+    <figcaption>
+      {{ .Get "caption" }}
+    </figcaption>
+  {{ end }}
+</figure>

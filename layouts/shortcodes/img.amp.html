@@ -1,0 +1,18 @@
+<figure{{ if .Get "class" }} class="{{ .Get "class" }}"{{ end }}>
+  {{ if .Get "href" }}
+    <a href="{{ .Get "href" }}" rel="noopener" target="_blank">
+  {{ end }}
+
+  <amp-img src="{{ .Get "src" | absURL }}"
+    alt="{{ .Get "caption" }}"
+    width={{ .Get "w" }}
+    height={{ .Get "h" }}
+    layout="responsive">
+  </amp-img>
+
+  {{ if .Get "caption" }}
+    <figcaption>
+      {{ .Get "caption" }}
+    </figcaption>
+  {{ end }}
+</figure>
