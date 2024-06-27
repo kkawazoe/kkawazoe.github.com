@@ -134,7 +134,7 @@ $('form').append( `&lt;input type="hidden" value="" name="book[category_ids][]" 
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード [ER 図]
-[model]
+ER 図 [model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
 category_ids を配列形式で許可する
 def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end </div>

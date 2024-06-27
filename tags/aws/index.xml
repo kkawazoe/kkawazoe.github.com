@@ -23,7 +23,7 @@ grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;
 revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; 権限の確認 該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
 \dp #=&amp;gt; &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;=awdDxt/postgres</description></item><item><title>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</link><pubDate>Fri, 08 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</guid><description>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく
 前提 以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8
-手順 参考
+構成図 手順 参考
 DB ユーザ追加
 以下のコマンドを使用してユーザを追加する
 ※実運用時は、適宜必要な権限を付与する

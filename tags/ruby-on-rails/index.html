@@ -174,11 +174,11 @@ class FavoritesController &lt; ApplicationController def create redirect_back fa
 </ul>
 <div class=summary>rails で複合項目で一意性チェックを行う方法を備忘録として残しておく
 環境 ruby: 3.0.5 rails: 6.1.7 実際のコード [ER 図]
-[model]
+ER 図 [model]
 uniqueness + scope で validate を行う
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category # book_id + category_id で一意かどうかをチェック validates :book_id, uniqueness: { scope: :category_id } end class Category has_many :book_categories has_many :books, through: :book_categories end [migrate]
 unique index を追加する
-class CreateBookCategoriess &lt; ActiveRecord::Migration[6.1] def change create_table :book_categories do |t| t.</div>
+class CreateBookCategoriess &lt; ActiveRecord::Migration[6.</div>
 </div>
 </a>
 </article>

@@ -25,11 +25,11 @@ def index @books = Book.all - render json: @books, each_serializer: Book::ListSe
 (遷移元が複数ある かつ ユーザビリティ的に良くない)ため 画面遷移させないようにしたい 実際のソース controller の該当アクションを以下のようにする
 class FavoritesController &amp;lt; ApplicationController def create redirect_back fallback_location: root_path end end # 以下も上手くいくが referer が取得できなかった場合を考えると上が良さそう class FavoritesController &amp;lt; ApplicationController def create redirect_to request.referer end end</description></item><item><title>rails で複合項目で一意性チェックを行う方法</title><link>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/02/03/how-to-validate-unique-for-multi-columns-with-rails/</guid><description>rails で複合項目で一意性チェックを行う方法を備忘録として残しておく
 環境 ruby: 3.0.5 rails: 6.1.7 実際のコード [ER 図]
-[model]
+ER 図 [model]
 uniqueness + scope で validate を行う
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category # book_id + category_id で一意かどうかをチェック validates :book_id, uniqueness: { scope: :category_id } end class Category has_many :book_categories has_many :books, through: :book_categories end [migrate]
 unique index を追加する
-class CreateBookCategoriess &amp;lt; ActiveRecord::Migration[6.1] def change create_table :book_categories do |t| t.</description></item><item><title>rails で画面表示時に小数部分の0を省略して表示する方法</title><link>https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/</link><pubDate>Thu, 12 Jan 2023 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/</guid><description>rails で画面表示時に小数部分の0を省略して表示する方法を備忘録として残しておく
+class CreateBookCategoriess &amp;lt; ActiveRecord::Migration[6.</description></item><item><title>rails で画面表示時に小数部分の0を省略して表示する方法</title><link>https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/</link><pubDate>Thu, 12 Jan 2023 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/01/12/how-to-omit-0s-in-decimals-when-displaying-on-screen-in-rails/</guid><description>rails で画面表示時に小数部分の0を省略して表示する方法を備忘録として残しておく
 環境 ruby: 3.0.4 rails: 6.1.0 実際のコード number_to_human メソッドを使用する ※参考
 ※strip_insignidicant_zeros オプションのデフォルトが true のため
 その他のヘルパーについてはNumberHelperを参照
@@ -61,7 +61,7 @@ erb のパターン association を使用して as: :check_boxes オプション
 &amp;lt;%= simple_form_for @book do |f| %&amp;gt; &amp;lt;%= f.association :categories, as: :check_boxes %&amp;gt; &amp;lt;%= f.button :submit %&amp;gt; &amp;lt;% end %&amp;gt; javascript のパターン 最終的に生成される params が以下のようになるように組み立てる
 [&amp;quot;&amp;quot;, 1, 3]
 $(&amp;#39;form&amp;#39;).append( `&amp;lt;input type=&amp;#34;hidden&amp;#34; value=&amp;#34;&amp;#34; name=&amp;#34;book[category_ids][]&amp;#34; /&amp;gt;`, ); book.</description></item><item><title>rails で has_many の ids を使用して中間テーブルの関連付けを行う方法</title><link>https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/</link><pubDate>Tue, 01 Nov 2022 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/01/how-to-use-has-many-ids-for-create-relation-through-table-with-rails/</guid><description>環境 ruby: 2.7.6 rails: 5.2.8.1 実際のコード [ER 図]
-[model]
+ER 図 [model]
 class Book has_many :book_categories, dependent: :destroy has_many :categories, through: :book_categories end class BookCategory belongs_to :book belongs_to :category end class Category has_many :book_categories has_many :books, through: :book_categories end [controller]
 category_ids を配列形式で許可する
 def create @book = Book.save!(book_params) end private def book_params params.require(:book).permit( :title, category_ids: [] ) end</description></item><item><title>ransack で scope を使用して link_to で表示する方法</title><link>https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/01/how-to-user-scope-for-link-to-with-ransack/</guid><description>方法 ransackable_scopes メソッドを使用して実現する
