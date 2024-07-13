@@ -226,13 +226,29 @@
 <p><code>aws s3 cp</code> や <code>aws s3 sync</code> では空オブジェクト(空フォルダ等)は同期されないため注意が必要<br>
 ※ダミーファイルを置く等しないといけない</p>
 <h2 id=api-gateway-の注意事項について>API Gateway の注意事項について</h2>
+<h3 id=使用できないパスについて>使用できないパスについて</h3>
 <p>以下のパスはサービスのヘルスチェック専用のためカスタムドメインのルートレベルのパスには使用しないよう注意が必要<br>
 ※それ以外の注意事項は<a href=https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/api-gateway-known-issues.html>公式</a>を参照</p>
 <ul>
 <li>/ping</li>
 <li>/sping</li>
 </ul>
-</div>
+<h3 id=長期間使用していない-lambda-について>長期間　使用していない Lambda について</h3>
+<p>関数が数週間アイドルのままの場合、Inactive 状態になり、その状態で関数を呼び出すとエラーになる</p>
+<p>詳細は以下を参照</p>
+<ul>
+<li><a href=https://aws.amazon.com/jp/blogs/news/tracking-the-state-of-lambda-functions/>AWS Lambda関数の状態の追跡</a></li>
+</ul>
+<p>以下のスクリプトを使用することで対象の洗い出しが行える</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e>#!/bin/sh
+</span><span style=color:#75715e></span>
+aws --profile <span style=color:#e6db74>&lt;&lt;プロフィール名&gt;&gt; lambda list-functions --region &lt;&lt;リージョン名&gt;&gt; --query &#39;Functions[?starts_with(FunctionName, `&lt;&lt;関数名プレフィックス&gt;&gt;`) == `true`].FunctionName&#39; &gt; lambda_list.json
+</span><span style=color:#e6db74>lambda_names=`jq -r .[] lambda_list.json`
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>for lambda_name in $lambda_names; do
+</span><span style=color:#e6db74>  aws --profile &lt;&lt;プロフィール名</span>&gt;&gt; lambda get-function --output text --function-name $lambda_name --query <span style=color:#e6db74>&#39;Configuration.[FunctionName, State, LastUpdateStatus]&#39;</span> | sort -k <span style=color:#ae81ff>1</span> | column -t -s <span style=color:#e6db74>&#34;`printf &#39;\t&#39;`&#34;</span>
+<span style=color:#66d9ef>done</span>
+</code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
