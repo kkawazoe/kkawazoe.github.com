@@ -137,15 +137,20 @@ DB_PASSWORD_PRD<span style=color:#f92672>=</span>xxx
 <span style=color:#75715e># Shared</span>
 SQL_DIR<span style=color:#f92672>=</span>sql
 SQL_FILE<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>SQL_DIR<span style=color:#e6db74>}</span>/execute.sql
+LOG_FILE<span style=color:#f92672>=</span>log/batch.log
 
 read -p <span style=color:#e6db74>&#34;Which environment connect to? (dev/stg/prd): &#34;</span> input_environment
 
 <span style=color:#75715e># Convert to uppercase</span>
 environment<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>echo <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> | tr <span style=color:#e6db74>&#39;[:lower:]&#39;</span> <span style=color:#e6db74>&#39;[:upper:]&#39;</span><span style=color:#66d9ef>)</span>
 
+echo <span style=color:#e6db74>&#34;【Start Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+
 <span style=color:#75715e># Check the environment</span>
 <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> in
   <span style=color:#e6db74>&#34;dev&#34;</span> | <span style=color:#e6db74>&#34;stg&#34;</span> | <span style=color:#e6db74>&#34;prd&#34;</span><span style=color:#f92672>)</span>
+    echo <span style=color:#e6db74>&#34;Connecting to </span><span style=color:#e6db74>${</span>environment<span style=color:#e6db74>}</span><span style=color:#e6db74> environment...&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+
     EC2_HOST<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo \${EC2_HOST_</span><span style=color:#e6db74>${</span>environment<span style=color:#e6db74>}</span><span style=color:#e6db74>}&#34;</span><span style=color:#66d9ef>)</span>
     EC2_PEM_KEY<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo \${EC2_PEM_KEY_</span><span style=color:#e6db74>${</span>environment<span style=color:#e6db74>}</span><span style=color:#e6db74>}&#34;</span><span style=color:#66d9ef>)</span>
     DB_HOST<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo \${DB_HOST_</span><span style=color:#e6db74>${</span>environment<span style=color:#e6db74>}</span><span style=color:#e6db74>}&#34;</span><span style=color:#66d9ef>)</span>
@@ -160,18 +165,16 @@ environment<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>
 
 scp -i <span style=color:#e6db74>${</span>EC2_PEM_KEY<span style=color:#e6db74>}</span> -r <span style=color:#e6db74>${</span>SQL_DIR<span style=color:#e6db74>}</span> <span style=color:#e6db74>${</span>EC2_HOST<span style=color:#e6db74>}</span>:~/
 
-DB_RESULT<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>ssh -i <span style=color:#e6db74>${</span>EC2_PEM_KEY<span style=color:#e6db74>}</span> -T <span style=color:#e6db74>${</span>EC2_HOST<span style=color:#e6db74>}</span> <span style=color:#e6db74>&lt;&lt;EOC
-</span><span style=color:#e6db74>  # Set DB Password
-</span><span style=color:#e6db74>  export PGPASSWORD=${DB_PASSWORD}
+ssh -i <span style=color:#e6db74>${</span>EC2_PEM_KEY<span style=color:#e6db74>}</span> -T <span style=color:#e6db74>${</span>EC2_HOST<span style=color:#e6db74>}</span> <span style=color:#e6db74>&lt;&lt;EOF &gt;&gt; ${LOG_FILE} 2&gt;&amp;1
+</span><span style=color:#e6db74># Set DB Password
+</span><span style=color:#e6db74>export PGPASSWORD=${DB_PASSWORD}
 </span><span style=color:#e6db74>
-</span><span style=color:#e6db74>  # Execute SQL
-</span><span style=color:#e6db74>  psql -p ${DB_PORT} -h ${DB_HOST} -d ${DB_NAME} -U ${DB_USER} -f ${SQL_FILE}
+</span><span style=color:#e6db74># Execute SQL
+</span><span style=color:#e6db74>psql -p ${DB_PORT} -h ${DB_HOST} -d ${DB_NAME} -U ${DB_USER} -f ${SQL_FILE}
 </span><span style=color:#e6db74>
-</span><span style=color:#e6db74>  # Remove SQL
-</span><span style=color:#e6db74>  rm -rf sql
-</span><span style=color:#e6db74>EOC</span>
-<span style=color:#e6db74>`</span>
-echo <span style=color:#e6db74>${</span>DB_RESULT<span style=color:#e6db74>}</span>
+</span><span style=color:#e6db74># Remove SQL
+</span><span style=color:#e6db74>rm -rf sql
+</span><span style=color:#e6db74>EOF</span>
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
