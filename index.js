@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/",
+title: "ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法",
+image: "images/logo/aws_logo.svg",
+date: "2024-07-18",
+body: "ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法 ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく 環境 OS: MacOS DB: PostgreSQL フォルダ構成 ./ ├── sql/ │ └── execute.sql └── execute_sql.sh 実際のコード #!/bin/sh # DEV EC2_HOST_DEV=xxx EC2_PEM_KEY_DEV=xxx DB_HOST_DEV=xxx DB_PORT_DEV=5432 DB_NAME_DEV=xxx DB_USER_DEV=xxx DB_PASSWORD_DEV=xxx # STG EC2_HOST_STG=xxx EC2_PEM_KEY_STG=xxx DB_HOST_STG=xxx DB_PORT_STG=5432 DB_NAME_STG=xxx DB_USER_STG=xxx DB_PASSWORD_STG=xxx # PRD EC2_HOST_PRD=xxx EC2_PEM_KEY_PRD=xxx DB_HOST_PRD=xxx DB_PORT_PRD=5432 DB_NAME_PRD=xxx DB_USER_PRD=xxx DB_PASSWORD_PRD=xxx # Shared SQL_DIR=sql SQL_FILE=${SQL_DIR}/execute.sql read -p \u0026#34;Which environment connect to? (dev/stg/prd): \u0026#34; input_environment # Convert to uppercase environment=$(echo \u0026#34;${input_environment}\u0026#34; | tr \u0026#39;[:lower:]\u0026#39; \u0026#39;[:upper:]\u0026#39;) # Check the environment case \u0026#34;${input_environment}\u0026#34; in \u0026#34;dev\u0026#34; | \u0026#34;stg\u0026#34; | \u0026#34;prd\u0026#34;) EC2_HOST=$(eval \u0026#34;echo \\${EC2_HOST_${environment}}\u0026#34;) EC2_PEM_KEY=$(eval \u0026#34;echo \\${EC2_PEM_KEY_${environment}}\u0026#34;) DB_HOST=$(eval \u0026#34;echo \\${DB_HOST_${environment}}\u0026#34;) DB_PORT=$(eval \u0026#34;echo \\${DB_PORT_${environment}}\u0026#34;) DB_NAME=$(eval \u0026#34;echo \\${DB_NAME_${environment}}\u0026#34;) DB_USER=$(eval \u0026#34;echo \\${DB_USER_${environment}}\u0026#34;) DB_PASSWORD=$(eval \u0026#34;echo \\${DB_PASSWORD_${environment}}\u0026#34;);; *) echo \u0026#34;Please enter the correct environment.\u0026#34; exit;; esac scp -i ${EC2_PEM_KEY} -r ${SQL_DIR} ${EC2_HOST}:~/ DB_RESULT=`ssh -i ${EC2_PEM_KEY} -T ${EC2_HOST} \u0026lt;\u0026lt;EOC # Set DB Password export PGPASSWORD=${DB_PASSWORD} # Execute SQL psql -p ${DB_PORT} -h ${DB_HOST} -d ${DB_NAME} -U ${DB_USER} -f ${SQL_FILE} # Remove SQL rm -rf sql EOC ` echo ${DB_RESULT}"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/",
 title: "Cognito 認証が必要な API を Postman から動作させる方法",
 image: "images/logo/aws_logo.svg",
