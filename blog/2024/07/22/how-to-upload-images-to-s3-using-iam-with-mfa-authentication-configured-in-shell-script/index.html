@@ -140,7 +140,7 @@ echo <span style=color:#e6db74>&#34;【Start Processing】</span><span style=col
 
     <span style=color:#75715e># Set environment variables</span>
     AWS_PROFILE<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo \${AWS_PROFILE_PREFIX}-</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>)</span>
-    AWS_S3_IMAGE_UPLOAD_DIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo olb-</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>-bucket-user-full/assets/images/aaa/&#34;</span><span style=color:#66d9ef>)</span>;;
+    AWS_S3_IMAGE_UPLOAD_DIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>eval <span style=color:#e6db74>&#34;echo s3-bucket-</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>-to/path/&#34;</span><span style=color:#66d9ef>)</span>;;
   *<span style=color:#f92672>)</span>
     echo <span style=color:#e6db74>&#34;Please enter the correct environment.&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
     echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
