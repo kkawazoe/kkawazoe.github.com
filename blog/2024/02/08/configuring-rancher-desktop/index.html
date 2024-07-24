@@ -96,6 +96,25 @@
 そのため、代替ツールとして <a href=https://rancherdesktop.io/>Rancher Desktop</a> を調査した結果を備忘録として残しておく</p>
 <h2 id=設定について>設定について</h2>
 <p>以下の設定を変更することで動作が速くなる可能性がある</p>
+<h3 id=preference---virtual-machine---emulation>Preference - Virtual Machine - Emulation</h3>
+<ol>
+<li>Virtual Machine Type に、VZを指定する</li>
+<li>右側に出る、VZ Option の Enable Rosetta support にチェックを入れる</li>
+</ol>
+<h4 id=rosetta-で動作しているか確認>Rosetta で動作しているか確認</h4>
+<p>下記コマンドで ubuntu に入り、 ps -ef を実行して、/mnt/lima-rosetta/rosetta と表示されていることを確認</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ docker run -it --platform linux/amd64 ubuntu
+<span style=color:#75715e># ps -ef</span>
+Unable to find image <span style=color:#e6db74>&#39;ubuntu:latest&#39;</span> locally
+latest: Pulling from library/ubuntu
+445a6a12be2b: Pull complete
+Digest: sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054
+Status: Downloaded newer image <span style=color:#66d9ef>for</span> ubuntu:latest
+root@0f03298c4ad5:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         <span style=color:#ae81ff>1</span>     <span style=color:#ae81ff>0</span>  <span style=color:#ae81ff>3</span> 03:46 pts/0    00:00:00 /mnt/lima-rosetta/rosetta /bin/bash
+root         <span style=color:#ae81ff>9</span>     <span style=color:#ae81ff>1</span>  <span style=color:#ae81ff>0</span> 03:46 pts/0    00:00:00 /usr/bin/ps -ef
+</code></pre></div><h3 id=preference---virtual-machine---volumes>Preference - Virtual Machine - Volumes</h3>
 <ol>
 <li>「Preferences」ボタンを押下</li>
 <li>Virtual Machine > Volumes > Mount Type を以下に変更する
