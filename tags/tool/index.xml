@@ -12,7 +12,7 @@ terraform apply Error: Error pinging Docker server: Cannot connect to the Docker
 レイヤー機能を使用して重なり順を気にせずに作業する 図を追加した際に背面に隠れてしまい、重なりを修正する手間を解消する
 手順 メニューバーから[表示]＞[レイヤー]を選択する
 ※初期状態では「背景」というレイヤーが配置されている 例えば以下のようにレイヤーを作成する
-※上に表示されているレイヤーが前面に表示される AWS 構成図 レイヤー定義例</description></item><item><title>Mac でディレクトリ内の差分比較を行う方法</title><link>https://kkawazoe.github.io/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/</link><pubDate>Mon, 15 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/</guid><description>普段 Diff ツールに CompareMerge2 を使用しているが無料版だと 200 アイテムまでの制限があるため他の方法を調査した方法を備忘録として残しておく
+※上に表示されているレイヤーが前面に表示される AWS 構成図 レイヤー定義例 エクスポートについて さまざまな形式でエクスポートが行えるが XML 形式でエクスポートするとレイヤー情報もエクスポート可能</description></item><item><title>Mac でディレクトリ内の差分比較を行う方法</title><link>https://kkawazoe.github.io/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/</link><pubDate>Mon, 15 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/15/how-to-perform-a-diff-comparison-in-a-directory-on-a-mac/</guid><description>普段 Diff ツールに CompareMerge2 を使用しているが無料版だと 200 アイテムまでの制限があるため他の方法を調査した方法を備忘録として残しておく
 手順 diff コマンドを使用する
 差分ファイル名のみ表示する -r オプション: 再起的に比較する -q オプション: 差分のあるファイルのみ表示 差分の内容は非表示 diff -r -q dir001/ dir002/ 差分ファイル数をカウントする ディレクトリの差分はない前提
 diff -r -q dir001/ dir002/ | wc #=&amp;gt; 0 0 0</description></item><item><title>JMeter の環境構築方法</title><link>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</link><pubDate>Thu, 04 Apr 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</guid><description>JMeter の環境構築方法を備忘録として残しておく
@@ -106,7 +106,7 @@ Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加
 Rambox バッジおよび未読数 しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
 対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
 Rambox サービス設定画面 実際のコード [Custom Code]
-function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.</description></item><item><title>Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</title><link>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</link><pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</guid><description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している
+function checkUnread() { const elements = document.querySelectorAll(&amp;#34;.roomListBadges__unreadBadgeText&amp;#34;); updateBadge(elements.length); } function updateBadge(e) { e &amp;gt;= 1 ?</description></item><item><title>Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</title><link>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</link><pubDate>Wed, 20 Feb 2019 00:24:14 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/</guid><description>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した
 情報元 Markdown PDF の「Page Break」の項目に記載あり
 実際のコード # h1 ## h2 ### h3 &amp;lt;!-- 改行させたい位置 --&amp;gt; &amp;lt;div class=&amp;#34;page&amp;#34;/&amp;gt; # h1 ## h2 ### h3</description></item></channel></rss>
