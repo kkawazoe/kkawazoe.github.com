@@ -1,10 +1,10 @@
 var data = [
 {
-url: "https://kkawazoe.github.io/amp/blog/2024/08/22/how-to-download-files-in-s3-buckets-using-aws-cloud-shell/",
-title: "AWS CloudShell を使用して S3 バケット内のファイルをダウンロードする方法",
+url: "https://kkawazoe.github.io/amp/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/",
+title: "Amazon Aurora のバックアップストレージ費用の確認方法",
 image: "images/logo/aws_logo.svg",
-date: "2024-08-22",
-body: "AWS CloudShell を使用して S3 バケット内のファイルをダウンロードする方法 AWS CloudShell を使用して S3 バケット内のファイルをダウンロードする方法について調査した結果を備忘録として残しておく 環境 OS: MacOS AWS CloudShell で実施 実際の手順 テキストファイルに S3 のオブジェクトパスを列挙 AWS ログイン CloudShell 起動 1 の ファイルをファイルアップロード フォルダ作成 mkdir tmp_folder 4 のファイルを移動 mv image_paths.txt tmp_folder/ cd tmp_folder S3 よりファイルをダウンロード while read line; do aws s3 cp s3://\u0026lt;\u0026lt;S3 Bucket 名\u0026gt;\u0026gt;/${line} .; done \u0026lt; \u0026#34;image_paths.txt\u0026#34; Text ファイル削除 rm -rf image_paths.txt Ps ファイル削除 rm -rf *.ps1 Zip 化 zip -rj tmp_folder . 10 のファイルをダウンロード 5, 10 のファイルおよびフォルダ削除"
+date: "2024-08-28",
+body: "Amazon Aurora のバックアップストレージ費用の確認方法 AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく 実際の手順 Cost Explorer にて確認 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月月」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/",
