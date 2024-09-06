@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/",
+title: "AWS コスト削減 Tips",
+image: "images/logo/aws_logo.svg",
+date: "2024-09-06",
+body: "AWS コスト削減 Tips AWS コスト削減 Tipsを備忘録として残しておく EC2 インスタンスタイプの変更 最適なインスタンスタイプの選定については、公式参照 使用していない期間(夜間/休日等)での停止 特に開発・検証環境については検討する余地あり 踏み台サーバとして運用している場合は、本番環境も検討する余地あり RDS 使用していない期間(夜間/休日等)での停止 特に開発・検証環境については検討する余地あり EC2 と比較して停止状態からの起動に時間がかかるため注意が必要 DB のデータ容量によるが 15 〜 30 分程度みた方が良い Backup に関わるコスト確認 バックアップ要件に関わるので顧客確認要 確認方法は以下記事を参照 Amazon Aurora のバックアップストレージ費用の確認方法"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/",
 title: "AWS ルートユーザに設定されている MFA が不明な場合のログイン方法",
 image: "images/logo/aws_logo.svg",
@@ -11,7 +18,7 @@ url: "https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-back
 title: "Amazon Aurora のバックアップストレージ費用の確認方法",
 image: "images/logo/aws_logo.svg",
 date: "2024-08-28",
-body: "Amazon Aurora のバックアップストレージ費用の確認方法 AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく 実際の手順 Cost Explorer にて確認 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月月」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)"
+body: "Amazon Aurora のバックアップストレージ費用の確認方法 AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく 実際の手順 Cost Explorer にて確認 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)"
 },
 {
 url: "https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/",
