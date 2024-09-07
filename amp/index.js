@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/09/06/aws-cost-reduction-tips-part-2/",
+title: "AWS コスト削減 Tips その2",
+image: "images/logo/aws_logo.svg",
+date: "2024-09-06",
+body: "AWS コスト削減 Tips その2 AWS コスト削減 Tipsを備忘録として残しておく [前回までの記事] AWS コスト削減 Tips CloudWatch コストの確認 Cost Explorer にて確認 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス CloudWatch リージョン 任意"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/09/06/aws-cost-reduction-tips/",
 title: "AWS コスト削減 Tips",
 image: "images/logo/aws_logo.svg",
