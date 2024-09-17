@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/09/17/how-to-set-up-google-form-to-require-login/",
+title: "Google Form のログインが必須になる設定について",
+image: "images/logo/google_form_logo.svg",
+date: "2024-09-17",
+body: "Google Form のログインが必須になる設定について Google Form のログインが必須になる設定について調査した結果を備忘録として残しておく Google アカウントでのログインが必須となる設定 メールアドレスを収集する 回答の編集を許可する 回答を1回に制限する 質問にファイルアップロードが含まれている場合"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/09/06/aws-cost-reduction-tips-part-2/",
 title: "AWS コスト削減 Tips その2",
 image: "images/logo/aws_logo.svg",
