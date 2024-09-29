@@ -6,7 +6,7 @@ Disallow: https://kkawazoe.github.io/blog/2014/02/09/my-memorandum-record
 Disallow: https://kkawazoe.github.io/blog/2014/06/22/batdeinihuairuwodu-ip-mu
 Disallow: https://kkawazoe.github.io/blog/2019/03/06/20190306_01/
 Disallow: https://kkawazoe.github.io/blog/2019/03/01/ime-comp-with-vbnet
-Disallow: https://kkawazoe.github.io/blog/2022/05/24/how_to_import_csv_with_postgre_sql/
+Disallow: https://kkawazoe.github.io/blog/2024/08/22/how-to-download-files-in-s3-buckets-using-aws-cloud-shell/
 
 {{ range where .Data.Pages "Params.robotsdisallow" true }}
 Disallow: {{ .RelPermalink }}
