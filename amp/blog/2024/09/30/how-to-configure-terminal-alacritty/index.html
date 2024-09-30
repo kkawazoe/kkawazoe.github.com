@@ -72,12 +72,25 @@
 <h2 id=手順>手順</h2>
 <h3 id=alacritty-のセットアップ>Alacritty のセットアップ</h3>
 <ol>
+<li>フォントのインストール</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install --cask font-monaspace
+
+<span style=color:#75715e># Hack Nerd Font</span>
+brew install font-hack-nerd-font
+
+<span style=color:#75715e># HackGen</span>
+brew install font-hackgen
+
+<span style=color:#75715e># HackGen Nerd</span>
+brew install font-hackgen-nerd
+</code></pre></div><ol start=2>
 <li>以下のコマンドを実行する</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install --cask alacritty
 mkdir -p ~/.config/alacritty
 vim ~/.config/alacritty/alacritty.toml
-</code></pre></div><ol start=2>
+</code></pre></div><ol start=3>
 <li>config ファイルを修正する</li>
 </ol>
 <p>設定値については<a href=https://alacritty.org/config-alacritty.html>参考</a>を参照</p>
@@ -97,16 +110,16 @@ vim ~/.config/alacritty/alacritty.toml
 <span style=color:#a6e22e>option_as_alt</span> = <span style=color:#e6db74>&#34;Both&#34;</span>
 
 [<span style=color:#a6e22e>font</span>]
-<span style=color:#a6e22e>normal</span>.<span style=color:#a6e22e>family</span> = <span style=color:#e6db74>&#34;Menlo&#34;</span> <span style=color:#75715e># Font Family を指定</span>
-<span style=color:#a6e22e>size</span> = <span style=color:#ae81ff>14</span>
-</code></pre></div><ol start=3>
+<span style=color:#a6e22e>normal</span>.<span style=color:#a6e22e>family</span> = <span style=color:#e6db74>&#34;HackGen Nerd&#34;</span> <span style=color:#75715e># Font Family を指定</span>
+<span style=color:#a6e22e>size</span> = <span style=color:#ae81ff>16</span>
+</code></pre></div><ol start=4>
 <li>alaciritty-themes のセットアップ</li>
 </ol>
 <p><code>~/.config/alacritty/alacritty.toml</code> の import にて指定する<br>
 theme の詳細は<a href=https://github.com/alacritty/alacritty-theme>公式</a>を参照</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd ~/.config/alacritty
 git clone https://github.com/alacritty/alacritty-theme themes
-</code></pre></div><ol start=4>
+</code></pre></div><ol start=5>
 <li>zsh-autosuggestions, zsh-syntax-highlighting のセットアップ</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install zsh-autosuggestions
@@ -116,14 +129,14 @@ brew install zsh-syntax-highlighting
 echo <span style=color:#e6db74>&#34;source </span><span style=color:#66d9ef>$(</span>brew --prefix<span style=color:#66d9ef>)</span><span style=color:#e6db74>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#34;</span> &gt;&gt; ~/.zshrc
 
 source ~/.zshrc
-</code></pre></div><ol start=5>
+</code></pre></div><ol start=6>
 <li>zellij のセットアップ</li>
 </ol>
 <p>tmux でも可</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install zellij
 mkdir ~/.config/zellij
 zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
-</code></pre></div><ol start=6>
+</code></pre></div><ol start=7>
 <li>zellij の起動</li>
 </ol>
 <p>ターミナル起動時に自動起動させる場合は<a href=https://zellij.dev/documentation/integration>公式</a>を参照<br>

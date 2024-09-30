@@ -80,8 +80,8 @@
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>Terminal Alacritty の設定方法について調査した結果を備忘録として残しておく
-環境 OS: macOS 14.7 手順 Alacritty のセットアップ 以下のコマンドを実行する brew install --cask alacritty mkdir -p ~/.config/alacritty vim ~/.config/alacritty/alacritty.toml config ファイルを修正する 設定値については参考を参照
-import = [ "~/.config/alacritty/themes/themes/pastel_dark.toml" # theme ] [env] TERM = "xterm-256color" [window] padding.x = 10 padding.y = 10 decorations = "Full" opacity = 0.9 # 透過率 blur = false option_as_alt = "Both" [font] normal.family = "Menlo" # Font Family を指定 size = 14 alaciritty-themes のセットアップ ~/.</div>
+環境 OS: macOS 14.7 手順 Alacritty のセットアップ フォントのインストール brew install --cask font-monaspace # Hack Nerd Font brew install font-hack-nerd-font # HackGen brew install font-hackgen # HackGen Nerd brew install font-hackgen-nerd 以下のコマンドを実行する brew install --cask alacritty mkdir -p ~/.config/alacritty vim ~/.config/alacritty/alacritty.toml config ファイルを修正する 設定値については参考を参照
+import = [ "~/.config/alacritty/themes/themes/pastel_dark.toml" # theme ] [env] TERM = "xterm-256color" [window] padding.x = 10 padding.y = 10 decorations = "Full" opacity = 0.</div>
 </div>
 </a>
 </article>
