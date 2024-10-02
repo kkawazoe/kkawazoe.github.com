@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/",
+title: "VSCode Extension の Postman でコレクションをエクスポートする方法",
+image: "images/logo/alacritty_logo.svg",
+date: "2024-10-02",
+body: "VSCode Extension の Postman でコレクションをエクスポートする方法 VSCode Extension の Postman でコレクションをエクスポートする方法について調査した結果を備忘録として残しておく 前提 VSCode Extension の Postman にはコレクションのインポート機能は存在するがエクスポート機能は存在しない そのため、Postman のアカウントに紐づいていることを利用して Web 版の Postman にてエクスポートする 手順 Web 版の Postman にアクセスする VSCode Extension の Postman と同じアカウントにログインする Workspaces \u0026gt; 該当の Workspace を選択 エクスポートしたいコレクションのメニューより「Export」を選択 エクスポートを行う"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/09/30/how-to-configure-terminal-alacritty/",
 title: "Terminal Alacritty の設定方法",
 image: "images/logo/alacritty_logo.svg",
@@ -72,7 +79,7 @@ body: "ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして 
 {
 url: "https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/",
 title: "Cognito 認証が必要な API を Postman から動作させる方法",
-image: "images/logo/aws_logo.svg",
+image: "images/logo/postman_logo.svg",
 date: "2024-06-26",
 body: "Cognito 認証が必要な API を Postman から動作させる方法 Cognito 認証が必要な API を Postman から動作させる方法について調査した結果を備忘録として残しておく 実際の設定 以下の通りに URL と Header, Body を設定する Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する Postman 設定その４"
 },
