@@ -2,7 +2,7 @@ var data = [
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/",
 title: "VSCode Extension の Postman でコレクションをエクスポートする方法",
-image: "images/logo/alacritty_logo.svg",
+image: "images/logo/postman_logo.svg",
 date: "2024-10-02",
 body: "VSCode Extension の Postman でコレクションをエクスポートする方法 VSCode Extension の Postman でコレクションをエクスポートする方法について調査した結果を備忘録として残しておく 前提 VSCode Extension の Postman にはコレクションのインポート機能は存在するがエクスポート機能は存在しない そのため、Postman のアカウントに紐づいていることを利用して Web 版の Postman にてエクスポートする 手順 Web 版の Postman にアクセスする VSCode Extension の Postman と同じアカウントにログインする Workspaces \u0026gt; 該当の Workspace を選択 エクスポートしたいコレクションのメニューより「Export」を選択 エクスポートを行う"
 },
