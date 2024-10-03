@@ -70,8 +70,9 @@
 <li><a href=https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/>AWS コスト削減 Tips</a></li>
 </ul>
 <h2 id=cloudwatch>CloudWatch</h2>
-<h3 id=コストの確認>コストの確認</h3>
-<p>Cost Explorer にて確認</p>
+<h3 id=全体コストの確認>全体コストの確認</h3>
+<p>Cost Explorer にて確認<br>
+※詳細は<a href=https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/cloudwatch_billing.html>公式</a>を参照</p>
 <p>[レポートパラメータ]</p>
 <ul>
 <li>日付範囲
@@ -103,6 +104,27 @@
 <li>リージョン
 <ul>
 <li>任意</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id=data-processing-bytesコスト詳細確認>Data-Processing-bytesコスト詳細確認</h4>
+<ul>
+<li>手順は<a href=https://repost.aws/ja/knowledge-center/cloudwatch-logs-bill-increase>公式</a>を参照
+<ul>
+<li>サイズ降順で並んで出力される</li>
+</ul>
+</li>
+</ul>
+<h3 id=コスト削減方法>コスト削減方法</h3>
+<ul>
+<li>ログ送信量を削減
+<ul>
+<li>console.log を削除</li>
+<li>CloudWatch への出力を text => json に変更してログレベルを制御
+<ul>
+<li>例. エラーのみ</li>
 </ul>
 </li>
 </ul>
