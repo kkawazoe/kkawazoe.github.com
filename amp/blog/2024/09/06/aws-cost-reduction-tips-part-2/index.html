@@ -119,12 +119,29 @@
 </ul>
 <h3 id=コスト削減方法>コスト削減方法</h3>
 <ul>
-<li>ログ送信量を削減
+<li>ログ送信量を削減 ※効果中 〜 効果大
 <ul>
 <li>console.log を削除</li>
 <li>CloudWatch への出力を text => json に変更してログレベルを制御
 <ul>
 <li>例. エラーのみ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不要なカスタムメトリクスの削除 ※効果中 〜 効果大
+<ul>
+<li>請求が高い場合には検討する価値あり</li>
+<li>対象の請求
+<ul>
+<li>XXX-CW:MetricMonitorUsage</li>
+<li>XXX-CW:Requests</li>
+</ul>
+</li>
+<li>カスタムメトリクス一覧の確認方法
+<ul>
+<li>CloudWatch > Metrics を選択</li>
+<li>検索欄に「NOT AWS」を入力して検索</li>
 </ul>
 </li>
 </ul>

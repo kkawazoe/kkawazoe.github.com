@@ -25,14 +25,14 @@ url: "https://kkawazoe.github.io/amp/blog/2024/09/06/aws-cost-reduction-tips-par
 title: "AWS コスト削減 Tips その2",
 image: "images/logo/aws_logo.svg",
 date: "2024-09-06",
-body: "AWS コスト削減 Tips その2 AWS コスト削減 Tipsを備忘録として残しておく [前回までの記事] AWS コスト削減 Tips CloudWatch 全体コストの確認 Cost Explorer にて確認 ※詳細は公式を参照 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス CloudWatch リージョン 任意 Data-Processing-bytesコスト詳細確認 手順は公式を参照 サイズ降順で並んで出力される コスト削減方法 ログ送信量を削減 console.log を削除 CloudWatch への出力を text =\u0026gt; json に変更してログレベルを制御 例. エラーのみ"
+body: "AWS コスト削減 Tips その2 AWS コスト削減 Tipsを備忘録として残しておく [前回までの記事] AWS コスト削減 Tips CloudWatch 全体コストの確認 Cost Explorer にて確認 ※詳細は公式を参照 [レポートパラメータ] 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス CloudWatch リージョン 任意 Data-Processing-bytesコスト詳細確認 手順は公式を参照 サイズ降順で並んで出力される コスト削減方法 ログ送信量を削減 ※効果中 〜 効果大 console.log を削除 CloudWatch への出力を text =\u0026gt; json に変更してログレベルを制御 例. エラーのみ 不要なカスタムメトリクスの削除 ※効果中 〜 効果大 請求が高い場合には検討する価値あり 対象の請求 XXX-CW:MetricMonitorUsage XXX-CW:Requests カスタムメトリクス一覧の確認方法 CloudWatch \u0026gt; Metrics を選択 検索欄に「NOT AWS」を入力して検索"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/09/06/aws-cost-reduction-tips/",
 title: "AWS コスト削減 Tips",
 image: "images/logo/aws_logo.svg",
 date: "2024-09-06",
-body: "AWS コスト削減 Tips AWS コスト削減 Tipsを備忘録として残しておく EC2 インスタンスタイプの変更 最適なインスタンスタイプの選定については、公式参照 使用していない期間(夜間/休日等)での停止 特に開発・検証環境については検討する余地あり 踏み台サーバとして運用している場合は、本番環境も検討する余地あり RDS 使用していない期間(夜間/休日等)での停止 特に開発・検証環境については検討する余地あり EC2 と比較して停止状態からの起動に時間がかかるため注意が必要 DB のデータ容量によるが 15 〜 30 分程度みた方が良い Backup に関わるコスト確認 バックアップ要件に関わるので顧客確認要 確認方法は以下記事を参照 Amazon Aurora のバックアップストレージ費用の確認方法"
+body: "AWS コスト削減 Tips AWS コスト削減 Tipsを備忘録として残しておく EC2 インスタンスタイプの変更 ※効果小 〜 効果中 最適なインスタンスタイプの選定については、公式参照 使用していない期間(夜間/休日等)での停止 ※効果大 特に開発・検証環境については検討する余地あり 踏み台サーバとして運用している場合は、本番環境も検討する余地あり RDS 使用していない期間(夜間/休日等)での停止 ※効果大 特に開発・検証環境については検討する余地あり EC2 と比較して停止状態からの起動に時間がかかるため注意が必要 DB のデータ容量によるが 15 〜 30 分程度みた方が良い Backup に関わるコスト確認 ※効果小 〜 効果中 バックアップ要件に関わるので顧客確認要 確認方法は以下記事を参照 Amazon Aurora のバックアップストレージ費用の確認方法"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/",
