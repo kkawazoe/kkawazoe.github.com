@@ -83,7 +83,11 @@
 しかし停止させたままにしたい状況が発生したため調査を行なった
 その際のまとめを備忘録として残しておく
 解決案 1つ目の方法が推奨だが今回は諸事情により 2つ目を採用
-Lambda 関数を使用する EventBridgeを使用する 実際の手順 以下の CloudFormation テンプレートを使用して stack を作成 --- AWSTemplateFormatVersion: '2010-09-09' Description: EventBridge Scheduler to stop RDS instance Parameters: InstanceId: Type: String ScheduleStopTime: Type: String Default: "cron(0 20 * * ? *)" ScheduleTimezone: Type: String Default: Japan Resources: # EventBridgeScheduler??? ScheduleRDSStop: Type: AWS::Scheduler::Schedule Properties: Name: !Sub 'RDS-Stop-${InstanceId}' Description: Stop RDS Instance ScheduleExpression: !Ref ScheduleStopTime ScheduleExpressionTimezone: !Ref ScheduleTimezone FlexibleTimeWindow: Mode: "OFF" State: ENABLED Target: Arn: arn:aws:scheduler:::aws-sdk:rds:stopDBInstance Input: !</div>
+Lambda 関数を使用する EventBridge を使用する どちらかというと夜間休日止めるのに最適 実際の手順 Lambda 関数を使用する IAM > ポリシー を選択
+以下でポリシーを作成
+{ "Version": "2012-10-17", "Statement": [ { "Sid": "VisualEditor0", "Effect": "Allow", "Action": [ "rds:StartDBCluster", "rds:StopDBCluster", "rds:ListTagsForResource", "rds:DescribeDBInstances", "rds:StopDBInstance", "rds:DescribeDBClusters", "rds:StartDBInstance" ], "Resource": "*" } ] } IAM > ロール を選択
+以下でロールを作成
+信頼できるエンティティタイプを選択: AWS サービス またはサービスを選択してユースケースを表示: Lambda ポリシー: 手順 2 で作成したポリシー RDS > データベース > &#171;該当の DB インスタンス&#187; を選択</div>
 </div>
 </a>
 </article>
