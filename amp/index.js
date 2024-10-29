@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/",
+title: "Amazon RDS を停止させたままにしたい場合の解決法",
+image: "images/logo/aws_logo.svg",
+date: "2024-10-29",
+body: "Amazon RDS を停止させたままにしたい場合の解決法 Amazon RDS は一時停止した場合、最大7日間までしか停止できない しかし停止させたままにしたい状況が発生したため調査を行なった その際のまとめを備忘録として残しておく 解決案 1つ目の方法が推奨だが今回は諸事情により 2つ目を採用 Lambda 関数を使用する EventBridgeを使用する 実際の手順 以下の CloudFormation テンプレートを使用して stack を作成 --- AWSTemplateFormatVersion: \u0026#39;2010-09-09\u0026#39; Description: EventBridge Scheduler to stop RDS instance Parameters: InstanceId: Type: String ScheduleStopTime: Type: String Default: \u0026#34;cron(0 20 * * ? *)\u0026#34; ScheduleTimezone: Type: String Default: Japan Resources: # EventBridgeScheduler??? ScheduleRDSStop: Type: AWS::Scheduler::Schedule Properties: Name: !Sub \u0026#39;RDS-Stop-${InstanceId}\u0026#39; Description: Stop RDS Instance ScheduleExpression: !Ref ScheduleStopTime ScheduleExpressionTimezone: !Ref ScheduleTimezone FlexibleTimeWindow: Mode: \u0026#34;OFF\u0026#34; State: ENABLED Target: Arn: arn:aws:scheduler:::aws-sdk:rds:stopDBInstance Input: !Sub |- { \u0026#34;DbInstanceIdentifier\u0026#34;: \u0026#34;${InstanceId}\u0026#34; } RoleArn: Fn::GetAtt: - SchedulerRDSStopRole - Arn # EventBridgeScheduler?????IAM?????? SchedulerRDSStopRole: Type: AWS::IAM::Role Properties: AssumeRolePolicyDocument: Version: \u0026#39;2012-10-17\u0026#39; Statement: - Effect: Allow Principal: Service: - scheduler.amazonaws.com Action: - sts:AssumeRole Path: \u0026#34;/\u0026#34; Policies: - PolicyName: rdsstop PolicyDocument: Version: \u0026#34;2012-10-17\u0026#34; Statement: - Effect: Allow Action: - rds:StopDBInstance Resource: - \u0026#34;*\u0026#34; 以下のパラメータを指定 対象のインスタンス(DB 識別子) 例. sample-db 停止のスケジュール(cron 式) 例. cron(0 20 * * ? *) タイムゾーン 例. japan 作成されたリソースを確認 3-1. Amazon EventBridge \u0026gt; スケジュール \u0026gt; \u0026laquo;対象のスケジュール\u0026raquo; 注意点 上記のスケジューラ起動時に DB が起動の途中だったりすると失敗するため注意が必要 ※停止時間を調整する"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/",
 title: "VSCode Extension の Postman でコレクションをエクスポートする方法",
 image: "images/logo/postman_logo.svg",
