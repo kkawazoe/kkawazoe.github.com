@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws/</link><description>Recent content in AWS on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 29 Oct 2024 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Amazon RDS を停止させたままにしたい場合の解決法</title><link>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Tue, 29 Oct 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>Amazon RDS は一時停止した場合、最大7日間までしか停止できない
 しかし停止させたままにしたい状況が発生したため調査を行なった
 その際のまとめを備忘録として残しておく
-解決案 1つ目の方法が推奨だが今回は諸事情により 2つ目を採用
-Lambda 関数を使用する EventBridge を使用する どちらかというと夜間休日止めるのに最適 実際の手順 Lambda 関数を使用する IAM &amp;gt; ポリシー を選択
+解決案 Lambda 関数を使用する 公式推奨 EventBridge を使用する どちらかというと夜間休日止めるのに最適 実際の手順 Lambda 関数を使用する IAM &amp;gt; ポリシー を選択
 以下でポリシーを作成
 { &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor0&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;rds:StartDBCluster&amp;#34;, &amp;#34;rds:StopDBCluster&amp;#34;, &amp;#34;rds:ListTagsForResource&amp;#34;, &amp;#34;rds:DescribeDBInstances&amp;#34;, &amp;#34;rds:StopDBInstance&amp;#34;, &amp;#34;rds:DescribeDBClusters&amp;#34;, &amp;#34;rds:StartDBInstance&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ] } IAM &amp;gt; ロール を選択
 以下でロールを作成
