@@ -142,7 +142,7 @@ zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zellij
 </code></pre></div><p>ターミナル起動時に zellij を自動起動させる場合は config ファイルに以下を追記する<br>
-※以下は、homebrew で zellij をインストールした場合</p>
+※以下は、homebrew で zellij をインストールした場合 path を <code>which tmux</code> で確認すること！</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:~/.config/alacritty/alacritty.toml data-lang=bash:~/.config/alacritty/alacritty.toml>[<span style=color:#a6e22e>shell</span>]
 <span style=color:#a6e22e>program</span> = <span style=color:#e6db74>&#34;/bin/zsh&#34;</span>
 <span style=color:#a6e22e>args</span> = [
@@ -151,7 +151,7 @@ zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
   <span style=color:#e6db74>&#34;/opt/homebrew/bin/zellij attach --index 0 --create&#34;</span>,
 ]
 </code></pre></div><p>ターミナル起動時に tmux を自動起動させる場合は config ファイルに以下を追記する<br>
-※以下は、homebrew で tmux をインストールした場合</p>
+※以下は、homebrew で tmux をインストールした場合 path を <code>which tmux</code> で確認すること！</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:~/.config/alacritty/alacritty.toml data-lang=bash:~/.config/alacritty/alacritty.toml>[<span style=color:#a6e22e>shell</span>]
 <span style=color:#a6e22e>program</span> = <span style=color:#e6db74>&#34;/bin/zsh&#34;</span>
 <span style=color:#a6e22e>args</span> = [
