@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gmail on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/gmail/</link><description>Recent content in Gmail on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 12 Nov 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/gmail/index.xml" rel="self" type="application/rss+xml"/><item><title>Gmail でエイリアスを除くメールアドレスでフィルターをかける方法</title><link>https://kkawazoe.github.io/blog/2024/11/12/how-to-filter-by-mail-address-except-aliases-in-gmail/</link><pubDate>Tue, 12 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/12/how-to-filter-by-mail-address-except-aliases-in-gmail/</guid><description>Gmail でエイリアスを除くメールアドレスでフィルターをかける方法を備忘録として残しておく
+方法 「&amp;quot;」で囲んだ上で「@」を半角空白に置換してフィルターをかける
+例.
+メールアドレス: mail-address@gmail.com
+=&amp;gt; &amp;quot;mail-address gmail.com&amp;quot;</description></item></channel></rss>

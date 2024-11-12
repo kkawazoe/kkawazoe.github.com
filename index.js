@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2024/11/12/how-to-filter-by-mail-address-except-aliases-in-gmail/",
+title: "Gmail でエイリアスを除くメールアドレスでフィルターをかける方法",
+image: "images/logo/gmail_logo.svg",
+date: "2024-11-12",
+body: "Gmail でエイリアスを除くメールアドレスでフィルターをかける方法 Gmail でエイリアスを除くメールアドレスでフィルターをかける方法を備忘録として残しておく 方法 「\u0026quot;」で囲んだ上で「@」を半角空白に置換してフィルターをかける 例. メールアドレス: mail-address@gmail.com =\u0026gt; \u0026quot;mail-address gmail.com\u0026quot;"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/11/05/how-to-compile-dmarc-reports-on-your-own/",
 title: "DMARC Reports を自前で集計する方法",
 image: "images/logo/gas_logo.svg",
