@@ -167,9 +167,25 @@ zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
 </code></pre></div><ol start=7>
 <li>zellij の起動</li>
 </ol>
-<p>ターミナル起動時に自動起動させる場合は<a href=https://zellij.dev/documentation/integration>公式</a>を参照<br>
-※但し、VSCode 等にも影響があるため注意</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zellij
+</code></pre></div><p>ターミナル起動時に zellij を自動起動させる場合は config ファイルに以下を追記する<br>
+※以下は、homebrew で zellij をインストールした場合</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:~/.config/alacritty/alacritty.toml data-lang=bash:~/.config/alacritty/alacritty.toml>[<span style=color:#a6e22e>shell</span>]
+<span style=color:#a6e22e>program</span> = <span style=color:#e6db74>&#34;/bin/zsh&#34;</span>
+<span style=color:#a6e22e>args</span> = [
+  <span style=color:#e6db74>&#34;-l&#34;</span>,
+  <span style=color:#e6db74>&#34;-c&#34;</span>,
+  <span style=color:#e6db74>&#34;/opt/homebrew/bin/zellij attach --index 0 --create&#34;</span>,
+]
+</code></pre></div><p>ターミナル起動時に tmux を自動起動させる場合は config ファイルに以下を追記する<br>
+※以下は、homebrew で tmux をインストールした場合</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:~/.config/alacritty/alacritty.toml data-lang=bash:~/.config/alacritty/alacritty.toml>[<span style=color:#a6e22e>shell</span>]
+<span style=color:#a6e22e>program</span> = <span style=color:#e6db74>&#34;/bin/zsh&#34;</span>
+<span style=color:#a6e22e>args</span> = [
+  <span style=color:#e6db74>&#34;-l&#34;</span>,
+  <span style=color:#e6db74>&#34;-c&#34;</span>,
+  <span style=color:#e6db74>&#34;/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u&#34;</span>,
+]
 </code></pre></div><h3 id=alacritty-のアイコンの変更>Alacritty のアイコンの変更</h3>
 <p><a href=https://github.com/alacritty/alacritty/issues/3926>issue</a>で議論されている件</p>
 <figure class=center>
