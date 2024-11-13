@@ -229,7 +229,7 @@ inactive_lambda_name_list<span style=color:#f92672>=()</span>
 
 <span style=color:#75715e># 最初にアカウント上のすべての関数名を取得</span>
 <span style=color:#66d9ef>function</span> get_all_lambda_name_list<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-
+    echo <span style=color:#e6db74>&#34;【Start get_all_lambda_name_list】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
     readonly lambda_list<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws lambda list-functions <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>        | jq -r <span style=color:#e6db74>&#39;.Functions&#39;</span><span style=color:#66d9ef>)</span>
 
@@ -237,6 +237,7 @@ inactive_lambda_name_list<span style=color:#f92672>=()</span>
     <span style=color:#66d9ef>for</span> i in <span style=color:#66d9ef>$(</span> seq <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>$((</span>$len <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>))</span> <span style=color:#66d9ef>)</span>; <span style=color:#66d9ef>do</span>
         all_lambda_name_list<span style=color:#f92672>+=(</span><span style=color:#66d9ef>$(</span>echo $lambda_list | jq -r .<span style=color:#f92672>[</span>$i<span style=color:#f92672>]</span>.FunctionName<span style=color:#66d9ef>)</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>done</span>
+    echo <span style=color:#e6db74>&#34;【End get_all_lambda_name_list】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 <span style=color:#f92672>}</span>
 
 <span style=color:#75715e># 関数が state = Active かどうかの判定</span>
@@ -255,7 +256,7 @@ inactive_lambda_name_list<span style=color:#f92672>=()</span>
 
 <span style=color:#75715e># Active でない関数のみを抽出</span>
 <span style=color:#66d9ef>function</span> filter_inactive_resources<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-    echo <span style=color:#e6db74>&#34;== following lambda is inacive ==&#34;</span>
+    echo <span style=color:#e6db74>&#34;【Start filter_inactive_resources】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
     <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>all_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
         is_active<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>is_lambda_active $lambda_name<span style=color:#66d9ef>)</span>
         <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>is_active<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;false&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
@@ -263,26 +264,29 @@ inactive_lambda_name_list<span style=color:#f92672>=()</span>
             inactive_lambda_name_list<span style=color:#f92672>+=(</span>$lambda_name<span style=color:#f92672>)</span>
         <span style=color:#66d9ef>fi</span>
     <span style=color:#66d9ef>done</span>
-    echo <span style=color:#e6db74>&#34;== that&#39;s all ==&#34;</span>
+    echo <span style=color:#e6db74>&#34;【End filter_inactive_resources】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 <span style=color:#f92672>}</span>
 
 <span style=color:#75715e># Active でない関数に対して publish-version を実行する</span>
 <span style=color:#66d9ef>function</span> publish_lambda<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo <span style=color:#e6db74>&#34;【Start publish_lambda】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>${#</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span> -eq <span style=color:#ae81ff>0</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
-        echo there is no lambda to publish
+        echo <span style=color:#e6db74>&#34;there is no lambda to publish&#34;</span>
         <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
     <span style=color:#66d9ef>fi</span>
     <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
-        echo now publishing $lambda_name
+        echo <span style=color:#e6db74>&#34;now publishing </span><span style=color:#e6db74>${</span>lambda_name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
         aws lambda publish-version --function-name $lambda_name
         aws lambda wait <span style=color:#66d9ef>function</span>-active --function-name $lambda_name <span style=color:#75715e># 関数が Active になるまで待機</span>
     <span style=color:#66d9ef>done</span>
+    echo <span style=color:#e6db74>&#34;【End publish_lambda】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 <span style=color:#f92672>}</span>
 
-
+echo <span style=color:#e6db74>&#34;【Start Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 get_all_lambda_name_list
 filter_inactive_resources
 publish_lambda
+echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
