@@ -221,6 +221,68 @@ aws --profile <span style=color:#e6db74>&lt;&lt;プロフィール名&gt;&gt; la
 </span><span style=color:#e6db74>for lambda_name in $lambda_names; do
 </span><span style=color:#e6db74>  aws --profile &lt;&lt;プロフィール名</span>&gt;&gt; lambda get-function --output text --function-name $lambda_name --query <span style=color:#e6db74>&#39;Configuration.[FunctionName, State, LastUpdateStatus]&#39;</span> | sort -k <span style=color:#ae81ff>1</span> | column -t -s <span style=color:#e6db74>&#34;`printf &#39;\t&#39;`&#34;</span>
 <span style=color:#66d9ef>done</span>
+</code></pre></div><p>また、以下のスクリプトを AWS Console 上で実行することで inactive => active に状態を更新できる</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:make_active_all_lambda.sh data-lang=sh:make_active_all_lambda.sh><span style=color:#75715e>#!/bin/bash -eu
+</span><span style=color:#75715e></span>
+all_lambda_name_list<span style=color:#f92672>=()</span>
+inactive_lambda_name_list<span style=color:#f92672>=()</span>
+
+<span style=color:#75715e># 最初にアカウント上のすべての関数名を取得</span>
+<span style=color:#66d9ef>function</span> get_all_lambda_name_list<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+
+    readonly lambda_list<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws lambda list-functions <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        | jq -r <span style=color:#e6db74>&#39;.Functions&#39;</span><span style=color:#66d9ef>)</span>
+
+    len<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>echo $lambda_list | jq length<span style=color:#66d9ef>)</span>
+    <span style=color:#66d9ef>for</span> i in <span style=color:#66d9ef>$(</span> seq <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>$((</span>$len <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>))</span> <span style=color:#66d9ef>)</span>; <span style=color:#66d9ef>do</span>
+        all_lambda_name_list<span style=color:#f92672>+=(</span><span style=color:#66d9ef>$(</span>echo $lambda_list | jq -r .<span style=color:#f92672>[</span>$i<span style=color:#f92672>]</span>.FunctionName<span style=color:#66d9ef>)</span><span style=color:#f92672>)</span>
+    <span style=color:#66d9ef>done</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># 関数が state = Active かどうかの判定</span>
+<span style=color:#66d9ef>function</span> is_lambda_active<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    local lambda_name<span style=color:#f92672>=</span>$1
+    local state<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws lambda get-function-configuration <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        --function-name $lambda_name <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        | jq -r <span style=color:#e6db74>&#39;.State&#39;</span><span style=color:#66d9ef>)</span>
+    
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $state <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Active&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;true&#34;</span>
+    <span style=color:#66d9ef>else</span>
+        echo <span style=color:#e6db74>&#34;false&#34;</span>
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># Active でない関数のみを抽出</span>
+<span style=color:#66d9ef>function</span> filter_inactive_resources<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo <span style=color:#e6db74>&#34;== following lambda is inacive ==&#34;</span>
+    <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>all_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
+        is_active<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>is_lambda_active $lambda_name<span style=color:#66d9ef>)</span>
+        <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>is_active<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;false&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+            echo $lambda_name
+            inactive_lambda_name_list<span style=color:#f92672>+=(</span>$lambda_name<span style=color:#f92672>)</span>
+        <span style=color:#66d9ef>fi</span>
+    <span style=color:#66d9ef>done</span>
+    echo <span style=color:#e6db74>&#34;== that&#39;s all ==&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># Active でない関数に対して publish-version を実行する</span>
+<span style=color:#66d9ef>function</span> publish_lambda<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>${#</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span> -eq <span style=color:#ae81ff>0</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+        echo there is no lambda to publish
+        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+    <span style=color:#66d9ef>fi</span>
+    <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
+        echo now publishing $lambda_name
+        aws lambda publish-version --function-name $lambda_name
+        aws lambda wait <span style=color:#66d9ef>function</span>-active --function-name $lambda_name <span style=color:#75715e># 関数が Active になるまで待機</span>
+    <span style=color:#66d9ef>done</span>
+<span style=color:#f92672>}</span>
+
+
+get_all_lambda_name_list
+filter_inactive_resources
+publish_lambda
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
