@@ -52,7 +52,8 @@
 <ul class=facts>
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-03-23T00:07:49JST>Mar 23, 2019</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
-<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/bat>Bat</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tool>Tool</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/batch-file>Batch File</a> </li>
 </ul>
 <aside class=share>
 <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
@@ -82,7 +83,7 @@ set timeStamp<span style=color:#f92672>=</span>%timeStamp: <span style=color:#f9
 echo %timeStamp%
 </code></pre></div><p>=> 2019/03/23-00:07:49.91</p>
 <h3 id=yyyymmddhhmmss-表示>yyyymmddhhMMss 表示</h3>
-<p>%var:~m,n%は変数varのm文字目からn文字を切り出す(mは0始まり)</p>
+<p>%timeStamp:~m,n% の部分は変数 timeStamp の m 文字目から n 文字を切り出す(mは0始まり)</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>@echo off
 
 set timeStamp<span style=color:#f92672>=</span>%DATE%-%TIME%
@@ -95,7 +96,8 @@ echo %formatTimeStamp%
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
-<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/bat>Bat</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tool>Tool</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/batch-file>Batch File</a> </li>
 </ul>
 <aside class=share>
 <a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fkkawazoe.github.io%2famp%2fblog%2f2019%2f03%2f23%2fadd-time-stamp-with-bat-file%2f&title=%e3%83%90%e3%83%83%e3%83%81%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a7%e3%82%bf%e3%82%a4%e3%83%a0%e3%82%b9%e3%82%bf%e3%83%b3%e3%83%97%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>

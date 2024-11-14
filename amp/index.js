@@ -893,7 +893,7 @@ url: "https://kkawazoe.github.io/amp/blog/2019/03/23/add-time-stamp-with-bat-fil
 title: "バッチファイルでタイムスタンプを付与する",
 image: "images/logo/bat_file_icon.png",
 date: "2019-03-23",
-body: "バッチファイルでタイムスタンプを付与する ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく 実際のコード 例 2019/03/23 0:07:49.91 に実行した場合 yyyy/mm/dd 表示 @echo off echo %DATE% =\u0026gt; 2019/03/23 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\u0026gt; 2019/03/23-00:07:49.91 yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す(mは0始まり) @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\u0026gt; 20190323000749"
+body: "バッチファイルでタイムスタンプを付与する ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく 実際のコード 例 2019/03/23 0:07:49.91 に実行した場合 yyyy/mm/dd 表示 @echo off echo %DATE% =\u0026gt; 2019/03/23 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% =\u0026gt; 2019/03/23-00:07:49.91 yyyymmddhhMMss 表示 %timeStamp:~m,n% の部分は変数 timeStamp の m 文字目から n 文字を切り出す(mは0始まり) @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% =\u0026gt; 20190323000749"
 },
 {
 url: "https://kkawazoe.github.io/amp/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/",

@@ -99,6 +99,27 @@
 </div>
 <div class="mcol c6">
 <article class=li>
+<a href=https://kkawazoe.github.io/blog/2019/03/23/add-time-stamp-with-bat-file/>
+<div class="thumb thumb-ecd45247f71b5a0c755e8d46de3ba742"></div>
+<div class=inner>
+<h2 class=title>バッチファイルでタイムスタンプを付与する</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-03-23T00:07:49JST>Mar 23, 2019</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>ファイル名などにタイムスタンプを付与したい場合に毎回検索してしまうため備忘録として残しておく
+実際のコード 例 2019/03/23 0:07:49.91 に実行した場合
+yyyy/mm/dd 表示 @echo off echo %DATE% => 2019/03/23
+yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% => 2019/03/23-00:07:49.91
+yyyymmddhhMMss 表示 %timeStamp:~m,n% の部分は変数 timeStamp の m 文字目から n 文字を切り出す(mは0始まり)
+@echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% => 20190323000749</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
 <a href=https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/>
 <div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
 <div class=inner>
@@ -157,6 +178,40 @@ function checkUnread() { const elements = document.querySelectorAll(".roomListBa
 資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した
 情報元 Markdown PDF の「Page Break」の項目に記載あり
 実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --> &lt;div class="page"/> # h1 ## h2 ### h3 </div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/>
+<div class="thumb thumb-95925b3c3c396d332297caefd1f3c3ee"></div>
+<div class=inner>
+<h2 class=title>Windows 環境でバッチファイルからiniファイルを読込んで値を取得する</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2014-06-22T09:01:00JST>Jun 22, 2014</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>対応方法 バッチファイルから ini ファイルを読込む場合 VBS を使用することで実現する
+具体的には、バッチファイルから VBS を呼び出して ini ファイルより値を取得して VBS から戻り値を受け取り、実現する
+取得する ini ファイルの中身 &lt;設定値>*****************************************************'&lt;コメント>####################################### [Path] WorkPath=C:/src/wk 'Work Folder Path 実際のコード @echo off set iniFileName=sample.ini for /f "usebackq tokens=* delims=" %%A in (`call cscript //Nologo getProfileString.vbs "%iniFileName%" Path WorkPath`) do set ret=%%A echo "%ret%" pause exit Option Explicit rem /***************************************************************** rem * getProfileString.vbs iniFileName, sectionName, entryName rem * rem * 引数 rem * iniFileName : 設定ファイル名(フルパス) rem * sectionName : セクション名 rem * entryName : エントリー名 rem * 動作 rem * 引数に指定された設定ファイルより指定した rem * 「セクション」,「エントリー」に対応する設定値を返す rem * 先頭がカンマの場合はコメント行として扱う rem * 行の途中でカンマがある場合は直前までの文字列(右空白除去)を rem * 設定値として扱う rem * 戻り値 rem * 設定値(見つからなかった場合およびエラーの場合は空を返す) rem *****************************************************************/ Dim ret Dim fs Dim readLineObj Dim searchFlg Dim buffer rem ファイルシステムアクセス用 Set fs = CreateObject( "Scripting.</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2014/02/09/switch-processing-by-message-box/>
+<div class="thumb thumb-11d08bed5565731bc48854b764577f97"></div>
+<div class=inner>
+<h2 class=title>Windows 環境でバッチファイルからメッセージボックスを表示して押下されたボタンによって処理を切り替える</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2014-02-09T18:46:00JST>Feb 9, 2014</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>対応方法 バッチファイルからメッセージボックスを表示する場合バッチファイル単体では実現不可のため VBS を使用して実現する
+※具体的には、バッチファイルから VBS を呼び出してメッセージボックスを表示し、 VBS から戻り値を受け取り、処理を切り替える
+実際のコード @echo off rem メッセージボックスの表示 set msg="メッセージボックスのテスト [\n] で改行します" set title="メッセージボックステスト" for /f "usebackq tokens=* delims=" %%A in (`call cscript //Nologo msgbox.vbs %msg%"%title%"`) do set ret=%%A echo %ret% pause exit Option Explicit rem /******************************************************* rem * msgbox.vbs msg [,title] rem * rem * 引数 rem * msg :表示するメッセージ rem * title :メッセージボックスのタイトル rem * 動作 rem * メッセージボックスを表示し、クリックされたボタンに rem * 対応する数値を返す rem * msg中の 「\n」という文字列は改行に変換する rem * 戻り値 rem * 0:[はい]/1:[いいえ] rem ********************************************************/ Dim args Dim arg(99) Dim value Dim cnt Dim retBtn Dim ret Dim eLevel rem 引数を変数にセット Set args = WScript.</div>
 </div>
 </a>
 </article>
@@ -297,8 +352,8 @@ function checkUnread() { const elements = document.querySelectorAll(".roomListBa
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tool>tool <span class=count>(38)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(35)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tool>tool <span class=count>(35)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(29)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(15)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>
@@ -306,7 +361,7 @@ function checkUnread() { const elements = document.querySelectorAll(".roomListBa
 <li><a href=https://kkawazoe.github.io/tags/amazon-rds>amazon-rds <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/vue.js>vue.js <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws-cognito>aws-cognito <span class=count>(3)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/bat>bat <span class=count>(3)</span></a></li>
+<li><a href=https://kkawazoe.github.io/tags/batch-file>batch-file <span class=count>(3)</span></a></li>
 </ul>
 </section>
 <section class=sidebar>

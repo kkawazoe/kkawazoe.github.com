@@ -207,7 +207,7 @@ $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchE
 yyyy/mm/dd 表示 @echo off echo %DATE% => 2019/03/23
 yyyy/mm/dd-hh:MM:ss.fff 表示 午前0時～午前9時の間は 0:00:00.00」(頭に半角スペース)になるため0埋め
 @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% echo %timeStamp% => 2019/03/23-00:07:49.91
-yyyymmddhhMMss 表示 %var:~m,n%は変数varのm文字目からn文字を切り出す(mは0始まり)
+yyyymmddhhMMss 表示 %timeStamp:~m,n% の部分は変数 timeStamp の m 文字目から n 文字を切り出す(mは0始まり)
 @echo off set timeStamp=%DATE%-%TIME% set timeStamp=%timeStamp: =0% set formatTimeStamp=%timeStamp:~0,4%%timeStamp:~5,2%%timeStamp:~8,2%%timeStamp:~11,2%%timeStamp:~14,2%%timeStamp:~17,2% echo %formatTimeStamp% => 20190323000749</div>
 </div>
 </a>
@@ -399,8 +399,8 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tool>tool <span class=count>(38)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(35)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tool>tool <span class=count>(35)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(29)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(15)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>
@@ -408,7 +408,7 @@ CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエ
 <li><a href=https://kkawazoe.github.io/tags/amazon-rds>amazon-rds <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/vue.js>vue.js <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws-cognito>aws-cognito <span class=count>(3)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/bat>bat <span class=count>(3)</span></a></li>
+<li><a href=https://kkawazoe.github.io/tags/batch-file>batch-file <span class=count>(3)</span></a></li>
 </ul>
 </section>
 <section class=sidebar>
