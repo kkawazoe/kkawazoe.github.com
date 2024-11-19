@@ -131,14 +131,18 @@ echo <span style=color:#e6db74>&#34;source </span><span style=color:#66d9ef>$(</
 
 source ~/.zshrc
 </code></pre></div><ol start=6>
-<li>zellij のセットアップ</li>
+<li>zellij or tmux のセットアップ</li>
 </ol>
-<p>tmux でも可</p>
+<p>zellij</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install zellij
 mkdir ~/.config/zellij
 zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
-</code></pre></div><ol start=7>
-<li>zellij の起動</li>
+</code></pre></div><p>tmux</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install tmux
+touch ~/.config/tmux/.tmux.conf
+</code></pre></div><p>.tmux.conf の設定内容は <a href=https://github.com/kkawazoe/dotfiles/blob/master/.config/tmux/.tmux.conf>dotfiles</a> 参照</p>
+<ol start=7>
+<li>zellij or tmuxの起動</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zellij
 </code></pre></div><p>ターミナル起動時に zellij を自動起動させる場合は config ファイルに以下を追記する<br>
