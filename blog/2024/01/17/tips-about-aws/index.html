@@ -239,8 +239,8 @@
 <ul>
 <li><a href=https://aws.amazon.com/jp/blogs/news/tracking-the-state-of-lambda-functions/>AWS Lambda関数の状態の追跡</a></li>
 </ul>
-<p>以下のスクリプトを使用することで対象の洗い出しが行える</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e>#!/bin/sh
+<p>以下のスクリプトを AWS CLI にて使用することで対象の洗い出しが行える</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:inactive_lambda_list.sh data-lang=sh:inactive_lambda_list.sh><span style=color:#75715e>#!/bin/sh
 </span><span style=color:#75715e></span>
 aws --profile <span style=color:#e6db74>&lt;&lt;プロフィール名&gt;&gt; lambda list-functions --region &lt;&lt;リージョン名&gt;&gt; --query &#39;Functions[?starts_with(FunctionName, `&lt;&lt;関数名プレフィックス&gt;&gt;`) == `true`].FunctionName&#39; &gt; lambda_list.json
 </span><span style=color:#e6db74>lambda_names=`jq -r .[] lambda_list.json`
@@ -314,6 +314,90 @@ get_all_lambda_name_list
 filter_inactive_resources
 publish_lambda
 echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</code></pre></div><p>AWS CLI で実行する場合は以下を参考にすること</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:make_active_all_lambda.sh data-lang=sh:make_active_all_lambda.sh><span style=color:#75715e>#!/bin/sh
+</span><span style=color:#75715e></span>
+<span style=color:#75715e># Shared</span>
+AWS_PROFILE_PREFIX<span style=color:#f92672>={</span>AWS プロファイルのプレフィックス<span style=color:#f92672>}</span>
+LOG_FILE<span style=color:#f92672>=</span>log/make_active_all_lambda.log
+
+all_lambda_name_list<span style=color:#f92672>=()</span>
+inactive_lambda_name_list<span style=color:#f92672>=()</span>
+
+read -p <span style=color:#e6db74>&#34;Which environment connect to? (dev/stg/prd): &#34;</span> input_environment
+
+<span style=color:#75715e># Check the environment</span>
+<span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> in
+  <span style=color:#e6db74>&#34;dev&#34;</span> | <span style=color:#e6db74>&#34;stg&#34;</span> | <span style=color:#e6db74>&#34;prd&#34;</span><span style=color:#f92672>)</span>
+    echo <span style=color:#e6db74>&#34;Connecting to </span><span style=color:#e6db74>${</span>environment<span style=color:#e6db74>}</span><span style=color:#e6db74> environment...&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $input_environment <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;prd&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+        <span style=color:#75715e># AWS MFA Authentication</span>
+        aws-mfa --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span>
+    <span style=color:#66d9ef>fi</span>;;
+  *<span style=color:#f92672>)</span>
+    echo <span style=color:#e6db74>&#34;Please enter the correct environment.&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+    echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+    exit;;
+<span style=color:#66d9ef>esac</span>
+
+<span style=color:#75715e># アカウント内全ての関数名を取得</span>
+<span style=color:#66d9ef>function</span> get_all_lambda_name_list<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+
+    readonly lambda_list<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> list-functions <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        | jq -r <span style=color:#e6db74>&#39;.Functions&#39;</span><span style=color:#66d9ef>)</span>
+
+    len<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>echo $lambda_list | jq length<span style=color:#66d9ef>)</span>
+    <span style=color:#66d9ef>for</span> i in <span style=color:#66d9ef>$(</span> seq <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>$((</span>$len <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>))</span> <span style=color:#66d9ef>)</span>; <span style=color:#66d9ef>do</span>
+        all_lambda_name_list<span style=color:#f92672>+=(</span><span style=color:#66d9ef>$(</span>echo $lambda_list | jq -r .<span style=color:#f92672>[</span>$i<span style=color:#f92672>]</span>.FunctionName<span style=color:#66d9ef>)</span><span style=color:#f92672>)</span>
+    <span style=color:#66d9ef>done</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># 関数の state == Active かどうかを返す</span>
+<span style=color:#66d9ef>function</span> is_lambda_active<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    local lambda_name<span style=color:#f92672>=</span>$1
+    local state<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> get-function-configuration <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        --function-name $lambda_name <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>        | jq -r <span style=color:#e6db74>&#39;.State&#39;</span><span style=color:#66d9ef>)</span>
+
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $state <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Active&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;true&#34;</span>
+    <span style=color:#66d9ef>else</span>
+        echo <span style=color:#e6db74>&#34;false&#34;</span>
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># 関数の state == Active でないものを抽出</span>
+<span style=color:#66d9ef>function</span> filter_inactive_resources<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo <span style=color:#e6db74>&#34;== following lambda is inactive ==&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+    <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>all_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
+        is_active<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>is_lambda_active $lambda_name<span style=color:#66d9ef>)</span>
+        <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>is_active<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;false&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+            echo $lambda_name
+            inactive_lambda_name_list<span style=color:#f92672>+=(</span>$lambda_name<span style=color:#f92672>)</span>
+        <span style=color:#66d9ef>fi</span>
+    <span style=color:#66d9ef>done</span>
+    echo <span style=color:#e6db74>&#34;== that&#39;s all ==&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># 関数を Active にする</span>
+<span style=color:#66d9ef>function</span> publish_lambda<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> <span style=color:#e6db74>${#</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span> -eq <span style=color:#ae81ff>0</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;there is no lambda to publish&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+    <span style=color:#66d9ef>fi</span>
+    <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
+        echo <span style=color:#e6db74>&#34;now publishing </span><span style=color:#e6db74>${</span>lambda_name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+        aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> publish-version --function-name $lambda_name
+        aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> wait <span style=color:#66d9ef>function</span>-active --function-name $lambda_name <span style=color:#75715e># 関数が Active になるまで待つ</span>
+    <span style=color:#66d9ef>done</span>
+<span style=color:#f92672>}</span>
+
+echo <span style=color:#e6db74>&#34;【Start Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+get_all_lambda_name_list
+filter_inactive_resources
+publish_lambda
+echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
