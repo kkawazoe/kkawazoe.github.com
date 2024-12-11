@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2024/12/11/how-to-update-some-columns-of-type-jsonb-in-postgresql/",
+title: "PostgreSQL で jsonb 型のカラムの一部を更新する方法",
+image: "images/logo/postgre_sql_logo.svg",
+date: "2024-12-11",
+body: "PostgreSQL で jsonb 型のカラムの一部を更新する方法 PostgreSQL で jsonb 型のカラムの一部を更新する方法を備忘録として残しておく 方法 以下の DB 構成および更新前のレコードの場合 Book Table id field: SERIAL type ※Primary Key value: 1 options field: JSONB type value: {\u0026ldquo;key_1\u0026rdquo;: \u0026ldquo;aaa\u0026rdquo;, \u0026ldquo;key_2\u0026rdquo;: \u0026ldquo;bbb\u0026rdquo;} UPDATE mst_organizations SET options = options || \u0026#39;{\u0026#34;key_1\u0026#34;: \u0026#34;ccc\u0026#34;}\u0026#39;, WHERE id = 1; 更新後 Book Table id field: SERIAL type ※Primary Key value: 1 options field: JSONB type value: {\u0026ldquo;key_1\u0026rdquo;: \u0026ldquo;ccc\u0026rdquo;, \u0026ldquo;key_2\u0026rdquo;: \u0026ldquo;bbb\u0026rdquo;}"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2024/11/22/how-to-sort-numeric-strings/",
 title: "数値文字列の並び替え方法",
 image: "images/logo/aws_logo.svg",
