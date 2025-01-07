@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2025/01/07/how-to-configure-terminal-ghostty/",
+title: "Terminal Ghostty の設定方法",
+image: "images/logo/ghostty_logo.png",
+date: "2025-01-07",
+body: "Terminal Ghostty の設定方法 Terminal Ghostty の設定方法について調査した結果を備忘録として残しておく 環境 OS: macOS 14.7 手順 Ghostty のセットアップ フォントのインストール brew install --cask font-monaspace # Hack Nerd Font brew install font-hack-nerd-font # HackGen brew install font-hackgen # HackGen Nerd brew install font-hackgen-nerd 以下のコマンドを実行する brew install --cask ghostty mkdir -p ~/.config/ghostty vim ~/.config/ghostty/config config ファイルを修正する 設定値については参考を参照 theme = iTerm2 Pastel Dark Background font-family = HackGen35 Console NF font-size = 16 macos-non-native-fullscreen = true macos-titlebar-proxy-icon = hidden macos-titlebar-style = tabs window-padding-x = 20 window-padding-y = 20 # クイックターミナルの位置を画面下部に設定 quick-terminal-position = \u0026quot;bottom\u0026quot; # クイックターミナルを表示するスクリーンを設定 (メインスクリーン) quick-terminal-screen = \u0026quot;main\u0026quot; # アニメーション時間を設定（0で即時表示） quick-terminal-animation-duration = 0 # グローバルホットキーを設定 keybind = \u0026quot;global:ctrl+cmd+`=toggle_quick_terminal\u0026quot; Ghostty チートシート キーバインディング 内容 ⌘+T 新規タブ作成 ⌘+[ or ⌘+] タブを移動 ⌘+D 横にスプリット ⇧+⌘+D 縦にスプリット ⌘+[ or ⌘+] スプリットを移動 ⇧+⌘+↵ スプリットをズーム、ズームアウト option+click クリックしたところにカーソルを合わせられます テーマのプレビュー ghostty +list-themes"
+},
+{
 url: "https://kkawazoe.github.io/blog/2024/12/24/how-to-make-a-part-of-a-columns-of-type-jsonb-a-search-condition-in-postgresql/",
 title: "PostgreSQL で jsonb 型のカラムの一部を検索条件にする方法",
 image: "images/logo/postgre_sql_logo.svg",
