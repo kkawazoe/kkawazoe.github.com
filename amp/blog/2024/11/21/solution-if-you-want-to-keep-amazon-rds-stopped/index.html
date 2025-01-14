@@ -84,7 +84,8 @@ aws --profile <span style=color:#e6db74>&lt;&lt;プロフィール名&gt;&gt; la
 <span style=color:#66d9ef>done</span>
 </code></pre></div><h2 id=解消方法>解消方法</h2>
 <p>inactive の状態で lambda を実行するとエラーになるがしばらくすると active 状態となり実行可能となる<br>
-もしくは、以下のスクリプトを AWS Console 上で実行することで inactive => active に状態を更新できる</p>
+もしくは、以下のスクリプトを AWS Console 上で実行することで inactive => active に状態を更新できる<br>
+publish-version(※1)で active 状態に更新されない場合は invoke(※2)に切り替えて実施する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:make_active_all_lambda.sh data-lang=sh:make_active_all_lambda.sh><span style=color:#75715e>#!/bin/bash -eu
 </span><span style=color:#75715e></span>
 all_lambda_name_list<span style=color:#f92672>=()</span>
@@ -139,7 +140,8 @@ inactive_lambda_name_list<span style=color:#f92672>=()</span>
     <span style=color:#66d9ef>fi</span>
     <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
         echo <span style=color:#e6db74>&#34;now publishing </span><span style=color:#e6db74>${</span>lambda_name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
-        aws lambda publish-version --function-name $lambda_name
+        aws lambda publish-version --function-name $lambda_name <span style=color:#75715e># ※1</span>
+        <span style=color:#75715e># aws lambda invoke --function-name $lambda_name lambda_invoke.log # ※2</span>
         aws lambda wait <span style=color:#66d9ef>function</span>-active --function-name $lambda_name <span style=color:#75715e># 関数が Active になるまで待機</span>
     <span style=color:#66d9ef>done</span>
     echo <span style=color:#e6db74>&#34;【End publish_lambda】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
@@ -150,12 +152,14 @@ get_all_lambda_name_list
 filter_inactive_resources
 publish_lambda
 echo <span style=color:#e6db74>&#34;【End Processing】</span><span style=color:#66d9ef>$(</span>date <span style=color:#e6db74>&#34;+%Y/%m/%d %H:%M:%S&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-</code></pre></div><p>AWS CLI で実行する場合は以下を参考にする</p>
+</code></pre></div><p>AWS CLI で実行する場合は以下を参考にする<br>
+publish-version(※1)で active 状態に更新されない場合は invoke(※2)に切り替えて実施する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:make_active_all_lambda.sh data-lang=sh:make_active_all_lambda.sh><span style=color:#75715e>#!/bin/sh
 </span><span style=color:#75715e></span>
 <span style=color:#75715e># Shared</span>
 AWS_PROFILE_PREFIX<span style=color:#f92672>={</span>AWS プロファイルのプレフィックス<span style=color:#f92672>}</span> <span style=color:#75715e>#自分の設定に書き換える</span>
-LOG_FILE<span style=color:#f92672>=</span>log/make_active_all_lambda.log
+LOG_FOLDER<span style=color:#f92672>=</span>log
+LOG_FILE<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>LOG_FOLDER<span style=color:#e6db74>}</span>/make_active_all_lambda.log
 
 all_lambda_name_list<span style=color:#f92672>=()</span>
 inactive_lambda_name_list<span style=color:#f92672>=()</span>
@@ -224,7 +228,8 @@ read -p <span style=color:#e6db74>&#34;Which environment connect to? (dev/stg/pr
     <span style=color:#66d9ef>fi</span>
     <span style=color:#66d9ef>for</span> lambda_name in <span style=color:#e6db74>${</span>inactive_lambda_name_list[@]<span style=color:#e6db74>}</span>; <span style=color:#66d9ef>do</span>
         echo <span style=color:#e6db74>&#34;now publishing </span><span style=color:#e6db74>${</span>lambda_name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>${</span>LOG_FILE<span style=color:#e6db74>}</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
-        aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> publish-version --function-name $lambda_name
+        aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> publish-version --function-name $lambda_name <span style=color:#75715e># ※1</span>
+        <span style=color:#75715e># aws lambda --profile=${AWS_PROFILE_PREFIX}-${input_environment} invoke --function-name $lambda_name ${LOG_FOLDER}/lambda_invoke.log &gt;&gt; ${LOG_FILE} 2&gt;&amp;1 # ※2</span>
         aws lambda --profile<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>AWS_PROFILE_PREFIX<span style=color:#e6db74>}</span>-<span style=color:#e6db74>${</span>input_environment<span style=color:#e6db74>}</span> wait <span style=color:#66d9ef>function</span>-active --function-name $lambda_name <span style=color:#75715e># 関数が Active になるまで待つ</span>
     <span style=color:#66d9ef>done</span>
 <span style=color:#f92672>}</span>
