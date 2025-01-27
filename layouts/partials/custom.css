@@ -16,9 +16,9 @@ article.sn > .article-body pre > code.hljs[data-filename] {
 
 article.sn > .article-body figcaption {
   color: #000;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .hljs[data-filename]::before {
@@ -28,25 +28,29 @@ article.sn > .article-body figcaption {
   left: 20px;
   padding: 0 0.3em;
   font-size: 0.93em;
-  background-color: #E7E9EB;
+  background-color: #e7e9eb;
 }
 
-ul.facts, ul.facts-tags {
+ul.facts,
+ul.facts-tags {
   margin: 0;
   padding: 0;
 }
 
-ul.facts li, ul.facts-tags li {
+ul.facts li,
+ul.facts-tags li {
   display: inline;
   font-size: 0.8rem;
 }
 
-ul.facts i, ul.facts-tags i {
+ul.facts i,
+ul.facts-tags i {
   color: #cfd8dc;
   margin-right: 0.5em;
 }
 
-ul.facts.sm li, ul.facts-tags.sm li {
+ul.facts.sm li,
+ul.facts-tags.sm li {
   font-size: 0.7rem;
 }
 
@@ -144,11 +148,18 @@ section.sidebar input[id="search-button"] {
 }
 
 @media (max-width: 768px) {
-  .l-container { max-width: 68rem; }
+  .l-container {
+    max-width: 68rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .c2, .c4, .c6, .c8 { width: 100%; }
+  .c2,
+  .c4,
+  .c6,
+  .c8 {
+    width: 100%;
+  }
 }
 
 .article-info-block a {
@@ -213,14 +224,13 @@ input::-webkit-input-placeholder {
   margin: 1em;
 }
 
-
-.search-item-wrap{
+.search-item-wrap {
   border-radius: 1rem;
   box-shadow: 3px 3px 7px #a7a7a7, -3px -3px 7px #f7f7f7;
   margin-bottom: 1rem;
 }
 
-.search-item-wrap a{
+.search-item-wrap a {
   text-decoration: none;
   color: #444;
 }
@@ -231,20 +241,20 @@ input::-webkit-input-placeholder {
   align-items: center;
 }
 
-.search-item-info{
+.search-item-info {
   max-width: 70%;
   padding: 0.5rem;
 }
 
-.search-item-title{
+.search-item-title {
   font-size: 1.4rem;
   font-weight: bolder;
   line-height: 1.2;
   text-decoration: none;
-  color: #009FE8;
+  color: #009fe8;
 }
 
-.search-item-date{
+.search-item-date {
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
@@ -258,7 +268,7 @@ input::-webkit-input-placeholder {
 }
 
 .search-item-excerpt b {
-  background: #A3DDE3;
+  background: #a3dde3;
 }
 
 .search-item-image {
@@ -279,4 +289,78 @@ input::-webkit-input-placeholder {
 
 .w-100 {
   width: 100%;
+}
+
+#paging {
+  margin: auto;
+  text-align: center;
+}
+
+#paging ul {
+  padding: 0;
+}
+
+#paging i {
+  font-weight: bold;
+}
+
+#paging .not-allow i {
+  font-weight: normal;
+  opacity: 0.3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.pagination li {
+  flex: 1 1 42px;
+  max-width: 42px;
+  min-width: 27px;
+  float: left;
+}
+
+.pagination > li > a {
+  display: inline-block;
+  width: 100%;
+  padding: 6px 0;
+  color: inherit;
+  background: #fff;
+  /*border: 1px solid #ddd;*/
+  border-right: 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.pagination > li:last-child > a,
+.pagination > .not-allow:first-child > a:hover {
+  /*border-right: 1px solid #ddd;*/
+}
+
+.pagination > .active > a,
+.pagination > li > a:hover {
+  color: #fff;
+  background: #42b983;
+}
+
+.pagination > .disabled {
+  display: none;
+}
+
+.pagination > .active > a:hover,
+.pagination > .not-allow > a:hover {
+  cursor: text;
+}
+
+.post #paging {
+  margin: 20px 0 40px 0;
+}
+
+.page-item {
+  margin-left: 5px;
+  margin-right: 5px;
 }

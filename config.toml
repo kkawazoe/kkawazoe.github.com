@@ -7,21 +7,20 @@ googleAnalytics = "G-T6MM10MYRV"
 disqusShortname = "kkawazoe"
 
 [permalinks]
-  post = "/blog/:year/:month/:day/:slug"
+post = "/blog/:year/:month/:day/:slug"
 
 [params]
 enableHighlight = true
 
-[markup.goldmark]
-  [markup.goldmark.renderer]
-    unsafe = true
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
 
 [params.author]
 thumbnail = "https://avatars.githubusercontent.com/kkawazoe"
 name = "kkawazoe"
 github = "https://github.com/kkawazoe"
 
-
 [outputs]
-  home = [ "HTML", "RSS" ]
-  page = [ "HTML", "AMP" ] # if you want AMP enable.
+home = [ "HTML", "RSS" ]
+page = [ "HTML", "AMP" ] # if you want AMP enable.

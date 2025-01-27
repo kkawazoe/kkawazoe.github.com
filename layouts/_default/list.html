@@ -43,14 +43,5 @@
   </div>
 </div>
 
-{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-<nav class="paging">
-  {{ if .Paginator.HasPrev }}
-  <a href="{{ .Paginator.Prev.URL }}" rel="prev">Prev</a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-  <a href="{{ .Paginator.Next.URL }}" rel="next">Next</a>
-  {{ end }}
-</nav>
-{{ end }}
+{{ template "_internal/pagination.html" . }}
 {{ end }}
