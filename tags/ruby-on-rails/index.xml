@@ -95,7 +95,7 @@ require &amp;#39;csv&amp;#39; require &amp;#39;fileutils&amp;#39; class Converte
 その対処方法を備忘録として残しておく
 環境 rails: rails 6.0.3.6 仕様 UTF-8 の文字列を CP932 に変換する ※変換不可能な文字は'〓'に変換する
 実際のコード str = &amp;#39;〜変換不可能文字を含む文字列〜&amp;#39; NKF.nkf(&amp;#39;--ic=UTF-8 --oc=CP932 --fb-subchar=0x3013&amp;#39;, str).encode(&amp;#39;UTF-8&amp;#39;, &amp;#39;CP932&amp;#39;) #=&amp;gt; &amp;#34;〓変換不可能文字を含む文字列〓&amp;#34;</description></item><item><title>Gem rubyXL を使用した際に起こったエラーおよび対応について</title><link>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</link><pubDate>Tue, 06 Oct 2020 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/10/06/about-error-with-rubyxl/</guid><description>Gem rubyXL を使用している際に起こったエラーとその対処方法を備忘録として残しておく
-環境 rails: rails 5.2.2 rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
+環境 rails: rails 5.2.2 rubyXL: Ver.3.4.0 rubyXL について 拡張子「xlsx」を読み書き可能なライブラリ
 使用感としてはテンプレートとなる Excel に対して読み書きする場合には
 問題なく使用可能
 但し、テンプレートに数式やグラフが含まれている場合に行などを
