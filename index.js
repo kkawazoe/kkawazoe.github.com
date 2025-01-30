@@ -23,7 +23,7 @@ body: "PostgreSQL で jsonb 型のカラムの一部を更新する方法 Postgr
 {
 url: "https://kkawazoe.github.io/blog/2024/11/22/how-to-sort-numeric-strings/",
 title: "数値文字列の並び替え方法",
-image: "images/logo/aws_logo.svg",
+image: "images/logo/nodejs_logo.svg",
 date: "2024-11-22",
 body: "数値文字列の並び替え方法 数値文字列の並び替え方法を備忘録として残しておく 方法 localeCompare メソッドの option numeric を使用する 例. 数値以外の文字を含むパターン Before Sort [\u0026ldquo;v1.0\u0026rdquo;, \u0026ldquo;v2.1\u0026rdquo;, \u0026ldquo;v1.4\u0026rdquo;, \u0026ldquo;v2.0\u0026rdquo;, \u0026ldquo;v1.11.3\u0026rdquo;, \u0026ldquo;v1.1.4\u0026rdquo;, \u0026ldquo;v1.1.1\u0026rdquo;] After Sort [\u0026ldquo;v2.1\u0026rdquo;, \u0026ldquo;v2.0\u0026rdquo;, \u0026ldquo;v1.11.3\u0026rdquo;, \u0026ldquo;v1.4\u0026rdquo;, \u0026ldquo;v1.1.4\u0026rdquo;, \u0026ldquo;v1.1.1\u0026rdquo;, \u0026ldquo;v1.0\u0026rdquo;] 数値以外の文字を含まないパターン Before Sort [\u0026ldquo;1.0\u0026rdquo;, \u0026ldquo;2.1\u0026rdquo;, \u0026ldquo;1.4\u0026rdquo;, \u0026ldquo;2.0\u0026rdquo;, \u0026ldquo;1.11.3\u0026rdquo;, \u0026ldquo;1.1.4\u0026rdquo;, \u0026ldquo;1.1.1\u0026rdquo;] After Sort [\u0026ldquo;2.1\u0026rdquo;, \u0026ldquo;2.0\u0026rdquo;, \u0026ldquo;1.11.3\u0026rdquo;, \u0026ldquo;1.4\u0026rdquo;, \u0026ldquo;1.1.4\u0026rdquo;, \u0026ldquo;1.1.1\u0026rdquo;, \u0026ldquo;1.0\u0026rdquo;] 実際のコード"
 },
