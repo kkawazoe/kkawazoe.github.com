@@ -11,21 +11,21 @@
 <link rel=apple-touch-icon href=https://kkawazoe.github.io/images/logo.png>
 <link rel="shortcut icon" href=https://kkawazoe.github.io/images/favicon.ico>
 <link rel=amphtml type=text/html href=https://kkawazoe.github.io/amp/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/ title="Note To Self ~One Step At A Time~">
-<meta name=description content="AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
+<meta name=description content="AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
 <meta property="og:title" content="AWS EC2 Instance Connect で接続する方法 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/">
 <meta property="og:image" content="https://kkawazoe.github.io/images/logo/aws_logo.svg">
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
-<meta property="og:description" content="AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
+<meta property="og:description" content="AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="Note To Self ~One Step At A Time~">
 <meta name=twitter:url content="https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/">
 <meta name=twitter:title content="AWS EC2 Instance Connect で接続する方法 - Note To Self ~One Step At A Time~">
-<meta name=twitter:description content="AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
+<meta name=twitter:description content="AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく">
 <meta name=twitter:image content="https://kkawazoe.github.io/images/logo/aws_logo.svg">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"AWS EC2 Instance Connect で接続する方法-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/aws_logo.svg","height":800,"width":800},"datePublished":"2024-03-30T00:00:00JST","dateModified":"2024-03-30T00:00:00JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"AWS EC2 Instance Connect で接続する方法-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/aws_logo.svg","height":800,"width":800},"datePublished":"2024-03-30T00:00:00JST","dateModified":"2024-03-30T00:00:00JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく"}</script>
 <link rel=canonical href=https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css>
@@ -92,7 +92,7 @@
 <a href=https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkkawazoe.github.io%2Findex.xml title=Feedlyでフォロー target=_blank><img id=feedlyFollow src=https://s1.feedly.com/legacy/feedly-follow-rectangle-flat-small_2x.png alt="follow us in feedly" width=66 height=20></a>
 </aside>
 </header>
-<div class=article-body><p>AWS EC2 Instance Connect で接続するする際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく</p>
+<div class=article-body><p>AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく</p>
 <h3 id=前提>前提</h3>
 <p><a href=https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html>AWS EC2 Instance Connect</a> をインストールしておく</p>
 <h3 id=手順>手順</h3>
@@ -106,7 +106,7 @@
 <p>以下のエラーが発生</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください
 </code></pre></div><p><a href=https://repost.aws/ja/knowledge-center/ec2-instance-connect-troubleshooting>公式のトラブルシューティング</a>を確認<br>
-=> セキュリティグループに、EC2 Instance Connect サービス IP がリストされてないが原因だった</p>
+=> セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった</p>
 <ol start=6>
 <li>以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する</li>
 </ol>
