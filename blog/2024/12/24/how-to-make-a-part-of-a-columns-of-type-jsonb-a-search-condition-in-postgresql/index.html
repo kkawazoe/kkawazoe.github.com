@@ -96,7 +96,7 @@
 <h2 id=方法>方法</h2>
 <p>以下の DB 構成およびレコードの場合</p>
 <ul>
-<li>Book Table
+<li>Books Table
 <ul>
 <li>id field: SERIAL type ※Primary Key
 <ul>
@@ -114,9 +114,32 @@
 </li>
 </ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>options</span><span style=color:#f92672>-&gt;&gt;</span><span style=color:#e6db74>&#39;key_2&#39;</span>
-<span style=color:#66d9ef>FROM</span> book
+<span style=color:#66d9ef>FROM</span> books
 <span style=color:#66d9ef>WHERE</span> <span style=color:#66d9ef>options</span><span style=color:#f92672>-&gt;&gt;</span><span style=color:#e6db74>&#39;key_1&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;ccc&#39;</span>;
-<span style=color:#f92672>#=&gt;</span> <span style=color:#e6db74>&#39;key_2&#39;</span>
+<span style=color:#f92672>#=&gt;</span> <span style=color:#e6db74>&#39;ddd&#39;</span>
+</code></pre></div><p>以下の DB 構成およびレコードの場合(配列)</p>
+<ul>
+<li>Books Table
+<ul>
+<li>id field: SERIAL type ※Primary Key
+<ul>
+<li>value1: 1</li>
+<li>value2: 2</li>
+</ul>
+</li>
+<li>options field: JSONB type
+<ul>
+<li>value: [{&ldquo;key_1&rdquo;: &ldquo;aaa&rdquo;, &ldquo;key_2&rdquo;: &ldquo;bbb&rdquo;}, {&ldquo;key_1&rdquo;: &ldquo;ccc&rdquo;, &ldquo;key_2&rdquo;: &ldquo;ddd&rdquo;}]</li>
+<li>value: [{&ldquo;key_1&rdquo;: &ldquo;eee&rdquo;, &ldquo;key_2&rdquo;: &ldquo;fff&rdquo;}, {&ldquo;key_1&rdquo;: &ldquo;ggg&rdquo;, &ldquo;key_2&rdquo;: &ldquo;hhh&rdquo;}]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>options</span><span style=color:#f92672>-&gt;&gt;</span><span style=color:#e6db74>&#39;key_2&#39;</span>
+<span style=color:#66d9ef>FROM</span> books, JSONB_ARRAY_ELEMENTS(<span style=color:#66d9ef>options</span>) <span style=color:#66d9ef>option</span>
+<span style=color:#66d9ef>WHERE</span> <span style=color:#66d9ef>option</span><span style=color:#f92672>-&gt;&gt;</span><span style=color:#e6db74>&#39;key_1&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;ccc&#39;</span>;
+<span style=color:#f92672>#=&gt;</span> <span style=color:#e6db74>&#39;ddd&#39;</span>
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
