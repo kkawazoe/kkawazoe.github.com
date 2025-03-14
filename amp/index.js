@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2025/03/14/tips-on-tbls/",
+title: "Tbls についての Tips",
+image: "images/logo/tbls_logo.png",
+date: "2025-03-14",
+body: "Tbls についての Tips Tbls についての Tipsを備忘録として残しておく 環境 OS: macOS 15.3 手順 Tbls について 実際の DB に接続してテーブル定義書を生成してくれるツール 様々な形式(markdown, Excel 等)で生成してくれる ※詳細は Tbls を参照 設定ファイルについて # # @see https://github.com/k1LoW/tbls # # Data Source Name ## @see https://github.com/k1LoW/tbls#dsn # dsn: postgres://user:pass@localhost:5432/dbname # To connect with SSL mode disabled dsn: postgres://user:pass@localhost:5432/dbname?sslmode=disable disableOutputSchema: true format: # Adjust the column width of Markdown format table # Default is false adjust: true # Sort the order of table list and columns # Default is false sort: false # Display sequential numbers in table rows # Default is false number: false # The comments for each table in the Tables section of the index page will display the text up to the first double newline (first paragraph). # Default is false showOnlyFirstParagraph: true # Hide table columns without values # Default is false hideColumnsWithoutValues: true # It can be boolean or array # hideColumnsWithoutValues: [\u0026#34;Parents\u0026#34;, \u0026#34;Children\u0026#34;] er: # Skip generation of ER diagram # Default is false skip: false # ER diagram image format (`png`, `jpg`, `svg`, `mermaid`) # Default is `svg` format: mermaid # Add table/column comment to ER diagram # Default is false comment: false # Hide relation definition from ER diagram # Default is false hideDef: true # Show column settings in ER diagram. If this section is not set, all columns will be displayed (default). showColumnTypes: # Show related columns related: true # Show primary key columns primary: true # Distance between tables that display relations in the ER # Default is 1 distance: 2 # ER diagram (png/jpg) font (font name, font file, font path or keyword) # Default is \u0026#34;\u0026#34; ( system default ) font: \u0026#34;\u0026#34; detectVirtualRelations: enabled: true strategy: default 出力ファイルの上書きについて # markdown tbls doc --config .tbls_config_ja.yml --rm-dist # Excel tbls out --config .tbls_config_ja.yml -t xlsx -o schema_ja.xlsx DSN の設定について ローカルで実施する場合は以下のどちらかで可能 Port Forwarding ※推奨 ローカルに各環境からテーブル定義のみインポートして実行"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2025/01/07/how-to-configure-terminal-ghostty/",
 title: "Terminal Ghostty の設定方法",
 image: "images/logo/ghostty_logo.png",
