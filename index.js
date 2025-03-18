@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2025/03/18/rails-7-release-notes-summary/",
+title: "Rails 7 リリースノートまとめ",
+image: "images/logo/rails_logo.svg",
+date: "2025-03-18",
+body: "Rails 7 リリースノートまとめ Rails 7 リリースノートについてまとめたものを備忘録として残しておく Rails 7 系での新機能および変更点 JavaScriptフロントエンドの刷新 ESM（ECMAScript modules）や import maps を使用し、Node.js をインストールせずにモダンな JavaScript が利用可能 ※デフォルトでは Hotwire, Stimulus, Turbo がインストールされる CSS Bundling 以下のサポートが追加 Tailwind CSS PostCSS アプリケーション新規作成時に指定可能 rails new myapp --css tailwind 既存に追加する場合は Gemfile に以下を追加して gem \u0026#39;cssbundling-rails\u0026#39; 以下のコマンドを実行することでインストールおよび初期設定が可能 bin/bundle install bin/rails css:install:tailwind Active Recordの実行時暗号化機能 データの暗号化が可能になった bin/rails db:encryption:init コマンドを実行してランダムなキーを生成 結果をbin/rails credentials:editで開いたエディタの画面に貼り付けて保存 Model で以下のように指定 class User \u0026lt; ApplicationRecord encrypts :name end Spring のデフォルト値の変更 大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更 Dockerfileの生成 新規アプリケーションで Dockerfile が自動生成されるようになった ActiveRecordの新機能 以下が追加および変更になった ActiveRecord::Base.normalizes generates_token_for async Active Jobの変更 perform_all_later が追加された オートロードの強化 autoload_lib autoload_lib_once Bunのサポート JavaScript ランタイムとして Bun がサポートされた 非同期のSQLクエリによる結果の取得 ActiveRecord::Relation#load_async を使用することで、非同期で SQL クエリを実行できる def index @articles = Article.per(params[:per]).page(params[:page]).load_async @categories = Category.active.load_async end バルクインサートで自動的にタイムスタンプを記録できる Active Record の insert_all や upsert_all メソッドなどでバルクインサート・バルクアップサートでレコードを作成、更新する際に created_at や updated_at などのタイムスタンプを自動でセットできるようになった。 使用する場合は Methods の record_timestamps オプションに true を渡す必要がある Article.insert_all([{ title: \u0026#34;What\u0026#39;s new in Rails 7\u0026#34; }], record_timestamps: true) Active Recordに in_order_of メソッドが追加 レコードを指定した順番で取得できる in_order_of メソッドが Active Record に追加された 例. ユーザID が1, 5, 3の順番になるように取得 User.in_order_of(:id, [1, 5, 3]) # SELECT \u0026#34;users\u0026#34;.* FROM \u0026#34;users\u0026#34; ORDER BY FIELD(\u0026#34;users\u0026#34;.\u0026#34;id\u0026#34;, 1, 5, 3)"
+},
+{
 url: "https://kkawazoe.github.io/blog/2025/03/14/tips-on-tbls/",
 title: "Tbls についての Tips",
 image: "images/logo/tbls_logo.png",
