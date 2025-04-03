@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2025/04/03/how-cursor-works-with-confluence-and-jira/",
+title: "Cursor と Confluence および Jira との連携方法",
+image: "images/logo/cursor_logo.png",
+date: "2025-04-03",
+body: "Cursor と Confluence および Jira との連携方法 Model Context Protocol(以下、MCP)を使用して連携する ※MCP Atlassianを参照 連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス API トークンを作成 コピー 環境変数(例. ATLASSIAN_API_TOKEN)に設定 uv のインストール brew install uv uvx mcp-atlassian MCP Atlassian の起動 uvx mcp-atlassian \\ --confluence-url=https://\u0026lt;\u0026lt;Your Domain Name\u0026gt;\u0026gt;.atlassian.net/wiki \\ --confluence-username=\u0026lt;\u0026lt;Your Mail Address\u0026gt;\u0026gt; \\ --confluence-token=${ATLASSIAN_API_TOKEN} \\ --jira-url=https://\u0026lt;\u0026lt;Your Domain Name\u0026gt;\u0026gt;.atlassian.net/ \\ --jira-username=\u0026lt;\u0026lt;Your Mail Address\u0026gt;\u0026gt; \\ --jira-token=${ATLASSIAN_API_TOKEN} \\ --transport sse --port 8080 Cursor の MCP設定 { \u0026#34;mcpServers\u0026#34;: { \u0026#34;mcp-atlassian\u0026#34;: { \u0026#34;url\u0026#34;: \u0026#34;http://localhost:8080/sse\u0026#34; }, \u0026#34;playwright-mcp\u0026#34;: { \u0026#34;command\u0026#34;: \u0026#34;npx\u0026#34;, \u0026#34;args\u0026#34;: [ \u0026#34;@playwright/mcp@latest\u0026#34; ] } } } 利用方法 Issueの取得：「JIRA から \u0026laquo;Ticket 番号\u0026raquo; について教えて」"
+},
+{
 url: "https://kkawazoe.github.io/blog/2025/03/19/rails-7-2-release-notes-summary/",
 title: "Rails 7.2 リリースノートまとめ",
 image: "images/logo/rails_logo.svg",
