@@ -74,7 +74,7 @@
 </ul>
 <div class=summary>Model Context Protocol(以下、MCP)を使用して連携する
 ※MCP Atlassianを参照
-連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス API トークンを作成 コピー 環境変数(例. ATLASSIAN_API_TOKEN)に設定 uv のインストール brew install uv uvx mcp-atlassian MCP Atlassian の起動 uvx mcp-atlassian \ --confluence-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/wiki \ --confluence-username=&lt;&lt;Your Mail Address>> \ --confluence-token=${ATLASSIAN_API_TOKEN} \ --jira-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/ \ --jira-username=&lt;&lt;Your Mail Address>> \ --jira-token=${ATLASSIAN_API_TOKEN} \ --transport sse --port 8080 Cursor の MCP設定 { "mcpServers": { "mcp-atlassian": { "url": "http://localhost:8080/sse" }, "playwright-mcp": { "command": "npx", "args": [ "@playwright/mcp@latest" ] } } } 利用方法 Issueの取得：「JIRA から &#171;Ticket 番号&#187; について教えて」</div>
+連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス API トークンを作成 コピー 環境変数(例. ATLASSIAN_API_TOKEN)に設定 uv のインストール brew install uv uvx mcp-atlassian MCP Atlassian の起動 uvx mcp-atlassian \ --confluence-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/wiki \ --confluence-username=&lt;&lt;Your Mail Address>> \ --confluence-token=${ATLASSIAN_API_TOKEN} \ --jira-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/ \ --jira-username=&lt;&lt;Your Mail Address>> \ --jira-token=${ATLASSIAN_API_TOKEN} \ --transport sse --port 8080 Cursor の MCP設定 { "mcpServers": { "mcp-atlassian": { "url": "http://localhost:8080/sse" } } } 利用方法 Issueの取得：「JIRA から &#171;Ticket 番号&#187; について教えて」</div>
 </div>
 </a>
 </article>
