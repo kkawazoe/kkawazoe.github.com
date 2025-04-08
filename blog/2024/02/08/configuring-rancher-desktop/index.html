@@ -123,6 +123,23 @@ root         <span style=color:#ae81ff>9</span>     <span style=color:#ae81ff>1<
 </ul>
 </li>
 </ol>
+<h3 id=preference---application---administrative-access>Preference - Application - Administrative Access</h3>
+<ol>
+<li>「Preferences」ボタンを押下</li>
+<li>Application > General > Administrative Access を以下に変更する
+<ul>
+<li>Allow to acquire administrative credentials(sudo access)
+<ul>
+<li>これにチェックをしないと docker.sock がホームディレクトリ配下に作成される
+<ul>
+<li>そのため Docker Default の /var/run 配下に作成されなくてエラーになるパターンがある</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 </div>
 <footer class=article-footer>
 <ul class=facts-tags>
