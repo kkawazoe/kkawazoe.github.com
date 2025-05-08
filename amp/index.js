@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2025/05/08/rails-8-what-to-check-if-you-get-a-403-error-in-rspec-requests-spec-when-using-docker/",
+title: "Rails 8 docker を使用している場合に rspec \u003e requests spec で 403 エラーが発生した場合の確認点について",
+image: "images/logo/rails_logo.svg",
+date: "2025-05-08",
+body: "Rails 8 docker を使用している場合に rspec \u003e requests spec で 403 エラーが発生した場合の確認点について Rails 8 docker を使用している場合に rspec \u0026gt; requests spec で 403 エラーが発生した場合の確認点について調査したものを備忘録として残しておく 環境 ruby: 3.4.2 rails: 8.0.2 mode: API mode エラー内容 Rails 6 以降で追加された DNS リバインディングに関するエラーが発生している ※エラー内容と根本原因は異なるため注意 \u0026lt;!-- 一部抜粋 --\u0026gt; \u0026lt;main role=\u0026#34;main\u0026#34; id=\u0026#34;container\u0026#34;\u0026gt; \u0026lt;h2\u0026gt;To allow requests to these hosts, make sure they are valid hostnames (containing only numbers, letters, dashes and dots), then add the following to your environment configuration:\u0026lt;/h2\u0026gt; \u0026lt;pre\u0026gt; config.hosts \u0026amp;lt;\u0026amp;lt; \u0026#34;www.example.com\u0026#34; \u0026lt;/pre\u0026gt; \u0026lt;p\u0026gt;For more details view: \u0026lt;a href=\u0026#34;https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization\u0026#34;\u0026gt;the Host Authorization guide\u0026lt;/a\u0026gt;\u0026lt;/p\u0026gt; \u0026lt;/main\u0026gt; 確認点 Docker で使用している環境変数を確認する RAILS_ENV=development が設定されていないこと spec/rails_helper.rb を確認すると環境変数を設定してしまっている状態だと test 環境とならないようになっている そのため docker で環境を構築する際、環境変数として RAILS_ENV=development と設定していると test 環境として実行されないためエラーになる ENV[\u0026#39;RAILS_ENV\u0026#39;] ||= \u0026#39;test\u0026#39;"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2025/04/14/rails-8-about-the-rails-new-command-options/",
 title: "Rails 8 rails new コマンドのオプションについて",
 image: "images/logo/rails_logo.svg",
