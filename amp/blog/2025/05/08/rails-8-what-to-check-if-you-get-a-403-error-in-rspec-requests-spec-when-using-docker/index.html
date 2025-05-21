@@ -74,6 +74,26 @@
 <h2 id=エラー内容>エラー内容</h2>
 <p>Rails 6 以降で追加された <a href=https://github.com/rails/rails/pull/33145>DNS リバインディング</a>に関するエラーが発生している<br>
 ※エラー内容と根本原因は異なるため注意</p>
+<p>状況としては以下の通り</p>
+<ul>
+<li>Rails Server 起動しての実行は成功
+<ul>
+<li><code>docker-compose exec app bash</code></li>
+<li><code>bin/rails s -b 0.0.0.0</code></li>
+</ul>
+</li>
+<li>RSpec > Request 実行時に 403 エラーが発生
+<ul>
+<li>Request Spec 以外は成功</li>
+<li><code>docker-compose exec app bash</code></li>
+<li><code>bin/rspec spec/requests/xxxx_spec.rb</code>
+<ul>
+<li>下記の html が返却される</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#75715e>&lt;!-- 一部抜粋 --&gt;</span>
 &lt;<span style=color:#f92672>main</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;container&#34;</span>&gt;
   &lt;<span style=color:#f92672>h2</span>&gt;To allow requests to these hosts, make sure they are valid hostnames (containing only numbers, letters, dashes and dots), then add the following to your environment configuration:&lt;/<span style=color:#f92672>h2</span>&gt;
