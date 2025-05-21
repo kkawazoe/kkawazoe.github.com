@@ -81,8 +81,7 @@
 </ul>
 <div class=summary>Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する方法を調査したものを備忘録として残しておく
 環境 Infrastructure: AWS lambda: nodejs(20.X) Secret Manager RDS: PostgreSQL AWS API Gateway API Key あり AWS SAM CLI Docker Compose API 仕様書 OpenAPI 3.0 AWS SAM 環境について 必要なファイルの内、重要な部分のみ記載
-[template.yaml]
-AWSTemplateFormatVersion: '2010-09-09' Transform: AWS::Serverless-2016-10-31 Globals: Function: Runtime: nodejs20.x Timeout: 5 MemorySize: 256 Environment: Variables: DB_NAME: test_db DB_HOST: host.docker.internal DB_USER: postgres DB_PORT: 5432 SECRET_NAME: local-secret IS_LOCAL: true NODE_ENV: local AWS_ENDPOINT_SECRETS_MANAGER: http://host.</div>
+フォルダ構成 ├── layers/ │ ├── package.json │ └── pg-layer.zip │ ├── scripts/ │ ├── create-pg-layer.sh │ ├── init-localstack.sh │ └── local-secret.</div>
 </div>
 </a>
 </article>

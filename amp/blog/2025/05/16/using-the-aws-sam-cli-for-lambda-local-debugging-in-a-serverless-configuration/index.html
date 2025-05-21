@@ -94,31 +94,44 @@
 </ul>
 <h2 id=aws-sam-環境について>AWS SAM 環境について</h2>
 <p>必要なファイルの内、重要な部分のみ記載</p>
-<p>[template.yaml]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>AWSTemplateFormatVersion</span>: <span style=color:#e6db74>&#39;2010-09-09&#39;</span>
+<h3 id=フォルダ構成>フォルダ構成</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>├── layers/
+│   ├── package.json
+│   └── pg-layer.zip
+│
+├── scripts/
+│   ├── create-pg-layer.sh
+│   ├── init-localstack.sh
+│   └── local-secret.json
+│
+├── .env
+├── docker-compose.yml
+└── template.yaml
+</code></pre></div><h3 id=実際のファイル>実際のファイル</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml:template.yaml data-lang=yaml:template.yaml><span style=color:#f92672>AWSTemplateFormatVersion</span>: <span style=color:#e6db74>&#39;2010-09-09&#39;</span>
 <span style=color:#f92672>Transform</span>: <span style=color:#ae81ff>AWS::Serverless-2016-10-31</span>
 
 <span style=color:#f92672>Globals</span>:
   <span style=color:#f92672>Function</span>:
     <span style=color:#f92672>Runtime</span>: <span style=color:#ae81ff>nodejs20.x</span>
-    <span style=color:#f92672>Timeout</span>: <span style=color:#ae81ff>5</span>
-    <span style=color:#f92672>MemorySize</span>: <span style=color:#ae81ff>256</span>
+    <span style=color:#f92672>Timeout</span>: <span style=color:#ae81ff>30</span>
+    <span style=color:#f92672>MemorySize</span>: <span style=color:#ae81ff>128</span>
     <span style=color:#f92672>Environment</span>:
       <span style=color:#f92672>Variables</span>:
-        <span style=color:#f92672>DB_NAME</span>: <span style=color:#ae81ff>test_db</span>
-        <span style=color:#f92672>DB_HOST</span>: <span style=color:#ae81ff>host.docker.internal</span>
-        <span style=color:#f92672>DB_USER</span>: <span style=color:#ae81ff>postgres</span>
-        <span style=color:#f92672>DB_PORT</span>: <span style=color:#ae81ff>5432</span>
-        <span style=color:#f92672>SECRET_NAME</span>: <span style=color:#ae81ff>local-secret</span>
-        <span style=color:#f92672>IS_LOCAL</span>: <span style=color:#66d9ef>true</span>
-        <span style=color:#f92672>NODE_ENV</span>: <span style=color:#ae81ff>local</span>
-        <span style=color:#f92672>AWS_ENDPOINT_SECRETS_MANAGER</span>: <span style=color:#ae81ff>http://host.docker.internal:4566</span>
-        <span style=color:#f92672>AWS_REGION</span>: <span style=color:#ae81ff>ap-northeast-1</span>
-        <span style=color:#f92672>AWS_ACCESS_KEY_ID</span>: <span style=color:#ae81ff>test</span>
-        <span style=color:#f92672>AWS_SECRET_ACCESS_KEY</span>: <span style=color:#ae81ff>test</span>
-        <span style=color:#f92672>AWS_SDK_LOAD_CONFIG</span>: <span style=color:#ae81ff>1</span>
-        <span style=color:#f92672>AWS_STS_REGIONAL_ENDPOINTS</span>: <span style=color:#ae81ff>regional</span>
-        <span style=color:#f92672>AWS_NODEJS_CONNECTION_REUSE_ENABLED</span>: <span style=color:#ae81ff>1</span>
+        <span style=color:#f92672>DB_NAME</span>: !<span style=color:#ae81ff>Sub &#34;${DB_NAME}&#34;</span>
+        <span style=color:#f92672>DB_HOST</span>: !<span style=color:#ae81ff>Sub &#34;${DB_HOST}&#34;</span>
+        <span style=color:#f92672>DB_USER</span>: !<span style=color:#ae81ff>Sub &#34;${DB_USER}&#34;</span>
+        <span style=color:#f92672>DB_PORT</span>: !<span style=color:#ae81ff>Sub &#34;${DB_PORT}&#34;</span>
+        <span style=color:#f92672>SECRET_NAME</span>: !<span style=color:#ae81ff>Sub &#34;${SECRET_NAME}&#34;</span>
+        <span style=color:#f92672>IS_LOCAL</span>: !<span style=color:#ae81ff>Sub &#34;${IS_LOCAL}&#34;</span>
+        <span style=color:#f92672>NODE_ENV</span>: !<span style=color:#ae81ff>Sub &#34;${NODE_ENV}&#34;</span>
+        <span style=color:#f92672>AWS_ENDPOINT_SECRETS_MANAGER</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_ENDPOINT_SECRETS_MANAGER}&#34;</span>
+        <span style=color:#f92672>AWS_REGION</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_REGION}&#34;</span>
+        <span style=color:#f92672>AWS_ACCESS_KEY_ID</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_ACCESS_KEY_ID}&#34;</span>
+        <span style=color:#f92672>AWS_SECRET_ACCESS_KEY</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_SECRET_ACCESS_KEY}&#34;</span>
+        <span style=color:#f92672>AWS_SDK_LOAD_CONFIG</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_SDK_LOAD_CONFIG}&#34;</span>
+        <span style=color:#f92672>AWS_STS_REGIONAL_ENDPOINTS</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_STS_REGIONAL_ENDPOINTS}&#34;</span>
+        <span style=color:#f92672>AWS_NODEJS_CONNECTION_REUSE_ENABLED</span>: !<span style=color:#ae81ff>Sub &#34;${AWS_NODEJS_CONNECTION_REUSE_ENABLED}&#34;</span>
 
 <span style=color:#f92672>Resources</span>:
   <span style=color:#75715e># API Gateway</span>
@@ -162,15 +175,14 @@
       <span style=color:#f92672>ContentUri</span>: <span style=color:#ae81ff>layers/pg-layer.zip</span>
       <span style=color:#f92672>CompatibleRuntimes</span>:
         - <span style=color:#ae81ff>nodejs20.x</span>
-</code></pre></div><p>[docker-compose.yml]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>services</span>:
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml:docker-compose.yml data-lang=yaml:docker-compose.yml><span style=color:#f92672>services</span>:
   <span style=color:#f92672>postgres</span>:
     <span style=color:#f92672>image</span>: <span style=color:#ae81ff>postgres:13</span>
     <span style=color:#f92672>container_name</span>: <span style=color:#ae81ff>test-postgres</span>
     <span style=color:#f92672>environment</span>:
-      <span style=color:#f92672>POSTGRES_DB</span>: <span style=color:#ae81ff>test_db</span>
-      <span style=color:#f92672>POSTGRES_USER</span>: <span style=color:#ae81ff>postgres</span>
-      <span style=color:#f92672>POSTGRES_PASSWORD</span>: <span style=color:#ae81ff>postgres</span>
+      <span style=color:#f92672>POSTGRES_DB</span>: <span style=color:#ae81ff>${DB_NAME}</span>
+      <span style=color:#f92672>POSTGRES_USER</span>: <span style=color:#ae81ff>${DB_USER}</span>
+      <span style=color:#f92672>POSTGRES_PASSWORD</span>: <span style=color:#ae81ff>${DB_PASSWORD}</span>
     <span style=color:#f92672>ports</span>:
       - <span style=color:#e6db74>&#34;5432:5432&#34;</span>
     <span style=color:#f92672>volumes</span>:
@@ -187,15 +199,14 @@
       - <span style=color:#e6db74>&#34;4566:4566&#34;</span>            <span style=color:#75715e># LocalStack Gateway</span>
       - <span style=color:#e6db74>&#34;4510-4559:4510-4559&#34;</span>  <span style=color:#75715e># External services port range</span>
     <span style=color:#f92672>environment</span>:
-      - <span style=color:#ae81ff>DEBUG=1</span>
-      - <span style=color:#ae81ff>DOCKER_HOST=unix:///var/run/docker.sock</span>
-      - <span style=color:#ae81ff>LAMBDA_EXECUTOR=docker</span>
-      - <span style=color:#ae81ff>PERSISTENCE=1</span>
-      - <span style=color:#ae81ff>SERVICES=secretsmanager</span>
-      - <span style=color:#ae81ff>DEFAULT_REGION=ap-northeast-1</span>
-      - <span style=color:#ae81ff>AWS_DEFAULT_REGION=ap-northeast-1</span>
-      - <span style=color:#ae81ff>AWS_ACCESS_KEY_ID=test</span>
-      - <span style=color:#ae81ff>AWS_SECRET_ACCESS_KEY=test</span>
+      - <span style=color:#ae81ff>DEBUG=${DEBUG}</span>
+      - <span style=color:#ae81ff>DOCKER_HOST=${DOCKER_HOST}</span>
+      - <span style=color:#ae81ff>LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR}</span>
+      - <span style=color:#ae81ff>PERSISTENCE=${PERSISTENCE}</span>
+      - <span style=color:#ae81ff>SERVICES=${SERVICES}</span>
+      - <span style=color:#ae81ff>AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}</span>
+      - <span style=color:#ae81ff>AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}</span>
+      - <span style=color:#ae81ff>AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}</span>
     <span style=color:#f92672>volumes</span>:
       - <span style=color:#e6db74>&#34;${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack&#34;</span>
       - <span style=color:#e6db74>&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
@@ -204,8 +215,7 @@
 
 <span style=color:#f92672>volumes</span>:
   <span style=color:#f92672>postgres_data</span>:
-</code></pre></div><p>[init-localstack.sh]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:scripts/init-localstack.sh data-lang=bash:scripts/init-localstack.sh><span style=color:#75715e>#!/bin/bash
 </span><span style=color:#75715e></span>
 <span style=color:#75715e># LocalStackのエンドポイント</span>
 ENDPOINT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://localhost:4566&#34;</span>
@@ -217,16 +227,13 @@ SECRET_STRING<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</spa
 aws --endpoint-url<span style=color:#f92672>=</span>$ENDPOINT secretsmanager create-secret <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    --name local-secret <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    --description <span style=color:#e6db74>&#34;Local development secret&#34;</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>    --secret-string <span style=color:#e6db74>&#34;</span>$SECRET_STRING<span style=color:#e6db74>&#34;</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>    --region ap-northeast-1
+</span><span style=color:#ae81ff></span>    --secret-string <span style=color:#e6db74>&#34;</span>$SECRET_STRING<span style=color:#e6db74>&#34;</span>
 
 echo <span style=color:#e6db74>&#34;LocalStack secrets initialized&#34;</span>
-</code></pre></div><p>[local-secret.json]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json:scripts/local-secret.json data-lang=json:scripts/local-secret.json>{
   <span style=color:#f92672>&#34;password&#34;</span>: <span style=color:#e6db74>&#34;postgres&#34;</span>
 }
-</code></pre></div><p>[create-pg-layer.sh]</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:scripts/create-pg-layer.sh data-lang=bash:scripts/create-pg-layer.sh><span style=color:#75715e>#!/bin/bash
 </span><span style=color:#75715e></span>
 set -e
 
@@ -249,6 +256,37 @@ cd ../../
 
 echo <span style=color:#e6db74>&#34;pg-layer の作成が完了しました: </span>$ZIP_FILE<span style=color:#e6db74>&#34;</span>
 rm -rf <span style=color:#e6db74>&#34;</span>$LAYER_DIR<span style=color:#e6db74>&#34;</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:.env data-lang=bash:.env><span style=color:#75715e># Only used for local debugging</span>
+
+<span style=color:#75715e># DB</span>
+DB_NAME<span style=color:#f92672>=</span>test_db
+DB_HOST<span style=color:#f92672>=</span>host.docker.internal
+DB_USER<span style=color:#f92672>=</span>postgres
+DB_PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>5432</span>
+DB_PASSWORD<span style=color:#f92672>=</span>postgres
+
+<span style=color:#75715e># SecretsManager</span>
+SECRET_NAME<span style=color:#f92672>=</span>local-secret
+
+<span style=color:#75715e># Lambda</span>
+IS_LOCAL<span style=color:#f92672>=</span>true
+NODE_ENV<span style=color:#f92672>=</span>local
+AWS_ENDPOINT_SECRETS_MANAGER<span style=color:#f92672>=</span>http://host.docker.internal:4566
+AWS_REGION<span style=color:#f92672>=</span>ap-northeast-1
+AWS_ACCESS_KEY_ID<span style=color:#f92672>=</span>test
+AWS_SECRET_ACCESS_KEY<span style=color:#f92672>=</span>test
+AWS_SDK_LOAD_CONFIG<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+AWS_STS_REGIONAL_ENDPOINTS<span style=color:#f92672>=</span>regional
+AWS_NODEJS_CONNECTION_REUSE_ENABLED<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+
+<span style=color:#75715e># LocalStack</span>
+DEBUG<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+DOCKER_HOST<span style=color:#f92672>=</span>unix:///var/run/docker.sock
+LAMBDA_EXECUTOR<span style=color:#f92672>=</span>docker
+PERSISTENCE<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+SERVICES<span style=color:#f92672>=</span>secretsmanager
+AWS_DEFAULT_REGION<span style=color:#f92672>=</span>ap-northeast-1
+LOCALSTACK_VOLUME_DIR<span style=color:#f92672>=</span>./volume
 </code></pre></div><h3 id=使用方法>使用方法</h3>
 <h4 id=実施手順>実施手順</h4>
 <ol>
@@ -266,7 +304,8 @@ rm -rf <span style=color:#e6db74>&#34;</span>$LAYER_DIR<span style=color:#e6db74
 <li>localstack の初期化スクリプトが実行され、シークレットマネージャーに値が追加される</li>
 <li>localstack のシークレットマネージャーに値が追加されたことを確認する</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ AWS_ACCESS_KEY_ID<span style=color:#f92672>=</span>test AWS_SECRET_ACCESS_KEY<span style=color:#f92672>=</span>test aws --endpoint-url<span style=color:#f92672>=</span>http://localhost:4566 --region ap-northeast-1 secretsmanager get-secret-value --secret-id local-secret
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ docker-compose exec localstack bash
+$ aws --endpoint-url<span style=color:#f92672>=</span>http://localhost:4566 secretsmanager get-secret-value --secret-id local-secret
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
