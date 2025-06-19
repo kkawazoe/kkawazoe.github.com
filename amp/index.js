@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2025/06/19/how-to-test-cookies-in-rspec/",
+title: "RSpec で Cookie のテストを行う方法",
+image: "images/logo/rails_logo.svg",
+date: "2025-06-19",
+body: "RSpec で Cookie のテストを行う方法 RSpec で Cookie のテストを行う方法を備忘録として残しておく 環境 ruby: 3.0.5 rails: 6.1.7 テスト方法 RSpec の Controller テストで Cookie のテストを行いたい場合、response.cookies[‘key’] で Cookieの内容を取得してテストする 例. Controller 側で以下のような Cookie を設定していた場合 def sample cookies[\u0026#34;sample\u0026#34;] = \u0026#39;ok\u0026#39; end RSpec 側は以下のようにして値のテストを行うことができる expect(response.cookies[\u0026#39;sample\u0026#39;]).to eq \u0026#39;ok\u0026#39;"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2025/05/16/using-the-aws-sam-cli-for-lambda-local-debugging-in-a-serverless-configuration/",
 title: "Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する",
 image: "images/logo/aws_logo.svg",
