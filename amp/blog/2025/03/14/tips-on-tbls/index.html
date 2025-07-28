@@ -75,7 +75,7 @@
 様々な形式(markdown, Excel 等)で生成してくれる<br>
 ※詳細は <a href=https://github.com/k1LoW/tbls>Tbls</a> を参照</p>
 <h3 id=設定ファイルについて>設定ファイルについて</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml data-lang=.yml><span style=color:#75715e>#</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml:.tbls.yml data-lang=.yml:.tbls.yml><span style=color:#75715e>#</span>
 <span style=color:#75715e># @see https://github.com/k1LoW/tbls</span>
 <span style=color:#75715e>#</span>
 
@@ -155,9 +155,9 @@
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh:.env data-lang=.sh:.env>TBLS_DSN<span style=color:#f92672>=</span>postgres://postgres:postgres@localhost:5432/olbdb?sslmode<span style=color:#f92672>=</span>disable
 </code></pre></div><h3 id=出力ファイルの上書きについて>出力ファイルの上書きについて</h3>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh><span style=color:#75715e># markdown</span>
-tbls doc --config .tbls_config_ja.yml --rm-dist
+tbls doc --config .tbls.yml --rm-dist
 <span style=color:#75715e># Excel</span>
-tbls out --config .tbls_config_ja.yml -t xlsx -o schema_ja.xlsx
+tbls out --config .tbls.yml -t xlsx -o schema.xlsx
 </code></pre></div><h3 id=dsn-の設定について>DSN の設定について</h3>
 <p>ローカルで実施する場合は以下のどちらかで可能</p>
 <ul>
