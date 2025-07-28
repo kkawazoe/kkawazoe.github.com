@@ -81,11 +81,14 @@
 
 <span style=color:#75715e># Data Source Name</span>
 <span style=color:#75715e>## @see https://github.com/k1LoW/tbls#dsn</span>
-<span style=color:#75715e># dsn: postgres://user:pass@localhost:5432/dbname</span>
+<span style=color:#75715e># dsn: postgres://&lt;&lt;user&gt;&gt;:&lt;&lt;pass&gt;&gt;@localhost:5432/&lt;&lt;dbname&gt;&gt;</span>
 <span style=color:#75715e># To connect with SSL mode disabled</span>
-<span style=color:#f92672>dsn</span>: <span style=color:#ae81ff>postgres://user:pass@localhost:5432/dbname?sslmode=disable</span>
+<span style=color:#75715e># dsn: postgres://&lt;&lt;user&gt;&gt;:&lt;&lt;pass&gt;&gt;@localhost:5432/&lt;&lt;dbname&gt;&gt;?sslmode=disable</span>
+<span style=color:#75715e># DSN configuration values should be found in the .env file TBLS_DSN</span>
 
-<span style=color:#f92672>disableOutputSchema</span>: <span style=color:#66d9ef>true</span>
+<span style=color:#75715e># Disable output of schema data</span>
+<span style=color:#75715e># Default is false</span>
+<span style=color:#f92672>disableOutputSchema</span>: <span style=color:#66d9ef>false</span>
 
 <span style=color:#f92672>format</span>:
   <span style=color:#75715e># Adjust the column width of Markdown format table</span>
@@ -102,7 +105,7 @@
   <span style=color:#f92672>showOnlyFirstParagraph</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#75715e># Hide table columns without values</span>
   <span style=color:#75715e># Default is false</span>
-  <span style=color:#f92672>hideColumnsWithoutValues</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>hideColumnsWithoutValues</span>: <span style=color:#66d9ef>false</span>
   <span style=color:#75715e># It can be boolean or array</span>
   <span style=color:#75715e># hideColumnsWithoutValues: [&#34;Parents&#34;, &#34;Children&#34;]</span>
 
@@ -127,7 +130,7 @@
     <span style=color:#f92672>primary</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#75715e># Distance between tables that display relations in the ER</span>
   <span style=color:#75715e># Default is 1</span>
-  <span style=color:#f92672>distance</span>: <span style=color:#ae81ff>2</span>
+  <span style=color:#f92672>distance</span>: <span style=color:#ae81ff>1</span>
   <span style=color:#75715e># ER diagram (png/jpg) font (font name, font file, font path or keyword)</span>
   <span style=color:#75715e># Default is &#34;&#34; ( system default )</span>
   <span style=color:#f92672>font</span>: <span style=color:#e6db74>&#34;&#34;</span>
@@ -135,6 +138,21 @@
 <span style=color:#f92672>detectVirtualRelations</span>:
   <span style=color:#f92672>enabled</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#f92672>strategy</span>: <span style=color:#ae81ff>default</span>
+
+<span style=color:#75715e># Exclude tables</span>
+<span style=color:#f92672>exclude</span>:
+  - <span style=color:#ae81ff>goose_db_version</span>
+
+<span style=color:#f92672>docPath</span>: <span style=color:#ae81ff>docs/ja/</span>
+
+<span style=color:#f92672>comments</span>:
+  -
+    <span style=color:#f92672>table</span>: <span style=color:#ae81ff>mst_books</span>
+    <span style=color:#f92672>tableComment</span>: |-<span style=color:#e6db74>
+</span><span style=color:#e6db74>      </span>      <span style=color:#ae81ff>書籍情報を管理するテーブル</span>
+    <span style=color:#f92672>columnComments</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>書籍名</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh:.env data-lang=.sh:.env>TBLS_DSN<span style=color:#f92672>=</span>postgres://postgres:postgres@localhost:5432/olbdb?sslmode<span style=color:#f92672>=</span>disable
 </code></pre></div><h3 id=出力ファイルの上書きについて>出力ファイルの上書きについて</h3>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh><span style=color:#75715e># markdown</span>
 tbls doc --config .tbls_config_ja.yml --rm-dist
@@ -146,7 +164,88 @@ tbls out --config .tbls_config_ja.yml -t xlsx -o schema_ja.xlsx
 <li>Port Forwarding ※推奨</li>
 <li>ローカルに各環境からテーブル定義のみインポートして実行</li>
 </ul>
-</div>
+<h3 id=mkdocs-との連携>mkdocs との連携</h3>
+<p>S3 等にアップロードして公開する場合は、mkdocs と連携して公開することも可能</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml:mkdocs.yml data-lang=.yml:mkdocs.yml><span style=color:#f92672>site_name</span>: <span style=color:#e6db74>&#34;DB Schema Tables&#34;</span>
+<span style=color:#f92672>docs_dir</span>: <span style=color:#ae81ff>docs</span>
+
+<span style=color:#f92672>theme</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>material</span>
+  <span style=color:#f92672>language</span>: <span style=color:#ae81ff>ja</span>
+  <span style=color:#f92672>features</span>:
+    - <span style=color:#ae81ff>search.suggest</span>
+    - <span style=color:#ae81ff>search.highlight</span>
+    - <span style=color:#ae81ff>search.share</span>
+
+<span style=color:#f92672>extra_css</span>:
+  - <span style=color:#ae81ff>assets/stylesheets/extra.css</span>
+
+<span style=color:#f92672>extra_javascript</span>:
+  - <span style=color:#ae81ff>assets/javascripts/custom.js</span>
+
+<span style=color:#f92672>plugins</span>:
+  - <span style=color:#ae81ff>search</span>
+  - <span style=color:#f92672>i18n</span>:
+      <span style=color:#f92672>default_language</span>: <span style=color:#ae81ff>ja</span>
+      <span style=color:#f92672>languages</span>:
+        <span style=color:#f92672>ja</span>:
+          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>日本語</span>
+          <span style=color:#f92672>build</span>: <span style=color:#66d9ef>true</span>
+        <span style=color:#f92672>en</span>:
+          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>English</span>
+          <span style=color:#f92672>build</span>: <span style=color:#66d9ef>true</span>
+
+<span style=color:#f92672>markdown_extensions</span>:
+  - <span style=color:#f92672>pymdownx.highlight</span>:
+      <span style=color:#f92672>anchor_linenums</span>: <span style=color:#66d9ef>true</span>
+      <span style=color:#f92672>line_spans</span>: <span style=color:#ae81ff>__span</span>
+      <span style=color:#f92672>pygments_lang_class</span>: <span style=color:#66d9ef>true</span>
+  - <span style=color:#ae81ff>pymdownx.inlinehilite</span>
+  - <span style=color:#ae81ff>pymdownx.snippets</span>
+  - <span style=color:#f92672>pymdownx.superfences</span>:
+      <span style=color:#f92672>custom_fences</span>:
+        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>mermaid</span>
+          <span style=color:#f92672>class</span>: <span style=color:#ae81ff>mermaid</span>
+          <span style=color:#f92672>format</span>: <span style=color:#75715e>!!python/name:pymdownx.superfences.fence_code_format</span>
+<span style=color:#f92672>nav</span>:
+  - <span style=color:#f92672>Home</span>: <span style=color:#ae81ff>README.md</span>
+  - <span style=color:#f92672>日本語/Japanese</span>:
+    - <span style=color:#f92672>テーブル一覧</span>: <span style=color:#ae81ff>ja/README.md</span>
+  - <span style=color:#f92672>English</span>:
+    - <span style=color:#f92672>Table List</span>: <span style=color:#ae81ff>en/README.md</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.txt:requirements.txt data-lang=.txt:requirements.txt>babel==2.17.0
+backrefs==5.9
+certifi==2025.7.9
+charset-normalizer==3.4.2
+click==8.2.1
+colorama==0.4.6
+ghp-import==2.1.0
+mkdocs-i18n==0.4.6
+idna==3.10
+Jinja2==3.1.6
+Markdown==3.8.2
+MarkupSafe==3.0.2
+mergedeep==1.3.4
+mkdocs==1.6.1
+mkdocs-get-deps==0.2.0
+mkdocs-glightbox==0.4.0
+mkdocs-material==9.6.15
+mkdocs-material-extensions==1.3.1
+packaging==25.0
+paginate==0.5.7
+pathspec==0.12.1
+platformdirs==4.3.8
+py==1.11.0
+Pygments==2.19.2
+pymdown-extensions==10.16
+python-dateutil==2.9.0.post0
+PyYAML==6.0.2
+pyyaml_env_tag==1.1
+requests==2.32.4
+six==1.17.0
+urllib3==2.5.0
+watchdog==6.0.0
+</code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
