@@ -3,8 +3,12 @@ languageCode = "jp"
 title = "Note To Self ~One Step At A Time~"
 theme = "hugo_theme_robust"
 enableRobotsTXT = true
-googleAnalytics = "G-T6MM10MYRV"
-disqusShortname = "kkawazoe"
+
+[services]
+  [services.disqus]
+    shortname = "kkawazoe"
+  [services.googleAnalytics]
+    id = "G-T6MM10MYRV"
 
 [permalinks]
 post = "/blog/:year/:month/:day/:slug"

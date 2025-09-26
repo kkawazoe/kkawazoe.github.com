@@ -1,6 +1,6 @@
 ---
 type: "js"
 url: "index.js"
-_build:
+build:
   list: false
 ---
