@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2025/11/20/road-to-jstqb-foundation-level-part2/",
+title: "JSTQB Foundation Level への道 その2",
+image: "images/logo/certified_tester_fl_logo.jpg",
+date: "2025-11-20",
+body: "JSTQB Foundation Level への道 その2 JSTQB Foundation Level を学習する中で間違えやすいポイントを備忘録として残しておく [前回までの記事] JSTQB Foundation Level への道 受験結果 無事に合格した 確認出来るのは、合格したかどうかのみで、詳細な点数や間違えた問題などは確認出来ない テス友のみだとシラバスの細かい部分がカバーしきれないので、公式シラバスをしっかり確認しておく必要がある また、追加で他の人がまとめてくれているサイトなども参考にすると良いと思う 勉強に使用したもの 公式シラバス（日本語版） JSTQB Foundation Level シラバス 日本語版 Version 2023V4.0.J02 テス友"
+},
+{
 url: "https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/",
 title: "JSTQB Foundation Level への道",
 image: "images/logo/certified_tester_fl_logo.jpg",
