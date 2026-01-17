@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pgAdmin on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/pgadmin/</link><description>Recent content in pgAdmin on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Wed, 20 Dec 2023 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/pgadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
+方法 事前作業 AWS Console にて接続に必要な情報を控えておく
+EC2 踏み台の Public IP を確認
+EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 Elastic IP が紐付けられている場合は以下を確認する
+EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認 RDS プロキシの設定がされている場合は以下を確認する
+RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認 その他 DB のパスワード (Secrets Manager)の設定確認方法
+AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description></item></channel></rss>

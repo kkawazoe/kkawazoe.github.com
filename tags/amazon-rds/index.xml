@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon RDS on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/amazon-rds/</link><description>Recent content in Amazon RDS on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 29 Oct 2024 13:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/amazon-rds/index.xml" rel="self" type="application/rss+xml"/><item><title>Amazon RDS を停止させたままにしたい場合の解決法</title><link>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Tue, 29 Oct 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>Amazon RDS は一時停止した場合、最大7日間までしか停止できない
+しかし停止させたままにしたい状況が発生したため調査を行なった
+その際のまとめを備忘録として残しておく
+解決案 Lambda 関数を使用する 公式推奨 EventBridge を使用する どちらかというと夜間休日止めるのに最適 実際の手順 Lambda 関数を使用する IAM &amp;gt; ポリシー を選択
+以下でポリシーを作成
+{ &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor0&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;rds:StartDBCluster&amp;#34;, &amp;#34;rds:StopDBCluster&amp;#34;, &amp;#34;rds:ListTagsForResource&amp;#34;, &amp;#34;rds:DescribeDBInstances&amp;#34;, &amp;#34;rds:StopDBInstance&amp;#34;, &amp;#34;rds:DescribeDBClusters&amp;#34;, &amp;#34;rds:StartDBInstance&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ] } IAM &amp;gt; ロール を選択
+以下でロールを作成
+信頼できるエンティティタイプを選択: AWS サービス またはサービスを選択してユースケースを表示: Lambda ポリシー: 手順 2 で作成したポリシー RDS &amp;gt; データベース &amp;gt; &amp;laquo;該当の DB インスタンス&amp;raquo; を選択</description></item><item><title>Amazon Aurora のバックアップストレージ費用の確認方法</title><link>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</link><pubDate>Wed, 28 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</guid><description>AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく
+実際の手順 Cost Explorer にて確認
+[レポートパラメータ]
+日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)</description></item><item><title>Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</link><pubDate>Fri, 08 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</guid><description>Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく
+前提 構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照
+前回の記事: Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法
+手順 Role に対して適宜必要な権限を付与 例. public Schema の全テーブルへの全権限を付与
+grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; アクセス制御を行うテーブルからアクセス権限を取り消す 例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
+revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; 権限の確認 該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
+\dp #=&amp;gt; &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;=awdDxt/postgres</description></item><item><title>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</link><pubDate>Fri, 08 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</guid><description>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく
+前提 以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8
+構成図 手順 参考
+DB ユーザ追加
+以下のコマンドを使用してユーザを追加する
+※実運用時は、適宜必要な権限を付与する
+postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; # 例. ログイン属性, 接続数制限なし, パスワード指定 postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; Secrets Manager にデータベース認証情報設定
+AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する
+設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け</description></item></channel></rss>

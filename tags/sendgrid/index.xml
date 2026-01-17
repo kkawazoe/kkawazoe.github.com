@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SendGrid on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/sendgrid/</link><description>Recent content in SendGrid on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/sendgrid/index.xml" rel="self" type="application/rss+xml"/><item><title>SendGrid の設定および動作確認方法について</title><link>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</guid><description>SendGrid の設定および動作確認方法を備忘録として残しておく
+前提 2024/4/1 以降の新しい方式 Domain Authentication DNS: Amazon Route 53 実際の手順 SendGrid 管理画面にて API Key を作成
+参考
+SendGrid 管理画面にて Domain Authentication の設定を行う
+Domain Authentication(SPF/DKIM設定)
+テストメールを送信して動作確認を行う
+参考
+メールテンプレートを作成
+参考
+メールテンプレートを使用した動作確認を行う
+参考1 参考2 Curl での動作確認 テンプレートなし [構文]
+curl -X POST https://api.sendgrid.com/v3/mail/send \ -d &amp;#34;JSONデータを指定&amp;#34; \ -H &amp;#34;Authorization: Bearer &amp;lt;&amp;lt;API Key&amp;gt;&amp;gt;&amp;#34; \ -H &amp;#34;Content-Type: application/json&amp;#34; [JSON データ]</description></item></channel></rss>
