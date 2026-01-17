@@ -2,7 +2,9 @@
   <header>ABOUT</header>
   <div>
     <div class="articles sm">
-      {{ range where $.Site.RegularPages "Section" "other" }}
+      {{ $pages := where $.Site.RegularPages "Section" "=" "other" }}
+      {{ $pages = where $pages "Build.List" "!=" "false" }}
+      {{ range $pages }}
       {{ .Render "li_sm" }}
       {{ end }}
     </div>
