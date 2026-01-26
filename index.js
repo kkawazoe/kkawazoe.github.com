@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2026/01/26/how-to-assign-sequential-numbers-to-a-large-number-of-rows-in-an-google-spreadsheet/",
+title: "Google スプレッドシートにて大量の行数が存在するシートに対して連番を付与する方法",
+image: "images/logo/excel_logo.svg",
+date: "2026-01-26",
+body: "Google スプレッドシートにて大量の行数が存在するシートに対して連番を付与する方法 Google スプレッドシートにて大量の行数が存在するシートに対して連番を付与する方法を備忘録として残しておく 方法 ARRAYFORMULA() + ROW() + IF 関数を使用することで対象列に値が入っている行に対して連番を付与することができる 例. 対象列が C 列で、4 行目から B 列に連番を付与したい場合 =ARRAYFORMULA(IF(C4:C\u0026lt;\u0026gt;\u0026#34;\u0026#34;, ROW(C4:C)-3, \u0026#34;\u0026#34;)) 上記の数式を B4 セルに入力することで、C 列に値が入っている 4 行目以降に対して B 列に連番が付与される ちなみに Excel としてダウンロードした場合でも同様に連番が付与された状態でダウンロードされる ※Excel 側では数式は以下 ※Ctrl + / で配列範囲を選択が可能 {=IF(C4:C1003\u0026lt;\u0026gt;\u0026#34;\u0026#34;, ROW(C4:C1003)-3, \u0026#34;\u0026#34;)} Excel 側で同様のことを行いたい場合は以下の数式を使用する =SEQUENCE(COUNTA(C:C)-1)"
+},
+{
 url: "https://kkawazoe.github.io/blog/2026/01/17/road-to-jstqb-foundation-level-part2/",
 title: "WSL 上の VSCode で 'Exec format error' が発生して起動しなくなったときの対処方法",
 image: "images/logo/vscode_logo.png",
