@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/amp/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/",
+title: "pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法",
+image: "images/logo/postgre_sql_logo.svg",
+date: "2026-02-06",
+body: "pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法 pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法を備忘録として残しておく 環境 OS: MacOS Tahoe 26.2 エラー内容 Error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you\u0026#39;re on macOS Sierra or later, you\u0026#39;ll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information. 対処法 ダウンロードフォルダ内にアプリケーションがある場合 pgAdmin4 を終了する Finder でダウンロードフォルダを開く pgAdmin4 アプリケーションを「アプリケーション」フォルダにドラッグアンドドロップで移動する アプリケーションフォルダから pgAdmin4 を起動し、再度更新する それ以外の場合 pgAdmin4 を終了する ターミナルを開いて、以下のコマンドを実行する sudo xattr -rd com.apple.quarantine /Applications/pgAdmin\\ 4.app pgAdmin4 を起動し、再度更新する"
+},
+{
 url: "https://kkawazoe.github.io/amp/blog/2026/01/26/how-to-assign-sequential-numbers-to-a-large-number-of-rows-in-an-google-spreadsheet/",
 title: "Google スプレッドシートにて大量の行数が存在するシートに対して連番を付与する方法",
 image: "images/logo/excel_logo.svg",
