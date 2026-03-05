@@ -107,9 +107,11 @@
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f "id_rsa" > Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下) > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下) > Enter passphrase (empty for no passphrase): [Type a passphrase] > Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-$ eval "$(ssh-agent -s)" > Agent pid 59566 ※ macOS Sierra 10.</div>
+実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f "id_rsa" > Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+> Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
+> Enter passphrase (empty for no passphrase): [Type a passphrase] > Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
+4-1. バックグラウンドでssh-agentを起動</div>
 </div>
 </a>
 </article>
@@ -178,7 +180,11 @@ github
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>経緯 仕事で必要となり表題の環境を準備することになった 苦労したためその際の手順およびハマった点等を備忘録として残しておく
-構築環境 ruby: ruby 1.8.7 rails: rails 2.3.18 手順 Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする Ruby をインストールする(オプションで環境変数パスへの登録を有効にする) DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する) 3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする 4-1. 以下のコマンドを入力する gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
+構築環境 ruby: ruby 1.8.7 rails: rails 2.3.18 手順 Ruby Installer で Ruby(1.8.7 p-374) および DevKit(DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe) をダウンロードする
+Ruby をインストールする(オプションで環境変数パスへの登録を有効にする)
+DevKit を展開する(自己解凍形式の圧縮ファイルなので、実行して適当なところに展開する)
+3-1. コマンドプロンプトで展開した場所に移動し以下のコマンドを入力する ruby dk.rb init ruby dk.rb install rubygems-update のバージョンをダウングレードする
+4-1. 以下のコマンドを入力する gem update --system 1.3.7 ※以下のエラーが起きる場合はこのサイトを参考に手動で rubygems-update をダウングレードする
 $ gem update --system ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError) SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.</div>
 </div>
 </a>

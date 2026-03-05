@@ -102,7 +102,7 @@
 様々な形式(markdown, Excel 等)で生成してくれる<br>
 ※詳細は <a href=https://github.com/k1LoW/tbls>Tbls</a> を参照</p>
 <h3 id=設定ファイルについて>設定ファイルについて</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml:.tbls.yml data-lang=.yml:.tbls.yml><span style=color:#75715e>#</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml:.tbls.yml data-lang=yml:.tbls.yml><span style=color:#75715e>#</span>
 <span style=color:#75715e># @see https://github.com/k1LoW/tbls</span>
 <span style=color:#75715e>#</span>
 
@@ -179,9 +179,9 @@
 </span><span style=color:#e6db74>      </span>      <span style=color:#ae81ff>書籍情報を管理するテーブル</span>
     <span style=color:#f92672>columnComments</span>:
       <span style=color:#f92672>name</span>: <span style=color:#ae81ff>書籍名</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh:.env data-lang=.sh:.env>TBLS_DSN<span style=color:#f92672>=</span>postgres://postgres:postgres@localhost:5432/olbdb?sslmode<span style=color:#f92672>=</span>disable
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh:.env data-lang=sh:.env>TBLS_DSN<span style=color:#f92672>=</span>postgres://postgres:postgres@localhost:5432/olbdb?sslmode<span style=color:#f92672>=</span>disable
 </code></pre></div><h3 id=出力ファイルの上書きについて>出力ファイルの上書きについて</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.sh data-lang=.sh><span style=color:#75715e># markdown</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e># markdown</span>
 tbls doc --config .tbls.yml --rm-dist
 <span style=color:#75715e># Excel</span>
 tbls out --config .tbls.yml -t xlsx -o schema.xlsx
@@ -193,7 +193,7 @@ tbls out --config .tbls.yml -t xlsx -o schema.xlsx
 </ul>
 <h3 id=mkdocs-との連携>mkdocs との連携</h3>
 <p>S3 等にアップロードして公開する場合は、mkdocs と連携して公開することも可能</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.yml:mkdocs.yml data-lang=.yml:mkdocs.yml><span style=color:#f92672>site_name</span>: <span style=color:#e6db74>&#34;DB Schema Tables&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml:mkdocs.yml data-lang=yml:mkdocs.yml><span style=color:#f92672>site_name</span>: <span style=color:#e6db74>&#34;DB Schema Tables&#34;</span>
 <span style=color:#f92672>docs_dir</span>: <span style=color:#ae81ff>docs</span>
 
 <span style=color:#f92672>theme</span>:
@@ -240,7 +240,7 @@ tbls out --config .tbls.yml -t xlsx -o schema.xlsx
     - <span style=color:#f92672>テーブル一覧</span>: <span style=color:#ae81ff>ja/README.md</span>
   - <span style=color:#f92672>English</span>:
     - <span style=color:#f92672>Table List</span>: <span style=color:#ae81ff>en/README.md</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-.txt:requirements.txt data-lang=.txt:requirements.txt>babel==2.17.0
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt:requirements.txt data-lang=txt:requirements.txt>babel==2.17.0
 backrefs==5.9
 certifi==2025.7.9
 charset-normalizer==3.4.2
