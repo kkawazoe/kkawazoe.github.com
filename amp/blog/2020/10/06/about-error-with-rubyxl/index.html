@@ -79,13 +79,13 @@
 あるため注意が必要</p>
 <h2 id=rubyxl-発生した障害とその対応>rubyXL 発生した障害とその対応</h2>
 <ol>
-<li>テキストの折り返しがsheet.add_cellではできない</li>
-</ol>
+<li>
+<p>テキストの折り返しがsheet.add_cellではできない</p>
 <p><code>sheet.add_cell(col, row, 'text').change_text_wrap</code> によって実装可能<br>
 テキストを折り返して表示してくれるようになる</p>
-<ol start=2>
-<li><code>change_contents</code> が使えない</li>
-</ol>
+</li>
+<li>
+<p><code>change_contents</code> が使えない</p>
 <p>version 3.4.0 以降は <code>convenience_methods</code> を呼び出さないと利用不可</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#75715e># require が必要なメソッド</span>
 require <span style=color:#e6db74>&#39;rubyXL/convenience_methods/cell&#39;</span>
@@ -95,14 +95,14 @@ require <span style=color:#e6db74>&#39;rubyXL/convenience_methods/workbook&#39;<
 require <span style=color:#e6db74>&#39;rubyXL/convenience_methods/worksheet&#39;</span>
 </code></pre></div><p>もしくは以下で全て使用可</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb>require <span style=color:#e6db74>&#39;rubyXL/convenience_methods&#39;</span>
-</code></pre></div><ol start=3>
-<li>シートのコピーができない</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>シートのコピーができない</p>
 <p><code>Marshal.load</code> なども試してみたが、上手くいかなかったので以下を参考にして対応<br>
 <a href=https://stackoverflow.com/questions/29507841/create-multiple-sheets-that-uses-same-template-using-rubyxl>参考サイト</a></p>
-<ol start=4>
-<li>シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう</li>
-</ol>
+</li>
+<li>
+<p>シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう</p>
 <p><code>change_contents</code> の仕様と上記のシートコピーによって生じた現象</p>
 <ul>
 <li>① シートの書式等をコピー</li>
@@ -111,20 +111,20 @@ require <span style=color:#e6db74>&#39;rubyXL/convenience_methods/worksheet&#39;
 => <code>add_cell</code> による値の挿入で対応<br>
 ※上記の場合は書式設定等は rubyXL 側で行う必要がある</li>
 </ul>
-<ol start=5>
-<li>動的な配置で Excel の数式を設定する</li>
-</ol>
+</li>
+<li>
+<p>動的な配置で Excel の数式を設定する</p>
 <p><code>insert_row</code> 等で行の挿入を動的に行った場合に Excel の数式によって値の算出を行いたい<br>
 ※<code>insert_row</code> は公式でも書かれているが扱いに慎重になるべきメソッドで、結合したセルや数式が挿入した行の下にあった場合に Excel が破損することがある</p>
 <p><a href=https://www.rubydoc.info/gems/rubyXL/1.1.12/RubyXL/Worksheet#add_cell-instance_method>add_cell</a>の書式を確認したところ数式は第4引数に該当するためそこに Excel の数式を代入する(SUM 関数等)</p>
-<ol start=6>
-<li>グラフの作成ができない</li>
-</ol>
+</li>
+<li>
+<p>グラフの作成ができない</p>
 <p>rubyXL 側にグラフに関するメソッドは存在しないため対応不可<br>
 テンプレートにグラフを挿入することで対応</p>
-<ol start=7>
-<li>印刷方向を縦向きから横向きにしたい</li>
-</ol>
+</li>
+<li>
+<p>印刷方向を縦向きから横向きにしたい</p>
 <p>基本的にテンプレートの印刷設定を修正するだけで対応可<br>
 「テンプレート内のシートをコピーして作成その後、シートを削除する」といった処理の場合は以下の対応を行う</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb>worksheet<span style=color:#f92672>.</span>page_setup <span style=color:#f92672>=</span> template<span style=color:#f92672>.</span>page_setup
@@ -220,25 +220,40 @@ require <span style=color:#e6db74>&#39;rubyXL/convenience_methods/worksheet&#39;
 </ul>
 </li>
 </ul>
-<h2 id=rubyxl-では実装できないパターンについて>rubyXL では実装できないパターンについて</h2>
-<ol>
-<li>グラフ関連</li>
+</li>
 </ol>
+<h2 id=rubyxl-では実装できないパターンについて>rubyXL では実装できないパターンについて</h2>
+<h3 id=グラフ関連>グラフ関連</h3>
 <p>グラフの描画自体はテンプレートファイルからの読み込みで問題なく実行可能<br>
 但し、以下のパターンは実現は難しい</p>
+<ol>
+<li>
+<p>シート名を動的に変更しつつグラフの描画を行う</p>
 <ul>
-<li>① シート名を動的に変更しつつグラフの描画を行う<br>
-Excel 上だとグラフのデータ範囲はシートに基づいており、シート名を変更してしまうと変更前のシート名を参照してしまいエラーが発生する<br>
-<code>DISTINCT</code>関数をテンプレート側で使用しても、グラフのデータ範囲はファイル読み込み時の Excel の関数よりも早くに動作するためエラーが発生する<br>
-また、シート名の動的な変更は xlsm のマクロを利用するしかなく RubyXL 側では実現不可</li>
-<li>② グラフのデータ範囲の変更<br>
-①と同様の理由で不可<br>
-同様の理由で、グラフのデータ範囲が動的に変化する<br>
-(<code>insert_row</code> などを使用して抽出するデータ範囲が変動する)場合も RubyXL 側では実現不可</li>
-<li>③ グラフの生成(グラフ設定の編集含む)<br>
-RubyXL にグラフ描画・サポート機能が対応していないため不可<br>
+<li>Excel 上だとグラフのデータ範囲はシートに基づいており、シート名を変更してしまうと変更前のシート名を参照してしまいエラーが発生する</li>
+<li><code>DISTINCT</code>関数をテンプレート側で使用しても、グラフのデータ範囲はファイル読み込み時の Excel の関数よりも早くに動作するためエラーが発生する</li>
+<li>シート名の動的な変更は xlsm のマクロを利用するしかなく RubyXL 側では実現不可</li>
+</ul>
+</li>
+<li>
+<p>グラフのデータ範囲の変更</p>
+<ul>
+<li>1 と同様の理由で不可
+<ul>
+<li>同様の理由で、グラフのデータ範囲が動的に変化する</li>
+</ul>
+</li>
+<li>(<code>insert_row</code> などを使用して抽出するデータ範囲が変動する)場合も RubyXL 側では実現不可</li>
+</ul>
+</li>
+<li>
+<p>グラフの生成(グラフ設定の編集含む)</p>
+<ul>
+<li>RubyXL にグラフ描画・サポート機能が対応していないため不可<br>
 テンプレートファイルにてグラフを挿入しておいて対応する</li>
 </ul>
+</li>
+</ol>
 </div>
 <footer class=article-footer>
 <ul class=facts-tags>

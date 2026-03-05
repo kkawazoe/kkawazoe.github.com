@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -98,22 +98,24 @@
 <p>前回の記事: <a href=https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</a></p>
 <h3 id=手順>手順</h3>
 <ol>
-<li>Role に対して適宜必要な権限を付与</li>
-</ol>
+<li>
+<p>Role に対して適宜必要な権限を付与</p>
 <p>例. public Schema の全テーブルへの全権限を付与</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>grant all on all tables in schema public to &lt;&lt;DB ユーザ&gt;&gt;;
-</code></pre></div><ol start=2>
-<li>アクセス制御を行うテーブルからアクセス権限を取り消す</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>アクセス制御を行うテーブルからアクセス権限を取り消す</p>
 <p>例. public T_USER_HISTORY テーブルのアクセス権限を取り消す</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>revoke <span style=color:#66d9ef>select</span> on <span style=color:#e6db74>&#34;public&#34;</span>.<span style=color:#e6db74>&#34;T_USER_HISTORY&#34;</span> from &lt;&lt;DB ユーザ&gt;&gt;;
-</code></pre></div><ol start=3>
-<li>権限の確認</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>権限の確認</p>
 <p>該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#ae81ff>\d</span>p
 <span style=color:#75715e>#=&gt; &lt;&lt;DB ユーザ&gt;&gt;=awdDxt/postgres</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -298,8 +300,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

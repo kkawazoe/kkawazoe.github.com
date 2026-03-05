@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -108,13 +108,11 @@
 <p>DB ユーザ追加</p>
 <p>以下のコマンドを使用してユーザを追加する<br>
 ※実運用時は、適宜必要な権限を付与する</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>postgres<span style=color:#f92672>=</span>&gt; CREATE ROLE <span style=color:#e6db74>&lt;&lt;ロール名&gt;&gt; LOGIN PASSWORD &#39;&lt;&lt;パスワード&gt;&gt;&#39;;
 </span><span style=color:#e6db74>
 </span><span style=color:#e6db74># 例. ログイン属性, 接続数制限なし, パスワード指定
 </span><span style=color:#e6db74>postgres=&gt; CREATE ROLE &lt;&lt;ロール名</span>&gt;&gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD <span style=color:#e6db74>&#39;&lt;&lt;パスワード&gt;&gt;&#39;</span>;
-</code></pre></div><ol start=2>
+</code></pre></div></li>
 <li>
 <p>Secrets Manager にデータベース認証情報設定</p>
 <p>AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する</p>
@@ -142,10 +140,10 @@
 </li>
 <li>
 <p>接続確認</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>psql -h &lt;&lt;RDS Proxy のエンドポイント&gt;&gt; -p <span style=color:#ae81ff>5432</span> -U &lt;&lt;作成した DB ユーザ&gt;&gt;
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -330,8 +328,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

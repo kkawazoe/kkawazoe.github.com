@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -132,7 +132,10 @@ class CreateBookCategoriess &lt; ActiveRecord::Migration[6.</div>
 </ul>
 <div class=summary>Mac(M1) でパスを通す際に Intel の場合と同じ手順では上手くいかなかったので備忘録として残しておく
 手順 例. mysql の path を通す場合 ※Homebrew でインストールしたもの
-インストール先の path を確認 $ brew --prefix mysql@5.7 #=> /opt/homebrew/opt/mysql@5.7 ~/.zshrc に追記する $ echo 'export PATH="$PATH:/opt/homebrew/opt/mysql@5.7/bin"' >> ~/.zshrc $ source ~/.zshrc 動作確認 $ mysql--version #=> mysql Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using EditLine wrapper </div>
+インストール先の path を確認
+brew --prefix mysql@5.7 #=> /opt/homebrew/opt/mysql@5.7 ~/.zshrc に追記する
+echo 'export PATH="$PATH:/opt/homebrew/opt/mysql@5.7/bin"' >> ~/.zshrc source ~/.zshrc 動作確認
+mysql--version #=> mysql Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using EditLine wrapper </div>
 </div>
 </a>
 </article>
@@ -205,7 +208,9 @@ module SampleGem # gem のクラス名 class Configuration attr_accessor :sample
 </ul>
 <div class=summary>Mac OS で mov を gif に変換する方法を備忘録として残しておく
 手順 ffmpeg を使用する ※ファイルのリサイズのために Image Magick も使用
-ffmpeg, Image Magick のインストール brew install ffmpeg brew install imagemagick gif に変換 ファイルサイズを少なくするために圧縮も行う
+ffmpeg, Image Magick のインストール
+brew install ffmpeg brew install imagemagick gif に変換
+ファイルサイズを少なくするために圧縮も行う
 cd 動画のあるディレクトリ ffmpeg -i {変換対象}.mov -an -r 20 %06d.png # 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成 convert *.png -resize 50% output_%06d.png # 作成した png を 50% にリサイズ convert output_*.png result.gif # gif に変換 # 生成された gif の確認は以下で行える ※Google Chrome インストールしている場合 open -a /Applications/Google\ Chrome.</div>
 </div>
 </a>
@@ -228,7 +233,10 @@ Hugo + GitHub Pages(master ブランチが対象)
 ※source ブランチを Hugo で変換して master ブランチに静的サイト用の資産を配置する Hugo テーマは submodule として取り込み 実際のコード GitHub Actions を使用する
 リポジトリ直下に .github/workflows フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される
 ※ source ブランチの push をトリガーに自動デプロイを行う
-source ブランチをチェックアウト Hugo(Docker) を使用して、静的サイト用の資産を作成 master ブランチに push して GitHub Pages にデプロイする name: Deploy on: push: branches: - source # Target Branch Name jobs: deploy: runs-on: ubuntu-22.04 steps: - uses: actions/checkout@v3 with: submodules: true # Fetch Hugo themes (true OR recursive) fetch-depth: 0 # Fetch all history for .</div>
+source ブランチをチェックアウト
+Hugo(Docker) を使用して、静的サイト用の資産を作成
+master ブランチに push して GitHub Pages にデプロイする
+name: Deploy on: push: branches: - source # Target Branch Name jobs: deploy: runs-on: ubuntu-22.</div>
 </div>
 </a>
 </article>
@@ -414,8 +422,8 @@ categories = Category.all.index_by(&:id) #=> { #=> 1=> #=> #&lt;Category:0x00005
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

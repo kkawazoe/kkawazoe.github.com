@@ -76,16 +76,18 @@
 ※ wsl のインストールについては <a href=https://docs.microsoft.com/ja-jp/windows/wsl/install-win10>参考</a> を参照</p>
 <h2 id=方法>方法</h2>
 <ol>
-<li>PowerShell で以下のコマンドを実行する</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ wsl
-$ sudo passwd root
-$ exit
-$ wsl -s Ubuntu-18.04
-$ ubuntu1804 config --default-user root
-$ wsl
+<li>
+<p>PowerShell で以下のコマンドを実行する</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>wsl
+sudo passwd root
+exit
+wsl -s Ubuntu-18.04
+ubuntu1804 config --default-user root
+wsl
 <span style=color:#75715e>#=&gt; root でログインしていることを確認</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>

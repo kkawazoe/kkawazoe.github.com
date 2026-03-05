@@ -65,16 +65,16 @@
 </aside>
 </header>
 <div class=article-body><p>Mac OS で mov を gif に変換する方法を備忘録として残しておく</p>
-<h3 id=手順>手順</h3>
+<h2 id=手順>手順</h2>
 <p>ffmpeg を使用する ※ファイルのリサイズのために Image Magick も使用</p>
 <ol>
-<li>ffmpeg, Image Magick のインストール</li>
-</ol>
+<li>
+<p>ffmpeg, Image Magick のインストール</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install ffmpeg
 brew install imagemagick
-</code></pre></div><ol start=2>
-<li>gif に変換</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>gif に変換</p>
 <p>ファイルサイズを少なくするために圧縮も行う</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd 動画のあるディレクトリ
 ffmpeg -i <span style=color:#f92672>{</span>変換対象<span style=color:#f92672>}</span>.mov -an -r <span style=color:#ae81ff>20</span> %06d.png   <span style=color:#75715e># 20 frames/secでpng作成 ※6 桁連番の png ファイルを生成</span>
@@ -87,6 +87,8 @@ open -a /Applications/Google<span style=color:#ae81ff>\ </span>Chrome.app result
 </code></pre></div><p>画像が多少荒くても良いのであれば以下</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ffmpeg -i <span style=color:#f92672>{</span>変換対象<span style=color:#f92672>}</span>.mov -r <span style=color:#ae81ff>24</span> result.gif
 </code></pre></div><p><a target=_blank href=https://icons8.com/icon/vCiwbOh7Uo7G/mac-os-logo>Mac Os Logo</a> icon by <a target=_blank href=https://icons8.com>Icons8</a></p>
+</li>
+</ol>
 </div>
 <footer class=article-footer>
 <ul class=facts-tags>

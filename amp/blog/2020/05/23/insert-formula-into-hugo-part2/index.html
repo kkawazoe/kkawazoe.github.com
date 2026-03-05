@@ -74,8 +74,8 @@
 <p><a href=http://docs.mathjax.org/en/latest/web/configuration.html#converting-your-v2-configuration-to-v3>参考</a> を見ながらアップデートする
 ※<a href=https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>version2 から version 3 への変換</a>を利用</p>
 <ol>
-<li>partials フォルダ配下の以下のファイルを修正する</li>
-</ol>
+<li>
+<p>partials フォルダ配下の以下のファイルを修正する</p>
 <p>CDN で提供されている最新の MathJax.js の URL は、<a href=https://cdnjs.com/>cdnjs.com</a> で確認する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html:mathjax_support.html data-lang=html:mathjax_support.html>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span>&gt;
   <span style=color:#a6e22e>MathJax</span> <span style=color:#f92672>=</span> {
@@ -117,15 +117,17 @@
   };
 &lt;/<span style=color:#f92672>script</span>&gt;
 &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span> <span style=color:#a6e22e>async</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;MathJax-script&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
-</code></pre></div><ol start=2>
-<li>1 で作成した partial を head or footer で読込</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>1 で作成した partial を head or footer で読込</p>
 <p>例 head で読込</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>head</span>&gt;
   ・・・
   {{ partial &#34;mathjax_support.html&#34; . }}
 &lt;/<span style=color:#f92672>head</span>&gt;
-</code></pre></div><h2 id=チートシート-追加分のみ>チートシート ※追加分のみ</h2>
+</code></pre></div></li>
+</ol>
+<h2 id=チートシート-追加分のみ>チートシート ※追加分のみ</h2>
 <h3 id=複数行で-イコール-の位置を揃える>複数行で =(イコール) の位置を揃える</h3>
 <h4 id=番号あり>番号あり</h4>
 <p>[記入例]</p>

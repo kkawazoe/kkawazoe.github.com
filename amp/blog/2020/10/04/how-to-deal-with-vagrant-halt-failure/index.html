@@ -68,8 +68,8 @@
 <p>vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく</p>
 <h2 id=手順>手順</h2>
 <ol>
-<li>vagrant halt を行う</li>
-</ol>
+<li>
+<p>vagrant halt を行う</p>
 <p>以下のエラーが発生</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>An action <span style=color:#e6db74>&#39;halt&#39;</span> was attempted on the machine <span style=color:#e6db74>&#39;default&#39;</span>,
 but another process is already executing an action on
@@ -82,17 +82,19 @@ If you believe this message is in error, please check
 the process
 listing <span style=color:#66d9ef>for</span> any <span style=color:#e6db74>&#34;ruby&#34;</span> or <span style=color:#e6db74>&#34;vagrant&#34;</span> processes and kill them. Then
 try again.
-</code></pre></div><ol start=2>
-<li>以下のコマンドを実行して <code>ruby.exe</code> の pid を探す</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して <code>ruby.exe</code> の pid を探す</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tasklist /fi <span style=color:#e6db74>&#34;Imagename eq ruby.exe&#34;</span>
-</code></pre></div><ol start=3>
-<li>以下のコマンドを実行して <code>ruby.exe</code> を終了させる</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して <code>ruby.exe</code> を終了させる</p>
 <p>例 ruby.exe の pid が 7972 の場合</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>taskkill /F /pid <span style=color:#ae81ff>7972</span>
-</code></pre></div><ol start=4>
-<li>再度 vagrant halt を実行する</li>
+</code></pre></div></li>
+<li>
+<p>再度 vagrant halt を実行する</p>
+</li>
 </ol>
 </div>
 <footer class=article-footer>

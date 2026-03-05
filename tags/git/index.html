@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -73,9 +73,10 @@
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 1. アクセストークンを作成する GitHub アカウントにログインし，Settings > Developer settings から Personal access tokens を選択する
-Generate new token を押下する
-2. 以下のコマンドを実行してリポジトリを clone する git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} 3. ローカルの設定を追加する git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
+手順 アクセストークンを作成する
+GitHub アカウントにログインし，Settings > Developer settings から Personal access tokens を選択する Generate new token を押下する 以下のコマンドを実行してリポジトリを clone する
+git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} ローカルの設定を追加する
+git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス} </div>
 </div>
 </a>
 </article>
@@ -91,8 +92,15 @@ Generate new token を押下する
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ Git 初期化 git init Git 接続先設定 git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得 git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成 git checkout -b topic/#{issue番号}-作業者名 開発 ステージングにあげる git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする git commit -m "コメント" プルリクエストを投げる git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し
-その他 ローカルの修正を元に戻す 一部ファイルのみ戻す場合</div>
+実際のコード 基本的な流れ Git 初期化
+git init Git 接続先設定
+git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得
+git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成
+git checkout -b topic/#{issue番号}-作業者名 開発
+ステージングにあげる
+git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする
+git commit -m "コメント" プルリクエストを投げる
+git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</div>
 </div>
 </a>
 </article>
@@ -230,8 +238,8 @@ Generate new token を押下する
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

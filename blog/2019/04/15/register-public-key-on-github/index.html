@@ -13,10 +13,11 @@
 <link rel=amphtml type=text/html href=https://kkawazoe.github.io/amp/blog/2019/04/15/register-public-key-on-github/ title="Note To Self ~One Step At A Time~">
 <meta name=description content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 > Enter passphrase (empty for no passphrase): [Type a passphrase] > Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動">
+4-1. バックグラウンドでssh-agentを起動
+eval &#34;$(ssh-agent -s)&#34; > Agent pid 59566 ※ macOS Sierra 10.">
 <meta property="og:title" content="GitHub への公開鍵の登録 - Note To Self ~One Step At A Time~">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/">
@@ -24,10 +25,11 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 <meta property="og:site_name" content="Note To Self ~One Step At A Time~">
 <meta property="og:description" content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 > Enter passphrase (empty for no passphrase): [Type a passphrase] > Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動">
+4-1. バックグラウンドでssh-agentを起動
+eval &#34;$(ssh-agent -s)&#34; > Agent pid 59566 ※ macOS Sierra 10.">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="Note To Self ~One Step At A Time~">
@@ -35,12 +37,13 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 <meta name=twitter:title content="GitHub への公開鍵の登録 - Note To Self ~One Step At A Time~">
 <meta name=twitter:description content="毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
 実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-$ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
+ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#34; > Generating public/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
 > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
 > Enter passphrase (empty for no passphrase): [Type a passphrase] > Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動">
+4-1. バックグラウンドでssh-agentを起動
+eval &#34;$(ssh-agent -s)&#34; > Agent pid 59566 ※ macOS Sierra 10.">
 <meta name=twitter:image content="https://kkawazoe.github.io/images/logo/github_logo.svg">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"GitHub への公開鍵の登録-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/github_logo.svg","height":800,"width":800},"datePublished":"2019-04-15T11:51:14JST","dateModified":"2019-04-15T11:51:14JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく\n実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行\n$ ssh-keygen -t rsa -b 4096 -C \u0026#34;your_email@example.com\u0026#34; -f \u0026#34;id_rsa\u0026#34; \u0026gt; Generating public\/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)\n\u0026gt; Enter a file in which to save the key (\/Users\/you\/.ssh\/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)\n\u0026gt; Enter passphrase (empty for no passphrase): [Type a passphrase] \u0026gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する\n4-1. バックグラウンドでssh-agentを起動"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/kkawazoe.github.io\/"},"headline":"GitHub への公開鍵の登録-Note To Self ~One Step At A Time~","image":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images\/logo\/github_logo.svg","height":800,"width":800},"datePublished":"2019-04-15T11:51:14JST","dateModified":"2019-04-15T11:51:14JST","author":{"@type":"Person","name":"Note To Self ~One Step At A Time~"},"publisher":{"@type":"Organization","name":"Note To Self ~One Step At A Time~","logo":{"@type":"ImageObject","url":"https:\/\/kkawazoe.github.io\/images/logo.png","width":600,"height":60}},"description":"毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく\n実際のコード Mac   以下のコマンドを GitHub のEメールアドレスに置き換えて実行\nssh-keygen -t rsa -b 4096 -C \u0026#34;your_email@example.com\u0026#34; -f \u0026#34;id_rsa\u0026#34; \u0026gt; Generating public\/private rsa key pair.   以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)\n\u0026gt; Enter a file in which to save the key (\/Users\/you\/.ssh\/id_rsa): [Press enter]   以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)\n\u0026gt; Enter passphrase (empty for no passphrase): [Type a passphrase] \u0026gt; Enter same passphrase again: [Type passphrase again]   SSH キーを ssh-agent に追加する\n4-1. バックグラウンドでssh-agentを起動\neval \u0026#34;$(ssh-agent -s)\u0026#34; \u0026gt; Agent pid 59566 ※ macOS Sierra 10."}</script>
 <link rel=canonical href=https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css>
@@ -76,7 +79,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -112,7 +115,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 <ol>
 <li>
 <p>以下のコマンドを GitHub のEメールアドレスに置き換えて実行</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -C <span style=color:#e6db74>&#34;your_email@example.com&#34;</span> -f <span style=color:#e6db74>&#34;id_rsa&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -C <span style=color:#e6db74>&#34;your_email@example.com&#34;</span> -f <span style=color:#e6db74>&#34;id_rsa&#34;</span>
 &gt; Generating public/private rsa key pair.
 </code></pre></div></li>
 <li>
@@ -127,7 +130,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 <li>
 <p>SSH キーを ssh-agent に追加する</p>
 <p>4-1. バックグラウンドでssh-agentを起動</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ eval <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>ssh-agent -s<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>eval <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>ssh-agent -s<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 &gt; Agent pid <span style=color:#ae81ff>59566</span>
 </code></pre></div><p>※ macOS Sierra 10.12.2 以降を使用している場合は <code>~/.ssh/config</code> ファイルを変更して自動的にキーを <code>ssh-agent</code> にロードしパスフレーズをキーチェーンに格納する必要あり</p>
 <pre tabindex=0><code class=language-bash:~/.ssh/config data-lang=bash:~/.ssh/config>Host *
@@ -151,7 +154,7 @@ $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34; -f &#34;id_rsa&#
 <ol>
 <li>
 <p>以下のコマンドを GitHub のEメールアドレスに置き換えて実行</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -C <span style=color:#e6db74>&#34;your_email@example.com&#34;</span> -f <span style=color:#e6db74>&#34;id_rsa&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -C <span style=color:#e6db74>&#34;your_email@example.com&#34;</span> -f <span style=color:#e6db74>&#34;id_rsa&#34;</span>
 &gt; Generating public/private rsa key pair.
 </code></pre></div></li>
 <li>
@@ -389,8 +392,8 @@ ssh -T git@github.com.sub
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

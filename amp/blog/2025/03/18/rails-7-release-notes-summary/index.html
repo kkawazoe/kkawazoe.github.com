@@ -88,14 +88,20 @@ bin<span style=color:#f92672>/</span>rails <span style=color:#e6db74>css</span>:
 </code></pre></div><h3 id=active-recordの実行時暗号化機能>Active Recordの実行時暗号化機能</h3>
 <p>データの暗号化が可能になった</p>
 <ol>
-<li><code>bin/rails db:encryption:init</code> コマンドを実行してランダムなキーを生成</li>
-<li>結果を<code>bin/rails credentials:edit</code>で開いたエディタの画面に貼り付けて保存</li>
-<li>Model で以下のように指定</li>
-</ol>
+<li>
+<p><code>bin/rails db:encryption:init</code> コマンドを実行してランダムなキーを生成</p>
+</li>
+<li>
+<p>結果を<code>bin/rails credentials:edit</code>で開いたエディタの画面に貼り付けて保存</p>
+</li>
+<li>
+<p>Model で以下のように指定</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rb data-lang=rb><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>ApplicationRecord</span>
- encrypts <span style=color:#e6db74>:name</span>
+encrypts <span style=color:#e6db74>:name</span>
 <span style=color:#66d9ef>end</span>
-</code></pre></div><h3 id=spring-のデフォルト値の変更>Spring のデフォルト値の変更</h3>
+</code></pre></div></li>
+</ol>
+<h3 id=spring-のデフォルト値の変更>Spring のデフォルト値の変更</h3>
 <p>大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更</p>
 <h3 id=sass-と-css-ジェネレータの非標準化>Sass と CSS ジェネレータの非標準化</h3>
 <p>最近では CSS フレームワークを使うようになっているため、Sass は使用されなくなってきている<br>

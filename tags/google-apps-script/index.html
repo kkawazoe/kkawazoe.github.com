@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -74,7 +74,10 @@
 </ul>
 <div class=summary>DMARC Reports を自前で集計する方法を備忘録として残しておく
 方法 GAS(Google Apps Script) を使用して集約する
-新規で Spread Sheet を作成 「拡張機能」>「Apps Script」を選択 「ファイル」>「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける let today = new Date(); let targetDate = new Date(today); let nextDate = new Date(today); targetDate.setDate(today.getDate() - 1); nextDate.setDate(targetDate.getDate() + 1); const folderId = '&lt;&lt;Folder ID>>'; // レポートファイルを保存する親フォルダIDを指定 const sheetId = '&lt;&lt;Sheet ID>>'; // レポートを出力するスプレッドシートIDを指定 // 実行日の前日のメールを検索 // DMARC レポートを取得できる検索条件を指定する const query = 'From:noreply-dmarc-support@google.com after:' + Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyy/MM/dd') + ' before:' + Utilities.</div>
+新規で Spread Sheet を作成
+「拡張機能」>「Apps Script」を選択
+「ファイル」>「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける
+let today = new Date(); let targetDate = new Date(today); let nextDate = new Date(today); targetDate.setDate(today.getDate() - 1); nextDate.setDate(targetDate.getDate() + 1); const folderId = '&lt;&lt;Folder ID>>'; // レポートファイルを保存する親フォルダIDを指定 const sheetId = '&lt;&lt;Sheet ID>>'; // レポートを出力するスプレッドシートIDを指定 // 実行日の前日のメールを検索 // DMARC レポートを取得できる検索条件を指定する const query = 'From:noreply-dmarc-support@google.com after:' + Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyy/MM/dd') + ' before:' + Utilities.</div>
 </div>
 </a>
 </article>
@@ -227,8 +230,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

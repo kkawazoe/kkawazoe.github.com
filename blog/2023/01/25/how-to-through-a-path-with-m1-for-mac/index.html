@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -92,24 +92,26 @@
 </aside>
 </header>
 <div class=article-body><p>Mac(M1) でパスを通す際に Intel の場合と同じ手順では上手くいかなかったので備忘録として残しておく</p>
-<h3 id=手順>手順</h3>
+<h2 id=手順>手順</h2>
 <p>例. mysql の path を通す場合 ※Homebrew でインストールしたもの</p>
 <ol>
-<li>インストール先の path を確認</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ brew --prefix mysql@5.7 
+<li>
+<p>インストール先の path を確認</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew --prefix mysql@5.7 
 <span style=color:#75715e>#=&gt; /opt/homebrew/opt/mysql@5.7</span>
-</code></pre></div><ol start=2>
-<li><code>~/.zshrc</code> に追記する</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ echo <span style=color:#e6db74>&#39;export PATH=&#34;$PATH:/opt/homebrew/opt/mysql@5.7/bin&#34;&#39;</span> &gt;&gt; ~/.zshrc
-$ source ~/.zshrc
-</code></pre></div><ol start=3>
-<li>動作確認</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ mysql--version
+</code></pre></div></li>
+<li>
+<p><code>~/.zshrc</code> に追記する</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>echo <span style=color:#e6db74>&#39;export PATH=&#34;$PATH:/opt/homebrew/opt/mysql@5.7/bin&#34;&#39;</span> &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre></div></li>
+<li>
+<p>動作確認</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mysql--version
 <span style=color:#75715e>#=&gt; mysql  Ver 14.14 Distrib 5.7.40, for osx10.17 (x86_64) using  EditLine wrapper</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -293,8 +295,8 @@ $ source ~/.zshrc
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

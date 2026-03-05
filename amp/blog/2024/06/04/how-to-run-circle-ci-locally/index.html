@@ -96,18 +96,20 @@
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>brew install circleci
 </code></pre></div><h2 id=使用方法>使用方法</h2>
 <ol>
-<li>CLI で定義ファイルの文法チェックを行う</li>
-</ol>
+<li>
+<p>CLI で定義ファイルの文法チェックを行う</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>circleci config validate
 <span style=color:#75715e>#=&gt; Config file at .circleci/config.yml is valid.</span>
-</code></pre></div><ol start=2>
-<li>circleci コマンドを使用して実行する</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>circleci コマンドを使用して実行する</p>
 <p>例. build Job 確認<br>
 ※version 2.1 の場合は一度 config ファイルの変換を行ってから実行する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>circleci config process .circleci/config.yml &gt; config-for-v2.yml
 circleci local execute -c config-for-v2.yml build
-</code></pre></div><h2 id=制約>制約</h2>
+</code></pre></div></li>
+</ol>
+<h2 id=制約>制約</h2>
 <p><a href=https://circleci.com/docs/ja/how-to-use-the-circleci-local-cli/#limitations-of-running-jobs-locally>ローカルでのジョブ実行時の制限事項</a>を参照</p>
 </div>
 <footer class=article-footer>

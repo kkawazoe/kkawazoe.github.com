@@ -78,13 +78,19 @@
 </ul>
 <h2 id=aws-mfa-設定>aws-mfa 設定</h2>
 <ol>
-<li>通常の aws profile を設定</li>
-<li>1 で設定した &#171;profile 名&#187;-long-term で Profile を設定</li>
-<li>追加で <code>~/.aws/credentials</code> に以下を設定</li>
-</ol>
+<li>
+<p>通常の aws profile を設定</p>
+</li>
+<li>
+<p>1 で設定した &#171;profile 名&#187;-long-term で Profile を設定</p>
+</li>
+<li>
+<p>追加で <code>~/.aws/credentials</code> に以下を設定</p>
 <pre tabindex=0><code class=language-sh:~/.aws/credentials data-lang=sh:~/.aws/credentials>[&lt;&lt;profile 名&gt;&gt;-long-term]
 aws_mfa_device = &lt;&lt;arn:aws:iam::*:mfa/${aws:username}&gt;&gt;
-</code></pre><h2 id=フォルダ構成>フォルダ構成</h2>
+</code></pre></li>
+</ol>
+<h2 id=フォルダ構成>フォルダ構成</h2>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>./
 ├── img/
 │    └── image_001.png

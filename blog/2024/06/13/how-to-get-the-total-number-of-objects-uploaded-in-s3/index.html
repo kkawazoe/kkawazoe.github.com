@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -93,10 +93,10 @@
 </aside>
 </header>
 <div class=article-body><p>S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく</p>
-<h3 id=実際のコード>実際のコード</h3>
+<h2 id=実際のコード>実際のコード</h2>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws s3 ls s3://<span style=color:#e6db74>&lt;&lt;bucket-name/path/to/&gt;&gt; --recursive --human-readab</span>le --summarize
-</code></pre></div><h3 id=その他>その他</h3>
-<h4 id=最終更新日の降順でソートして出力>最終更新日の降順でソートして出力</h4>
+</code></pre></div><h2 id=その他>その他</h2>
+<h3 id=最終更新日の降順でソートして出力>最終更新日の降順でソートして出力</h3>
 <p>UI 上だとできないのでコマンドを使用する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws s3 ls s3://&lt;&lt;bucket-name/path/to/&gt;&gt; | sort -nr
 </code></pre></div></div>
@@ -284,8 +284,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

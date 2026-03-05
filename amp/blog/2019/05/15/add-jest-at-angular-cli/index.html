@@ -83,16 +83,22 @@ Package                      Version
 rxjs                         6.3.3
 typescript                   3.2.4
 </code></pre></div><h3 id=手順>手順</h3>
-<h4 id=1-プロジェクトを作成>1. プロジェクトを作成</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ ng new JEST-EXAMPLE --style<span style=color:#f92672>=</span>styl
+<ol>
+<li>
+<p>プロジェクトを作成</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ng new JEST-EXAMPLE --style<span style=color:#f92672>=</span>styl
 ? Would you like to add Angular routing? Yes
-</code></pre></div><h4 id=2-以下のコマンドを実行する>2. 以下のコマンドを実行する</h4>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>yarn global add @briebug/jest-schematic
 ng g @briebug/jest-schematic:add
 ng add @briebug/jest-schematic
-</code></pre></div><h4 id=3-以下のコマンドを実行して動作確認する>3. 以下のコマンドを実行して動作確認する</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ yarn test
-$ jest
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して動作確認する</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>yarn test
+jest
 PASS  src/app/app.component.spec.ts
 AppComponent
     ✓ should create the app <span style=color:#f92672>(</span>89ms<span style=color:#f92672>)</span>
@@ -106,8 +112,10 @@ Time:        3.913s
 Ran all test suites.
 ✨  Done in 4.76s.
 </code></pre></div><p>上記だけでも動くが snapshot テストを行うためには以下が追加で必要</p>
-<h4 id=4-srcappappcomponentspects-を修正>4. src/app/app.component.spec.ts を修正</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>TestBed</span>, <span style=color:#66d9ef>async</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;@angular/core/testing&#39;</span>;
+</li>
+<li>
+<p>src/app/app.component.spec.ts を修正</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts:src/app/app.component.spec.ts data-lang=ts:src/app/app.component.spec.ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>TestBed</span>, <span style=color:#66d9ef>async</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;@angular/core/testing&#39;</span>;
 <span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>RouterTestingModule</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;@angular/router/testing&#39;</span>;
 <span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>AppComponent</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;./app.component&#39;</span>;
 
@@ -130,8 +138,10 @@ Ran all test suites.
     });
   });
 });
-</code></pre></div><h4 id=5-srctsconfigspecjson-を修正>5. src/tsconfig.spec.json を修正</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+</code></pre></div></li>
+<li>
+<p>src/tsconfig.spec.json を修正</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json:src/tsconfig.spec.json data-lang=json:src/tsconfig.spec.json>{
   <span style=color:#f92672>&#34;extends&#34;</span>: <span style=color:#e6db74>&#34;../tsconfig.json&#34;</span>,
   <span style=color:#f92672>&#34;compilerOptions&#34;</span>: {
     <span style=color:#f92672>&#34;outDir&#34;</span>: <span style=color:#e6db74>&#34;../out-tsc spec&#34;</span>,
@@ -149,8 +159,10 @@ Ran all test suites.
     <span style=color:#e6db74>&#34;**/*.d.ts&#34;</span>
   ]
 }
-</code></pre></div><h4 id=6-srcangularjson-から以下を削除>6. src/angular.json から以下を削除</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+</code></pre></div></li>
+<li>
+<p>src/angular.json から以下を削除</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json:src/angular.json data-lang=json:src/angular.json>{
   <span style=color:#960050;background-color:#1e0010>・・・</span>
   <span style=color:#f92672>&#34;test&#34;</span>: {
     <span style=color:#f92672>&#34;builder&#34;</span>: <span style=color:#e6db74>&#34;@angular-devkit/build-angular:karma&#34;</span>,
@@ -171,11 +183,15 @@ Ran all test suites.
   },
   <span style=color:#960050;background-color:#1e0010>・・・</span>
 }
-</code></pre></div><h4 id=7-以下のコマンドを実行する>7. 以下のコマンドを実行する</h4>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>yarn remove @types/jasmine @types/jasminewd2
 yarn add @types/jest
-</code></pre></div><h4 id=8-以下のコマンドを実行して動作確認する>8. 以下のコマンドを実行して動作確認する</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ jest
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行して動作確認する</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>jest
 PASS  src/app/app.component.spec.ts
 AppComponent
     snapshots
@@ -187,7 +203,9 @@ Snapshots:   <span style=color:#ae81ff>1</span> passed, <span style=color:#ae81f
 Time:        1.711s, estimated 3s
 Ran all test suites.
 ✨  Done in 2.43s.
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>

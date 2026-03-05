@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -107,10 +107,14 @@
 リポジトリ直下に <code>.github/workflows</code> フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される<br>
 ※ source ブランチの push をトリガーに自動デプロイを行う</p>
 <ol>
-<li>source ブランチをチェックアウト</li>
-<li>Hugo(Docker) を使用して、静的サイト用の資産を作成</li>
-<li>master ブランチに push して GitHub Pages にデプロイする</li>
-</ol>
+<li>
+<p>source ブランチをチェックアウト</p>
+</li>
+<li>
+<p>Hugo(Docker) を使用して、静的サイト用の資産を作成</p>
+</li>
+<li>
+<p>master ブランチに push して GitHub Pages にデプロイする</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml:.github/workflows/deploy.yml data-lang=yml:.github/workflows/deploy.yml><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy</span>
 
 <span style=color:#f92672>on</span>:
@@ -180,7 +184,9 @@
           <span style=color:#f92672>github_token</span>: <span style=color:#ae81ff>${{ secrets.GITHUB_TOKEN }}</span>
           <span style=color:#f92672>publish_branch</span>: <span style=color:#ae81ff>master</span>
           <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -366,8 +372,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

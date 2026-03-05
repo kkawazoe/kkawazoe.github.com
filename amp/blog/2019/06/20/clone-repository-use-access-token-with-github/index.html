@@ -68,21 +68,25 @@
 <div class=article-body><h2 id=経緯>経緯</h2>
 <p>表題の件を行う必要があり対応を行ったため備忘録として残しておく</p>
 <h3 id=手順>手順</h3>
-<h4 id=1-アクセストークンを作成する>1. アクセストークンを作成する</h4>
+<ol>
+<li>
+<p>アクセストークンを作成する</p>
 <ul>
-<li>
-<p>GitHub アカウントにログインし，Settings > Developer settings から Personal access tokens を選択する</p>
-</li>
-<li>
-<p>Generate new token を押下する</p>
-</li>
+<li>GitHub アカウントにログインし，Settings > Developer settings から Personal access tokens を選択する</li>
+<li>Generate new token を押下する</li>
 </ul>
-<h4 id=2-以下のコマンドを実行してリポジトリを-clone-する>2. 以下のコマンドを実行してリポジトリを clone する</h4>
+</li>
+<li>
+<p>以下のコマンドを実行してリポジトリを clone する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://<span style=color:#f92672>{</span>アカウント名<span style=color:#f92672>}</span>:<span style=color:#f92672>{</span>アクセストークン<span style=color:#f92672>}</span>@github.com/<span style=color:#f92672>{</span>アカウント名<span style=color:#f92672>}</span>/<span style=color:#f92672>{</span>リポジトリ名<span style=color:#f92672>}</span>
-</code></pre></div><h4 id=3-ローカルの設定を追加する>3. ローカルの設定を追加する</h4>
+</code></pre></div></li>
+<li>
+<p>ローカルの設定を追加する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git config --local user.name <span style=color:#f92672>{</span>アカウント名<span style=color:#f92672>}</span>
 git config --local user.email <span style=color:#f92672>{</span>アカウントのメールアドレス<span style=color:#f92672>}</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>

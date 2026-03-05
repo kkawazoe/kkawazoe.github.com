@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -98,7 +98,12 @@ Usage: rails new APP_PATH [options] Options: [--skip-namespace] # Skip namespace
 </ul>
 <div class=summary>Model Context Protocol(以下、MCP)を使用して連携する
 ※MCP Atlassianを参照
-連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス API トークンを作成 コピー 環境変数(例. ATLASSIAN_API_TOKEN)に設定 uv のインストール brew install uv uvx mcp-atlassian Cursor の MCP設定 { "mcpServers": { "mcp-atlassian": { "command": "uvx", "args": [ "mcp-atlassian", "--confluence-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/wiki", "--confluence-username=&lt;&lt;Your Mail Address>>", "--confluence-token=&lt;&lt;ATLASSIAN_API_TOKEN>>", "--jira-url=https://wlc-poc.atlassian.net", "--jira-username=&lt;&lt;Your Mail Address>>", "--jira-token=&lt;&lt;ATLASSIAN_API_TOKEN>>" ] } } } 利用方法 Issueの取得：「JIRA から &#171;Ticket 番号&#187; について教えて」</div>
+連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス
+API トークンを作成
+コピー
+環境変数(例. ATLASSIAN_API_TOKEN)に設定
+uv のインストール
+brew install uv uvx mcp-atlassian Cursor の MCP設定 { "mcpServers": { "mcp-atlassian": { "command": "uvx", "args": [ "mcp-atlassian", "--confluence-url=https://&lt;&lt;Your Domain Name>>.atlassian.net/wiki", "--confluence-username=&lt;&lt;Your Mail Address>>", "--confluence-token=&lt;&lt;ATLASSIAN_API_TOKEN>>", "--jira-url=https://wlc-poc.atlassian.net", "--jira-username=&lt;&lt;Your Mail Address>>", "--jira-token=&lt;&lt;ATLASSIAN_API_TOKEN>>" ] } } } 利用方法 Issueの取得：「JIRA から &#171;Ticket 番号&#187; について教えて」</div>
 </div>
 </a>
 </article>
@@ -182,7 +187,10 @@ CSS Bundling 以下のサポートが追加 Tailwind CSS PostCSS アプリケー
 rails new myapp --css tailwind 既存に追加する場合は Gemfile に以下を追加して
 gem 'cssbundling-rails' 以下のコマンドを実行することでインストールおよび初期設定が可能
 bin/bundle install bin/rails css:install:tailwind Active Recordの実行時暗号化機能 データの暗号化が可能になった
-bin/rails db:encryption:init コマンドを実行してランダムなキーを生成 結果をbin/rails credentials:editで開いたエディタの画面に貼り付けて保存 Model で以下のように指定 class User &lt; ApplicationRecord encrypts :name end Spring のデフォルト値の変更 大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更</div>
+bin/rails db:encryption:init コマンドを実行してランダムなキーを生成
+結果をbin/rails credentials:editで開いたエディタの画面に貼り付けて保存
+Model で以下のように指定
+class User &lt; ApplicationRecord encrypts :name end Spring のデフォルト値の変更 大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更</div>
 </div>
 </a>
 </article>
@@ -217,7 +225,10 @@ bin/rails db:encryption:init コマンドを実行してランダムなキーを
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>Terminal Ghostty の設定方法について調査した結果を備忘録として残しておく
-環境 OS: macOS 14.7 手順 Ghostty のセットアップ フォントのインストール brew install --cask font-monaspace # Hack Nerd Font brew install font-hack-nerd-font # HackGen brew install font-hackgen # HackGen Nerd brew install font-hackgen-nerd 以下のコマンドを実行する brew install --cask ghostty mkdir -p ~/.config/ghostty vim ~/.config/ghostty/config config ファイルを修正する 設定値については参考を参照
+環境 OS: macOS 14.7 手順 Ghostty のセットアップ フォントのインストール
+brew install --cask font-monaspace # Hack Nerd Font brew install font-hack-nerd-font # HackGen brew install font-hackgen # HackGen Nerd brew install font-hackgen-nerd 以下のコマンドを実行する
+brew install --cask ghostty mkdir -p ~/.config/ghostty vim ~/.config/ghostty/config config ファイルを修正する
+設定値については参考を参照
 theme = iTerm2 Pastel Dark Background font-family = HackGen35 Console NF font-size = 16 macos-non-native-fullscreen = true macos-titlebar-proxy-icon = hidden macos-titlebar-style = tabs window-padding-x = 20 window-padding-y = 20 # クイックターミナルの位置を画面下部に設定 quick-terminal-position = "bottom" # クイックターミナルを表示するスクリーンを設定 (メインスクリーン) quick-terminal-screen = "main" # アニメーション時間を設定（0で即時表示） quick-terminal-animation-duration = 0 # グローバルホットキーを設定 keybind = "global:ctrl+cmd+`=toggle_quick_terminal" Ghostty チートシート キーバインディング 内容 ⌘+T 新規タブ作成 ⌘+[ or ⌘+] タブを移動 ⌘+D 横にスプリット ⇧+⌘+D 縦にスプリット ⌘+[ or ⌘+] スプリットを移動 ⇧+⌘+↵ スプリットをズーム、ズームアウト option+click クリックしたところにカーソルを合わせられます テーマのプレビュー ghostty +list-themes </div>
 </div>
 </a>
@@ -422,8 +433,8 @@ Book Table id field: SERIAL type ※Primary Key value: 1 options field: JSONB ty
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

@@ -66,27 +66,39 @@
 </aside>
 </header>
 <div class=article-body><p>AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく</p>
-<h3 id=前提>前提</h3>
+<h2 id=前提>前提</h2>
 <p><a href=https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html>AWS EC2 Instance Connect</a> をインストールしておく</p>
-<h3 id=手順>手順</h3>
+<h2 id=手順>手順</h2>
 <ol>
-<li><a href=https://console.aws.amazon.com/ec2/>Amazon EC2 コンソール</a> を開く</li>
-<li>ナビゲーションペインで、[インスタンス] を選択する</li>
-<li>インスタンスを選択し、[接続] を選択する</li>
-<li>[EC2 Instance Connect] を選択する</li>
-<li>ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く</li>
-</ol>
+<li>
+<p><a href=https://console.aws.amazon.com/ec2/>Amazon EC2 コンソール</a> を開く</p>
+</li>
+<li>
+<p>ナビゲーションペインで、[インスタンス] を選択する</p>
+</li>
+<li>
+<p>インスタンスを選択し、[接続] を選択する</p>
+</li>
+<li>
+<p>[EC2 Instance Connect] を選択する</p>
+</li>
+<li>
+<p>ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く</p>
 <p>以下のエラーが発生</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください
 </code></pre></div><p><a href=https://repost.aws/ja/knowledge-center/ec2-instance-connect-troubleshooting>公式のトラブルシューティング</a>を確認<br>
 => セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった</p>
-<ol start=6>
-<li>以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する</li>
-</ol>
+</li>
+<li>
+<p>以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r <span style=color:#e6db74>&#39;.prefixes[] | select(.region==&#34;&lt;&lt;対象リージョン&gt;&gt;&#34;) | select(.service==&#34;EC2_INSTANCE_CONNECT&#34;) | .ip_prefix&#39;</span>
-</code></pre></div><ol start=7>
-<li>セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する</li>
-<li>再度、EC2 Instance Connect に接続する</li>
+</code></pre></div></li>
+<li>
+<p>セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する</p>
+</li>
+<li>
+<p>再度、EC2 Instance Connect に接続する</p>
+</li>
 </ol>
 </div>
 <footer class=article-footer>

@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -213,7 +213,10 @@ CSS Bundling 以下のサポートが追加 Tailwind CSS PostCSS アプリケー
 rails new myapp --css tailwind 既存に追加する場合は Gemfile に以下を追加して
 gem 'cssbundling-rails' 以下のコマンドを実行することでインストールおよび初期設定が可能
 bin/bundle install bin/rails css:install:tailwind Active Recordの実行時暗号化機能 データの暗号化が可能になった
-bin/rails db:encryption:init コマンドを実行してランダムなキーを生成 結果をbin/rails credentials:editで開いたエディタの画面に貼り付けて保存 Model で以下のように指定 class User &lt; ApplicationRecord encrypts :name end Spring のデフォルト値の変更 大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更</div>
+bin/rails db:encryption:init コマンドを実行してランダムなキーを生成
+結果をbin/rails credentials:editで開いたエディタの画面に貼り付けて保存
+Model で以下のように指定
+class User &lt; ApplicationRecord encrypts :name end Spring のデフォルト値の変更 大規模なアプリケーション以外では Spring があまり意味をなさなくなったため、デフォルトがオフに変更</div>
 </div>
 </a>
 </article>
@@ -418,8 +421,8 @@ class Book &lt; ApplicationRecord scope :with_title, -> (title) do next if title
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

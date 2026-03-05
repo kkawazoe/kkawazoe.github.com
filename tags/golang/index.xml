@@ -2,6 +2,10 @@
 ※環境変数読み込み時にロードエラーになっていた
 前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Go をインストール済 $GOPATH を設定済 $GOPATH/bin を環境変数 $PATH へ追加済 サーバ情報 host: 127.0.0.1 port: 3000 ディレクトリ構成 以下のような構成になっている想定
 ※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する
-cmd ├── main.go .env 手順 VSCode に Go 言語の拡張機能をインストール コマンドパレットから Go: Install/Update Tools を選択 以下のツールを選択して実行 gopls@latest dlv@latest launch.json を編集 { // IntelliSense を使用して利用可能な属性を学べます。 // 既存の属性の説明をホバーして表示します。 // 詳細情報は次を確認してください: https://go.</description></item><item><title>Go Tour のローカルでの実行方法</title><link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link><pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</guid><description>Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく
+cmd ├── main.go .env 手順 VSCode に Go 言語の拡張機能をインストール
+コマンドパレットから Go: Install/Update Tools を選択
+以下のツールを選択して実行
+gopls@latest dlv@latest launch.json を編集
+{ // IntelliSense を使用して利用可能な属性を学べます。 // 既存の属性の説明をホバーして表示します。 // 詳細情報は次を確認してください: https://go.</description></item><item><title>Go Tour のローカルでの実行方法</title><link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link><pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</guid><description>Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく
 環境 OS : MacOS Ventura(13.4) golang: go1.20.4 エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=&amp;gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する
 tour</description></item></channel></rss>

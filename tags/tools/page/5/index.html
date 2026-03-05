@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -62,6 +62,73 @@
 </header>
 <div class=articles>
 <div class=mrow>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2019/03/19/config-hosts-file-for-microsoft-edge-developer/>
+<div class="thumb thumb-206974e06b087bbe9dd046e97aa00882"></div>
+<div class=inner>
+<h2 class=title>Microsoft Edge Developer(旧Modern IE)でhostsファイルを設定する方法</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-03-19T23:35:30JST>Mar 19, 2019</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>経緯 普段 Mac にて開発を行っているが動作端末は Windows であることが多い
+そのため、表題のツールを使用することがあるがその際に Mac 上の hosts ファイルと同様の設定をしたい場合があり苦労したため備忘録として残しておく
+Microsoft Edge Developer(旧Modern IE)について ダウンロードは以下から行う
+ダウンロードページの「Virtual Machines」より「Virtual machine」と「platform」を選択してダウンロードする
+手順 hostsファイルの権限変更 Microsoft Edge Developer 上で以下を行う
+「C:/Windows/System32/drivers/etc」に hosts ファイルがある
+そのファイルを右クリック>Properties>Security>Editボタンで、 Users の権限に全部チェックを入れる
+Mac の hosts ファイルを複製 Mac の hosts ファイルは「/private/etc/hosts」にあるので、それを前述のファイルに中身をコピーする
+※hosts ファイルのループバックアドレスは固定のホスト側のIPアドレスに置き換えて記述すること
+Rails での確認の際の注意点 確認作業を Rails で行う場合には追加で以下の作業を行う
+IEの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.0.0.0 インターネットオプションのLocal intranetに「localhost:3000」を登録
+Edgeの場合 サーバの起動の際に以下のコマンドで行う
+bundle exec rails s -b 0.</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2019/02/28/unread-chatwork-notice-with-rambox/>
+<div class="thumb thumb-5be2a40737ee2715ddd6c0983ee493bd"></div>
+<div class=inner>
+<h2 class=title>Rambox で ChatWork の未読メッセージを通知する</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-02-28T12:00:00JST>Feb 28, 2019</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>確認環境 Windows10 Rambox: 0.6.3 経緯 普段、 仕事で Chatwork や Slack を使用しているが別々のアプリを切り替えるのが手間だったためまとめて管理できるツールがないか調査した
+候補 Franz Station Rambox Franz, Station だと ChatWork で PDF ファイルのプレビューを表示した際にダウンロード用のダイアログが表示されるため 「保存」 => 「PDF を開く」の手間が発生してしまうため Rambox に決定
+Rambox の ChatWork の挙動 Rambox で ChatWork をサービスとして追加した場合自分にメンションがついているメッセージの場合は以下のようにバッジと未読数が表示される
+Rambox バッジおよび未読数 しかし、自分にメンションがついていないメッセージについてはバッジおよび未読数は表示されないため見逃してしまう
+対処方法 Rambox のサービス設定画面でカスタムコードを使用して対応する ※未読数(未読のあるルーム数) アプリ版 ChatWork と同じ挙動
+Rambox サービス設定画面 実際のコード [Custom Code]
+function checkUnread() { const elements = document.querySelectorAll(".roomListBadges__unreadBadgeText"); updateBadge(elements.length); } function updateBadge(e) { e >= 1 ?</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2019/02/20/markdown-pdf-page-break/>
+<div class="thumb thumb-b9c0df1dc6dcc004f785e3c0222005f4"></div>
+<div class=inner>
+<h2 class=title>Visual Studio Code で Markdown PDF を使用してPDF出力する際に任意の場所で改行させる</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2019-02-20T00:24:14JST>Feb 20, 2019</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>経緯 普段、 VS Code を使用しておりちょっとしたメモや資料は Markdown を使用して作成している
+資料を共有をする場合に拡張機能である Markdown PDF を使用しているが、出力後のPDFで改ページが微妙な場所でされてしまったため任意の場所で改ページできないか調査した
+情報元 Markdown PDF の「Page Break」の項目に記載あり
+実際のコード # h1 ## h2 ### h3 &lt;!-- 改行させたい位置 --> &lt;div class="page"/> # h1 ## h2 ### h3 </div>
+</div>
+</a>
+</article>
+</div>
 <div class="mcol c6">
 <article class=li>
 <a href=https://kkawazoe.github.io/blog/2014/06/22/get-value-from-initialize-file/>
@@ -258,8 +325,8 @@
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -209,7 +209,10 @@ require 'csv' require 'fileutils' class Converter def self.</div>
 </ul>
 <div class=summary>PostgreSQL で テーブルのカラム内の特定の文字数を取得する方法を備忘録として残しておく
 方法 sum, length, regexp_replace を使用する
-環境 PostgreSQL: 13.3 実際のコード regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換 length 関数で 1 の置換前の文字数および置換後の文字数を取得 sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定 select 'ユーザテーブル--名前カラム中の「仼」または「鶴」の件数', coalesce(sum(length(name)-length(regexp_replace(name, '[仼鶴]','','g'))), 0) from users; </div>
+環境 PostgreSQL: 13.3 実際のコード regexp_replace 関数で name カラム内の 「仼」、「鶴」を空文字に置換
+length 関数で 1 の置換前の文字数および置換後の文字数を取得
+sum 関数で 2 で取得したものを計算(置換前文字数 - 置換後文字数) ※coalsesce 関数は null が返却された場合のデフォルト値を設定
+select 'ユーザテーブル--名前カラム中の「仼」または「鶴」の件数', coalesce(sum(length(name)-length(regexp_replace(name, '[仼鶴]','','g'))), 0) from users; </div>
 </div>
 </a>
 </article>
@@ -410,8 +413,8 @@ require 'csv' require 'fileutils' class Converter def self.</div>
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

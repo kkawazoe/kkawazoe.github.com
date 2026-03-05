@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -94,7 +94,7 @@
 </aside>
 </header>
 <div class=article-body><p>AWS Lambda の amplify-login で始まる関数の要否判断について調査した結果を備忘録として残しておく</p>
-<h3 id=調査に至った事象>調査に至った事象</h3>
+<h2 id=調査に至った事象>調査に至った事象</h2>
 <p>AWS より以下のメールが配信されていた<br>
 対象の Lambda 関数を確認すると掲題のものが指摘を受けていたが、作成した記憶はなく要否の判断がつかなかったため、調査を行なった</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>[アクションが必要です] AWS Lambda での Node.js 16 のサポート終了について | [Action Required] AWS Lambda end of support for Node.js 16
@@ -119,9 +119,9 @@ aws lambda list-functions --region us-west-2 --output text --query &#34;Function
 
 ご不明な点やサポートが必要な場合は、AWS サポート [5] までお問い合わせ下さい。
 ・・・
-</code></pre></div><h4 id=amplify-login-で始まる-lambda-関数とは>amplify-login で始まる Lambda 関数とは？</h4>
+</code></pre></div><h3 id=amplify-login-で始まる-lambda-関数とは>amplify-login で始まる Lambda 関数とは？</h3>
 <p><a href=https://docs.amplify.aws/javascript/tools/console/adminui/access-management/#cognito-lambda-triggers>Amplify Studio</a>を有効化した際に自動的に作成される関数</p>
-<h4 id=要否の判断>要否の判断</h4>
+<h3 id=要否の判断>要否の判断</h3>
 <p>Amplify Studio を使用していない場合は削除して問題ない<br>
 また、<a href=https://dev.classmethod.jp/articles/tsnote-lambda-please-tell-me-about-whether-lambda-functions-starting-with-amplify-login-can-be-deleted/#toc-3>参考</a>のように Amplify アプリと Lambda 関数の関連性を特定することができる</p>
 <ul>
@@ -129,8 +129,8 @@ aws lambda list-functions --region us-west-2 --output text --query &#34;Function
 <li>Cognito ユーザプール > [ユーザプールのプロパティ] Lambda トリガー で追加されているかどうか</li>
 <li>ID プール > [ユーザアクセス] > [ID プロバイダ] に追加されているかどうか</li>
 </ul>
-<h3 id=全リージョンに存在する-lambda-関数の中で-node-16-を使用しているものを出力する方法>全リージョンに存在する Lambda 関数の中で Node 16 を使用しているものを出力する方法</h3>
-<h4 id=前提条件>前提条件</h4>
+<h2 id=全リージョンに存在する-lambda-関数の中で-node-16-を使用しているものを出力する方法>全リージョンに存在する Lambda 関数の中で Node 16 を使用しているものを出力する方法</h2>
+<h3 id=前提条件>前提条件</h3>
 <ul>
 <li>Sh が実行可能</li>
 <li>AWS CLI がインストール済</li>
@@ -351,8 +351,8 @@ REGIONS<span style=color:#f92672>=(</span><span style=color:#e6db74>`</span>aws 
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

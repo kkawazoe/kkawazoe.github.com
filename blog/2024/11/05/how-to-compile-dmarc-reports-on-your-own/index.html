@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -79,7 +79,7 @@
 <ul class=facts>
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-11-05T09:00:00JST>Nov 5, 2024</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
-<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tool>Tool</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tools>Tools</a> </li>
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/google-apps-script>Google Apps Script</a> </li>
 </ul>
 <aside class=share>
@@ -96,10 +96,14 @@
 <h2 id=方法>方法</h2>
 <p>GAS(Google Apps Script) を使用して集約する</p>
 <ol>
-<li>新規で Spread Sheet を作成</li>
-<li>「拡張機能」>「Apps Script」を選択</li>
-<li>「ファイル」>「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける</li>
-</ol>
+<li>
+<p>新規で Spread Sheet を作成</p>
+</li>
+<li>
+<p>「拡張機能」>「Apps Script」を選択</p>
+</li>
+<li>
+<p>「ファイル」>「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける</p>
 <pre tabindex=0><code class=language-js:コード.gs data-lang=js:コード.gs>let today = new Date();
 let targetDate = new Date(today);
 let nextDate = new Date(today);
@@ -120,7 +124,7 @@ function executeAll(){
 function saveAttachmentsFromEmails() {  
   // 日付のフォーマットをYYYYMMDDに変換
   let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyyMMdd');
-  
+
   let threads = GmailApp.search(query);
   let parentFolder = DriveApp.getFolderById(folderId); 
 
@@ -141,7 +145,7 @@ function saveAttachmentsFromEmails() {
         let attachment = attachments[k];
         let file = dateFolder.createFile(attachment);
         Logger.log('File saved: ' + file.getName());
-        
+
         // ZIPファイルの解凍処理
         if (attachment.getContentType() === 'application/zip') {
           let zipBlob = attachment.copyBlob();
@@ -177,10 +181,10 @@ function parseDMARCReports() {
   let parentFolder = DriveApp.getFolderById(folderId);
   let spreadsheet = SpreadsheetApp.openById(sheetId);
   let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyyMMdd');
-  
+
   let dateFolder = parentFolder.getFoldersByName(formattedDate);
   let folder = dateFolder.hasNext() ? dateFolder.next() : null;
-  
+
   if (!folder) {
     Logger.log('Folder for ' + formattedDate + ' does not exist.');
     return;
@@ -189,7 +193,7 @@ function parseDMARCReports() {
   // 新しいシートを作成 ※左から3番目にシートを作成
   // 既にシートが存在する場合は追記
   let sheet = spreadsheet.getSheetByName(formattedDate) || spreadsheet.insertSheet(formattedDate, 2);
-  
+
   // シートのヘッダーを設定
   let headers = ['Source IP', 'Count', 'DMARC', 'Disposition', 'DKIM', 'SPF', 'Envelope To', 'Envelope From', 'Header From', 'DKIM Result', 'SPF Result'];
   sheet.appendRow(headers);
@@ -201,7 +205,7 @@ function parseDMARCReports() {
       let xmlContent = file.getBlob().getDataAsString();
       let document = XmlService.parse(xmlContent);
       let root = document.getRootElement();
-      
+
       // 解析ロジック
       let records = root.getChildren('record');
       let rowsData = [];
@@ -210,7 +214,7 @@ function parseDMARCReports() {
         let row = record.getChild('row');
         let identifiers = record.getChild('identifiers');
         let auth_results = record.getChild('auth_results');
-        
+
         let sourceIp = row.getChildText('source_ip');
         let count = row.getChildText('count');
         let disposition = row.getChild('policy_evaluated').getChildText('disposition');
@@ -224,7 +228,7 @@ function parseDMARCReports() {
         let spfResultNode = auth_results.getChild('spf');
         let dkimResult = dkimResultNode ? dkimResultNode.getChildText('result') : '';
         let spfResult = spfResultNode ? spfResultNode.getChildText('result') : '';
-        
+
         let rowData = [sourceIp, count, dmarc, disposition, dkim, spf, envelopeTo, envelopeFrom, headerFrom, dkimResult, spfResult];
         rowsData.push(rowData);
       }
@@ -238,7 +242,7 @@ function parseDMARCReports() {
 function calculateAndAppendHeaderFromTotals() {
   let spreadsheet = SpreadsheetApp.openById(sheetId);
   let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyyMMdd');
-  
+
   let sheet = spreadsheet.getSheetByName(formattedDate);
   if (!sheet) {
     Logger.log('Sheet for ' + formattedDate + ' does not exist.');
@@ -247,18 +251,18 @@ function calculateAndAppendHeaderFromTotals() {
 
   let data = sheet.getDataRange().getValues();
   let headerFromTotals = {};
-  
+
   // 集計処理
   for (let i = 1; i &lt; data.length; i++) { // ヘッダー行をスキップするためにiを1から開始
     let cValue = data[i][2]; // C列の値
     let bValue = data[i][1]; // B列の値
     let hValue = data[i][8]; // H列の値
     let dValue = data[i][3]; // D列の値
-    
+
     if (!headerFromTotals[hValue]) {
       headerFromTotals[hValue] = { passTotal: 0, failTotal: 0, noneCount: 0, quarantineCount: 0, rejectCount: 0 };
     }
-    
+
     if (cValue === 'OK') {
       headerFromTotals[hValue].passTotal += bValue;
     } else {
@@ -294,7 +298,7 @@ function calculateAndAppendHeaderFromTotals() {
     resultSheet.appendRow([headerFrom, formattedDate, passTotal, failTotal, successRateStr, noneCount, quarantineCount, rejectCount, quarantineRejectRateStr]);
   }
 }
-</code></pre><ol start=4>
+</code></pre></li>
 <li>
 <p>「トリガー」>「トリガーを追加」ボタンを押下</p>
 </li>
@@ -314,7 +318,7 @@ function calculateAndAppendHeaderFromTotals() {
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
-<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tool>Tool</a> </li>
+<li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/tools>Tools</a> </li>
 <li><i class="fas fa-tags" aria-hidden=true></i><a href=https://kkawazoe.github.io/tags/google-apps-script>Google Apps Script</a> </li>
 </ul>
 <aside class=share>
@@ -495,8 +499,8 @@ function calculateAndAppendHeaderFromTotals() {
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

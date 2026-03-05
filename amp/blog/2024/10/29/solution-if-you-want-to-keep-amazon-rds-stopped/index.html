@@ -89,8 +89,6 @@
 </li>
 <li>
 <p>以下でポリシーを作成</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
     <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#e6db74>&#34;2012-10-17&#34;</span>,
     <span style=color:#f92672>&#34;Statement&#34;</span>: [
@@ -110,7 +108,7 @@
         }
     ]
 }
-</code></pre></div><ol start=3>
+</code></pre></div></li>
 <li>
 <p>IAM > ロール を選択</p>
 </li>
@@ -147,8 +145,6 @@
 </li>
 <li>
 <p>コード > [コードソース]エディタでサンプルコードを削除して次のコードを入力</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#f92672>import</span> boto3
 rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;rds&#39;</span>)
 
@@ -173,7 +169,7 @@ rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>cl
 
 <span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
     lambda_handler(<span style=color:#66d9ef>None</span>, <span style=color:#66d9ef>None</span>)
-</code></pre></div><ol start=10>
+</code></pre></div></li>
 <li>
 <p>デプロイする</p>
 </li>
@@ -193,8 +189,6 @@ rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>cl
 </li>
 <li>
 <p>手順 7 〜 12 を行い RDS 自動停止用の関数を作成</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#f92672>import</span> boto3
 rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;rds&#39;</span>)
 
@@ -218,10 +212,12 @@ rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>cl
 
 <span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
     lambda_handler(<span style=color:#66d9ef>None</span>, <span style=color:#66d9ef>None</span>)
-</code></pre></div><h3 id=eventbridge-を使用する>EventBridge を使用する</h3>
-<ol>
-<li>以下の CloudFormation テンプレートを使用して stack を作成</li>
+</code></pre></div></li>
 </ol>
+<h3 id=eventbridge-を使用する>EventBridge を使用する</h3>
+<ol>
+<li>
+<p>以下の CloudFormation テンプレートを使用して stack を作成</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>---
 <span style=color:#f92672>AWSTemplateFormatVersion</span>: <span style=color:#e6db74>&#39;2010-09-09&#39;</span>
 <span style=color:#f92672>Description</span>:  <span style=color:#ae81ff>EventBridge Scheduler to stop RDS instance</span>
@@ -282,9 +278,9 @@ rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>cl
                   - <span style=color:#ae81ff>rds:StopDBInstance</span>
                 <span style=color:#f92672>Resource</span>:
                   - <span style=color:#e6db74>&#34;*&#34;</span>
-</code></pre></div><ol start=2>
-<li>以下のパラメータを指定</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>以下のパラメータを指定</p>
 <ul>
 <li>対象のインスタンス(DB 識別子)
 <ul>
@@ -302,7 +298,7 @@ rds <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>cl
 </ul>
 </li>
 </ul>
-<ol start=3>
+</li>
 <li>
 <p>作成されたリソースを確認</p>
 <p>3-1. Amazon EventBridge > スケジュール > &#171;対象のスケジュール&#187;</p>

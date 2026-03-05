@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -317,11 +317,11 @@ LOCALSTACK_VOLUME_DIR<span style=color:#f92672>=</span>./volume
 </code></pre></div><h3 id=使用方法>使用方法</h3>
 <h4 id=実施手順>実施手順</h4>
 <ol>
-<li><code>$ docker-compose up -d</code></li>
+<li><code>docker-compose up -d</code></li>
 <li>Copy the DB in the Dev environment</li>
 <li>If the Layer is updated, do the following
-<code>$ ./scripts/create-pg-layer.sh</code></li>
-<li><code>$ sam local start-api</code></li>
+<code>./scripts/create-pg-layer.sh</code></li>
+<li><code>sam local start-api</code></li>
 </ol>
 <h4 id=シークレットマネージャーに値が追加された場合>シークレットマネージャーに値が追加された場合</h4>
 <p>ローカルデバッグでは localstack を使用する</p>
@@ -331,8 +331,8 @@ LOCALSTACK_VOLUME_DIR<span style=color:#f92672>=</span>./volume
 <li>localstack の初期化スクリプトが実行され、シークレットマネージャーに値が追加される</li>
 <li>localstack のシークレットマネージャーに値が追加されたことを確認する</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ docker-compose exec localstack bash
-$ aws --endpoint-url<span style=color:#f92672>=</span>http://localhost:4566 secretsmanager get-secret-value --secret-id local-secret
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>docker-compose exec localstack bash
+aws --endpoint-url<span style=color:#f92672>=</span>http://localhost:4566 secretsmanager get-secret-value --secret-id local-secret
 </code></pre></div></div>
 <footer class=article-footer>
 <ul class=facts-tags>
@@ -518,8 +518,8 @@ $ aws --endpoint-url<span style=color:#f92672>=</span>http://localhost:4566 secr
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

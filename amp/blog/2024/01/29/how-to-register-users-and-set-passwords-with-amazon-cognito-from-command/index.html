@@ -74,27 +74,25 @@
 <p>ユーザ登録</p>
 <p>&ndash;user-attributes は必要に応じて増やす<br>
 ※「&ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws cognito-idp admin-create-user <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-pool-id <span style=color:#e6db74>&lt;&lt;ユーザプール ID&gt;&gt; \
 </span><span style=color:#e6db74>--username &lt;&lt;E メールアドレス ※E メールアドレスをユーザ</span>名に設定した場合&gt;&gt; <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-attributes Name<span style=color:#f92672>=</span>email,Value<span style=color:#f92672>=</span><span style=color:#e6db74>&lt;&lt;E メールアドレス&gt;&gt; \
 </span><span style=color:#e6db74>Name=email_verified,Value=TRUE</span> <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--message-action SUPPRESS
-</code></pre></div><ol start=2>
+</code></pre></div></li>
 <li>
 <p>パスワード設定</p>
 <p>&ndash;no-permanent は仮パスワード扱い<br>
 ※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる</p>
-</li>
-</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>aws cognito-idp admin-set-user-password <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--user-pool-id <span style=color:#e6db74>&lt;&lt;ユーザプール ID&gt;&gt; \
 </span><span style=color:#e6db74>--username &lt;&lt;ユーザ</span>名 or sub&gt;&gt; <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>--password <span style=color:#e6db74>&lt;&lt;password&gt;&gt; \
 </span><span style=color:#e6db74>--no-p</span>ermanent
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>

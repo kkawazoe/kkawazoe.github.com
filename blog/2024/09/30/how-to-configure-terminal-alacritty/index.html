@@ -61,7 +61,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -99,8 +99,8 @@
 <h2 id=手順>手順</h2>
 <h3 id=alacritty-のセットアップ>Alacritty のセットアップ</h3>
 <ol>
-<li>フォントのインストール</li>
-</ol>
+<li>
+<p>フォントのインストール</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install --cask font-monaspace
 
 <span style=color:#75715e># Hack Nerd Font</span>
@@ -111,15 +111,15 @@ brew install font-hackgen
 
 <span style=color:#75715e># HackGen Nerd</span>
 brew install font-hackgen-nerd
-</code></pre></div><ol start=2>
-<li>以下のコマンドを実行する</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>以下のコマンドを実行する</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install --cask alacritty
 mkdir -p ~/.config/alacritty
 vim ~/.config/alacritty/alacritty.toml
-</code></pre></div><ol start=3>
-<li>config ファイルを修正する</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>config ファイルを修正する</p>
 <p>設定値については<a href=https://alacritty.org/config-alacritty.html>参考</a>を参照</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash:~/.config/alacritty/alacritty.toml data-lang=bash:~/.config/alacritty/alacritty.toml><span style=color:#a6e22e>import</span> = [
   <span style=color:#e6db74>&#34;~/.config/alacritty/themes/themes/pastel_dark.toml&#34;</span> <span style=color:#75715e># theme</span>
@@ -140,16 +140,16 @@ vim ~/.config/alacritty/alacritty.toml
 <span style=color:#a6e22e>normal</span>.<span style=color:#a6e22e>family</span> = <span style=color:#e6db74>&#34;HackGen35 Console NF&#34;</span> <span style=color:#75715e># Font Family を指定</span>
 <span style=color:#a6e22e>normal</span>.<span style=color:#a6e22e>style</span> = <span style=color:#e6db74>&#34;Bold&#34;</span>
 <span style=color:#a6e22e>size</span> = <span style=color:#ae81ff>16</span>
-</code></pre></div><ol start=4>
-<li>alaciritty-themes のセットアップ</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>alaciritty-themes のセットアップ</p>
 <p><code>~/.config/alacritty/alacritty.toml</code> の import にて指定する<br>
 theme の詳細は<a href=https://github.com/alacritty/alacritty-theme>公式</a>を参照</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd ~/.config/alacritty
 git clone https://github.com/alacritty/alacritty-theme themes
-</code></pre></div><ol start=5>
-<li>zsh-autosuggestions, zsh-syntax-highlighting のセットアップ</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>zsh-autosuggestions, zsh-syntax-highlighting のセットアップ</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install zsh-autosuggestions
 echo <span style=color:#e6db74>&#34;source </span><span style=color:#66d9ef>$(</span>brew --prefix<span style=color:#66d9ef>)</span><span style=color:#e6db74>/share/zsh-autosuggestions/zsh-autosuggestions.zsh&#34;</span> &gt;&gt; ~/.zshrc
 
@@ -157,9 +157,9 @@ brew install zsh-syntax-highlighting
 echo <span style=color:#e6db74>&#34;source </span><span style=color:#66d9ef>$(</span>brew --prefix<span style=color:#66d9ef>)</span><span style=color:#e6db74>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#34;</span> &gt;&gt; ~/.zshrc
 
 source ~/.zshrc
-</code></pre></div><ol start=6>
-<li>zellij or tmux のセットアップ</li>
-</ol>
+</code></pre></div></li>
+<li>
+<p>zellij or tmux のセットアップ</p>
 <p>zellij</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install zellij
 mkdir ~/.config/zellij
@@ -168,9 +168,9 @@ zellij setup --dump-config &gt; ~/.config/zellij/config.kdl
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install tmux
 touch ~/.config/tmux/.tmux.conf
 </code></pre></div><p>.tmux.conf の設定内容は <a href=https://github.com/kkawazoe/dotfiles/blob/master/.config/tmux/.tmux.conf>dotfiles</a> 参照</p>
-<ol start=7>
-<li>zellij or tmuxの起動</li>
-</ol>
+</li>
+<li>
+<p>zellij or tmuxの起動</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zellij
 </code></pre></div><p>ターミナル起動時に zellij を自動起動させる場合は config ファイルに以下を追記する<br>
 ※以下は、homebrew で zellij をインストールした場合 path を <code>which tmux</code> で確認すること！</p>
@@ -190,7 +190,9 @@ touch ~/.config/tmux/.tmux.conf
   <span style=color:#e6db74>&#34;-c&#34;</span>,
   <span style=color:#e6db74>&#34;/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u&#34;</span>,
 ]
-</code></pre></div><h3 id=alacritty-のアイコンの変更>Alacritty のアイコンの変更</h3>
+</code></pre></div></li>
+</ol>
+<h3 id=alacritty-のアイコンの変更>Alacritty のアイコンの変更</h3>
 <p><a href=https://github.com/alacritty/alacritty/issues/3926>issue</a>で議論されている件</p>
 <figure class=center>
 <a href=/images/20240930_01/before_replacement_alacritty_icon.png rel=noopener target=_blank>
@@ -209,10 +211,12 @@ touch ~/.config/tmux/.tmux.conf
 </figcaption>
 </figure>
 <ol>
-<li>以下のコマンドを実行</li>
-</ol>
+<li>
+<p>以下のコマンドを実行</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>/bin/bash -c <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>curl -fsSL https://raw.githubusercontent.com/hmarr/dotfiles/refs/heads/main/bin/update-alacritty-icon.sh<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-</code></pre></div></div>
+</code></pre></div></li>
+</ol>
+</div>
 <footer class=article-footer>
 <ul class=facts-tags>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://kkawazoe.github.io/post/>POST</a></li>
@@ -396,8 +400,8 @@ touch ~/.config/tmux/.tmux.conf
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

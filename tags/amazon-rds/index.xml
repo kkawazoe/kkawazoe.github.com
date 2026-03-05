@@ -11,9 +11,12 @@
 日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)</description></item><item><title>Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</link><pubDate>Fri, 08 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</guid><description>Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく
 前提 構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照
 前回の記事: Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法
-手順 Role に対して適宜必要な権限を付与 例. public Schema の全テーブルへの全権限を付与
-grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; アクセス制御を行うテーブルからアクセス権限を取り消す 例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
-revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; 権限の確認 該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
+手順 Role に対して適宜必要な権限を付与
+例. public Schema の全テーブルへの全権限を付与
+grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; アクセス制御を行うテーブルからアクセス権限を取り消す
+例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
+revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; 権限の確認
+該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
 \dp #=&amp;gt; &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;=awdDxt/postgres</description></item><item><title>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</link><pubDate>Fri, 08 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</guid><description>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく
 前提 以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8
 構成図 手順 参考
@@ -21,4 +24,5 @@ DB ユーザ追加
 以下のコマンドを使用してユーザを追加する
 ※実運用時は、適宜必要な権限を付与する
 postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; # 例. ログイン属性, 接続数制限なし, パスワード指定 postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; Secrets Manager にデータベース認証情報設定
-AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する</description></item></channel></rss>
+AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する
+設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け</description></item></channel></rss>

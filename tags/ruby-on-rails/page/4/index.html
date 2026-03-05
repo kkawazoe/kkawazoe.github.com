@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -113,13 +113,17 @@
 但し、テンプレートに数式やグラフが含まれている場合に行などを
 追加した場合に出力された Excel ファイルが破損して起動不可になる場合が
 あるため注意が必要
-rubyXL 発生した障害とその対応 テキストの折り返しがsheet.add_cellではできない sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能
+rubyXL 発生した障害とその対応 テキストの折り返しがsheet.add_cellではできない
+sheet.add_cell(col, row, 'text').change_text_wrap によって実装可能
 テキストを折り返して表示してくれるようになる
-change_contents が使えない version 3.4.0 以降は convenience_methods を呼び出さないと利用不可
+change_contents が使えない
+version 3.4.0 以降は convenience_methods を呼び出さないと利用不可
 # require が必要なメソッド require 'rubyXL/convenience_methods/cell' require 'rubyXL/convenience_methods/color' require 'rubyXL/convenience_methods/font' require 'rubyXL/convenience_methods/workbook' require 'rubyXL/convenience_methods/worksheet' もしくは以下で全て使用可
-require 'rubyXL/convenience_methods' シートのコピーができない Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応
+require 'rubyXL/convenience_methods' シートのコピーができない
+Marshal.load なども試してみたが、上手くいかなかったので以下を参考にして対応
 参考サイト
-シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう change_contents の仕様と上記のシートコピーによって生じた現象
+シートコピー後、コピーしたシートを編集したら他のシートの内容も一緒に変わってしまう
+change_contents の仕様と上記のシートコピーによって生じた現象
 ① シートの書式等をコピー ② change_contents で書式設定を保持したまま内容を変更 ③ 該当するコピーシートすべての内容が書き換わる という動作をしている</div>
 </div>
 </a>
@@ -156,9 +160,9 @@ desc 'Generate Error Pages' task generate_error_pages: :environment do I18n.avai
 </ul>
 <div class=summary>環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
 以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=> コンテナが起動していない場合は docker-compose run rails bash $ EDITOR="vim" bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
+docker-compose exec rails bash #=> コンテナが起動していない場合は docker-compose run rails bash EDITOR="vim" bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
 以下のコマンドを使用して確認する
-$ docker-compose exec rails bash #=> コンテナが起動していない場合は docker-compose run rails bash $ EDITOR="vim" bin/rails env_credentials:edit -e production </div>
+docker-compose exec rails bash #=> コンテナが起動していない場合は docker-compose run rails bash EDITOR="vim" bin/rails env_credentials:edit -e production </div>
 </div>
 </a>
 </article>
@@ -413,8 +417,8 @@ github
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>

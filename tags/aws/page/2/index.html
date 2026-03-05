@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+62
 <span>Tags</span>
 </a>
 </div>
@@ -90,7 +90,10 @@
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく
-実際の設定 以下の通りに URL と Header, Body を設定する Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する Postman 設定その４ </div>
+実際の設定 以下の通りに URL と Header, Body を設定する
+Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する
+Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する
+Postman 設定その４ </div>
 </div>
 </a>
 </article>
@@ -175,10 +178,16 @@ aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> | sort -nr </div>
 </ul>
 <div class=summary>AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく
 前提 AWS EC2 Instance Connect をインストールしておく
-手順 Amazon EC2 コンソール を開く ナビゲーションペインで、[インスタンス] を選択する インスタンスを選択し、[接続] を選択する [EC2 Instance Connect] を選択する ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く 以下のエラーが発生
+手順 Amazon EC2 コンソール を開く
+ナビゲーションペインで、[インスタンス] を選択する
+インスタンスを選択し、[接続] を選択する
+[EC2 Instance Connect] を選択する
+ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く
+以下のエラーが発生
 インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください 公式のトラブルシューティングを確認
 => セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった
-以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r '.prefixes[] | select(.region=="&lt;&lt;対象リージョン>>") | select(.service=="EC2_INSTANCE_CONNECT") | .ip_prefix' セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する 再度、EC2 Instance Connect に接続する </div>
+以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する
+curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r '.prefixes[] | select(.region=="&lt;&lt;対象リージョン>>") | select(.service=="EC2_INSTANCE_CONNECT") | .ip_prefix' セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する</div>
 </div>
 </a>
 </article>
@@ -194,9 +203,12 @@ aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> | sort -nr </div>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 <div class=summary>Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく
-手順 postgresql13 を以下のコマンドでインストールする sudo amazon-linux-extras install postgresql13 以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found Installation failed. Check that you have permissions to install. 以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること sudo sed -i "s/\$releasever/7/g" "/etc/yum.repos.d/pgdg-redhat-all.repo" 再度、 postgresql13 をインストールする 以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.</div>
+手順 postgresql13 を以下のコマンドでインストールする
+sudo amazon-linux-extras install postgresql13 以下のエラーが発生
+failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found Installation failed. Check that you have permissions to install. 以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること
+sudo sed -i "s/\$releasever/7/g" "/etc/yum.repos.d/pgdg-redhat-all.repo" 再度、 postgresql13 をインストールする
+以下のエラーが発生
+failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try.</div>
 </div>
 </a>
 </article>
@@ -214,9 +226,12 @@ failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to tr
 <div class=summary>Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく
 前提 構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照
 前回の記事: Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法
-手順 Role に対して適宜必要な権限を付与 例. public Schema の全テーブルへの全権限を付与
-grant all on all tables in schema public to &lt;&lt;DB ユーザ>>; アクセス制御を行うテーブルからアクセス権限を取り消す 例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
-revoke select on "public"."T_USER_HISTORY" from &lt;&lt;DB ユーザ>>; 権限の確認 該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
+手順 Role に対して適宜必要な権限を付与
+例. public Schema の全テーブルへの全権限を付与
+grant all on all tables in schema public to &lt;&lt;DB ユーザ>>; アクセス制御を行うテーブルからアクセス権限を取り消す
+例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
+revoke select on "public"."T_USER_HISTORY" from &lt;&lt;DB ユーザ>>; 権限の確認
+該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
 \dp #=> &lt;&lt;DB ユーザ>>=awdDxt/postgres </div>
 </div>
 </a>
@@ -404,8 +419,8 @@ AWS Secrets Manager のマネジメントコンソールから、先ほど登録
 <section class=sidebar>
 <header><a href=https://kkawazoe.github.io/tags>TAGS</a></header>
 <ul class=terms>
+<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(45)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/ruby-on-rails>ruby-on-rails <span class=count>(43)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/tools>tools <span class=count>(42)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/aws>aws <span class=count>(31)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC>資格 <span class=count>(17)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>
