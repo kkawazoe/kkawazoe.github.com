@@ -10,6 +10,14 @@ article.sn > .article-body h4 {
   position: relative;
 }
 
+article.sn > .article-body pre code {
+  color: rgb(131, 148, 150);
+  background-color: rgb(0, 43, 54);
+  border-radius: 0;
+  white-space: pre;
+  padding: 1rem 2rem;
+}
+
 article.sn > .article-body pre > code.hljs[data-filename] {
   padding-top: 2em;
 }
