@@ -1,7 +1,7 @@
 <!doctype html><html lang=ja>
 <head>
 <meta charset=utf-8>
-<title>SNS - Note To Self ~One Step At A Time~</title>
+<title>Amazon Cognito - Note To Self ~One Step At A Time~</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -10,8 +10,8 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://kkawazoe.github.io/images/logo.png>
 <link rel="shortcut icon" href=https://kkawazoe.github.io/images/favicon.ico>
-<link rel=alternate type=application/rss+xml href=https://kkawazoe.github.io/tags/sns/index.xml title="Note To Self ~One Step At A Time~">
-<link rel=canonical href=https://kkawazoe.github.io/tags/sns/>
+<link rel=alternate type=application/rss+xml href=https://kkawazoe.github.io/tags/amazon-cognito/index.xml title="Note To Self ~One Step At A Time~">
+<link rel=canonical href=https://kkawazoe.github.io/tags/amazon-cognito/>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-62
+63
 <span>Tags</span>
 </a>
 </div>
@@ -58,23 +58,47 @@
 </div>
 <div class="mcol c8">
 <header class=page-title>
-<h1 class=title>SNS</h1>
+<h1 class=title>Amazon Cognito</h1>
 </header>
 <div class=articles>
 <div class=mrow>
 <div class="mcol c6">
 <article class=li>
-<a href=https://kkawazoe.github.io/blog/2024/07/26/how-to-remove-subscriptions-not-tied-to-amazon-sns-topics-in-shell-script/>
-<div class="thumb thumb-47d25b8b60b450fdb5e6d87fbaa3365d"></div>
+<a href=https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/>
+<div class="thumb thumb-03d1b14f9c70df9bafb8247863227bb1"></div>
 <div class=inner>
-<h2 class=title>ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法</h2>
+<h2 class=title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</h2>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-07-26T12:00:00JST>Jul 26, 2024</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-02-01T00:00:00JST>Feb 1, 2024</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS 実際のコード &lt;&lt;AWS Configure Profile>> 部分は実際の環境に応じて書き換える
-#!/bin/bash AWS_PROFILE=&lt;&lt;AWS Configure Profile>> # SNSトピック一覧を取得 topics=$(aws sns list-topics --profile=${AWS_PROFILE} | jq -r '.Topics[].TopicArn') # SNSサブスクリプション一覧を取得 subscriptions=$(aws sns list-subscriptions --profile=${AWS_PROFILE}) # トピックに紐づかないサブスクリプションを削除 echo $subscriptions | jq -c '.Subscriptions[]' | while read subscription; do subscriptionArn=$(echo $subscription | jq -r '.SubscriptionArn') topicArn=$(echo $subscription | jq -r '.TopicArn') # サブスクリプションのtopicArnがtopicsに含まれていなければ削除 if ! echo $topics | grep $topicArn > /dev/null then aws sns unsubscribe --subscription-arn $subscriptionArn --profile=${AWS_PROFILE} echo "削除したサブスクリプション: $subscriptionArn" fi done </div>
+<div class=summary>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
+方法 以下の２つの方法が考えられる
+Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
+※リストアはユーザ CSV インポート機能で行う 実際のコード const { stringify } = require("csv-stringify/sync"); module.exports = async (params) => { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require("@aws-sdk/client-cognito-identity-provider"); const cognito = new CognitoIdentityProvider(); module.exports = async (param) => { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/>
+<div class="thumb thumb-02f7361c91fa442b01871da54dfb772c"></div>
+<div class=inner>
+<h2 class=title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-01-29T12:30:00JST>Jan 29, 2024</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
+方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
+実際のコード ユーザ登録
+&ndash;user-attributes は必要に応じて増やす
+※「&ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
+aws cognito-idp admin-create-user \ --user-pool-id &lt;&lt;ユーザプール ID>> \ --username &lt;&lt;E メールアドレス ※E メールアドレスをユーザ名に設定した場合>> \ --user-attributes Name=email,Value=&lt;&lt;E メールアドレス>> \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定
+&ndash;no-permanent は仮パスワード扱い
+※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる
+aws cognito-idp admin-set-user-password \ --user-pool-id &lt;&lt;ユーザプール ID>> \ --username &lt;&lt;ユーザ名 or sub>> \ --password &lt;&lt;password>> \ --no-permanent </div>
 </div>
 </a>
 </article>

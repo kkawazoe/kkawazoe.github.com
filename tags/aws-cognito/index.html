@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-62
+63
 <span>Tags</span>
 </a>
 </div>
@@ -62,47 +62,6 @@
 </header>
 <div class=articles>
 <div class=mrow>
-<div class="mcol c6">
-<article class=li>
-<a href=https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/>
-<div class="thumb thumb-03d1b14f9c70df9bafb8247863227bb1"></div>
-<div class=inner>
-<h2 class=title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</h2>
-<ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-02-01T00:00:00JST>Feb 1, 2024</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-<div class=summary>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
-方法 以下の２つの方法が考えられる
-Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
-※リストアはユーザ CSV インポート機能で行う 実際のコード const { stringify } = require("csv-stringify/sync"); module.exports = async (params) => { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require("@aws-sdk/client-cognito-identity-provider"); const cognito = new CognitoIdentityProvider(); module.exports = async (param) => { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</div>
-</div>
-</a>
-</article>
-</div>
-<div class="mcol c6">
-<article class=li>
-<a href=https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/>
-<div class="thumb thumb-02f7361c91fa442b01871da54dfb772c"></div>
-<div class=inner>
-<h2 class=title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</h2>
-<ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-01-29T12:30:00JST>Jan 29, 2024</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-<div class=summary>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード ユーザ登録
-&ndash;user-attributes は必要に応じて増やす
-※「&ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
-aws cognito-idp admin-create-user \ --user-pool-id &lt;&lt;ユーザプール ID>> \ --username &lt;&lt;E メールアドレス ※E メールアドレスをユーザ名に設定した場合>> \ --user-attributes Name=email,Value=&lt;&lt;E メールアドレス>> \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定
-&ndash;no-permanent は仮パスワード扱い
-※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる
-aws cognito-idp admin-set-user-password \ --user-pool-id &lt;&lt;ユーザプール ID>> \ --username &lt;&lt;ユーザ名 or sub>> \ --password &lt;&lt;password>> \ --no-permanent </div>
-</div>
-</a>
-</article>
-</div>
 <div class="mcol c6">
 <article class=li>
 <a href=https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/>
