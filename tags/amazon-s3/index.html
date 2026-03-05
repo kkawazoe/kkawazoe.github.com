@@ -1,7 +1,7 @@
 <!doctype html><html lang=ja>
 <head>
 <meta charset=utf-8>
-<title>AWS Cognito - Note To Self ~One Step At A Time~</title>
+<title>Amazon S3 - Note To Self ~One Step At A Time~</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -10,8 +10,8 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://kkawazoe.github.io/images/logo.png>
 <link rel="shortcut icon" href=https://kkawazoe.github.io/images/favicon.ico>
-<link rel=alternate type=application/rss+xml href=https://kkawazoe.github.io/tags/aws-cognito/index.xml title="Note To Self ~One Step At A Time~">
-<link rel=canonical href=https://kkawazoe.github.io/tags/aws-cognito/>
+<link rel=alternate type=application/rss+xml href=https://kkawazoe.github.io/tags/amazon-s3/index.xml title="Note To Self ~One Step At A Time~">
+<link rel=canonical href=https://kkawazoe.github.io/tags/amazon-s3/>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/solarized-dark.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+61
 <span>Tags</span>
 </a>
 </div>
@@ -58,23 +58,43 @@
 </div>
 <div class="mcol c8">
 <header class=page-title>
-<h1 class=title>AWS Cognito</h1>
+<h1 class=title>Amazon S3</h1>
 </header>
 <div class=articles>
 <div class=mrow>
 <div class="mcol c6">
 <article class=li>
-<a href=https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/>
-<div class="thumb thumb-28d72c3b71e5ac90a3b921bc5c1d0def"></div>
+<a href=https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images-to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/>
+<div class="thumb thumb-926ef91baaadcf56aa42663e41fc80ce"></div>
 <div class=inner>
-<h2 class=title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</h2>
+<h2 class=title>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法</h2>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-01-16T12:30:00JST>Jan 16, 2024</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-07-22T12:00:00JST>Jul 22, 2024</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter "{検索に使用する属性} = \"{検索文字列}\"" \ --attributes-to-get "{取得する属性(スペース区切りで複数指定可)}" \ | jq -r '.Users[] | [.Username, .Attributes[].Value] | @csv' \ | tr -d '"' \ > user_pool_list.csv </div>
+<div class=summary>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法について調査した結果を備忘録として残しておく
+環境 OS: MacOS aws-mfa をインストールして登録済 aws-mfa 設定を参照 aws-mfa 設定 通常の aws profile を設定
+1 で設定した &#171;profile 名&#187;-long-term で Profile を設定
+追加で ~/.aws/credentials に以下を設定
+[&lt;&lt;profile 名>>-long-term] aws_mfa_device = &lt;&lt;arn:aws:iam::*:mfa/${aws:username}>> フォルダ構成 ./ ├── img/ │ └── image_001.png └── upload_image.sh 実際のコード &lt;&lt;AWS Profile Prefix>> 部分は実際の環境に応じて書き換える
+#!/bin/sh # Shared AWS_PROFILE_PREFIX=&lt;&lt;AWS Profile Prefix>> IMAGE_UPLOAD_DIR=img read -p "Which environment connect to?</div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/>
+<div class="thumb thumb-69891ed902d70b5559d875d1ac500f1d"></div>
+<div class=inner>
+<h2 class=title>S3 でアップロードされているオブジェクトの総数を取得する方法</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-06-13T12:00:00JST>Jun 13, 2024</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく
+実際のコード aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> --recursive --human-readable --summarize その他 最終更新日の降順でソートして出力 UI 上だとできないのでコマンドを使用する
+aws s3 ls s3://&lt;&lt;bucket-name/path/to/>> | sort -nr </div>
 </div>
 </a>
 </article>
@@ -219,9 +239,9 @@
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/postgresql>postgresql <span class=count>(8)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/vs-code>vs-code <span class=count>(5)</span></a></li>
+<li><a href=https://kkawazoe.github.io/tags/amazon-cognito>amazon-cognito <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/amazon-rds>amazon-rds <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/rspec>rspec <span class=count>(4)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/vue.js>vue.js <span class=count>(4)</span></a></li>
 </ul>
 </section>
 <section class=sidebar>

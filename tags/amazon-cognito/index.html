@@ -46,7 +46,7 @@
 </div>
 <div class=article-info-block>
 <a href=https://kkawazoe.github.io/tags/>
-63
+61
 <span>Tags</span>
 </a>
 </div>
@@ -62,6 +62,25 @@
 </header>
 <div class=articles>
 <div class=mrow>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/>
+<div class="thumb thumb-b2fa07a5a7f8d2635c57a211d904a36c"></div>
+<div class=inner>
+<h2 class=title>API Gateway のオーソライザに Amazon Cognito を使用している API を Postman から動作させる方法</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-06-26T12:00:00JST>Jun 26, 2024</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく
+実際の設定 以下の通りに URL と Header, Body を設定する
+Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する
+Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する
+Postman 設定その４ </div>
+</div>
+</a>
+</article>
+</div>
 <div class="mcol c6">
 <article class=li>
 <a href=https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/>
@@ -99,6 +118,23 @@ aws cognito-idp admin-create-user \ --user-pool-id &lt;&lt;ユーザプール ID
 &ndash;no-permanent は仮パスワード扱い
 ※「&ndash;permanent」オプションを付与で恒久パスワード扱いになる
 aws cognito-idp admin-set-user-password \ --user-pool-id &lt;&lt;ユーザプール ID>> \ --username &lt;&lt;ユーザ名 or sub>> \ --password &lt;&lt;password>> \ --no-permanent </div>
+</div>
+</a>
+</article>
+</div>
+<div class="mcol c6">
+<article class=li>
+<a href=https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/>
+<div class="thumb thumb-28d72c3b71e5ac90a3b921bc5c1d0def"></div>
+<div class=inner>
+<h2 class=title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</h2>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2024-01-16T12:30:00JST>Jan 16, 2024</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+<div class=summary>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
+方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
+実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter "{検索に使用する属性} = \"{検索文字列}\"" \ --attributes-to-get "{取得する属性(スペース区切りで複数指定可)}" \ | jq -r '.Users[] | [.Username, .Attributes[].Value] | @csv' \ | tr -d '"' \ > user_pool_list.csv </div>
 </div>
 </a>
 </article>
@@ -243,9 +279,9 @@ aws cognito-idp admin-set-user-password \ --user-pool-id &lt;&lt;ユーザプー
 <li><a href=https://kkawazoe.github.io/tags/github>github <span class=count>(8)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/postgresql>postgresql <span class=count>(8)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/vs-code>vs-code <span class=count>(5)</span></a></li>
+<li><a href=https://kkawazoe.github.io/tags/amazon-cognito>amazon-cognito <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/amazon-rds>amazon-rds <span class=count>(4)</span></a></li>
 <li><a href=https://kkawazoe.github.io/tags/rspec>rspec <span class=count>(4)</span></a></li>
-<li><a href=https://kkawazoe.github.io/tags/vue.js>vue.js <span class=count>(4)</span></a></li>
 </ul>
 </section>
 <section class=sidebar>
