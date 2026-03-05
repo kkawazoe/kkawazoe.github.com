@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/",
+title: "draw.io MCP を各ツールに導入する手順",
+image: "images/logo/drawio_logo.svg",
+date: "2026-03-05",
+body: "draw.io MCP を各ツールに導入する手順 draw.io MCP を各ツールに導入する手順を備忘録として残しておく 環境 OS: MacOS Tahoe 26.3 Cursor 前提 Node.js がインストールされていること Cursor Settings を開く サイドバー \u0026gt; 「Tools \u0026amp; MCP」 を選択して、「Add Custom MCP」を選択 Cursor Settings \u0026gt; Tools \u0026amp; MCP 画面 以下の内容を入力して保存する { \u0026#34;mcpServers\u0026#34;: { \u0026#34;drawio\u0026#34;: { \u0026#34;command\u0026#34;: \u0026#34;npx\u0026#34;, \u0026#34;args\u0026#34;: [ \u0026#34;-y\u0026#34;, \u0026#34;@drawio/mcp@latest\u0026#34; ] } } } Installed MCP Servers に draw.io MCP が追加されている \u0026amp; 有効になっていることを確認する"
+},
+{
 url: "https://kkawazoe.github.io/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/",
 title: "pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法",
 image: "images/logo/postgre_sql_logo.svg",
