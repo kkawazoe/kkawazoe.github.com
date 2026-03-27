@@ -52,43 +52,41 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>PostgreSQL で jsonb 型のカラムの一部を更新する方法</title><link>https://kkawazoe.github.io/blog/2024/12/11/how-to-update-some-columns-of-type-jsonb-in-postgresql/</link><pubDate>Wed, 11 Dec 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/12/11/how-to-update-some-columns-of-type-jsonb-in-postgresql/</guid><description>&lt;p&gt;PostgreSQL で jsonb 型のカラムの一部を更新する方法を備忘録として残しておく&lt;/p&gt;
 &lt;h2 id="方法"&gt;方法&lt;/h2&gt;
 &lt;p&gt;以下の DB 構成および更新前のレコードの場合&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Book Table
-&lt;ul&gt;
-&lt;li&gt;id field: SERIAL type ※Primary Key
-&lt;ul&gt;
-&lt;li&gt;value: 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;options field: JSONB type
-&lt;ul&gt;
-&lt;li&gt;value: {&amp;ldquo;key_1&amp;rdquo;: &amp;ldquo;aaa&amp;rdquo;, &amp;ldquo;key_2&amp;rdquo;: &amp;ldquo;bbb&amp;rdquo;}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Book Table&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;id&lt;/th&gt;
+ &lt;th&gt;options(jsonb)&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;{&amp;ldquo;key_1&amp;rdquo;: &amp;ldquo;aaa&amp;rdquo;, &amp;ldquo;key_2&amp;rdquo;: &amp;ldquo;bbb&amp;rdquo;}&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;UPDATE&lt;/span&gt; book
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;SET&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;options&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;options&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;{&amp;#34;key_1&amp;#34;: &amp;#34;ccc&amp;#34;}&amp;#39;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;WHERE&lt;/span&gt; id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更新後&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Book Table
-&lt;ul&gt;
-&lt;li&gt;id field: SERIAL type ※Primary Key
-&lt;ul&gt;
-&lt;li&gt;value: 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;options field: JSONB type
-&lt;ul&gt;
-&lt;li&gt;value: {&amp;ldquo;key_1&amp;rdquo;: &amp;ldquo;ccc&amp;rdquo;, &amp;ldquo;key_2&amp;rdquo;: &amp;ldquo;bbb&amp;rdquo;}&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>&lt;p&gt;ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;Book Table&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;id&lt;/th&gt;
+ &lt;th&gt;options(jsonb)&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;{&amp;ldquo;key_1&amp;rdquo;: &amp;ldquo;ccc&amp;rdquo;, &amp;ldquo;key_2&amp;rdquo;: &amp;ldquo;bbb&amp;rdquo;}&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>&lt;p&gt;ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
 &lt;h2 id="環境"&gt;環境&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OS: MacOS&lt;/li&gt;
