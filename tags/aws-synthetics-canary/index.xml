@@ -1,2 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Synthetics Canary on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws-synthetics-canary/</link><description>Recent content in AWS Synthetics Canary on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws-synthetics-canary/index.xml" rel="self" type="application/rss+xml"/><item><title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title><link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid><description>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく
-方法 CloudWatch &amp;gt; Synthetics Canary を選択 「Canary を作成」ボタンを押下 以下を設定 設計図を使用する 設計図: API Canary Canary ビルダー: 任意の Canary 名 Amazon API Gateway API を使用中: チェックを入れる API を選択: API Gateway から API とステージを選択 使用している API, ステージを選択 Host Name: 使用している Host Name を指定 HTTP リクエスト HTTP リクエストを追加ボタンを押下 監視したい API の情報を設定 スクリプトエディタ: スクリプトを参照 スケジュール: 任意のスケジュールを選択 アクセス許可 IAM ロール: 既存のロールを選択 ポリシーを参照 「保存」ボタンを押下 実際のコード スクリプト 基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Synthetics Canary on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws-synthetics-canary/</link><description>Recent content in AWS Synthetics Canary on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws-synthetics-canary/index.xml" rel="self" type="application/rss+xml"/><item><title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title><link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid><description>&lt;p&gt;外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;CloudWatch &amp;gt; Synthetics Canary を選択&lt;/li&gt;
+&lt;li&gt;「Canary を作成」ボタンを押下&lt;/li&gt;
+&lt;li&gt;以下を設定
+&lt;ul&gt;
+&lt;li&gt;設計図を使用する&lt;/li&gt;
+&lt;li&gt;設計図: API Canary&lt;/li&gt;
+&lt;li&gt;Canary ビルダー: 任意の Canary 名&lt;/li&gt;
+&lt;li&gt;Amazon API Gateway API を使用中: チェックを入れる&lt;/li&gt;
+&lt;li&gt;API を選択: API Gateway から API とステージを選択
+&lt;ul&gt;
+&lt;li&gt;使用している API, ステージを選択&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Host Name: 使用している Host Name を指定&lt;/li&gt;
+&lt;li&gt;HTTP リクエスト
+&lt;ul&gt;
+&lt;li&gt;HTTP リクエストを追加ボタンを押下
+&lt;ul&gt;
+&lt;li&gt;監視したい API の情報を設定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;スクリプトエディタ: &lt;a href="#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88"&gt;スクリプト&lt;/a&gt;を参照&lt;/li&gt;
+&lt;li&gt;スケジュール: 任意のスケジュールを選択&lt;/li&gt;
+&lt;li&gt;アクセス許可
+&lt;ul&gt;
+&lt;li&gt;IAM ロール: 既存のロールを選択
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC"&gt;ポリシー&lt;/a&gt;を参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;「保存」ボタンを押下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;h3 id="スクリプト"&gt;スクリプト&lt;/h3&gt;
+&lt;p&gt;基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある&lt;/p&gt;</description></item></channel></rss>

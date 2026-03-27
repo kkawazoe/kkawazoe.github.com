@@ -1,11 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/golang/</link><description>Recent content in Golang on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Wed, 03 Apr 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 言語用のデバッグ環境を VS Code 上に構築する方法</title><link>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</link><pubDate>Wed, 03 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</guid><description>Go 言語用のデバッグ環境を VS Code 上に構築する方法を備忘録として残しておく
-※環境変数読み込み時にロードエラーになっていた
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Go をインストール済 $GOPATH を設定済 $GOPATH/bin を環境変数 $PATH へ追加済 サーバ情報 host: 127.0.0.1 port: 3000 ディレクトリ構成 以下のような構成になっている想定
-※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する
-cmd ├── main.go .env 手順 VSCode に Go 言語の拡張機能をインストール
-コマンドパレットから Go: Install/Update Tools を選択
-以下のツールを選択して実行
-gopls@latest dlv@latest launch.json を編集
-{ // IntelliSense を使用して利用可能な属性を学べます。 // 既存の属性の説明をホバーして表示します。 // 詳細情報は次を確認してください: https://go.</description></item><item><title>Go Tour のローカルでの実行方法</title><link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link><pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</guid><description>Go Tour をローカルで実行しようとした際に手順通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく
-環境 OS : MacOS Ventura(13.4) golang: go1.20.4 エラー内容 go get github.com/atotto/go-tour-jp/gotour gotour #=&amp;gt; zsh: command not found: gotour 対応方法 以下のコマンドで実行する
-tour</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/golang/</link><description>Recent content in Golang on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Wed, 03 Apr 2024 12:30:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 言語用のデバッグ環境を VS Code 上に構築する方法</title><link>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</link><pubDate>Wed, 03 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</guid><description>&lt;p&gt;Go 言語用のデバッグ環境を VS Code 上に構築する方法を備忘録として残しておく&lt;br&gt;
+※環境変数読み込み時にロードエラーになっていた&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Go をインストール済&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$GOPATH&lt;/code&gt; を設定済&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$GOPATH/bin&lt;/code&gt; を環境変数 &lt;code&gt;$PATH&lt;/code&gt; へ追加済&lt;/li&gt;
+&lt;li&gt;サーバ情報
+&lt;ul&gt;
+&lt;li&gt;host: 127.0.0.1&lt;/li&gt;
+&lt;li&gt;port: 3000&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="ディレクトリ構成"&gt;ディレクトリ構成&lt;/h3&gt;
+&lt;p&gt;以下のような構成になっている想定&lt;br&gt;
+※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cmd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── main.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;.env
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;VSCode に &lt;a href="https://marketplace.visualstudio.com/items?itemName=golang.Go"&gt;Go 言語の拡張機能&lt;/a&gt;をインストール&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コマンドパレットから &lt;code&gt;Go: Install/Update Tools&lt;/code&gt; を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のツールを選択して実行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gopls@latest&lt;/li&gt;
+&lt;li&gt;dlv@latest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;launch.json&lt;/code&gt; を編集&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:.vscode/launch.json" data-lang="json:.vscode/launch.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// IntelliSense を使用して利用可能な属性を学べます。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 既存の属性の説明をホバーして表示します。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;0.2.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;configurations&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Launch Program&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mode&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;debug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;program&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;${workspaceFolder}/cmd/&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;host&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;3000&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;cwd&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;${workspaceFolder}&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// ※1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※1 設定することで cwd が移動して &lt;code&gt;.env&lt;/code&gt; ファイルがロード可能になる&lt;/p&gt;</description></item><item><title>Go Tour のローカルでの実行方法</title><link>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</link><pubDate>Mon, 05 Jun 2023 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/06/05/how-to-run-go-tour-locally/</guid><description>&lt;p&gt;Go Tour をローカルで実行しようとした際に&lt;a href="https://go-tour-jp.appspot.com/welcome/3"&gt;手順&lt;/a&gt;通りに行った際にエラーが発生したため調査を行った際の調査結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS : MacOS Ventura(13.4)&lt;/li&gt;
+&lt;li&gt;golang: go1.20.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="エラー内容"&gt;エラー内容&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;go get github.com/atotto/go-tour-jp/gotour
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gotour
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; zsh: command not found: gotour&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="対応方法"&gt;対応方法&lt;/h2&gt;
+&lt;p&gt;以下のコマンドで実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tour
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

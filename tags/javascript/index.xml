@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/javascript/</link><description>Recent content in JavaScript on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Fri, 22 Nov 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>数値文字列の並び替え方法</title><link>https://kkawazoe.github.io/blog/2024/11/22/how-to-sort-numeric-strings/</link><pubDate>Fri, 22 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/22/how-to-sort-numeric-strings/</guid><description>数値文字列の並び替え方法を備忘録として残しておく
-方法 localeCompare メソッドの option numeric を使用する
-例.
-数値以外の文字を含むパターン Before Sort [&amp;ldquo;v1.0&amp;rdquo;, &amp;ldquo;v2.1&amp;rdquo;, &amp;ldquo;v1.4&amp;rdquo;, &amp;ldquo;v2.0&amp;rdquo;, &amp;ldquo;v1.11.3&amp;rdquo;, &amp;ldquo;v1.1.4&amp;rdquo;, &amp;ldquo;v1.1.1&amp;rdquo;] After Sort [&amp;ldquo;v2.1&amp;rdquo;, &amp;ldquo;v2.0&amp;rdquo;, &amp;ldquo;v1.11.3&amp;rdquo;, &amp;ldquo;v1.4&amp;rdquo;, &amp;ldquo;v1.1.4&amp;rdquo;, &amp;ldquo;v1.1.1&amp;rdquo;, &amp;ldquo;v1.0&amp;rdquo;] 数値以外の文字を含まないパターン Before Sort [&amp;ldquo;1.0&amp;rdquo;, &amp;ldquo;2.1&amp;rdquo;, &amp;ldquo;1.4&amp;rdquo;, &amp;ldquo;2.0&amp;rdquo;, &amp;ldquo;1.11.3&amp;rdquo;, &amp;ldquo;1.1.4&amp;rdquo;, &amp;ldquo;1.1.1&amp;rdquo;] After Sort [&amp;ldquo;2.1&amp;rdquo;, &amp;ldquo;2.0&amp;rdquo;, &amp;ldquo;1.11.3&amp;rdquo;, &amp;ldquo;1.4&amp;rdquo;, &amp;ldquo;1.1.4&amp;rdquo;, &amp;ldquo;1.1.1&amp;rdquo;, &amp;ldquo;1.0&amp;rdquo;] 実際のコード</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/javascript/</link><description>Recent content in JavaScript on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Fri, 22 Nov 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>数値文字列の並び替え方法</title><link>https://kkawazoe.github.io/blog/2024/11/22/how-to-sort-numeric-strings/</link><pubDate>Fri, 22 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/22/how-to-sort-numeric-strings/</guid><description>&lt;p&gt;数値文字列の並び替え方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"&gt;localeCompare メソッドの option numeric&lt;/a&gt; を使用する&lt;/p&gt;
+&lt;p&gt;例.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数値以外の文字を含むパターン
+&lt;ul&gt;
+&lt;li&gt;Before Sort
+&lt;ul&gt;
+&lt;li&gt;[&amp;ldquo;v1.0&amp;rdquo;, &amp;ldquo;v2.1&amp;rdquo;, &amp;ldquo;v1.4&amp;rdquo;, &amp;ldquo;v2.0&amp;rdquo;, &amp;ldquo;v1.11.3&amp;rdquo;, &amp;ldquo;v1.1.4&amp;rdquo;, &amp;ldquo;v1.1.1&amp;rdquo;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After Sort
+&lt;ul&gt;
+&lt;li&gt;[&amp;ldquo;v2.1&amp;rdquo;, &amp;ldquo;v2.0&amp;rdquo;, &amp;ldquo;v1.11.3&amp;rdquo;, &amp;ldquo;v1.4&amp;rdquo;, &amp;ldquo;v1.1.4&amp;rdquo;, &amp;ldquo;v1.1.1&amp;rdquo;, &amp;ldquo;v1.0&amp;rdquo;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数値以外の文字を含まないパターン
+&lt;ul&gt;
+&lt;li&gt;Before Sort
+&lt;ul&gt;
+&lt;li&gt;[&amp;ldquo;1.0&amp;rdquo;, &amp;ldquo;2.1&amp;rdquo;, &amp;ldquo;1.4&amp;rdquo;, &amp;ldquo;2.0&amp;rdquo;, &amp;ldquo;1.11.3&amp;rdquo;, &amp;ldquo;1.1.4&amp;rdquo;, &amp;ldquo;1.1.1&amp;rdquo;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After Sort
+&lt;ul&gt;
+&lt;li&gt;[&amp;ldquo;2.1&amp;rdquo;, &amp;ldquo;2.0&amp;rdquo;, &amp;ldquo;1.11.3&amp;rdquo;, &amp;ldquo;1.4&amp;rdquo;, &amp;ldquo;1.1.4&amp;rdquo;, &amp;ldquo;1.1.1&amp;rdquo;, &amp;ldquo;1.0&amp;rdquo;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;amp-iframe
+ height="500"
+ src=https://codesandbox.io/embed/2fgqxn?view&amp;#61;editor&amp;amp;module&amp;#61;%2Findex.ts&amp;amp;expanddevtools&amp;#61;1
+ style="width:100%; border:0; border-radius: 4px; overflow:hidden;"
+ title=TypeScript&amp;#32;で数値文字列のソートを行う
+ allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+ sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"&gt;
+&lt;/amp-iframe&gt;</description></item></channel></rss>

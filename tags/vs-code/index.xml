@@ -1,26 +1,182 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/vs-code/</link><description>Recent content in VS Code on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>WSL 上の VSCode で 'Exec format error' が発生して起動しなくなったときの対処方法</title><link>https://kkawazoe.github.io/blog/2026/01/17/road-to-jstqb-foundation-level-part2/</link><pubDate>Sat, 17 Jan 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/01/17/road-to-jstqb-foundation-level-part2/</guid><description>WSL 上の VSCode で &amp;lsquo;Exec format error&amp;rsquo; が発生して起動しなくなったときの対処方法を備忘録として残しておく
-環境 OS: Windows 11 Pro バージョン: 22H2 WSL2 カーネルバージョン: 5.15.153.1-2 OS: Ubuntu 24.04.1 LTS VSCode: バージョン 1.108.1 発生エラー /mnt/c/Users/admin/AppData/Local/Programs/Microsoft VS Code/bin/code: 61: /mnt/c/Users/admin/AppData/Local/Programs/Microsoft VS Code/Code.exe: Exec format error 対応方法 以下のコマンドを実行する
-※Github Issue参照
-sudo sh -c &amp;#39;echo :WSLInterop:M::MZ::/init:PF &amp;gt; /usr/lib/binfmt.d/WSLInterop.conf&amp;#39; sudo systemctl unmask systemd-binfmt.service sudo systemctl restart systemd-binfmt sudo systemctl mask systemd-binfmt.service</description></item><item><title>VSCode Extension の Postman でコレクションをエクスポートする方法</title><link>https://kkawazoe.github.io/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/</link><pubDate>Wed, 02 Oct 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/</guid><description>VSCode Extension の Postman でコレクションをエクスポートする方法について調査した結果を備忘録として残しておく
-前提 VSCode Extension の Postman にはコレクションのインポート機能は存在するがエクスポート機能は存在しない
-そのため、Postman のアカウントに紐づいていることを利用して Web 版の Postman にてエクスポートする
-手順 Web 版の Postman にアクセスする VSCode Extension の Postman と同じアカウントにログインする Workspaces &amp;gt; 該当の Workspace を選択 エクスポートしたいコレクションのメニューより「Export」を選択 エクスポートを行う</description></item><item><title>Go 言語用のデバッグ環境を VS Code 上に構築する方法</title><link>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</link><pubDate>Wed, 03 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</guid><description>Go 言語用のデバッグ環境を VS Code 上に構築する方法を備忘録として残しておく
-※環境変数読み込み時にロードエラーになっていた
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Go をインストール済 $GOPATH を設定済 $GOPATH/bin を環境変数 $PATH へ追加済 サーバ情報 host: 127.0.0.1 port: 3000 ディレクトリ構成 以下のような構成になっている想定
-※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する
-cmd ├── main.go .env 手順 VSCode に Go 言語の拡張機能をインストール
-コマンドパレットから Go: Install/Update Tools を選択
-以下のツールを選択して実行
-gopls@latest dlv@latest launch.json を編集
-{ // IntelliSense を使用して利用可能な属性を学べます。 // 既存の属性の説明をホバーして表示します。 // 詳細情報は次を確認してください: https://go.</description></item><item><title>Visual Studio Code Dev Containers での開発環境構築について</title><link>https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/</link><pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/</guid><description>Visual Studio Code Dev Containers での開発環境構築について調査した結果を備忘録として残しておく
-Dev Containers について 以下のような構成になる
-Architecture Containers 引用元: https://code.visualstudio.com/docs/devcontainers/containers
-以下のようなメリットがある
-プロジェクトごとのミドルウェアなどをコンテナに閉じ込めることができる ホスト環境を汚さない VS Code の Extention もコンテナに閉じ込められる 環境構築を自動化できる 新規に作成したり、別のPCでの作り直しが簡単 環境構築について 前提条件 VS Code で以下の Extention をインストールする
-Remote Development Dev Containers ※テンプレートを使用する場合 Docker Docker Desktop or Rancher Desktop 実際の例 新規で作成する場合 VS Code の左下の「&amp;gt;&amp;lt;」ボタンを押下 「新しい開発コンテナー&amp;hellip;」 を選択 ベースとなる設定を選択する 基本的には Dockerfile or Docker Compose の話になるのでそちらに慣れていれば問題なくできると思われる</description></item><item><title>Visual Studio Code で拡張子毎に設定値を変更する方法</title><link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link><pubDate>Tue, 22 Nov 2022 17:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid><description>経緯 Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため調査を行なった
-その結果を備忘録として残しておく
-手順 コマンドパレットを開く
-Configure language specific settings を入力して選択する
-拡張子を質問されるので markdown を選択する
-settings.json ファイルに以下のように編集する
-実際の設定ファイル { &amp;#34;[markdown]&amp;#34;: { &amp;#34;files.trimTrailingWhitespace&amp;#34;: false } }</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/vs-code/</link><description>Recent content in VS Code on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>WSL 上の VSCode で 'Exec format error' が発生して起動しなくなったときの対処方法</title><link>https://kkawazoe.github.io/blog/2026/01/17/road-to-jstqb-foundation-level-part2/</link><pubDate>Sat, 17 Jan 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/01/17/road-to-jstqb-foundation-level-part2/</guid><description>&lt;p&gt;WSL 上の VSCode で &amp;lsquo;Exec format error&amp;rsquo; が発生して起動しなくなったときの対処方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: Windows 11 Pro&lt;/li&gt;
+&lt;li&gt;バージョン: 22H2&lt;/li&gt;
+&lt;li&gt;WSL2&lt;/li&gt;
+&lt;li&gt;カーネルバージョン: 5.15.153.1-2&lt;/li&gt;
+&lt;li&gt;OS: Ubuntu 24.04.1 LTS&lt;/li&gt;
+&lt;li&gt;VSCode: バージョン 1.108.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="発生エラー"&gt;発生エラー&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/mnt/c/Users/admin/AppData/Local/Programs/Microsoft VS Code/bin/code: 61: /mnt/c/Users/admin/AppData/Local/Programs/Microsoft VS Code/Code.exe: Exec format error
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="対応方法"&gt;対応方法&lt;/h2&gt;
+&lt;p&gt;以下のコマンドを実行する&lt;br&gt;
+※&lt;a href="https://github.com/microsoft/WSL/issues/8952#issuecomment-1572193568"&gt;Github Issue&lt;/a&gt;参照&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo sh -c &lt;span style="color:#e6db74"&gt;&amp;#39;echo :WSLInterop:M::MZ::/init:PF &amp;gt; /usr/lib/binfmt.d/WSLInterop.conf&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl unmask systemd-binfmt.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl restart systemd-binfmt
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl mask systemd-binfmt.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>VSCode Extension の Postman でコレクションをエクスポートする方法</title><link>https://kkawazoe.github.io/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/</link><pubDate>Wed, 02 Oct 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/02/how-to-export-collections-with-postman-in-vscode-extension/</guid><description>&lt;p&gt;VSCode Extension の &lt;a href="https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode"&gt;Postman&lt;/a&gt; でコレクションをエクスポートする方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;VSCode Extension の Postman にはコレクションのインポート機能は存在するが&lt;a href="https://github.com/postmanlabs/postman-app-support/issues/11728"&gt;エクスポート機能は存在しない&lt;/a&gt;&lt;br&gt;
+そのため、Postman のアカウントに紐づいていることを利用して Web 版の Postman にてエクスポートする&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Web 版の &lt;a href="https://web.postman.co"&gt;Postman&lt;/a&gt; にアクセスする&lt;/li&gt;
+&lt;li&gt;VSCode Extension の Postman と同じアカウントにログインする&lt;/li&gt;
+&lt;li&gt;Workspaces &amp;gt; 該当の Workspace を選択&lt;/li&gt;
+&lt;li&gt;エクスポートしたいコレクションのメニューより「Export」を選択&lt;/li&gt;
+&lt;li&gt;エクスポートを行う&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Go 言語用のデバッグ環境を VS Code 上に構築する方法</title><link>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</link><pubDate>Wed, 03 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/03/how-to-build-a-debugging-environment-for-the-go-language-on-vs-code/</guid><description>&lt;p&gt;Go 言語用のデバッグ環境を VS Code 上に構築する方法を備忘録として残しておく&lt;br&gt;
+※環境変数読み込み時にロードエラーになっていた&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Go をインストール済&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$GOPATH&lt;/code&gt; を設定済&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$GOPATH/bin&lt;/code&gt; を環境変数 &lt;code&gt;$PATH&lt;/code&gt; へ追加済&lt;/li&gt;
+&lt;li&gt;サーバ情報
+&lt;ul&gt;
+&lt;li&gt;host: 127.0.0.1&lt;/li&gt;
+&lt;li&gt;port: 3000&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="ディレクトリ構成"&gt;ディレクトリ構成&lt;/h3&gt;
+&lt;p&gt;以下のような構成になっている想定&lt;br&gt;
+※デバッグ対象のプログラムと環境変数ファイルが異なるディレクトリに存在する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cmd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── main.go
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;.env
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;VSCode に &lt;a href="https://marketplace.visualstudio.com/items?itemName=golang.Go"&gt;Go 言語の拡張機能&lt;/a&gt;をインストール&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コマンドパレットから &lt;code&gt;Go: Install/Update Tools&lt;/code&gt; を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のツールを選択して実行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gopls@latest&lt;/li&gt;
+&lt;li&gt;dlv@latest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;launch.json&lt;/code&gt; を編集&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:.vscode/launch.json" data-lang="json:.vscode/launch.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// IntelliSense を使用して利用可能な属性を学べます。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 既存の属性の説明をホバーして表示します。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;0.2.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;configurations&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Launch Program&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mode&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;debug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;program&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;${workspaceFolder}/cmd/&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;host&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;3000&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;cwd&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;${workspaceFolder}&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// ※1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※1 設定することで cwd が移動して &lt;code&gt;.env&lt;/code&gt; ファイルがロード可能になる&lt;/p&gt;</description></item><item><title>Visual Studio Code Dev Containers での開発環境構築について</title><link>https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/</link><pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/08/building-a-development-environment-with-visual-studio-code-dev-containers/</guid><description>&lt;p&gt;Visual Studio Code Dev Containers での開発環境構築について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h3 id="dev-containers-について"&gt;&lt;a href="https://code.visualstudio.com/docs/devcontainers/containers"&gt;Dev Containers について&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;以下のような構成になる&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240208_01/architecture-containers.png"
+ alt="Architecture Containers"
+ width=500
+ height=500
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+
+ 
+ &lt;figcaption&gt;
+ Architecture Containers
+ &lt;/figcaption&gt;
+ 
+&lt;/figure&gt;
+
+&lt;p&gt;引用元: &lt;a href="https://code.visualstudio.com/docs/devcontainers/containers"&gt;https://code.visualstudio.com/docs/devcontainers/containers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下のようなメリットがある&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プロジェクトごとのミドルウェアなどをコンテナに閉じ込めることができる
+&lt;ul&gt;
+&lt;li&gt;ホスト環境を汚さない&lt;/li&gt;
+&lt;li&gt;VS Code の Extention もコンテナに閉じ込められる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;環境構築を自動化できる
+&lt;ul&gt;
+&lt;li&gt;新規に作成したり、別のPCでの作り直しが簡単&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="環境構築について"&gt;環境構築について&lt;/h2&gt;
+&lt;h3 id="前提条件"&gt;前提条件&lt;/h3&gt;
+&lt;p&gt;VS Code で以下の Extention をインストールする&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack"&gt;Remote Development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://code.visualstudio.com/docs/devcontainers/containers"&gt;Dev Containers&lt;/a&gt; ※テンプレートを使用する場合&lt;/li&gt;
+&lt;li&gt;Docker
+&lt;ul&gt;
+&lt;li&gt;Docker Desktop or Rancher Desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="実際の例"&gt;実際の例&lt;/h3&gt;
+&lt;h3 id="新規で作成する場合"&gt;新規で作成する場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;VS Code の左下の「&amp;gt;&amp;lt;」ボタンを押下&lt;/li&gt;
+&lt;li&gt;「新しい開発コンテナー&amp;hellip;」 を選択&lt;/li&gt;
+&lt;li&gt;ベースとなる設定を選択する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本的には Dockerfile or Docker Compose の話になるのでそちらに慣れていれば問題なくできると思われる&lt;/p&gt;
+&lt;h3 id="テンプレートの使用"&gt;テンプレートの使用&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;コマンドパレットで「Add Dev Container Configuration Files&amp;hellip;」を選択&lt;/li&gt;
+&lt;li&gt;「ワークスペースに構成を追加する」を選択&lt;/li&gt;
+&lt;li&gt;「すべての定義を表示&amp;hellip;」を選択&lt;/li&gt;
+&lt;li&gt;以降は新規で作成する場合と同様&lt;br&gt;
+4-1. ℹ️を押下することでテンプレートの使い方やカスタマイズ方法が表示される&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="tips"&gt;Tips&lt;/h2&gt;
+&lt;h3 id="ホスト側の-db-クライアントから接続したい場合"&gt;ホスト側の DB クライアントから接続したい場合&lt;/h3&gt;
+&lt;p&gt;以下の２つのファイルの設定を修正する必要がある&lt;br&gt;
+&lt;a href="https://code.visualstudio.com/docs/devcontainers/containers#_always-forwarding-a-port"&gt;参考&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Visual Studio Code で拡張子毎に設定値を変更する方法</title><link>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</link><pubDate>Tue, 22 Nov 2022 17:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/22/how-to-modified-config-value-for-extensions-with-visual-studio-code/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
+&lt;p&gt;Visual Studio Code にて保存時の空白のトリミングの挙動を markdown の場合のみ変えたくなったため調査を行なった&lt;br&gt;
+その結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;コマンドパレットを開く&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure language specific settings を入力して選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拡張子を質問されるので markdown を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;settings.json ファイルに以下のように編集する&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="実際の設定ファイル"&gt;実際の設定ファイル&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:settings.json" data-lang="json:settings.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;[markdown]&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;files.trimTrailingWhitespace&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

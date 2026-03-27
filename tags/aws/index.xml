@@ -1,123 +1,1494 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws/</link><description>Recent content in AWS on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Fri, 16 May 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する</title><link>https://kkawazoe.github.io/blog/2025/05/16/using-the-aws-sam-cli-for-lambda-local-debugging-in-a-serverless-configuration/</link><pubDate>Fri, 16 May 2025 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/05/16/using-the-aws-sam-cli-for-lambda-local-debugging-in-a-serverless-configuration/</guid><description>Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する方法を調査したものを備忘録として残しておく
-環境 Infrastructure: AWS lambda: nodejs(20.X) Secret Manager RDS: PostgreSQL AWS API Gateway API Key あり AWS SAM CLI Docker Compose API 仕様書 OpenAPI 3.0 AWS SAM 環境について 必要なファイルの内、重要な部分のみ記載
-フォルダ構成 ├── layers/ │ ├── package.json │ └── pg-layer.zip │ ├── scripts/ │ ├── create-pg-layer.sh │ ├── init-localstack.sh │ └── local-secret.</description></item><item><title>長期間使用していない AWS Lambda の inactive 状態を active 状態にする方法</title><link>https://kkawazoe.github.io/blog/2024/11/21/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Thu, 21 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/21/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>長期間使用していない AWS Lambda の inactive 状態を active 状態にする方法を備忘録として残しておく
-事象 関数が数週間アイドルのままの場合、Inactive 状態になり、その状態で関数を呼び出すとエラーになる
-詳細は以下を参照
-AWS Lambda関数の状態の追跡 対象の洗い出し 以下のスクリプトを AWS CLI にて使用することで対象の洗い出しが行える
-#!/bin/sh aws --profile &amp;lt;&amp;lt;プロフィール名&amp;gt;&amp;gt; lambda list-functions --region &amp;lt;&amp;lt;リージョン名&amp;gt;&amp;gt; --query &amp;#39;Functions[?starts_with(FunctionName, `&amp;lt;&amp;lt;関数名プレフィックス&amp;gt;&amp;gt;`) == `true`].FunctionName&amp;#39; &amp;gt; lambda_list.json lambda_names=`jq -r .[] lambda_list.json` for lambda_name in $lambda_names; do aws --profile &amp;lt;&amp;lt;プロフィール名&amp;gt;&amp;gt; lambda get-function --output text --function-name $lambda_name --query &amp;#39;Configuration.[FunctionName, State, LastUpdateStatus]&amp;#39; | sort -k 1 | column -t -s &amp;#34;`printf &amp;#39;\t&amp;#39;`&amp;#34; done 解消方法 inactive の状態で lambda を実行するとエラーになるがしばらくすると active 状態となり実行可能となる</description></item><item><title>Amazon RDS を停止させたままにしたい場合の解決法</title><link>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Tue, 29 Oct 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>Amazon RDS は一時停止した場合、最大7日間までしか停止できない
-しかし停止させたままにしたい状況が発生したため調査を行なった
-その際のまとめを備忘録として残しておく
-解決案 Lambda 関数を使用する 公式推奨 EventBridge を使用する どちらかというと夜間休日止めるのに最適 実際の手順 Lambda 関数を使用する IAM &amp;gt; ポリシー を選択
-以下でポリシーを作成
-{ &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor0&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;rds:StartDBCluster&amp;#34;, &amp;#34;rds:StopDBCluster&amp;#34;, &amp;#34;rds:ListTagsForResource&amp;#34;, &amp;#34;rds:DescribeDBInstances&amp;#34;, &amp;#34;rds:StopDBInstance&amp;#34;, &amp;#34;rds:DescribeDBClusters&amp;#34;, &amp;#34;rds:StartDBInstance&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ] } IAM &amp;gt; ロール を選択
-以下でロールを作成
-信頼できるエンティティタイプを選択: AWS サービス またはサービスを選択してユースケースを表示: Lambda ポリシー: 手順 2 で作成したポリシー RDS &amp;gt; データベース &amp;gt; &amp;laquo;該当の DB インスタンス&amp;raquo; を選択</description></item><item><title>AWS コスト削減 Tips その2</title><link>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips-part-2/</link><pubDate>Fri, 06 Sep 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips-part-2/</guid><description>AWS コスト削減 Tipsを備忘録として残しておく
-[前回までの記事]
-AWS コスト削減 Tips CloudWatch 全体コストの確認 Cost Explorer にて確認
-※詳細は公式を参照
-[レポートパラメータ]
-日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス CloudWatch リージョン 任意 Data-Processing-bytesコスト詳細確認 手順は公式を参照 サイズ降順で並んで出力される コスト削減方法 ログ送信量を削減 ※効果中 〜 効果大 console.log を削除 CloudWatch への出力を text =&amp;gt; json に変更してログレベルを制御 例.</description></item><item><title>AWS コスト削減 Tips</title><link>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/</link><pubDate>Fri, 06 Sep 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/</guid><description>AWS コスト削減 Tipsを備忘録として残しておく
-EC2 インスタンスタイプの変更 ※効果小 〜 効果中 最適なインスタンスタイプの選定については、公式参照 使用していない期間(夜間/休日等)での停止 ※効果大 特に開発・検証環境については検討する余地あり 踏み台サーバとして運用している場合は、本番環境も検討する余地あり NAT Gateway 使用していない期間(夜間/休日等)での削除 ※効果大 特に開発・検証環境については検討する余地あり 但し、再作成とセットで自動化する必要あり RDS 使用していない期間(夜間/休日等)での停止 ※効果大 特に開発・検証環境については検討する余地あり EC2 と比較して停止状態からの起動に時間がかかるため注意が必要 DB のデータ容量によるが 15 〜 30 分程度みた方が良い Backup に関わるコスト確認 ※効果小 〜 効果中 バックアップ要件に関わるので顧客確認要 確認方法は以下記事を参照 Amazon Aurora のバックアップストレージ費用の確認方法</description></item><item><title>AWS ルートユーザに設定されている MFA が不明な場合のログイン方法</title><link>https://kkawazoe.github.io/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/</link><pubDate>Tue, 03 Sep 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/</guid><description>AWS ルートユーザに設定されている MFA が不明な場合のログイン方法を備忘録として残しておく
-状況 ルートユーザ メールアドレス: 把握 パスワード: 不明 MFA: 故障 or 紛失 実際の手順 公式の手順 を参考に行う
-事前作業 公式の手順 を参考に行う
-IAM ユーザ認証情報を使用して、更新対象の AWS アカウントにログイン AWS Billing and Cost Management &amp;gt; Account を選択 [Contact Information] の横にある [Edit]を選択 アカウントに関連付けられている電話番号を更新
-※電話番号の国コードが正しく、余分なスペースが含まれていないことを確認 [Update]を選択 作業手順 AWS アカウントのルートユーザーの E メールアドレスを使用してサインインする [Root user sign in]ページで、ルートアカウントのパスワードを入力する [Amazon Web Services Sign In With Authentication Device]ページで、[Troubleshoot MFA? Click here] を選択 [Troubleshoot Your Authentication Device] ページで、[Sign In using alternative factors]を選択 [Step 1: Email address verification]で、メールアドレスが正しいことを検証し、[Send verification email]を選択 件名が「AWS Email Verification」である AWS からの E メールで、[Verify your email address]を選択</description></item><item><title>Amazon Aurora のバックアップストレージ費用の確認方法</title><link>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</link><pubDate>Wed, 28 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</guid><description>AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく
-実際の手順 Cost Explorer にて確認
-[レポートパラメータ]
-日付範囲 任意 ※月単位で確認するのであれば「6ヶ月」等を指定 粒度 任意 ※月単位で確認するのであれば「月別」を指定 グループ化の条件 ディメンション 使用タイプ フィルター サービス Relational Database Service（RDS） リージョン 任意 使用タイプ Aurora:BackupUsage(GB-Month) Aurora:StorageIOUsage(IOs) Aurora:StorageUsage(GB-Month)</description></item><item><title>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法</title><link>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</link><pubDate>Thu, 22 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</guid><description>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS AWS にて IAM ユーザを作成して MFA 認証を設定済 aws-mfa をインストール済 aws-mfa 設定 IAM ユーザのアクセスキーを作成してダウンロード
-&amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定
-デフォルト Region, Output を設定したい場合は &amp;laquo;profile 名&amp;raquo; の Profile を設定 以下のコマンドを実行
-# ARN は IAM &amp;gt; ユーザー &amp;gt; &amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; の [セキュリティ認証情報]タブ &amp;gt; 多要素認証 (MFA) の識別子のため注意 aws-mfa --device arn:aws:iam::&amp;lt;&amp;lt;AWS アカウント&amp;gt;&amp;gt;:mfa/&amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; --profile &amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt; 追加で ~/.</description></item><item><title>ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法</title><link>https://kkawazoe.github.io/blog/2024/07/26/how-to-remove-subscriptions-not-tied-to-amazon-sns-topics-in-shell-script/</link><pubDate>Fri, 26 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/26/how-to-remove-subscriptions-not-tied-to-amazon-sns-topics-in-shell-script/</guid><description>ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS 実際のコード &amp;lt;&amp;lt;AWS Configure Profile&amp;gt;&amp;gt; 部分は実際の環境に応じて書き換える
-#!/bin/bash AWS_PROFILE=&amp;lt;&amp;lt;AWS Configure Profile&amp;gt;&amp;gt; # SNSトピック一覧を取得 topics=$(aws sns list-topics --profile=${AWS_PROFILE} | jq -r &amp;#39;.Topics[].TopicArn&amp;#39;) # SNSサブスクリプション一覧を取得 subscriptions=$(aws sns list-subscriptions --profile=${AWS_PROFILE}) # トピックに紐づかないサブスクリプションを削除 echo $subscriptions | jq -c &amp;#39;.Subscriptions[]&amp;#39; | while read subscription; do subscriptionArn=$(echo $subscription | jq -r &amp;#39;.SubscriptionArn&amp;#39;) topicArn=$(echo $subscription | jq -r &amp;#39;.TopicArn&amp;#39;) # サブスクリプションのtopicArnがtopicsに含まれていなければ削除 if ! echo $topics | grep $topicArn &amp;gt; /dev/null then aws sns unsubscribe --subscription-arn $subscriptionArn --profile=${AWS_PROFILE} echo &amp;#34;削除したサブスクリプション: $subscriptionArn&amp;#34; fi done</description></item><item><title>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法</title><link>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images-to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</link><pubDate>Mon, 22 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images-to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</guid><description>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS aws-mfa をインストールして登録済 aws-mfa 設定を参照 aws-mfa 設定 通常の aws profile を設定
-1 で設定した &amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定
-追加で ~/.aws/credentials に以下を設定
-[&amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;-long-term] aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt; フォルダ構成 ./ ├── img/ │ └── image_001.png └── upload_image.sh 実際のコード &amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt; 部分は実際の環境に応じて書き換える
-#!/bin/sh # Shared AWS_PROFILE_PREFIX=&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt; IMAGE_UPLOAD_DIR=img read -p &amp;#34;Which environment connect to?</description></item><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS DB: PostgreSQL フォルダ構成 ./ ├── sql/ │ └── execute.sql └── execute_sql.sh 実際のコード 環境変数(xxx 部分)は実際の環境に応じて書き換える
-#!/bin/sh # DEV EC2_HOST_DEV=xxx EC2_PEM_KEY_DEV=xxx DB_HOST_DEV=xxx DB_PORT_DEV=5432 DB_NAME_DEV=xxx DB_USER_DEV=xxx DB_PASSWORD_DEV=xxx # STG EC2_HOST_STG=xxx EC2_PEM_KEY_STG=xxx DB_HOST_STG=xxx DB_PORT_STG=5432 DB_NAME_STG=xxx DB_USER_STG=xxx DB_PASSWORD_STG=xxx # PRD EC2_HOST_PRD=xxx EC2_PEM_KEY_PRD=xxx DB_HOST_PRD=xxx DB_PORT_PRD=5432 DB_NAME_PRD=xxx DB_USER_PRD=xxx DB_PASSWORD_PRD=xxx # Shared SQL_DIR=sql SQL_FILE=${SQL_DIR}/execute.sql LOG_FILE=log/batch.log read -p &amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34; input_environment # Convert to uppercase environment=$(echo &amp;#34;${input_environment}&amp;#34; | tr &amp;#39;[:lower:]&amp;#39; &amp;#39;[:upper:]&amp;#39;) echo &amp;#34;【Start Processing】$(date &amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;)&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1 # Check the environment case &amp;#34;${input_environment}&amp;#34; in &amp;#34;dev&amp;#34; | &amp;#34;stg&amp;#34; | &amp;#34;prd&amp;#34;) echo &amp;#34;Connecting to ${environment}environment.</description></item><item><title>API Gateway のオーソライザに Amazon Cognito を使用している API を Postman から動作させる方法</title><link>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</link><pubDate>Wed, 26 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</guid><description>API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく
-実際の設定 以下の通りに URL と Header, Body を設定する
-Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する
-Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する
-Postman 設定その４</description></item><item><title>S3 でアップロードされているオブジェクトの総数を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/</link><pubDate>Thu, 13 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/</guid><description>S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく
-実際のコード aws s3 ls s3://&amp;lt;&amp;lt;bucket-name/path/to/&amp;gt;&amp;gt; --recursive --human-readable --summarize その他 最終更新日の降順でソートして出力 UI 上だとできないのでコマンドを使用する
-aws s3 ls s3://&amp;lt;&amp;lt;bucket-name/path/to/&amp;gt;&amp;gt; | sort -nr</description></item><item><title>AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法</title><link>https://kkawazoe.github.io/blog/2024/05/09/how-to-retrieve-the-list-of-certificates-managed-by-aws-certificate-manager-for-all-regions/</link><pubDate>Thu, 09 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/09/how-to-retrieve-the-list-of-certificates-managed-by-aws-certificate-manager-for-all-regions/</guid><description>AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法について調査した結果を備忘録として残しておく
-実際のコード # AWSのリージョンのリストを取得する REGIONS=(`aws ec2 describe-regions --query Regions[*].RegionName --output text`) # リージョン毎に証明書のリストを出力する # 証明書 Arn, ドメイン名, タイプ, ステータス, 使用中かどうか for region in ${REGIONS[@]} do echo &amp;#34;[${region}]&amp;#34; aws acm list-certificates --output text --region ${region} --query &amp;#34;CertificateSummaryList[].[CertificateArn, DomainName, Type, Status, InUse]&amp;#34; | sort -k 1 | column -t -s &amp;#34;`printf &amp;#39;\t&amp;#39;`&amp;#34; echo &amp;#34;---------------------&amp;#34; done</description></item><item><title>AWS Lambda の amplify-login で始まる関数の要否判断について</title><link>https://kkawazoe.github.io/blog/2024/04/24/determining-whether-a-function-starting-with-amplify-login-in-aws-lambda-is-required-or-not/</link><pubDate>Wed, 24 Apr 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/24/determining-whether-a-function-starting-with-amplify-login-in-aws-lambda-is-required-or-not/</guid><description>AWS Lambda の amplify-login で始まる関数の要否判断について調査した結果を備忘録として残しておく
-調査に至った事象 AWS より以下のメールが配信されていた
-対象の Lambda 関数を確認すると掲題のものが指摘を受けていたが、作成した記憶はなく要否の判断がつかなかったため、調査を行なった
-[アクションが必要です] AWS Lambda での Node.js 16 のサポート終了について | [Action Required] AWS Lambda end of support for Node.js 16 English follows Japanese | 英語のメッセージは日本語の後にございます いつもお世話になっております。 [Amazon Health Dashboard はこのコミュニケーションに関するリマインダー通知を定期的にトリガーする場合があります] お客様の AWS アカウントに現在、Node.js 16 ランタイムを使用する AWS Lambda 関数が 1 つ以上あることが判明したため、ご連絡いたしております。 Lambda での Node.js 16 のサポートは 2024 年 6 月 12 日に終了します。これは、2023 年 9 月 11 日に Node.js 16 がサポート終了 (EOL) したことに続くものです [1]。 Lambda ランタイムサポートポリシー [2] で説明されているように、Lambda の言語ランタイムのサポートはいくつかの段階で終了します。2024 年 6 月 12 日以降、Lambda は Lambda 関数で使用される Node.</description></item><item><title>AWS 関連のリンクまとめ</title><link>https://kkawazoe.github.io/blog/2024/04/19/aws-related-link-summary/</link><pubDate>Fri, 19 Apr 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/19/aws-related-link-summary/</guid><description>AWS 関連のリンクについて毎回探してしまうためまとめておく
-※一度でも調査に使用したものをまとめていく
-ベストプラクティスおよびサービスの導入理由 Well-Architected セキュリティの柱 検知 インフラストラクチャ保護 データ保護 AWS ホワイトペーバーとガイド DDos 耐性のベストプラクティス サービスの状態 各サービスごとのリンク Cognito ユーザプールの大文字・小文字の区別 RDS Amazon Aurora DB Aurora DB クラスターのバックアップと復元 Amazon Aurora Serverless V1 Amazon S3 への DB スナップショットデータのエクスポート Amazon Pinpoint プッシュ通知の送信 API Reference SES DMARC 対応 送信制限 本番稼働する際の制限解除について E メール受信時のフィードバックについて SNS 米国製品番号について ACM ACM 証明書について サポートされるリージョンについて 自動更新について EC2 インスタンスでパブリックキーを追加または削除する VPC AWS サービスが利用する IP アドレス範囲について WAF Managed Rules CloudFront フィールドレベル暗号化を使用した機密データの保護 API Gateway Amazon API Gateway のクォータと重要な注意点 Cloud Shell Amazon VPC AWS CloudShell での使用 classmethod の記事</description></item><item><title>AWS EC2 Instance Connect で接続する方法</title><link>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</link><pubDate>Sat, 30 Mar 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</guid><description>AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく
-前提 AWS EC2 Instance Connect をインストールしておく
-手順 Amazon EC2 コンソール を開く
-ナビゲーションペインで、[インスタンス] を選択する
-インスタンスを選択し、[接続] を選択する
-[EC2 Instance Connect] を選択する
-ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く
-以下のエラーが発生
-インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください 公式のトラブルシューティングを確認
-=&amp;gt; セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった
-以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する
-curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r &amp;#39;.prefixes[] | select(.region==&amp;#34;&amp;lt;&amp;lt;対象リージョン&amp;gt;&amp;gt;&amp;#34;) | select(.service==&amp;#34;EC2_INSTANCE_CONNECT&amp;#34;) | .ip_prefix&amp;#39; セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する</description></item><item><title>Amazon Linux 2 に PostgreSQL 13 をインストールする方法</title><link>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</link><pubDate>Fri, 29 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</guid><description>Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく
-手順 postgresql13 を以下のコマンドでインストールする
-sudo amazon-linux-extras install postgresql13 以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found Installation failed. Check that you have permissions to install. 以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること
-sudo sed -i &amp;quot;s/\$releasever/7/g&amp;quot; &amp;quot;/etc/yum.repos.d/pgdg-redhat-all.repo&amp;quot; 再度、 postgresql13 をインストールする
-以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try.</description></item><item><title>Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</link><pubDate>Fri, 08 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</guid><description>Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく
-前提 構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照
-前回の記事: Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法
-手順 Role に対して適宜必要な権限を付与
-例. public Schema の全テーブルへの全権限を付与
-grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; アクセス制御を行うテーブルからアクセス権限を取り消す
-例. public T_USER_HISTORY テーブルのアクセス権限を取り消す
-revoke select on &amp;#34;public&amp;#34;.&amp;#34;T_USER_HISTORY&amp;#34; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;; 権限の確認
-該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する
-\dp #=&amp;gt; &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;=awdDxt/postgres</description></item><item><title>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</link><pubDate>Fri, 08 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</guid><description>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく
-前提 以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8
-構成図 手順 参考
-DB ユーザ追加
-以下のコマンドを使用してユーザを追加する
-※実運用時は、適宜必要な権限を付与する
-postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; # 例. ログイン属性, 接続数制限なし, パスワード指定 postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;; Secrets Manager にデータベース認証情報設定
-AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する
-設定 シークレットのタイプ: Amazon RDSデータベースの認証情報 ユーザー名: 該当のもの パスワード: 該当のもの DBインスタンス: 該当のもの RDS Proxy とシークレットの関連付け</description></item><item><title>Amazon IAM で登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</link><pubDate>Tue, 20 Feb 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</guid><description>Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws iam list-users \ | jq -r &amp;#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; iam_users_list.csv</description></item><item><title>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</link><pubDate>Tue, 06 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</guid><description>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法について調査した内容を備忘録として残しておく
-前提 対象のドメインを「検証済み ID」として作成済 DKIM が設定済 DNS サービスの提供元が Route 53 方法 Amazon SES &amp;gt; 設定: 検証済み ID を選択 対象の ID を選択 カスタム MAIL FROM ドメイン &amp;gt; 「編集」ボタンを押下 以下のように設定して「保存」ボタンを押下 カスタム MAIL FROM ドメインの使用: チェック MAIL FROM ドメイン: 任意の値 MX 障害時の動作: 以下のどちらか デフォルトの MAIL FROM ドメインの使用 メッセージの拒否 DNS レコードの発行を行う Route 53 &amp;gt; ホストゾーン &amp;gt; {対象のドメイン} を選択 「レコードを作成」を押下 以下を設定する レコード名: _dmarc レコードタイプ: TXT 値: v=DMARC1; p=none テストEメール確認して OK なら値を「v=DMARC1; p=reject」, 「v=DMARC1; p=reject」の順に変更 詳細はDMARC を実装するためのベストプラクティス参照 確認方法 例えば、以下のような方法で確認する</description></item><item><title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid><description>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
-方法 以下の２つの方法が考えられる
-Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
-※リストアはユーザ CSV インポート機能で行う 実際のコード const { stringify } = require(&amp;#34;csv-stringify/sync&amp;#34;); module.exports = async (params) =&amp;gt; { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require(&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;); const cognito = new CognitoIdentityProvider(); module.exports = async (param) =&amp;gt; { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</description></item><item><title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title><link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid><description>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく
-方法 CloudWatch &amp;gt; Synthetics Canary を選択 「Canary を作成」ボタンを押下 以下を設定 設計図を使用する 設計図: API Canary Canary ビルダー: 任意の Canary 名 Amazon API Gateway API を使用中: チェックを入れる API を選択: API Gateway から API とステージを選択 使用している API, ステージを選択 Host Name: 使用している Host Name を指定 HTTP リクエスト HTTP リクエストを追加ボタンを押下 監視したい API の情報を設定 スクリプトエディタ: スクリプトを参照 スケジュール: 任意のスケジュールを選択 アクセス許可 IAM ロール: 既存のロールを選択 ポリシーを参照 「保存」ボタンを押下 実際のコード スクリプト 基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある</description></item><item><title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title><link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link><pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid><description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード ユーザ登録
-&amp;ndash;user-attributes は必要に応じて増やす
-※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
-aws cognito-idp admin-create-user \ --user-pool-id &amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \ --username &amp;lt;&amp;lt;E メールアドレス ※E メールアドレスをユーザ名に設定した場合&amp;gt;&amp;gt; \ --user-attributes Name=email,Value=&amp;lt;&amp;lt;E メールアドレス&amp;gt;&amp;gt; \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定
-&amp;ndash;no-permanent は仮パスワード扱い
-※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる
-aws cognito-idp admin-set-user-password \ --user-pool-id &amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \ --username &amp;lt;&amp;lt;ユーザ名 or sub&amp;gt;&amp;gt; \ --password &amp;lt;&amp;lt;password&amp;gt;&amp;gt; \ --no-permanent</description></item><item><title>AWS についての Tips</title><link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link><pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</guid><description>AWS についての Tips について備忘録として残しておく
-※適宜、更新予定
-DB の接続情報の確認 EC2 踏み台の Public IP を確認
-※通常は Elastic IP を付与しているので固定のはず
-EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 RDS RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択 接続とセキュリティ &amp;gt; エンドポイントを確認 RDS プロキシを設定している場合は以下
-RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択 プロキシ &amp;gt; 該当のプロキシ識別子を選択 プロキシエンドポイント &amp;gt; エンドポイントを確認 Secret Manager DB のパスワードの設定確認方法
-AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する バッチ処理について AWS 内で定期実行バッチの有無を確認する場合は以下を確認する</description></item><item><title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link><pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid><description>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter &amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34; \ --attributes-to-get &amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34; \ | jq -r &amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; user_pool_list.csv</description></item><item><title>Amazon Lambda で登録されている関数一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</link><pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</guid><description>Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws lambda list-functions --region {リージョン名} \ | jq &amp;#39;.Functions[] | [.FunctionName]&amp;#39; \ | jq -rs &amp;#39;map([.[]])[] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; lambda-functions-list.csv</description></item><item><title>Amazon Pinpoint API で push 通知を送信する方法</title><link>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</link><pubDate>Thu, 28 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</guid><description>Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく
-前提構成: 前回記事を参照
-方法 デベロッパーガイドを参照
-※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう
-リファクタリング前 ・・・ if (service == &amp;#39;GCM&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: &amp;#39;GCM&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;GCMMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } else if (service == &amp;#39;APNS&amp;#39;) { var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39; : &amp;#39;APNS&amp;#39; } }, &amp;#39;MessageConfiguration&amp;#39;: { &amp;#39;APNSMessage&amp;#39;: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; } ・・・ リファクタリング後 ・・・ var messageRequest = { &amp;#39;Addresses&amp;#39;: { [token]: { &amp;#39;ChannelType&amp;#39;: service } }, &amp;#39;MessageConfiguration&amp;#39;: { /** * リファクタリングポイント: * []とテンプレートリテラルを使用して連装配列の key を動的に生成する */ [`${service}Message`]: { &amp;#39;Action&amp;#39;: action, &amp;#39;Body&amp;#39;: message, &amp;#39;Priority&amp;#39;: priority, &amp;#39;SilentPush&amp;#39;: silent, &amp;#39;Title&amp;#39;: title, &amp;#39;TimeToLive&amp;#39;: ttl, &amp;#39;Url&amp;#39;: url } } }; ・・・</description></item><item><title>AWS と Firebase を連携して Push 通知を行う場合の設定について</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</guid><description>AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく
-方法 Amazon Pinpoint を使用
-Amazon Pinpoint &amp;gt; 使用を開始する &amp;gt; Pinpoint campaign orchestration を選択 [プロジェクトを管理]ボタンを押下 該当のプロジェクト名を選択 設定 &amp;gt; プッシュ通知 を選択 [編集]ボタンを押下 Apple Push Notification service (APNs) デフォルトの認証タイプ キー認証情報(推奨) 有効にする APN チャネルを選択 任意のチャネルを選択 キー ID Apple Developer Programで確認 バンドル識別子 Apple Developer Programで確認 チーム識別子 Apple Developer Programで確認 認証キー(.p8 ファイル) Apple Developer Programで取得 Firebase Cloud Messaging (FCM) デフォルトの認証タイプ トークン認証情報(推奨) サービス json (.</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
-方法 事前作業 AWS Console にて接続に必要な情報を控えておく
-EC2 踏み台の Public IP を確認
-EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 Elastic IP が紐付けられている場合は以下を確認する
-EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認 RDS プロキシの設定がされている場合は以下を確認する
-RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認 その他 DB のパスワード (Secrets Manager)の設定確認方法
-AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/aws/</link><description>Recent content in AWS on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Fri, 16 May 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する</title><link>https://kkawazoe.github.io/blog/2025/05/16/using-the-aws-sam-cli-for-lambda-local-debugging-in-a-serverless-configuration/</link><pubDate>Fri, 16 May 2025 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/05/16/using-the-aws-sam-cli-for-lambda-local-debugging-in-a-serverless-configuration/</guid><description>&lt;p&gt;Serverless 構成で lambda ローカルデバッグ用に AWS SAM CLI を使用する方法を調査したものを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Infrastructure:
+&lt;ul&gt;
+&lt;li&gt;AWS
+&lt;ul&gt;
+&lt;li&gt;lambda: nodejs(20.X)&lt;/li&gt;
+&lt;li&gt;Secret Manager&lt;/li&gt;
+&lt;li&gt;RDS: PostgreSQL&lt;/li&gt;
+&lt;li&gt;AWS API Gateway
+&lt;ul&gt;
+&lt;li&gt;API Key あり&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AWS SAM CLI&lt;/li&gt;
+&lt;li&gt;Docker Compose&lt;/li&gt;
+&lt;li&gt;API 仕様書
+&lt;ul&gt;
+&lt;li&gt;OpenAPI 3.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aws-sam-環境について"&gt;AWS SAM 環境について&lt;/h2&gt;
+&lt;p&gt;必要なファイルの内、重要な部分のみ記載&lt;/p&gt;
+&lt;h3 id="フォルダ構成"&gt;フォルダ構成&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── layers/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── package.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── pg-layer.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── scripts/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── create-pg-layer.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── init-localstack.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── local-secret.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── .env
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── docker-compose.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── template.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="実際のファイル"&gt;実際のファイル&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yaml:template.yaml" data-lang="yaml:template.yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;AWSTemplateFormatVersion&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;2010-09-09&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;Transform&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;AWS::Serverless-2016-10-31&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;Globals&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Function&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Runtime&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;nodejs20.x&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Timeout&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;MemorySize&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;128&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Variables&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;DB_NAME&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${DB_NAME}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;DB_HOST&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${DB_HOST}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;DB_USER&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${DB_USER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;DB_PORT&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${DB_PORT}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;SECRET_NAME&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${SECRET_NAME}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;IS_LOCAL&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${IS_LOCAL}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;NODE_ENV&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${NODE_ENV}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_ENDPOINT_SECRETS_MANAGER&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_ENDPOINT_SECRETS_MANAGER}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_REGION&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_REGION}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_ACCESS_KEY_ID}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_SECRET_ACCESS_KEY}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_SDK_LOAD_CONFIG&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_SDK_LOAD_CONFIG}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_STS_REGIONAL_ENDPOINTS&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_STS_REGIONAL_ENDPOINTS}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AWS_NODEJS_CONNECTION_REUSE_ENABLED&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Sub &amp;#34;${AWS_NODEJS_CONNECTION_REUSE_ENABLED}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;Resources&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# API Gateway&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;LocalApi&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Type&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;AWS::Serverless::Api&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Properties&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;StageName&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;local&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Cors&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AllowMethods&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#39;*&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AllowHeaders&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#39;*&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;AllowOrigin&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#39;*&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Auth&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;ApiKeyRequired&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;DefinitionBody&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Fn::Transform&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;AWS::Include&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Parameters&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Location&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;./docs/open_api.yml&lt;/span&gt; &lt;span style="color:#75715e"&gt;# Parameterized OpenAPI 3.0 file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Lambda Function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;GetUserDetailFunction&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Type&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;AWS::Serverless::Function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Properties&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;CodeUri&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;functions/getUserDetail/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Handler&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;index.handler&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Layers&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - !&lt;span style="color:#ae81ff"&gt;Ref PgLayer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Events&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;ApiEvent&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Type&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Api&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Properties&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;RestApiId&lt;/span&gt;: !&lt;span style="color:#ae81ff"&gt;Ref LocalApi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Path&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;/users/{userId}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Method&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;GET&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;PgLayer&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Type&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;AWS::Serverless::LayerVersion&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Properties&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;LayerName&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;pg-layer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;Description&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;PostgreSQL client for Node.js&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;ContentUri&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;layers/pg-layer.zip&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;CompatibleRuntimes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;nodejs20.x&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yaml:docker-compose.yml" data-lang="yaml:docker-compose.yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;postgres&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;image&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;postgres:13&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;container_name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;test-postgres&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;POSTGRES_DB&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${DB_NAME}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;POSTGRES_USER&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${DB_USER}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;POSTGRES_PASSWORD&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${DB_PASSWORD}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;5432:5432&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;postgres_data:/var/lib/postgresql/data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;healthcheck&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;test&lt;/span&gt;: [&lt;span style="color:#e6db74"&gt;&amp;#34;CMD-SHELL&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;pg_isready -U postgres&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;interval&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;10s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;timeout&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;5s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;retries&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;localstack&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;image&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;localstack/localstack:latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;4566:4566&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# LocalStack Gateway&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;4510-4559:4510-4559&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;# External services port range&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;DEBUG=${DEBUG}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;DOCKER_HOST=${DOCKER_HOST}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;PERSISTENCE=${PERSISTENCE}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;SERVICES=${SERVICES}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;/var/run/docker.sock:/var/run/docker.sock&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;./scripts/init-localstack.sh:/etc/localstack/init/ready.d/init-localstack.sh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;./scripts/local-secret.json:/etc/localstack/local-secret.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;postgres_data&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash:scripts/init-localstack.sh" data-lang="bash:scripts/init-localstack.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# LocalStackのエンドポイント&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ENDPOINT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:4566&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# シークレット値を外部ファイルから読み込む&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SECRET_STRING&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;cat /etc/localstack/local-secret.json&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# シークレットの作成&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws --endpoint-url&lt;span style="color:#f92672"&gt;=&lt;/span&gt;$ENDPOINT secretsmanager create-secret &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --name local-secret &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --description &lt;span style="color:#e6db74"&gt;&amp;#34;Local development secret&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --secret-string &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$SECRET_STRING&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;LocalStack secrets initialized&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:scripts/local-secret.json" data-lang="json:scripts/local-secret.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;password&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;postgres&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash:scripts/create-pg-layer.sh" data-lang="bash:scripts/create-pg-layer.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;set -e
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;LAYER_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;layers/pg-layer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ZIP_FILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;layers/pg-layer.zip&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$LAYER_DIR&lt;span style="color:#e6db74"&gt;/nodejs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cp layers/package.json &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$LAYER_DIR&lt;span style="color:#e6db74"&gt;/nodejs/package.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$LAYER_DIR&lt;span style="color:#e6db74"&gt;/nodejs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm install --production
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ../../..
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -f &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$ZIP_FILE&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$LAYER_DIR&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zip -r &lt;span style="color:#e6db74"&gt;&amp;#34;../../&lt;/span&gt;$ZIP_FILE&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ../../
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;pg-layer の作成が完了しました: &lt;/span&gt;$ZIP_FILE&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -rf &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$LAYER_DIR&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash:.env" data-lang="bash:.env"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Only used for local debugging&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# DB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;test_db
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;host.docker.internal
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;postgres
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;postgres
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# SecretsManager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SECRET_NAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;local-secret
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Lambda&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;IS_LOCAL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;NODE_ENV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;local
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_ENDPOINT_SECRETS_MANAGER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;http://host.docker.internal:4566
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_REGION&lt;span style="color:#f92672"&gt;=&lt;/span&gt;ap-northeast-1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_ACCESS_KEY_ID&lt;span style="color:#f92672"&gt;=&lt;/span&gt;test
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_SECRET_ACCESS_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;test
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_SDK_LOAD_CONFIG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_STS_REGIONAL_ENDPOINTS&lt;span style="color:#f92672"&gt;=&lt;/span&gt;regional
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_NODEJS_CONNECTION_REUSE_ENABLED&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# LocalStack&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DEBUG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DOCKER_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;unix:///var/run/docker.sock
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;LAMBDA_EXECUTOR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PERSISTENCE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SERVICES&lt;span style="color:#f92672"&gt;=&lt;/span&gt;secretsmanager
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_DEFAULT_REGION&lt;span style="color:#f92672"&gt;=&lt;/span&gt;ap-northeast-1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;LOCALSTACK_VOLUME_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;./volume
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="使用方法"&gt;使用方法&lt;/h3&gt;
+&lt;h4 id="実施手順"&gt;実施手順&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up -d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Copy the DB in the Dev environment&lt;/li&gt;
+&lt;li&gt;If the Layer is updated, do the following
+&lt;code&gt;./scripts/create-pg-layer.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sam local start-api&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="シークレットマネージャーに値が追加された場合"&gt;シークレットマネージャーに値が追加された場合&lt;/h4&gt;
+&lt;p&gt;ローカルデバッグでは localstack を使用する&lt;/p&gt;</description></item><item><title>長期間使用していない AWS Lambda の inactive 状態を active 状態にする方法</title><link>https://kkawazoe.github.io/blog/2024/11/21/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Thu, 21 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/21/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>&lt;p&gt;長期間使用していない AWS Lambda の inactive 状態を active 状態にする方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="事象"&gt;事象&lt;/h2&gt;
+&lt;p&gt;関数が数週間アイドルのままの場合、Inactive 状態になり、その状態で関数を呼び出すとエラーになる&lt;/p&gt;
+&lt;p&gt;詳細は以下を参照&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/jp/blogs/news/tracking-the-state-of-lambda-functions/"&gt;AWS Lambda関数の状態の追跡&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="対象の洗い出し"&gt;対象の洗い出し&lt;/h3&gt;
+&lt;p&gt;以下のスクリプトを AWS CLI にて使用することで対象の洗い出しが行える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:inactive_lambda_list.sh" data-lang="sh:inactive_lambda_list.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws --profile &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;プロフィール名&amp;gt;&amp;gt; lambda list-functions --region &amp;lt;&amp;lt;リージョン名&amp;gt;&amp;gt; --query &amp;#39;Functions[?starts_with(FunctionName, `&amp;lt;&amp;lt;関数名プレフィックス&amp;gt;&amp;gt;`) == `true`].FunctionName&amp;#39; &amp;gt; lambda_list.json
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;lambda_names=`jq -r .[] lambda_list.json`
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;for lambda_name in $lambda_names; do
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; aws --profile &amp;lt;&amp;lt;プロフィール名&lt;/span&gt;&amp;gt;&amp;gt; lambda get-function --output text --function-name $lambda_name --query &lt;span style="color:#e6db74"&gt;&amp;#39;Configuration.[FunctionName, State, LastUpdateStatus]&amp;#39;&lt;/span&gt; | sort -k &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; | column -t -s &lt;span style="color:#e6db74"&gt;&amp;#34;`printf &amp;#39;\t&amp;#39;`&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="解消方法"&gt;解消方法&lt;/h2&gt;
+&lt;p&gt;inactive の状態で lambda を実行するとエラーになるがしばらくすると active 状態となり実行可能となる&lt;br&gt;
+もしくは、以下のスクリプトを AWS Console 上で実行することで inactive =&amp;gt; active に状態を更新できる&lt;br&gt;
+publish-version(※1)で active 状態に更新されない場合は invoke(※2)に切り替えて実施する&lt;/p&gt;</description></item><item><title>Amazon RDS を停止させたままにしたい場合の解決法</title><link>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</link><pubDate>Tue, 29 Oct 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/10/29/solution-if-you-want-to-keep-amazon-rds-stopped/</guid><description>&lt;p&gt;Amazon RDS は一時停止した場合、&lt;a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html"&gt;最大7日間までしか停止できない&lt;/a&gt;&lt;br&gt;
+しかし停止させたままにしたい状況が発生したため調査を行なった&lt;br&gt;
+その際のまとめを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="解決案"&gt;解決案&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://repost.aws/ja/knowledge-center/rds-stop-seven-days"&gt;Lambda 関数を使用する&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;公式推奨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dev.classmethod.jp/articles/rds-stop-with-amazon-eventbridge-scheduler-and-cloudformation/"&gt;EventBridge を使用する&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;どちらかというと夜間休日止めるのに最適&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際の手順"&gt;実際の手順&lt;/h2&gt;
+&lt;h3 id="lambda-関数を使用する"&gt;Lambda 関数を使用する&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IAM &amp;gt; ポリシー を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下でポリシーを作成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Version&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;2012-10-17&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Statement&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Sid&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;VisualEditor0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Effect&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Allow&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Action&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:StartDBCluster&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:StopDBCluster&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:ListTagsForResource&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:DescribeDBInstances&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:StopDBInstance&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:DescribeDBClusters&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;rds:StartDBInstance&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Resource&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IAM &amp;gt; ロール を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下でロールを作成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信頼できるエンティティタイプを選択: AWS サービス&lt;/li&gt;
+&lt;li&gt;またはサービスを選択してユースケースを表示: Lambda&lt;/li&gt;
+&lt;li&gt;ポリシー: 手順 2 で作成したポリシー&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RDS &amp;gt; データベース &amp;gt; &amp;laquo;該当の DB インスタンス&amp;raquo; を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下の様にタグを設定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;autostart: yes&lt;/li&gt;
+&lt;li&gt;autostop: yes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lambda &amp;gt; 関数 を選択&lt;/p&gt;</description></item><item><title>AWS コスト削減 Tips その2</title><link>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips-part-2/</link><pubDate>Fri, 06 Sep 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips-part-2/</guid><description>&lt;p&gt;AWS コスト削減 Tipsを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/"&gt;AWS コスト削減 Tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cloudwatch"&gt;CloudWatch&lt;/h2&gt;
+&lt;h3 id="全体コストの確認"&gt;全体コストの確認&lt;/h3&gt;
+&lt;p&gt;Cost Explorer にて確認&lt;br&gt;
+※詳細は&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/cloudwatch_billing.html"&gt;公式&lt;/a&gt;を参照&lt;/p&gt;
+&lt;p&gt;[レポートパラメータ]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;日付範囲
+&lt;ul&gt;
+&lt;li&gt;任意 ※月単位で確認するのであれば「6ヶ月」等を指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;粒度
+&lt;ul&gt;
+&lt;li&gt;任意 ※月単位で確認するのであれば「月別」を指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;グループ化の条件
+&lt;ul&gt;
+&lt;li&gt;ディメンション
+&lt;ul&gt;
+&lt;li&gt;使用タイプ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;フィルター
+&lt;ul&gt;
+&lt;li&gt;サービス
+&lt;ul&gt;
+&lt;li&gt;CloudWatch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;リージョン
+&lt;ul&gt;
+&lt;li&gt;任意&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="data-processing-bytesコスト詳細確認"&gt;Data-Processing-bytesコスト詳細確認&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;手順は&lt;a href="https://repost.aws/ja/knowledge-center/cloudwatch-logs-bill-increase"&gt;公式&lt;/a&gt;を参照
+&lt;ul&gt;
+&lt;li&gt;サイズ降順で並んで出力される&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="コスト削減方法"&gt;コスト削減方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ログ送信量を削減 ※効果中 〜 効果大
+&lt;ul&gt;
+&lt;li&gt;console.log を削除&lt;/li&gt;
+&lt;li&gt;CloudWatch への出力を text =&amp;gt; json に変更してログレベルを制御
+&lt;ul&gt;
+&lt;li&gt;例. エラーのみ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不要なカスタムメトリクスの削除 ※効果中 〜 効果大
+&lt;ul&gt;
+&lt;li&gt;請求が高い場合には検討する価値あり&lt;/li&gt;
+&lt;li&gt;対象の請求
+&lt;ul&gt;
+&lt;li&gt;XXX-CW:MetricMonitorUsage&lt;/li&gt;
+&lt;li&gt;XXX-CW:Requests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;カスタムメトリクス一覧の確認方法
+&lt;ul&gt;
+&lt;li&gt;CloudWatch &amp;gt; Metrics を選択&lt;/li&gt;
+&lt;li&gt;検索欄に「NOT AWS」を入力して検索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>AWS コスト削減 Tips</title><link>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/</link><pubDate>Fri, 06 Sep 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/06/aws-cost-reduction-tips/</guid><description>&lt;p&gt;AWS コスト削減 Tipsを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="ec2"&gt;EC2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;インスタンスタイプの変更 ※効果小 〜 効果中
+&lt;ul&gt;
+&lt;li&gt;最適なインスタンスタイプの選定については、&lt;a href="https://aws.amazon.com/jp/ec2/instance-types/"&gt;公式&lt;/a&gt;参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用していない期間(夜間/休日等)での停止 ※効果大
+&lt;ul&gt;
+&lt;li&gt;特に開発・検証環境については検討する余地あり&lt;/li&gt;
+&lt;li&gt;踏み台サーバとして運用している場合は、本番環境も検討する余地あり&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="nat-gateway"&gt;NAT Gateway&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用していない期間(夜間/休日等)での削除 ※効果大
+&lt;ul&gt;
+&lt;li&gt;特に開発・検証環境については検討する余地あり
+&lt;ul&gt;
+&lt;li&gt;但し、再作成とセットで自動化する必要あり&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="rds"&gt;RDS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用していない期間(夜間/休日等)での停止 ※効果大
+&lt;ul&gt;
+&lt;li&gt;特に開発・検証環境については検討する余地あり&lt;/li&gt;
+&lt;li&gt;EC2 と比較して停止状態からの起動に時間がかかるため注意が必要
+&lt;ul&gt;
+&lt;li&gt;DB のデータ容量によるが 15 〜 30 分程度みた方が良い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Backup に関わるコスト確認 ※効果小 〜 効果中
+&lt;ul&gt;
+&lt;li&gt;バックアップ要件に関わるので顧客確認要&lt;/li&gt;
+&lt;li&gt;確認方法は以下記事を参照
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/"&gt;Amazon Aurora のバックアップストレージ費用の確認方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>AWS ルートユーザに設定されている MFA が不明な場合のログイン方法</title><link>https://kkawazoe.github.io/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/</link><pubDate>Tue, 03 Sep 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/09/03/how-to-login-when-the-mfa-set-for-the-aws-root-user-is-unknown/</guid><description>&lt;p&gt;AWS ルートユーザに設定されている MFA が不明な場合のログイン方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="状況"&gt;状況&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ルートユーザ
+&lt;ul&gt;
+&lt;li&gt;メールアドレス: 把握&lt;/li&gt;
+&lt;li&gt;パスワード: 不明&lt;/li&gt;
+&lt;li&gt;MFA: 故障 or 紛失&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際の手順"&gt;実際の手順&lt;/h2&gt;
+&lt;p&gt;公式の&lt;a href="https://repost.aws/ja/knowledge-center/reset-root-user-mfa"&gt;手順&lt;/a&gt; を参考に行う&lt;/p&gt;
+&lt;h3 id="事前作業"&gt;事前作業&lt;/h3&gt;
+&lt;p&gt;公式の&lt;a href="https://repost.aws/ja/knowledge-center/reset-mfa-device"&gt;手順&lt;/a&gt; を参考に行う&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IAM ユーザ認証情報を使用して、更新対象の AWS アカウントにログイン&lt;/li&gt;
+&lt;li&gt;AWS Billing and Cost Management &amp;gt; Account を選択&lt;/li&gt;
+&lt;li&gt;[Contact Information] の横にある [Edit]を選択&lt;/li&gt;
+&lt;li&gt;アカウントに関連付けられている電話番号を更新&lt;br&gt;
+※&lt;em&gt;電話番号の国コードが正しく、余分なスペースが含まれていないことを確認&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;[Update]を選択&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="作業手順"&gt;作業手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS アカウントのルートユーザーの E メールアドレスを使用してサインインする&lt;/li&gt;
+&lt;li&gt;[Root user sign in]ページで、ルートアカウントのパスワードを入力する&lt;/li&gt;
+&lt;li&gt;[Amazon Web Services Sign In With Authentication Device]ページで、[Troubleshoot MFA? Click here] を選択&lt;/li&gt;
+&lt;li&gt;[Troubleshoot Your Authentication Device] ページで、[Sign In using alternative factors]を選択&lt;/li&gt;
+&lt;li&gt;[Step 1: Email address verification]で、メールアドレスが正しいことを検証し、[Send verification email]を選択&lt;/li&gt;
+&lt;li&gt;件名が「AWS Email Verification」である AWS からの E メールで、[Verify your email address]を選択&lt;br&gt;
+=&amp;gt; 検証プロセスの「ステップ 2」ページが表示&lt;/li&gt;
+&lt;li&gt;[Step 2: Phone number verification]で、表示されている電話番号が正しいことを確認し、[Call me now]を選択&lt;/li&gt;
+&lt;li&gt;AWS からの電話に応答し、電話のキーパッドを使用して、デバイスの画面に表示される 6 桁の検証コードを送信&lt;/li&gt;
+&lt;li&gt;[Step 3: Sign In]で、[Sign in to the console]を選択&lt;br&gt;
+=&amp;gt; [Security Credentials]に自動的にリダイレクトされる&lt;/li&gt;
+&lt;li&gt;リセットする MFA デバイスの横にある [Deactivate]を選択&lt;/li&gt;
+&lt;li&gt;[Activate MFA] を選択して MFA デバイスを追加&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Amazon Aurora のバックアップストレージ費用の確認方法</title><link>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</link><pubDate>Wed, 28 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/28/how-to-check-amazon-aurora-backup-storage-costs/</guid><description>&lt;p&gt;AWS のコスト削減の一環として Amazon Aurora のバックアップストレージ費用の確認方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際の手順"&gt;実際の手順&lt;/h2&gt;
+&lt;p&gt;Cost Explorer にて確認&lt;/p&gt;
+&lt;p&gt;[レポートパラメータ]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;日付範囲
+&lt;ul&gt;
+&lt;li&gt;任意 ※月単位で確認するのであれば「6ヶ月」等を指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;粒度
+&lt;ul&gt;
+&lt;li&gt;任意 ※月単位で確認するのであれば「月別」を指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;グループ化の条件
+&lt;ul&gt;
+&lt;li&gt;ディメンション
+&lt;ul&gt;
+&lt;li&gt;使用タイプ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;フィルター
+&lt;ul&gt;
+&lt;li&gt;サービス
+&lt;ul&gt;
+&lt;li&gt;Relational Database Service（RDS）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;リージョン
+&lt;ul&gt;
+&lt;li&gt;任意&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用タイプ
+&lt;ul&gt;
+&lt;li&gt;Aurora:BackupUsage(GB-Month)&lt;/li&gt;
+&lt;li&gt;Aurora:StorageIOUsage(IOs)&lt;/li&gt;
+&lt;li&gt;Aurora:StorageUsage(GB-Month)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法</title><link>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</link><pubDate>Thu, 22 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</guid><description>&lt;p&gt;AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;AWS にて IAM ユーザを作成して MFA 認証を設定済&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/broamski/aws-mfa"&gt;aws-mfa&lt;/a&gt; をインストール済&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aws-mfa-設定"&gt;aws-mfa 設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IAM ユーザのアクセスキーを作成してダウンロード&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;デフォルト Region, Output を設定したい場合は &amp;laquo;profile 名&amp;raquo; の Profile を設定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ARN は IAM &amp;gt; ユーザー &amp;gt; &amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; の [セキュリティ認証情報]タブ &amp;gt; 多要素認証 (MFA) の識別子のため注意 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws-mfa --device arn:aws:iam::&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;AWS アカウント&amp;gt;&amp;gt;:mfa/&amp;lt;&amp;lt;IA&lt;/span&gt;M ユーザ&amp;gt;&amp;gt; --profile &amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;追加で &lt;code&gt;~/.aws/credentials&lt;/code&gt; に以下を設定&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:~/.aws/credentials" data-lang="sh:~/.aws/credentials"&gt;[&amp;lt;profile 名&amp;gt;-long-term]
+aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="使用の仕方"&gt;使用の仕方&lt;/h2&gt;
+&lt;p&gt;AWS CLI にてコマンドを実行する前に以下のコマンドを実行する&lt;/p&gt;</description></item><item><title>ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法</title><link>https://kkawazoe.github.io/blog/2024/07/26/how-to-remove-subscriptions-not-tied-to-amazon-sns-topics-in-shell-script/</link><pubDate>Fri, 26 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/26/how-to-remove-subscriptions-not-tied-to-amazon-sns-topics-in-shell-script/</guid><description>&lt;p&gt;ShellScript で Amazon SNS トピックに紐づかないサブスクリプションを削除する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;&amp;lt;AWS Configure Profile&amp;gt;&amp;gt;&lt;/code&gt; 部分は実際の環境に応じて書き換える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:trash_unnecessary_subscriptions.sh" data-lang="sh:trash_unnecessary_subscriptions.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_PROFILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;AWS Configure Profile&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# SNSトピック一覧を取得
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;topics=$(aws sns list-topics --profile=${AWS&lt;/span&gt;_PROFILE&lt;span style="color:#f92672"&gt;}&lt;/span&gt; | jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.Topics[].TopicArn&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# SNSサブスクリプション一覧を取得&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;subscriptions&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;aws sns list-subscriptions --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# トピックに紐づかないサブスクリプションを削除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo $subscriptions | jq -c &lt;span style="color:#e6db74"&gt;&amp;#39;.Subscriptions[]&amp;#39;&lt;/span&gt; | &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; read subscription; &lt;span style="color:#66d9ef"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; subscriptionArn&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;echo $subscription | jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.SubscriptionArn&amp;#39;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; topicArn&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;echo $subscription | jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.TopicArn&amp;#39;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# サブスクリプションのtopicArnがtopicsに含まれていなければ削除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; ! echo $topics | grep $topicArn &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aws sns unsubscribe --subscription-arn $subscriptionArn --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;削除したサブスクリプション: &lt;/span&gt;$subscriptionArn&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法</title><link>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images--to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</link><pubDate>Mon, 22 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images--to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</guid><description>&lt;p&gt;ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/broamski/aws-mfa"&gt;aws-mfa&lt;/a&gt; をインストールして登録済
+&lt;ul&gt;
+&lt;li&gt;aws-mfa 設定を参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aws-mfa-設定"&gt;aws-mfa 設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通常の aws profile を設定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;1 で設定した &amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;追加で &lt;code&gt;~/.aws/credentials&lt;/code&gt; に以下を設定&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:~/.aws/credentials" data-lang="sh:~/.aws/credentials"&gt;[&amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;-long-term]
+aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="フォルダ構成"&gt;フォルダ構成&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── img/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── image_001.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── upload_image.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt;&lt;/code&gt; 部分は実際の環境に応じて書き換える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:upload_image.sh" data-lang="sh:upload_image.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Shared&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_PROFILE_PREFIX&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;IMAGE_UPLOAD_DIR=img
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;read -p &amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34; input_environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Convert to uppercase
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;environment=$(echo &amp;#34;${input_environment}&amp;#34; | tr &amp;#39;[:lower:]&amp;#39; &amp;#39;[:upper:]&amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;echo &amp;#34;【Start Processing】$(date &amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;)&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Check the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;case &amp;#34;${input_environment}&amp;#34; in
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;dev&amp;#34; | &amp;#34;stg&amp;#34; | &amp;#34;prd&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; echo &amp;#34;Connecting to ${environment} environment...&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; # AWS&lt;/span&gt; MFA Authentication
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aws-mfa --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE_PREFIX&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;-&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Set environment variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AWS_PROFILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${AWS_PROFILE_PREFIX}-&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AWS_S3_IMAGE_UPLOAD_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo s3-bucket-&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;-to/path/&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Please enter the correct environment.&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exit;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【Start Upload Image】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove .DS_Store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#e6db74"&gt;&amp;#34;.DS_Store&amp;#34;&lt;/span&gt; | xargs rm -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Upload images to S3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws s3 cp ./&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;IMAGE_UPLOAD_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; s3://&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_S3_IMAGE_UPLOAD_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; --recursive &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Upload Image】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>&lt;p&gt;ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;DB: PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="フォルダ構成"&gt;フォルダ構成&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── sql/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── execute.sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── execute_sql.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;環境変数(xxx 部分)は実際の環境に応じて書き換える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:execute_sql.sh" data-lang="sh:execute_sql.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# DEV&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# STG&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# PRD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Shared&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SQL_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SQL_FILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;SQL_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;/execute.sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;LOG_FILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;log/batch.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;read -p &lt;span style="color:#e6db74"&gt;&amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34;&lt;/span&gt; input_environment
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Convert to uppercase&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;environment&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; | tr &lt;span style="color:#e6db74"&gt;&amp;#39;[:lower:]&amp;#39;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;[:upper:]&amp;#39;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【Start Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Check the environment&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; in
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;dev&amp;#34;&lt;/span&gt; | &lt;span style="color:#e6db74"&gt;&amp;#34;stg&amp;#34;&lt;/span&gt; | &lt;span style="color:#e6db74"&gt;&amp;#34;prd&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Connecting to &lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; environment...&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; EC2_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${EC2_HOST_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; EC2_PEM_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${EC2_PEM_KEY_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_HOST_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_PORT_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_NAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_NAME_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_USER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_USER_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_PASSWORD_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Please enter the correct environment.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exit;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scp -i &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_PEM_KEY&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; -r &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;SQL_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_HOST&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;:~/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -i &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_PEM_KEY&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; -T &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_HOST&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Set DB Password
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;export PGPASSWORD=${DB_PASSWORD}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Execute SQL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;psql -p ${DB_PORT} -h ${DB_HOST} -d ${DB_NAME} -U ${DB_USER} -f ${SQL_FILE}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Remove SQL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;rm -rf sql
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>API Gateway のオーソライザに Amazon Cognito を使用している API を Postman から動作させる方法</title><link>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</link><pubDate>Wed, 26 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</guid><description>&lt;p&gt;API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際の設定"&gt;実際の設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;以下の通りに URL と Header, Body を設定する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_1.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_1.png"
+ alt="Postman 設定その１"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その１
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_2.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_2.png"
+ alt="Postman 設定その２"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その２
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;他の API で使用するために変数に格納する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_3.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_3.png"
+ alt="Postman 設定その3"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その3
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_4.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_4.png"
+ alt="Postman 設定その４"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その４
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>S3 でアップロードされているオブジェクトの総数を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/</link><pubDate>Thu, 13 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/13/how-to-get-the-total-number-of-objects-uploaded-in-s3/</guid><description>&lt;p&gt;S3 でアップロードされているオブジェクトの総数を取得する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws s3 ls s3://&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;bucket-name/path/to/&amp;gt;&amp;gt; --recursive --human-readab&lt;/span&gt;le --summarize
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="その他"&gt;その他&lt;/h2&gt;
+&lt;h3 id="最終更新日の降順でソートして出力"&gt;最終更新日の降順でソートして出力&lt;/h3&gt;
+&lt;p&gt;UI 上だとできないのでコマンドを使用する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws s3 ls s3://&amp;lt;&amp;lt;bucket-name/path/to/&amp;gt;&amp;gt; | sort -nr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法</title><link>https://kkawazoe.github.io/blog/2024/05/09/how-to-retrieve-the-list-of-certificates-managed-by-aws-certificate-manager-for-all-regions/</link><pubDate>Thu, 09 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/09/how-to-retrieve-the-list-of-certificates-managed-by-aws-certificate-manager-for-all-regions/</guid><description>&lt;p&gt;AWS Certificate Manager で管理している証明書一覧を全リージョンに対して取得する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# AWSのリージョンのリストを取得する&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;REGIONS&lt;span style="color:#f92672"&gt;=(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;aws ec2 describe-regions --query Regions&lt;span style="color:#f92672"&gt;[&lt;/span&gt;*&lt;span style="color:#f92672"&gt;]&lt;/span&gt;.RegionName --output text&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# リージョン毎に証明書のリストを出力する&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 証明書 Arn, ドメイン名, タイプ, ステータス, 使用中かどうか&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; region in &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;REGIONS[@]&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;[&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;region&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;]&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aws acm list-certificates --output text --region &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;region&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; --query &lt;span style="color:#e6db74"&gt;&amp;#34;CertificateSummaryList[].[CertificateArn, DomainName, Type, Status, InUse]&amp;#34;&lt;/span&gt; | sort -k &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; | column -t -s &lt;span style="color:#e6db74"&gt;&amp;#34;`printf &amp;#39;\t&amp;#39;`&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;---------------------&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>AWS Lambda の amplify-login で始まる関数の要否判断について</title><link>https://kkawazoe.github.io/blog/2024/04/24/determining-whether-a-function-starting-with-amplify-login-in-aws-lambda-is-required-or-not/</link><pubDate>Wed, 24 Apr 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/24/determining-whether-a-function-starting-with-amplify-login-in-aws-lambda-is-required-or-not/</guid><description>&lt;p&gt;AWS Lambda の amplify-login で始まる関数の要否判断について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="調査に至った事象"&gt;調査に至った事象&lt;/h2&gt;
+&lt;p&gt;AWS より以下のメールが配信されていた&lt;br&gt;
+対象の Lambda 関数を確認すると掲題のものが指摘を受けていたが、作成した記憶はなく要否の判断がつかなかったため、調査を行なった&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-md" data-lang="md"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[アクションが必要です] AWS Lambda での Node.js 16 のサポート終了について | [Action Required] AWS Lambda end of support for Node.js 16
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;English follows Japanese | 英語のメッセージは日本語の後にございます
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;いつもお世話になっております。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[Amazon Health Dashboard はこのコミュニケーションに関するリマインダー通知を定期的にトリガーする場合があります]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;お客様の AWS アカウントに現在、Node.js 16 ランタイムを使用する AWS Lambda 関数が 1 つ以上あることが判明したため、ご連絡いたしております。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Lambda での Node.js 16 のサポートは 2024 年 6 月 12 日に終了します。これは、2023 年 9 月 11 日に Node.js 16 がサポート終了 (EOL) したことに続くものです [1]。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Lambda ランタイムサポートポリシー [2] で説明されているように、Lambda の言語ランタイムのサポートはいくつかの段階で終了します。2024 年 6 月 12 日以降、Lambda は Lambda 関数で使用される Node.js 16 ランタイムにセキュリティパッチやその他の更新を適用しなくなり、Node.js 16 を使用する関数はテクニカルサポートの対象ではなくなります。また、Node.js 16 は AWS コンソールで使用できなくなりますが、AWS CloudFormation、AWS CLI、AWS SAM、またはその他のツールを使用して、Node.js 16 を使用する関数を作成および更新することはできます。2025 年 2 月 28 日以降、Node.js 16 ランタイムを使用する新しい Lambda 関数を作成することはできなくなります。2025 年 3 月 31 日以降、Node.js 16 ランタイムを使用する既存の関数を更新することはできなくなります。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;2024 年 6 月 12 日までに、既存の Node.js 16 の関数を利用可能な最新の Node.js ランタイムにアップグレードすることをお勧めします。Node.js 16 の関数のリストは、AWS ヘルスダッシュボードの [&lt;span style="color:#f92672"&gt;影響を受けるリソース&lt;/span&gt;](&lt;span style="color:#a6e22e"&gt;Affected resources&lt;/span&gt;) タブにあります。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;サポートの終了は関数の実行には影響しません。関数は引き続き実行されます。ただし、これらはサポートされていないランタイムで実行されるため、AWS Lambda チームによるメンテナンスやパッチの適用は行われません。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;この通知は、$LATEST 関数バージョンに Node.js 16 ランタイムを使用する関数に対して生成されました。次のコマンドは、AWS CLI [3] を使用して、Node.js 16 を使用して特定のリージョンのすべての関数 (公開されている関数バージョンを含む) を一覧表示する方法を示しています。アカウントでこのような関数をすべて見つけるには、各リージョンで次のコマンドを繰り返します。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws lambda list-functions --region us-west-2 --output text --query &amp;#34;Functions[?Runtime==&amp;#39;nodejs16.x&amp;#39;].FunctionArn&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;廃止予定の 180 日前から、Trusted Advisor を使用して、公開されている関数バージョン [4] を含め、Node.js 16 ランタイムを使用するすべての関数を識別することもできます。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ご不明な点やサポートが必要な場合は、AWS サポート [5] までお問い合わせ下さい。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;・・・
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="amplify-login-で始まる-lambda-関数とは"&gt;amplify-login で始まる Lambda 関数とは？&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://docs.amplify.aws/javascript/tools/console/adminui/access-management/#cognito-lambda-triggers"&gt;Amplify Studio&lt;/a&gt;を有効化した際に自動的に作成される関数&lt;/p&gt;</description></item><item><title>AWS 関連のリンクまとめ</title><link>https://kkawazoe.github.io/blog/2024/04/19/aws-related-link-summary/</link><pubDate>Fri, 19 Apr 2024 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/19/aws-related-link-summary/</guid><description>&lt;p&gt;AWS 関連のリンクについて毎回探してしまうためまとめておく&lt;br&gt;
+※一度でも調査に使用したものをまとめていく&lt;/p&gt;
+&lt;h3 id="ベストプラクティスおよびサービスの導入理由"&gt;ベストプラクティスおよびサービスの導入理由&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/jp/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&amp;amp;wa-lens-whitepapers.sort-order=desc&amp;amp;wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&amp;amp;wa-guidance-whitepapers.sort-order=desc"&gt;Well-Architected&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;セキュリティの柱
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/security-pillar/detection.html"&gt;検知&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/security-pillar/infrastructure-protection.html"&gt;インフラストラクチャ保護&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/security-pillar/data-protection.html"&gt;データ保護&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/jp/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&amp;amp;whitepapers-main.sort-order=desc&amp;amp;awsf.whitepapers-content-type=*all&amp;amp;awsf.whitepapers-global-methodology=*all&amp;amp;awsf.whitepapers-tech-category=tech-category%23security-identity-compliance&amp;amp;awsf.whitepapers-industries=*all&amp;amp;awsf.whitepapers-business-category=*all"&gt;AWS ホワイトペーバーとガイド&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/whitepapers/latest/aws-best-practices-ddos-resiliency/welcome.html"&gt;DDos 耐性のベストプラクティス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://health.aws.amazon.com/health/status"&gt;サービスの状態&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="各サービスごとのリンク"&gt;各サービスごとのリンク&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Cognito
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/user-pool-case-sensitivity.html"&gt;ユーザプールの大文字・小文字の区別&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RDS
+&lt;ul&gt;
+&lt;li&gt;Amazon Aurora DB
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html"&gt;Aurora DB クラスターのバックアップと復元&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html"&gt;Amazon Aurora Serverless V1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html"&gt;Amazon S3 への DB スナップショットデータのエクスポート&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Amazon Pinpoint
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/pinpoint/latest/developerguide/send-messages-push.html"&gt;プッシュ通知の送信&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/pinpoint/latest/apireference/welcome.html"&gt;API Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SES
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/ses/latest/dg/send-email-authentication-dmarc.html#send-email-authentication-dmarc-dns"&gt;DMARC 対応&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/ses/latest/dg/manage-sending-quotas-errors.html"&gt;送信制限&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/ses/latest/dg/request-production-access.html"&gt;本番稼働する際の制限解除について&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/ses/latest/dg/monitor-sending-activity-using-notifications-email.html"&gt;E メール受信時のフィードバックについて&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SNS
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"&gt;米国製品番号について&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ACM
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/acm/latest/userguide/acm-certificate.html"&gt;ACM 証明書について&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/acm/latest/userguide/acm-regions.html"&gt;サポートされるリージョンについて&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/acm/latest/userguide/managed-renewal.html"&gt;自動更新について&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;EC2
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/replacing-key-pair.html"&gt;インスタンスでパブリックキーを追加または削除する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VPC
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/vpc/latest/userguide/aws-ip-ranges.html"&gt;AWS サービスが利用する IP アドレス範囲について&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WAF
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/en_us/waf/latest/developerguide/aws-managed-rule-groups-list.html"&gt;Managed Rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CloudFront
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"&gt;フィールドレベル暗号化を使用した機密データの保護&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;API Gateway
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/limits.html#apigateway-account-level-limits-table"&gt;Amazon API Gateway のクォータと重要な注意点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cloud Shell
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/cloudshell/latest/userguide/using-cshell-in-vpc.html"&gt;Amazon VPC AWS CloudShell での使用&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://dev.classmethod.jp/articles/cloudshell-vpc-environment/"&gt;classmethod の記事&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>AWS EC2 Instance Connect で接続する方法</title><link>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</link><pubDate>Sat, 30 Mar 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</guid><description>&lt;p&gt;AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html"&gt;AWS EC2 Instance Connect&lt;/a&gt; をインストールしておく&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://console.aws.amazon.com/ec2/"&gt;Amazon EC2 コンソール&lt;/a&gt; を開く&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ナビゲーションペインで、[インスタンス] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;インスタンスを選択し、[接続] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[EC2 Instance Connect] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く&lt;/p&gt;
+&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://repost.aws/ja/knowledge-center/ec2-instance-connect-troubleshooting"&gt;公式のトラブルシューティング&lt;/a&gt;を確認&lt;br&gt;
+=&amp;gt; セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.prefixes[] | select(.region==&amp;#34;&amp;lt;&amp;lt;対象リージョン&amp;gt;&amp;gt;&amp;#34;) | select(.service==&amp;#34;EC2_INSTANCE_CONNECT&amp;#34;) | .ip_prefix&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再度、EC2 Instance Connect に接続する&lt;/p&gt;</description></item><item><title>Amazon Linux 2 に PostgreSQL 13 をインストールする方法</title><link>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</link><pubDate>Fri, 29 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</guid><description>&lt;p&gt;Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;postgresql13 を以下のコマンドでインストールする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo amazon-linux-extras install postgresql13
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;failure: repodata/repomd.xml from pgdg-common: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 256&lt;span style="color:#f92672"&gt;]&lt;/span&gt; No more mirrors to try.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 14&lt;span style="color:#f92672"&gt;]&lt;/span&gt; HTTPS Error &lt;span style="color:#ae81ff"&gt;404&lt;/span&gt; - Not Found
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Installation failed. Check that you have permissions to install.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:/etc/yum.repos.d/pgdg-redhat-all.repo" data-lang="sh:/etc/yum.repos.d/pgdg-redhat-all.repo"&gt;sudo sed -i &amp;#34;s/\$releasever/7/g&amp;#34; &amp;#34;/etc/yum.repos.d/pgdg-redhat-all.repo&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再度、 postgresql13 をインストールする&lt;/p&gt;
+&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;failure: repodata/repomd.xml from pgdg-common: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 256&lt;span style="color:#f92672"&gt;]&lt;/span&gt; No more mirrors to try.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-7-x86_64/repodata/repomd.xml: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno -1&lt;span style="color:#f92672"&gt;]&lt;/span&gt; repomd.xml signature could not be verified &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; pgdg-common
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Installation failed. Check that you have permissions to install.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下の対象ファイルの内容を更新 ※事前にバックアップすること&lt;/p&gt;</description></item><item><title>Amazon Aurora PostgreSQL で一部のテーブルに対するアクセス制御を行う方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</link><pubDate>Fri, 08 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-control-access-to-some-tables-in-amazon-aurora-postgresql/</guid><description>&lt;p&gt;Amazon RDS で一部のテーブルに対するアクセス制御を行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;構成および RDS Proxy に接続可能な DB ユーザを追加する方法については前回記事を参照&lt;/p&gt;
+&lt;p&gt;前回の記事: &lt;a href="https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/"&gt;Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Role に対して適宜必要な権限を付与&lt;/p&gt;
+&lt;p&gt;例. public Schema の全テーブルへの全権限を付与&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;grant all on all tables in schema public to &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;アクセス制御を行うテーブルからアクセス権限を取り消す&lt;/p&gt;
+&lt;p&gt;例. public T_USER_HISTORY テーブルのアクセス権限を取り消す&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;revoke &lt;span style="color:#66d9ef"&gt;select&lt;/span&gt; on &lt;span style="color:#e6db74"&gt;&amp;#34;public&amp;#34;&lt;/span&gt;.&lt;span style="color:#e6db74"&gt;&amp;#34;T_USER_HISTORY&amp;#34;&lt;/span&gt; from &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;権限の確認&lt;/p&gt;
+&lt;p&gt;該当テーブルの Access privileges 欄を確認して r(read) がないことを確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;\d&lt;/span&gt;p
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; &amp;lt;&amp;lt;DB ユーザ&amp;gt;&amp;gt;=awdDxt/postgres&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法</title><link>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</link><pubDate>Fri, 08 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/08/how-to-add-a-db-user-that-can-connect-to-rds-proxy-in-amazon-rds/</guid><description>&lt;p&gt;Amazon RDS で RDS Proxy に接続可能な DB ユーザを追加する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;以下の構成を想定 ※RDS は Aurora PostgreSQL Version 13.8&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240308_01/rds-proxy-user-add.png"
+ alt="構成図"
+ width=500
+ height=500
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+
+ 
+ &lt;figcaption&gt;
+ 構成図
+ &lt;/figcaption&gt;
+ 
+&lt;/figure&gt;
+
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/rds-proxy-managing.html#rds-proxy-new-db-user"&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;DB ユーザ追加&lt;/p&gt;
+&lt;p&gt;以下のコマンドを使用してユーザを追加する&lt;br&gt;
+※実運用時は、適宜必要な権限を付与する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;postgres&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&amp;gt; CREATE ROLE &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;ロール名&amp;gt;&amp;gt; LOGIN PASSWORD &amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# 例. ログイン属性, 接続数制限なし, パスワード指定
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;postgres=&amp;gt; CREATE ROLE &amp;lt;&amp;lt;ロール名&lt;/span&gt;&amp;gt;&amp;gt; WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOREPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;lt;&amp;lt;パスワード&amp;gt;&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Secrets Manager にデータベース認証情報設定&lt;/p&gt;
+&lt;p&gt;AWS Secrets Manager のマネジメントコンソールから、先ほど登録した DB ユーザに対応するシークレットを作成する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;設定
+&lt;ul&gt;
+&lt;li&gt;シークレットのタイプ: Amazon RDSデータベースの認証情報&lt;/li&gt;
+&lt;li&gt;ユーザー名: 該当のもの&lt;/li&gt;
+&lt;li&gt;パスワード: 該当のもの&lt;/li&gt;
+&lt;li&gt;DBインスタンス: 該当のもの&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RDS Proxy とシークレットの関連付け&lt;/p&gt;</description></item><item><title>Amazon IAM で登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</link><pubDate>Tue, 20 Feb 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/20/how-to-get-a-list-of-registered-users-in-amazon-iam/</guid><description>&lt;p&gt;Amazon IAM で登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws iam list-users &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.Users[] | [.UserName, .CreateDate, .PasswordLastUsed] | @csv&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| tr -d &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;&amp;gt; iam_users_list.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Amazon SES でカスタムドメインに対して DMARC 対応を行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</link><pubDate>Tue, 06 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/06/how-to-dmarc-support-for-custom-domains-in-amazon-ses/</guid><description>&lt;p&gt;Amazon SES でカスタムドメインに対して DMARC 対応を行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;対象のドメインを「検証済み ID」として作成済&lt;/li&gt;
+&lt;li&gt;DKIM が設定済&lt;/li&gt;
+&lt;li&gt;DNS サービスの提供元が Route 53&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon SES &amp;gt; 設定: 検証済み ID を選択&lt;/li&gt;
+&lt;li&gt;対象の ID を選択&lt;/li&gt;
+&lt;li&gt;カスタム MAIL FROM ドメイン &amp;gt; 「編集」ボタンを押下&lt;/li&gt;
+&lt;li&gt;以下のように設定して「保存」ボタンを押下
+&lt;ul&gt;
+&lt;li&gt;カスタム MAIL FROM ドメインの使用: チェック&lt;/li&gt;
+&lt;li&gt;MAIL FROM ドメイン: 任意の値&lt;/li&gt;
+&lt;li&gt;MX 障害時の動作: 以下のどちらか
+&lt;ul&gt;
+&lt;li&gt;デフォルトの MAIL FROM ドメインの使用&lt;/li&gt;
+&lt;li&gt;メッセージの拒否&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS レコードの発行を行う&lt;/li&gt;
+&lt;li&gt;Route 53 &amp;gt; ホストゾーン &amp;gt; {対象のドメイン} を選択&lt;/li&gt;
+&lt;li&gt;「レコードを作成」を押下&lt;/li&gt;
+&lt;li&gt;以下を設定する
+&lt;ul&gt;
+&lt;li&gt;レコード名: _dmarc&lt;/li&gt;
+&lt;li&gt;レコードタイプ: TXT&lt;/li&gt;
+&lt;li&gt;値: v=DMARC1; p=none&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;テストEメール確認して OK なら値を「v=DMARC1; p=reject」, 「v=DMARC1; p=reject」の順に変更
+&lt;ul&gt;
+&lt;li&gt;詳細は&lt;a href="https://docs.aws.amazon.com/ja_jp/ses/latest/dg/send-email-authentication-dmarc.html#send-email-authentication-dmarc-implement"&gt;DMARC を実装するためのベストプラクティス&lt;/a&gt;参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="確認方法"&gt;確認方法&lt;/h2&gt;
+&lt;p&gt;例えば、以下のような方法で確認する&lt;/p&gt;</description></item><item><title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid><description>&lt;p&gt;Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;以下の２つの方法が考えられる&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/jp/solutions/implementations/cognito-user-profiles-export-reference-architecture/"&gt;Cognito User Profiles Export リファレンスアーキテクチャ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する&lt;br&gt;
+※リストアは&lt;a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html%E3%81%A7%E8%A1%8C%E3%81%86"&gt;ユーザ CSV インポート機能&lt;/a&gt;で行う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js:convertCsvString.js" data-lang="js:convertCsvString.js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;stringify&lt;/span&gt; } &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;require&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;csv-stringify/sync&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;module&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;exports&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;csvString&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;stringify&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;header&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;quoted_string&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;csvString&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js:getCognitoUsers.js" data-lang="js:getCognitoUsers.js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;CognitoIdentityProvider&lt;/span&gt; } &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;require&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognito&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;CognitoIdentityProvider&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;module&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;exports&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;param&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Array();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;params&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;UserPoolId&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;process&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;env&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;USER_POOL_ID&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;!==&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;undefined&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognito&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;listUsers&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;PaginationToken&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;PaginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Users&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Users&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;forEach&lt;/span&gt;((&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// ① を参照
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {};
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Attributes&amp;#34;&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt; =&amp;gt; &lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;===&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;) &lt;span style="color:#f92672"&gt;||&lt;/span&gt; {})[&lt;span style="color:#e6db74"&gt;&amp;#34;Value&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email_verified&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Attributes&amp;#34;&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt; =&amp;gt; &lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;===&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;email_verified&amp;#34;&lt;/span&gt;) &lt;span style="color:#f92672"&gt;||&lt;/span&gt; {})[&lt;span style="color:#e6db74"&gt;&amp;#34;Value&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;cognito:mfa_enabled&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;FALSE&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;cognito:username&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;push&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;登録ユーザーが存在しません。&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※① &lt;a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html#cognito-user-pools-using-import-tool-downloading-csv-header-using-cli"&gt;CSV ファイルヘッダーのダウンロード (AWS CLI)&lt;/a&gt;で必要な項目を取得して設定する&lt;/p&gt;</description></item><item><title>外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法</title><link>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/31/how-to-combine-with-cognito-authentication-when-deploying-aws-synthetics-canary-for-external-monitoring/</guid><description>&lt;p&gt;外形監視に AWS Synthetics Canary を導入する場合に Cognito 認証と組み合わせる方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;CloudWatch &amp;gt; Synthetics Canary を選択&lt;/li&gt;
+&lt;li&gt;「Canary を作成」ボタンを押下&lt;/li&gt;
+&lt;li&gt;以下を設定
+&lt;ul&gt;
+&lt;li&gt;設計図を使用する&lt;/li&gt;
+&lt;li&gt;設計図: API Canary&lt;/li&gt;
+&lt;li&gt;Canary ビルダー: 任意の Canary 名&lt;/li&gt;
+&lt;li&gt;Amazon API Gateway API を使用中: チェックを入れる&lt;/li&gt;
+&lt;li&gt;API を選択: API Gateway から API とステージを選択
+&lt;ul&gt;
+&lt;li&gt;使用している API, ステージを選択&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Host Name: 使用している Host Name を指定&lt;/li&gt;
+&lt;li&gt;HTTP リクエスト
+&lt;ul&gt;
+&lt;li&gt;HTTP リクエストを追加ボタンを押下
+&lt;ul&gt;
+&lt;li&gt;監視したい API の情報を設定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;スクリプトエディタ: &lt;a href="#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88"&gt;スクリプト&lt;/a&gt;を参照&lt;/li&gt;
+&lt;li&gt;スケジュール: 任意のスケジュールを選択&lt;/li&gt;
+&lt;li&gt;アクセス許可
+&lt;ul&gt;
+&lt;li&gt;IAM ロール: 既存のロールを選択
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC"&gt;ポリシー&lt;/a&gt;を参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;「保存」ボタンを押下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;h3 id="スクリプト"&gt;スクリプト&lt;/h3&gt;
+&lt;p&gt;基本的にはデフォルトのままで良いが Request Header に Cognito の ID トークンを付与する必要がある&lt;/p&gt;</description></item><item><title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title><link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link><pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid><description>&lt;p&gt;Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ユーザ登録&lt;/p&gt;
+&lt;p&gt;&amp;ndash;user-attributes は必要に応じて増やす&lt;br&gt;
+※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp admin-create-user &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--username &amp;lt;&amp;lt;E メールアドレス ※E メールアドレスをユーザ&lt;/span&gt;名に設定した場合&amp;gt;&amp;gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-attributes Name&lt;span style="color:#f92672"&gt;=&lt;/span&gt;email,Value&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;E メールアドレス&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;Name=email_verified,Value=TRUE&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--message-action SUPPRESS
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;パスワード設定&lt;/p&gt;
+&lt;p&gt;&amp;ndash;no-permanent は仮パスワード扱い&lt;br&gt;
+※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp admin-set-user-password &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--username &amp;lt;&amp;lt;ユーザ&lt;/span&gt;名 or sub&amp;gt;&amp;gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--password &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;password&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--no-p&lt;/span&gt;ermanent
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>AWS についての Tips</title><link>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</link><pubDate>Wed, 17 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/17/tips-about-aws/</guid><description>&lt;p&gt;AWS についての Tips について備忘録として残しておく&lt;br&gt;
+※適宜、更新予定&lt;/p&gt;
+&lt;h2 id="db-の接続情報の確認"&gt;DB の接続情報の確認&lt;/h2&gt;
+&lt;h3 id="ec2"&gt;EC2&lt;/h3&gt;
+&lt;p&gt;踏み台の Public IP を確認&lt;br&gt;
+※通常は Elastic IP を付与しているので固定のはず&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択&lt;/li&gt;
+&lt;li&gt;パブリック IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="rds"&gt;RDS&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択&lt;/li&gt;
+&lt;li&gt;接続とセキュリティ &amp;gt; エンドポイントを確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;RDS プロキシを設定している場合は以下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RDS &amp;gt; データベース &amp;gt; 該当の DB 識別子を選択&lt;/li&gt;
+&lt;li&gt;プロキシ &amp;gt; 該当のプロキシ識別子を選択&lt;/li&gt;
+&lt;li&gt;プロキシエンドポイント &amp;gt; エンドポイントを確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="secret-manager"&gt;Secret Manager&lt;/h3&gt;
+&lt;p&gt;DB のパスワードの設定確認方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択&lt;/li&gt;
+&lt;li&gt;シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下&lt;/li&gt;
+&lt;li&gt;パスワードを確認する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="バッチ処理について"&gt;バッチ処理について&lt;/h2&gt;
+&lt;p&gt;AWS 内で定期実行バッチの有無を確認する場合は以下を確認する&lt;/p&gt;
+&lt;h3 id="amazon-eventbridge-scheduler"&gt;Amazon EventBridge Scheduler&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon EventBridge &amp;gt; スケジューラ &amp;gt; スケジュール &amp;gt; 該当のスケジュールを選択&lt;/li&gt;
+&lt;li&gt;スケジュール &amp;gt; cron 式 を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="amazon-eventbridge-rule"&gt;Amazon EventBridge Rule&lt;/h3&gt;
+&lt;p&gt;Cloud Formation で設定した場合はこっちを確認する&lt;br&gt;
+※Cloud Formation の定義を見た方が良いと思われる&lt;/p&gt;</description></item><item><title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link><pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid><description>&lt;p&gt;Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp list-users &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#f92672"&gt;{&lt;/span&gt;該当のユーザプール ID&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--filter &lt;span style="color:#e6db74"&gt;&amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--attributes-to-get &lt;span style="color:#e6db74"&gt;&amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| tr -d &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;&amp;gt; user_pool_list.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Amazon Lambda で登録されている関数一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</link><pubDate>Tue, 16 Jan 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-registered-functions-in-amazon-lambda/</guid><description>&lt;p&gt;Amazon Lambda で登録されている関数一覧を取得する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws lambda list-functions --region &lt;span style="color:#f92672"&gt;{&lt;/span&gt;リージョン名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| jq &lt;span style="color:#e6db74"&gt;&amp;#39;.Functions[] | [.FunctionName]&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| jq -rs &lt;span style="color:#e6db74"&gt;&amp;#39;map([.[]])[] | @csv&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| tr -d &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;&amp;gt; lambda-functions-list.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Amazon Pinpoint API で push 通知を送信する方法</title><link>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</link><pubDate>Thu, 28 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/28/how-to-send-push-notifications-with-amazon-pinpoint-api/</guid><description>&lt;p&gt;Amazon Pinpoint API で push 通知を送信する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;前提構成: &lt;a href="https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/"&gt;前回記事&lt;/a&gt;を参照&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/pinpoint/latest/developerguide/send-messages-push.html"&gt;デベロッパーガイド&lt;/a&gt;を参照&lt;br&gt;
+※上記の以下の部分はパラメータがほとんど同じため共通化した方が良さそう&lt;/p&gt;
+&lt;h3 id="リファクタリング前"&gt;リファクタリング前&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;・・・&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;service&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;GCM&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;messageRequest&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Addresses&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#a6e22e"&gt;token&lt;/span&gt;]&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;ChannelType&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;GCM&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;MessageConfiguration&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;GCMMessage&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Action&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;action&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Body&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;message&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Priority&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;priority&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;SilentPush&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;silent&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;TimeToLive&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ttl&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Url&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;} &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;service&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;APNS&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;messageRequest&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Addresses&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#a6e22e"&gt;token&lt;/span&gt;]&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;ChannelType&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;APNS&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;MessageConfiguration&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;APNSMessage&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Action&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;action&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Body&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;message&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Priority&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;priority&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;SilentPush&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;silent&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;TimeToLive&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ttl&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Url&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;・・・&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="リファクタリング後"&gt;リファクタリング後&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;・・・&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;messageRequest&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Addresses&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#a6e22e"&gt;token&lt;/span&gt;]&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;ChannelType&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;service&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;MessageConfiguration&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * リファクタリングポイント:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * []とテンプレートリテラルを使用して連装配列の key を動的に生成する
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;service&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;Message`&lt;/span&gt;]&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Action&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;action&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Body&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;message&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Priority&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;priority&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;SilentPush&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;silent&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;title&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;TimeToLive&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ttl&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;Url&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;・・・&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>AWS と Firebase を連携して Push 通知を行う場合の設定について</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-set-up-push-notification-with-aws-and-firebase/</guid><description>&lt;p&gt;AWS と Firebase を連携して Push 通知を行う場合の設定について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;Amazon Pinpoint を使用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon Pinpoint &amp;gt; 使用を開始する &amp;gt; Pinpoint campaign orchestration を選択&lt;/li&gt;
+&lt;li&gt;[プロジェクトを管理]ボタンを押下&lt;/li&gt;
+&lt;li&gt;該当のプロジェクト名を選択&lt;/li&gt;
+&lt;li&gt;設定 &amp;gt; プッシュ通知 を選択&lt;/li&gt;
+&lt;li&gt;[編集]ボタンを押下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="apple-push-notification-service-apns"&gt;Apple Push Notification service (APNs)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;デフォルトの認証タイプ
+&lt;ul&gt;
+&lt;li&gt;キー認証情報(推奨)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;有効にする APN チャネルを選択
+&lt;ul&gt;
+&lt;li&gt;任意のチャネルを選択&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;キー ID
+&lt;ul&gt;
+&lt;li&gt;Apple Developer Programで確認&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;バンドル識別子
+&lt;ul&gt;
+&lt;li&gt;Apple Developer Programで確認&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;チーム識別子
+&lt;ul&gt;
+&lt;li&gt;Apple Developer Programで確認&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;認証キー(.p8 ファイル)
+&lt;ul&gt;
+&lt;li&gt;Apple Developer Programで取得&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="firebase-cloud-messaging-fcm"&gt;Firebase Cloud Messaging (FCM)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;デフォルトの認証タイプ
+&lt;ul&gt;
+&lt;li&gt;トークン認証情報(推奨)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;サービス json (.json ファイル)
+&lt;ul&gt;
+&lt;li&gt;Firebase で発行可能な秘密鍵を選択&lt;br&gt;
+※google-services.json ではないので注意&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>&lt;p&gt;pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;h3 id="事前作業"&gt;事前作業&lt;/h3&gt;
+&lt;p&gt;AWS Console にて接続に必要な情報を控えておく&lt;/p&gt;
+&lt;h4 id="ec2"&gt;EC2&lt;/h4&gt;
+&lt;p&gt;踏み台の Public IP を確認&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択&lt;/li&gt;
+&lt;li&gt;パブリック IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Elastic IP が紐付けられている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; Elastic IP を選択&lt;/li&gt;
+&lt;li&gt;関連付けられたインスタンス ID が一致するものを検索する&lt;/li&gt;
+&lt;li&gt;割り当てられた IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="rds"&gt;RDS&lt;/h4&gt;
+&lt;p&gt;プロキシの設定がされている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択&lt;/li&gt;
+&lt;li&gt;プロキシエンドポイントを確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="その他"&gt;その他&lt;/h4&gt;
+&lt;p&gt;DB のパスワード (Secrets Manager)の設定確認方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択&lt;/li&gt;
+&lt;li&gt;シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下&lt;/li&gt;
+&lt;li&gt;パスワードを確認する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="pgadmin4-での作業"&gt;pgAdmin4 での作業&lt;/h4&gt;
+&lt;p&gt;プロパティにそれぞれ以下の値を設定する&lt;/p&gt;</description></item></channel></rss>

@@ -1,43 +1,308 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHub on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/github/</link><description>Recent content in GitHub on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 07 May 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Actions をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</link><pubDate>Tue, 07 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</guid><description>GitHub Actions をローカルで実行する方法を備忘録として残しておく
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Container 管理ツール Rancher Desktop 使用ツール act GitHub Actions 既に作成済想定 act のインストール Home Brew でインストールする
-brew install act 使用方法 act で実行可能な一覧を表示する
-act -l WARN ⚠ You are using Apple M-series chip and you have not specified container architecture, you might encounter issues while running act.</description></item><item><title>GitHub Actions で AWS S3 に静的ファイルのディレクトリごとデプロイする方法</title><link>https://kkawazoe.github.io/blog/2024/03/06/how-to-deploy-a-whole-directory-of-static-files-to-aws-s3-with-github-actions/</link><pubDate>Wed, 06 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/06/how-to-deploy-a-whole-directory-of-static-files-to-aws-s3-with-github-actions/</guid><description>GitHub Actions で AWS S3 に静的ファイルのディレクトリごとデプロイする方法を備忘録として残しておく
-事前準備 GitHub Actions 用の IAM ユーザを作成 GitHub の Environments に上記 IAM ユーザのシークレットを登録 Environments &amp;gt; Environment Secrets S3 のバケットを作成（ホスティングする場合は公開設定にする） S3 のバケット名はグローバルでユニークにする必要がある 公式ドキュメント 前提 S3 のバケットは作成済 Package Manager は npm を使用(yarn でも可) npm build で dist フォルダ配下にデプロイ資産が作成される 実際のコード name: cd-dev on: push: branches: - &amp;#34;develop&amp;#34; workflow_dispatch: jobs: build-deploy: runs-on: ubuntu-latest environment: develop steps: - name: Checkout uses: actions/checkout@v4 # ① - uses: actions/setup-node@v4 with: node-version: 20 cache: &amp;#39;npm&amp;#39; cache-dependency-path: ${{ github.</description></item><item><title>GitHub の PR で折りたたみコンテンツを使用する方法</title><link>https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/</link><pubDate>Fri, 27 Jan 2023 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/</guid><description>GitHub の PR を作成する際に縦に長くなりすぎるため、折りたたみコンテンツを使用している
-その方法を備忘録として残しておく
-実際のコード html タグの details, summary タグを使用する
-※画像を入れる場合は、1行空行を入れないと展開されないため要注意
-&amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;その１&amp;lt;/summary&amp;gt; ![画像1](/images/logo/github_logo.svg) &amp;lt;/details&amp;gt;</description></item><item><title>Hugo と GitHub Pages の構成で自動デプロイを行う方法</title><link>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</guid><description>元々バッチを使用して手動でデプロイを行っていたが、自動デプロイする方法がないか調査を行った
-その結果を備忘録として残しておく
-前提 [構成]
-Hugo + GitHub Pages(master ブランチが対象)
-※source ブランチを Hugo で変換して master ブランチに静的サイト用の資産を配置する Hugo テーマは submodule として取り込み 実際のコード GitHub Actions を使用する
-リポジトリ直下に .github/workflows フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される
-※ source ブランチの push をトリガーに自動デプロイを行う
-source ブランチをチェックアウト
-Hugo(Docker) を使用して、静的サイト用の資産を作成
-master ブランチに push して GitHub Pages にデプロイする
-name: Deploy on: push: branches: - source # Target Branch Name jobs: deploy: runs-on: ubuntu-22.</description></item><item><title>GitHub で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</title><link>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</link><pubDate>Wed, 02 Jun 2021 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</guid><description>経緯 表題の件を行う必要があり調査を行ったため備忘録として残しておく
-手順 GitHub にログインする
-以下を GitHub 内で検索する
-is:open is:pr review-requested:{自分のユーザー名} もしくは rewiew-requested で確認可能 ※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要
-追記 以下で検索すればコメント等つけた場合も含めて検索されそう ※こちらは逆に未レビューのものが対象から外れてしまうため注意が必要
-is:open is:pr reviewed-by:{自分のユーザー名} その他 他のコマンドについては 参考 を参照</description></item><item><title>github で access token を使用してリポジトリを clone する</title><link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link><pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid><description>経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 アクセストークンを作成する
-GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する Generate new token を押下する 以下のコマンドを実行してリポジトリを clone する
-git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} ローカルの設定を追加する
-git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス}</description></item><item><title>Git コマンドについて</title><link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid><description>基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ Git 初期化
-git init Git 接続先設定
-git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得
-git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成
-git checkout -b topic/#{issue番号}-作業者名 開発
-ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする
-git commit -m &amp;#34;コメント&amp;#34; プルリクエストを投げる
-git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</description></item><item><title>GitHub への公開鍵の登録</title><link>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</link><pubDate>Mon, 15 Apr 2019 11:51:14 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid><description>毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく
-実際のコード Mac 以下のコマンドを GitHub のEメールアドレスに置き換えて実行
-ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; -f &amp;#34;id_rsa&amp;#34; &amp;gt; Generating public/private rsa key pair. 以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)
-&amp;gt; Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter] 以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)
-&amp;gt; Enter passphrase (empty for no passphrase): [Type a passphrase] &amp;gt; Enter same passphrase again: [Type passphrase again] SSH キーを ssh-agent に追加する
-4-1. バックグラウンドでssh-agentを起動
-eval &amp;#34;$(ssh-agent -s)&amp;#34; &amp;gt; Agent pid 59566 ※ macOS Sierra 10.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHub on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/github/</link><description>Recent content in GitHub on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Tue, 07 May 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Actions をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</link><pubDate>Tue, 07 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</guid><description>&lt;p&gt;GitHub Actions をローカルで実行する方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Container 管理ツール
+&lt;ul&gt;
+&lt;li&gt;Rancher Desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用ツール
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/nektos/act"&gt;act&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;GitHub Actions
+&lt;ul&gt;
+&lt;li&gt;既に作成済想定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="act-のインストール"&gt;act のインストール&lt;/h2&gt;
+&lt;p&gt;Home Brew でインストールする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install act
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;act で実行可能な一覧を表示する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;act -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;WARN ⚠ You are using Apple M-series chip and you have not specified container architecture, you might encounter issues &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; running act. If so, try running it with &lt;span style="color:#e6db74"&gt;&amp;#39;--container-architecture linux/amd64&amp;#39;&lt;/span&gt;. ⚠
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Stage Job ID Job name Workflow name Workflow file Events
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; ci ci ci ci.yml push,pull_request
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;act コマンドを使用して実行する&lt;/p&gt;</description></item><item><title>GitHub Actions で AWS S3 に静的ファイルのディレクトリごとデプロイする方法</title><link>https://kkawazoe.github.io/blog/2024/03/06/how-to-deploy-a-whole-directory-of-static-files-to-aws-s3-with-github-actions/</link><pubDate>Wed, 06 Mar 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/06/how-to-deploy-a-whole-directory-of-static-files-to-aws-s3-with-github-actions/</guid><description>&lt;p&gt;GitHub Actions で AWS S3 に静的ファイルのディレクトリごとデプロイする方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="事前準備"&gt;事前準備&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Actions 用の IAM ユーザを作成&lt;/li&gt;
+&lt;li&gt;GitHub の Environments に上記 IAM ユーザのシークレットを登録
+&lt;ul&gt;
+&lt;li&gt;Environments &amp;gt; Environment Secrets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;S3 のバケットを作成（ホスティングする場合は公開設定にする）&lt;/li&gt;
+&lt;li&gt;S3 のバケット名はグローバルでユニークにする必要がある
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/BucketRestrictions.html"&gt;公式ドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;S3 のバケットは作成済&lt;/li&gt;
+&lt;li&gt;Package Manager は npm を使用(yarn でも可)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm build&lt;/code&gt; で dist フォルダ配下にデプロイ資産が作成される&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml:cd-dev.yaml" data-lang="yml:cd-dev.yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;cd-dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;on&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;push&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;branches&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#e6db74"&gt;&amp;#34;develop&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;workflow_dispatch&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;jobs&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;build-deploy&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;runs-on&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;ubuntu-latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;environment&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;develop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;steps&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Checkout&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;actions/checkout@v4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# ①&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;actions/setup-node@v4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;node-version&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;cache&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;npm&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;cache-dependency-path&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{ github.workspace }}/package-lock.json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Install Dependencies&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;npm install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Build&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;npm run build&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Configure AWS Credentials&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;aws-actions/configure-aws-credentials@v1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;aws-access-key-id&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{ secrets.AWS_ACCESS_KEY_ID }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;aws-secret-access-key&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{ secrets.AWS_SECRET_ACCESS_KEY }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;aws-region&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{ secrets.AWS_REGION }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Deploy to S3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;aws s3 sync ./dist s3://&amp;lt;&amp;lt;S3 Buckets Name&amp;gt;&amp;gt; --delete&lt;/span&gt; &lt;span style="color:#75715e"&gt;# ②&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# ③&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Clear cache&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;aws cloudfront create-invalidation --distribution-id &amp;lt;&amp;lt;CloudFront Distribution ID&amp;gt;&amp;gt; --paths &amp;#34;/*&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="ポイントの説明"&gt;ポイントの説明&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;①
+&lt;ul&gt;
+&lt;li&gt;依存パッケージをキャッシュする
+&lt;ul&gt;
+&lt;li&gt;cache: npm or yarn&lt;/li&gt;
+&lt;li&gt;cache-dependency-path: package-lock.json のパスを指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;②
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;delete を付与するとバケットには存在するが、ディレクトリにはないファイルがあった場合に、バケットのファイルを削除する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;③
+&lt;ul&gt;
+&lt;li&gt;CloudFront のキャッシュが有効になっている場合は以下も行う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>GitHub の PR で折りたたみコンテンツを使用する方法</title><link>https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/</link><pubDate>Fri, 27 Jan 2023 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/01/27/how-to-accordion-content-with-pr-for-github/</guid><description>&lt;p&gt;GitHub の PR を作成する際に縦に長くなりすぎるため、折りたたみコンテンツを使用している&lt;br&gt;
+その方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;html タグの details, summary タグを使用する&lt;br&gt;
+※画像を入れる場合は、1行空行を入れないと展開されないため要注意&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-md" data-lang="md"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;details&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;summary&amp;gt;その１&amp;lt;/summary&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ![&lt;span style="color:#f92672"&gt;画像1&lt;/span&gt;](&lt;span style="color:#a6e22e"&gt;/images/logo/github_logo.svg&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/details&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Hugo と GitHub Pages の構成で自動デプロイを行う方法</title><link>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/17/how-to-auto-deploy-configure-hugo-and-github-pages/</guid><description>&lt;p&gt;元々バッチを使用して手動でデプロイを行っていたが、自動デプロイする方法がないか調査を行った&lt;br&gt;
+その結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;[構成]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo + GitHub Pages(master ブランチが対象)&lt;br&gt;
+※source ブランチを Hugo で変換して master ブランチに静的サイト用の資産を配置する&lt;/li&gt;
+&lt;li&gt;Hugo テーマは submodule として取り込み&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;GitHub Actions を使用する&lt;br&gt;
+リポジトリ直下に &lt;code&gt;.github/workflows&lt;/code&gt; フォルダを作成して配下に yml ファイルを配置することで GitHub Actions が登録される&lt;br&gt;
+※ source ブランチの push をトリガーに自動デプロイを行う&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;source ブランチをチェックアウト&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo(Docker) を使用して、静的サイト用の資産を作成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;master ブランチに push して GitHub Pages にデプロイする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yml:.github/workflows/deploy.yml" data-lang="yml:.github/workflows/deploy.yml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Deploy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;on&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;push&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;branches&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;source &lt;/span&gt; &lt;span style="color:#75715e"&gt;# Target Branch Name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;jobs&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;deploy&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;runs-on&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;ubuntu-22.04&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;steps&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;actions/checkout@v3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;submodules&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt; &lt;span style="color:#75715e"&gt;# Fetch Hugo themes (true OR recursive)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;fetch-depth&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#75715e"&gt;# Fetch all history for .GitInfo and .Lastmod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Deleting old publication&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;rm -rf public&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Setup Hugo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;peaceiris/actions-hugo@v2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;hugo-version&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;0.91.2&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;extended&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Build&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;run&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;hugo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#f92672"&gt;name&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;Deploy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;uses&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;with&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;github_token&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;${{ secrets.GITHUB_TOKEN }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;publish_branch&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;master&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;publish_dir&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;./public&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;定期実行する場合は、以下のようにする&lt;/p&gt;</description></item><item><title>GitHub で自分にレビュー依頼が来ているプルリクエストを一覧で表示する方法</title><link>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</link><pubDate>Wed, 02 Jun 2021 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/06/02/how-to-show-reviewer-pullrequest-assign-self/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
+&lt;p&gt;表題の件を行う必要があり調査を行ったため備忘録として残しておく&lt;/p&gt;
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;GitHub にログインする&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下を GitHub 内で検索する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;is:open is:pr review-requested:&lt;span style="color:#f92672"&gt;{&lt;/span&gt;自分のユーザー名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;もしくは &lt;a href="https://github.com/pulls/review-requested"&gt;rewiew-requested&lt;/a&gt; で確認可能
+※PR 内でコメントをつけたりすると対象から外れてしまうため注意が必要&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="追記"&gt;追記&lt;/h3&gt;
+&lt;p&gt;以下で検索すればコメント等つけた場合も含めて検索されそう
+※こちらは逆に未レビューのものが対象から外れてしまうため注意が必要&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;is:open is:pr reviewed-by:&lt;span style="color:#f92672"&gt;{&lt;/span&gt;自分のユーザー名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="その他"&gt;その他&lt;/h3&gt;
+&lt;p&gt;他のコマンドについては &lt;a href="https://docs.github.com/ja/search-github/searching-on-github/searching-issues-and-pull-requests"&gt;参考&lt;/a&gt; を参照&lt;/p&gt;</description></item><item><title>github で access token を使用してリポジトリを clone する</title><link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link><pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
+&lt;p&gt;表題の件を行う必要があり対応を行ったため備忘録として残しておく&lt;/p&gt;
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;アクセストークンを作成する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する&lt;/li&gt;
+&lt;li&gt;Generate new token を押下する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行してリポジトリを clone する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;:&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アクセストークン&lt;span style="color:#f92672"&gt;}&lt;/span&gt;@github.com/&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;/&lt;span style="color:#f92672"&gt;{&lt;/span&gt;リポジトリ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ローカルの設定を追加する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git config --local user.name &lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git config --local user.email &lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウントのメールアドレス&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Git コマンドについて</title><link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid><description>&lt;p&gt;基本的なコマンドを含めて備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;h3 id="基本的な流れ"&gt;基本的な流れ&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Git 初期化&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git 接続先設定&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git remote add &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元接続先URL&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git remote add &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 先リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 先接続先URL&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最新ソース取得&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git pull &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ブランチ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トピックブランチ作成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout -b topic/#&lt;span style="color:#f92672"&gt;{&lt;/span&gt;issue番号&lt;span style="color:#f92672"&gt;}&lt;/span&gt;-作業者名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開発&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ステージングにあげる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# untracked files を除いてステージングに挙げる場合は以下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git add -u
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コミットする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git commit -m &lt;span style="color:#e6db74"&gt;&amp;#34;コメント&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;プルリクエストを投げる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git push &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ブランチ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;※修正がある場合はgit addから先を繰り返し&lt;/p&gt;
+&lt;h3 id="その他"&gt;その他&lt;/h3&gt;
+&lt;h4 id="ローカルの修正を元に戻す"&gt;ローカルの修正を元に戻す&lt;/h4&gt;
+&lt;p&gt;一部ファイルのみ戻す場合&lt;br&gt;
+※半角空白で区切ることで複数ファイル指定可&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ファイル1&lt;span style="color:#f92672"&gt;(&lt;/span&gt;ファイルパス付&lt;span style="color:#f92672"&gt;)}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ファイル2&lt;span style="color:#f92672"&gt;(&lt;/span&gt;ファイルパス付&lt;span style="color:#f92672"&gt;)}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;全て元に戻す場合&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;untracked files をまとめて削除(削除対象表示)&lt;br&gt;
+※untracked files は変更ではないため以下を行う&lt;/p&gt;</description></item><item><title>GitHub への公開鍵の登録</title><link>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</link><pubDate>Mon, 15 Apr 2019 11:51:14 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/15/register-public-key-on-github/</guid><description>&lt;p&gt;毎回、PC をセットアップする際に調べてしまうため備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;h3 id="mac"&gt;Mac&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを GitHub のEメールアドレスに置き換えて実行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-keygen -t rsa -b &lt;span style="color:#ae81ff"&gt;4096&lt;/span&gt; -C &lt;span style="color:#e6db74"&gt;&amp;#34;your_email@example.com&amp;#34;&lt;/span&gt; -f &lt;span style="color:#e6db74"&gt;&amp;#34;id_rsa&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Generating public/private rsa key pair.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下が表示されるのでファイル場所を入力(デフォルトでいい場合は「Enter」押下)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Enter a file in which to save the key &lt;span style="color:#f92672"&gt;(&lt;/span&gt;/Users/you/.ssh/id_rsa&lt;span style="color:#f92672"&gt;)&lt;/span&gt;: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Press enter&lt;span style="color:#f92672"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下が表示されるのでパスフレーズを入力(なしでいい場合は「Enter」押下)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Enter passphrase &lt;span style="color:#f92672"&gt;(&lt;/span&gt;empty &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; no passphrase&lt;span style="color:#f92672"&gt;)&lt;/span&gt;: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Type a passphrase&lt;span style="color:#f92672"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Enter same passphrase again: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Type passphrase again&lt;span style="color:#f92672"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH キーを ssh-agent に追加する&lt;/p&gt;
+&lt;p&gt;4-1. バックグラウンドでssh-agentを起動&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;ssh-agent -s&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Agent pid &lt;span style="color:#ae81ff"&gt;59566&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※ macOS Sierra 10.12.2 以降を使用している場合は &lt;code&gt;~/.ssh/config&lt;/code&gt; ファイルを変更して自動的にキーを &lt;code&gt;ssh-agent&lt;/code&gt; にロードしパスフレーズをキーチェーンに格納する必要あり&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-bash:~/.ssh/config" data-lang="bash:~/.ssh/config"&gt;Host *
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile ~/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する&lt;/p&gt;</description></item></channel></rss>

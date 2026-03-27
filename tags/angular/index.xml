@@ -1,5 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Angular on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/angular/</link><description>Recent content in Angular on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Wed, 15 May 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml"/><item><title>Angular Cli で作成したプロジェクトに Jest を追加する</title><link>https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/</link><pubDate>Wed, 15 May 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/</guid><description>Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため
-Jest に変更する手順を備忘録として残しておく
-構築環境 Angular CLI: 7.3.9 Node: 10.15.3 OS: darwin x64 Angular: ... Package Version ------------------------------------------------------ @angular-devkit/architect 0.13.9 @angular-devkit/core 7.3.9 @angular-devkit/schematics 7.3.9 @schematics/angular 7.3.9 @schematics/update 0.13.9 rxjs 6.3.3 typescript 3.2.4 手順 プロジェクトを作成
-ng new JEST-EXAMPLE --style=styl ? Would you like to add Angular routing? Yes 以下のコマンドを実行する
-yarn global add @briebug/jest-schematic ng g @briebug/jest-schematic:add ng add @briebug/jest-schematic 以下のコマンドを実行して動作確認する</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Angular on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/angular/</link><description>Recent content in Angular on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Wed, 15 May 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml"/><item><title>Angular Cli で作成したプロジェクトに Jest を追加する</title><link>https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/</link><pubDate>Wed, 15 May 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/05/15/add-jest-at-angular-cli/</guid><description>&lt;p&gt;Angular Cli でプロジェクトを作成すると Karma + Jasmine が単体テストとして入るため&lt;br&gt;
+Jest に変更する手順を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="構築環境"&gt;構築環境&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Angular CLI: 7.3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Node: 10.15.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;OS: darwin x64
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Angular:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Package Version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;------------------------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@angular-devkit/architect 0.13.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@angular-devkit/core 7.3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@angular-devkit/schematics 7.3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@schematics/angular 7.3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@schematics/update 0.13.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rxjs 6.3.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;typescript 3.2.4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;プロジェクトを作成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ng new JEST-EXAMPLE --style&lt;span style="color:#f92672"&gt;=&lt;/span&gt;styl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;? Would you like to add Angular routing? Yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yarn global add @briebug/jest-schematic
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ng g @briebug/jest-schematic:add
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ng add @briebug/jest-schematic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行して動作確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yarn test
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;jest
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;PASS src/app/app.component.spec.ts
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AppComponent
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ✓ should create the app &lt;span style="color:#f92672"&gt;(&lt;/span&gt;89ms&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ✓ should have as title &lt;span style="color:#e6db74"&gt;&amp;#39;JEST-EXAMPLE&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;(&lt;/span&gt;28ms&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ✓ should render title in a h1 tag &lt;span style="color:#f92672"&gt;(&lt;/span&gt;29ms&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Test Suites: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; passed, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; total
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Tests: &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; passed, &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; total
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Snapshots: &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; total
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Time: 3.913s
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Ran all test suites.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;✨ Done in 4.76s.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記だけでも動くが snapshot テストを行うためには以下が追加で必要&lt;/p&gt;</description></item></channel></rss>

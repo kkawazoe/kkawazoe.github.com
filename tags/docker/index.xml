@@ -1,12 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/docker/</link><description>Recent content in Docker on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 04 Jun 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Circle CI をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/</link><pubDate>Tue, 04 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/</guid><description>Circle CI をローカルで実行する方法を備忘録として残しておく
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Container 管理ツール Rancher Desktop 使用ツール Circle CI CLI Circle CI 定義ファイル 既に作成済想定 Circle CI CLI のインストール Home Brew でインストールする
-brew install circleci 使用方法 CLI で定義ファイルの文法チェックを行う
-circleci config validate #=&amp;gt; Config file at .circleci/config.yml is valid. circleci コマンドを使用して実行する
-例. build Job 確認</description></item><item><title>GitHub Actions をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</link><pubDate>Tue, 07 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</guid><description>GitHub Actions をローカルで実行する方法を備忘録として残しておく
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Container 管理ツール Rancher Desktop 使用ツール act GitHub Actions 既に作成済想定 act のインストール Home Brew でインストールする
-brew install act 使用方法 act で実行可能な一覧を表示する
-act -l WARN ⚠ You are using Apple M-series chip and you have not specified container architecture, you might encounter issues while running act.</description></item><item><title>Rancher Desktop の設定について</title><link>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</link><pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</guid><description>普段個人で開発している時は Docker Desktop を使用しているが仕事で使用する場合には従業員数等で有償となる
-そのため、代替ツールとして Rancher Desktop を調査した結果を備忘録として残しておく
-設定について 以下の設定を変更することで動作が速くなる可能性がある
-Preference - Virtual Machine - Emulation Virtual Machine Type に、VZを指定する 右側に出る、VZ Option の Enable Rosetta support にチェックを入れる Rosetta で動作しているか確認 下記コマンドで ubuntu に入り、 ps -ef を実行して、/mnt/lima-rosetta/rosetta と表示されていることを確認
-docker run -it --platform linux/amd64 ubuntu # ps -ef Unable to find image &amp;#39;ubuntu:latest&amp;#39; locally latest: Pulling from library/ubuntu 445a6a12be2b: Pull complete Digest: sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054 Status: Downloaded newer image for ubuntu:latest root@0f03298c4ad5:/# ps -ef UID PID PPID C STIME TTY TIME CMD root 1 0 3 03:46 pts/0 00:00:00 /mnt/lima-rosetta/rosetta /bin/bash root 9 1 0 03:46 pts/0 00:00:00 /usr/bin/ps -ef Preference - Virtual Machine - Volumes 「Preferences」ボタンを押下 Virtual Machine &amp;gt; Volumes &amp;gt; Mount Type を以下に変更する Mount Type: virtiofs Preference - Application - Administrative Access 「Preferences」ボタンを押下 Application &amp;gt; General &amp;gt; Administrative Access を以下に変更する Allow to acquire administrative credentials(sudo access) これにチェックをしないとユーザ権限で実行された際に docker.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/docker/</link><description>Recent content in Docker on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Tue, 04 Jun 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Circle CI をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/</link><pubDate>Tue, 04 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/04/how-to-run-circle-ci-locally/</guid><description>&lt;p&gt;Circle CI をローカルで実行する方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Container 管理ツール
+&lt;ul&gt;
+&lt;li&gt;Rancher Desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用ツール
+&lt;ul&gt;
+&lt;li&gt;Circle CI CLI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Circle CI 定義ファイル
+&lt;ul&gt;
+&lt;li&gt;既に作成済想定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="circle-ci-cli-のインストール"&gt;Circle CI CLI のインストール&lt;/h2&gt;
+&lt;p&gt;Home Brew でインストールする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install circleci
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;CLI で定義ファイルの文法チェックを行う&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;circleci config validate
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; Config file at .circleci/config.yml is valid.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;circleci コマンドを使用して実行する&lt;/p&gt;
+&lt;p&gt;例. build Job 確認&lt;br&gt;
+※version 2.1 の場合は一度 config ファイルの変換を行ってから実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;circleci config process .circleci/config.yml &amp;gt; config-for-v2.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;circleci local execute -c config-for-v2.yml build
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="制約"&gt;制約&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://circleci.com/docs/ja/how-to-use-the-circleci-local-cli/#limitations-of-running-jobs-locally"&gt;ローカルでのジョブ実行時の制限事項&lt;/a&gt;を参照&lt;/p&gt;</description></item><item><title>GitHub Actions をローカルで実行する方法</title><link>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</link><pubDate>Tue, 07 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/07/how-to-run-github-actions-locally/</guid><description>&lt;p&gt;GitHub Actions をローカルで実行する方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Container 管理ツール
+&lt;ul&gt;
+&lt;li&gt;Rancher Desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用ツール
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/nektos/act"&gt;act&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;GitHub Actions
+&lt;ul&gt;
+&lt;li&gt;既に作成済想定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="act-のインストール"&gt;act のインストール&lt;/h2&gt;
+&lt;p&gt;Home Brew でインストールする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install act
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;act で実行可能な一覧を表示する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;act -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;WARN ⚠ You are using Apple M-series chip and you have not specified container architecture, you might encounter issues &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; running act. If so, try running it with &lt;span style="color:#e6db74"&gt;&amp;#39;--container-architecture linux/amd64&amp;#39;&lt;/span&gt;. ⚠
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Stage Job ID Job name Workflow name Workflow file Events
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; ci ci ci ci.yml push,pull_request
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;act コマンドを使用して実行する&lt;/p&gt;</description></item><item><title>Rancher Desktop の設定について</title><link>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</link><pubDate>Thu, 08 Feb 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/08/configuring-rancher-desktop/</guid><description>&lt;p&gt;普段個人で開発している時は Docker Desktop を使用しているが仕事で使用する場合には従業員数等で有償となる&lt;br&gt;
+そのため、代替ツールとして &lt;a href="https://rancherdesktop.io/"&gt;Rancher Desktop&lt;/a&gt; を調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="設定について"&gt;設定について&lt;/h2&gt;
+&lt;p&gt;以下の設定を変更することで動作が速くなる可能性がある&lt;/p&gt;
+&lt;h3 id="preference---virtual-machine---emulation"&gt;Preference - Virtual Machine - Emulation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Virtual Machine Type に、VZを指定する&lt;/li&gt;
+&lt;li&gt;右側に出る、VZ Option の Enable Rosetta support にチェックを入れる&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="rosetta-で動作しているか確認"&gt;Rosetta で動作しているか確認&lt;/h4&gt;
+&lt;p&gt;下記コマンドで ubuntu に入り、 ps -ef を実行して、/mnt/lima-rosetta/rosetta と表示されていることを確認&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -it --platform linux/amd64 ubuntu
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ps -ef&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Unable to find image &lt;span style="color:#e6db74"&gt;&amp;#39;ubuntu:latest&amp;#39;&lt;/span&gt; locally
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;latest: Pulling from library/ubuntu
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;445a6a12be2b: Pull complete
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Digest: sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Status: Downloaded newer image &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; ubuntu:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root@0f03298c4ad5:/# ps -ef
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;UID PID PPID C STIME TTY TIME CMD
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; 03:46 pts/0 00:00:00 /mnt/lima-rosetta/rosetta /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;root &lt;span style="color:#ae81ff"&gt;9&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 03:46 pts/0 00:00:00 /usr/bin/ps -ef
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="preference---virtual-machine---volumes"&gt;Preference - Virtual Machine - Volumes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;「Preferences」ボタンを押下&lt;/li&gt;
+&lt;li&gt;Virtual Machine &amp;gt; Volumes &amp;gt; Mount Type を以下に変更する
+&lt;ul&gt;
+&lt;li&gt;Mount Type: virtiofs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="preference---application---administrative-access"&gt;Preference - Application - Administrative Access&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;「Preferences」ボタンを押下&lt;/li&gt;
+&lt;li&gt;Application &amp;gt; General &amp;gt; Administrative Access を以下に変更する
+&lt;ul&gt;
+&lt;li&gt;Allow to acquire administrative credentials(sudo access)
+&lt;ul&gt;
+&lt;li&gt;これにチェックをしないとユーザ権限で実行された際に docker.sock が unix:///Users/&amp;laquo;User Name&amp;raquo;/.rd/docker.sock に作成される
+&lt;ul&gt;
+&lt;li&gt;そのため Docker Default の /var/run 配下に作成されなくてエラーになるパターンがある&lt;/li&gt;
+&lt;li&gt;確認のチェックは &lt;code&gt;Without&lt;/code&gt; のためチェックを入れずに「OK」ボタンを押下する！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

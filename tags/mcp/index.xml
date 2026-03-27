@@ -1,12 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MCP on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/mcp/</link><description>Recent content in MCP on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/mcp/index.xml" rel="self" type="application/rss+xml"/><item><title>draw.io MCP を各ツールに導入する手順</title><link>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</guid><description>draw.io MCP を各ツールに導入する手順を備忘録として残しておく
-環境 OS: MacOS Tahoe 26.3 Cursor 前提 Node.js がインストールされていること Cursor Settings を開く
-サイドバー &amp;gt; 「Tools &amp;amp; MCP」 を選択して、「Add Custom MCP」を選択
-Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面 以下の内容を入力して保存する
-{ &amp;#34;mcpServers&amp;#34;: { &amp;#34;drawio&amp;#34;: { &amp;#34;command&amp;#34;: &amp;#34;npx&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-y&amp;#34;, &amp;#34;@drawio/mcp@latest&amp;#34; ] } } } Installed MCP Servers に draw.io MCP が追加されている &amp;amp; 有効になっていることを確認する</description></item><item><title>Cursor と Confluence および Jira との連携方法</title><link>https://kkawazoe.github.io/blog/2025/04/03/how-cursor-works-with-confluence-and-jira/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/04/03/how-cursor-works-with-confluence-and-jira/</guid><description>Model Context Protocol(以下、MCP)を使用して連携する
-※MCP Atlassianを参照
-連携方法 MCP Atlassian の導入 API トークンの取得 Atlassian Account にアクセス
-API トークンを作成
-コピー
-環境変数(例. ATLASSIAN_API_TOKEN)に設定
-uv のインストール
-brew install uv uvx mcp-atlassian Cursor の MCP設定 { &amp;#34;mcpServers&amp;#34;: { &amp;#34;mcp-atlassian&amp;#34;: { &amp;#34;command&amp;#34;: &amp;#34;uvx&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;mcp-atlassian&amp;#34;, &amp;#34;--confluence-url=https://&amp;lt;&amp;lt;Your Domain Name&amp;gt;&amp;gt;.atlassian.net/wiki&amp;#34;, &amp;#34;--confluence-username=&amp;lt;&amp;lt;Your Mail Address&amp;gt;&amp;gt;&amp;#34;, &amp;#34;--confluence-token=&amp;lt;&amp;lt;ATLASSIAN_API_TOKEN&amp;gt;&amp;gt;&amp;#34;, &amp;#34;--jira-url=https://wlc-poc.atlassian.net&amp;#34;, &amp;#34;--jira-username=&amp;lt;&amp;lt;Your Mail Address&amp;gt;&amp;gt;&amp;#34;, &amp;#34;--jira-token=&amp;lt;&amp;lt;ATLASSIAN_API_TOKEN&amp;gt;&amp;gt;&amp;#34; ] } } } 利用方法 Issueの取得：「JIRA から &amp;laquo;Ticket 番号&amp;raquo; について教えて」</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MCP on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/mcp/</link><description>Recent content in MCP on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/mcp/index.xml" rel="self" type="application/rss+xml"/><item><title>draw.io MCP を各ツールに導入する手順</title><link>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</guid><description>&lt;p&gt;draw.io MCP を各ツールに導入する手順を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS Tahoe 26.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cursor"&gt;Cursor&lt;/h3&gt;
+&lt;h4 id="前提"&gt;前提&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js がインストールされていること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Cursor Settings を開く&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;サイドバー &amp;gt; 「Tools &amp;amp; MCP」 を選択して、「Add Custom MCP」を選択&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20260305_01/cursor_config_1.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20260305_01/cursor_config_1.png"
+ alt="Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下の内容を入力して保存する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:mcp_servers.json" data-lang="json:mcp_servers.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;drawio&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;-y&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;@drawio/mcp@latest&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Installed MCP Servers に draw.io MCP が追加されている &amp;amp; 有効になっていることを確認する&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Cursor と Confluence および Jira との連携方法</title><link>https://kkawazoe.github.io/blog/2025/04/03/how-cursor-works-with-confluence-and-jira/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/04/03/how-cursor-works-with-confluence-and-jira/</guid><description>&lt;p&gt;Model Context Protocol(以下、MCP)を使用して連携する&lt;br&gt;
+※&lt;a href="https://github.com/sooperset/mcp-atlassian"&gt;MCP Atlassian&lt;/a&gt;を参照&lt;/p&gt;
+&lt;h2 id="連携方法"&gt;連携方法&lt;/h2&gt;
+&lt;h3 id="mcp-atlassian-の導入"&gt;MCP Atlassian の導入&lt;/h3&gt;
+&lt;h4 id="api-トークンの取得"&gt;API トークンの取得&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://id.atlassian.com/manage-profile/security/api-tokens"&gt;Atlassian Account&lt;/a&gt; にアクセス&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;API トークンを作成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コピー&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;環境変数(例. ATLASSIAN_API_TOKEN)に設定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;uv のインストール&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install uv
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uvx mcp-atlassian
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="cursor-の-mcp設定"&gt;Cursor の MCP設定&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mcp-atlassian&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;uvx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;mcp-atlassian&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--confluence-url=https://&amp;lt;&amp;lt;Your Domain Name&amp;gt;&amp;gt;.atlassian.net/wiki&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--confluence-username=&amp;lt;&amp;lt;Your Mail Address&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--confluence-token=&amp;lt;&amp;lt;ATLASSIAN_API_TOKEN&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--jira-url=https://wlc-poc.atlassian.net&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--jira-username=&amp;lt;&amp;lt;Your Mail Address&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;--jira-token=&amp;lt;&amp;lt;ATLASSIAN_API_TOKEN&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="利用方法"&gt;利用方法&lt;/h2&gt;
+&lt;p&gt;Issueの取得：「JIRA から &amp;laquo;Ticket 番号&amp;raquo; について教えて」&lt;/p&gt;</description></item></channel></rss>

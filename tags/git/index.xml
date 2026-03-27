@@ -1,14 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/git/</link><description>Recent content in Git on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>github で access token を使用してリポジトリを clone する</title><link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link><pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid><description>経緯 表題の件を行う必要があり対応を行ったため備忘録として残しておく
-手順 アクセストークンを作成する
-GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する Generate new token を押下する 以下のコマンドを実行してリポジトリを clone する
-git clone https://{アカウント名}:{アクセストークン}@github.com/{アカウント名}/{リポジトリ名} ローカルの設定を追加する
-git config --local user.name {アカウント名} git config --local user.email {アカウントのメールアドレス}</description></item><item><title>Git コマンドについて</title><link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid><description>基本的なコマンドを含めて備忘録として残しておく
-実際のコード 基本的な流れ Git 初期化
-git init Git 接続先設定
-git remote add {Fork 元リモート名} {Fork 元接続先URL} git remote add {Fork 先リモート名} {Fork 先接続先URL} 最新ソース取得
-git pull {Fork 元リモート名} {ブランチ名} トピックブランチ作成
-git checkout -b topic/#{issue番号}-作業者名 開発
-ステージングにあげる
-git add -A # untracked files を除いてステージングに挙げる場合は以下 git add -u コミットする
-git commit -m &amp;#34;コメント&amp;#34; プルリクエストを投げる
-git push {Fork 元リモート名} {ブランチ名} ※修正がある場合はgit addから先を繰り返し</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/git/</link><description>Recent content in Git on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 20 Jun 2019 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>github で access token を使用してリポジトリを clone する</title><link>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</link><pubDate>Thu, 20 Jun 2019 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/06/20/clone-repository-use-access-token-with-github/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
+&lt;p&gt;表題の件を行う必要があり対応を行ったため備忘録として残しておく&lt;/p&gt;
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;アクセストークンを作成する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub アカウントにログインし，Settings &amp;gt; Developer settings から Personal access tokens を選択する&lt;/li&gt;
+&lt;li&gt;Generate new token を押下する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行してリポジトリを clone する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;:&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アクセストークン&lt;span style="color:#f92672"&gt;}&lt;/span&gt;@github.com/&lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;/&lt;span style="color:#f92672"&gt;{&lt;/span&gt;リポジトリ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ローカルの設定を追加する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git config --local user.name &lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウント名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git config --local user.email &lt;span style="color:#f92672"&gt;{&lt;/span&gt;アカウントのメールアドレス&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Git コマンドについて</title><link>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/18/about-git-command/</guid><description>&lt;p&gt;基本的なコマンドを含めて備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;h3 id="基本的な流れ"&gt;基本的な流れ&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Git 初期化&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git 接続先設定&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git remote add &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元接続先URL&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git remote add &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 先リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 先接続先URL&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最新ソース取得&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git pull &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ブランチ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トピックブランチ作成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout -b topic/#&lt;span style="color:#f92672"&gt;{&lt;/span&gt;issue番号&lt;span style="color:#f92672"&gt;}&lt;/span&gt;-作業者名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開発&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ステージングにあげる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# untracked files を除いてステージングに挙げる場合は以下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git add -u
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コミットする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git commit -m &lt;span style="color:#e6db74"&gt;&amp;#34;コメント&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;プルリクエストを投げる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git push &lt;span style="color:#f92672"&gt;{&lt;/span&gt;Fork 元リモート名&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ブランチ名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;※修正がある場合はgit addから先を繰り返し&lt;/p&gt;
+&lt;h3 id="その他"&gt;その他&lt;/h3&gt;
+&lt;h4 id="ローカルの修正を元に戻す"&gt;ローカルの修正を元に戻す&lt;/h4&gt;
+&lt;p&gt;一部ファイルのみ戻す場合&lt;br&gt;
+※半角空白で区切ることで複数ファイル指定可&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ファイル1&lt;span style="color:#f92672"&gt;(&lt;/span&gt;ファイルパス付&lt;span style="color:#f92672"&gt;)}&lt;/span&gt; &lt;span style="color:#f92672"&gt;{&lt;/span&gt;ファイル2&lt;span style="color:#f92672"&gt;(&lt;/span&gt;ファイルパス付&lt;span style="color:#f92672"&gt;)}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;全て元に戻す場合&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git checkout .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;untracked files をまとめて削除(削除対象表示)&lt;br&gt;
+※untracked files は変更ではないため以下を行う&lt;/p&gt;</description></item></channel></rss>

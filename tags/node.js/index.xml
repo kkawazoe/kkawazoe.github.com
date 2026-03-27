@@ -1,5 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Node.js on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/node.js/</link><description>Recent content in Node.js on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 30 May 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml"/><item><title>M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法</title><link>https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/</link><pubDate>Thu, 30 May 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/</guid><description>M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法を備忘録として残しておく
-前提 CPU: Apple M1 macOS: Sonoma 14.5 Node.js Version: 14.21.3 インストール時のエラー nodenv install 14.21.3 #=&amp;gt; BUILD FAILED (OS X 14.5 using node-build 4.9.138) 解決方法 以下のコマンドでインストールを行う
-arch -x86_64 nodenv install 14.21.3 原因 Apple M1 は ARM(darwin-arm64) だが公式では 16 以降が対応
-そのため未満のバージョンをインストールした際にエラーになる場合がある
-Node.js 16 CHANGELOG</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Node.js on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/node.js/</link><description>Recent content in Node.js on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 30 May 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml"/><item><title>M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法</title><link>https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/</link><pubDate>Thu, 30 May 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/30/m1-solution-for-failure-to-install-older-nodejs-with-nodenv-on-mac/</guid><description>&lt;p&gt;M1 Mac の nodenv で古い Node.js をインストールできない場合の解決方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU: Apple M1&lt;/li&gt;
+&lt;li&gt;macOS: Sonoma 14.5&lt;/li&gt;
+&lt;li&gt;Node.js Version: 14.21.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="インストール時のエラー"&gt;インストール時のエラー&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nodenv install 14.21.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; BUILD FAILED (OS X 14.5 using node-build 4.9.138)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="解決方法"&gt;解決方法&lt;/h2&gt;
+&lt;p&gt;以下のコマンドでインストールを行う&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;arch -x86_64 nodenv install 14.21.3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="原因"&gt;原因&lt;/h2&gt;
+&lt;p&gt;Apple M1 は ARM(darwin-arm64) だが公式では 16 以降が対応&lt;br&gt;
+そのため未満のバージョンをインストールした際にエラーになる場合がある&lt;br&gt;
+&lt;a href="https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V16.md#toolchain-and-compiler-upgrades"&gt;Node.js 16 CHANGELOG&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

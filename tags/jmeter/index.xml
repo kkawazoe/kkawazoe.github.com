@@ -1,6 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JMeter on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/jmeter/</link><description>Recent content in JMeter on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/jmeter/index.xml" rel="self" type="application/rss+xml"/><item><title>JMeter の環境構築方法</title><link>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</link><pubDate>Thu, 04 Apr 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</guid><description>JMeter の環境構築方法を備忘録として残しておく
-前提 Mac OS OS Version: Sonoma 14.4.1 Chip: Apple M1 Java Version: OpenJDK 21 手順 Java をインストールする ※Eclipse Temurin™
-brew tap homebrew/cask-versions brew install --cask temurin21 JMeter をダウンロードする
-JMeter でダウンロードしても良い
-brew install jmeter 以下のコマンドを実行して JMeter を起動する
-jmeter</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JMeter on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/jmeter/</link><description>Recent content in JMeter on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/jmeter/index.xml" rel="self" type="application/rss+xml"/><item><title>JMeter の環境構築方法</title><link>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</link><pubDate>Thu, 04 Apr 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/04/how-to-build-a-jmeter-environment/</guid><description>&lt;p&gt;JMeter の環境構築方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS
+&lt;ul&gt;
+&lt;li&gt;OS Version: Sonoma 14.4.1&lt;/li&gt;
+&lt;li&gt;Chip: Apple M1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Java
+&lt;ul&gt;
+&lt;li&gt;Version: OpenJDK 21&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Java をインストールする ※Eclipse Temurin™&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew tap homebrew/cask-versions
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install --cask temurin21
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JMeter をダウンロードする&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://jmeter.apache.org/download_jmeter.cgi"&gt;JMeter&lt;/a&gt; でダウンロードしても良い&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install jmeter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行して JMeter を起動する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;jmeter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

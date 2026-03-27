@@ -1,7 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Access on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/access/</link><description>Recent content in Access on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/access/index.xml" rel="self" type="application/rss+xml"/><item><title>Access でパラメータクエリが未入力の場合は全検索する</title><link>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</link><pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</guid><description>実際のコード パラメータが未入力の際に全ての検索条件を無視して全検索する場合
-抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する
-[抽出条件]
-[パラメータ] Or [パラメータ] Is Null パラメータが未入力の際に関係する抽出条件のみを全検索する場合
-パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する
-[抽出条件]
-[抽出対象フィールド] Or Is Null ※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Access on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/access/</link><description>Recent content in Access on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/access/index.xml" rel="self" type="application/rss+xml"/><item><title>Access でパラメータクエリが未入力の場合は全検索する</title><link>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</link><pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/23/when-not-input-parameter-query-execute-full-search-with-access/</guid><description>&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;パラメータが未入力の際に全ての検索条件を無視して全検索する場合&lt;/p&gt;
+&lt;p&gt;抽出条件として抽出したいフィールドの「抽出条件」欄に以下を入力する&lt;/p&gt;
+&lt;p&gt;[抽出条件]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[パラメータ] Or [パラメータ] Is Null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;パラメータが未入力の際に関係する抽出条件のみを全検索する場合&lt;/p&gt;
+&lt;p&gt;パラメータ用のフィールドを追加して「抽出条件」欄に以下を入力する&lt;/p&gt;
+&lt;p&gt;[抽出条件]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[抽出対象フィールド] Or Is Null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※一番右側にフィールドを配置しないと意図しないSQLになることもあるため必ずSQLビューで作成されたSQLを確認すること&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

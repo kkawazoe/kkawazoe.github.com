@@ -1,124 +1,1430 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>資格 on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</link><description>Recent content in 資格 on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 20 Nov 2025 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml"/><item><title>JSTQB Foundation Level への道 その2</title><link>https://kkawazoe.github.io/blog/2025/11/20/road-to-jstqb-foundation-level-part2/</link><pubDate>Thu, 20 Nov 2025 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/11/20/road-to-jstqb-foundation-level-part2/</guid><description>JSTQB Foundation Level を学習する中で間違えやすいポイントを備忘録として残しておく
-[前回までの記事]
-JSTQB Foundation Level への道 受験結果 無事に合格した
-確認出来るのは、合格したかどうかのみで、詳細な点数や間違えた問題などは確認出来ない
-テス友のみだとシラバスの細かい部分がカバーしきれないので、公式シラバスをしっかり確認しておく必要がある
-また、追加で他の人がまとめてくれているサイトなども参考にすると良いと思う
-勉強に使用したもの 公式シラバス（日本語版） JSTQB Foundation Level シラバス 日本語版 Version 2023V4.0.J02 テス友</description></item><item><title>JSTQB Foundation Level への道</title><link>https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/</link><pubDate>Fri, 19 Sep 2025 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/</guid><description>JSTQB Foundation Level を学習する中で間違えやすいポイントを備忘録として残しておく
-JSTQB Foundation Level シラバス キーワード 第 1章：テストの基礎 キーワード 概要（シラバス記載の学習対象の例） 参照節（ソースの該当箇所） カバレッジ (Coverage) テストの徹底度を測る指標。トレーサビリティを維持することで、カバレッジの評価を支援する。カバレッジ基準は、テスト目的がどの程度達成しているかを示す活動を遂行するための KPI として機能する。 1.4.4, 4.2.1, 4.3.1, 4.3.2, 5.3.1 デバッグ (Debugging) 故障の原因（欠陥）を発見し、解析し、取り除く活動。テストとは別の活動である。 1.1.2 欠陥 (Defect) 人間のエラーによって生み出されるもの。故障につながることもある。静的テストや動的テストで発見の支援をする。 1.2.3, 5.5 エラー (Error) 人間が起こす誤り。エラー推測は、この発生を予測する技法である。 1.2.3, 4.4.1 故障 (Failure) 欠陥が実行されることでシステムがすべきことをしない、またはすべきでないことをしてしまう結果。 1.2.3 品質 (Quality) ソフトウェアテストは、ソフトウェアの品質を評価し、運用環境で故障が発生するリスクを低減する手助けとなる。 1.2.2, 5.3.1 品質保証 (Quality Assurance, QA) プロセス指向の予防的アプローチであり、プロセスの実装と改善に焦点を当てる。 1.</description></item><item><title>(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 その2</title><link>https://kkawazoe.github.io/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/</link><pubDate>Sun, 19 May 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/</guid><description>AWS 認定ソリューションアーキテクト - アソシエイトを学習する中で間違えやすいポイントを備忘録として残しておく
-[前回までの記事]
-(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 受験結果 無事に合格した
-実際に組んでみたり、ベストプラクティスを確認することが大事だと感じた
-勉強に使用したもの udemy</description></item><item><title>(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道</title><link>https://kkawazoe.github.io/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/</link><pubDate>Thu, 16 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/</guid><description>AWS 認定ソリューションアーキテクト - アソシエイトを学習する中で間違えやすいポイントを備忘録として残しておく
-EC2 Auto Scaling 動的スケーリング 簡易スケーリングポリシー(ターゲッツ追跡スケーリングポリシー) 一定の CPU 利用に応じてスケーリングを実行する ステップスケーリングポリシー スケールさせるインスタンス数を段階的に増やすステップを設定する ターミネーションポリシー スケールイン時のインスタンスを終了させる方法を定義する 手動スケーリング 希望する容量を調整して、手動でスケーリングを実施する スケジュールさせたスケーリング スケーリングを実施する日時を指定して、スケーリングを実行する AWS Nitro Enclaves 高度な機密情報の保護や安全措置を向上する、分離されたコンピューティング環境を作成することができる
-EBS EBS のコピーについて EBS 自体は別リージョンに移動して利用することはできない
-以下のような手順が必要
-スナップショットを作成 S3 スナップショットが格納される 別リージョンの S3 にコピーする 別リージョンのEBS に復元する EBS の RAID 構成 RAID 0 目的 パフォーマンスを向上させる 複数のディスクを 1 台のディスクのように扱う 読み書きを高速化する構成 ストライピング RAID 1 目的 ボリュームの冗長性を高める 2 つのボリュームを同時にミラーリングする EFS VPC 内の Amazon EFS ファイルシステムにアクセスする VPC に 1 つ以上のマウントターゲットを作成する必要がある リージョンファイルシステム AWS リージョン内の各アベイラビリティーゾーンにマウントターゲットを作成 1 ゾーンファイルシステム ファイルシステムと同じアベイラビリティーゾーンにマウントターゲットを 1 つだけ作成 VPC Direct Connect Direct Connect は AWS とオンプレミス環境間の専用線接続サービス ゲートウェイ型エンドポイント VPC 内の EC2 インスタンスから、プライベートネットワークを経由する</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その5</title><link>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</link><pubDate>Mon, 05 Dec 2022 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</guid><description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-[前回までの記事]
-Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3 Ruby Gold 認定試験 Ver 3 への道 その4 受験結果 無事に合格した
-前回、 ver 2 受験時と難易度的には同じくらいだったように思う
-なので、基本的にはオブジェクト指向周りを再確認する
-3 系から追加された 「hash 明示(**hash)」などはリリースノートで確認して置いた方が良いが 2.2 〜 2.7 系での変更点についても押さえておくとより良いと思う
-NEWS for Ruby 3.0.0
-Ruby 3.0.0 リリースノート
-勉強に使用したもの 公式の模擬問題
-基本的には、上記をやって該当のコードを自分でコーディングしながら、色々変更して動作確認するのが一番良さそう</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その4</title><link>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</link><pubDate>Thu, 01 Dec 2022 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</guid><description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-[前回までの記事]
-Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 Ruby Gold 認定試験 Ver 3 への道 その3 環境 ruby: 3.1.2 キーワード引数 キーワード引数で a: のようなデフォルト値を指定しない場合、構文エラーにはならないが、呼び出し時に指定しなかった場合に ArgumentError になる
-class KeywordArgument def foo(a:, b: &amp;#39;bbb&amp;#39;) puts &amp;#34;a: #{a}, b: #{b}&amp;#34; end end keyword_argument = KeywordArgument.new keyword_argument.foo(a: &amp;#39;aaa&amp;#39;, b: &amp;#39;BBB&amp;#39;) #=&amp;gt; a: aaa, b: BBB keyword_argument.foo(a: &amp;#39;aaa&amp;#39;) #=&amp;gt; a: aaa, b: bbb keyword_argument.</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その3</title><link>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</link><pubDate>Fri, 25 Nov 2022 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</guid><description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-[前回までの記事]
-Ruby Gold 認定試験 Ver 3 への道 Ruby Gold 認定試験 Ver 3 への道 その2 環境 ruby: 3.1.2 public_send メソッド Object#public_send メソッドは private メソッドを呼び出せない
-private_send メソッドは存在しない ※private メソッドを 呼び出す場合は Object#send or BasicObject#__send__ メソッドを使用する
-class PublicTest def public_method puts &amp;#39;call public methods&amp;#39; end private def private_method puts &amp;#39;call private methods&amp;#39; end end test = PublicTest.new test.public_method test.private_method #=&amp;gt; call public methods #=&amp;gt; public_send.</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その2</title><link>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</link><pubDate>Thu, 24 Nov 2022 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</guid><description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-[前回までの記事]
-Ruby Gold 認定試験 Ver 3 への道 環境 ruby: 3.1.2 __FILE__ __FILE__ が書いてあるファイルのファイル名を表す 似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す
-puts __FILE__ puts $0 require_relative &amp;#39;./file_name&amp;#39; ruby file_name.rb __FILE__: file_name.rb $0: file_name.rb ruby require_file_name.rb __FILE__: file_name.rb $0: require_file_name.rb 累乗の計算 def exponentiation(n) n ** n end puts exponentiation(-1) #=&amp;gt; -1 puts exponentiation(1i) #=&amp;gt; 0.20787957635076193+0.0i 複素数 正規表現 =~ の $1 等 &amp;#39;www.ruby.co.jp&amp;#39;.match(%r(www(\.ruby\.co)(\.jp))) do |e| puts &amp;#34;match e= #{e}&amp;#34; puts &amp;#34;match e[0]= #{e[0]}&amp;#34; puts &amp;#34;match e[1]= #{e[1]}&amp;#34; puts &amp;#34;match e[2]= #{e[2]}&amp;#34; puts &amp;#34;match $0 #{$0}&amp;#34; puts &amp;#34;match $&amp;amp; #{$&amp;amp;}&amp;#34; puts &amp;#34;match $1 #{$1}&amp;#34; puts &amp;#34;match $2 #{$2}&amp;#34; end #=&amp;gt; match e= www.</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道</title><link>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</link><pubDate>Wed, 23 Nov 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</guid><description>Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく
-環境 ruby: 3.1.2 Numbered parameters _1 から始まる _1, _2 で 第一引数, 第二引数の意味となる
-以下は同じ意味
-h = { a: 1, b: 2, c: 3 } h.transform_values{|v| v * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h.transform_values{_1 * 2} #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.map{|key, value| [key, value * 2]}.to_h #=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6} h = { a: 1, b: 2, c: 3 } h.</description></item><item><title>FP3級への道 その7</title><link>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</link><pubDate>Sat, 06 Jul 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 FP3級への道 その6 受験結果 2019年5月 一応　FP 3級合格
-勉強時間は一月半程度
-後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した
-FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う
-2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい
-【種目別試験結果】ファイナンシャル・プランニング技能検定 公式サイトで確認すると今回の合格率は以下
-等級 学科/実技 試験科目 合格率 3級 学科 42.76％ 3級 実技 個人資産相談業務 54.35％ 大体例年通りくらいの合格率だったらしい</description></item><item><title>FP3級への道 その6</title><link>https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/</link><pubDate>Tue, 30 Apr 2019 00:00:19 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 FP3級への道 その5 金融資産運用 債権 債権の利回り 直接利回り
-投資金額(購入価格)に対する毎年の利息収入の割合
-$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
-$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$
-例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)
-$$ \frac{1%}{102円} \times 100 ≒ 0.98% $$
-応募者利回り
-債権の発行時に購入し、償還まで所有した場合の利回り
-$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$
-例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)
-$$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$
-最終利回り</description></item><item><title>FP3級への道 その5</title><link>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</link><pubDate>Fri, 26 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 FP3級への道 その4 金融資産運用 株式 株式投資に用いる指標 $$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$
-※PER が低い銘柄は 割安 、高い銘柄は割高
-$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$
-※PBR が低い(1倍に近い)銘柄は 割安 、高い銘柄は割高
-$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$
-$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$
-$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$
-$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$
-参考にした教本 上記内容は以下の教本の内容を参考にしてます
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description></item><item><title>FP3級への道 その4</title><link>https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
-FP3級への道 FP3級への道 その2 FP3級への道 その3 リスクマネジメント 火災保険 補償の範囲 損害 住宅火災保険 住宅総合保険 火災、落雷、爆発、破裂
-風災、雹災、雪災 ◯ ◯ 水害(水災) × ◯ 給排水設備事故による水漏れ × ◯ 盗難 × ◯ 外部からの落下、飛来、衝突 × ◯ 持出家財の損害 × ◯ 地震、噴火、津波 × × 傷害保険 主な傷害保険 普通傷害保険 国内外を問わず、日常生活で起こる傷害を補償する保険
-※病気、細菌性食中毒、自殺、地震、噴火、津波を原因とする傷害は対象外
-=&amp;gt; 1つの契約で家族全員が補償される「家族傷害保険」もある 交通事故傷害保険 国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険</description></item><item><title>FP3級への道 その3</title><link>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</link><pubDate>Wed, 24 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-[前回までの記事]
-FP3級への道 FP3級への道 その2 リスクマネジメント 生命保険と税金 生命保険金を受け取った時の税金 契約や、被保険者、受取人が誰かによって課される税金が異なる
-[死亡保険金の場合]
-契約者 被保険者 受取人 税金 A A B 相続税 A B A 所得税(一時所得)
-住民税 A B C 贈与税 [満期保険金の場合]
-契約者 被保険者 受取人 税金 A 誰でも A 所得税(一時所得)
-住民税 A 誰でも B 贈与税 [非課税となる保険金や給付金]</description></item><item><title>FP3級への道 その2</title><link>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</link><pubDate>Mon, 22 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</guid><description>学習中に間違えやすいと思った点を備忘録として残しておく
-前回の記事: FP3級への道
-ライフプランニングの手法 ライフプランニングを行う際に利用するツール ライフイベント表
-家族の将来のライフイベントと、それに必要な資金の額を時系列にまとめた表 キャッシュフロー表
-ライフイベント表と現在の収支状況に基づいて、将来の収支状況と貯蓄残高の予想を
-まとめた表 個人バランスシート
-一定時点における資産と負債のバランスを見るための表
-※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税) 資金計画を立てる際の6つの係数 終価係数 現在の金額を複利で運用した場合の、一定期間後の金額を求める場合に用いる係数
-例. 100万円を年利3%で運用した場合の7年後の金額はいくらか？
-現価係数 一定期間後に一定金額に達するために必要な原本を求めるのに用いる係数
-例. 年利3%で7年後に100万円を用意するためには、元本がいくら必要になるか？
-年金終価係数 毎年一定金額を積み立てた場合の、一定期間後の元利合計を求める場合に用いる係数
-例. 年利3%、毎年10万円を7年後の金額はいくらか？
-減債基金係数 一定期間後に一定金額を用意するための、毎年の積立額を計算するための係数
-例. 年利3%、７年後に100万円を用意するためには毎年いくら積み立てる必要があるか？
-資本回収係数 現在の一定金額を一定期間で取り崩した場合の、毎年の受取金額を計算するための係数
-例. 100万円を年利2%で運用しながら7年噛んで取り崩した場合の毎年の受取金額はいくら？
-年金現価係数 将来の一定期間に渡って、一定額を受け取るために必要な元本を計算するための係数
-例. 7年間に渡って、10万円ずつ受け取りたい
-年利3%とした場合、必要な元本はいくらか？
-終価係数と年金終価係数の違い 終価係数は、現在の金額を複利で運用した場合の金額を求めるための係数
-=&amp;gt; 定期預金のイメージ
-年金終価係数は、毎年一定金額を積み立てた場合の一定期間後の元利合計を求めるための係数
-=&amp;gt; 積立定期預金のイメージ
-減債基金係数と資本回収係数の違い 減債基金係数は毎年の積立額を求めるための係数
-資本回収係数は毎年の受取金額を求めるための係数
-現価係数はと年金現価係数の違い 現価係数は一定金額に達するために必要な原本を求めるための係数
-年金現価係数は一定額を受け取るために必要な元本を求めるための係数
-参考にした教本 上記内容は以下の教本の内容を参考にしてます
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description></item><item><title>AWS 認定ソリューションアーキテクト - アソシエイトへの道</title><link>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</link><pubDate>Fri, 19 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</guid><description>試験概要 詳細は、試験ガイド(試験概要 の「試験ガイドのダウンロード」を参照)
-受験料 15,000 円 (日本語版/税別)
-出題範囲 分野 試験に占める 割合 分野 1: 回復性の高いアーキテクチャを設計する 34% 分野 2: パフォーマンスに優れたアーキテクチャを定義する 24% 分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する 26% 分野 4: コスト最適化アーキテクチャを設計する 10% 分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する 6% 合計 100% 出題範囲詳細 分野 1: 回復性の高いアーキテクチャを設計する 1.1 信頼性と回復性の高いストレージを選択する 1.2 AWS サービスを使用した分離機構を設計する方法を定義する 1.3 多層アーキテクチャソリューションを設計する方法を定義する 1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する 分野 2: パフォーマンスに優れたアーキテクチャを定義する 2.</description></item><item><title>FP3級への道</title><link>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</guid><description>ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった 上記のこともあり知識として必要だと感じため、学習しその記録を残しておく
-受験する科目 学科 FP 協会・金融財政事情研究会で共通 実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい FP 協会 資産設計提案業務 金融財政事情研究会 個人資産相談業務 ※今回受験 保険顧客資産相談業務 使用する教材 今回使用する教材は以下
-2018-2019年版　みんなが欲しかった！　FPの教科書3級
-滝澤ななみ TAC 2018年05月22日
-売り上げランキング : 楽天ブックスで購入Amazonで購入 by ヨメレバ 他の人の評価等を確認する限り、これ１冊でもいけそう 必要があれば追加で購入する とりあえず、5月の受験を目指す
-2019/03/26 追記 試験用の電卓を購入
-CANON HS-1220TUG 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する
-シャープ EL-N942-X 実務電卓 12桁楽天市場で購入Amazonで購入by カエレバ 2019/04/15 追記 問題集として追加で以下を購入 ※教本だけだと習熟度がわからないため
-2018-2019年版　みんなが欲しかった！　FPの問題集3級
-滝澤ななみ TAC 2018年05月22日</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>資格 on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/</link><description>Recent content in 資格 on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 20 Nov 2025 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/%E8%B3%87%E6%A0%BC/index.xml" rel="self" type="application/rss+xml"/><item><title>JSTQB Foundation Level への道 その2</title><link>https://kkawazoe.github.io/blog/2025/11/20/road-to-jstqb-foundation-level-part2/</link><pubDate>Thu, 20 Nov 2025 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/11/20/road-to-jstqb-foundation-level-part2/</guid><description>&lt;p&gt;JSTQB Foundation Level を学習する中で間違えやすいポイントを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/"&gt;JSTQB Foundation Level への道&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="受験結果"&gt;受験結果&lt;/h2&gt;
+&lt;p&gt;無事に合格した&lt;br&gt;
+確認出来るのは、合格したかどうかのみで、詳細な点数や間違えた問題などは確認出来ない&lt;br&gt;
+テス友のみだとシラバスの細かい部分がカバーしきれないので、公式シラバスをしっかり確認しておく必要がある&lt;br&gt;
+また、追加で他の人がまとめてくれているサイトなども参考にすると良いと思う&lt;/p&gt;
+&lt;h2 id="勉強に使用したもの"&gt;勉強に使用したもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;公式シラバス（日本語版）
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://jstqb.jp/dl/JSTQB-SyllabusFoundation_VersionV40.J02.pdf"&gt;JSTQB Foundation Level シラバス 日本語版 Version 2023V4.0.J02&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.qbook.jp/info-testomo/"&gt;テス友&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>JSTQB Foundation Level への道</title><link>https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/</link><pubDate>Fri, 19 Sep 2025 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2025/09/19/road-to-jstqb-foundation-level/</guid><description>&lt;p&gt;JSTQB Foundation Level を学習する中で間違えやすいポイントを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="jstqb-foundation-level-シラバス-キーワード"&gt;JSTQB Foundation Level シラバス キーワード&lt;/h2&gt;
+&lt;h3 id="第-1章テストの基礎"&gt;第 1章：テストの基礎&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;カバレッジ (Coverage)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの徹底度を測る指標。トレーサビリティを維持することで、カバレッジの評価を支援する。カバレッジ基準は、テスト目的がどの程度達成しているかを示す活動を遂行するための KPI として機能する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.4, 4.2.1, 4.3.1, 4.3.2, 5.3.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;デバッグ (Debugging)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;故障の原因（欠陥）を発見し、解析し、取り除く活動。テストとは別の活動である。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.1.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;欠陥 (Defect)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;人間のエラーによって生み出されるもの。故障につながることもある。静的テストや動的テストで発見の支援をする。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.3, 5.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;エラー (Error)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;人間が起こす誤り。エラー推測は、この発生を予測する技法である。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.3, 4.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;故障 (Failure)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;欠陥が実行されることでシステムがすべきことをしない、またはすべきでないことをしてしまう結果。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;品質 (Quality)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ソフトウェアテストは、ソフトウェアの品質を評価し、運用環境で故障が発生するリスクを低減する手助けとなる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.2, 5.3.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;品質保証 (Quality Assurance, QA)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;プロセス指向の予防的アプローチであり、プロセスの実装と改善に焦点を当てる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;根本原因 (Root Cause)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;問題（例えばエラーにつながる状況）が発生する根底の理由。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト分析 (Test Analysis)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト可能なフィーチャーを識別し、関連するテスト条件を定義し優先順位を付ける活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストベース (Test Basis)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストケースを導出する元となる作業成果物など。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストケース (Test Case)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト条件を具現化したもの。テストケースの優先順位付けはテスト実行の順番を決める。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 4.2, 5.1.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト完了 (Test Completion)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;プロジェクトのマイルストーンで、テストウェアの保管、教訓の識別、テスト完了レポートの作成などを行う活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト条件 (Test Condition)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストベースを分析して定義するテスト対象の要素。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 4.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストコントロール (Test Control)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの目的を達成するために必要な行動（是正措置）をとる活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 5.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストデータ (Test Data)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト実行に必要なデータ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト設計 (Test Design)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト条件をテストケースやテストチャーターなどに落とし込む活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト実行 (Test Execution)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト実行スケジュールに従ってテストを走らせる活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト実装 (Test Implementation)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト実行に必要なテストウェア（テストプロシジャー、自動テストスクリプト、テストデータなど）を作成または取得する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストモニタリング (Test Monitoring)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;すべてのテスト活動を継続的にチェックし、実際の進捗をテスト計画と比較する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 5.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト対象 (Test Object)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストをする対象のソフトウェアアーティファクト。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト目的 (Test Objective)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストによって達成しようとする目的（例：欠陥の発見、品質評価、信頼の積み上げなど）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト計画 (Test Planning)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト目的を定義し、目的を最も効果的に達成するアプローチを選択する活動。テスト計画書を作成するプロセス。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 5.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストプロシジャー (Test Procedure)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストケースを順序立てて実行できるようにしたもの。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト結果 (Test Result)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの実行により得られる結果。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト (Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;欠陥を発見し、ソフトウェアアーティファクトの品質を評価するための一連の活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストウェア (Testware)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト活動によって出力される作業成果物（テスト計画書、テストケース、テストデータなど）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.4.1, 1.4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;妥当性確認 (Validation)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ユーザーやその他のステークホルダーのニーズを運用環境でシステムが満たしていることを確認する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;検証 (Verification)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;指定されている要件をシステムが満たすかどうかを確認する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="第-2章ソフトウェア開発ライフサイクル全体を通してのテスト"&gt;第 2章：ソフトウェア開発ライフサイクル全体を通してのテスト&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;受け入れテスト (Acceptance Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;妥当性確認と、デプロイの準備ができていることの実証に焦点を当てるテストレベル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ブラックボックステスト (Black-box Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;仕様に基づき、テスト対象の外観を示すドキュメントからテストを導出するテストタイプ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.2, 4.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;コンポーネント統合テスト (Component Integration Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コンポーネント間のインターフェース、および相互処理に焦点を当てるテストレベル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;コンポーネントテスト (Component Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コンポーネントを単独でテストすることに焦点を当てるテストレベル（ユニットテストとも呼ばれる）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;確認テスト (Confirmation Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;元の欠陥が正常に修正されたことを確認するテスト。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;機能テスト (Functional Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コンポーネント、およびシステムが実行する機能を評価するテストタイプ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;統合テスト (Integration Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コンポーネント統合テストやシステム統合テストなど、インターフェースや相互処理に焦点を当てるテスト。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;メンテナンステスト (Maintenance Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;システムへの変更や環境の更新に伴い実施されるテスト。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;非機能テスト (Non-functional Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コンポーネント、およびシステムが実行する機能特性以外の属性（性能、信頼性、使用性など）を評価するテストタイプ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リグレッションテスト (Regression Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;変更によって悪影響が生じないことを確認するテスト。自動化の有力な候補となる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;シフトレフト (Shift Left)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストを SDLC の早い段階で実行するアプローチ（早期テストの原則）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.1.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;システム統合テスト (System Integration Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト対象システムと他のシステム、外部サービスとのインターフェースのテストに焦点を当てるテストレベル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;システムテスト (System Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;システムやプロダクト全体の振る舞いや能力の全般に焦点を当てるテストレベル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストレベル (Test Level)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;系統的にまとめ、マネジメントしていくテスト活動のグループ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト対象 (Test Object)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストをする対象のコンポーネントまたはシステム。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストタイプ (Test Type)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;特定の品質特性に関連するテスト活動のグループ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ホワイトボックステスト (White-box Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;構造に基づき、システムの実装または内部構造からテストを導き出すテストタイプ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.2.2, 4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="第-3章静的テスト"&gt;第 3章：静的テスト&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;不正 (Anomaly)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;レビュー中に識別される、作業成果物中の誤り、不備、矛盾など。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.2, 5.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;動的テスト (Dynamic Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ソフトウェアの実行を伴うテスト。静的テストと相互に補完し合う。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.1.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;形式的レビュー (Formal Review)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;厳密な定義プロセスに従い、インスペクションなど監査証跡が必要な場合に使用するレビュー種別。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;非形式的レビュー (Informal Review)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;定義されたプロセスに従わず、正式に文書化されたアウトプットを必要としないレビュー種別。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;インスペクション (Inspection)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;最も形式的なレビュー種別であり、不正を最大数発見することを主な目的とする。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;レビュー (Review)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;人手による確認を通じて作業成果物を評価する静的テスト技法。レビュープロセスは柔軟な枠組みを提供する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.1, 3.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;静的解析 (Static Analysis)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ツールを使用して作業成果物を評価する静的テスト技法。コードの特定の欠陥を検出するために使用する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.1, 3.1.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;静的テスト (Static Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト対象のソフトウェアを実行せずに、人手やツールで評価するテスト。SDLC の初期段階で欠陥を検出できる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.1, 3.1.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テクニカルレビュー (Technical Review)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;技術的に適格なレビューアによって行われ、技術的な問題に関して合意を得て判断することを目的とするレビュー種別。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ウォークスルー (Walkthrough)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;作成者が主導し、品質評価、不正の検出など多くの目的を達成できるレビュー種別。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;3.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="第-4章テスト分析と設計"&gt;第 4章：テスト分析と設計&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;受け入れ基準 (Acceptance Criteria)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ユーザーストーリーの実装をステークホルダーが受け入れるために満たさなければならない条件。テスト条件とみなすことができる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.5.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;受け入れテスト駆動開発 (Acceptance Test-Driven Development, ATDD)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストファーストのアプローチで、顧客、開発担当者、テスト担当者などが共同でテストケースを作成する。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;2.1.3, 4.5.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ブラックボックステスト技法 (Black-box Test Technique)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト対象の内部構造を参照することなく、仕様上の振る舞いの分析に基づく技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.1, 4.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;境界値分析 (Boundary Value Analysis, BVA)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;同値パーティションの境界を確認することに基づいた技法。2値 BVA と 3値 BVA がある。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ブランチカバレッジ (Branch Coverage)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストケースによって通したコード内のブランチの数を計測するカバレッジ指標。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.3.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;チェックリストベースドテスト (Checklist-based Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;チェックリストのテスト条件をカバーするようにテストケースを設計、実行する経験ベースの技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;コラボレーションベースのテストアプローチ (Collaboration-based Test Approach)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;コラボレーションとコミュニケーションによる欠陥の回避に焦点を当てたアプローチ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;カバレッジ (Coverage)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの徹底度を測る指標。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2, 4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;カバレッジアイテム (Coverage Item)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト技法を適用した際に、テストによって通過させる必要がある要素。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2, 4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;デシジョンテーブルテスト (Decision Table Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;条件のさまざまな組み合わせがどのようにさまざまな結果をもたらすかを仕様化している要件の実装をテストするために使用する技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;同値分割法 (Equivalence Partitioning, EP)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;データを同値パーティションに分割し、各パーティションから 1 つの値をテストするテストケースを作成する技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;エラー推測 (Error Guessing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト担当者の知識に基づいて、エラー、欠陥、故障の発生を予測する経験ベースの技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;経験ベースのテスト技法 (Experience-based Test Technique)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストケースの設計と実装にテスト担当者の知識と経験を効果的に利用する技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;探索的テスト (Exploratory Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト担当者がテスト対象について学習しながら、テストケースを同時に設計、実行、評価する技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.4.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;状態遷移テスト (State Transition Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;システムの取り得る状態と有効な遷移をモデル化し、それに基づいてテストケースを導出する技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ステートメントカバレッジ (Statement Coverage)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストにより通過した実行可能なステートメント数を計測するカバレッジ指標。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.3.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト技法 (Test Technique)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;比較的少ないながらも十分なテストケースのセットを体系的に開発するのに役立つ手法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;ホワイトボックステスト技法 (White-box Test Technique)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト対象の内部構造や処理の分析に基づく技法。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;4.1, 4.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="第-5章テスト活動のマネジメント"&gt;第 5章：テスト活動のマネジメント&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;欠陥マネジメント (Defect Management)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;報告された不正を発見から終結まで処理するためのワークフローを含むプロセス。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;欠陥レポート (Defect Report)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;報告された欠陥の処理・解決のための情報を提供する、または作業成果物の品質を追跡する目的で作成する文書。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.5&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;開始基準 (Entry Criteria)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ある活動を行うための事前条件を定義するもの。アジャイルでは「準備完了（Ready）の定義」とも呼ぶ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;終了基準 (Exit Criteria)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;活動の完了を宣言するために何を達成しなければならないかを定義するもの。アジャイルでは「完了（done）の定義」とも呼ぶ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;プロダクトリスク (Product Risk)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;プロダクトの品質特性に関連するリスク。テストの深さと範囲に影響を与える。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.2, 5.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;プロジェクトリスク (Project Risk)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;プロジェクトのマネジメントや統制に関連するリスク（例：納期遅れ、スキル不足）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスク (Risk)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;顕在化することによって悪影響が生じる、潜在的な事象。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスク分析 (Risk Analysis)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスク識別とリスクアセスメント（可能性と影響の決定）から構成される活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクアセスメント (Risk Assessment)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;識別したリスクを分類し、リスクの可能性、リスクの影響、レベルを決定し、優先順位を付ける活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクコントロール (Risk Control)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスク軽減とリスクモニタリングから構成される、識別し評価したリスクに対応する手段。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスク識別 (Risk Identification)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスクの包括的なリストを作成する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクレベル (Risk Level)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスクの可能性とリスクの影響（損害）の二つの要素で表されるリスクの尺度。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクマネジメント (Risk Management)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;組織が目的を達成する可能性を高め、プロダクトの品質を向上させることを可能にする活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスク軽減 (Risk Mitigation)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスクアセスメントで提案された措置を実施し、リスクレベルを低減させること。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクモニタリング (Risk Monitoring)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスク軽減措置が効果的であることを確認し、新たなリスクを識別する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;リスクベースドテスト (Risk-based Testing)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;リスク分析とリスクコントロールに基づいてテスト活動を選択し、優先順位を付け、マネジメントしていくテストアプローチ。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストアプローチ (Test Approach)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト計画書の構成要素（テスト戦略やテストレベル、テストタイプ、テスト技法、テスト成果物など）。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト完了レポート (Test Completion Report)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの特定の段階の完了時に作成し、テスト活動を要約するレポート。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.3.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストコントロール (Test Control)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストモニタリングからの情報を用いて、必要な補正のアクションを提供する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストモニタリング (Test Monitoring)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストに関する情報を収集し、進捗を評価する活動。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.3&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト計画書 (Test Plan)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストプロジェクトの目的、リソース、プロセスを表す文書。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト計画 (Test Planning)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テスト計画書を作成するプロセス。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト進捗レポート (Test Progress Report)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストの継続的なコントロールを支援するために定期的に作成するレポート。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.3.2&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストピラミッド (Test Pyramid)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;異なるテストレベルにおける粒度とテスト自動化の度合いを示すモデル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.6&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テストの四象限 (Test Quadrants)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストレベルを、アジャイルソフトウェア開発における適切なテストタイプ、活動、技法、作業成果物に分類するモデル。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.1.7&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;構成管理 (Configuration Management, CM)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストウェアなどの作業成果物を識別、コントロール、トラッキングするための規律。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;5.4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="第-6章テストツール"&gt;第 6章：テストツール&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;キーワード&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;概要（シラバス記載の学習対象の例）&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;参照節（ソースの該当箇所）&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;テスト自動化 (Test Automation)&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;テストツールを使用し、反復作業の削減や一貫性の向上などの利点をもたらす活動。ツールの導入、保守、トレーニングが必要となる。&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;6.2, 6.2.1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道 その2</title><link>https://kkawazoe.github.io/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/</link><pubDate>Sun, 19 May 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/19/new-road-to-aws-certified-solutions-architect-associate-part2/</guid><description>&lt;p&gt;AWS 認定ソリューションアーキテクト - アソシエイトを学習する中で間違えやすいポイントを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/"&gt;(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="受験結果"&gt;受験結果&lt;/h2&gt;
+&lt;p&gt;無事に合格した&lt;br&gt;
+実際に組んでみたり、ベストプラクティスを確認することが大事だと感じた&lt;/p&gt;
+&lt;h2 id="勉強に使用したもの"&gt;勉強に使用したもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.udemy.com/course/aws-associate/?couponCode=LEADERSALE24A"&gt;udemy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>(新) AWS 認定ソリューションアーキテクト - アソシエイトへの道</title><link>https://kkawazoe.github.io/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/</link><pubDate>Thu, 16 May 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/05/16/new-road-to-aws-certified-solutions-architect-associate/</guid><description>&lt;p&gt;AWS 認定ソリューションアーキテクト - アソシエイトを学習する中で間違えやすいポイントを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="ec2"&gt;EC2&lt;/h2&gt;
+&lt;h3 id="auto-scaling"&gt;Auto Scaling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;動的スケーリング
+&lt;ul&gt;
+&lt;li&gt;簡易スケーリングポリシー(ターゲッツ追跡スケーリングポリシー)
+&lt;ul&gt;
+&lt;li&gt;一定の CPU 利用に応じてスケーリングを実行する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ステップスケーリングポリシー
+&lt;ul&gt;
+&lt;li&gt;スケールさせるインスタンス数を段階的に増やすステップを設定する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ターミネーションポリシー
+&lt;ul&gt;
+&lt;li&gt;スケールイン時のインスタンスを終了させる方法を定義する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;手動スケーリング
+&lt;ul&gt;
+&lt;li&gt;希望する容量を調整して、手動でスケーリングを実施する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;スケジュールさせたスケーリング
+&lt;ul&gt;
+&lt;li&gt;スケーリングを実施する日時を指定して、スケーリングを実行する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="aws-nitro-enclaves"&gt;AWS Nitro Enclaves&lt;/h3&gt;
+&lt;p&gt;高度な機密情報の保護や安全措置を向上する、分離されたコンピューティング環境を作成することができる&lt;/p&gt;
+&lt;h3 id="ebs"&gt;EBS&lt;/h3&gt;
+&lt;h4 id="ebs-のコピーについて"&gt;EBS のコピーについて&lt;/h4&gt;
+&lt;p&gt;EBS 自体は別リージョンに移動して利用することはできない&lt;br&gt;
+以下のような手順が必要&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;スナップショットを作成
+&lt;ul&gt;
+&lt;li&gt;S3 スナップショットが格納される&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;別リージョンの S3 にコピーする&lt;/li&gt;
+&lt;li&gt;別リージョンのEBS に復元する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="ebs-の-raid-構成"&gt;EBS の RAID 構成&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;RAID 0
+&lt;ul&gt;
+&lt;li&gt;目的
+&lt;ul&gt;
+&lt;li&gt;パフォーマンスを向上させる&lt;/li&gt;
+&lt;li&gt;複数のディスクを 1 台のディスクのように扱う
+&lt;ul&gt;
+&lt;li&gt;読み書きを高速化する構成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ストライピング&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RAID 1
+&lt;ul&gt;
+&lt;li&gt;目的
+&lt;ul&gt;
+&lt;li&gt;ボリュームの冗長性を高める&lt;/li&gt;
+&lt;li&gt;2 つのボリュームを同時にミラーリングする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="efs"&gt;EFS&lt;/h3&gt;
+&lt;h4 id="vpc-内の-amazon-efs-ファイルシステムにアクセスする"&gt;VPC 内の Amazon EFS ファイルシステムにアクセスする&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;VPC に 1 つ以上のマウントターゲットを作成する必要がある
+&lt;ul&gt;
+&lt;li&gt;リージョンファイルシステム
+&lt;ul&gt;
+&lt;li&gt;AWS リージョン内の各アベイラビリティーゾーンにマウントターゲットを作成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1 ゾーンファイルシステム
+&lt;ul&gt;
+&lt;li&gt;ファイルシステムと同じアベイラビリティーゾーンにマウントターゲットを 1 つだけ作成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="vpc"&gt;VPC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Direct Connect
+&lt;ul&gt;
+&lt;li&gt;Direct Connect は AWS とオンプレミス環境間の専用線接続サービス&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="ゲートウェイ型エンドポイント"&gt;ゲートウェイ型エンドポイント&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;VPC 内の EC2 インスタンスから、プライベートネットワークを経由する&lt;br&gt;
+VPC 外の Amazon DynamoDB テーブルにアクセスする際に使用
+&lt;ul&gt;
+&lt;li&gt;VPC にゲートウェイエンドポイントを構成して、DynamoDB にルートを設定することが必要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DynamoDB と Amazon S3 にのみ適用可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="プライペートリンク型エンドポイントインターフェース型"&gt;プライペートリンク型エンドポイント(インターフェース型)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;プライベート IP アドレスを使用してサービスにプライベートにアクセスする&lt;/li&gt;
+&lt;li&gt;AWS PrivateLink は VPC とサービス間のすべてのネットワークトラフィックを Amazon ネットワークに制限&lt;/li&gt;
+&lt;li&gt;RDS, EC2 など多くの AWS サービスに適用可能
+&lt;ul&gt;
+&lt;li&gt;2022 年より Amazon S3 に対応 ※DynamoDB は未対応&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sqs"&gt;SQS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;可視性タイムアウト
+&lt;ul&gt;
+&lt;li&gt;他のカスタマーがそのメッセージの受信や処理できなくなる期間
+&lt;ul&gt;
+&lt;li&gt;デフォルトは 30 秒 ※最小は 0 秒で最大は 12 時間&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;デッドレターキュー
+&lt;ul&gt;
+&lt;li&gt;エラーのためにソフトウェアシステムが処理できないメッセージを一時的に保存する特別なタイプのメッセージキュー&lt;/li&gt;
+&lt;li&gt;デフォルトでは有効でない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="kinesis"&gt;Kinesis&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kinesis Agent
+&lt;ul&gt;
+&lt;li&gt;Kinesis サービスにデータを簡単に収集して取り込む OSS のスタンドアロン Java アプリケーション&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kinesis Producer Library (KPL)
+&lt;ul&gt;
+&lt;li&gt;Kinesis Streams にデータを送信する OSS の補助ライブラリ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fluent plugin for Amazon Kinesis
+&lt;ul&gt;
+&lt;li&gt;Kinesis Streams と Kinesis Firehose にイベントを送信する OSS の Fluentd 出力プラグイン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kinesis Data Generator (KDG)
+&lt;ul&gt;
+&lt;li&gt;KDG を利用して Kinesis Streams or Kinesis Firehose にテストデータを簡単に送信できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kinesis Client Library (KCL)
+&lt;ul&gt;
+&lt;li&gt;KCL を利用して Kinesis アプリケーションを作成する&lt;/li&gt;
+&lt;li&gt;OSS のクライアントライブラリで EC2 インスタンスなどにデプロイして利用する&lt;/li&gt;
+&lt;li&gt;ワーカーがシャード数に応じて、レコードプロセッサのライフサイクル管理(生成/終了)を実施&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="kinesis-のサービス"&gt;Kinesis のサービス&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kinesis Data Analytics
+&lt;ul&gt;
+&lt;li&gt;SQL や Java(Apache Flink) を使ってストリーミングデータに対してリアルタイム分析を行うことが出来るマネージドサービス&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kinesis Data Firehose
+&lt;ul&gt;
+&lt;li&gt;実行内容
+&lt;ul&gt;
+&lt;li&gt;データ形式の変換&lt;/li&gt;
+&lt;li&gt;データの配信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;処理速度
+&lt;ul&gt;
+&lt;li&gt;60 秒感覚のバッチ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;データ保存
+&lt;ul&gt;
+&lt;li&gt;ストリーム配信自体にはデータ保存不可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kinesis Data Streams
+&lt;ul&gt;
+&lt;li&gt;実行内容
+&lt;ul&gt;
+&lt;li&gt;高速なデータ処理&lt;/li&gt;
+&lt;li&gt;データ分析・集計&lt;/li&gt;
+&lt;li&gt;複雑なストリーム処理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;処理速度
+&lt;ul&gt;
+&lt;li&gt;ミリ秒単位のリアルタイム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;データ保存
+&lt;ul&gt;
+&lt;li&gt;24 時間 〜 365 日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="s3"&gt;S3&lt;/h2&gt;
+&lt;h3 id="アクセス制限について"&gt;アクセス制限について&lt;/h3&gt;
+&lt;p&gt;特定の S3 バケットへのアクセス制限は対象によってやり方が異なる&lt;/p&gt;</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その5</title><link>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</link><pubDate>Mon, 05 Dec 2022 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/05/road-to-ruby-gold-ver-3-part5/</guid><description>&lt;p&gt;Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/"&gt;Ruby Gold 認定試験 Ver 3 への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/"&gt;Ruby Gold 認定試験 Ver 3 への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/"&gt;Ruby Gold 認定試験 Ver 3 への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/"&gt;Ruby Gold 認定試験 Ver 3 への道 その4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="受験結果"&gt;受験結果&lt;/h2&gt;
+&lt;p&gt;無事に合格した&lt;br&gt;
+前回、 ver 2 受験時と難易度的には同じくらいだったように思う&lt;br&gt;
+なので、基本的にはオブジェクト指向周りを再確認する&lt;br&gt;
+3 系から追加された 「hash 明示(**hash)」などはリリースノートで確認して置いた方が良いが 2.2 〜 2.7 系での変更点についても押さえておくとより良いと思う&lt;br&gt;
+&lt;a href="https://github.com/ruby/ruby/blob/v3_0_0/NEWS.md"&gt;NEWS for Ruby 3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.ruby-lang.org/ja/news/2020/12/25/ruby-3-0-0-released/"&gt;Ruby 3.0.0 リリースノート&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="勉強に使用したもの"&gt;勉強に使用したもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ruby-association/prep-test/blob/version3/gold_ja.md"&gt;公式の模擬問題&lt;/a&gt;&lt;br&gt;
+基本的には、上記をやって該当のコードを自分でコーディングしながら、色々変更して動作確認するのが一番良さそう&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その4</title><link>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</link><pubDate>Thu, 01 Dec 2022 13:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/12/01/road-to-ruby-gold-ver-3-part4/</guid><description>&lt;p&gt;Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/"&gt;Ruby Gold 認定試験 Ver 3 への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/"&gt;Ruby Gold 認定試験 Ver 3 への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/"&gt;Ruby Gold 認定試験 Ver 3 への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ruby: 3.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="キーワード引数"&gt;キーワード引数&lt;/h3&gt;
+&lt;p&gt;キーワード引数で &lt;code&gt;a:&lt;/code&gt; のようなデフォルト値を指定しない場合、構文エラーにはならないが、呼び出し時に指定しなかった場合に &lt;code&gt;ArgumentError&lt;/code&gt; になる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;KeywordArgument&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;foo&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;a&lt;/span&gt;:, &lt;span style="color:#e6db74"&gt;b&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;bbb&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;a: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;a&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;, b: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;b&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;keyword_argument &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;KeywordArgument&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;new
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;keyword_argument&lt;span style="color:#f92672"&gt;.&lt;/span&gt;foo(&lt;span style="color:#e6db74"&gt;a&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;aaa&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;b&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;BBB&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; a: aaa, b: BBB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;keyword_argument&lt;span style="color:#f92672"&gt;.&lt;/span&gt;foo(&lt;span style="color:#e6db74"&gt;a&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#39;aaa&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; a: aaa, b: bbb&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;keyword_argument&lt;span style="color:#f92672"&gt;.&lt;/span&gt;foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; ./keyword_argument.rb:2:in `foo&amp;#39;: missing keyword: :a (ArgumentError)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt;	from ./keyword_argument.rb:8:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="グローバル変数-クラス変数-インスタンス変数"&gt;グローバル変数, クラス変数, インスタンス変数&lt;/h3&gt;
+&lt;h4 id="グローバル変数"&gt;グローバル変数&lt;/h4&gt;
+&lt;p&gt;グローバル変数のため全体で同じ変数を参照&lt;/p&gt;</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その3</title><link>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</link><pubDate>Fri, 25 Nov 2022 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/25/road-to-ruby-gold-ver-3-part3/</guid><description>&lt;p&gt;Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/"&gt;Ruby Gold 認定試験 Ver 3 への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/"&gt;Ruby Gold 認定試験 Ver 3 への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ruby: 3.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="public_send-メソッド"&gt;public_send メソッド&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Object#public_send&lt;/code&gt; メソッドは private メソッドを呼び出せない&lt;br&gt;
+&lt;code&gt;private_send&lt;/code&gt; メソッドは存在しない ※private メソッドを
+呼び出す場合は &lt;code&gt;Object#send&lt;/code&gt; or &lt;code&gt;BasicObject#__send__&lt;/code&gt; メソッドを使用する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;PublicTest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;public_method&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;call public methods&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;private_method&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;call private methods&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;test &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;PublicTest&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;new
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;test&lt;span style="color:#f92672"&gt;.&lt;/span&gt;public_method
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;test&lt;span style="color:#f92672"&gt;.&lt;/span&gt;private_method
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; call public methods&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; public_send.rb:17:in `&amp;lt;main&amp;gt;&amp;#39;: private method `private_method&amp;#39; called for #&amp;lt;PublicTest:0x00000001046769e8&amp;gt; (NoMethodError)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; test.private_method&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; Did you mean? private_methods&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="begin--rescue-でエラークラスを省略した際の動作"&gt;begin &amp;amp; rescue でエラークラスを省略した際の動作&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ExceptionTest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;foo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;begin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exit
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;rescue&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; e
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;Default Rescue&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;rescue&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;SystemExit&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; e
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;System Exit&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;ensure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;Ensure&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#39;End&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;t &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;ExceptionTest&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;new
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;t&lt;span style="color:#f92672"&gt;.&lt;/span&gt;foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; System Exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; Ensure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; End&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="定数の書き換え"&gt;定数の書き換え&lt;/h3&gt;
+&lt;p&gt;メソッド内での書き換えは不可&lt;/p&gt;</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道 その2</title><link>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</link><pubDate>Thu, 24 Nov 2022 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/24/road-to-ruby-gold-ver-3-part2/</guid><description>&lt;p&gt;Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/"&gt;Ruby Gold 認定試験 Ver 3 への道&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ruby: 3.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="__file__"&gt;&lt;code&gt;__FILE__&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;__FILE__&lt;/code&gt; が書いてあるファイルのファイル名を表す
+似たようなので $0 があるがこちらは直接実行したファイルのファイル名を表す&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb:file_name.rb" data-lang="rb:file_name.rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;puts __FILE__
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;puts $0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb:require_file_name.rb" data-lang="rb:require_file_name.rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;require_relative &lt;span style="color:#e6db74"&gt;&amp;#39;./file_name&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ruby file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;__FILE__: file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$0: file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ruby require_file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;__FILE__: file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$0: require_file_name&lt;span style="color:#f92672"&gt;.&lt;/span&gt;rb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="累乗の計算"&gt;累乗の計算&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;exponentiation&lt;/span&gt;(n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; n &lt;span style="color:#f92672"&gt;**&lt;/span&gt; n
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;puts exponentiation(&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;) &lt;span style="color:#75715e"&gt;#=&amp;gt; -1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;puts exponentiation(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;i) &lt;span style="color:#75715e"&gt;#=&amp;gt; 0.20787957635076193+0.0i 複素数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="正規表現--の-1-等"&gt;正規表現 =~ の $1 等&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb:regex.rb" data-lang="rb:regex.rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;www.ruby.co.jp&amp;#39;&lt;/span&gt;&lt;span style="color:#f92672"&gt;.&lt;/span&gt;match(&lt;span style="color:#e6db74"&gt;%r(www(\.ruby\.co)(\.jp))&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;do&lt;/span&gt; &lt;span style="color:#f92672"&gt;|&lt;/span&gt;e&lt;span style="color:#f92672"&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match e= &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;e&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match e[0]= &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;e&lt;span style="color:#f92672"&gt;[&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match e[1]= &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;e&lt;span style="color:#f92672"&gt;[&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match e[2]= &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;e&lt;span style="color:#f92672"&gt;[&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match $0 &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;$0&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match $&amp;amp; &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;$&amp;amp;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match $1 &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;$1&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; puts &lt;span style="color:#e6db74"&gt;&amp;#34;match $2 &lt;/span&gt;&lt;span style="color:#e6db74"&gt;#{&lt;/span&gt;$2&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match e= www.ruby.co.jp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match e[0]= www.ruby.co.jp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match e[1]= .ruby.co&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match e[2]= .jp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match $0 regex.rb # 実行ファイル名&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match $&amp;amp; www.ruby.co.jp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match $1 .ruby.co&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; match $2 .jp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Ruby Gold 認定試験 Ver 3 への道</title><link>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</link><pubDate>Wed, 23 Nov 2022 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/11/23/road-to-ruby-gold-ver-3/</guid><description>&lt;p&gt;Ruby Gold 認定試験の Ver 3 の勉強時に学んだことを備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ruby: 3.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="numbered-parameters"&gt;Numbered parameters&lt;/h3&gt;
+&lt;p&gt;_1 から始まる _1, _2 で 第一引数, 第二引数の意味となる&lt;/p&gt;
+&lt;p&gt;以下は同じ意味&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h &lt;span style="color:#f92672"&gt;=&lt;/span&gt; { &lt;span style="color:#e6db74"&gt;a&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;b&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;c&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h&lt;span style="color:#f92672"&gt;.&lt;/span&gt;transform_values{&lt;span style="color:#f92672"&gt;|&lt;/span&gt;v&lt;span style="color:#f92672"&gt;|&lt;/span&gt; v &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h&lt;span style="color:#f92672"&gt;.&lt;/span&gt;transform_values{_1 &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h &lt;span style="color:#f92672"&gt;=&lt;/span&gt; { &lt;span style="color:#e6db74"&gt;a&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;b&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;c&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h&lt;span style="color:#f92672"&gt;.&lt;/span&gt;map{&lt;span style="color:#f92672"&gt;|&lt;/span&gt;key, value&lt;span style="color:#f92672"&gt;|&lt;/span&gt; &lt;span style="color:#f92672"&gt;[&lt;/span&gt;key, value &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;]&lt;/span&gt;}&lt;span style="color:#f92672"&gt;.&lt;/span&gt;to_h
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h &lt;span style="color:#f92672"&gt;=&lt;/span&gt; { &lt;span style="color:#e6db74"&gt;a&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;b&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;c&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;h&lt;span style="color:#f92672"&gt;.&lt;/span&gt;map{&lt;span style="color:#f92672"&gt;[&lt;/span&gt;_1, _2 &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;]&lt;/span&gt;}&lt;span style="color:#f92672"&gt;.&lt;/span&gt;to_h
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; {:a=&amp;gt;2, :b=&amp;gt;4, :c=&amp;gt;6}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; hash に対して map! はエラーとなる&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="eof--eof-eof-の動作の違い"&gt;&lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt;, &lt;code&gt;&amp;lt;&amp;lt;-EOF&lt;/code&gt;, &lt;code&gt;&amp;lt;&amp;lt;~EOF&lt;/code&gt; の動作の違い&lt;/h3&gt;
+&lt;p&gt;詳細は &lt;a href="https://docs.ruby-lang.org/ja/latest/doc/spec=2fliteral.html#here"&gt;ヒアドキュメント&lt;/a&gt; 参照&lt;/p&gt;
+&lt;p&gt;・&lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-rb" data-lang="rb"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;EOF # 識別子 EOF までがリテラルになる
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&lt;/span&gt; the string
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;next&lt;/span&gt; line
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下と同じ意味&lt;/p&gt;</description></item><item><title>FP3級への道 その7</title><link>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</link><pubDate>Sat, 06 Jul 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/07/06/road-to-fp3-part7/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/"&gt;FP3級への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/"&gt;FP3級への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/"&gt;FP3級への道 その4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/"&gt;FP3級への道 その5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/"&gt;FP3級への道 その6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="受験結果"&gt;受験結果&lt;/h2&gt;
+&lt;h3 id="2019年5月"&gt;2019年5月&lt;/h3&gt;
+&lt;p&gt;一応　FP 3級合格&lt;br&gt;
+勉強時間は一月半程度&lt;br&gt;
+後半 2週間は過去2, 3年分の過去問を中心に解いて解説および関連する分野を勉強した&lt;br&gt;
+FP に関しては試験受ける・受けないはともかくとして勉強自体はやって良かったと思う&lt;br&gt;
+2級以上を受験するかどうかは今のところ不明だがモチベーションが上がれば挑戦したい&lt;/p&gt;
+&lt;h3 id="種目別試験結果ファイナンシャルプランニング技能検定"&gt;【種目別試験結果】ファイナンシャル・プランニング技能検定&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.kinzai.or.jp/fp/news-fp/23815.html"&gt;公式サイト&lt;/a&gt;で確認すると今回の合格率は以下&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: right"&gt;等級&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;学科/実技&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;試験科目&lt;/th&gt;
+ &lt;th style="text-align: right"&gt;合格率&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: right"&gt;3級&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;学科&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;/td&gt;
+ &lt;td style="text-align: right"&gt;42.76％&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: right"&gt;3級&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;実技&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;個人資産相談業務&lt;/td&gt;
+ &lt;td style="text-align: right"&gt;54.35％&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;大体例年通りくらいの合格率だったらしい&lt;/p&gt;</description></item><item><title>FP3級への道 その6</title><link>https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/</link><pubDate>Tue, 30 Apr 2019 00:00:19 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/30/road-to-fp3-part6/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/"&gt;FP3級への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/"&gt;FP3級への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/"&gt;FP3級への道 その4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/"&gt;FP3級への道 その5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="金融資産運用"&gt;金融資産運用&lt;/h2&gt;
+&lt;h3 id="債権"&gt;債権&lt;/h3&gt;
+&lt;h4 id="債権の利回り"&gt;債権の利回り&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接利回り&lt;/p&gt;
+&lt;p&gt;投資金額(購入価格)に対する毎年の利息収入の割合&lt;/p&gt;
+&lt;p&gt;$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$&lt;/p&gt;
+&lt;p&gt;$$ 直接利回り(\%) = \frac{表面利率}{購入価格} \times 100 $$&lt;/p&gt;
+&lt;p&gt;例えば、表面利率1%の債権を102万円で購入した場合(小数点以下第3位を四捨五入)&lt;/p&gt;
+&lt;p&gt;$$ \frac{1%}{102円} \times 100 ≒ 0.98% $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;応募者利回り&lt;/p&gt;
+&lt;p&gt;債権の発行時に購入し、償還まで所有した場合の利回り&lt;/p&gt;
+&lt;p&gt;$$ 応募者利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 発行価格}{償還期限(年)}}{発行価格} \times 100 $$&lt;/p&gt;
+&lt;p&gt;例えば、表面利率1%、発行価格98円、償還期限5年の債権を購入した場合(小数点以下第3位を四捨五入)&lt;/p&gt;
+&lt;p&gt;$$ \frac{1% + \frac{100円 - 98円}{5年}}{98円} \times 100 ≒ 1.43% $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最終利回り&lt;/p&gt;
+&lt;p&gt;既に発行されている債権を時価で購入し、償還まで所有した場合の利回り&lt;/p&gt;
+&lt;p&gt;$$ 最終利回り(\%) = \frac{表面利率 + \frac{額面(100円) - 購入価格}{残存年数(年)}}{購入価格} \times 100 $$&lt;/p&gt;</description></item><item><title>FP3級への道 その5</title><link>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</link><pubDate>Fri, 26 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/26/road-to-fp3-part5/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/"&gt;FP3級への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/"&gt;FP3級への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/"&gt;FP3級への道 その4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="金融資産運用"&gt;金融資産運用&lt;/h2&gt;
+&lt;h3 id="株式"&gt;株式&lt;/h3&gt;
+&lt;h4 id="株式投資に用いる指標"&gt;株式投資に用いる指標&lt;/h4&gt;
+&lt;p&gt;$$ PER(倍) = \frac{株価}{一株当たりの純利益(EPS)} $$&lt;/p&gt;
+&lt;p&gt;※PER が低い銘柄は &lt;em&gt;割安&lt;/em&gt; 、高い銘柄は&lt;em&gt;割高&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ PBR(倍) = \frac{株価}{一株当たりの純資産(BPS)} $$&lt;/p&gt;
+&lt;p&gt;※PBR が低い(1倍に近い)銘柄は &lt;em&gt;割安&lt;/em&gt; 、高い銘柄は&lt;em&gt;割高&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ ROE(\%) = \frac{税引後当期純利益}{自己資本(純資産)} \times 100 $$&lt;/p&gt;
+&lt;p&gt;$$ 配当利回り(\%) = \frac{一株当たりの配当金}{株価} \times 100 $$&lt;/p&gt;
+&lt;p&gt;$$ 配当性向(\%) = \frac{配当金総額}{税引後当期純利益} \times 100 $$&lt;/p&gt;
+&lt;p&gt;$$ 自己資本比率(\%) = \frac{自己資本(純資産)}{総資産(負債 + 純資産)} \times 100 $$&lt;/p&gt;
+&lt;h3 id="参考にした教本"&gt;参考にした教本&lt;/h3&gt;
+&lt;p&gt;上記内容は以下の教本の内容を参考にしてます&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;span style="font-size: smaller"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;2018-2019年版　みんなが欲しかった！　FPの問題集3級&lt;/a&gt;&lt;br /&gt;&lt;br /&gt; 滝澤ななみ TAC 2018年05月22日&lt;br /&gt; 売り上げランキング : &lt;br /&gt;&lt;table style="border:none"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;楽天ブックスで購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt; &lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://yomereba.com" rel="nofollow" target="_blank"&gt;ヨメレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description></item><item><title>FP3級への道 その4</title><link>https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/25/road-to-fp3-part4/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/"&gt;FP3級への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/"&gt;FP3級への道 その3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="リスクマネジメント"&gt;リスクマネジメント&lt;/h2&gt;
+&lt;h3 id="火災保険"&gt;火災保険&lt;/h3&gt;
+&lt;h4 id="補償の範囲"&gt;補償の範囲&lt;/h4&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;損害&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;住宅火災保険&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;住宅総合保険&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;火災、落雷、爆発、破裂&lt;br&gt;風災、雹災、雪災&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;水害(水災)&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;×&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;給排水設備事故による水漏れ&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;×&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;盗難&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;×&lt;/em&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;◯&lt;/em&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;外部からの落下、飛来、衝突&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;×&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;持出家財の損害&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;×&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;◯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;地震、噴火、津波&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;×&lt;/em&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;×&lt;/em&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="傷害保険"&gt;傷害保険&lt;/h3&gt;
+&lt;h4 id="主な傷害保険"&gt;主な傷害保険&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;普通傷害保険
+&lt;ul&gt;
+&lt;li&gt;国内外を問わず、日常生活で起こる傷害を補償する保険&lt;br&gt;
+※病気、&lt;em&gt;細菌性食中毒&lt;/em&gt;、自殺、地震、噴火、津波を原因とする傷害は&lt;em&gt;対象外&lt;/em&gt;&lt;br&gt;
+=&amp;gt; 1つの契約で家族全員が補償される「家族傷害保険」もある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;交通事故傷害保険
+&lt;ul&gt;
+&lt;li&gt;国内外で起きた交通事故、建物や乗り物の火災などによる傷害を保証する保険&lt;br&gt;
+=&amp;gt; 1つの契約で家族全員が補償される「ファミリー交通傷害保険」もある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;国内旅行傷害保険
+&lt;ul&gt;
+&lt;li&gt;国内旅行中の傷害を補償する保険&lt;br&gt;
+※&lt;em&gt;細菌性食中毒&lt;/em&gt;は保証の&lt;em&gt;対象&lt;/em&gt;だが、地震などによる傷害は&lt;em&gt;対象外&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;海外旅行傷害保険
+&lt;ul&gt;
+&lt;li&gt;海外旅行中(家を出てから帰宅するまで)の傷害を補償する保険&lt;br&gt;
+※&lt;em&gt;細菌性食中毒&lt;/em&gt;、地震、噴火、津波による傷害も補償の&lt;em&gt;対象&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="参考にした教本"&gt;参考にした教本&lt;/h3&gt;
+&lt;p&gt;上記内容は以下の教本の内容を参考にしてます&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;span style="font-size: smaller"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;2018-2019年版　みんなが欲しかった！　FPの問題集3級&lt;/a&gt;&lt;br /&gt;&lt;br /&gt; 滝澤ななみ TAC 2018年05月22日&lt;br /&gt; 売り上げランキング : &lt;br /&gt;&lt;table style="border:none"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;楽天ブックスで購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt; &lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://yomereba.com" rel="nofollow" target="_blank"&gt;ヨメレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description></item><item><title>FP3級への道 その3</title><link>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</link><pubDate>Wed, 24 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/24/road-to-fp3-part3/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;[前回までの記事]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/"&gt;FP3級への道 その2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="リスクマネジメント"&gt;リスクマネジメント&lt;/h2&gt;
+&lt;h3 id="生命保険と税金"&gt;生命保険と税金&lt;/h3&gt;
+&lt;h4 id="生命保険金を受け取った時の税金"&gt;生命保険金を受け取った時の税金&lt;/h4&gt;
+&lt;p&gt;契約や、被保険者、受取人が誰かによって課される税金が異なる&lt;/p&gt;
+&lt;p&gt;[死亡保険金の場合]&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;契約者&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;被保険者&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;受取人&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;税金&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;B&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;相続&lt;/em&gt;税&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;B&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;所得&lt;/em&gt;税(&lt;em&gt;一時&lt;/em&gt;所得)&lt;br&gt;&lt;em&gt;住民&lt;/em&gt;税&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;B&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;C&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;贈与&lt;/em&gt;税&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;[満期保険金の場合]&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;契約者&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;被保険者&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;受取人&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;税金&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;誰でも&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;所得&lt;/em&gt;税(&lt;em&gt;一時&lt;/em&gt;所得)&lt;br&gt;&lt;em&gt;住民&lt;/em&gt;税&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;A&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;誰でも&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;B&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;em&gt;贈与&lt;/em&gt;税&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;[非課税となる保険金や給付金]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;入院給付金&lt;/li&gt;
+&lt;li&gt;高度障害保険金&lt;/li&gt;
+&lt;li&gt;手術給付金&lt;/li&gt;
+&lt;li&gt;特定疾病保険金&lt;/li&gt;
+&lt;li&gt;リビングニーズ特約保険金&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;等&lt;/p&gt;
+&lt;h3 id="参考にした教本"&gt;参考にした教本&lt;/h3&gt;
+&lt;p&gt;上記内容は以下の教本の内容を参考にしてます&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;span style="font-size: smaller"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;2018-2019年版　みんなが欲しかった！　FPの問題集3級&lt;/a&gt;&lt;br /&gt;&lt;br /&gt; 滝澤ななみ TAC 2018年05月22日&lt;br /&gt; 売り上げランキング : &lt;br /&gt;&lt;table style="border:none"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;楽天ブックスで購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt; &lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://yomereba.com" rel="nofollow" target="_blank"&gt;ヨメレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description></item><item><title>FP3級への道 その2</title><link>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</link><pubDate>Mon, 22 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/22/road-to-fp3-part2/</guid><description>&lt;p&gt;学習中に間違えやすいと思った点を備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;前回の記事: &lt;a href="https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/"&gt;FP3級への道&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="ライフプランニングの手法"&gt;ライフプランニングの手法&lt;/h2&gt;
+&lt;h3 id="ライフプランニングを行う際に利用するツール"&gt;ライフプランニングを行う際に利用するツール&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ライフイベント表&lt;br&gt;
+家族の将来のライフイベントと、それに必要な資金の額を時系列にまとめた表&lt;/li&gt;
+&lt;li&gt;キャッシュフロー表&lt;br&gt;
+ライフイベント表と現在の収支状況に基づいて、将来の収支状況と貯蓄残高の予想を&lt;br&gt;
+まとめた表&lt;/li&gt;
+&lt;li&gt;個人バランスシート&lt;br&gt;
+一定時点における資産と負債のバランスを見るための表&lt;br&gt;
+※[可処分所得] = [年収] - (社会保険料 + 所得税 + 住民税)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="資金計画を立てる際の6つの係数"&gt;資金計画を立てる際の6つの係数&lt;/h3&gt;
+&lt;h4 id="終価係数"&gt;終価係数&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;現在の金額&lt;/code&gt;を複利で運用した場合の、&lt;code&gt;一定期間後の金額&lt;/code&gt;を求める場合に用いる係数&lt;/p&gt;
+&lt;p&gt;例. 100万円を年利3%で運用した場合の7年後の金額はいくらか？&lt;/p&gt;
+&lt;h4 id="現価係数"&gt;現価係数&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;一定期間後&lt;/code&gt;に&lt;code&gt;一定金額に達する&lt;/code&gt;ために&lt;code&gt;必要な原本&lt;/code&gt;を求めるのに用いる係数&lt;/p&gt;
+&lt;p&gt;例. 年利3%で7年後に100万円を用意するためには、元本がいくら必要になるか？&lt;/p&gt;
+&lt;h4 id="年金終価係数"&gt;年金終価係数&lt;/h4&gt;
+&lt;p&gt;毎年&lt;code&gt;一定金額を積み立てた&lt;/code&gt;場合の、&lt;code&gt;一定期間後の元利合計&lt;/code&gt;を求める場合に用いる係数&lt;/p&gt;
+&lt;p&gt;例. 年利3%、毎年10万円を7年後の金額はいくらか？&lt;/p&gt;
+&lt;h4 id="減債基金係数"&gt;減債基金係数&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;一定期間後&lt;/code&gt;に&lt;code&gt;一定金額&lt;/code&gt;を用意するための、&lt;code&gt;毎年の積立額&lt;/code&gt;を計算するための係数&lt;/p&gt;
+&lt;p&gt;例. 年利3%、７年後に100万円を用意するためには毎年いくら積み立てる必要があるか？&lt;/p&gt;
+&lt;h4 id="資本回収係数"&gt;資本回収係数&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;現在の一定金額&lt;/code&gt;を&lt;code&gt;一定期間で取り崩した&lt;/code&gt;場合の、&lt;code&gt;毎年の受取金額&lt;/code&gt;を計算するための係数&lt;/p&gt;
+&lt;p&gt;例. 100万円を年利2%で運用しながら7年噛んで取り崩した場合の毎年の受取金額はいくら？&lt;/p&gt;
+&lt;h4 id="年金現価係数"&gt;年金現価係数&lt;/h4&gt;
+&lt;p&gt;将来の&lt;code&gt;一定期間に渡って&lt;/code&gt;、&lt;code&gt;一定額を受け取る&lt;/code&gt;ために&lt;code&gt;必要な元本&lt;/code&gt;を計算するための係数&lt;/p&gt;
+&lt;p&gt;例. 7年間に渡って、10万円ずつ受け取りたい&lt;br&gt;
+年利3%とした場合、必要な元本はいくらか？&lt;/p&gt;
+&lt;h3 id="終価係数と年金終価係数の違い"&gt;終価係数と年金終価係数の違い&lt;/h3&gt;
+&lt;p&gt;終価係数は、&lt;code&gt;現在の金額&lt;/code&gt;を複利で運用した場合の&lt;code&gt;金額&lt;/code&gt;を求めるための係数&lt;br&gt;
+=&amp;gt; 定期預金のイメージ&lt;br&gt;
+年金終価係数は、毎年&lt;code&gt;一定金額を積み立てた&lt;/code&gt;場合の&lt;code&gt;一定期間後の元利合計&lt;/code&gt;を求めるための係数&lt;br&gt;
+=&amp;gt; 積立定期預金のイメージ&lt;/p&gt;
+&lt;h3 id="減債基金係数と資本回収係数の違い"&gt;減債基金係数と資本回収係数の違い&lt;/h3&gt;
+&lt;p&gt;減債基金係数は&lt;code&gt;毎年の積立額&lt;/code&gt;を求めるための係数&lt;br&gt;
+資本回収係数は&lt;code&gt;毎年の受取金額&lt;/code&gt;を求めるための係数&lt;/p&gt;
+&lt;h3 id="現価係数はと年金現価係数の違い"&gt;現価係数はと年金現価係数の違い&lt;/h3&gt;
+&lt;p&gt;現価係数は&lt;code&gt;一定金額に達する&lt;/code&gt;ために&lt;code&gt;必要な原本&lt;/code&gt;を求めるための係数&lt;br&gt;
+年金現価係数は&lt;code&gt;一定額を受け取る&lt;/code&gt;ために&lt;code&gt;必要な元本&lt;/code&gt;を求めるための係数&lt;/p&gt;
+&lt;h3 id="参考にした教本"&gt;参考にした教本&lt;/h3&gt;
+&lt;p&gt;上記内容は以下の教本の内容を参考にしてます&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5886/9784813275886.jpg?_ex=200x200" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;span style="font-size: smaller"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;2018-2019年版　みんなが欲しかった！　FPの問題集3級&lt;/a&gt;&lt;br /&gt;&lt;br /&gt; 滝澤ななみ TAC 2018年05月22日&lt;br /&gt; 売り上げランキング : &lt;br /&gt;&lt;table style="border:none"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251730366382?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459214%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;楽天ブックスで購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/exec/obidos/asin/4813275885/kkawazoe-22/" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt; &lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://yomereba.com" rel="nofollow" target="_blank"&gt;ヨメレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description></item><item><title>AWS 認定ソリューションアーキテクト - アソシエイトへの道</title><link>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</link><pubDate>Fri, 19 Apr 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/04/19/road-to-aws-certified-solutions-architect-associate/</guid><description>&lt;h2 id="試験概要"&gt;試験概要&lt;/h2&gt;
+&lt;p&gt;詳細は、試験ガイド(&lt;a href="https://aws.amazon.com/jp/certification/certified-solutions-architect-associate/"&gt;試験概要&lt;/a&gt; の「試験ガイドのダウンロード」を参照)&lt;/p&gt;
+&lt;h3 id="受験料"&gt;受験料&lt;/h3&gt;
+&lt;p&gt;15,000 円 (日本語版/税別)&lt;/p&gt;
+&lt;h3 id="出題範囲"&gt;出題範囲&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;分野&lt;/th&gt;
+ &lt;th&gt;試験に占める 割合&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分野 1: 回復性の高いアーキテクチャを設計する&lt;/td&gt;
+ &lt;td&gt;34%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分野 2: パフォーマンスに優れたアーキテクチャを定義する&lt;/td&gt;
+ &lt;td&gt;24%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する&lt;/td&gt;
+ &lt;td&gt;26%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分野 4: コスト最適化アーキテクチャを設計する&lt;/td&gt;
+ &lt;td&gt;10%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する&lt;/td&gt;
+ &lt;td&gt;6%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;合計&lt;/td&gt;
+ &lt;td&gt;100%&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="出題範囲詳細"&gt;出題範囲詳細&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;分野 1: 回復性の高いアーキテクチャを設計する
+&lt;ul&gt;
+&lt;li&gt;1.1 信頼性と回復性の高いストレージを選択する&lt;/li&gt;
+&lt;li&gt;1.2 AWS サービスを使用した分離機構を設計する方法を定義する&lt;/li&gt;
+&lt;li&gt;1.3 多層アーキテクチャソリューションを設計する方法を定義する&lt;/li&gt;
+&lt;li&gt;1.4 可用性またはフォルトトレラント性 (あるいはその両方) が高いアーキテクチャを設計する方法を定義する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分野 2: パフォーマンスに優れたアーキテクチャを定義する
+&lt;ul&gt;
+&lt;li&gt;2.1 パフォーマンスの高いストレージとデータベースを選択する&lt;/li&gt;
+&lt;li&gt;2.2 キャッシュを使用してパフォーマンスを向上させる&lt;/li&gt;
+&lt;li&gt;2.3 伸縮性と拡張性を備えたソリューションを設計する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分野 3: セキュアなアプリケーションおよびアーキテクチャを規定する
+&lt;ul&gt;
+&lt;li&gt;3.1 アプリケーション層をセキュリティ保護する方法を定義する&lt;/li&gt;
+&lt;li&gt;3.2 データをセキュリティ保護する方法を定義する&lt;/li&gt;
+&lt;li&gt;3.3 単一の VPC アプリケーション用のネットワークインフラストラクチャーを定義する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分野 4: コスト最適化アーキテクチャを設計する
+&lt;ul&gt;
+&lt;li&gt;4.1 コスト最適化ストレージを設計する方法を定義する&lt;/li&gt;
+&lt;li&gt;4.2 コスト最適化コンピューティングを設計する方法を定義する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分野 5: オペレーショナルエクセレンスを備えたアーキテクチャを定義する
+&lt;ul&gt;
+&lt;li&gt;5.1 オペレーショナルエクセレンスを実現するソリューションの設計特性を選択する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="合格ライン"&gt;合格ライン&lt;/h3&gt;
+&lt;p&gt;100～1000 点の範囲のスコアでレポートされる&lt;br&gt;
+最低合格スコアは 720 点&lt;br&gt;
+各分野毎の最低合格ラインはなし&lt;/p&gt;</description></item><item><title>FP3級への道</title><link>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2019/03/11/road-to-fp3/</guid><description>&lt;p&gt;ここ最近今まで縁のなかった確定申告や高額医療制度のお世話になることがあった
+上記のこともあり知識として必要だと感じため、学習しその記録を残しておく&lt;/p&gt;
+&lt;h2 id="受験する科目"&gt;受験する科目&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;学科
+&lt;ul&gt;
+&lt;li&gt;FP 協会・金融財政事情研究会で共通&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;実技 ※難易度的には FP 協会の「資産設計提案業務」が初心者には易しいらしい
+&lt;ul&gt;
+&lt;li&gt;FP 協会
+&lt;ul&gt;
+&lt;li&gt;資産設計提案業務&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;金融財政事情研究会
+&lt;ul&gt;
+&lt;li&gt;個人資産相談業務 &lt;strong&gt;※今回受験&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;保険顧客資産相談業務&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="使用する教材"&gt;使用する教材&lt;/h2&gt;
+&lt;p&gt;今回使用する教材は以下&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5855/9784813275855.jpg?_ex=200x200" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;span style="font-size: smaller"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;2018-2019年版　みんなが欲しかった！　FPの教科書3級&lt;/a&gt;&lt;br /&gt;&lt;br /&gt; 滝澤ななみ TAC 2018年05月22日&lt;br /&gt; 売り上げランキング : &lt;br /&gt;&lt;table style="border:none"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/yomereba_main_201904251728028921?pc=http%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F15459211%2F%3Fscid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2Fev%2Fbook%2F" target="_blank" rel="nofollow" &gt;楽天ブックスで購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/yl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/exec/obidos/asin/4813275850/kkawazoe-22/" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt; &lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://yomereba.com" rel="nofollow" target="_blank"&gt;ヨメレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;他の人の評価等を確認する限り、これ１冊でもいけそう
+必要があれば追加で購入する
+とりあえず、5月の受験を目指す&lt;/p&gt;
+&lt;h3 id="20190326-追記"&gt;2019/03/26 追記&lt;/h3&gt;
+&lt;p&gt;試験用の電卓を購入&lt;/p&gt;
+&lt;table border="0" cellpadding="5" style="border:none"&gt;&lt;tr&gt;&lt;td valign="top" style="border:none"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/g00q6326.r4a5h27d.g00q6326.r4a5i421/kaereba_main_201904251743260583?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fec-current%2F4960999793986%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fec-current%2Fi%2F10843757%2F" target="_blank" rel="nofollow" &gt;&lt;img src="https://thumbnail.image.rakuten.co.jp/@0_mall/ec-current/cabinet/226/4960999793986.jpg?_ex=128x128" border="0" style="margin-right:10px" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;td valign="top" style="border:none;text-align:left"&gt;&lt;div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/g00q6326.r4a5h27d.g00q6326.r4a5i421/kaereba_main_201904251743260583?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fec-current%2F4960999793986%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fec-current%2Fi%2F10843757%2F" target="_blank" rel="nofollow" &gt;CANON HS-1220TUG 実務電卓 12桁&lt;/a&gt;&lt;/div&gt;&lt;div class="kaerebalink-detail" style="margin-bottom:5px;"&gt;&lt;/div&gt;&lt;table style="border:none;margin-top:10px"&gt;&lt;tr&gt;&lt;td style="border:none;text-align:left;"&gt;&lt;div class="shoplinkrakuten" style="margin-right:5px;background: url('//img.yomereba.com/kl.gif') 0 -50px no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://hb.afl.rakuten.co.jp/hgc/1856df65.f59e3a22.1856df66.b49ed49a/kaereba_main_201904251743260583?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FCanon%2520%25E9%259B%25BB%25E5%258D%2593%2520HS-1220TUG%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F" target="_blank" rel="nofollow" &gt;楽天市場で購入&lt;/a&gt;&lt;/div&gt;&lt;div class="shoplinkamazon" style="margin-right:5px;background: url('//img.yomereba.com/kl.gif') 0 0 no-repeat;padding: 2px 0 2px 18px;white-space: nowrap;"&gt;&lt;a href="https://www.amazon.co.jp/gp/search?keywords=Canon%20%E9%9B%BB%E5%8D%93%20HS-1220TUG&amp;__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;tag=kkawazoe-22" target="_blank" rel="nofollow" &gt;Amazonで購入&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style="vertical-align:bottom;padding-left:10px;font-size:x-small;border:none"&gt;by &lt;a href="https://kaereba.com" rel="nofollow" target="_blank"&gt;カエレバ&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;こっちと迷ったが現状だとあまり必要なさそうなので安さで選択上位の級で必要になれば購入する&lt;/p&gt;</description></item></channel></rss>

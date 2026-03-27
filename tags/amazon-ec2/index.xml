@@ -1,26 +1,169 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon EC2 on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/amazon-ec2/</link><description>Recent content in Amazon EC2 on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 18 Jul 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/amazon-ec2/index.xml" rel="self" type="application/rss+xml"/><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS DB: PostgreSQL フォルダ構成 ./ ├── sql/ │ └── execute.sql └── execute_sql.sh 実際のコード 環境変数(xxx 部分)は実際の環境に応じて書き換える
-#!/bin/sh # DEV EC2_HOST_DEV=xxx EC2_PEM_KEY_DEV=xxx DB_HOST_DEV=xxx DB_PORT_DEV=5432 DB_NAME_DEV=xxx DB_USER_DEV=xxx DB_PASSWORD_DEV=xxx # STG EC2_HOST_STG=xxx EC2_PEM_KEY_STG=xxx DB_HOST_STG=xxx DB_PORT_STG=5432 DB_NAME_STG=xxx DB_USER_STG=xxx DB_PASSWORD_STG=xxx # PRD EC2_HOST_PRD=xxx EC2_PEM_KEY_PRD=xxx DB_HOST_PRD=xxx DB_PORT_PRD=5432 DB_NAME_PRD=xxx DB_USER_PRD=xxx DB_PASSWORD_PRD=xxx # Shared SQL_DIR=sql SQL_FILE=${SQL_DIR}/execute.sql LOG_FILE=log/batch.log read -p &amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34; input_environment # Convert to uppercase environment=$(echo &amp;#34;${input_environment}&amp;#34; | tr &amp;#39;[:lower:]&amp;#39; &amp;#39;[:upper:]&amp;#39;) echo &amp;#34;【Start Processing】$(date &amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;)&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1 # Check the environment case &amp;#34;${input_environment}&amp;#34; in &amp;#34;dev&amp;#34; | &amp;#34;stg&amp;#34; | &amp;#34;prd&amp;#34;) echo &amp;#34;Connecting to ${environment}environment.</description></item><item><title>AWS EC2 Instance Connect で接続する方法</title><link>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</link><pubDate>Sat, 30 Mar 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</guid><description>AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく
-前提 AWS EC2 Instance Connect をインストールしておく
-手順 Amazon EC2 コンソール を開く
-ナビゲーションペインで、[インスタンス] を選択する
-インスタンスを選択し、[接続] を選択する
-[EC2 Instance Connect] を選択する
-ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く
-以下のエラーが発生
-インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください 公式のトラブルシューティングを確認
-=&amp;gt; セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった
-以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する
-curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r &amp;#39;.prefixes[] | select(.region==&amp;#34;&amp;lt;&amp;lt;対象リージョン&amp;gt;&amp;gt;&amp;#34;) | select(.service==&amp;#34;EC2_INSTANCE_CONNECT&amp;#34;) | .ip_prefix&amp;#39; セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する</description></item><item><title>Amazon Linux 2 に PostgreSQL 13 をインストールする方法</title><link>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</link><pubDate>Fri, 29 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</guid><description>Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく
-手順 postgresql13 を以下のコマンドでインストールする
-sudo amazon-linux-extras install postgresql13 以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try. https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found Installation failed. Check that you have permissions to install. 以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること
-sudo sed -i &amp;quot;s/\$releasever/7/g&amp;quot; &amp;quot;/etc/yum.repos.d/pgdg-redhat-all.repo&amp;quot; 再度、 postgresql13 をインストールする
-以下のエラーが発生
-failure: repodata/repomd.xml from pgdg-common: [Errno 256] No more mirrors to try.</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
-方法 事前作業 AWS Console にて接続に必要な情報を控えておく
-EC2 踏み台の Public IP を確認
-EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 Elastic IP が紐付けられている場合は以下を確認する
-EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認 RDS プロキシの設定がされている場合は以下を確認する
-RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認 その他 DB のパスワード (Secrets Manager)の設定確認方法
-AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon EC2 on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/amazon-ec2/</link><description>Recent content in Amazon EC2 on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 18 Jul 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/amazon-ec2/index.xml" rel="self" type="application/rss+xml"/><item><title>ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法</title><link>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</link><pubDate>Thu, 18 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/18/how-to-access-a-db-via-a-stepping-stone-server-and-execute-sql-in-shell-script/</guid><description>&lt;p&gt;ShellScript で踏み台サーバ(EC2)経由で DB にアクセスして SQL を実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;DB: PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="フォルダ構成"&gt;フォルダ構成&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── sql/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── execute.sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── execute_sql.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;環境変数(xxx 部分)は実際の環境に応じて書き換える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:execute_sql.sh" data-lang="sh:execute_sql.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# DEV&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_DEV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# STG&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_STG&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# PRD&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_HOST_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EC2_PEM_KEY_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_HOST_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PORT_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;5432&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_NAME_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_USER_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;DB_PASSWORD_PRD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Shared&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SQL_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SQL_FILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;SQL_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;/execute.sql
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;LOG_FILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;log/batch.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;read -p &lt;span style="color:#e6db74"&gt;&amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34;&lt;/span&gt; input_environment
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Convert to uppercase&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;environment&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; | tr &lt;span style="color:#e6db74"&gt;&amp;#39;[:lower:]&amp;#39;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;[:upper:]&amp;#39;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【Start Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Check the environment&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; in
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;dev&amp;#34;&lt;/span&gt; | &lt;span style="color:#e6db74"&gt;&amp;#34;stg&amp;#34;&lt;/span&gt; | &lt;span style="color:#e6db74"&gt;&amp;#34;prd&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Connecting to &lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; environment...&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; EC2_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${EC2_HOST_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; EC2_PEM_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${EC2_PEM_KEY_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_HOST&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_HOST_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_PORT_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_NAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_NAME_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_USER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_USER_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; DB_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${DB_PASSWORD_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Please enter the correct environment.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exit;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scp -i &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_PEM_KEY&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; -r &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;SQL_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_HOST&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;:~/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -i &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_PEM_KEY&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; -T &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;EC2_HOST&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Set DB Password
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;export PGPASSWORD=${DB_PASSWORD}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Execute SQL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;psql -p ${DB_PORT} -h ${DB_HOST} -d ${DB_NAME} -U ${DB_USER} -f ${SQL_FILE}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Remove SQL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;rm -rf sql
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>AWS EC2 Instance Connect で接続する方法</title><link>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</link><pubDate>Sat, 30 Mar 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/30/how-to-connect-with-aws-ec2-instance-connect/</guid><description>&lt;p&gt;AWS EC2 Instance Connect で接続する際にエラーが発生したため、接続できるように調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html"&gt;AWS EC2 Instance Connect&lt;/a&gt; をインストールしておく&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://console.aws.amazon.com/ec2/"&gt;Amazon EC2 コンソール&lt;/a&gt; を開く&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ナビゲーションペインで、[インスタンス] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;インスタンスを選択し、[接続] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[EC2 Instance Connect] を選択する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ユーザー名を検証し、[Connect (接続)] を選択してターミナルウィンドウを開く&lt;/p&gt;
+&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;インスタンス接続の設定中に問題が発生し、ログインに失敗しました。このインスタンスが開始したばかりの場合は、1～2 分後にもう一度試してください
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://repost.aws/ja/knowledge-center/ec2-instance-connect-troubleshooting"&gt;公式のトラブルシューティング&lt;/a&gt;を確認&lt;br&gt;
+=&amp;gt; セキュリティグループに、EC2 Instance Connect サービス IP がホワイトリストにされていないのが原因だった&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行して EC2 Instance Connect サービス IP を確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -s https://ip-ranges.amazonaws.com/ip-ranges.json| jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.prefixes[] | select(.region==&amp;#34;&amp;lt;&amp;lt;対象リージョン&amp;gt;&amp;gt;&amp;#34;) | select(.service==&amp;#34;EC2_INSTANCE_CONNECT&amp;#34;) | .ip_prefix&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;セキュリティグループのインバウンドルールを更新して、手順 6 で確認した IP 範囲から TCP ポート 22 にアクセスできるようにルールを更新する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再度、EC2 Instance Connect に接続する&lt;/p&gt;</description></item><item><title>Amazon Linux 2 に PostgreSQL 13 をインストールする方法</title><link>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</link><pubDate>Fri, 29 Mar 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/03/29/how-to-install-postgresql-13-on-amazon-linux-2/</guid><description>&lt;p&gt;Amazon Linux 2 に PostgreSQL 13 をインストールする際にエラーが発生したため、インストールできるように調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="手順"&gt;手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;postgresql13 を以下のコマンドでインストールする&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo amazon-linux-extras install postgresql13
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;failure: repodata/repomd.xml from pgdg-common: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 256&lt;span style="color:#f92672"&gt;]&lt;/span&gt; No more mirrors to try.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-2-x86_64/repodata/repomd.xml: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 14&lt;span style="color:#f92672"&gt;]&lt;/span&gt; HTTPS Error &lt;span style="color:#ae81ff"&gt;404&lt;/span&gt; - Not Found
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Installation failed. Check that you have permissions to install.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドで対象ファイルの内容を更新する ※事前にバックアップすること&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:/etc/yum.repos.d/pgdg-redhat-all.repo" data-lang="sh:/etc/yum.repos.d/pgdg-redhat-all.repo"&gt;sudo sed -i &amp;#34;s/\$releasever/7/g&amp;#34; &amp;#34;/etc/yum.repos.d/pgdg-redhat-all.repo&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再度、 postgresql13 をインストールする&lt;/p&gt;
+&lt;p&gt;以下のエラーが発生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;failure: repodata/repomd.xml from pgdg-common: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno 256&lt;span style="color:#f92672"&gt;]&lt;/span&gt; No more mirrors to try.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-7-x86_64/repodata/repomd.xml: &lt;span style="color:#f92672"&gt;[&lt;/span&gt;Errno -1&lt;span style="color:#f92672"&gt;]&lt;/span&gt; repomd.xml signature could not be verified &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; pgdg-common
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Installation failed. Check that you have permissions to install.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下の対象ファイルの内容を更新 ※事前にバックアップすること&lt;/p&gt;</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>&lt;p&gt;pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;h3 id="事前作業"&gt;事前作業&lt;/h3&gt;
+&lt;p&gt;AWS Console にて接続に必要な情報を控えておく&lt;/p&gt;
+&lt;h4 id="ec2"&gt;EC2&lt;/h4&gt;
+&lt;p&gt;踏み台の Public IP を確認&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択&lt;/li&gt;
+&lt;li&gt;パブリック IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Elastic IP が紐付けられている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; Elastic IP を選択&lt;/li&gt;
+&lt;li&gt;関連付けられたインスタンス ID が一致するものを検索する&lt;/li&gt;
+&lt;li&gt;割り当てられた IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="rds"&gt;RDS&lt;/h4&gt;
+&lt;p&gt;プロキシの設定がされている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択&lt;/li&gt;
+&lt;li&gt;プロキシエンドポイントを確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="その他"&gt;その他&lt;/h4&gt;
+&lt;p&gt;DB のパスワード (Secrets Manager)の設定確認方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択&lt;/li&gt;
+&lt;li&gt;シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下&lt;/li&gt;
+&lt;li&gt;パスワードを確認する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="pgadmin4-での作業"&gt;pgAdmin4 での作業&lt;/h4&gt;
+&lt;p&gt;プロパティにそれぞれ以下の値を設定する&lt;/p&gt;</description></item></channel></rss>

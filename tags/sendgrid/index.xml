@@ -1,12 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SendGrid on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/sendgrid/</link><description>Recent content in SendGrid on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/sendgrid/index.xml" rel="self" type="application/rss+xml"/><item><title>SendGrid の設定および動作確認方法について</title><link>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</guid><description>SendGrid の設定および動作確認方法を備忘録として残しておく
-前提 2024/4/1 以降の新しい方式 Domain Authentication DNS: Amazon Route 53 実際の手順 SendGrid 管理画面にて API Key を作成
-参考
-SendGrid 管理画面にて Domain Authentication の設定を行う
-Domain Authentication(SPF/DKIM設定)
-テストメールを送信して動作確認を行う
-参考
-メールテンプレートを作成
-参考
-メールテンプレートを使用した動作確認を行う
-参考1 参考2 Curl での動作確認 テンプレートなし [構文]
-curl -X POST https://api.sendgrid.com/v3/mail/send \ -d &amp;#34;JSONデータを指定&amp;#34; \ -H &amp;#34;Authorization: Bearer &amp;lt;&amp;lt;API Key&amp;gt;&amp;gt;&amp;#34; \ -H &amp;#34;Content-Type: application/json&amp;#34; [JSON データ]</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SendGrid on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/sendgrid/</link><description>Recent content in SendGrid on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/sendgrid/index.xml" rel="self" type="application/rss+xml"/><item><title>SendGrid の設定および動作確認方法について</title><link>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/01/how-to-configure-send-grid-and-checkits-operation/</guid><description>&lt;p&gt;SendGrid の設定および動作確認方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2024/4/1 以降の新しい方式
+&lt;ul&gt;
+&lt;li&gt;Domain Authentication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS: Amazon Route 53&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際の手順"&gt;実際の手順&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;SendGrid 管理画面にて API Key を作成&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://sendgrid.kke.co.jp/docs/Tutorials/A_Transaction_Mail/manage_api_key.html"&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SendGrid 管理画面にて Domain Authentication の設定を行う&lt;/p&gt;
+&lt;p&gt;Domain Authentication(SPF/DKIM設定)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;テストメールを送信して動作確認を行う&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://sendgrid.kke.co.jp/docs/Tutorials/A_Transaction_Mail/send_transaction_mail.html#-Curl"&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;メールテンプレートを作成&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://sendgrid.kke.co.jp/docs/Tutorials/A_Transaction_Mail/using_dynamic_templates.html#-Edit"&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;メールテンプレートを使用した動作確認を行う&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sendgrid.kke.co.jp/docs/API_Reference/Web_API_v3/Mail/index.html"&gt;参考1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sendgrid.kke.co.jp/docs/API_Reference/Web_API_v3/Transactional_Templates/smtpapi.html"&gt;参考2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="curl-での動作確認"&gt;Curl での動作確認&lt;/h2&gt;
+&lt;h3 id="テンプレートなし"&gt;テンプレートなし&lt;/h3&gt;
+&lt;p&gt;[構文]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -X POST https://api.sendgrid.com/v3/mail/send &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -d &lt;span style="color:#e6db74"&gt;&amp;#34;JSONデータを指定&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -H &lt;span style="color:#e6db74"&gt;&amp;#34;Authorization: Bearer &amp;lt;&amp;lt;API Key&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -H &lt;span style="color:#e6db74"&gt;&amp;#34;Content-Type: application/json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;[JSON データ]&lt;/p&gt;
+&lt;p&gt;VS Code を使用している場合は &lt;a href="https://marketplace.visualstudio.com/items?itemName=nextfaze.json-parse-stringify"&gt;JSON Parse &amp;amp; Stringify&lt;/a&gt; を使用すると JSON の Parse &amp;amp; Stringify が容易のため推奨&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;personalizations&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;to&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt;&amp;lt;送信先メールアドレス&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;subject&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt;&amp;lt;件名&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;from&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt;&amp;lt;送信元メールアドレス&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;text/plain&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;lt;&amp;lt;本文&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="テンプレートあり"&gt;テンプレートあり&lt;/h3&gt;
+&lt;p&gt;[構文]&lt;/p&gt;</description></item></channel></rss>

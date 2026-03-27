@@ -1,18 +1,183 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon Cognito on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/amazon-cognito/</link><description>Recent content in Amazon Cognito on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Wed, 26 Jun 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/amazon-cognito/index.xml" rel="self" type="application/rss+xml"/><item><title>API Gateway のオーソライザに Amazon Cognito を使用している API を Postman から動作させる方法</title><link>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</link><pubDate>Wed, 26 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</guid><description>API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく
-実際の設定 以下の通りに URL と Header, Body を設定する
-Postman 設定その１ Postman 設定その２ 他の API で使用するために変数に格納する
-Postman 設定その3 Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する
-Postman 設定その４</description></item><item><title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid><description>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく
-方法 以下の２つの方法が考えられる
-Cognito User Profiles Export リファレンスアーキテクチャ Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する
-※リストアはユーザ CSV インポート機能で行う 実際のコード const { stringify } = require(&amp;#34;csv-stringify/sync&amp;#34;); module.exports = async (params) =&amp;gt; { const csvString = stringify(params, { header: true, quoted_string: false }) return csvString; }; const { CognitoIdentityProvider } = require(&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;); const cognito = new CognitoIdentityProvider(); module.exports = async (param) =&amp;gt; { let cognitoUsers = new Array(); let cognitoData; try { let params = { UserPoolId: process.</description></item><item><title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title><link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link><pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid><description>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード ユーザ登録
-&amp;ndash;user-attributes は必要に応じて増やす
-※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能
-aws cognito-idp admin-create-user \ --user-pool-id &amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \ --username &amp;lt;&amp;lt;E メールアドレス ※E メールアドレスをユーザ名に設定した場合&amp;gt;&amp;gt; \ --user-attributes Name=email,Value=&amp;lt;&amp;lt;E メールアドレス&amp;gt;&amp;gt; \ Name=email_verified,Value=TRUE \ --message-action SUPPRESS パスワード設定
-&amp;ndash;no-permanent は仮パスワード扱い
-※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる
-aws cognito-idp admin-set-user-password \ --user-pool-id &amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \ --username &amp;lt;&amp;lt;ユーザ名 or sub&amp;gt;&amp;gt; \ --password &amp;lt;&amp;lt;password&amp;gt;&amp;gt; \ --no-permanent</description></item><item><title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link><pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid><description>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく
-方法 該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する
-実際のコード aws cognito-idp list-users \ --user-pool-id {該当のユーザプール ID} \ --filter &amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34; \ --attributes-to-get &amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34; \ | jq -r &amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39; \ | tr -d &amp;#39;&amp;#34;&amp;#39; \ &amp;gt; user_pool_list.csv</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon Cognito on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/amazon-cognito/</link><description>Recent content in Amazon Cognito on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Wed, 26 Jun 2024 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/amazon-cognito/index.xml" rel="self" type="application/rss+xml"/><item><title>API Gateway のオーソライザに Amazon Cognito を使用している API を Postman から動作させる方法</title><link>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</link><pubDate>Wed, 26 Jun 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/06/26/how-to-make-apis-that-require-cognito-authentication-work-from-postman/</guid><description>&lt;p&gt;API Gateway のオーソライザに Cognito を使用している API を Postman から動作させる方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="実際の設定"&gt;実際の設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;以下の通りに URL と Header, Body を設定する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_1.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_1.png"
+ alt="Postman 設定その１"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その１
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_2.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_2.png"
+ alt="Postman 設定その２"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その２
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;他の API で使用するために変数に格納する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_3.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_3.png"
+ alt="Postman 設定その3"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その3
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cognito 認証が必要な API の Authorization に変数に格納した IDToken を設定する&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20240626_01/postman_config_4.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240626_01/postman_config_4.png"
+ alt="Postman 設定その４"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Postman 設定その４
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法</title><link>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/02/01/how-to-backup-and-restore-an-amazon-cognito-user-pool/</guid><description>&lt;p&gt;Amazon Cognito のユーザプールのバックアップおよびリストアを行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;以下の２つの方法が考えられる&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/jp/solutions/implementations/cognito-user-profiles-export-reference-architecture/"&gt;Cognito User Profiles Export リファレンスアーキテクチャ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lambda でユーザプールの一覧を取得して csv で出力して S3 に保存する&lt;br&gt;
+※リストアは&lt;a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html%E3%81%A7%E8%A1%8C%E3%81%86"&gt;ユーザ CSV インポート機能&lt;/a&gt;で行う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js:convertCsvString.js" data-lang="js:convertCsvString.js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;stringify&lt;/span&gt; } &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;require&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;csv-stringify/sync&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;module&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;exports&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;csvString&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;stringify&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;header&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;quoted_string&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;csvString&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js:getCognitoUsers.js" data-lang="js:getCognitoUsers.js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;CognitoIdentityProvider&lt;/span&gt; } &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;require&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;@aws-sdk/client-cognito-identity-provider&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognito&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;CognitoIdentityProvider&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;module&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;exports&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;param&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Array();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;params&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;UserPoolId&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;process&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;env&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;USER_POOL_ID&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;!==&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;undefined&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognito&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;listUsers&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;PaginationToken&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;params&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;PaginationToken&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;paginationToken&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Users&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoData&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Users&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;forEach&lt;/span&gt;((&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// ① を参照
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {};
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Attributes&amp;#34;&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt; =&amp;gt; &lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;===&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;) &lt;span style="color:#f92672"&gt;||&lt;/span&gt; {})[&lt;span style="color:#e6db74"&gt;&amp;#34;Value&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email_verified&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;user&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Attributes&amp;#34;&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;find&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt; =&amp;gt; &lt;span style="color:#a6e22e"&gt;attr&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;===&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;email_verified&amp;#34;&lt;/span&gt;) &lt;span style="color:#f92672"&gt;||&lt;/span&gt; {})[&lt;span style="color:#e6db74"&gt;&amp;#34;Value&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;cognito:mfa_enabled&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;FALSE&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;cognito:username&amp;#34;&lt;/span&gt;] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#34;email&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;push&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;userAttributes&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;登録ユーザーが存在しません。&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cognitoUsers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※① &lt;a href="https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/cognito-user-pools-using-import-tool-csv-header.html#cognito-user-pools-using-import-tool-downloading-csv-header-using-cli"&gt;CSV ファイルヘッダーのダウンロード (AWS CLI)&lt;/a&gt;で必要な項目を取得して設定する&lt;/p&gt;</description></item><item><title>Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法</title><link>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</link><pubDate>Mon, 29 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/29/how-to-register-users-and-set-passwords-with-amazon-cognito-from-command/</guid><description>&lt;p&gt;Amazon Cognito でコマンドからユーザ登録およびパスワード設定を行う方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ユーザ登録&lt;/p&gt;
+&lt;p&gt;&amp;ndash;user-attributes は必要に応じて増やす&lt;br&gt;
+※「&amp;ndash;message-action SUPPRESS」のオプションを付与することで対象ユーザへの通知を止めることが可能&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp admin-create-user &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--username &amp;lt;&amp;lt;E メールアドレス ※E メールアドレスをユーザ&lt;/span&gt;名に設定した場合&amp;gt;&amp;gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-attributes Name&lt;span style="color:#f92672"&gt;=&lt;/span&gt;email,Value&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;E メールアドレス&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;Name=email_verified,Value=TRUE&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--message-action SUPPRESS
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;パスワード設定&lt;/p&gt;
+&lt;p&gt;&amp;ndash;no-permanent は仮パスワード扱い&lt;br&gt;
+※「&amp;ndash;permanent」オプションを付与で恒久パスワード扱いになる&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp admin-set-user-password &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;ユーザプール ID&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--username &amp;lt;&amp;lt;ユーザ&lt;/span&gt;名 or sub&amp;gt;&amp;gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--password &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;password&amp;gt;&amp;gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;--no-p&lt;/span&gt;ermanent
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法</title><link>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</link><pubDate>Tue, 16 Jan 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/01/16/how-to-get-a-list-of-users-registered-in-user-pool-in-amazon-cognito/</guid><description>&lt;p&gt;Amazon Cognito でユーザプールに登録されているユーザ一覧を取得する方法について調査した内容を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;該当の AWS Console にログインして AWS Cloud Shell 上で以下のコマンドを実行する&lt;/p&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws cognito-idp list-users &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--user-pool-id &lt;span style="color:#f92672"&gt;{&lt;/span&gt;該当のユーザプール ID&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--filter &lt;span style="color:#e6db74"&gt;&amp;#34;{検索に使用する属性} = \&amp;#34;{検索文字列}\&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;--attributes-to-get &lt;span style="color:#e6db74"&gt;&amp;#34;{取得する属性(スペース区切りで複数指定可)}&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| jq -r &lt;span style="color:#e6db74"&gt;&amp;#39;.Users[] | [.Username, .Attributes[].Value] | @csv&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;| tr -d &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt;&amp;gt; user_pool_list.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

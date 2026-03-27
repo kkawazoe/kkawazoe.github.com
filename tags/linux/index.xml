@@ -1,3 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/linux/</link><description>Recent content in Linux on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sun, 28 Aug 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>CentOS でファイル内の行数を取得する方法</title><link>https://kkawazoe.github.io/blog/2022/08/28/how-to-get-number-of-lines-with-cent-os/</link><pubDate>Sun, 28 Aug 2022 22:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/08/28/how-to-get-number-of-lines-with-cent-os/</guid><description>CentOS でファイル内の行数を取得する方法を備忘録として残しておく
-方法 wc コマンドの -l オプションを使用する
-環境 CentOS: CentOS Linux release 8.4.2105 実際のコード # 該当のファイルが存在するディレクトリに移動して実行 wc -l # 拡張子で対象を絞りたい場合は以下 # 例. 拡張子が「.csv」のファイルの行数を取得 wc -l `find ./ -name &amp;#39;*.csv&amp;#39;`</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/linux/</link><description>Recent content in Linux on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sun, 28 Aug 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>CentOS でファイル内の行数を取得する方法</title><link>https://kkawazoe.github.io/blog/2022/08/28/how-to-get-number-of-lines-with-cent-os/</link><pubDate>Sun, 28 Aug 2022 22:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2022/08/28/how-to-get-number-of-lines-with-cent-os/</guid><description>&lt;p&gt;CentOS でファイル内の行数を取得する方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;wc コマンドの -l オプションを使用する&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CentOS: CentOS Linux release 8.4.2105&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 該当のファイルが存在するディレクトリに移動して実行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wc -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 拡張子で対象を絞りたい場合は以下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 例. 拡張子が「.csv」のファイルの行数を取得&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wc -l &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;find ./ -name &lt;span style="color:#e6db74"&gt;&amp;#39;*.csv&amp;#39;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

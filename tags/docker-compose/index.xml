@@ -1,7 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker Compose on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/docker-compose/</link><description>Recent content in Docker Compose on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sun, 14 Mar 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker-compose/index.xml" rel="self" type="application/rss+xml"/><item><title>docker-compose で管理しているコンテナ内にファイルをコピーする方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</link><pubDate>Sun, 14 Mar 2021 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</guid><description>docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく
-環境 dokcer: 20.10.5 docker-compose: 1.28.5 前提 ファイルをコピーする対象のコンテナに紐づいているサービス名 app
-方法 docker cp {コピーする対象ファイル} `docker-compose ps -q {サービス名}`:/ # 例 サービス名 app に紐付いているコンテナに test.txt をコピーする docker cp test.txt `docker-compose ps -q app`:/</description></item><item><title>Docker Compose 上で Rails の秘匿情報を扱う</title><link>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</link><pubDate>Sat, 04 Apr 2020 10:46:01 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</guid><description>環境 rails: rails 5.2.3 方法 前提 credentials.yml.enc を使用 docker 上での rails のコンテナ名: rails 確認 例. production 環境の秘匿情報を確認する
-以下のコマンドを使用して確認する
-docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash EDITOR=&amp;#34;vim&amp;#34; bin/rails env_credentials:show -e production 編集 例. production 環境の秘匿情報を編集する
-以下のコマンドを使用して確認する
-docker-compose exec rails bash #=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash EDITOR=&amp;#34;vim&amp;#34; bin/rails env_credentials:edit -e production</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker Compose on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/docker-compose/</link><description>Recent content in Docker Compose on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sun, 14 Mar 2021 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/docker-compose/index.xml" rel="self" type="application/rss+xml"/><item><title>docker-compose で管理しているコンテナ内にファイルをコピーする方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</link><pubDate>Sun, 14 Mar 2021 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/copy-file-into-container-with-docker-compose/</guid><description>&lt;p&gt;docker-compose で管理しているコンテナにホストに存在するファイルをコピーする方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;dokcer: 20.10.5&lt;/li&gt;
+&lt;li&gt;docker-compose: 1.28.5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;ファイルをコピーする対象のコンテナに紐づいているサービス名 &lt;code&gt;app&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker cp &lt;span style="color:#f92672"&gt;{&lt;/span&gt;コピーする対象ファイル&lt;span style="color:#f92672"&gt;}&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;docker-compose ps -q &lt;span style="color:#f92672"&gt;{&lt;/span&gt;サービス名&lt;span style="color:#f92672"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;:/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 例 サービス名 app に紐付いているコンテナに test.txt をコピーする&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker cp test.txt &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;docker-compose ps -q app&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;:/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docker Compose 上で Rails の秘匿情報を扱う</title><link>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</link><pubDate>Sat, 04 Apr 2020 10:46:01 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/04/04/handle-credentials-info-of-rails-on-docker-compose/</guid><description>&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;rails: rails 5.2.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;h3 id="前提"&gt;前提&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;credentials.yml.enc&lt;/strong&gt; を使用&lt;/li&gt;
+&lt;li&gt;docker 上での rails のコンテナ名: rails&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="確認"&gt;確認&lt;/h3&gt;
+&lt;p&gt;例. production 環境の秘匿情報を確認する&lt;/p&gt;
+&lt;p&gt;以下のコマンドを使用して確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker-compose exec rails bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EDITOR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;vim&amp;#34;&lt;/span&gt; bin/rails env_credentials:show -e production
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="編集"&gt;編集&lt;/h3&gt;
+&lt;p&gt;例. production 環境の秘匿情報を編集する&lt;/p&gt;
+&lt;p&gt;以下のコマンドを使用して確認する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker-compose exec rails bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; コンテナが起動していない場合は docker-compose run rails bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;EDITOR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;vim&amp;#34;&lt;/span&gt; bin/rails env_credentials:edit -e production
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

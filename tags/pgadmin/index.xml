@@ -1,8 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pgAdmin on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/pgadmin/</link><description>Recent content in pgAdmin on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/pgadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法</title><link>https://kkawazoe.github.io/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/</guid><description>pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法を備忘録として残しておく
-環境 OS: MacOS Tahoe 26.2 エラー内容 Error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you&amp;#39;re on macOS Sierra or later, you&amp;#39;ll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information. 対処法 ダウンロードフォルダ内にアプリケーションがある場合 pgAdmin4 を終了する Finder でダウンロードフォルダを開く pgAdmin4 アプリケーションを「アプリケーション」フォルダにドラッグアンドドロップで移動する アプリケーションフォルダから pgAdmin4 を起動し、再度更新する それ以外の場合 pgAdmin4 を終了する</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく
-方法 事前作業 AWS Console にて接続に必要な情報を控えておく
-EC2 踏み台の Public IP を確認
-EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択 パブリック IPv4 アドレス を確認 Elastic IP が紐付けられている場合は以下を確認する
-EC2 &amp;gt; Elastic IP を選択 関連付けられたインスタンス ID が一致するものを検索する 割り当てられた IPv4 アドレス を確認 RDS プロキシの設定がされている場合は以下を確認する
-RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択 プロキシエンドポイントを確認 その他 DB のパスワード (Secrets Manager)の設定確認方法
-AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択 シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下 パスワードを確認する pgAdmin4 での作業 プロパティにそれぞれ以下の値を設定する</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PgAdmin on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/pgadmin/</link><description>Recent content in PgAdmin on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/pgadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法</title><link>https://kkawazoe.github.io/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/02/06/troubleshooting-software-updates-in-pgadmin4-when-errors-occur/</guid><description>&lt;p&gt;pgAdmin4 でソフトウェア自体の更新する際にエラーが発生する場合の対処法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS Tahoe 26.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="エラー内容"&gt;エラー内容&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Error: Cannot update &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you&lt;span style="color:#e6db74"&gt;&amp;#39;re on macOS Sierra or later, you&amp;#39;&lt;/span&gt;ll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; more information.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="対処法"&gt;対処法&lt;/h2&gt;
+&lt;h3 id="ダウンロードフォルダ内にアプリケーションがある場合"&gt;ダウンロードフォルダ内にアプリケーションがある場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;pgAdmin4 を終了する&lt;/li&gt;
+&lt;li&gt;Finder でダウンロードフォルダを開く&lt;/li&gt;
+&lt;li&gt;pgAdmin4 アプリケーションを「アプリケーション」フォルダにドラッグアンドドロップで移動する&lt;/li&gt;
+&lt;li&gt;アプリケーションフォルダから pgAdmin4 を起動し、再度更新する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="それ以外の場合"&gt;それ以外の場合&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;pgAdmin4 を終了する&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ターミナルを開いて、以下のコマンドを実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo xattr -rd com.apple.quarantine /Applications/pgAdmin&lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;4.app
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pgAdmin4 を起動し、再度更新する&lt;/p&gt;</description></item><item><title>pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法</title><link>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</link><pubDate>Wed, 20 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/20/how-to-access-postgresql-built-in-aws-ec2-with-pgadmin4/</guid><description>&lt;p&gt;pgAdmin4 で AWS の EC2 内に構築された PostgreSQL にアクセスする方法を毎回手順を確認するため備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;h3 id="事前作業"&gt;事前作業&lt;/h3&gt;
+&lt;p&gt;AWS Console にて接続に必要な情報を控えておく&lt;/p&gt;
+&lt;h4 id="ec2"&gt;EC2&lt;/h4&gt;
+&lt;p&gt;踏み台の Public IP を確認&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; リソース &amp;gt; 該当のリソースを選択&lt;/li&gt;
+&lt;li&gt;パブリック IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Elastic IP が紐付けられている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EC2 &amp;gt; Elastic IP を選択&lt;/li&gt;
+&lt;li&gt;関連付けられたインスタンス ID が一致するものを検索する&lt;/li&gt;
+&lt;li&gt;割り当てられた IPv4 アドレス を確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="rds"&gt;RDS&lt;/h4&gt;
+&lt;p&gt;プロキシの設定がされている場合は以下を確認する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RDS &amp;gt; プロキシ &amp;gt; {該当の DB 識別子} を選択&lt;/li&gt;
+&lt;li&gt;プロキシエンドポイントを確認&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="その他"&gt;その他&lt;/h4&gt;
+&lt;p&gt;DB のパスワード (Secrets Manager)の設定確認方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS Secrets Manager &amp;gt; DB のユーザパスワードを選択&lt;/li&gt;
+&lt;li&gt;シークレットの値 &amp;gt; [シークレットの値を取得する]ボタンを押下&lt;/li&gt;
+&lt;li&gt;パスワードを確認する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="pgadmin4-での作業"&gt;pgAdmin4 での作業&lt;/h4&gt;
+&lt;p&gt;プロパティにそれぞれ以下の値を設定する&lt;/p&gt;</description></item></channel></rss>

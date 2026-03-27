@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WSL on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/wsl/</link><description>Recent content in WSL on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sun, 14 Mar 2021 10:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml"/><item><title>wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</link><pubDate>Sun, 14 Mar 2021 10:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</guid><description>wsl の起動時のユーザを root にする方法を備忘録として残しておく
-環境 windows: Windows 10 Pro wsl: version 2 ディストリビューション: Ubuntu 18.04 前提 wsl の有効化およびディストリビューションのインストールは完了している前提
-※ wsl のインストールについては 参考 を参照
-方法 PowerShell で以下のコマンドを実行する
-wsl sudo passwd root exit wsl -s Ubuntu-18.04 ubuntu1804 config --default-user root wsl #=&amp;gt; root でログインしていることを確認</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WSL on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/wsl/</link><description>Recent content in WSL on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sun, 14 Mar 2021 10:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml"/><item><title>wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</link><pubDate>Sun, 14 Mar 2021 10:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</guid><description>&lt;p&gt;wsl の起動時のユーザを root にする方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;windows: Windows 10 Pro&lt;/li&gt;
+&lt;li&gt;wsl: version 2&lt;/li&gt;
+&lt;li&gt;ディストリビューション: Ubuntu 18.04&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;wsl の有効化およびディストリビューションのインストールは完了している前提&lt;br&gt;
+※ wsl のインストールについては &lt;a href="https://docs.microsoft.com/ja-jp/windows/wsl/install-win10"&gt;参考&lt;/a&gt; を参照&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;PowerShell で以下のコマンドを実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;exit
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl -s Ubuntu-18.04
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ubuntu1804 config --default-user root
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; root でログインしていることを確認&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

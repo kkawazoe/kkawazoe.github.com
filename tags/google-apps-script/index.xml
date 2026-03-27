@@ -1,6 +1,237 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Apps Script on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/google-apps-script/</link><description>Recent content in Google Apps Script on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Tue, 05 Nov 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/google-apps-script/index.xml" rel="self" type="application/rss+xml"/><item><title>DMARC Reports を自前で集計する方法</title><link>https://kkawazoe.github.io/blog/2024/11/05/how-to-compile-dmarc-reports-on-your-own/</link><pubDate>Tue, 05 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/05/how-to-compile-dmarc-reports-on-your-own/</guid><description>DMARC Reports を自前で集計する方法を備忘録として残しておく
-方法 GAS(Google Apps Script) を使用して集約する
-新規で Spread Sheet を作成
-「拡張機能」&amp;gt;「Apps Script」を選択
-「ファイル」&amp;gt;「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける
-let today = new Date(); let targetDate = new Date(today); let nextDate = new Date(today); targetDate.setDate(today.getDate() - 1); nextDate.setDate(targetDate.getDate() + 1); const folderId = '&amp;lt;&amp;lt;Folder ID&amp;gt;&amp;gt;'; // レポートファイルを保存する親フォルダIDを指定 const sheetId = '&amp;lt;&amp;lt;Sheet ID&amp;gt;&amp;gt;'; // レポートを出力するスプレッドシートIDを指定 // 実行日の前日のメールを検索 // DMARC レポートを取得できる検索条件を指定する const query = 'From:noreply-dmarc-support@google.com after:' + Utilities.formatDate(targetDate, Session.getScriptTimeZone(), 'yyyy/MM/dd') + ' before:' + Utilities.</description></item><item><title>Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</title><link>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</link><pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid><description>実際のソース function searchContactMail() { /* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */ var strTerms = &amp;#39;noreply&amp;#39;; var myThreads = GmailApp.search(strTerms, 0, 100); var myMsgs = GmailApp.getMessagesForThreads(myThreads); //二次元配列 var contents = []; /* 各メールの内容を取り出す */ for (var i = 0; i &amp;lt; myMsgs.length; i++) { for (var j = 0; j &amp;lt; myMsgs[i].length; j++) { var data = myMsgs[i][j].getTo(); if (data !== null) { contents.push([data]); } } } /* スプレッドシートのシート「output」に出力 */ if (myMsgs.length &amp;gt; 0) { var mySheet = SpreadsheetApp.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Apps Script on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/google-apps-script/</link><description>Recent content in Google Apps Script on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Tue, 05 Nov 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/google-apps-script/index.xml" rel="self" type="application/rss+xml"/><item><title>DMARC Reports を自前で集計する方法</title><link>https://kkawazoe.github.io/blog/2024/11/05/how-to-compile-dmarc-reports-on-your-own/</link><pubDate>Tue, 05 Nov 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/11/05/how-to-compile-dmarc-reports-on-your-own/</guid><description>&lt;p&gt;DMARC Reports を自前で集計する方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;p&gt;GAS(Google Apps Script) を使用して集約する&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;新規で Spread Sheet を作成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「拡張機能」&amp;gt;「Apps Script」を選択&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「ファイル」&amp;gt;「コード.gs」のデフォルトで記載されているソースを削除して以下を貼り付ける&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-js:コード.gs" data-lang="js:コード.gs"&gt;let today = new Date();
+let targetDate = new Date(today);
+let nextDate = new Date(today);
+targetDate.setDate(today.getDate() - 1);
+nextDate.setDate(targetDate.getDate() + 1);
+const folderId = &amp;#39;&amp;lt;&amp;lt;Folder ID&amp;gt;&amp;gt;&amp;#39;; // レポートファイルを保存する親フォルダIDを指定
+const sheetId = &amp;#39;&amp;lt;&amp;lt;Sheet ID&amp;gt;&amp;gt;&amp;#39;; // レポートを出力するスプレッドシートIDを指定
+// 実行日の前日のメールを検索
+// DMARC レポートを取得できる検索条件を指定する
+const query = &amp;#39;From:noreply-dmarc-support@google.com after:&amp;#39; + Utilities.formatDate(targetDate, Session.getScriptTimeZone(), &amp;#39;yyyy/MM/dd&amp;#39;) + &amp;#39; before:&amp;#39; + Utilities.formatDate(nextDate, Session.getScriptTimeZone(), &amp;#39;yyyy/MM/dd&amp;#39;);
+
+function executeAll(){
+ saveAttachmentsFromEmails();
+ parseDMARCReports();
+ calculateAndAppendHeaderFromTotals();
+}
+
+function saveAttachmentsFromEmails() { 
+ // 日付のフォーマットをYYYYMMDDに変換
+ let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), &amp;#39;yyyyMMdd&amp;#39;);
+
+ let threads = GmailApp.search(query);
+ let parentFolder = DriveApp.getFolderById(folderId); 
+
+ if (threads.length === 0) {
+ return;
+ }
+
+ // 日付別のフォルダを作成
+ let dateFolder = parentFolder.createFolder(formattedDate);
+ let totalAttachments = threads.reduce((sum, thread) =&amp;gt; sum + thread.getMessages().reduce((sum, message) =&amp;gt; sum + message.getAttachments().length, 0), 0);
+ let processedAttachments = 0;
+
+ for (let i = 0; i &amp;lt; threads.length; i++) {
+ let messages = threads[i].getMessages();
+ for (let j = 0; j &amp;lt; messages.length; j++) {
+ let attachments = messages[j].getAttachments();
+ for (let k = 0; k &amp;lt; attachments.length; k++) {
+ let attachment = attachments[k];
+ let file = dateFolder.createFile(attachment);
+ Logger.log(&amp;#39;File saved: &amp;#39; + file.getName());
+
+ // ZIPファイルの解凍処理
+ if (attachment.getContentType() === &amp;#39;application/zip&amp;#39;) {
+ let zipBlob = attachment.copyBlob();
+ let unzippedFiles = Utilities.unzip(zipBlob);
+ for (let m = 0; m &amp;lt; unzippedFiles.length; m++) {
+ dateFolder.createFile(unzippedFiles[m]);
+ Logger.log(&amp;#39;Unzipped file saved: &amp;#39; + unzippedFiles[m].getName());
+ }
+ // ZIPファイル自体は削除する
+ file.setTrashed(true);
+ }
+ // GZファイルの解凍処理
+ else if (attachment.getContentType() === &amp;#39;application/gzip&amp;#39; || attachment.getName().endsWith(&amp;#39;.gz&amp;#39;)) {
+ let gzBlob = attachment.copyBlob();
+ gzBlob.setContentType(&amp;#34;application/x-gzip&amp;#34;);
+ let decompressedData = Utilities.ungzip(gzBlob);
+ let gzFileName = attachment.getName().replace(&amp;#39;.gz&amp;#39;, &amp;#39;&amp;#39;);
+ let decompressedBlob = Utilities.newBlob(&amp;#34;&amp;#34;, &amp;#39;application/xml&amp;#39;, gzFileName).setDataFromString(decompressedData.getDataAsString(), &amp;#34;UTF8&amp;#34;);;
+ dateFolder.createFile(decompressedBlob);
+ Logger.log(&amp;#39;Decompressed file saved: &amp;#39; + gzFileName);
+ // GZファイル自体は削除する
+ file.setTrashed(true);
+ }
+ processedAttachments++;
+ let progress = ((processedAttachments / totalAttachments) * 100).toFixed(2);
+ Logger.log(&amp;#39;Progress: &amp;#39; + progress + &amp;#39;%&amp;#39;);
+ }
+ }
+ }
+}
+
+function parseDMARCReports() {
+ let parentFolder = DriveApp.getFolderById(folderId);
+ let spreadsheet = SpreadsheetApp.openById(sheetId);
+ let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), &amp;#39;yyyyMMdd&amp;#39;);
+
+ let dateFolder = parentFolder.getFoldersByName(formattedDate);
+ let folder = dateFolder.hasNext() ? dateFolder.next() : null;
+
+ if (!folder) {
+ Logger.log(&amp;#39;Folder for &amp;#39; + formattedDate + &amp;#39; does not exist.&amp;#39;);
+ return;
+ }
+
+ // 新しいシートを作成 ※左から3番目にシートを作成
+ // 既にシートが存在する場合は追記
+ let sheet = spreadsheet.getSheetByName(formattedDate) || spreadsheet.insertSheet(formattedDate, 2);
+
+ // シートのヘッダーを設定
+ let headers = [&amp;#39;Source IP&amp;#39;, &amp;#39;Count&amp;#39;, &amp;#39;DMARC&amp;#39;, &amp;#39;Disposition&amp;#39;, &amp;#39;DKIM&amp;#39;, &amp;#39;SPF&amp;#39;, &amp;#39;Envelope To&amp;#39;, &amp;#39;Envelope From&amp;#39;, &amp;#39;Header From&amp;#39;, &amp;#39;DKIM Result&amp;#39;, &amp;#39;SPF Result&amp;#39;];
+ sheet.appendRow(headers);
+
+ let files = folder.getFiles();
+ while (files.hasNext()) {
+ let file = files.next();
+ if (file.getMimeType() === &amp;#39;text/xml&amp;#39;) {
+ let xmlContent = file.getBlob().getDataAsString();
+ let document = XmlService.parse(xmlContent);
+ let root = document.getRootElement();
+
+ // 解析ロジック
+ let records = root.getChildren(&amp;#39;record&amp;#39;);
+ let rowsData = [];
+ for (let i = 0; i &amp;lt; records.length; i++) {
+ let record = records[i];
+ let row = record.getChild(&amp;#39;row&amp;#39;);
+ let identifiers = record.getChild(&amp;#39;identifiers&amp;#39;);
+ let auth_results = record.getChild(&amp;#39;auth_results&amp;#39;);
+
+ let sourceIp = row.getChildText(&amp;#39;source_ip&amp;#39;);
+ let count = row.getChildText(&amp;#39;count&amp;#39;);
+ let disposition = row.getChild(&amp;#39;policy_evaluated&amp;#39;).getChildText(&amp;#39;disposition&amp;#39;);
+ let dkim = row.getChild(&amp;#39;policy_evaluated&amp;#39;).getChildText(&amp;#39;dkim&amp;#39;);
+ let spf = row.getChild(&amp;#39;policy_evaluated&amp;#39;).getChildText(&amp;#39;spf&amp;#39;);
+ let dmarc = (dkim === &amp;#39;pass&amp;#39; || spf === &amp;#39;pass&amp;#39;) ? &amp;#39;OK&amp;#39; : &amp;#39;NG&amp;#39;;
+ let envelopeTo = identifiers ? identifiers.getChildText(&amp;#39;envelope_to&amp;#39;) : &amp;#39;&amp;#39;;
+ let envelopeFrom = identifiers ? identifiers.getChildText(&amp;#39;envelope_from&amp;#39;) : &amp;#39;&amp;#39;;
+ let headerFrom = identifiers ? identifiers.getChildText(&amp;#39;header_from&amp;#39;) : &amp;#39;&amp;#39;;
+ let dkimResultNode = auth_results.getChild(&amp;#39;dkim&amp;#39;);
+ let spfResultNode = auth_results.getChild(&amp;#39;spf&amp;#39;);
+ let dkimResult = dkimResultNode ? dkimResultNode.getChildText(&amp;#39;result&amp;#39;) : &amp;#39;&amp;#39;;
+ let spfResult = spfResultNode ? spfResultNode.getChildText(&amp;#39;result&amp;#39;) : &amp;#39;&amp;#39;;
+
+ let rowData = [sourceIp, count, dmarc, disposition, dkim, spf, envelopeTo, envelopeFrom, headerFrom, dkimResult, spfResult];
+ rowsData.push(rowData);
+ }
+ if (rowsData.length &amp;gt; 0) {
+ sheet.getRange(sheet.getLastRow() + 1, 1, rowsData.length, headers.length).setValues(rowsData);
+ }
+ }
+ }
+}
+
+function calculateAndAppendHeaderFromTotals() {
+ let spreadsheet = SpreadsheetApp.openById(sheetId);
+ let formattedDate = Utilities.formatDate(targetDate, Session.getScriptTimeZone(), &amp;#39;yyyyMMdd&amp;#39;);
+
+ let sheet = spreadsheet.getSheetByName(formattedDate);
+ if (!sheet) {
+ Logger.log(&amp;#39;Sheet for &amp;#39; + formattedDate + &amp;#39; does not exist.&amp;#39;);
+ return;
+ }
+
+ let data = sheet.getDataRange().getValues();
+ let headerFromTotals = {};
+
+ // 集計処理
+ for (let i = 1; i &amp;lt; data.length; i++) { // ヘッダー行をスキップするためにiを1から開始
+ let cValue = data[i][2]; // C列の値
+ let bValue = data[i][1]; // B列の値
+ let hValue = data[i][8]; // H列の値
+ let dValue = data[i][3]; // D列の値
+
+ if (!headerFromTotals[hValue]) {
+ headerFromTotals[hValue] = { passTotal: 0, failTotal: 0, noneCount: 0, quarantineCount: 0, rejectCount: 0 };
+ }
+
+ if (cValue === &amp;#39;OK&amp;#39;) {
+ headerFromTotals[hValue].passTotal += bValue;
+ } else {
+ headerFromTotals[hValue].failTotal += bValue;
+ }
+
+ // D列の値をカウント
+ if (dValue === &amp;#39;quarantine&amp;#39;) {
+ headerFromTotals[hValue].quarantineCount += bValue;
+ } else if (dValue === &amp;#39;reject&amp;#39;) {
+ headerFromTotals[hValue].rejectCount += bValue;
+ } else if (dValue === &amp;#39;none&amp;#39;) {
+ headerFromTotals[hValue].noneCount += bValue;
+ }
+ }
+
+ // 結果をスプレッドシートに書き込む
+ let resultSheet = spreadsheet.getSheetByName(&amp;#39;Results&amp;#39;) || spreadsheet.insertSheet(&amp;#39;Results&amp;#39;);
+ if (resultSheet.getLastRow() === 0) {
+ resultSheet.appendRow([&amp;#39;Header From&amp;#39;, &amp;#39;Date&amp;#39;, &amp;#39;Pass Total&amp;#39;, &amp;#39;Fail Total&amp;#39;, &amp;#39;Success Rate&amp;#39;, &amp;#39;None Count&amp;#39;, &amp;#39;Quarantine Count&amp;#39;, &amp;#39;Reject Count&amp;#39;, &amp;#39;Quarantine + Reject Rate&amp;#39;]);
+ }
+
+ for (let headerFrom in headerFromTotals) {
+ let passTotal = headerFromTotals[headerFrom].passTotal;
+ let failTotal = headerFromTotals[headerFrom].failTotal;
+ let successRate = Math.floor((passTotal / (passTotal + failTotal)) * 10000) / 100; // 切り捨て
+ let successRateStr = successRate.toFixed(2) + &amp;#39;%&amp;#39;; // 小数点第2位まで表示
+ let noneCount = headerFromTotals[headerFrom].noneCount;
+ let quarantineCount = headerFromTotals[headerFrom].quarantineCount;
+ let rejectCount = headerFromTotals[headerFrom].rejectCount;
+ let quarantineRejectRate = Math.floor(((quarantineCount + rejectCount) / failTotal) * 10000) / 100; // 切り捨て
+ let quarantineRejectRateStr = Number.isNaN(quarantineRejectRate) ? &amp;#39;0.00%&amp;#39; : quarantineRejectRate.toFixed(2) + &amp;#39;%&amp;#39;; // 小数点第2位まで表示
+ resultSheet.appendRow([headerFrom, formattedDate, passTotal, failTotal, successRateStr, noneCount, quarantineCount, rejectCount, quarantineRejectRateStr]);
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「トリガー」&amp;gt;「トリガーを追加」ボタンを押下&lt;/p&gt;</description></item><item><title>Google Apps Script で Gmail から 特定条件のスレッドを検索しメールを取り出す</title><link>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</link><pubDate>Thu, 19 Mar 2020 15:25:56 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/03/19/use-gas-to-search-for-gmail-and-retrieve-emails/</guid><description>&lt;h2 id="実際のソース"&gt;実際のソース&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;searchContactMail&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;/* Gmail から件名が「noreply」のスレッドを検索して内容を取り出す */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;strTerms&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;noreply&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;myThreads&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;GmailApp&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;search&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strTerms&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;myMsgs&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;GmailApp&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;getMessagesForThreads&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;myThreads&lt;/span&gt;); &lt;span style="color:#75715e"&gt;//二次元配列
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;contents&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;/* 各メールの内容を取り出す */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;myMsgs&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;j&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;j&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;myMsgs&lt;/span&gt;[&lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;j&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;data&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;myMsgs&lt;/span&gt;[&lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;][&lt;span style="color:#a6e22e"&gt;j&lt;/span&gt;].&lt;span style="color:#a6e22e"&gt;getTo&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;data&lt;/span&gt; &lt;span style="color:#f92672"&gt;!==&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;contents&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;push&lt;/span&gt;([&lt;span style="color:#a6e22e"&gt;data&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;/* スプレッドシートのシート「output」に出力 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;myMsgs&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;mySheet&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SpreadsheetApp&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;getActiveSpreadsheet&lt;/span&gt;().&lt;span style="color:#a6e22e"&gt;getSheetByName&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;mySheet&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;getRange&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;contents&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;length&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;setValues&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;contents&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

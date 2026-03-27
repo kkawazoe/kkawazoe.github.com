@@ -1,2 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Analytics on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/google-analytics/</link><description>Recent content in Google Analytics on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 02 Dec 2023 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/google-analytics/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法</title><link>https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/</link><pubDate>Sat, 02 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/</guid><description>Google Analytics(GA) で Google Tag Manager(以下 GTM) で設定したイベントパラメータを計測および表示を行う方法を備忘録として残しておく
-前提 ソースコードに GTM との連携用のスクリプトが導入済であること ソースコード上に以下のようなカスタムイベント発火のコードが設定されていること pushDataLayer({ event: &amp;#34;watch_video&amp;#34;, userID: userId, datetime: `${date}${time}`, }); 方法 [管理] &amp;gt; [データの収集と修正] &amp;gt; [データ ストリーム]を選択 対象のサイトを選択 測定 ID をコピーして退避しておく [Google マーケティング プラットフォーム] &amp;gt; [タグマネージャー]を選択 GTM での作業 変数の登録 [変数] &amp;gt; [ユーザ定義変数] &amp;gt; [新規]ボタンを押下 変数名に「user_id」と入力 変数のタイプに[データレイヤーの変数]を選択 データレイヤーの変数名に「userId」を入力 [保存]ボタンを押下 「datetime」も同じように登録する トリガーの登録 [トリガー] &amp;gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガーの設定]の中央アイコンを押下 [その他] &amp;gt; [カスタムイベント]を選択 イベント名に「watch_video」を入力 [保存]ボタンを押下 タグの登録 [タグ] &amp;gt; [新規]ボタンを押下 名称に「動画再生」と入力 [トリガー]の中央アイコンを押下 トリガーの登録で登録した「動画再生」を選択 [タグの設定]の中央アイコンを押下 [Google アナリティクス] &amp;gt; [Google アナリティクス: GA4 イベント]を選択 測定 ID に事前に退避しておいた測定 ID を入力 イベント名に「watch_video」を入力 イベント パラメータに 「user_id」を入力 値に「{{user_id}}」を入力 イベント パラメータに 「datetime」を入力 値に「{{datetime}}」を入力 [保存]ボタンを押下 [プレビュー]ボタンを押下してカスタムイベントが測定されることを確認 [公開]ボタンを押下 GA での作業 カスタムディメンションの設定 Google Analytics にログイン [管理]&amp;gt;[データの表示]&amp;gt;[カスタム定義]を選択 [カスタム ディメンションを作成]を押下 ディメンション名に「ユーザID」と入力 範囲に「イベント」を選択 説明に任意の値を入力 イベント パラメータに「user_id」を入力 「保存」ボタンを押下 datetime も同じように登録 ※ディメンション名は「イベント実行時間」 動画再生時間収集用の探索の設定 ※探索は前日までのデータしか対象にできないため設定の確認は後日に行うことになる</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Analytics on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/google-analytics/</link><description>Recent content in Google Analytics on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sat, 02 Dec 2023 12:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/google-analytics/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Analytics で Google Tag Manager で設定したイベントパラメータを計測および表示を行う方法</title><link>https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/</link><pubDate>Sat, 02 Dec 2023 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2023/12/02/how-to-measure-and-display-event-parameters-set-by-gtm-in-ga/</guid><description>&lt;p&gt;Google Analytics(GA) で Google Tag Manager(以下 GTM) で設定したイベントパラメータを計測および表示を行う方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ソースコードに GTM との連携用のスクリプトが導入済であること&lt;/li&gt;
+&lt;li&gt;ソースコード上に以下のようなカスタムイベント発火のコードが設定されていること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;pushDataLayer&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;event&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;watch_video&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;userID&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;userId&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;datetime&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;date&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt; &lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;time&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;[管理] &amp;gt; [データの収集と修正] &amp;gt; [データ ストリーム]を選択&lt;/li&gt;
+&lt;li&gt;対象のサイトを選択&lt;/li&gt;
+&lt;li&gt;測定 ID をコピーして退避しておく&lt;/li&gt;
+&lt;li&gt;[Google マーケティング プラットフォーム] &amp;gt; [タグマネージャー]を選択&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="gtm-での作業"&gt;GTM での作業&lt;/h2&gt;
+&lt;h3 id="変数の登録"&gt;変数の登録&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[変数] &amp;gt; [ユーザ定義変数] &amp;gt; [新規]ボタンを押下&lt;/li&gt;
+&lt;li&gt;変数名に「user_id」と入力&lt;/li&gt;
+&lt;li&gt;変数のタイプに[データレイヤーの変数]を選択&lt;/li&gt;
+&lt;li&gt;データレイヤーの変数名に「userId」を入力&lt;/li&gt;
+&lt;li&gt;[保存]ボタンを押下&lt;/li&gt;
+&lt;li&gt;「datetime」も同じように登録する&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="トリガーの登録"&gt;トリガーの登録&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[トリガー] &amp;gt; [新規]ボタンを押下&lt;/li&gt;
+&lt;li&gt;名称に「動画再生」と入力&lt;/li&gt;
+&lt;li&gt;[トリガーの設定]の中央アイコンを押下&lt;/li&gt;
+&lt;li&gt;[その他] &amp;gt; [カスタムイベント]を選択&lt;/li&gt;
+&lt;li&gt;イベント名に「watch_video」を入力&lt;/li&gt;
+&lt;li&gt;[保存]ボタンを押下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="タグの登録"&gt;タグの登録&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[タグ] &amp;gt; [新規]ボタンを押下&lt;/li&gt;
+&lt;li&gt;名称に「動画再生」と入力&lt;/li&gt;
+&lt;li&gt;[トリガー]の中央アイコンを押下&lt;/li&gt;
+&lt;li&gt;トリガーの登録で登録した「動画再生」を選択&lt;/li&gt;
+&lt;li&gt;[タグの設定]の中央アイコンを押下&lt;/li&gt;
+&lt;li&gt;[Google アナリティクス] &amp;gt; [Google アナリティクス: GA4 イベント]を選択&lt;/li&gt;
+&lt;li&gt;測定 ID に事前に退避しておいた測定 ID を入力&lt;/li&gt;
+&lt;li&gt;イベント名に「watch_video」を入力&lt;/li&gt;
+&lt;li&gt;イベント パラメータに 「user_id」を入力&lt;/li&gt;
+&lt;li&gt;値に「{{user_id}}」を入力&lt;/li&gt;
+&lt;li&gt;イベント パラメータに 「datetime」を入力&lt;/li&gt;
+&lt;li&gt;値に「{{datetime}}」を入力&lt;/li&gt;
+&lt;li&gt;[保存]ボタンを押下&lt;/li&gt;
+&lt;li&gt;[プレビュー]ボタンを押下してカスタムイベントが測定されることを確認&lt;/li&gt;
+&lt;li&gt;[公開]ボタンを押下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="ga-での作業"&gt;GA での作業&lt;/h2&gt;
+&lt;h3 id="カスタムディメンションの設定"&gt;カスタムディメンションの設定&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Google Analytics にログイン&lt;/li&gt;
+&lt;li&gt;[管理]&amp;gt;[データの表示]&amp;gt;[カスタム定義]を選択&lt;/li&gt;
+&lt;li&gt;[カスタム ディメンションを作成]を押下&lt;/li&gt;
+&lt;li&gt;ディメンション名に「ユーザID」と入力&lt;/li&gt;
+&lt;li&gt;範囲に「イベント」を選択&lt;/li&gt;
+&lt;li&gt;説明に任意の値を入力&lt;/li&gt;
+&lt;li&gt;イベント パラメータに「user_id」を入力&lt;/li&gt;
+&lt;li&gt;「保存」ボタンを押下&lt;/li&gt;
+&lt;li&gt;datetime も同じように登録 ※ディメンション名は「イベント実行時間」&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="動画再生時間収集用の探索の設定"&gt;動画再生時間収集用の探索の設定&lt;/h3&gt;
+&lt;p&gt;※探索は前日までのデータしか対象にできないため設定の確認は後日に行うことになる&lt;/p&gt;</description></item></channel></rss>

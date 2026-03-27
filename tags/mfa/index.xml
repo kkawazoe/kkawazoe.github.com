@@ -1,10 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MFA on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/mfa/</link><description>Recent content in MFA on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 22 Aug 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/mfa/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法</title><link>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</link><pubDate>Thu, 22 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</guid><description>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS AWS にて IAM ユーザを作成して MFA 認証を設定済 aws-mfa をインストール済 aws-mfa 設定 IAM ユーザのアクセスキーを作成してダウンロード
-&amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定
-デフォルト Region, Output を設定したい場合は &amp;laquo;profile 名&amp;raquo; の Profile を設定 以下のコマンドを実行
-# ARN は IAM &amp;gt; ユーザー &amp;gt; &amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; の [セキュリティ認証情報]タブ &amp;gt; 多要素認証 (MFA) の識別子のため注意 aws-mfa --device arn:aws:iam::&amp;lt;&amp;lt;AWS アカウント&amp;gt;&amp;gt;:mfa/&amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; --profile &amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt; 追加で ~/.</description></item><item><title>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法</title><link>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images-to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</link><pubDate>Mon, 22 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images-to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</guid><description>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法について調査した結果を備忘録として残しておく
-環境 OS: MacOS aws-mfa をインストールして登録済 aws-mfa 設定を参照 aws-mfa 設定 通常の aws profile を設定
-1 で設定した &amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定
-追加で ~/.aws/credentials に以下を設定
-[&amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;-long-term] aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt; フォルダ構成 ./ ├── img/ │ └── image_001.png └── upload_image.sh 実際のコード &amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt; 部分は実際の環境に応じて書き換える
-#!/bin/sh # Shared AWS_PROFILE_PREFIX=&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt; IMAGE_UPLOAD_DIR=img read -p &amp;#34;Which environment connect to?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MFA on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/mfa/</link><description>Recent content in MFA on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 22 Aug 2024 09:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/mfa/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法</title><link>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</link><pubDate>Thu, 22 Aug 2024 09:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/08/22/how-to-execute-commands-in-the-aws-cli-using-an-iam-user-with-mfa-authentication-already-set-up/</guid><description>&lt;p&gt;AWS CLI で MFA 認証を設定済の IAM ユーザを使用してコマンドを実行する方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;AWS にて IAM ユーザを作成して MFA 認証を設定済&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/broamski/aws-mfa"&gt;aws-mfa&lt;/a&gt; をインストール済&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aws-mfa-設定"&gt;aws-mfa 設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;IAM ユーザのアクセスキーを作成してダウンロード&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;デフォルト Region, Output を設定したい場合は &amp;laquo;profile 名&amp;raquo; の Profile を設定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のコマンドを実行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ARN は IAM &amp;gt; ユーザー &amp;gt; &amp;lt;&amp;lt;IAM ユーザ&amp;gt;&amp;gt; の [セキュリティ認証情報]タブ &amp;gt; 多要素認証 (MFA) の識別子のため注意 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws-mfa --device arn:aws:iam::&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;AWS アカウント&amp;gt;&amp;gt;:mfa/&amp;lt;&amp;lt;IA&lt;/span&gt;M ユーザ&amp;gt;&amp;gt; --profile &amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;追加で &lt;code&gt;~/.aws/credentials&lt;/code&gt; に以下を設定&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:~/.aws/credentials" data-lang="sh:~/.aws/credentials"&gt;[&amp;lt;profile 名&amp;gt;-long-term]
+aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="使用の仕方"&gt;使用の仕方&lt;/h2&gt;
+&lt;p&gt;AWS CLI にてコマンドを実行する前に以下のコマンドを実行する&lt;/p&gt;</description></item><item><title>ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法</title><link>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images--to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</link><pubDate>Mon, 22 Jul 2024 12:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/07/22/how-to-upload-images--to-s3-using-iam-with-mfa-authentication-configured-in-shell-script/</guid><description>&lt;p&gt;ShellScript で MFA 認証設定済の IAM を使用して S3 に画像をアップロードする方法について調査した結果を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/broamski/aws-mfa"&gt;aws-mfa&lt;/a&gt; をインストールして登録済
+&lt;ul&gt;
+&lt;li&gt;aws-mfa 設定を参照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aws-mfa-設定"&gt;aws-mfa 設定&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通常の aws profile を設定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;1 で設定した &amp;laquo;profile 名&amp;raquo;-long-term で Profile を設定&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;追加で &lt;code&gt;~/.aws/credentials&lt;/code&gt; に以下を設定&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-sh:~/.aws/credentials" data-lang="sh:~/.aws/credentials"&gt;[&amp;lt;&amp;lt;profile 名&amp;gt;&amp;gt;-long-term]
+aws_mfa_device = &amp;lt;&amp;lt;arn:aws:iam::*:mfa/${aws:username}&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="フォルダ構成"&gt;フォルダ構成&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── img/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── image_001.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── upload_image.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="実際のコード"&gt;実際のコード&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt;&lt;/code&gt; 部分は実際の環境に応じて書き換える&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh:upload_image.sh" data-lang="sh:upload_image.sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Shared&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;AWS_PROFILE_PREFIX&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;AWS Profile Prefix&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;IMAGE_UPLOAD_DIR=img
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;read -p &amp;#34;Which environment connect to? (dev/stg/prd): &amp;#34; input_environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Convert to uppercase
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;environment=$(echo &amp;#34;${input_environment}&amp;#34; | tr &amp;#39;[:lower:]&amp;#39; &amp;#39;[:upper:]&amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;echo &amp;#34;【Start Processing】$(date &amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;)&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;# Check the environment
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;case &amp;#34;${input_environment}&amp;#34; in
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;dev&amp;#34; | &amp;#34;stg&amp;#34; | &amp;#34;prd&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; echo &amp;#34;Connecting to ${environment} environment...&amp;#34; &amp;gt;&amp;gt; ${LOG_FILE} 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; # AWS&lt;/span&gt; MFA Authentication
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aws-mfa --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE_PREFIX&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;-&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Set environment variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AWS_PROFILE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo \${AWS_PROFILE_PREFIX}-&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AWS_S3_IMAGE_UPLOAD_DIR&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;echo s3-bucket-&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;input_environment&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;-to/path/&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Please enter the correct environment.&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exit;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【Start Upload Image】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Remove .DS_Store&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#e6db74"&gt;&amp;#34;.DS_Store&amp;#34;&lt;/span&gt; | xargs rm -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Upload images to S3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aws s3 cp ./&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;IMAGE_UPLOAD_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; s3://&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_S3_IMAGE_UPLOAD_DIR&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; --profile&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;AWS_PROFILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; --recursive &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Upload Image】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;【End Processing】&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;date &lt;span style="color:#e6db74"&gt;&amp;#34;+%Y/%m/%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;${&lt;/span&gt;LOG_FILE&lt;span style="color:#e6db74"&gt;}&lt;/span&gt; 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

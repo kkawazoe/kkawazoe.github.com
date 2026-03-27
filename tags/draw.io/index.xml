@@ -1,11 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Draw.io on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/draw.io/</link><description>Recent content in Draw.io on Note To Self ~One Step At A Time~</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/draw.io/index.xml" rel="self" type="application/rss+xml"/><item><title>draw.io MCP を各ツールに導入する手順</title><link>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</guid><description>draw.io MCP を各ツールに導入する手順を備忘録として残しておく
-環境 OS: MacOS Tahoe 26.3 Cursor 前提 Node.js がインストールされていること Cursor Settings を開く
-サイドバー &amp;gt; 「Tools &amp;amp; MCP」 を選択して、「Add Custom MCP」を選択
-Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面 以下の内容を入力して保存する
-{ &amp;#34;mcpServers&amp;#34;: { &amp;#34;drawio&amp;#34;: { &amp;#34;command&amp;#34;: &amp;#34;npx&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;-y&amp;#34;, &amp;#34;@drawio/mcp@latest&amp;#34; ] } } } Installed MCP Servers に draw.io MCP が追加されている &amp;amp; 有効になっていることを確認する</description></item><item><title>draw.io で AWS の構成図を作成する際の Tips</title><link>https://kkawazoe.github.io/blog/2024/04/24/tips-for-creating-aws-configuration-diagrams-with-draw-io/</link><pubDate>Wed, 24 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/24/tips-for-creating-aws-configuration-diagrams-with-draw-io/</guid><description>draw.io で AWS の構成図を作成する際の Tips を備忘録として残しておく
-レイヤー機能を使用して重なり順を気にせずに作業する 図を追加した際に背面に隠れてしまい、重なりを修正する手間を解消する
-手順 メニューバーから[表示]＞[レイヤー]を選択する
-※初期状態では「背景」というレイヤーが配置されている
-例えば以下のようにレイヤーを作成する
-※上に表示されているレイヤーが前面に表示される
-AWS 構成図 レイヤー定義例 エクスポートについて さまざまな形式でエクスポートが行えるが XML 形式でエクスポートするとレイヤー情報もエクスポート可能</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Draw.io on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/draw.io/</link><description>Recent content in Draw.io on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/draw.io/index.xml" rel="self" type="application/rss+xml"/><item><title>draw.io MCP を各ツールに導入する手順</title><link>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</guid><description>&lt;p&gt;draw.io MCP を各ツールに導入する手順を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: MacOS Tahoe 26.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cursor"&gt;Cursor&lt;/h3&gt;
+&lt;h4 id="前提"&gt;前提&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js がインストールされていること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Cursor Settings を開く&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;サイドバー &amp;gt; 「Tools &amp;amp; MCP」 を選択して、「Add Custom MCP」を選択&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ &lt;a href="https://kkawazoe.github.io/images/20260305_01/cursor_config_1.png" rel="noopener" target="_blank"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20260305_01/cursor_config_1.png"
+ alt="Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面"
+ width=900
+ height=400
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ Cursor Settings &amp;gt; Tools &amp;amp; MCP 画面
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下の内容を入力して保存する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:mcp_servers.json" data-lang="json:mcp_servers.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;drawio&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;-y&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;@drawio/mcp@latest&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Installed MCP Servers に draw.io MCP が追加されている &amp;amp; 有効になっていることを確認する&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>draw.io で AWS の構成図を作成する際の Tips</title><link>https://kkawazoe.github.io/blog/2024/04/24/tips-for-creating-aws-configuration-diagrams-with-draw-io/</link><pubDate>Wed, 24 Apr 2024 12:30:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2024/04/24/tips-for-creating-aws-configuration-diagrams-with-draw-io/</guid><description>&lt;p&gt;draw.io で AWS の構成図を作成する際の Tips を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="レイヤー機能を使用して重なり順を気にせずに作業する"&gt;レイヤー機能を使用して重なり順を気にせずに作業する&lt;/h2&gt;
+&lt;p&gt;図を追加した際に背面に隠れてしまい、重なりを修正する手間を解消する&lt;/p&gt;
+&lt;h3 id="手順"&gt;手順&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;メニューバーから[表示]＞[レイヤー]を選択する&lt;br&gt;
+※初期状態では「背景」というレイヤーが配置されている&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例えば以下のようにレイヤーを作成する&lt;br&gt;
+※上に表示されているレイヤーが前面に表示される&lt;/p&gt;
+&lt;figure class="center"&gt;
+ 
+ 
+ &lt;amp-img src="https://kkawazoe.github.io/images/20240424_01/aws_layer.png"
+ alt="AWS 構成図 レイヤー定義例"
+ width=300
+ height=300
+ layout="responsive"&gt;
+ &lt;/amp-img&gt;
+ 
+ 
+ &lt;figcaption&gt;
+ AWS 構成図 レイヤー定義例
+ &lt;/figcaption&gt;
+ 
+ &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="エクスポートについて"&gt;エクスポートについて&lt;/h2&gt;
+&lt;p&gt;さまざまな形式でエクスポートが行えるが XML 形式でエクスポートするとレイヤー情報もエクスポート可能&lt;/p&gt;</description></item></channel></rss>
