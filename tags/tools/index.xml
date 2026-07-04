@@ -1,38 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/tools/</link><description>Recent content in Tools on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac 版 Obsidian Vault を Windows で開く方法</title><link>https://kkawazoe.github.io/blog/2026/07/04/how-to-open-the-mac-version-of-obsidian-vault-on-windows/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/07/04/how-to-open-the-mac-version-of-obsidian-vault-on-windows/</guid><description>&lt;p&gt;Mac 版 Obsidian Vault を Windows で開く方法を備忘録として残しておく&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/tools/</link><description>Recent content in Tools on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>wsl のシェルを zsh に変更する方法</title><link>https://kkawazoe.github.io/blog/2026/07/05/how-to-change-the-wsl-shell-to-zsh/</link><pubDate>Sun, 05 Jul 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/07/05/how-to-change-the-wsl-shell-to-zsh/</guid><description>&lt;p&gt;wsl のシェルを zsh に変更する方法を備忘録として残しておく&lt;/p&gt;
 &lt;h2 id="環境"&gt;環境&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;OS: Windows 11 Pro&lt;/li&gt;
-&lt;li&gt;WSL: WSL2
+&lt;li&gt;WSL: version 2
 &lt;ul&gt;
 &lt;li&gt;OS: Ubuntu 24.04&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;wsl の有効化およびディストリビューションのインストールは完了している前提&lt;br&gt;
+※ wsl のインストールについては &lt;a href="https://docs.microsoft.com/ja-jp/windows/wsl/install-win10"&gt;参考&lt;/a&gt; を参照&lt;/p&gt;
 &lt;h2 id="方法"&gt;方法&lt;/h2&gt;
-&lt;p&gt;WSL 内に Linux 版 Obsidian をインストールする&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;systemd有効化&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo nano /etc/wsl.conf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下を追加：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;boot&lt;span style="color:#f92672"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemd&lt;span style="color:#f92672"&gt;=&lt;/span&gt;true
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;WSLを再起動（PowerShellで実行）：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --shutdown
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;p&gt;Windows Terminal を起動する&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Flatpak導入&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install -y flatpak
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;p&gt;「Ctrl」+「,」を押下して &lt;code&gt;setting.json&lt;/code&gt; を開く&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Obsidianインストール&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo flatpak install -y flathub md.obsidian.Obsidian
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;起動&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;flatpak run md.obsidian.Obsidian
+&lt;p&gt;&lt;code&gt;setting.json&lt;/code&gt; の設定に以下を追加する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json:settings.json" data-lang="json:settings.json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 中略
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;profiles&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;defaults&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;elevate&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;startingDirectory&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;list&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;commandline&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-24.04 -e zsh&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// -e zsh を追加
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;guid&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;{963ff2f7-6aed-5ce3-9d91-90d99571f53a}&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Ubuntu-24.04&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;source&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Windows.Terminal.Wsl&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;startingDirectory&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;/home/guest/project&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 以下、省略
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>draw.io MCP を各ツールに導入する手順</title><link>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/</guid><description>&lt;p&gt;draw.io MCP を各ツールに導入する手順を備忘録として残しておく&lt;/p&gt;
 &lt;h2 id="環境"&gt;環境&lt;/h2&gt;
@@ -1133,9 +1144,12 @@ keybind = &amp;#34;global:ctrl+cmd+`=toggle_quick_terminal&amp;#34;
 &lt;/ol&gt;</description></item><item><title>windows terminal でターミナル毎に起動時のディレクトリを変更する方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</link><pubDate>Sun, 14 Mar 2021 15:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/modify-starting-directory-for-windows-terminal/</guid><description>&lt;p&gt;windows terminal でターミナル毎に起動時のディレクトリを変更する方法を備忘録として残しておく&lt;/p&gt;
 &lt;h2 id="環境"&gt;環境&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;windows: Windows 10 Pro&lt;/li&gt;
-&lt;li&gt;wsl: version 2&lt;/li&gt;
-&lt;li&gt;ディストリビューション: Ubuntu 18.04&lt;/li&gt;
+&lt;li&gt;OS: Windows 10 Pro&lt;/li&gt;
+&lt;li&gt;WSL: version 2
+&lt;ul&gt;
+&lt;li&gt;OS: Ubuntu Ubuntu 18.04&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="方法"&gt;方法&lt;/h2&gt;
 &lt;ol&gt;
@@ -1188,6 +1202,28 @@ keybind = &amp;#34;global:ctrl+cmd+`=toggle_quick_terminal&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>wsl ディストリビューションに ubuntu を選択した際に起動時のユーザを root に変更する方法</title><link>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</link><pubDate>Sun, 14 Mar 2021 10:00:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2021/03/14/modify-root-user-distribution-for-wsl-on-ubuntu/</guid><description>&lt;p&gt;wsl の起動時のユーザを root にする方法を備忘録として残しておく&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;windows: Windows 10 Pro&lt;/li&gt;
+&lt;li&gt;wsl: version 2&lt;/li&gt;
+&lt;li&gt;ディストリビューション: Ubuntu 18.04&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="前提"&gt;前提&lt;/h2&gt;
+&lt;p&gt;wsl の有効化およびディストリビューションのインストールは完了している前提&lt;br&gt;
+※ wsl のインストールについては &lt;a href="https://docs.microsoft.com/ja-jp/windows/wsl/install-win10"&gt;参考&lt;/a&gt; を参照&lt;/p&gt;
+&lt;h2 id="方法"&gt;方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;PowerShell で以下のコマンドを実行する&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;exit
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl -s Ubuntu-18.04
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ubuntu1804 config --default-user root
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#=&amp;gt; root でログインしていることを確認&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;</description></item><item><title>vagrant halt 失敗時の対応方法</title><link>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</link><pubDate>Sun, 04 Oct 2020 09:00:30 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2020/10/04/how-to-deal-with-vagrant-halt-failure/</guid><description>&lt;h2 id="経緯"&gt;経緯&lt;/h2&gt;
 &lt;p&gt;vagrant halt を行った際に以下のエラーが発生したため、その対処方法を備忘録として残しておく&lt;/p&gt;
