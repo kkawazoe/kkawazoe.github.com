@@ -1,5 +1,12 @@
 var data = [
 {
+url: "https://kkawazoe.github.io/blog/2026/07/04/how-to-open-the-mac-version-of-obsidian-vault-on-windows/",
+title: "Mac 版 Obsidian Vault を Windows で開く方法",
+image: "images/logo/obsidian_logo.svg",
+date: "2026-07-04",
+body: "Mac 版 Obsidian Vault を Windows で開く方法 Mac 版 Obsidian Vault を Windows で開く方法を備忘録として残しておく 環境 OS: Windows 11 Pro WSL: WSL2 OS: Ubuntu 24.04 方法 WSL 内に Linux 版 Obsidian をインストールする systemd有効化 sudo nano /etc/wsl.conf 以下を追加： [boot] systemd=true WSLを再起動（PowerShellで実行）： wsl --shutdown Flatpak導入 sudo apt update \u0026amp;\u0026amp; sudo apt upgrade -y sudo apt install -y flatpak sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo Obsidianインストール sudo flatpak install -y flathub md.obsidian.Obsidian 起動 flatpak run md.obsidian.Obsidian"
+},
+{
 url: "https://kkawazoe.github.io/blog/2026/03/05/steps-to-integrate-drawio-mcp-into-each-tool/",
 title: "draw.io MCP を各ツールに導入する手順",
 image: "images/logo/drawio_logo.svg",
