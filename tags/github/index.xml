@@ -281,7 +281,8 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;以下のコマンドを GitHub のEメールアドレスに置き換えて実行&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-keygen -t rsa -b &lt;span style="color:#ae81ff"&gt;4096&lt;/span&gt; -C &lt;span style="color:#e6db74"&gt;&amp;#34;your_email@example.com&amp;#34;&lt;/span&gt; -f &lt;span style="color:#e6db74"&gt;&amp;#34;id_rsa&amp;#34;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ~/.ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-keygen -t rsa -b &lt;span style="color:#ae81ff"&gt;4096&lt;/span&gt; -C &lt;span style="color:#e6db74"&gt;&amp;#34;your_email@example.com&amp;#34;&lt;/span&gt; -f &lt;span style="color:#e6db74"&gt;&amp;#34;id_rsa&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Generating public/private rsa key pair.
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
@@ -298,11 +299,4 @@
 &lt;p&gt;4-1. バックグラウンドでssh-agentを起動&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;eval &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;ssh-agent -s&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; Agent pid &lt;span style="color:#ae81ff"&gt;59566&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※ macOS Sierra 10.12.2 以降を使用している場合は &lt;code&gt;~/.ssh/config&lt;/code&gt; ファイルを変更して自動的にキーを &lt;code&gt;ssh-agent&lt;/code&gt; にロードしパスフレーズをキーチェーンに格納する必要あり&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code class="language-bash:~/.ssh/config" data-lang="bash:~/.ssh/config"&gt;Host *
- AddKeysToAgent yes
- UseKeychain yes
- IdentityFile ~/.ssh/id_rsa
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SSH 秘密鍵を ssh-agent に追加してパスフレーズをキーチェーンに保存する&lt;/p&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※ macOS Sierra 10.12.2 以降を使用している場合は &lt;code&gt;~/.ssh/config&lt;/code&gt; ファイルを変更して自動的にキーを &lt;code&gt;ssh-agent&lt;/code&gt; にロードしパスフレーズをキーチェーンに格納する必要あり&lt;/p&gt;</description></item></channel></rss>
