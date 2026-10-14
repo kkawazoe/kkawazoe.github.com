@@ -320,18 +320,6 @@ macos-titlebar-style = tabs
 
 window-padding-x = 20
 window-padding-y = 20
-
-# クイックターミナルの位置を画面下部に設定
-quick-terminal-position = &amp;#34;bottom&amp;#34;
-
-# クイックターミナルを表示するスクリーンを設定 (メインスクリーン)
-quick-terminal-screen = &amp;#34;main&amp;#34;
-
-# アニメーション時間を設定（0で即時表示）
-quick-terminal-animation-duration = 0
-
-# グローバルホットキーを設定
-keybind = &amp;#34;global:ctrl+cmd+`=toggle_quick_terminal&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="ghostty-チートシート"&gt;Ghostty チートシート&lt;/h2&gt;
