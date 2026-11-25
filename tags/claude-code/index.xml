@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Claude Code on Note To Self ~One Step At A Time~</title><link>https://kkawazoe.github.io/tags/claude-code/</link><description>Recent content in Claude Code on Note To Self ~One Step At A Time~</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Wed, 25 Nov 2026 16:18:00 +0900</lastBuildDate><atom:link href="https://kkawazoe.github.io/tags/claude-code/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude Code の /code-review スキルの使い方と使い分け</title><link>https://kkawazoe.github.io/blog/2026/11/25/how-to-use-claude-code-code-review-skill/</link><pubDate>Wed, 25 Nov 2026 16:18:00 +0900</pubDate><guid>https://kkawazoe.github.io/blog/2026/11/25/how-to-use-claude-code-code-review-skill/</guid><description>&lt;p&gt;Claude Code に組み込まれている &lt;code&gt;/code-review&lt;/code&gt; スキルの使い方と、似たコマンドとの使い分けを備忘録として残しておく&lt;/p&gt;
+&lt;p&gt;本記事の内容は、以下のいずれかで裏付けが取れたものだけを記載している&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公式ドキュメント (&lt;code&gt;code.claude.com/docs&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;公式 CHANGELOG (&lt;code&gt;anthropics/claude-code&lt;/code&gt; リポジトリ)&lt;/li&gt;
+&lt;li&gt;手元の環境で実際に確認した結果 (「手元で確認」と明記)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;※ Claude Code は更新頻度が高く、&lt;code&gt;/code-review&lt;/code&gt; の挙動も短期間で何度も変わっている&lt;br&gt;
+最新の挙動は &lt;a href="#%E5%8F%82%E8%80%83"&gt;参考&lt;/a&gt; の公式ドキュメントを確認すること&lt;/p&gt;
+&lt;h2 id="環境"&gt;環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: macOS&lt;/li&gt;
+&lt;li&gt;Claude Code: 2.1.332 (&lt;code&gt;claude --version&lt;/code&gt; で確認)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="概要"&gt;概要&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;/code-review&lt;/code&gt; は Claude Code のプロンプトで実行する &lt;strong&gt;バンドルスキル&lt;/strong&gt; で、作業中のブランチの変更を読んで &lt;strong&gt;正しさに関するバグ (correctness bugs)&lt;/strong&gt; を探し、結果を会話に返してくれる&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;どのプランでも利用でき、通常のセッションと同じく利用量 (または API 課金) としてカウントされる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/review&lt;/code&gt; は &lt;code&gt;/code-review&lt;/code&gt; のエイリアス (2.1.223 から)&lt;/li&gt;
+&lt;li&gt;組み込みのスキルなので、ディスク上に編集可能な &lt;code&gt;SKILL.md&lt;/code&gt; は存在しない&lt;/li&gt;
+&lt;li&gt;プロジェクト固有のレビュールールを与えたい場合は &lt;code&gt;CLAUDE.md&lt;/code&gt; に書く (レビューは &lt;code&gt;CLAUDE.md&lt;/code&gt; に従う)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="基本的な使い方"&gt;基本的な使い方&lt;/h2&gt;
+&lt;h3 id="書式"&gt;書式&lt;/h3&gt;
+&lt;p&gt;公式のコマンドリファレンスでは以下の書式になっている&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default] [pr#|branch|path]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;「effort レベル → フラグ → レビュー対象」の順で指定する&lt;/p&gt;</description></item></channel></rss>
